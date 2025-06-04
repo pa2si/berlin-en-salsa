@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "NewSpirit";
+  src: url("/fonts/new-spirit-medium-condensed.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-new-spirit: "NewSpirit", Arial, sans-serif;
 }
 
 @theme inline {
@@ -20,7 +28,8 @@
 }
 
 body {
-  background: var(--background);
+  background: url("/bes-fondo03.webp") no-repeat center center fixed;
+  background-size: cover;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-new-spirit);
 }

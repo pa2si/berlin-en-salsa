@@ -1,9 +1,10 @@
-import { SubscribeSection } from '@/components/SubscribeSesction';
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div>
-      <SubscribeSection />
-    </div>
+    <main>
+      <Hero />
+      {/* <SubscribeSection /> */}
+    </main>
   );
 }

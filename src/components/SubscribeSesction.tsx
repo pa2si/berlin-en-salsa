@@ -24,7 +24,7 @@ export const SubscribeSection = () => {
   };
 
   return (
-    <div className='px-5 h-auto pt-14 bg-gray-200/80'>
+    <div className='px-5 h-auto pt-14 '>
       <div className='max-w-[700px] mx-auto'>
         <div className='text-3xl mb-4 text-gray-400/80 text-center'>
           Subscribe to my monthly newsletter!
