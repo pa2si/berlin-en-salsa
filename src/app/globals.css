@@ -16,7 +16,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-bes-red: #ff1200;
+  --color-bes-purple: #b725e8;
+  --color-bes-amber: #ffdfa8;
+  --color-bes-black: #1d1d1b;
   --font-mono: var(--font-geist-mono);
 }
 
