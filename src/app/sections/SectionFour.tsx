@@ -2,7 +2,7 @@ const SectionFour = () => {
   return (
     <>
       {/* Mobile layout (only visible below sm) */}
-      <div className="bg-bes-purple flex h-dvh flex-col items-center justify-around overflow-auto sm:hidden">
+      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto sm:hidden">
         <img
           src="/como-se-financia-berlin-en-salsa.svg"
           alt="Como se financia Berlin en Salsa"
@@ -41,7 +41,7 @@ const SectionFour = () => {
       </div>
 
       {/* New sm to lg layout (2-column layout) */}
-      <div className="bg-bes-purple hidden h-dvh w-full grid-cols-2 overflow-auto sm:grid lg:grid xl:hidden">
+      <div className="bg-bes-purple hidden h-svh w-full grid-cols-2 overflow-auto sm:grid lg:grid xl:hidden">
         {/* Left column - Financing information */}
         <div className="flex flex-col items-center justify-center p-2 lg:p-8">
           <img
@@ -88,7 +88,7 @@ const SectionFour = () => {
       </div>
 
       {/* Desktop layout (only visible at xl and above) */}
-      <div className="bg-bes-purple hidden h-dvh grid-cols-3 overflow-auto px-8 xl:grid">
+      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-auto px-8 xl:grid">
         <div className="flex items-center justify-center">
           <img
             src="/bes-camiseta-white.webp"

@@ -1,14 +1,14 @@
 const SectionOne = () => {
   return (
-    <div className="flex h-auto w-screen flex-col overflow-hidden sm:flex-row xl:h-dvh">
+    <div className="flex h-auto w-screen flex-col overflow-hidden sm:flex-row xl:h-svh">
       <div
-        className="flex h-dvh items-center justify-center bg-cover bg-center sm:w-1/2"
+        className="flex h-svh items-center justify-center bg-cover bg-center sm:w-1/2"
         style={{
           backgroundImage: 'url("/image-section-2.webp")',
           backgroundPosition: "50% 50%",
         }}
       />
-      <div className="bg-bes-amber flex h-dvh overflow-hidden sm:w-1/2 sm:items-center sm:justify-center">
+      <div className="bg-bes-amber flex h-svh overflow-hidden sm:w-1/2 sm:items-center sm:justify-center">
         <div className="flex h-[95%] w-full flex-col items-center justify-evenly gap-4 py-4">
           <img
             src="/que-es-berlin-en-salsa.svg"

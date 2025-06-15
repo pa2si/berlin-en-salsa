@@ -1,7 +1,7 @@
 const SectionOne = () => {
   return (
-    <div className="flex h-auto w-screen flex-col overflow-hidden sm:flex-row xl:h-dvh">
-      <div className="bg-bes-amber flex h-dvh items-center justify-center sm:w-1/2">
+    <div className="flex h-auto w-screen flex-col overflow-hidden sm:flex-row xl:h-svh">
+      <div className="bg-bes-amber flex h-svh items-center justify-center sm:w-1/2">
         <div className="flex flex-col items-center">
           <img
             src="/bes-logo-color.webp"
@@ -15,7 +15,7 @@ const SectionOne = () => {
       </div>
 
       <div
-        className="flex h-dvh flex-col items-center justify-center gap-10 bg-cover sm:w-1/2 sm:gap-4 lg:gap-10"
+        className="flex h-svh flex-col items-center justify-center gap-10 bg-cover sm:w-1/2 sm:gap-4 lg:gap-10"
         style={{
           backgroundImage: 'url("/bes-section-1-bg.webp")',
           backgroundPosition: "100% 40%",

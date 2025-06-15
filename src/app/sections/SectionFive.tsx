@@ -3,10 +3,10 @@ import { Footer } from "@/components/Footer";
 
 const SectionFive = () => {
   return (
-    <div className="bg-bes-amber flex h-dvh flex-col overflow-y-auto">
+    <div className="bg-bes-amber flex h-svh flex-col overflow-y-auto">
       <div className="flex w-full flex-1 flex-col justify-between">
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-2 px-4 md:gap-4">
-          <div className="flex w-full justify-center">
+          <div className="mb-8 flex w-full justify-center sm:mb-0">
             <img
               src="/contacto.svg"
               alt="Contacto"
