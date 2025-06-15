@@ -9,12 +9,12 @@ const SectionFour = () => {
           className="mx-auto w-[80vw] max-w-[33rem] min-w-[13rem]"
         />
 
-        <p className="text-bes-amber min-text-lg max-text-2xl px-2 text-center text-[6vw]">
+        <p className="text-bes-amber min-text-lg max-text-2xl -mt-4 px-2 text-center text-[6vw]">
           Berlin en Salsa no cuenta con financiación pública ni patrocinio
           comercial.
         </p>
 
-        <p className="text-bes-amber min-text-lg max-text-2xl px-2 text-center text-[6vw]">
+        <p className="text-bes-amber min-text-lg max-text-2xl -mt-4 px-2 text-center text-[6vw]">
           Somos un festival hecho por y para la comunidad salsera, y nos
           financiamos únicamente a través de la venta de camisetas y sus
           donaciones.
@@ -23,10 +23,10 @@ const SectionFour = () => {
         <img
           src="/ponte.svg"
           alt="Ponte tu camiseta"
-          className="m-4 mx-auto w-[30vw] max-w-[10rem] min-w-[6rem]"
+          className="mx-auto w-[30vw] max-w-[10rem] min-w-[6rem]"
         />
 
-        <div className="flex w-full items-center justify-around gap-4 px-4">
+        <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
           <img
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
