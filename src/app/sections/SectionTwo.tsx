@@ -1,13 +1,52 @@
-const SectionOne = () => {
+"use client";
+
+import { useState, useEffect } from "react";
+
+const SectionTwo = () => {
+  const images = ["/image-section-2.webp", "/foto-2.webp", "/foto-3.webp"];
+  const [currentImage, setCurrentImage] = useState(0);
+
+  // Auto-rotate images every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="flex h-auto w-screen flex-col overflow-hidden sm:flex-row xl:h-svh">
-      <div
-        className="flex h-svh items-center justify-center bg-cover bg-center sm:w-1/2"
-        style={{
-          backgroundImage: 'url("/image-section-2.webp")',
-          backgroundPosition: "50% 50%",
-        }}
-      />
+      <div className="relative flex h-svh items-center justify-center sm:w-1/2">
+        {images.map((img, index) => (
+          <div
+            key={img}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              index === currentImage ? "opacity-100" : "opacity-0"
+            }`}
+            style={{
+              backgroundImage: `url("${img}")`,
+              backgroundPosition: "50% 50%",
+            }}
+          />
+        ))}
+
+        {/* Navigation dots */}
+        <div className="absolute bottom-4 z-10 flex space-x-2">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`h-2 w-2 rounded-full ${
+                index === currentImage
+                  ? "bg-bes-amber"
+                  : "bg-opacity-50 bg-white"
+              }`}
+              onClick={() => setCurrentImage(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
       <div className="bg-bes-amber flex h-svh overflow-hidden sm:w-1/2 sm:items-center sm:justify-center">
         <div className="flex h-[95%] w-full flex-col items-center justify-evenly gap-4 py-4">
           <img
@@ -40,4 +79,4 @@ const SectionOne = () => {
     </div>
   );
 };
-export default SectionOne;
+export default SectionTwo;
