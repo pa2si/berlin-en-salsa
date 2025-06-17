@@ -1,8 +1,11 @@
 Versions:
 
-current version: 0.1.3
-
 whats's done:
+
+v 0.1.5
+
+- Footer added a bit of pb in mobile view
+- the Form has less height in sma sm and md also everything more compact in sm and md.
 
 v 0.1.4
 

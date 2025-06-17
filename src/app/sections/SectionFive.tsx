@@ -10,7 +10,7 @@ const SectionFive = () => {
             <img
               src="/contacto.svg"
               alt="Contacto"
-              className="w-[65vw] max-w-[25rem] min-w-[15rem] object-contain"
+              className="mt-0 w-[65vw] max-w-[25rem] min-w-[15rem] object-contain sm:mt-2 sm:max-w-[15rem] lg:mt-0 lg:max-w-[25rem]"
             />
           </div>
 
