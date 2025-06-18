@@ -21,9 +21,9 @@ const SectionFour = () => {
         </p>
 
         <img
-          src="/ponte.svg"
-          alt="Ponte tu camiseta"
-          className="mx-auto w-[30vw] max-w-[10rem] min-w-[6rem]"
+          src="/apoyanos-double-line.svg"
+          alt="Apoyanos pidiendo tu camiseta"
+          className="mx-auto w-[50vw] max-w-[25rem] min-w-[14rem]"
         />
 
         <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
@@ -67,21 +67,21 @@ const SectionFour = () => {
         {/* Right column - T-shirts */}
         <div className="flex flex-col items-center justify-center sm:p-8">
           <img
-            src="/ponte.svg"
-            alt="Ponte tu camiseta"
-            className="mb-5 w-[60%] sm:max-w-[8rem] lg:mb-6"
+            src="/apoyanos-single-line.svg"
+            alt="Apoyanos pidiendo tu camiseta"
+            className="mb-5 w-[100%] sm:max-w-[30rem] lg:mb-6"
           />
 
           <div className="flex flex-row items-center justify-center gap-4 md:gap-6">
             <img
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa white t-shirt"
-              className="w-[45%] max-w-[8rem] lg:max-w-[12rem]"
+              className="w-[45%] max-w-[15rem] lg:max-w-[12rem]"
             />
             <img
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa black t-shirt"
-              className="w-[45%] max-w-[8rem] lg:max-w-[12rem]"
+              className="w-[45%] max-w-[15rem] lg:max-w-[12rem]"
             />
           </div>
         </div>
@@ -115,9 +115,9 @@ const SectionFour = () => {
             donaciones.
           </p>
           <img
-            src="/ponte.svg"
-            alt="Ponte tu camiseta"
-            className="mx-auto max-w-[11rem] min-w-[10rem]"
+            src="/apoyanos-single-line.svg"
+            alt="Apoyanos pidiendo tu camiseta"
+            className="mx-auto max-w-[35rem] min-w-[10rem]"
           />
         </div>
         <div className="flex items-center justify-center">

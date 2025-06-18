@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.6
+
+- in SectionFour: changed the svg under the <p> to apoyanos ...
+
 v 0.1.5
 
 - Footer added a bit of pb in mobile view
