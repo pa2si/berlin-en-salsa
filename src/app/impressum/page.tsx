@@ -3,82 +3,97 @@ import Link from "next/link";
 
 export default function Impressum() {
   return (
-    <div className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8">
-        <Link
-          href="/"
-          className="text-bes-red mb-8 inline-block hover:underline"
-        >
-          ← Volver a Inicio
-        </Link>
+    <div className="bg-bes-amber flex min-h-screen flex-col">
+      {/* Breadcrumb and back button navigation */}
+      <div className="container mx-auto px-4 py-4 sm:py-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+          <nav className="flex" aria-label="Breadcrumb">
+            <ol className="inline-flex items-center space-x-1 md:space-x-2">
+              <li className="inline-flex items-center">
+                <Link
+                  href="/"
+                  className="text-bes-red hover:text-bes-red/80 inline-flex items-center text-sm sm:text-base md:text-lg"
+                >
+                  Inicio
+                </Link>
+              </li>
+              <li>
+                <div className="flex items-center">
+                  <span className="mx-1 text-gray-500">/</span>
+                  <span className="text-bes-purple text-sm sm:text-base md:text-lg">
+                    Impressum
+                  </span>
+                </div>
+              </li>
+            </ol>
+          </nav>
 
-        <h1 className="text-bes-red mb-6 text-3xl font-bold">
-          Aviso Legal / Impressum
-        </h1>
-
-        <div className="prose text-bes-purple max-w-none">
-          <h2 className="mt-6 mb-3 text-xl font-bold">
-            Información del Proveedor
-          </h2>
-          <p>
-            Berlin En Salsa
-            <br />
-            [Dirección Postal]
-            <br />
-            Berlín, Alemania
-          </p>
-
-          <p className="mt-4">
-            <strong>Correo electrónico:</strong>{" "}
-            <a
-              href="mailto:info@berlinensalsa.com"
-              className="text-bes-red hover:underline"
+          <Link
+            href="/"
+            className="text-bes-red hover:text-bes-red/80 mt-2 flex items-center text-sm sm:mt-0 sm:text-base md:text-lg"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="mr-1 h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
             >
-              info@berlinensalsa.com
-            </a>
-          </p>
-          <p>
-            <strong>Representante legal:</strong> [Nombre del Representante]
-          </p>
+              <path
+                fillRule="evenodd"
+                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Volver a Inicio
+          </Link>
+        </div>
+      </div>
 
-          <h2 className="mt-6 mb-3 text-xl font-bold">
-            Responsabilidad por el Contenido
-          </h2>
-          <p>
-            Como proveedores de servicios, somos responsables de nuestro propio
-            contenido en estas páginas de acuerdo con las leyes generales. Sin
-            embargo, no estamos obligados a monitorear la información
-            transmitida o almacenada por terceros o a investigar circunstancias
-            que indiquen actividad ilegal.
-          </p>
+      {/* Main content - vertically and horizontally centered */}
+      <div className="flex flex-grow items-center justify-center">
+        <div className="container mx-auto px-4 py-8">
+          <div className="prose text-bes-purple mx-auto max-w-none text-center">
+            <h1 className="text-bes-red mb-8 text-3xl font-bold sm:text-4xl md:text-5xl">
+              Impressum
+            </h1>
 
-          <h2 className="mt-6 mb-3 text-xl font-bold">Derechos de Autor</h2>
-          <p>
-            El contenido y las obras proporcionadas en estas páginas están
-            sujetos a la ley alemana de derechos de autor. La duplicación, el
-            procesamiento, la distribución y cualquier tipo de explotación fuera
-            de los límites de la ley de derechos de autor requieren el
-            consentimiento por escrito del autor o creador respectivo.
-          </p>
+            <p className="text-lg sm:text-xl md:text-2xl">
+              Max Mustermann
+              <br />
+              Musterstraße 111
+              <br />
+              Gebäude 44
+              <br />
+              90210 Musterstadt
+            </p>
 
-          <h2 className="mt-6 mb-3 text-xl font-bold">
-            Resolución de Disputas
-          </h2>
-          <p>
-            La Comisión Europea proporciona una plataforma para la resolución de
-            disputas en línea, que se puede encontrar en{" "}
-            <a
-              href="http://ec.europa.eu/consumers/odr/"
-              className="text-bes-red hover:underline"
-            >
-              http://ec.europa.eu/consumers/odr/
-            </a>
-            .
-          </p>
-          <p>
-            No estamos obligados ni dispuestos a participar en procedimientos de
-            resolución de disputas ante un organismo de arbitraje de consumo.
-          </p>
+            <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
+              Kontakt
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl">
+              Telefon: +49 (0) 123 44 55 66
+              <br />
+              E-Mail:{" "}
+              <a
+                href="mailto:mustermann@musterfirma.de"
+                className="text-bes-red hover:underline"
+              >
+                mustermann@musterfirma.de
+              </a>
+            </p>
+
+            <p className="mt-8 text-base sm:text-lg md:text-xl">
+              Quelle:{" "}
+              <a
+                href="https://www.e-recht24.de"
+                className="text-bes-red hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                eRecht24
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

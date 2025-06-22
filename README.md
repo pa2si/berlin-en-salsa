@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.7
+
+- updated the spotify link to the actual profile
+
 v 0.1.6
 
 - in SectionFour: changed the svg under the <p> to apoyanos ...

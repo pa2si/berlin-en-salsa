@@ -50,7 +50,7 @@ const SectionFive = () => {
             </a>
 
             <a
-              href="https://open.spotify.com/playlist/0Yu9ifjWZSQ5Pw7iyjKPxy?si=guiseUsqRMWb_D5AHDX9hw"
+              href="https://open.spotify.com/user/31cin24rvdxaothpsseizytsorxq?si=c0624aeb6b6e4906"
               target="_blank"
               rel="noopener noreferrer"
               className="text-bes-red hover:text-bes-red/80 flex items-center transition-colors"
