@@ -3,7 +3,17 @@ import Link from "next/link";
 
 export default function Impressum() {
   return (
-    <div className="bg-bes-amber flex min-h-screen flex-col">
+    <div className="bg-bes-amber relative flex min-h-screen flex-col">
+      {/* Background Logo with low opacity */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
+        <img
+          src="/bes-logo-color.webp"
+          alt=""
+          className="h-[80vh] w-auto max-w-none object-contain opacity-[0.03] select-none sm:h-[85vh] md:h-[95vh]"
+          aria-hidden="true"
+        />
+      </div>
+
       {/* Breadcrumb and back button navigation */}
       <div className="container mx-auto px-4 py-4 sm:py-6">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">

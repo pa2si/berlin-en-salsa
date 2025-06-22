@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.8
+
+- bg in impressum now has the logo in the bg with little opacity
+
 v 0.1.7
 
 - updated the spotify link to the actual profile
