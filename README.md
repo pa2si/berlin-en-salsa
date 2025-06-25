@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.10
+
+- privacy is now up to date.
+- actions.ts is now dealing with double opt in for newsletter
+- form has now mentions of US data storage and indicates that a email has been sent instead of successfull subscribed
+
 v 0.1.9
 
 - Form and impressum is now in spanish

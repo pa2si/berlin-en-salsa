@@ -72,7 +72,7 @@ export const addSubscriber = async (
       process.env.MAILCHIMP_AUDIENCE_ID as string,
       {
         email_address: email,
-        status: "subscribed" as const,
+        status: "pending" as const, // Use "pending" to force Double Opt-In
         merge_fields: {
           FNAME: sanitizedFirstName,
           LNAME: sanitizedLastName,
@@ -80,7 +80,7 @@ export const addSubscriber = async (
       },
     );
     return {
-      successMessage: `¡Éxito! ${email} se ha suscrito correctamente a nuestro boletín.`,
+      successMessage: `¡Casi listo! Hemos enviado un correo de confirmación a ${email}. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu suscripción.`,
     };
   } catch (error: unknown) {
     const mailchimpError = error as MailchimpError;

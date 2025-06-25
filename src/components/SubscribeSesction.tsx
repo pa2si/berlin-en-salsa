@@ -106,7 +106,10 @@ export const SubscribeSection = () => {
                   className="text-bes-red hover:text-bes-red/80 underline"
                 >
                   Política de Privacidad
-                </a>
+                </a>{" "}
+                y consiento que mis datos sean procesados por Mailchimp en
+                EE.UU. Entiendo que los correos pueden ser rastreados para
+                análisis.
               </label>
             </div>
 
