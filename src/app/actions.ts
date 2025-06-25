@@ -48,11 +48,14 @@ export const addSubscriber = async (
 
   // Server-side validation
   if (!email || !firstName || !lastName) {
-    return { errorMessage: "All fields are required." };
+    return { errorMessage: "Todos los campos son obligatorios." };
   }
 
   if (!isValidEmail(email)) {
-    return { errorMessage: "Please enter a valid email address." };
+    return {
+      errorMessage:
+        "Por favor, introduce una dirección de correo electrónico válida.",
+    };
   }
 
   const sanitizedFirstName = sanitizeInput(firstName);
@@ -60,7 +63,7 @@ export const addSubscriber = async (
 
   if (sanitizedFirstName.length < 2 || sanitizedLastName.length < 2) {
     return {
-      errorMessage: "First and last name must be at least 2 characters long.",
+      errorMessage: "El nombre y apellido deben tener al menos 2 caracteres.",
     };
   }
 
@@ -77,7 +80,7 @@ export const addSubscriber = async (
       },
     );
     return {
-      successMessage: `Success! ${email} was successfully subscribed to our newsletter!`,
+      successMessage: `¡Éxito! ${email} se ha suscrito correctamente a nuestro boletín.`,
     };
   } catch (error: unknown) {
     const mailchimpError = error as MailchimpError;
@@ -85,11 +88,11 @@ export const addSubscriber = async (
 
     if (mailchimpError.response?.body?.title === "Member Exists") {
       return {
-        errorMessage: `Oops! ${email} is already subscribed to our newsletter!`,
+        errorMessage: `¡Vaya! ${email} ya está suscrito a nuestro boletín.`,
       };
     }
     return {
-      errorMessage: `Oops! There was a problem subscribing ${email} to our newsletter!`,
+      errorMessage: `¡Vaya! Hubo un problema al suscribir ${email} a nuestro boletín.`,
     };
   }
 };

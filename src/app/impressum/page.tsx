@@ -31,7 +31,7 @@ export default function Impressum() {
                 <div className="flex items-center">
                   <span className="mx-1 text-gray-500">/</span>
                   <span className="text-bes-purple text-sm sm:text-base md:text-lg">
-                    Impressum
+                    Aviso Legal
                   </span>
                 </div>
               </li>
@@ -64,26 +64,26 @@ export default function Impressum() {
         <div className="container mx-auto px-4 py-8">
           <div className="prose text-bes-purple mx-auto max-w-none text-center">
             <h1 className="text-bes-red mb-8 text-3xl font-bold sm:text-4xl md:text-5xl">
-              Impressum
+              Aviso Legal
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl">
               Max Mustermann
               <br />
-              Musterstraße 111
+              Calle Ejemplo 111
               <br />
-              Gebäude 44
+              Edificio 44
               <br />
-              90210 Musterstadt
+              90210 Ciudad Ejemplo
             </p>
 
             <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
-              Kontakt
+              Contacto
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl">
-              Telefon: +49 (0) 123 44 55 66
+              Teléfono: +49 (0) 123 44 55 66
               <br />
-              E-Mail:{" "}
+              Correo electrónico:{" "}
               <a
                 href="mailto:mustermann@musterfirma.de"
                 className="text-bes-red hover:underline"
@@ -93,7 +93,7 @@ export default function Impressum() {
             </p>
 
             <p className="mt-8 text-base sm:text-lg md:text-xl">
-              Quelle:{" "}
+              Fuente:{" "}
               <a
                 href="https://www.e-recht24.de"
                 className="text-bes-red hover:underline"

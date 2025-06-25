@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.9
+
+- Form and impressum is now in spanish
+
 v 0.1.8
 
 - bg in impressum now has the logo in the bg with little opacity

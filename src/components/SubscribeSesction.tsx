@@ -13,7 +13,9 @@ export const SubscribeSection = () => {
     e.preventDefault();
 
     if (!privacyChecked) {
-      setSubscribeError("You must accept the privacy policy to subscribe.");
+      setSubscribeError(
+        "Debes aceptar la política de privacidad para suscribirte.",
+      );
       return;
     }
 
@@ -37,7 +39,7 @@ export const SubscribeSection = () => {
       <div className="mx-auto max-w-[700px]">
         {" "}
         <div className="text-bes-red mb-3 text-center text-xl font-bold sm:mb-2 sm:text-xl md:mb-3 md:text-2xl lg:text-3xl">
-          Subscribe to our newsletter
+          Suscríbete a nuestro boletín
         </div>
         <form
           className="flex flex-col items-center justify-center gap-y-4 sm:gap-y-2 md:gap-y-3 lg:gap-y-4"
@@ -49,23 +51,23 @@ export const SubscribeSection = () => {
               type="text"
               name="firstName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[48%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="First name"
+              placeholder="Nombre"
               required
               minLength={2}
               maxLength={50}
               pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Please enter a valid first name (letters, spaces, and hyphens only)"
+              title="Por favor, introduce un nombre válido (sólo letras, espacios y guiones)"
             />
             <input
               type="text"
               name="lastName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[48%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="Last name"
+              placeholder="Apellido"
               required
               minLength={2}
               maxLength={50}
               pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Please enter a valid last name (letters, spaces, and hyphens only)"
+              title="Por favor, introduce un apellido válido (sólo letras, espacios y guiones)"
             />
           </div>
           <div className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
@@ -74,11 +76,11 @@ export const SubscribeSection = () => {
               type="email"
               name="email"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[100%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="Email address"
+              placeholder="Correo electrónico"
               required
               maxLength={320}
               pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
-              title="Please enter a valid email address"
+              title="Por favor, introduce una dirección de correo electrónico válida"
               autoComplete="email"
               spellCheck="false"
             />
@@ -131,7 +133,7 @@ export const SubscribeSection = () => {
                   role="alert"
                   aria-live="polite"
                 >
-                  Please accept the privacy policy to continue
+                  Por favor, acepta la política de privacidad para continuar
                 </p>
               )}
             </div>
