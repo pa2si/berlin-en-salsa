@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.11
+
+- corrected quotes in privay to get rid of the eslint errors
+
 v 0.1.10
 
 - privacy is now up to date.

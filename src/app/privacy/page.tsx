@@ -63,7 +63,7 @@ export default function Privacy() {
       <div className="container mx-auto mb-16 px-4 py-8">
         <div className="prose text-bes-purple mx-auto max-w-none">
           <h1 className="text-bes-red mb-8 text-center text-3xl font-bold sm:text-4xl md:text-5xl">
-            Datenschutz&shy;erkl&auml;rung
+            Política de Privacidad
           </h1>
 
           <p className="text-right text-sm">
@@ -71,130 +71,128 @@ export default function Privacy() {
           </p>
 
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
-            1. Datenschutz auf einen Blick
+            1. Privacidad de un vistazo
           </h2>
-          <h3 className="mt-6 mb-2 text-xl font-bold">Allgemeine Hinweise</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">Información general</h3>
           <p>
-            Die folgenden Hinweise geben einen einfachen &Uuml;berblick
-            dar&uuml;ber, was mit Ihren personenbezogenen Daten passiert, wenn
-            Sie diese Website besuchen. Personenbezogene Daten sind alle Daten,
-            mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen.
-            Ausf&uuml;hrliche Informationen zum Thema Datenschutz entnehmen Sie
-            unserer unter diesem Text aufgef&uuml;hrten
-            Datenschutzerkl&auml;rung.
+            Las siguientes notas proporcionan una visión general sencilla de lo
+            que sucede con sus datos personales cuando visita este sitio web.
+            Los datos personales son todos aquellos mediante los cuales usted
+            puede ser identificado personalmente. Encontrará información
+            detallada sobre la protección de datos en nuestra política de
+            privacidad que figura a continuación de este texto.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Datenerfassung auf dieser Website
+            Recopilación de datos en este sitio web
           </h3>
           <h4 className="mt-4 mb-2 text-lg font-bold">
-            Wer ist verantwortlich f&uuml;r die Datenerfassung auf dieser
-            Website?
+            ¿Quién es responsable de la recopilación de datos en este sitio web?
           </h4>
           <p>
-            Die Datenverarbeitung auf dieser Website erfolgt durch den
-            Websitebetreiber. Dessen Kontaktdaten k&ouml;nnen Sie dem Abschnitt
-            &bdquo;Hinweis zur Verantwortlichen Stelle&ldquo; in dieser
-            Datenschutzerkl&auml;rung entnehmen.
+            El tratamiento de datos en este sitio web lo realiza el operador del
+            sitio web. Puede encontrar sus datos de contacto en la sección
+            &ldquo;Información sobre la entidad responsable&rdquo; de esta
+            política de privacidad.
           </p>
 
           <h4 className="mt-4 mb-2 text-lg font-bold">
-            Wie erfassen wir Ihre Daten?
+            ¿Cómo recopilamos sus datos?
           </h4>
           <p>
-            Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese
-            mitteilen. Hierbei kann es sich z.&nbsp;B. um Daten handeln, die Sie
-            in ein Kontaktformular eingeben.
+            Por un lado, sus datos se recopilan cuando usted nos los
+            proporciona. Esto puede ser, por ejemplo, datos que introduce en un
+            formulario de contacto.
           </p>
           <p>
-            Andere Daten werden automatisch oder nach Ihrer Einwilligung beim
-            Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor
-            allem technische Daten (z.&nbsp;B. Internetbrowser, Betriebssystem
-            oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt
-            automatisch, sobald Sie diese Website betreten.
+            Otros datos son recopilados automáticamente o con su consentimiento
+            por nuestros sistemas informáticos cuando visita el sitio web. Se
+            trata principalmente de datos técnicos (por ejemplo, navegador de
+            Internet, sistema operativo o hora de acceso a la página). Estos
+            datos se recopilan automáticamente en cuanto accede a este sitio
+            web.
           </p>
 
           <h4 className="mt-4 mb-2 text-lg font-bold">
-            Wof&uuml;r nutzen wir Ihre Daten?
+            ¿Para qué utilizamos sus datos?
           </h4>
           <p>
-            Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung
-            der Website zu gew&auml;hrleisten. Andere Daten k&ouml;nnen zur
-            Analyse Ihres Nutzerverhaltens verwendet werden. Sofern &uuml;ber
-            die Website Vertr&auml;ge geschlossen oder angebahnt werden
-            k&ouml;nnen, werden die &uuml;bermittelten Daten auch f&uuml;r
-            Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen
-            verarbeitet.
+            Parte de los datos se recogen para garantizar que el sitio web se
+            proporcione sin errores. Otros datos pueden utilizarse para analizar
+            su comportamiento como usuario. Si a través del sitio web se pueden
+            celebrar o iniciar contratos, los datos transmitidos también se
+            tratarán para ofertas contractuales, pedidos u otras solicitudes de
+            servicio.
           </p>
 
           <h4 className="mt-4 mb-2 text-lg font-bold">
-            Welche Rechte haben Sie bez&uuml;glich Ihrer Daten?
+            ¿Qué derechos tiene con respecto a sus datos?
           </h4>
           <p>
-            Sie haben jederzeit das Recht, unentgeltlich Auskunft &uuml;ber
-            Herkunft, Empf&auml;nger und Zweck Ihrer gespeicherten
-            personenbezogenen Daten zu erhalten. Sie haben au&szlig;erdem ein
-            Recht, die Berichtigung oder L&ouml;schung dieser Daten zu
-            verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt
-            haben, k&ouml;nnen Sie diese Einwilligung jederzeit f&uuml;r die
-            Zukunft widerrufen. Au&szlig;erdem haben Sie das Recht, unter
-            bestimmten Umst&auml;nden die Einschr&auml;nkung der Verarbeitung
-            Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen
-            ein Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde
-            zu.
+            Tiene derecho, en cualquier momento y de forma gratuita, a recibir
+            información sobre el origen, el destinatario y la finalidad de sus
+            datos personales almacenados. También tiene derecho a solicitar la
+            rectificación o supresión de estos datos. Si ha dado su
+            consentimiento para el tratamiento de datos, puede revocarlo en
+            cualquier momento con efecto futuro. También tiene derecho, en
+            determinadas circunstancias, a solicitar la limitación del
+            tratamiento de sus datos personales. Además, tiene derecho a
+            presentar una reclamación ante la autoridad de control competente.
           </p>
           <p>
-            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz k&ouml;nnen
-            Sie sich jederzeit an uns wenden.
+            Si tiene alguna pregunta sobre este tema o sobre la protección de
+            datos, puede ponerse en contacto con nosotros en cualquier momento.
           </p>
 
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
-            2. Hosting
+            2. Alojamiento
           </h2>
-          <h3 className="mt-6 mb-2 text-xl font-bold">Hosting über Vercel</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            Alojamiento a través de Vercel
+          </h3>
           <p>
-            Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut,
-            CA 91789, USA, gehostet.
+            Nuestro sitio web está alojado en Vercel Inc., 340 S Lemon Ave
+            #4133, Walnut, CA 91789, EE.UU.
           </p>
           <p>
-            Wenn Sie unsere Website besuchen, werden personenbezogene Daten auf
-            den Servern von Vercel erfasst. Hierbei kann es sich v. a. um
-            IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten,
-            Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige
-            Daten handeln, die über eine Website generiert werden.
+            Cuando visita nuestro sitio web, sus datos personales se recogen en
+            los servidores de Vercel. Esto puede incluir direcciones IP,
+            solicitudes de contacto, metadatos y datos de comunicación, datos
+            contractuales, datos de contacto, nombres, accesos al sitio web y
+            otros datos generados a través de un sitio web.
           </p>
           <p>
-            Das Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber
-            unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b
-            DSGVO) und im Interesse einer sicheren, schnellen und effizienten
-            Bereitstellung unseres Online-Angebots durch einen professionellen
-            Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+            El alojamiento se realiza con el fin de cumplir un contrato con
+            nuestros clientes potenciales y existentes (Art. 6 Apdo. 1 lit. b
+            RGPD) y en interés de proporcionar nuestros servicios en línea de
+            forma segura, rápida y eficiente a través de un proveedor
+            profesional (Art. 6 Apdo. 1 lit. f RGPD).
           </p>
 
           <h4 className="mt-4 mb-2 text-lg font-bold">
-            Datenübermittlung in die USA
+            Transferencia de datos a EE.UU.
           </h4>
           <p>
-            Vercel ist ein Dienstleister aus den USA. Eine Datenübertragung in
-            die USA kann daher nicht ausgeschlossen werden. Wir weisen darauf
-            hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein
-            angemessenes Schutzniveau für den Datentransfer in die USA besteht.
-            Dies kann für Sie Risiken bezüglich der Rechtmäßigkeit und
-            Sicherheit der Datenverarbeitung bedeuten.
+            Vercel es un proveedor de servicios con sede en EE.UU. Por lo tanto,
+            no se puede excluir la transferencia de datos a EE.UU. Debemos
+            señalar que, en opinión del Tribunal de Justicia Europeo,
+            actualmente no existe un nivel adecuado de protección para la
+            transferencia de datos a EE.UU. Esto puede suponer riesgos para
+            usted en cuanto a la legalidad y seguridad del tratamiento de datos.
           </p>
           <p>
-            Als Grundlage für die Datenverarbeitung bei Empfängern mit Sitz in
-            Drittstaaten haben wir mit Vercel einen Vertrag zur
-            Auftragsverarbeitung (Data Processing Addendum, DPA) geschlossen.
-            Dieser Vertrag enthält die von der EU-Kommission genehmigten
-            Standardvertragsklauseln (Standard Contractual Clauses – SCCs).
-            Durch diese Klauseln verpflichtet sich Vercel, bei der Verarbeitung
-            Ihrer Daten das europäische Datenschutzniveau einzuhalten, auch wenn
-            die Daten in den USA gespeichert und verarbeitet werden.
+            Como base para el tratamiento de datos por parte de destinatarios
+            ubicados en terceros países, hemos firmado un contrato de
+            procesamiento de datos (Data Processing Addendum, DPA) con Vercel.
+            Este contrato contiene las cláusulas contractuales estándar
+            (Standard Contractual Clauses - SCCs) aprobadas por la Comisión
+            Europea. Mediante estas cláusulas, Vercel se compromete a cumplir
+            con el nivel europeo de protección de datos al procesar sus datos,
+            incluso si estos se almacenan y procesan en EE.UU.
           </p>
           <p>
-            Den mit uns geschlossenen Vertrag (DPA), der die
-            Standardvertragsklauseln enthält, finden Sie unter:{" "}
+            El contrato (DPA) que contiene las cláusulas contractuales estándar
+            firmado con nosotros puede encontrarse en:{" "}
             <a
               href="https://vercel.com/legal/dpa"
               className="text-bes-red hover:underline"
@@ -205,8 +203,8 @@ export default function Privacy() {
             </a>
           </p>
           <p>
-            Mehr über die Daten, die durch die Nutzung von Vercel verarbeitet
-            werden, erfahren Sie in der Datenschutzerklärung von Vercel:{" "}
+            Puede obtener más información sobre los datos que se procesan al
+            utilizar Vercel en la política de privacidad de Vercel:{" "}
             <a
               href="https://vercel.com/legal/privacy-policy"
               className="text-bes-red hover:underline"
@@ -218,37 +216,35 @@ export default function Privacy() {
           </p>
 
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
-            3. Allgemeine Hinweise und Pflicht&shy;informationen
+            3. Información general y obligatoria
           </h2>
-          <h3 className="mt-6 mb-2 text-xl font-bold">Datenschutz</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">Protección de datos</h3>
           <p>
-            Die Betreiber dieser Seiten nehmen den Schutz Ihrer
-            pers&ouml;nlichen Daten sehr ernst. Wir behandeln Ihre
-            personenbezogenen Daten vertraulich und entsprechend den
-            gesetzlichen Datenschutzvorschriften sowie dieser
-            Datenschutzerkl&auml;rung.
+            Los operadores de este sitio web toman muy en serio la protección de
+            sus datos personales. Tratamos sus datos personales de forma
+            confidencial y de acuerdo con las regulaciones legales de protección
+            de datos y esta política de privacidad.
           </p>
           <p>
-            Wenn Sie diese Website benutzen, werden verschiedene
-            personenbezogene Daten erhoben. Personenbezogene Daten sind Daten,
-            mit denen Sie pers&ouml;nlich identifiziert werden k&ouml;nnen. Die
-            vorliegende Datenschutzerkl&auml;rung erl&auml;utert, welche Daten
-            wir erheben und wof&uuml;r wir sie nutzen. Sie erl&auml;utert auch,
-            wie und zu welchem Zweck das geschieht.
+            Cuando utiliza este sitio web, se recopilan diversos datos
+            personales. Los datos personales son datos que permiten
+            identificarle personalmente. Esta política de privacidad explica qué
+            datos recopilamos y para qué los utilizamos. También explica cómo y
+            con qué propósito se hace.
           </p>
           <p>
-            Wir weisen darauf hin, dass die Daten&uuml;bertragung im Internet
-            (z.&nbsp;B. bei der Kommunikation per E-Mail) Sicherheitsl&uuml;cken
-            aufweisen kann. Ein l&uuml;ckenloser Schutz der Daten vor dem
-            Zugriff durch Dritte ist nicht m&ouml;glich.
+            Señalamos que la transmisión de datos en Internet (por ejemplo, la
+            comunicación por correo electrónico) puede tener fallos de
+            seguridad. No es posible una protección completa de los datos contra
+            el acceso de terceros.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Hinweis zur verantwortlichen Stelle
+            Información sobre la entidad responsable
           </h3>
           <p>
-            Die verantwortliche Stelle f&uuml;r die Datenverarbeitung auf dieser
-            Website ist:
+            La entidad responsable del tratamiento de datos en este sitio web
+            es:
           </p>
           <p>
             Beispielfirma
@@ -259,397 +255,384 @@ export default function Privacy() {
           </p>
 
           <p>
-            Telefon: +49 (0) 123 44 55 66
+            Teléfono: +49 (0) 123 44 55 66
             <br />
-            E-Mail: info@beispielfirma.de
+            Correo electrónico: info@beispielfirma.de
           </p>
           <p>
-            Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
-            Person, die allein oder gemeinsam mit anderen &uuml;ber die Zwecke
-            und Mittel der Verarbeitung von personenbezogenen Daten (z.&nbsp;B.
-            Namen, E-Mail-Adressen o. &Auml;.) entscheidet.
-          </p>
-
-          <h3 className="mt-6 mb-2 text-xl font-bold">Speicherdauer</h3>
-          <p>
-            Soweit innerhalb dieser Datenschutzerkl&auml;rung keine speziellere
-            Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten
-            bei uns, bis der Zweck f&uuml;r die Datenverarbeitung entf&auml;llt.
-            Wenn Sie ein berechtigtes L&ouml;schersuchen geltend machen oder
-            eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre
-            Daten gel&ouml;scht, sofern wir keine anderen rechtlich
-            zul&auml;ssigen Gr&uuml;nde f&uuml;r die Speicherung Ihrer
-            personenbezogenen Daten haben (z.&nbsp;B. steuer- oder
-            handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall
-            erfolgt die L&ouml;schung nach Fortfall dieser Gr&uuml;nde.
+            La entidad responsable es la persona física o jurídica que, sola o
+            junto con otras, determina los fines y medios del tratamiento de
+            datos personales (como nombres, direcciones de correo electrónico,
+            etc.).
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung
-            auf dieser Website
+            Periodo de almacenamiento
           </h3>
           <p>
-            Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten
-            wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1
-            lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere
-            Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im
-            Falle einer ausdr&uuml;cklichen Einwilligung in die &Uuml;bertragung
-            personenbezogener Daten in Drittstaaten erfolgt die
-            Datenverarbeitung au&szlig;erdem auf Grundlage von Art. 49 Abs. 1
-            lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den
-            Zugriff auf Informationen in Ihr Endger&auml;t (z.&nbsp;B. via
-            Device-Fingerprinting) eingewilligt haben, erfolgt die
-            Datenverarbeitung zus&auml;tzlich auf Grundlage von &sect; 25 Abs. 1
-            TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten
-            zur Vertragserf&uuml;llung oder zur Durchf&uuml;hrung
-            vorvertraglicher Ma&szlig;nahmen erforderlich, verarbeiten wir Ihre
-            Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren
-            verarbeiten wir Ihre Daten, sofern diese zur Erf&uuml;llung einer
-            rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6
-            Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage
-            unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO
-            erfolgen. &Uuml;ber die jeweils im Einzelfall einschl&auml;gigen
-            Rechtsgrundlagen wird in den folgenden Abs&auml;tzen dieser
-            Datenschutzerkl&auml;rung informiert.
+            A menos que se indique un periodo específico de almacenamiento en
+            esta política de privacidad, sus datos personales permanecerán con
+            nosotros hasta que se cumpla la finalidad para la que se procesan.
+            Si presenta una solicitud legítima de eliminación o revoca su
+            consentimiento para el procesamiento de datos, sus datos serán
+            eliminados, a menos que tengamos otros motivos legalmente
+            permisibles para almacenar sus datos personales (por ejemplo,
+            períodos de retención fiscales o comerciales); en este último caso,
+            la eliminación se llevará a cabo después de que estos motivos dejen
+            de existir.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Empf&auml;nger von personenbezogenen Daten
+            Información general sobre las bases jurídicas del procesamiento de
+            datos en este sitio web
           </h3>
           <p>
-            Im Rahmen unserer Gesch&auml;ftst&auml;tigkeit arbeiten wir mit
-            verschiedenen externen Stellen zusammen. Dabei ist teilweise auch
-            eine &Uuml;bermittlung von personenbezogenen Daten an diese externen
-            Stellen erforderlich. Wir geben personenbezogene Daten nur dann an
-            externe Stellen weiter, wenn dies im Rahmen einer
-            Vertragserf&uuml;llung erforderlich ist, wenn wir gesetzlich hierzu
-            verpflichtet sind (z.&nbsp;B. Weitergabe von Daten an
-            Steuerbeh&ouml;rden), wenn wir ein berechtigtes Interesse nach Art.
-            6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine
-            sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz
-            von Auftragsverarbeitern geben wir personenbezogene Daten unserer
-            Kunden nur auf Grundlage eines g&uuml;ltigen Vertrags &uuml;ber
-            Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung
-            wird ein Vertrag &uuml;ber gemeinsame Verarbeitung geschlossen.
+            Si usted ha consentido al procesamiento de datos, procesamos sus
+            datos personales sobre la base del Art. 6 Párr. 1 lit. a RGPD o Art.
+            9 Párr. 2 lit. a RGPD, si se procesan categorías especiales de datos
+            según el Art. 9 Párr. 1 RGPD. En caso de consentimiento expreso para
+            la transferencia de datos personales a terceros países, el
+            procesamiento de datos también se basa en el Art. 49 Párr. 1 lit. a
+            RGPD. Si ha dado su consentimiento para el almacenamiento de cookies
+            o el acceso a información en su dispositivo (por ejemplo, a través
+            de la huella digital del dispositivo), el procesamiento de datos se
+            realizará adicionalmente sobre la base del § 25 Párr. 1 TDDDG. El
+            consentimiento puede ser revocado en cualquier momento. Si sus datos
+            son necesarios para el cumplimiento de un contrato o para la
+            ejecución de medidas precontractuales, procesamos sus datos en base
+            al Art. 6 Párr. 1 lit. b RGPD. Además, procesamos sus datos si son
+            necesarios para el cumplimiento de una obligación legal en base al
+            Art. 6 Párr. 1 lit. c RGPD. El procesamiento de datos también puede
+            realizarse en base a nuestro interés legítimo según el Art. 6 Párr.
+            1 lit. f RGPD. Se le informará sobre las bases jurídicas específicas
+            aplicables en cada caso en los siguientes párrafos de esta política
+            de privacidad.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Widerruf Ihrer Einwilligung zur Datenverarbeitung
+            Destinatarios de datos personales
           </h3>
           <p>
-            Viele Datenverarbeitungsvorg&auml;nge sind nur mit Ihrer
-            ausdr&uuml;cklichen Einwilligung m&ouml;glich. Sie k&ouml;nnen eine
-            bereits erteilte Einwilligung jederzeit widerrufen. Die
-            Rechtm&auml;&szlig;igkeit der bis zum Widerruf erfolgten
-            Datenverarbeitung bleibt vom Widerruf unber&uuml;hrt.
+            En el curso de nuestras actividades comerciales, trabajamos con
+            varias entidades externas. Esto a veces también requiere la
+            transferencia de datos personales a estas entidades externas. Solo
+            transferimos datos personales a entidades externas si es necesario
+            en el marco del cumplimiento de un contrato, si estamos legalmente
+            obligados a hacerlo (por ejemplo, transferencia de datos a las
+            autoridades fiscales), si tenemos un interés legítimo en la
+            transferencia según el Art. 6 Párr. 1 lit. f RGPD, o si otra base
+            legal permite la transferencia de datos. Al utilizar procesadores,
+            solo transferimos datos personales de nuestros clientes sobre la
+            base de un contrato válido de procesamiento de datos. En el caso de
+            procesamiento conjunto, se celebra un contrato de procesamiento
+            conjunto.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Widerspruchsrecht gegen die Datenerhebung in besonderen F&auml;llen
-            sowie gegen Direktwerbung (Art. 21 DSGVO)
+            Revocación de su consentimiento para el procesamiento de datos
+          </h3>
+          <p>
+            Muchas operaciones de procesamiento de datos solo son posibles con
+            su consentimiento expreso. Puede revocar un consentimiento ya
+            otorgado en cualquier momento. La legalidad del procesamiento de
+            datos realizado hasta la revocación no se ve afectada por esta.
+          </p>
+
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            Derecho de oposición a la recopilación de datos en casos especiales
+            y a la publicidad directa (Art. 21 RGPD)
           </h3>
           <p className="uppercase">
-            WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E
-            ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS
-            GR&Uuml;NDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN
-            DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH
-            EINZULEGEN; DIES GILT AUCH F&Uuml;R EIN AUF DIESE BESTIMMUNGEN
-            GEST&Uuml;TZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN
-            EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER
-            DATENSCHUTZERKL&Auml;RUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR
-            IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES
-            SEI DENN, WIR K&Ouml;NNEN ZWINGENDE SCHUTZW&Uuml;RDIGE GR&Uuml;NDE
-            F&Uuml;R DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE
-            UND FREIHEITEN &Uuml;BERWIEGEN ODER DIE VERARBEITUNG DIENT DER
-            GELTENDMACHUNG, AUS&Uuml;BUNG ODER VERTEIDIGUNG VON
-            RECHTSANSPR&Uuml;CHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).
+            SI EL PROCESAMIENTO DE DATOS SE REALIZA SOBRE LA BASE DEL ART. 6
+            PÁRR. 1 LIT. E O F RGPD, USTED TIENE DERECHO A OPONERSE EN CUALQUIER
+            MOMENTO, POR MOTIVOS DERIVADOS DE SU SITUACIÓN PARTICULAR, AL
+            PROCESAMIENTO DE SUS DATOS PERSONALES; ESTO TAMBIÉN SE APLICA A LA
+            ELABORACIÓN DE PERFILES BASADA EN ESTAS DISPOSICIONES. LAS
+            RESPECTIVAS BASES JURÍDICAS EN LAS QUE SE BASA UN PROCESAMIENTO SE
+            PUEDEN ENCONTRAR EN ESTA POLÍTICA DE PRIVACIDAD. SI USTED SE OPONE,
+            NO PROCESAREMOS MÁS SUS DATOS PERSONALES AFECTADOS A MENOS QUE
+            PODAMOS DEMOSTRAR MOTIVOS LEGÍTIMOS CONVINCENTES PARA EL
+            PROCESAMIENTO QUE PREVALEZCAN SOBRE SUS INTERESES, DERECHOS Y
+            LIBERTADES, O EL PROCESAMIENTO SIRVA PARA LA AFIRMACIÓN, EJERCICIO O
+            DEFENSA DE RECLAMACIONES LEGALES (OPOSICIÓN SEGÚN EL ART. 21 PÁRR. 1
+            RGPD).
           </p>
           <p className="uppercase">
-            WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU
-            BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE
-            VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE
-            DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH F&Uuml;R DAS
-            PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT.
-            WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN
-            ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET
-            (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).
+            SI SUS DATOS PERSONALES SON PROCESADOS CON FINES DE PUBLICIDAD
+            DIRECTA, TIENE DERECHO A OPONERSE EN CUALQUIER MOMENTO AL
+            PROCESAMIENTO DE SUS DATOS PERSONALES CON FINES DE DICHA PUBLICIDAD;
+            ESTO TAMBIÉN SE APLICA A LA ELABORACIÓN DE PERFILES EN LA MEDIDA EN
+            QUE ESTÉ RELACIONADA CON DICHA PUBLICIDAD DIRECTA. SI USTED SE
+            OPONE, SUS DATOS PERSONALES NO SERÁN UTILIZADOS POSTERIORMENTE PARA
+            PUBLICIDAD DIRECTA (OPOSICIÓN SEGÚN ART. 21 PÁRR. 2 RGPD).
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Beschwerde&shy;recht bei der zust&auml;ndigen
-            Aufsichts&shy;beh&ouml;rde
+            Derecho de reclamación ante la autoridad supervisora competente
           </h3>
           <p>
-            Im Falle von Verst&ouml;&szlig;en gegen die DSGVO steht den
-            Betroffenen ein Beschwerderecht bei einer Aufsichtsbeh&ouml;rde,
-            insbesondere in dem Mitgliedstaat ihres gew&ouml;hnlichen
-            Aufenthalts, ihres Arbeitsplatzes oder des Orts des
-            mutma&szlig;lichen Versto&szlig;es zu. Das Beschwerderecht besteht
-            unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher
-            Rechtsbehelfe.
+            En caso de infracciones del RGPD, los afectados tienen derecho a
+            presentar una reclamación ante una autoridad de control, en
+            particular en el Estado miembro de su residencia habitual, su lugar
+            de trabajo o el lugar de la presunta infracción. Este derecho de
+            reclamación existe sin perjuicio de otros recursos administrativos o
+            judiciales.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Recht auf Daten&shy;&uuml;bertrag&shy;barkeit
+            Derecho a la portabilidad de datos
           </h3>
           <p>
-            Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung
-            oder in Erf&uuml;llung eines Vertrags automatisiert verarbeiten, an
-            sich oder an einen Dritten in einem g&auml;ngigen, maschinenlesbaren
-            Format aush&auml;ndigen zu lassen. Sofern Sie die direkte
-            &Uuml;bertragung der Daten an einen anderen Verantwortlichen
-            verlangen, erfolgt dies nur, soweit es technisch machbar ist.
+            Tiene derecho a que los datos que procesamos automáticamente en base
+            a su consentimiento o en cumplimiento de un contrato le sean
+            entregados a usted o a un tercero en un formato común y legible por
+            máquina. Si solicita la transferencia directa de los datos a otro
+            responsable, esto solo se hará en la medida en que sea técnicamente
+            posible.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Auskunft, Berichtigung und L&ouml;schung
+            Información, rectificación y supresión
           </h3>
           <p>
-            Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen
-            jederzeit das Recht auf unentgeltliche Auskunft &uuml;ber Ihre
-            gespeicherten personenbezogenen Daten, deren Herkunft und
-            Empf&auml;nger und den Zweck der Datenverarbeitung und ggf. ein
-            Recht auf Berichtigung oder L&ouml;schung dieser Daten. Hierzu sowie
-            zu weiteren Fragen zum Thema personenbezogene Daten k&ouml;nnen Sie
-            sich jederzeit an uns wenden.
+            Dentro del marco de las disposiciones legales aplicables, tiene en
+            todo momento el derecho a recibir información gratuita sobre sus
+            datos personales almacenados, su origen y destinatario y la
+            finalidad del procesamiento de datos y, si procede, el derecho a la
+            rectificación o supresión de estos datos. Para ello, así como para
+            otras cuestiones relativas a los datos personales, puede ponerse en
+            contacto con nosotros en cualquier momento.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Recht auf Einschr&auml;nkung der Verarbeitung
+            Derecho a la limitación del procesamiento
           </h3>
           <p>
-            Sie haben das Recht, die Einschr&auml;nkung der Verarbeitung Ihrer
-            personenbezogenen Daten zu verlangen. Hierzu k&ouml;nnen Sie sich
-            jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der
-            Verarbeitung besteht in folgenden F&auml;llen:
+            Tiene derecho a solicitar la limitación del procesamiento de sus
+            datos personales. Para ello, puede ponerse en contacto con nosotros
+            en cualquier momento. El derecho a la limitación del procesamiento
+            existe en los siguientes casos:
           </p>
           <ul className="my-4 list-disc pl-6">
             <li>
-              Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
-              personenbezogenen Daten bestreiten, ben&ouml;tigen wir in der
-              Regel Zeit, um dies zu &uuml;berpr&uuml;fen. F&uuml;r die Dauer
-              der Pr&uuml;fung haben Sie das Recht, die Einschr&auml;nkung der
-              Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+              Si usted cuestiona la exactitud de sus datos personales
+              almacenados por nosotros, generalmente necesitamos tiempo para
+              verificarlos. Durante el período de verificación, tiene derecho a
+              solicitar la limitación del procesamiento de sus datos personales.
             </li>
             <li>
-              Wenn die Verarbeitung Ihrer personenbezogenen Daten
-              unrechtm&auml;&szlig;ig geschah/geschieht, k&ouml;nnen Sie statt
-              der L&ouml;schung die Einschr&auml;nkung der Datenverarbeitung
-              verlangen.
+              Si el procesamiento de sus datos personales se realizó/realiza
+              ilegalmente, puede solicitar la limitación del procesamiento de
+              datos en lugar de la eliminación.
             </li>
             <li>
-              Wenn wir Ihre personenbezogenen Daten nicht mehr ben&ouml;tigen,
-              Sie sie jedoch zur Aus&uuml;bung, Verteidigung oder Geltendmachung
-              von Rechtsanspr&uuml;chen ben&ouml;tigen, haben Sie das Recht,
-              statt der L&ouml;schung die Einschr&auml;nkung der Verarbeitung
-              Ihrer personenbezogenen Daten zu verlangen.
+              Si ya no necesitamos sus datos personales, pero usted los necesita
+              para ejercer, defender o hacer valer reclamaciones legales, tiene
+              derecho a solicitar la limitación del procesamiento de sus datos
+              personales en lugar de la eliminación.
             </li>
             <li>
-              Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt
-              haben, muss eine Abw&auml;gung zwischen Ihren und unseren
-              Interessen vorgenommen werden. Solange noch nicht feststeht,
-              wessen Interessen &uuml;berwiegen, haben Sie das Recht, die
-              Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten
-              zu verlangen.
+              Si ha presentado una objeción según el Art. 21 Párr. 1 RGPD, debe
+              hacerse una ponderación entre sus intereses y los nuestros.
+              Mientras no se haya determinado de quién son los intereses
+              prevalentes, tiene derecho a exigir la limitación del
+              procesamiento de sus datos personales.
             </li>
           </ul>
           <p>
-            Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten
-            eingeschr&auml;nkt haben, d&uuml;rfen diese Daten &ndash; von ihrer
-            Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur
-            Geltendmachung, Aus&uuml;bung oder Verteidigung von
-            Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen
-            nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden
-            eines wichtigen &ouml;ffentlichen Interesses der Europ&auml;ischen
-            Union oder eines Mitgliedstaats verarbeitet werden.
+            Si ha restringido el procesamiento de sus datos personales, estos
+            datos -aparte de su almacenamiento- solo podrán procesarse con su
+            consentimiento o para el establecimiento, ejercicio o defensa de
+            reclamaciones legales o para la protección de los derechos de otra
+            persona física o jurídica o por razones de interés público
+            importante de la Unión Europea o de un Estado miembro.
+          </p>
+
+          <h3 className="mt-6 mb-2 text-xl font-bold">Cifrado SSL o TLS</h3>
+          <p>
+            Por razones de seguridad y para proteger la transmisión de
+            contenidos confidenciales, como pedidos o consultas que nos envía
+            como operador del sitio, este sitio utiliza cifrado SSL o TLS. Puede
+            reconocer una conexión cifrada porque la línea de dirección del
+            navegador cambia de &ldquo;http://&rdquo; a &ldquo;https://&rdquo; y
+            por el símbolo de candado en la línea de su navegador.
+          </p>
+          <p>
+            Si el cifrado SSL o TLS está activado, los datos que nos transmite
+            no pueden ser leídos por terceros.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            SSL- bzw. TLS-Verschl&uuml;sselung
+            Oposición a los correos electrónicos publicitarios
           </h3>
           <p>
-            Diese Seite nutzt aus Sicherheitsgr&uuml;nden und zum Schutz der
-            &Uuml;bertragung vertraulicher Inhalte, wie zum Beispiel
-            Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber
-            senden, eine SSL- bzw. TLS-Verschl&uuml;sselung. Eine
-            verschl&uuml;sselte Verbindung erkennen Sie daran, dass die
-            Adresszeile des Browsers von &bdquo;http://&ldquo; auf
-            &bdquo;https://&ldquo; wechselt und an dem Schloss-Symbol in Ihrer
-            Browserzeile.
-          </p>
-          <p>
-            Wenn die SSL- bzw. TLS-Verschl&uuml;sselung aktiviert ist,
-            k&ouml;nnen die Daten, die Sie an uns &uuml;bermitteln, nicht von
-            Dritten mitgelesen werden.
-          </p>
-
-          <h3 className="mt-6 mb-2 text-xl font-bold">
-            Widerspruch gegen Werbe-E-Mails
-          </h3>
-          <p>
-            Der Nutzung von im Rahmen der Impressumspflicht
-            ver&ouml;ffentlichten Kontaktdaten zur &Uuml;bersendung von nicht
-            ausdr&uuml;cklich angeforderter Werbung und Informationsmaterialien
-            wird hiermit widersprochen. Die Betreiber der Seiten behalten sich
-            ausdr&uuml;cklich rechtliche Schritte im Falle der unverlangten
-            Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor.
+            Por la presente nos oponemos al uso de los datos de contacto
+            publicados en el marco de la obligación de pie de imprenta para el
+            envío de material publicitario e informativo no solicitado
+            expresamente. Los operadores de este sitio se reservan expresamente
+            el derecho a emprender acciones legales en caso de envío no
+            solicitado de información publicitaria, por ejemplo, mediante
+            correos electrónicos spam.
           </p>
 
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
-            4. Datenerfassung auf dieser Website
+            4. Recopilación de datos en este sitio web
           </h2>
-          <h3 className="mt-6 mb-2 text-xl font-bold">Kontaktformular</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            Formulario de contacto
+          </h3>
           <p>
-            Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden
-            Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort
-            angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und f&uuml;r
-            den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben
-            wir nicht ohne Ihre Einwilligung weiter.
+            Si nos envía consultas a través del formulario de contacto, sus
+            datos del formulario de solicitud, incluidos los datos de contacto
+            que proporcionó allí, se almacenarán con nosotros para procesar la
+            consulta y en caso de preguntas adicionales. No compartimos estos
+            datos sin su consentimiento.
           </p>
           <p>
-            Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
-            1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines
-            Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung
-            vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen
-            &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem
-            berechtigten Interesse an der effektiven Bearbeitung der an uns
-            gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
-            Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt
-            wurde; die Einwilligung ist jederzeit widerrufbar.
+            El procesamiento de estos datos se basa en el Art. 6 Párr. 1 lit. b
+            RGPD, si su solicitud está relacionada con el cumplimiento de un
+            contrato o es necesaria para la ejecución de medidas
+            precontractuales. En todos los demás casos, el procesamiento se basa
+            en nuestro interés legítimo en el procesamiento efectivo de las
+            solicitudes dirigidas a nosotros (Art. 6 Párr. 1 lit. f RGPD) o en
+            su consentimiento (Art. 6 Párr. 1 lit. a RGPD) si se ha solicitado;
+            el consentimiento puede ser revocado en cualquier momento.
           </p>
           <p>
-            Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei
-            uns, bis Sie uns zur L&ouml;schung auffordern, Ihre Einwilligung zur
-            Speicherung widerrufen oder der Zweck f&uuml;r die Datenspeicherung
-            entf&auml;llt (z.&nbsp;B. nach abgeschlossener Bearbeitung Ihrer
-            Anfrage). Zwingende gesetzliche Bestimmungen &ndash; insbesondere
-            Aufbewahrungsfristen &ndash; bleiben unber&uuml;hrt.
+            Los datos que introduce en el formulario de contacto permanecerán
+            con nosotros hasta que nos solicite su eliminación, revoque su
+            consentimiento al almacenamiento o la finalidad del almacenamiento
+            de datos deje de aplicarse (por ejemplo, después de completar el
+            procesamiento de su solicitud). Las disposiciones legales
+            obligatorias -en particular los períodos de retención- no se ven
+            afectadas.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            Anfrage per E-Mail, Telefon oder Telefax
+            Consulta por correo electrónico, teléfono o fax
           </h3>
           <p>
-            Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird
-            Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen
-            Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei
-            uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne
-            Ihre Einwilligung weiter.
+            Si se pone en contacto con nosotros por correo electrónico, teléfono
+            o fax, su solicitud, incluidos todos los datos personales
+            resultantes (nombre, solicitud) se almacenarán y procesarán por
+            nosotros con el fin de procesar su solicitud. No compartimos estos
+            datos sin su consentimiento.
           </p>
           <p>
-            Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs.
-            1 lit. b DSGVO, sofern Ihre Anfrage mit der Erf&uuml;llung eines
-            Vertrags zusammenh&auml;ngt oder zur Durchf&uuml;hrung
-            vorvertraglicher Ma&szlig;nahmen erforderlich ist. In allen
-            &uuml;brigen F&auml;llen beruht die Verarbeitung auf unserem
-            berechtigten Interesse an der effektiven Bearbeitung der an uns
-            gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer
-            Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt
-            wurde; die Einwilligung ist jederzeit widerrufbar.
+            El procesamiento de estos datos se basa en el Art. 6 Párr. 1 lit. b
+            RGPD, si su solicitud está relacionada con el cumplimiento de un
+            contrato o es necesaria para la ejecución de medidas
+            precontractuales. En todos los demás casos, el procesamiento se basa
+            en nuestro interés legítimo en el procesamiento efectivo de las
+            solicitudes dirigidas a nosotros (Art. 6 Párr. 1 lit. f RGPD) o en
+            su consentimiento (Art. 6 Párr. 1 lit. a RGPD) si se ha solicitado;
+            el consentimiento puede ser revocado en cualquier momento.
           </p>
           <p>
-            Die von Ihnen an uns per Kontaktanfragen &uuml;bersandten Daten
-            verbleiben bei uns, bis Sie uns zur L&ouml;schung auffordern, Ihre
-            Einwilligung zur Speicherung widerrufen oder der Zweck f&uuml;r die
-            Datenspeicherung entf&auml;llt (z.&nbsp;B. nach abgeschlossener
-            Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen
-            &ndash; insbesondere gesetzliche Aufbewahrungsfristen &ndash;
-            bleiben unber&uuml;hrt.
+            Los datos que nos envía a través de solicitudes de contacto
+            permanecerán con nosotros hasta que nos solicite su eliminación,
+            revoque su consentimiento al almacenamiento o la finalidad del
+            almacenamiento de datos deje de aplicarse (por ejemplo, después de
+            completar el procesamiento de su solicitud). Las disposiciones
+            legales obligatorias -en particular los períodos legales de
+            retención- no se ven afectadas.
           </p>
 
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
-            5. Newsletterversand via Mailchimp
+            5. Envío de boletines a través de Mailchimp
           </h2>
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            1. Beschreibung und Zweck der Datenverarbeitung
+            1. Descripción y propósito del procesamiento de datos
           </h3>
           <p>
-            Für den Versand unseres Newsletters nutzen wir den Dienst
-            &ldquo;Mailchimp&rdquo;, eine Newsletter-Versandplattform des
-            US-Anbieters The Rocket Science Group, LLC, 675 Ponce de Leon Ave
-            NE, Suite 5000, Atlanta, GA 30308, USA.
+            Para el envío de nuestro boletín utilizamos el servicio
+            &ldquo;Mailchimp&rdquo;, una plataforma de envío de boletines del
+            proveedor estadounidense The Rocket Science Group, LLC, 675 Ponce de
+            Leon Ave NE, Suite 5000, Atlanta, GA 30308, EE.UU.
           </p>
           <p>
-            Wenn Sie sich für unseren Newsletter anmelden, werden die von Ihnen
-            im Anmeldeformular angegebenen Daten (in der Regel Ihre
-            E-Mail-Adresse und optional Ihr Name) an die Server von Mailchimp in
-            den USA übertragen und dort gespeichert.
+            Cuando se suscribe a nuestro boletín, los datos que proporciona en
+            el formulario de registro (normalmente su dirección de correo
+            electrónico y opcionalmente su nombre) se transfieren a los
+            servidores de Mailchimp en EE.UU. y se almacenan allí.
           </p>
           <p>
-            Zusätzlich zum Versand ermöglicht uns Mailchimp, den Erfolg unserer
-            Newsletter-Kampagnen zu analysieren. So können wir sehen, ob eine
-            Newsletter-Nachricht geöffnet und welche Links ggf. geklickt wurden.
-            Diese Informationen helfen uns zu erkennen, welche Inhalte für
-            unsere Leser besonders interessant sind und unseren Service stetig
-            zu verbessern. Mailchimp nutzt diese Daten auch zur eigenen
-            Serviceverbesserung. Eine Nutzung Ihrer Daten durch Mailchimp, um
-            Sie direkt anzuschreiben oder an Dritte weiterzugeben, erfolgt
-            nicht.
+            Además del envío, Mailchimp nos permite analizar el éxito de
+            nuestras campañas de boletín. Así podemos ver si un mensaje de
+            boletín ha sido abierto y qué enlaces se han clicado. Esta
+            información nos ayuda a reconocer qué contenidos son especialmente
+            interesantes para nuestros lectores y a mejorar continuamente
+            nuestro servicio. Mailchimp también utiliza estos datos para mejorar
+            su propio servicio. Mailchimp no utiliza sus datos para contactarle
+            directamente o para transferirlos a terceros.
           </p>
 
-          <h3 className="mt-6 mb-2 text-xl font-bold">2. Rechtsgrundlage</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">2. Base legal</h3>
           <p>
-            Der Versand des Newsletters und die damit verbundene Erfolgsmessung
-            erfolgen auf Grundlage Ihrer ausdrücklichen Einwilligung gemäß Art.
-            6 Abs. 1 lit. a DSGVO. Die Anmeldung zu unserem Newsletter erfolgt
-            in einem sog. Double-Opt-In-Verfahren. Das heißt, Sie erhalten nach
-            der Anmeldung eine E-Mail, in der Sie um die Bestätigung Ihrer
-            Anmeldung gebeten werden. Diese Bestätigung ist notwendig, damit
-            sich niemand mit fremden E-Mail-Adressen anmelden kann.
+            El envío del boletín y la medición del éxito asociada se realizan
+            sobre la base de su consentimiento expreso de conformidad con el
+            Art. 6 Párr. 1 lit. a RGPD. La suscripción a nuestro boletín se
+            lleva a cabo en un proceso llamado de doble opt-in. Esto significa
+            que después de registrarse, recibirá un correo electrónico en el que
+            se le pedirá que confirme su registro. Esta confirmación es
+            necesaria para que nadie pueda registrarse con direcciones de correo
+            electrónico ajenas.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            3. Auftragsverarbeitungsvertrag
+            3. Contrato de procesamiento de pedidos
           </h3>
           <p>
-            Wir haben mit Mailchimp einen sogenannten &ldquo;Data Processing
-            Addendum&rdquo; (DPA) abgeschlossen. Hierbei handelt es sich um
-            einen Vertrag, in dem sich Mailchimp verpflichtet, die Daten unserer
-            Nutzer zu schützen, entsprechend dessen Datenschutzbestimmungen in
-            unserem Auftrag zu verarbeiten und insbesondere nicht an Dritte
-            weiterzugeben. Dieser Vertrag stellt sicher, dass Mailchimp sich an
-            die europäischen Datenschutzstandards hält.
+            Hemos firmado un llamado &ldquo;Anexo de procesamiento de
+            datos&rdquo; (DPA) con Mailchimp. Este es un contrato en el que
+            Mailchimp se compromete a proteger los datos de nuestros usuarios, a
+            procesarlos de acuerdo con sus políticas de privacidad en nuestro
+            nombre y, en particular, a no transferirlos a terceros. Este
+            contrato asegura que Mailchimp cumpla con los estándares europeos de
+            protección de datos.
           </p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
-            4. Datenübertragung in die USA
+            4. Transferencia de datos a EE.UU.
           </h3>
           <p>
-            Die Datenverarbeitung durch Mailchimp findet in den USA statt, einem
-            Drittland ohne von der EU-Kommission anerkanntes angemessenes
-            Datenschutzniveau. Um den Schutz Ihrer personenbezogenen Daten
-            dennoch zu gewährleisten, stützt sich die Datenübermittlung auf die
-            von der EU-Kommission genehmigten Standardvertragsklauseln (Standard
-            Contractual Clauses – SCCs), die Bestandteil des mit Mailchimp
-            geschlossenen DPA sind. Damit verpflichtet sich Mailchimp, bei der
-            Verarbeitung Ihrer Daten das europäische Datenschutzniveau
-            einzuhalten.
+            El procesamiento de datos por parte de Mailchimp se realiza en
+            EE.UU., un país tercero sin un nivel adecuado de protección de datos
+            reconocido por la Comisión de la UE. Para garantizar la protección
+            de sus datos personales, la transferencia de datos se basa en las
+            cláusulas contractuales estándar (Standard Contractual Clauses -
+            SCCs) aprobadas por la Comisión de la UE, que forman parte del DPA
+            firmado con Mailchimp. Con esto, Mailchimp se compromete a cumplir
+            con el nivel europeo de protección de datos al procesar sus datos.
           </p>
 
-          <h3 className="mt-6 mb-2 text-xl font-bold">5. Speicherdauer</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            5. Periodo de almacenamiento
+          </h3>
           <p>
-            Die von Ihnen zum Zwecke des Newsletterbezugs bei uns hinterlegten
-            Daten werden von uns bis zu Ihrer Austragung aus dem Newsletter
-            gespeichert und nach der Abbestellung des Newsletters sowohl von
-            unseren Servern als auch von den Servern von Mailchimp gelöscht.
-            Daten, die zu anderen Zwecken bei uns gespeichert wurden, bleiben
-            hiervon unberührt.
+            Los datos que nos proporciona con el fin de recibir el boletín se
+            almacenarán por nuestra parte hasta que se dé de baja del boletín y,
+            tras la cancelación de la suscripción, se eliminarán tanto de
+            nuestros servidores como de los servidores de Mailchimp. Los datos
+            almacenados con nosotros para otros fines no se ven afectados.
           </p>
 
-          <h3 className="mt-6 mb-2 text-xl font-bold">6. Widerrufsrecht</h3>
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            6. Derecho de revocación
+          </h3>
           <p>
-            Ihre Einwilligung in den Empfang des Newsletters und die damit
-            verbundene Datenverarbeitung können Sie jederzeit für die Zukunft
-            widerrufen. Den Widerruf können Sie durch Klick auf den in jedem
-            Newsletter bereitgestellten &ldquo;Abmelden&rdquo;-Link, per E-Mail
-            an info@beispielfirma.de oder durch eine Nachricht an die im
-            Impressum angegebenen Kontaktdaten erklären. Durch den Widerruf der
-            Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung
-            bis zum Widerruf erfolgten Verarbeitung nicht berührt.
+            Puede revocar su consentimiento para recibir el boletín y el
+            procesamiento de datos asociado en cualquier momento con efecto
+            futuro. Puede declarar la revocación haciendo clic en el enlace
+            &ldquo;Cancelar suscripción&rdquo; proporcionado en cada boletín,
+            por correo electrónico a info@beispielfirma.de o mediante un mensaje
+            a los datos de contacto indicados en el aviso legal. La revocación
+            del consentimiento no afecta a la legalidad del procesamiento
+            realizado sobre la base del consentimiento hasta la revocación.
           </p>
 
           <p className="mt-8 text-right">
-            Quelle:{" "}
+            Fuente:{" "}
             <a
               href="https://www.e-recht24.de"
               className="text-bes-red hover:underline"
@@ -659,8 +642,8 @@ export default function Privacy() {
           </p>
 
           <p className="mt-8 text-right">
-            Weitere Informationen zum Datenschutz bei Mailchimp finden Sie in
-            deren Datenschutzbestimmungen unter:{" "}
+            Puede encontrar más información sobre la protección de datos en
+            Mailchimp en su política de privacidad:{" "}
             <a
               href="https://mailchimp.com/legal/privacy/"
               className="text-bes-red hover:underline"
