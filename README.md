@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.15
+
+- Language switcher now hides when scrolling down and reappears when scrolling up on mobile devices
+
 v 0.1.14
 
 - Announcement Banner and Modal and program button implemented for both languages
