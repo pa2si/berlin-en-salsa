@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import { Footer } from "@/components/Footer";
 
-export default function Privacy() {
+export default function Privacidad() {
   return (
     <div className="bg-bes-amber relative flex min-h-screen flex-col">
       {/* Background Logo with low opacity */}
@@ -14,9 +15,29 @@ export default function Privacy() {
         />
       </div>
 
-      {/* Breadcrumb and back button navigation */}
+      {/* Absolutely positioned back button - hidden on mobile */}
+      <Link
+        href="/"
+        className="text-bes-red hover:text-bes-red/80 absolute top-6 right-30 hidden items-center text-sm sm:flex sm:text-base md:text-lg"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="mr-1 h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+        Volver a Inicio
+      </Link>
+
+      {/* Breadcrumb navigation */}
       <div className="container mx-auto px-4 py-4 sm:py-6">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center">
           <nav className="flex" aria-label="Breadcrumb">
             <ol className="inline-flex items-center space-x-1 md:space-x-2">
               <li className="inline-flex items-center">
@@ -24,7 +45,11 @@ export default function Privacy() {
                   href="/"
                   className="text-bes-red hover:text-bes-red/80 inline-flex items-center text-sm sm:text-base md:text-lg"
                 >
-                  Inicio
+                  <img
+                    src="/bes-logo-color.webp"
+                    alt="Berlin En Salsa"
+                    className="h-15 w-auto"
+                  />
                 </Link>
               </li>
               <li>
@@ -37,25 +62,6 @@ export default function Privacy() {
               </li>
             </ol>
           </nav>
-
-          <Link
-            href="/"
-            className="text-bes-red hover:text-bes-red/80 mt-2 flex items-center text-sm sm:mt-0 sm:text-base md:text-lg"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mr-1 h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-            Volver a Inicio
-          </Link>
         </div>
       </div>
 
@@ -655,6 +661,9 @@ export default function Privacy() {
           </p>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

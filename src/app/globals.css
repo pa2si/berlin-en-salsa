@@ -34,4 +34,5 @@
 body {
   color: var(--foreground);
   font-family: var(--font-new-spirit);
+  overflow-x: hidden;
 }

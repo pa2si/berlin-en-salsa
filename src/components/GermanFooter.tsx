@@ -7,22 +7,22 @@ export const Footer = () => {
       <div className="container mx-auto">
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium md:gap-4">
           <Link
-            href="/privacidad"
+            href="/de/datenschutz"
             className="hover:text-bes-red/80 transition-colors hover:underline"
           >
-            Política de Privacidad
+            Datenschutz
           </Link>
           <span>|</span>
           <Link
-            href="/legal"
+            href="/de/impressum"
             className="hover:text-bes-red/80 transition-colors hover:underline"
           >
-            Aviso Legal
+            Impressum
           </Link>
         </div>
         <div className="text-bes-purple mt-2 text-xs">
-          © {new Date().getFullYear()} Berlin En Salsa. Todos los derechos
-          reservados.
+          © {new Date().getFullYear()} Berlin En Salsa. Alle Rechte
+          vorbehalten.
         </div>
       </div>
     </footer>

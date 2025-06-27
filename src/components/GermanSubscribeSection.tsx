@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
-import { addSubscriber } from "@/app/actions";
+import { addSubscriber } from "@/app/de/actions";
 
 export const SubscribeSection = () => {
   const [isPending, setIsPending] = useState<boolean>(false);
@@ -14,7 +14,7 @@ export const SubscribeSection = () => {
 
     if (!privacyChecked) {
       setSubscribeError(
-        "Debes aceptar la política de privacidad para suscribirte.",
+        "Sie müssen die Datenschutzrichtlinie akzeptieren, um sich anzumelden.",
       );
       return;
     }
@@ -39,7 +39,7 @@ export const SubscribeSection = () => {
       <div className="mx-auto max-w-[700px]">
         {" "}
         <div className="text-bes-red mb-3 text-center text-xl font-bold sm:mb-2 sm:text-xl md:mb-3 md:text-2xl lg:mb-6 lg:text-3xl">
-          Suscríbete a nuestro boletín
+          Melden dich für unseren Newsletter an
         </div>
         <form
           className="flex flex-col items-center justify-center gap-y-4 sm:gap-y-2 md:gap-y-3 lg:gap-y-4"
@@ -51,23 +51,23 @@ export const SubscribeSection = () => {
               type="text"
               name="firstName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[48%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="Nombre"
+              placeholder="Vorname"
               required
               minLength={2}
               maxLength={50}
-              pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Por favor, introduce un nombre válido (sólo letras, espacios y guiones)"
+              pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑäöüÄÖÜß\s-]+"
+              title="Bitte geben Sie einen gültigen Namen ein (nur Buchstaben, Leerzeichen und Bindestriche)"
             />
             <input
               type="text"
               name="lastName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[48%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="Apellido"
+              placeholder="Nachname"
               required
               minLength={2}
               maxLength={50}
-              pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Por favor, introduce un apellido válido (sólo letras, espacios y guiones)"
+              pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑäöüÄÖÜß\s-]+"
+              title="Bitte geben Sie einen gültigen Nachnamen ein (nur Buchstaben, Leerzeichen und Bindestriche)"
             />
           </div>
           <div className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
@@ -75,12 +75,12 @@ export const SubscribeSection = () => {
             <input
               type="email"
               name="email"
-              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
-              placeholder="Correo electrónico"
+              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-[100%] sm:px-3 md:h-10 md:px-3 lg:h-12 lg:px-4"
+              placeholder="E-Mail-Adresse"
               required
               maxLength={320}
               pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
-              title="Por favor, introduce una dirección de correo electrónico válida"
+              title="Bitte geben Sie eine gültige E-Mail-Adresse ein"
               autoComplete="email"
               spellCheck="false"
             />
@@ -100,12 +100,12 @@ export const SubscribeSection = () => {
                 htmlFor="privacy-checkbox"
                 className="text-bes-purple text-sm sm:text-xs md:text-xs lg:text-sm"
               >
-                Acepto la{" "}
+                Ich akzeptiere die{" "}
                 <a
-                  href="/privacy"
+                  href="/de/privacy"
                   className="text-bes-red hover:text-bes-red/80 underline"
                 >
-                  Política de Privacidad
+                  Datenschutzrichtlinie
                 </a>{" "}
               </label>
             </div>
@@ -118,13 +118,13 @@ export const SubscribeSection = () => {
                   if (!privacyChecked) {
                     e.preventDefault();
                     setSubscribeError(
-                      "Por favor, acepta la política de privacidad para continuar.",
+                      "Bitte akzeptieren Sie die Datenschutzrichtlinie, um fortzufahren.",
                     );
                   }
                 }}
                 aria-describedby="privacy-error"
               >
-                {isPending ? "Enviando..." : "SUSCRIBIR"}
+                {isPending ? "Wird gesendet..." : "ABONNIEREN"}
               </button>
               {!privacyChecked && (
                 <p
@@ -133,13 +133,14 @@ export const SubscribeSection = () => {
                   role="alert"
                   aria-live="polite"
                 >
-                  Por favor, acepta la política de privacidad para continuar
+                  Bitte akzeptieren Sie die Datenschutzrichtlinie, um
+                  fortzufahren
                 </p>
               )}
             </div>
           </div>
         </form>
-        <div className="mt-1 flex min-h-[40px] items-center justify-center sm:mt-1 sm:min-h-[30px] md:mt-1.5 md:min-h-[35px] lg:mt-2 lg:min-h-[40px]">
+        <div className="mt-1 flex min-h-[5px] items-center justify-center sm:mt-1 sm:min-h-[30px] md:mt-1.5 md:min-h-[35px] lg:mt-2 lg:min-h-[40px]">
           {subscribeSuccess && (
             <p className="bg-bes-purple/10 text-bes-purple rounded-lg px-3 py-1 text-sm font-bold sm:px-2 sm:py-0.5 sm:text-xs md:px-3 md:py-1 md:text-xs lg:px-4 lg:py-2 lg:text-sm">
               {subscribeSuccess}

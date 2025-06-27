@@ -2,6 +2,14 @@ Versions:
 
 whats's done:
 
+v 0.1.12
+
+- german version included and triggered via button
+- corrected desctiption in spanish Layout:
+- deutscher Datenschutz
+- spanisch modified
+- breadcrump now with logo instead of home text
+
 v 0.1.11
 
 - corrected quotes in privay to get rid of the eslint errors

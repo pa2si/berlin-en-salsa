@@ -21,18 +21,18 @@ const SectionThree = () => {
         <div className="text-bes-amber ml-3 flex flex-col gap-12 sm:ml-8 sm:gap-2 lg:ml-3 lg:gap-12 xl:ml-20">
           <img
             src="/berlin-en-salsa-se-viene-con-todo.svg"
-            alt="Berlin en Salsa se viene con todo!"
+            alt="Berlin en Salsa kommt mit allem!"
             className="-ml-1 w-[24rem] sm:w-[16rem] lg:ml-4 lg:w-[30rem]"
           />
-          <div className="ml-1 flex flex-col gap-2 text-[2rem] sm:gap-0 sm:text-2xl lg:ml-6 lg:gap-2 lg:text-5xl xl:gap-3">
-            <p>2 días de pura salsa!</p>
-            <p>6 orquestas en vivo</p>
-            <p>6 shows de baile</p>
+          <div className="ml-1 flex flex-col gap-2 text-[2rem] font-medium sm:gap-0 sm:text-2xl lg:ml-6 lg:gap-2 lg:text-5xl xl:gap-3">
+            <p>2 Tage voller Salsa!</p>
+            <p>6 Live-Orchester</p>
+            <p>6 Tanzshows</p>
             <p>16 DJs</p>
-            <p>Charlas</p>
-            <p>Talleres musicales</p>
-            <p>Mercado de vinilos</p>
-            <p>Delicias latinas y más!</p>
+            <p>Vorträge</p>
+            <p>Musikworkshops</p>
+            <p>Vinyl-Markt</p>
+            <p>LATAM Spezialitäten und mehr!</p>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ const SectionThree = () => {
                 index === currentImage ? "bg-bes-red" : "bg-opacity-50 bg-white"
               }`}
               onClick={() => setCurrentImage(index)}
-              aria-label={`Go to slide ${index + 1}`}
+              aria-label={`Gehe zu Folie ${index + 1}`}
             />
           ))}
         </div>
