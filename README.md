@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.13
+
+- paypal added to the footer
+
 v 0.1.12
 
 - german version included and triggered via button
