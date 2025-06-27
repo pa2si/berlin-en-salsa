@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.14
+
+- Announcement Banner and Modal and program button implemented for both languages
+
 v 0.1.13
 
 - paypal added to the footer

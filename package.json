@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -12,6 +12,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "formidable": "^3.5.2",
+    "framer-motion": "^12.19.2",
     "next": "15.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
