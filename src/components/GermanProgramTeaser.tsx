@@ -19,12 +19,14 @@ const GermanProgramTeaser = () => {
     },
     {
       title: "Tanzworkshops",
-      description: "Lerne von den besten internationalen Lehrern.",
+      description:
+        "Entdecke verschiedene Tanzstile und lass dich vom Rhythmus leiten.",
       icon: "💃",
     },
     {
       title: "Musikworkshops",
-      description: "Masterclasses für Instrumente und Musikkomposition.",
+      description:
+        "Erforsche die Seele der Salsa mit Perkussion-, Rhythmus- und weiteren Kursen.",
       icon: "🎹",
     },
     {
@@ -36,7 +38,7 @@ const GermanProgramTeaser = () => {
       title: "Kultur und Kunst",
       description:
         "Schallplatten Markt, Vorträge und mehr kulturelle Aktivitäten.",
-      icon: "💿",
+      icon: "disco", // Using "disco" to indicate we'll use the image instead of emoji
     },
   ];
 
@@ -133,7 +135,7 @@ const GermanProgramTeaser = () => {
                     transition={{ duration: 0.5 }}
                     className="flex items-center space-x-4"
                   >
-                    {currentTeaser === 4 ? (
+                    {teasers[currentTeaser].icon === "disco" ? (
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{

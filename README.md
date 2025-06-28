@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.21
+
+- Updated German program teaser descriptions to match improved Spanish versions
+- Improved text for dance and music workshops in German version for better engagement
+- Modified culture icon logic to use the disco SVG image instead of emoji
+
 v 0.1.20
 
 - talleres musicales now is called talleres de musica

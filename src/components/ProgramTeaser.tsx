@@ -19,12 +19,14 @@ const ProgramTeaser = () => {
     },
     {
       title: "Talleres de baile",
-      description: "Aprende con los mejores profesores.",
+      description:
+        "Aprende diferentes estilos de baile y déjate llevar por el ritmo.",
       icon: "💃",
     },
     {
       title: "Talleres de música",
-      description: "Masterclasses de instrumentos y composición musical.",
+      description:
+        "Explora el alma de la salsa con clases de percusión, ritmo y más",
       icon: "🎹",
     },
     {
@@ -35,7 +37,7 @@ const ProgramTeaser = () => {
     {
       title: "Cultura y arte",
       description: "Mercado De Vinilo, charlas y más actividades culturales.",
-      icon: "💿",
+      icon: "disco", // Using "disco" to indicate we'll use the image instead of emoji
     },
   ];
 
@@ -132,7 +134,7 @@ const ProgramTeaser = () => {
                     transition={{ duration: 0.5 }}
                     className="flex items-center space-x-4"
                   >
-                    {currentTeaser === 4 ? (
+                    {teasers[currentTeaser].icon === "disco" ? (
                       <motion.div
                         animate={{ rotate: 360 }}
                         transition={{
