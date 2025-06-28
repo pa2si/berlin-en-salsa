@@ -76,8 +76,8 @@ const SectionTwo = () => {
               mehr.
             </p>
             <p>
-              Eine Veranstaltung, die auf Solidarität und Kultur in Zeiten von
-              Kürzungen und dem Vormarsch der Rechten setzt.
+              Eine Veranstaltung, die in Zeiten von Kürzungen und und Rechtsruck
+              auf Solidarität, Kultur und Community setzt.
             </p>
             <p>
               Komm, teile, unterstütze und feiere mit uns die Salsa-Kultur

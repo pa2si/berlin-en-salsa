@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.22
+
+- In SectionTwo adapted the german text
+
 v 0.1.21
 
 - Updated German program teaser descriptions to match improved Spanish versions
