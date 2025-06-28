@@ -18,53 +18,62 @@ const LanguageSwitcher = () => {
       setCurrentLang("es");
     }
   }, [pathname]);
-
   useEffect(() => {
-    // Only apply this effect on screens smaller than sm (640px)
-    const checkScreenWidth = () => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
       if (window.innerWidth >= 640) {
-        setIsVisible(true); // Always visible on larger screens
+        // Always visible on larger screens regardless of scroll
+        setIsVisible(true);
         return;
       }
 
-      const handleScroll = () => {
-        const currentScrollY = window.scrollY;
+      // Threshold for more reliable scrolling behavior
+      const scrollDelta = Math.abs(currentScrollY - lastScrollY.current);
 
-        if (currentScrollY < 10) {
-          // Always show at the top of the page
-          setIsVisible(true);
-        } else if (currentScrollY > lastScrollY.current) {
-          // Scrolling down
-          setIsVisible(false);
-        } else {
-          // Scrolling up
-          setIsVisible(true);
-        }
+      if (currentScrollY < 10) {
+        // Always show at the top of the page
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current && scrollDelta > 5) {
+        // Scrolling down - only hide if scrolled more than threshold
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current && scrollDelta > 5) {
+        // Scrolling up - only show if scrolled more than threshold
+        setIsVisible(true);
+      }
 
-        lastScrollY.current = currentScrollY;
-      };
-
-      window.addEventListener("scroll", handleScroll, { passive: true });
-
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
+      lastScrollY.current = currentScrollY;
     };
 
-    // Check screen width and add scroll listener if needed
-    const checkAndSetupListener = () => {
-      const cleanup = checkScreenWidth();
+    // Initial check
+    handleScroll();
 
-      // Also listen for resize events to update behavior
-      window.addEventListener("resize", checkScreenWidth);
+    // Use throttled event listener for better performance
+    let timeoutId: number | null = null;
 
-      return () => {
-        if (cleanup) cleanup();
-        window.removeEventListener("resize", checkScreenWidth);
-      };
+    const throttledScrollHandler = () => {
+      if (timeoutId === null) {
+        timeoutId = window.setTimeout(() => {
+          handleScroll();
+          timeoutId = null;
+        }, 100);
+      }
     };
 
-    return checkAndSetupListener();
+    // Add event listeners
+    window.addEventListener("scroll", throttledScrollHandler, {
+      passive: true,
+    });
+    window.addEventListener("resize", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", throttledScrollHandler);
+      window.removeEventListener("resize", handleScroll);
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   const switchLanguage = (lang: string) => {
@@ -97,13 +106,17 @@ const LanguageSwitcher = () => {
 
   return (
     <div
-      className={`fixed top-4 right-4 z-50 flex transform transition-transform duration-300 ${!isVisible ? "-translate-y-20" : "translate-y-0"}`}
+      className={`fixed top-4 right-4 z-50 flex transform transition-all duration-300 ease-in-out ${
+        !isVisible
+          ? "pointer-events-none -translate-y-20 opacity-0"
+          : "translate-y-0 opacity-100"
+      }`}
     >
-      <div className="flex overflow-hidden rounded-full bg-gray-900/40 p-1 backdrop-blur-sm">
+      <div className="flex overflow-hidden rounded-full bg-gray-900/40 p-1 shadow-lg backdrop-blur-md">
         <button
           className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
             currentLang === "es"
-              ? "bg-bes-amber text-bes-red"
+              ? "bg-bes-amber text-bes-red shadow-inner"
               : "text-gray-300 hover:text-white"
           }`}
           onClick={() => switchLanguage("es")}
@@ -113,7 +126,7 @@ const LanguageSwitcher = () => {
         <button
           className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
             currentLang === "de"
-              ? "bg-bes-amber text-bes-red"
+              ? "bg-bes-amber text-bes-red shadow-inner"
               : "text-gray-300 hover:text-white"
           }`}
           onClick={() => switchLanguage("de")}

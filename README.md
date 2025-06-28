@@ -2,9 +2,16 @@ Versions:
 
 whats's done:
 
+v 0.1.17
+
+- Improved language switcher scroll behavior with better performance and reliability
+- Enhanced language switcher UI with better visibility and smoother transitions
+- Fixed issue where language switcher wasn't reliably hiding on scroll
+
 v 0.1.16
 
 - Added touch swipe support for image galleries in Sections Two and Three on mobile devices (only spanish)
+- Fixed language switcher hide/show on scroll functionality for mobile devices
 
 v 0.1.15
 
