@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.23
+
+- changed image-section-2.webp
+
 v 0.1.22
 
 - In SectionTwo adapted the german text
