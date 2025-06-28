@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.20
+
+- talleres musicales now is called talleres de musica
+
 v 0.1.19
 
 - Disabled automatic pop-up of program modal for both Spanish and German versions

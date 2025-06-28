@@ -36,7 +36,7 @@ const SectionThree = () => {
             <p>6 shows de baile</p>
             <p>16 DJs</p>
             <p>Charlas</p>
-            <p>Talleres musicales</p>
+            <p>Talleres de musica</p>
             <p>Mercado de vinilos</p>
             <p>Delicias latinas y más!</p>
           </div>
