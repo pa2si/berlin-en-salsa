@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.16
+
+- Added touch swipe support for image galleries in Sections Two and Three on mobile devices (only spanish)
+
 v 0.1.15
 
 - Language switcher now hides when scrolling down and reappears when scrolling up on mobile devices
