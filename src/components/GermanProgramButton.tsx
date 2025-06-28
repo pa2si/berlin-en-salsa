@@ -16,7 +16,7 @@ const GermanProgramButton = ({ onClick }: { onClick: () => void }) => {
       onClick={onClick}
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 10, type: "spring" }}
+      transition={{ delay: 2, type: "spring" }}
     >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"

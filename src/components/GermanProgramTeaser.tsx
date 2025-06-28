@@ -40,20 +40,13 @@ const GermanProgramTeaser = () => {
     },
   ];
 
-  // Show modal after delay, then show button after modal is closed
+  // Show button immediately, but don't show modal automatically
   useEffect(() => {
-    const modalTimer = setTimeout(() => {
-      setShowModal(true);
-    }, 5000);
+    // Set button to show immediately
+    setShowButton(true);
 
-    const buttonTimer = setTimeout(() => {
-      setShowButton(true);
-    }, 15000);
-
-    return () => {
-      clearTimeout(modalTimer);
-      clearTimeout(buttonTimer);
-    };
+    // No longer automatically showing the modal
+    // The modal will only appear when the button is clicked
   }, []);
 
   // Rotate through teasers

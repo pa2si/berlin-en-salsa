@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.19
+
+- Disabled automatic pop-up of program modal for both Spanish and German versions
+- Program modal now only appears when the program button is clicked
+- ProgramButton now appears after 2 sec.
+
 v 0.1.18
 
 - Changed image galleries in Sections Two and Three to use tap/click interaction instead of swipe
