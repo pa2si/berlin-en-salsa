@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.18
+
+- Changed image galleries in Sections Two and Three to use tap/click interaction instead of swipe
+- Removed "Desliza" announcement from image galleries
+- Simplified user interaction for better user experience
+
 v 0.1.17
 
 - Improved language switcher scroll behavior with better performance and reliability

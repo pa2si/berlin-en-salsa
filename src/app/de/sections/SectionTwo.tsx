@@ -1,10 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const SectionTwo = () => {
   const images = ["/image-section-2.webp", "/foto-2.webp", "/foto-3.webp"];
   const [currentImage, setCurrentImage] = useState(0);
+  const slideContainerRef = useRef<HTMLDivElement>(null);
+
+  // Handle image tap/click to advance to next image
+  const handleImageClick = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
+  };
 
   // Auto-rotate images every 5 seconds
   useEffect(() => {
@@ -17,7 +23,11 @@ const SectionTwo = () => {
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
-      <div className="relative flex h-svh items-center justify-center sm:w-1/2">
+      <div
+        className="relative flex h-svh cursor-pointer items-center justify-center sm:w-1/2"
+        ref={slideContainerRef}
+        onClick={handleImageClick}
+      >
         {images.map((img, index) => (
           <div
             key={img}

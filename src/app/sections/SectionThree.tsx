@@ -5,59 +5,11 @@ import { useState, useEffect, useRef } from "react";
 const SectionThree = () => {
   const images = ["/image-section-3.webp", "/foto-4.webp"];
   const [currentImage, setCurrentImage] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
-  const [touchEnd, setTouchEnd] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const slideContainerRef = useRef<HTMLDivElement>(null);
 
-  // Check if screen is mobile size (below sm breakpoint)
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    // Initial check
-    checkIfMobile();
-
-    // Add resize listener
-    window.addEventListener("resize", checkIfMobile);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", checkIfMobile);
-  }, []);
-
-  // Handle touch events for swiping
-  const handleTouchStart = (e: React.TouchEvent) => {
-    if (!isMobile) return;
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isMobile) return;
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    if (!isMobile) return;
-
-    // Minimum swipe distance - 50px
-    const minSwipeDistance = 50;
-    const swipeDistance = touchStart - touchEnd;
-
-    // If the swipe is shorter than minimum, don't do anything
-    if (Math.abs(swipeDistance) < minSwipeDistance) return;
-
-    if (swipeDistance > 0) {
-      // Swiped left - show next image
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    } else {
-      // Swiped right - show previous image
-      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
-    }
-
-    // Reset touch coordinates after swipe
-    setTouchStart(0);
-    setTouchEnd(0);
+  // Handle image tap/click to advance to next image
+  const handleImageClick = () => {
+    setCurrentImage((prev) => (prev + 1) % images.length);
   };
 
   // Auto-rotate images every 5 seconds
@@ -91,11 +43,9 @@ const SectionThree = () => {
         </div>
       </div>
       <div
-        className="relative h-svh sm:w-1/2"
+        className="relative h-svh cursor-pointer sm:w-1/2"
         ref={slideContainerRef}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        onClick={handleImageClick}
       >
         {images.map((img, index) => (
           <div
@@ -109,13 +59,6 @@ const SectionThree = () => {
             }}
           />
         ))}
-
-        {/* Swipe indicator for mobile */}
-        {isMobile && (
-          <div className="bg-opacity-40 absolute top-4 right-4 rounded-md bg-black px-2 py-1 text-xs text-white">
-            ← Desliza →
-          </div>
-        )}
 
         {/* Navigation dots */}
         <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
