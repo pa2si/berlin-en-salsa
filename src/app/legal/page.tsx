@@ -1,6 +1,26 @@
 import React from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
+import type { Metadata } from "next";
+
+// Base URL for absolute URLs in metadata
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+
+export const metadata: Metadata = {
+  title: "Legal",
+  description: "Información legal de Berlin En Salsa.",
+  alternates: {
+    canonical: `${baseUrl}/legal`,
+    languages: {
+      de: `${baseUrl}/de/impressum`,
+      es: `${baseUrl}/legal`,
+    },
+  },
+  openGraph: {
+    title: "Berlin En Salsa | Legal",
+    url: `${baseUrl}/legal`,
+  },
+};
 
 export default function Legal() {
   return (

@@ -20,8 +20,6 @@
   --color-bes-purple: #b725e8;
   --color-bes-amber: #ffdfa8;
   --color-bes-black: #1d1d1b;
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {

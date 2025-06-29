@@ -5,6 +5,28 @@ import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import GermanComingSoonBanner from "@/components/GermanComingSoonBanner";
 import GermanProgramTeaser from "@/components/GermanProgramTeaser";
+import type { Metadata } from "next";
+
+// Base URL for absolute URLs in metadata
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+
+export const metadata: Metadata = {
+  // For homepage, we use a specific title without using the template format
+  title: "Salsa-Festival in Berlin",
+  description:
+    "Berlin En Salsa ist ein Salsa Musik- und Tanzfestival in Berlin mit Live-Auftritten, DJs, Tanzshows, Workshops und einer Feier der lateinamerikanischen Kultur.",
+  openGraph: {
+    images: [
+      {
+        url: `${baseUrl}/bes-section-1-bg.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Berlin En Salsa Festival",
+      },
+    ],
+    locale: "de_DE",
+  },
+};
 
 export default function Home() {
   return (

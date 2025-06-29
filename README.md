@@ -2,6 +2,44 @@ Versions:
 
 whats's done:
 
+v 0.1.25
+
+- Removed unused Geist and Geist_Mono fonts from both layouts
+- Simplified body class in layout files
+- Removed unused font CSS variables from globals.css
+- Reduced bundle size by removing unnecessary font imports
+- Added comprehensive favicon setup for multiple platforms
+- Updated metadata to include various favicon sizes
+- Created detailed favicon setup guide
+- Added support for Android, iOS, and standard browser favicons
+- Improved website branding with consistent favicon across all platforms
+- Added fallback static OpenGraph and Twitter card images in public folder
+- Installed @vercel/og package for dynamic image generation
+- Fixed 404 errors for social media preview images
+- Simplified dynamic image generation code for better compatibility
+- Added hybrid approach with both dynamic and static image options
+- Added dynamically generated OpenGraph images for social media sharing
+- Created Twitter card images for better visibility on Twitter
+- Implemented separate images for Spanish and German versions
+- Used site branding colors and elements for visual consistency
+- Optimized image generation with Next.js Edge Runtime
+- Added auto-generated sitemap.xml for better search engine indexing
+- Created robots.txt file to guide search engine crawlers
+- Properly linked sitemap in robots.txt for improved SEO
+- Configured all routes with appropriate priority and change frequency
+- Fixed title format to consistently use "Berlin En Salsa | Page Name" pattern
+- Corrected metadata for all pages including Spanish Privacidad and German Datenschutz pages
+- Updated site logo reference to Berlin-en-Salsa-Logo.png
+- Fixed duplicate Berlin En Salsa in page titles
+- Added missing metadata for Privacidad page
+- Implemented comprehensive SEO optimization across the site
+- Added dynamic title templates for consistent page titles
+- Added OpenGraph and Twitter card metadata for better social media sharing
+- Implemented proper canonical URLs and language alternates for multilingual SEO
+- Added page-specific metadata for homepage, legal, and impressum pages
+- Enhanced descriptions with more detailed, keyword-rich content
+- Added complete robots directives to improve search engine crawling
+
 v 0.1.24
 
 - new Image for carousel in SectionThree

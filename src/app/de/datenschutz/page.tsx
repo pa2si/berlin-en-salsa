@@ -1,6 +1,27 @@
 import React from "react";
 import Link from "next/link";
 import { Footer as GermanFooter } from "@/components/GermanFooter";
+import type { Metadata } from "next";
+
+// Base URL for absolute URLs in metadata
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+
+export const metadata: Metadata = {
+  title: "Datenschutz",
+  description:
+    "Datenschutzerklärung von Berlin En Salsa. Informationen zur Verwendung und zum Schutz Ihrer personenbezogenen Daten.",
+  alternates: {
+    canonical: `${baseUrl}/de/datenschutz`,
+    languages: {
+      de: `${baseUrl}/de/datenschutz`,
+      es: `${baseUrl}/privacidad`,
+    },
+  },
+  openGraph: {
+    title: "Datenschutzerklärung",
+    url: `${baseUrl}/de/datenschutz`,
+  },
+};
 
 export default function Datenschutz() {
   return (
