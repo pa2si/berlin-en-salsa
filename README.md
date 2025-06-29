@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 0.1.27
+
+- repared robots.ts
+- deleted robots.txt
+
 v 0.1.26
 
 - added new images to carousels in SectionTwo and SectionThree
