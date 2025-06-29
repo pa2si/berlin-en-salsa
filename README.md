@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.28
+
+- swapped the order of image 3 and 4 in SectionThree
+
 v 0.1.27
 
 - repared robots.ts
