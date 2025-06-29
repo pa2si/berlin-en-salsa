@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.29
+
+- adpated SectionTwo and SectionThree: When there is only one image in the array "image" then the images are dsplayed as normal image and if there are multiple the images are displayed in a carousel
+
 v 0.1.28
 
 - swapped the order of image 3 and 4 in SectionThree

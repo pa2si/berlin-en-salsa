@@ -3,28 +3,28 @@
 import { useState, useEffect, useRef } from "react";
 
 const SectionThree = () => {
-  const images = [
-    "/section-3-image-1.webp",
-    "/section-3-image-2.webp",
-    "/section-3-image-3.webp",
-    "/section-3-image-4.webp",
-  ];
+  const images = ["/section-3-image-1.webp"];
   const [currentImage, setCurrentImage] = useState(0);
   const slideContainerRef = useRef<HTMLDivElement>(null);
+  const hasMultipleImages = images.length > 1;
 
-  // Handle image tap/click to advance to next image
+  // Handle image tap/click to advance to next image (only for multiple images)
   const handleImageClick = () => {
-    setCurrentImage((prev) => (prev + 1) % images.length);
+    if (hasMultipleImages) {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }
   };
 
-  // Auto-rotate images every 5 seconds
+  // Auto-rotate images every 5 seconds (only for multiple images)
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
+    if (hasMultipleImages) {
+      const interval = setInterval(() => {
+        setCurrentImage((prev) => (prev + 1) % images.length);
+      }, 5000);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+      return () => clearInterval(interval);
+    }
+  }, [images.length, hasMultipleImages]);
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
@@ -48,15 +48,19 @@ const SectionThree = () => {
         </div>
       </div>
       <div
-        className="relative h-svh cursor-pointer sm:w-1/2"
+        className={`relative h-svh ${hasMultipleImages ? "cursor-pointer" : ""} sm:w-1/2`}
         ref={slideContainerRef}
-        onClick={handleImageClick}
+        onClick={hasMultipleImages ? handleImageClick : undefined}
       >
         {images.map((img, index) => (
           <div
             key={img}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-100" : "opacity-0"
+            className={`absolute inset-0 bg-cover bg-center ${
+              hasMultipleImages ? "transition-opacity duration-1000" : ""
+            } ${
+              !hasMultipleImages || index === currentImage
+                ? "opacity-100"
+                : "opacity-0"
             }`}
             style={{
               backgroundImage: `url("${img}")`,
@@ -65,19 +69,23 @@ const SectionThree = () => {
           />
         ))}
 
-        {/* Navigation dots */}
-        <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`h-2 w-2 rounded-full ${
-                index === currentImage ? "bg-bes-red" : "bg-opacity-50 bg-white"
-              }`}
-              onClick={() => setCurrentImage(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
+        {/* Navigation dots - only show for multiple images */}
+        {hasMultipleImages && (
+          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                className={`h-2 w-2 rounded-full ${
+                  index === currentImage
+                    ? "bg-bes-red"
+                    : "bg-opacity-50 bg-white"
+                }`}
+                onClick={() => setCurrentImage(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
