@@ -3,7 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 
 const SectionTwo = () => {
-  const images = ["/image-section-2.webp", "/foto-2.webp", "/foto-3.webp"];
+  const images = [
+    "/section-2-image-1.webp",
+    "/section-2-image-2.webp",
+    "/section-2-image-3.webp",
+    "/section-2-image-4.webp",
+  ];
   const [currentImage, setCurrentImage] = useState(0);
   const slideContainerRef = useRef<HTMLDivElement>(null);
 

@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.26
+
+- added new images to carousels in SectionTwo and SectionThree
+
 v 0.1.25
 
 - Removed unused Geist and Geist_Mono fonts from both layouts
