@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.24
+
+- new Image for carousel in SectionThree
+
 v 0.1.23
 
 - changed image-section-2.webp

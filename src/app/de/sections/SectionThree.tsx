@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 
 const SectionThree = () => {
-  const images = ["/image-section-3.webp", "/foto-4.webp"];
+  const images = ["/image-section-3.webp", "/camisetas.webp", "/foto-4.webp"];
   const [currentImage, setCurrentImage] = useState(0);
   const slideContainerRef = useRef<HTMLDivElement>(null);
 
