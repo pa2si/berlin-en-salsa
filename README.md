@@ -2,6 +2,14 @@ Versions:
 
 whats's done:
 
+v 0.1.30
+
+- better error Handling for From submitting in actions.ts
+  - more checks
+  - better answers
+  - console.log removed
+- Hero.tsx removed as it was from a very first version
+
 v 0.1.29
 
 - adpated SectionTwo and SectionThree: When there is only one image in the array "image" then the images are dsplayed as normal image and if there are multiple the images are displayed in a carousel
