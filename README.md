@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.31
+
+- in SectionThree the image is now chosen depending on the screen size
+
 v 0.1.30
 
 - better error Handling for From submitting in actions.ts

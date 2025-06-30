@@ -3,28 +3,32 @@
 import { useState, useEffect, useRef } from "react";
 
 const SectionThree = () => {
-  const images = ["/section-3-image-1.webp"];
-  const [currentImage, setCurrentImage] = useState(0);
+  // Define desktop and mobile image paths
+  const desktopImage = "/section-3-image-1.webp";
+  const mobileImage = "/section-3-image-1-mobile.webp";
+
+  // Start with a default image (will be updated in useEffect)
+  const [currentImageSrc, setCurrentImageSrc] = useState(mobileImage);
   const slideContainerRef = useRef<HTMLDivElement>(null);
-  const hasMultipleImages = images.length > 1;
 
-  // Handle image tap/click to advance to next image (only for multiple images)
-  const handleImageClick = () => {
-    if (hasMultipleImages) {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }
-  };
-
-  // Auto-rotate images every 5 seconds (only for multiple images)
+  // Media query effect to switch images based on screen size
   useEffect(() => {
-    if (hasMultipleImages) {
-      const interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
-      }, 5000);
+    // Function to set the right image based on screen width
+    const handleResize = () => {
+      // Check if screen is xl or larger (1280px is Tailwind's xl breakpoint)
+      const isXlScreen = window.matchMedia("(min-width: 1280px)").matches;
+      setCurrentImageSrc(isXlScreen ? desktopImage : mobileImage);
+    };
 
-      return () => clearInterval(interval);
-    }
-  }, [images.length, hasMultipleImages]);
+    // Set initial image
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
@@ -47,45 +51,14 @@ const SectionThree = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`relative h-svh ${hasMultipleImages ? "cursor-pointer" : ""} sm:w-1/2`}
-        ref={slideContainerRef}
-        onClick={hasMultipleImages ? handleImageClick : undefined}
-      >
-        {images.map((img, index) => (
-          <div
-            key={img}
-            className={`absolute inset-0 bg-cover bg-center ${
-              hasMultipleImages ? "transition-opacity duration-1000" : ""
-            } ${
-              !hasMultipleImages || index === currentImage
-                ? "opacity-100"
-                : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url("${img}")`,
-              backgroundPosition: "50% 50%",
-            }}
-          />
-        ))}
-
-        {/* Navigation dots - only show for multiple images */}
-        {hasMultipleImages && (
-          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === currentImage
-                    ? "bg-bes-red"
-                    : "bg-opacity-50 bg-white"
-                }`}
-                onClick={() => setCurrentImage(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
+      <div className="relative h-svh sm:w-1/2" ref={slideContainerRef}>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url("${currentImageSrc}")`,
+            backgroundPosition: "50% 50%",
+          }}
+        />
       </div>
     </div>
   );
