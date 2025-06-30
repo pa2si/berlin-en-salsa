@@ -13,7 +13,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
 export const metadata: Metadata = {
   title: "Berlin En Salsa | Festival de Salsa en Berlín",
   description:
-    "Berlin En Salsa es un festival de Salsa en Berlín con conciertos, DJs, shows de baile, talleres y una celebración de la cultura latina.",
+    "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
   openGraph: {
     images: [
       {

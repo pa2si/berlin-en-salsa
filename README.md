@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.32
+
+- adjusted description in german and spanish page.tsx
+
 v 0.1.31
 
 - in SectionThree the image is now chosen depending on the screen size

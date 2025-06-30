@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   // For homepage, we use a specific title without using the template format
   title: "Salsa-Festival in Berlin",
   description:
-    "Berlin En Salsa ist ein Salsa Musik- und Tanzfestival in Berlin mit Live-Auftritten, DJs, Tanzshows, Workshops und einer Feier der lateinamerikanischen Kultur.",
+    "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr.",
   openGraph: {
     images: [
       {
