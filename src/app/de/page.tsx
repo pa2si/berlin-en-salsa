@@ -8,7 +8,7 @@ import GermanProgramTeaser from "@/components/GermanProgramTeaser";
 import type { Metadata } from "next";
 
 // Base URL for absolute URLs in metadata
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   // For homepage, we use a specific title without using the template format
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: `${baseUrl}/bes-section-1-bg.webp`,
+        url: `${baseUrl}/opengraph-image.png`,
         width: 1200,
         height: 630,
         alt: "Berlin En Salsa Festival",

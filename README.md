@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.36
+
+- corrected path for opengraph image in page.tsx
+
 v 0.1.35
 
 - set in the layout.tsx regarding the const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
