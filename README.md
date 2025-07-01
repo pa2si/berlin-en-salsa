@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.33
+
+- corrected text in german SectionOne
+
 v 0.1.32
 
 - adjusted description in german and spanish page.tsx

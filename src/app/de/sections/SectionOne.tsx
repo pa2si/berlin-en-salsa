@@ -23,11 +23,11 @@ const SectionOne = () => {
       >
         <div className="text-bes-amber flex flex-col items-center gap-4 text-6xl sm:text-[2rem] lg:text-[5rem] xl:gap-3 xl:text-[5.5rem] 2xl:gap-4">
           <p>Ein Salsa-</p>
-          <p>festival</p>
+          <p>Festival</p>
           <p>für alle:</p>
-          <p>kostenlos</p>
-          <p>und unter</p>
-          <p>freiem Himmel!</p>
+          <p>öffentlich</p>
+          <p>umsonst</p>
+          <p>und draußen!</p>
         </div>
         <img
           src="/disco.svg"
