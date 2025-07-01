@@ -2,6 +2,18 @@ Versions:
 
 whats's done:
 
+v 0.1.34
+
+- Updated social media sharing images:
+  - Using static opengraph-image.png and twitter-image.png (1200x630px) in the public folder
+  - Removed dynamic OG image generation files
+  - Updated metadata in both language layouts to reference the new images
+  - Fixed WhatsApp and social media preview to only show the logo image
+  - Removed PWA support:
+  - Deleted site.webmanifest file
+  - Removed web-app-manifest icon files
+  - Simplified the website to focus on core functionality
+
 v 0.1.33
 
 - corrected text in german SectionOne

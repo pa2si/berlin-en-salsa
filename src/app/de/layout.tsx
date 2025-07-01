@@ -25,9 +25,9 @@ export const metadata: Metadata = {
       "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr.",
     images: [
       {
-        url: `${baseUrl}/Berlin-en-Salsa-Logo.png`,
-        width: 800,
-        height: 600,
+        url: `${baseUrl}/opengraph-image.png`,
+        width: 1200,
+        height: 630,
         alt: "Berlin En Salsa Logo",
       },
     ],
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Berlin En Salsa",
     description: "Berlin En Salsa. Ein Salsa Festival für alle.",
-    images: [`${baseUrl}/Berlin-en-Salsa-Logo.png`],
+    images: [`${baseUrl}/twitter-image.png`],
     creator: "@berlinensalsa",
   },
 
