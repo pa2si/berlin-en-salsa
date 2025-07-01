@@ -31,9 +31,9 @@ const SectionThree = () => {
       <div className="bg-bes-red flex h-svh items-center sm:w-1/2">
         <div className="text-bes-amber ml-3 flex flex-col gap-12 sm:ml-8 sm:gap-2 lg:ml-3 lg:gap-12 xl:ml-20">
           <img
-            src="/berlin-en-salsa-se-viene-con-todo.svg"
+            src="/berlin-en-salsa-kommt-mit-voller-power.png"
             alt="Berlin en Salsa kommt mit allem!"
-            className="-ml-1 w-[24rem] sm:w-[16rem] lg:ml-4 lg:w-[30rem]"
+            className="-ml-1 h-[6rem] w-[24rem] sm:h-[5rem] sm:w-[16rem] lg:ml-1 lg:h-[7rem] lg:w-[30rem]"
           />
           <div className="ml-1 flex flex-col gap-2 text-[2rem] font-medium sm:gap-0 sm:text-2xl lg:ml-6 lg:gap-2 lg:text-5xl xl:gap-3">
             <p>2 Tage voller Salsa!</p>

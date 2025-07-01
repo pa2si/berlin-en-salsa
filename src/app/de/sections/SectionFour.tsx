@@ -4,9 +4,9 @@ const SectionFour = () => {
       {/* Mobile layout (only visible below sm) */}
       <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto sm:hidden">
         <img
-          src="/como-se-financia-berlin-en-salsa.svg"
+          src="/wie-finanziert-sich-berlin-en-salsa.svg"
           alt="Wie finanziert sich Berlin en Salsa"
-          className="mx-auto w-[80vw] max-w-[33rem] min-w-[13rem]"
+          className="mx-auto w-[75vw] max-w-[33rem] min-w-[13rem]"
         />
 
         <p className="text-bes-amber min-text-lg max-text-2xl -mt-4 px-2 text-center text-[6vw]">
@@ -44,7 +44,7 @@ const SectionFour = () => {
         {/* Left column - Financing information */}
         <div className="flex flex-col items-center justify-center p-2 lg:p-8">
           <img
-            src="/como-se-financia-berlin-en-salsa.svg"
+            src="/wie-finanziert-sich-berlin-en-salsa.svg"
             alt="Wie finanziert sich Berlin en Salsa"
             className="mx-auto w-[95%] max-w-[20rem]"
           />
@@ -98,9 +98,9 @@ const SectionFour = () => {
         <div className="flex flex-col items-center justify-center px-4 sm:space-y-4 md:space-y-2 lg:space-y-6 2xl:gap-8">
           <div>
             <img
-              src="/como-se-financia-berlin-en-salsa.svg"
+              src="/wie-finanziert-sich-berlin-en-salsa.svg"
               alt="Wie finanziert sich Berlin en Salsa"
-              className="mx-auto max-w-[32rem] min-w-[27rem]"
+              className="mx-auto max-w-[28rem] min-w-[27rem] xl:-mr-5"
             />
           </div>
 

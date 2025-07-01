@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.37
+
+- spanisch titles replaced with the german titles
+
 v 0.1.36
 
 - corrected path for opengraph image in page.tsx

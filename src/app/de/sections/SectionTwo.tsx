@@ -71,7 +71,7 @@ const SectionTwo = () => {
       <div className="bg-bes-amber flex h-svh overflow-hidden sm:w-1/2 sm:items-center sm:justify-center">
         <div className="flex h-[95%] w-full flex-col items-center justify-evenly gap-4 py-4">
           <img
-            src="/que-es-berlin-en-salsa.svg"
+            src="/was-ist-berlin-en-salsa.svg"
             alt="Was ist Berlin en Salsa?"
             className="w-[80vw] max-w-[24rem] min-w-[22rem] px-8 sm:max-w-[18rem] sm:min-w-[17rem] lg:max-w-[24rem] xl:max-w-[30rem]"
           />
