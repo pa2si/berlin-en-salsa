@@ -3,7 +3,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import "./globals.css";
 
 // Base URL for absolute URLs in metadata
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
   // Basic metadata

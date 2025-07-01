@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 0.1.35
+
+- set in the layout.tsx regarding the const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+- created the variable in .env
+
 v 0.1.34
 
 - Updated social media sharing images:
