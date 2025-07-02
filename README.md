@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.38
+
+- rest of missing section titles implemented
+
 v 0.1.37
 
 - spanisch titles replaced with the german titles

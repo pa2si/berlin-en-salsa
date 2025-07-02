@@ -20,9 +20,9 @@ const SectionFour = () => {
         </p>
 
         <img
-          src="/apoyanos-double-line.svg"
+          src="/unterstuetze-uns-dabei.svg"
           alt="Unterstütze uns durch den Kauf eines T-Shirts"
-          className="mx-auto w-[50vw] max-w-[25rem] min-w-[14rem]"
+          className="mx-auto w-[70vw] max-w-[25rem] min-w-[14rem]"
         />
 
         <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
@@ -66,7 +66,7 @@ const SectionFour = () => {
         {/* Right column - T-shirts */}
         <div className="flex flex-col items-center justify-center sm:p-8">
           <img
-            src="/apoyanos-single-line.svg"
+            src="/unterstuetze-uns-dabei.svg"
             alt="Unterstütze uns durch den Kauf eines T-Shirts"
             className="mb-5 w-[100%] sm:max-w-[30rem] lg:mb-6"
           />
@@ -114,9 +114,9 @@ const SectionFour = () => {
             Ihre Spenden.
           </p>
           <img
-            src="/apoyanos-single-line.svg"
+            src="/unterstuetze-uns-dabei.svg"
             alt="Unterstütze uns durch den Kauf eines T-Shirts"
-            className="mx-auto max-w-[35rem] min-w-[10rem]"
+            className="mx-auto max-w-[23rem] min-w-[10rem]"
           />
         </div>
         <div className="flex items-center justify-center">

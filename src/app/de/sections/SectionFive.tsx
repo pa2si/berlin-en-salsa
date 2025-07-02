@@ -8,9 +8,9 @@ const SectionFive = () => {
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-2 px-4 md:gap-4">
           <div className="mb-8 flex w-full justify-center sm:mb-0">
             <img
-              src="/contacto.svg"
+              src="/kontakt.svg"
               alt="Kontakt"
-              className="mt-4 w-[65vw] max-w-[25rem] min-w-[15rem] object-contain sm:mt-2 sm:max-w-[15rem] lg:mt-0 lg:max-w-[25rem]"
+              className="mt-4 w-[65vw] max-w-[25rem] min-w-[15rem] object-contain sm:mt-2 sm:max-w-[13rem] lg:mt-0 lg:max-w-[22rem]"
             />
           </div>
 
