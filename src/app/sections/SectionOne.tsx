@@ -6,9 +6,9 @@ const SectionOne = () => {
           <img
             src="/bes-logo-color.webp"
             alt="Berlin en Salsa Logo"
-            className="w-[19.5rem] sm:w-[10rem] lg:w-[22rem]"
+            className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-w-[100%] lg:min-w-[60%]"
           />
-          <p className="text-bes-red sm:text-w-[1rem] text-center text-4xl sm:mb-4 lg:text-[3rem] xl:text-[3.5rem]">
+          <p className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]">
             19 y 20 de julio <br /> Neulich Biergarten
           </p>
         </div>
@@ -21,18 +21,30 @@ const SectionOne = () => {
           backgroundPosition: "100% 40%",
         }}
       >
-        <div className="text-bes-amber flex flex-col items-center gap-4 text-6xl sm:text-[2rem] lg:text-[5rem] xl:gap-3 xl:text-[5.5rem] 2xl:gap-4">
-          <p>¡Un festival</p>
-          <p>de salsa</p>
-          <p>para todxs:</p>
-          <p>publico</p>
-          <p>gratuito y</p>
-          <p>al aire libre!</p>
+        <div className="text-bes-amber flex h-[65%] flex-col items-center justify-between gap-0 -space-y-[0.35em] py-1.5 lg:h-[70%]">
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            ¡Un festival
+          </p>
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            de salsa
+          </p>
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            para todxs:
+          </p>
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            publico
+          </p>
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            gratuito y
+          </p>
+          <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
+            al aire libre!
+          </p>
         </div>
         <img
           src="/disco.svg"
-          alt="Disco decoration"
-          className="w-40 sm:w-24 lg:w-40"
+          alt="Disco Dekoration"
+          className="mt-4 h-[clamp(50px,4vh,160px)] w-auto xl:mt-0"
         />
       </div>
     </div>

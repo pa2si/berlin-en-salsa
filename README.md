@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.39
+
+- SeectionOne is now fully responsive
+
 v 0.1.38
 
 - rest of missing section titles implemented
