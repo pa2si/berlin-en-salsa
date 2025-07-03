@@ -29,7 +29,7 @@ const SectionTwo = () => {
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
       <div
-        className={`relative flex h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}
+        className={`relative flex h-[50vh] sm:h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}
         ref={slideContainerRef}
         onClick={hasMultipleImages ? handleImageClick : undefined}
       >
@@ -68,29 +68,29 @@ const SectionTwo = () => {
           </div>
         )}
       </div>
-      <div className="bg-bes-amber flex h-svh overflow-hidden sm:w-1/2 sm:items-center sm:justify-center">
-        <div className="flex h-[95%] w-full flex-col items-center justify-evenly gap-4 py-4">
+      <div className="bg-bes-amber flex h-auto overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
+        <div className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4">
           <img
             src="/que-es-berlin-en-salsa.svg"
             alt="¿Qué es Berlin en Salsa?"
-            className="w-[80vw] max-w-[24rem] min-w-[22rem] px-8 sm:max-w-[18rem] sm:min-w-[17rem] lg:max-w-[24rem] xl:max-w-[30rem]"
+            className="mb-4 h-auto max-h-[4vh] min-h-[80px] w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[15vh]"
           />
 
-          <div className="text-bes-red flex flex-col gap-4 px-6 text-center text-[1.5rem] sm:gap-4 sm:px-2 sm:text-[1.15rem] md:gap-6 lg:gap-8 lg:px-15 lg:text-3xl xl:gap-8 xl:px-16 xl:leading-10 2xl:gap-8 2xl:text-4xl 2xl:leading-14">
-            <p>
+          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[90%] flex-col justify-between gap-y-5 px-4 text-center sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 xl:gap-y-3">
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
               Un fin de semana organizado por y para la comunidad salsera de
               Berlín. ¡Gózatelo!
             </p>
-            <p>
-              donde puedes vivir la diversidad de la cultura de la salsa:
-              orquestas en vivo, DJs, baile, talleres, charlas, mercado de
-              vinilos y más.
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
+              Un espacio donde puedes vivir la diversidad de la cultura de la
+              salsa: orquestas en vivo, DJs, baile, talleres, charlas, mercado
+              de vinilos y más.
             </p>
-            <p>
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
               Un evento que apuesta por la solidaridad y la cultura en tiempos
               de recortes y avance de las derechas.
             </p>
-            <p>
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
               Ven a compartir, apoyar y celebrar con nosotrxs la cultura salsera
               de Berlín.
             </p>
@@ -100,4 +100,5 @@ const SectionTwo = () => {
     </div>
   );
 };
+
 export default SectionTwo;
