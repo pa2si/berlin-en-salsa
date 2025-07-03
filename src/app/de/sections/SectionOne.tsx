@@ -3,6 +3,9 @@ const SectionOne = () => {
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
       <div className="bg-bes-amber flex h-svh items-center justify-center sm:w-1/2">
         <div className="flex flex-col items-center">
+          <h1 className="sr-only">
+            Berlin En Salsa - Ein Salsa-Festival in Berlin für alle
+          </h1>
           <img
             src="/bes-logo-color.webp"
             alt="Berlin en Salsa Logo"

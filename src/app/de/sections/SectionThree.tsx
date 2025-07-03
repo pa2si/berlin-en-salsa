@@ -65,8 +65,8 @@ const SectionThree = () => {
           <div className="flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] md:gap-1 md:text-[clamp(1.2rem,2.5vw,1.8rem)] lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3">
             <p>2 Tage voller Salsa!</p>
             <p>6 Live-Orchester</p>
-            <p>6 Tanzshows</p>
-            <p>16 DJs</p>
+            <p>5 Tanzshows</p>
+            <p>20 DJs</p>
             <p>Vorträge</p>
             <p>Musikworkshops</p>
             <p>Vinyl-Markt</p>

@@ -274,17 +274,17 @@ export default function Privacidad() {
             es:
           </p>
           <p>
-            Beispielfirma
+            Paul Welch Guerra
             <br />
-            Musterweg 10
+            Drorystr. 2
             <br />
-            90210 Musterstadt
+            12055 Berlin
           </p>
 
           <p>
-            Teléfono: +49 (0) 123 44 55 66
+            Teléfono: +49 176 47024026
             <br />
-            Correo electrónico: info@beispielfirma.de
+            Correo electrónico: info@berlinensalsa.de
           </p>
           <p>
             La entidad responsable es la persona física o jurídica que, sola o

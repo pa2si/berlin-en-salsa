@@ -290,7 +290,11 @@ export default function Datenschutz() {
             12055 Berlin
           </p>
 
-          <p>E-Mail: info@beispielfirma.de</p>
+          <p>
+            Telefon: +49 176 47024026
+            <br />
+            E-Mail: info@berlinensalsa.de
+          </p>
           <br />
           <p>
             Verantwortliche Stelle ist die nat&uuml;rliche oder juristische

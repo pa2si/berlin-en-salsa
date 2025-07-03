@@ -104,6 +104,15 @@ export default function Impressum() {
             <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
               Kontakt
             </h2>
+            <p className="text-lg sm:text-xl md:text-xl">
+              Telefon:{" "}
+              <a
+                href="tel:+4917647024026"
+                className="text-bes-red hover:underline"
+              >
+                +49 176 47024026
+              </a>
+            </p>
             <p className="text-lg sm:text-xl md:text-2xl">
               E-Mail:{" "}
               <a

@@ -105,6 +105,15 @@ export default function Legal() {
               Contacto
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl">
+              Teléfono:{" "}
+              <a
+                href="tel:+4917647024026"
+                className="text-bes-red hover:underline"
+              >
+                +49 176 47024026
+              </a>
+            </p>
+            <p className="text-lg sm:text-xl md:text-2xl">
               Correo electrónico:{" "}
               <a
                 href="mailto:info@berlinensalsa.de"

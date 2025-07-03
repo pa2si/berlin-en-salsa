@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v 0.1.45
+
+- added phone number to legal and privacy
+- modified 16 DJs to 20 DJs
+- added h1 only fro screen reader
+- modified keywords in layout.tsx
+
 v 0.1.44
 
 - SectionFive is now fully responsive
