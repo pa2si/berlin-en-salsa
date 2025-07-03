@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.44
+
+- SectionFive is now fully responsive
+  - Title image, social media icons, and text scale based on available height
+  - All elements adapt to the viewport height using clamp() for proper scaling
+
 v 0.1.43
 
 - Images selection now depends of screensize in SectionThree
