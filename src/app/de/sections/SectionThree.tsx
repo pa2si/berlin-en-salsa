@@ -28,14 +28,14 @@ const SectionThree = () => {
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
-      <div className="bg-bes-red flex h-svh items-center sm:w-1/2">
-        <div className="text-bes-amber ml-3 flex flex-col gap-12 sm:ml-8 sm:gap-2 lg:ml-3 lg:gap-12 xl:ml-20">
+      <div className="bg-bes-red flex h-auto items-center justify-center py-12 sm:h-svh sm:w-1/2 sm:justify-start sm:py-0">
+        <div className="text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 md:gap-8 lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12">
           <img
-            src="/berlin-en-salsa-kommt-mit-voller-power.png"
+            src="/berlin-en-salsa-kommt-mit-voller-power.svg"
             alt="Berlin en Salsa kommt mit allem!"
-            className="-ml-1 h-[6rem] w-[24rem] sm:h-[5rem] sm:w-[16rem] lg:ml-1 lg:h-[7rem] lg:w-[30rem]"
+            className="mx-auto h-[auto] w-full max-w-[24rem] sm:mx-0 sm:-ml-5 sm:max-w-[16rem] md:-mb-6 md:max-w-[20rem] lg:h-[clamp(6rem,12vh,10rem)] lg:max-w-[30rem] xl:h-[clamp(8rem,15vh,12rem)] xl:w-[30rem] 2xl:h-[clamp(9rem,18vh,14rem)]"
           />
-          <div className="ml-1 flex flex-col gap-2 text-[2rem] font-medium sm:gap-0 sm:text-2xl lg:ml-6 lg:gap-2 lg:text-5xl xl:gap-3">
+          <div className="flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] md:gap-1 md:text-[clamp(1.2rem,2.5vw,1.8rem)] lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3">
             <p>2 Tage voller Salsa!</p>
             <p>6 Live-Orchester</p>
             <p>6 Tanzshows</p>
@@ -48,7 +48,7 @@ const SectionThree = () => {
         </div>
       </div>
       <div
-        className={`relative h-svh ${hasMultipleImages ? "cursor-pointer" : ""} sm:w-1/2`}
+        className={`relative flex h-[50vh] sm:h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}
         ref={slideContainerRef}
         onClick={hasMultipleImages ? handleImageClick : undefined}
       >
@@ -71,7 +71,7 @@ const SectionThree = () => {
 
         {/* Navigation dots - only show for multiple images */}
         {hasMultipleImages && (
-          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 space-x-2">
+          <div className="absolute bottom-4 z-10 flex space-x-2">
             {images.map((_, index) => (
               <button
                 key={index}

@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.41
+
+- SectionThree is now fully responsive
+
 v 0.1.40
 
 - SectionTwo is now fully responsive
