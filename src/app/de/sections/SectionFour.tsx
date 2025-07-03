@@ -9,12 +9,12 @@ const SectionFour = () => {
           className="mx-auto w-[75vw] max-w-[33rem] min-w-[13rem]"
         />
 
-        <p className="text-bes-amber min-text-lg max-text-2xl -mt-4 px-2 text-center text-[6vw]">
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.9rem,3vh,2.1rem)] leading-snug">
           Berlin en Salsa erhält keine öffentliche Finanzierung oder
           kommerzielle Sponsoren.
         </p>
 
-        <p className="text-bes-amber min-text-lg max-text-2xl -mt-4 px-2 text-center text-[6vw]">
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.9rem,3vh,2.1rem)] leading-snug">
           Wir sind ein Festival von und für die Salsa-Community und finanzieren
           uns ausschließlich durch den Verkauf von T-Shirts und Ihre Spenden.
         </p>
@@ -39,23 +39,23 @@ const SectionFour = () => {
         </div>
       </div>
 
-      {/* New sm to lg layout (2-column layout) */}
-      <div className="bg-bes-purple hidden h-svh w-full grid-cols-2 overflow-auto sm:grid lg:grid xl:hidden">
+      {/* Small screen layout (sm only) - 2-column layout */}
+      <div className="bg-bes-purple hidden h-svh w-full grid-cols-2 overflow-auto sm:grid md:hidden">
         {/* Left column - Financing information */}
-        <div className="flex flex-col items-center justify-center p-2 lg:p-8">
+        <div className="flex flex-col items-center justify-center p-4">
           <img
             src="/wie-finanziert-sich-berlin-en-salsa.svg"
             alt="Wie finanziert sich Berlin en Salsa"
             className="mx-auto w-[95%] max-w-[20rem]"
           />
 
-          <div className="mt-1 space-y-4 lg:mt-8 lg:space-y-6">
-            <p className="text-bes-amber text-center text-xl sm:text-2xl lg:text-3xl">
+          <div className="mt-4 space-y-4 px-2">
+            <p className="text-bes-amber text-center text-[clamp(0.9rem,2.5vw,1.3rem)]">
               Berlin en Salsa erhält keine öffentliche Finanzierung oder
               kommerzielle Sponsoren.
             </p>
 
-            <p className="text-bes-amber text-center text-xl sm:text-2xl lg:text-3xl">
+            <p className="text-bes-amber text-center text-[clamp(0.9rem,2.5vw,1.3rem)]">
               Wir sind ein Festival von und für die Salsa-Community und
               finanzieren uns ausschließlich durch den Verkauf von T-Shirts und
               Ihre Spenden.
@@ -64,23 +64,72 @@ const SectionFour = () => {
         </div>
 
         {/* Right column - T-shirts */}
-        <div className="flex flex-col items-center justify-center sm:p-8">
+        <div className="flex flex-col items-center justify-center p-4">
           <img
             src="/unterstuetze-uns-dabei.svg"
             alt="Unterstütze uns durch den Kauf eines T-Shirts"
-            className="mb-5 w-[100%] sm:max-w-[30rem] lg:mb-6"
+            className="mb-4 w-[100%] max-w-[20rem]"
           />
 
-          <div className="flex flex-row items-center justify-center gap-4 md:gap-6">
+          <div className="flex flex-row items-center justify-center gap-4">
             <img
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa weißes T-Shirt"
-              className="w-[45%] max-w-[15rem] lg:max-w-[12rem]"
+              className="w-[45%] max-w-[12rem]"
             />
             <img
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa schwarzes T-Shirt"
-              className="w-[45%] max-w-[15rem] lg:max-w-[12rem]"
+              className="w-[45%] max-w-[12rem]"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Medium to large layout (md to lg) - 2-row layout */}
+      <div className="bg-bes-purple hidden h-svh w-full flex-col overflow-auto md:flex lg:flex xl:hidden">
+        {/* Top row - Financing information */}
+        <div className="flex flex-1 flex-col items-center justify-center p-4 lg:p-8">
+          <div className="flex h-full flex-col items-center justify-center">
+            <img
+              src="/wie-finanziert-sich-berlin-en-salsa.svg"
+              alt="Wie finanziert sich Berlin en Salsa"
+              className="mx-auto mb-4 max-h-[28vh] w-[clamp(18rem,40vh,32rem)] object-contain lg:mb-4"
+            />
+
+            <div className="max-w-3xl space-y-3 px-4 lg:space-y-4">
+              <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
+                Berlin en Salsa erhält keine öffentliche Finanzierung oder
+                kommerzielle Sponsoren.
+              </p>
+
+              <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
+                Wir sind ein Festival von und für die Salsa-Community und
+                finanzieren uns ausschließlich durch den Verkauf von T-Shirts
+                und Ihre Spenden.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom row - T-shirts */}
+        <div className="flex flex-1 flex-col items-center justify-center p-4 lg:p-8">
+          <img
+            src="/unterstuetze-uns-dabei.svg"
+            alt="Unterstütze uns durch den Kauf eines T-Shirts"
+            className="mx-auto mb-4 max-h-[18vh] w-[clamp(18rem,40vh,32rem)] object-contain lg:mb-8"
+          />
+
+          <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
+            <img
+              src="/bes-camiseta-white.webp"
+              alt="Berlin en Salsa weißes T-Shirt"
+              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
+            />
+            <img
+              src="/bes-camiseta-black.webp"
+              alt="Berlin en Salsa schwarzes T-Shirt"
+              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
             />
           </div>
         </div>
