@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 0.1.43
+
+- Images selection now depends of screensize in SectionThree
+  - for under sm and from xl on we have one image
+  - for sm, md and lg we have another image
+
 v 0.1.42
 
 - SectionFour is now fully responsive

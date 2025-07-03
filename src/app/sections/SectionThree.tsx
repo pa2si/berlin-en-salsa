@@ -3,9 +3,16 @@
 import { useState, useEffect, useRef } from "react";
 
 const SectionThree = () => {
-  const images = ["/section-3-image-1.webp"];
+  // Define image sets for different screen sizes
+  const defaultImages = ["/section-3-image-1.webp"];
+  const midSizeImages = ["/section-3-image-1-mobile.webp"];
+
   const [currentImage, setCurrentImage] = useState(0);
+  const [isMidSize, setIsMidSize] = useState(false);
   const slideContainerRef = useRef<HTMLDivElement>(null);
+
+  // Get the appropriate image set based on screen size
+  const images = isMidSize ? midSizeImages : defaultImages;
   const hasMultipleImages = images.length > 1;
 
   // Handle image tap/click to advance to next image (only for multiple images)
@@ -14,6 +21,26 @@ const SectionThree = () => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }
   };
+
+  // Check screen size to determine which image set to use
+  useEffect(() => {
+    // Function to check if screen size is sm, md, or lg (768px to 1279px)
+    const checkScreenSize = () => {
+      const isSmToLg = window.matchMedia(
+        "(min-width: 640px) and (max-width: 1279px)",
+      ).matches;
+      setIsMidSize(isSmToLg);
+    };
+
+    // Check on initial load
+    checkScreenSize();
+
+    // Add event listener for resize
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
 
   // Auto-rotate images every 5 seconds (only for multiple images)
   useEffect(() => {
@@ -24,7 +51,7 @@ const SectionThree = () => {
 
       return () => clearInterval(interval);
     }
-  }, [images.length, hasMultipleImages]);
+  }, [images.length, hasMultipleImages, isMidSize]);
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
