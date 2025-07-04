@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 1.0.0
+
+- release version (same as 0.1.47).
+- website is now launched and online
+
 v 0.1.47
 
 - added overflow-y-auto
