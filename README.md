@@ -2,6 +2,14 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.0
+
+- (version naming targets the future v1.1.0 (a minor version bump for new features).)
+- route for timetable created.
+  - page.tsx has breadcrum, back button and footer as the other routes
+  - FestivalTimetable.tsx includes the acutal timetable.
+  - it needs more accurance with the display of the bubbles proportions
+
 v 1.0.0
 
 - release version (same as 0.1.47).
