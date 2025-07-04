@@ -70,6 +70,7 @@ const SectionTwo = () => {
       </div>
       <div className="bg-bes-amber flex h-auto overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
         <div className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4">
+          <h2 className="sr-only">Was ist Berlin en Salsa?</h2>
           <img
             src="/was-ist-berlin-en-salsa.svg"
             alt="Was ist Berlin en Salsa?"

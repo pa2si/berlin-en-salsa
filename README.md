@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 0.1.46
+
+- added <h2> for each Section
+
 v 0.1.45
 
 - added phone number to legal and privacy

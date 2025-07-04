@@ -57,6 +57,7 @@ const SectionThree = () => {
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
       <div className="bg-bes-red flex h-auto items-center justify-center py-12 sm:h-svh sm:w-1/2 sm:justify-start sm:py-0">
         <div className="text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 md:gap-8 lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12">
+          <h2 className="sr-only">Berlin en Salsa se viene con todo!</h2>
           <img
             src="/berlin-en-salsa-se-viene-con-todo.svg"
             alt="Berlin en Salsa se viene con todo!"

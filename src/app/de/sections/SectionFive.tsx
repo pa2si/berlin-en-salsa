@@ -7,6 +7,7 @@ const SectionFive = () => {
       <div className="flex w-full flex-1 flex-col justify-between">
         <div className="flex w-full flex-1 flex-col items-center justify-center gap-2 px-4 md:gap-4">
           <div className="mb-6 flex w-full justify-center sm:mb-2">
+            <h2 className="sr-only">Kontakt</h2>
             <img
               src="/kontakt.svg"
               alt="Kontakt"

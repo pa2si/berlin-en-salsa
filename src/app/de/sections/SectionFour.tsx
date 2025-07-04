@@ -3,6 +3,7 @@ const SectionFour = () => {
     <>
       {/* Mobile layout (only visible below sm) */}
       <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto sm:hidden">
+        <h2 className="sr-only">Wie finanziert sich Berlin en Salsa?</h2>
         <img
           src="/wie-finanziert-sich-berlin-en-salsa.svg"
           alt="Wie finanziert sich Berlin en Salsa"
