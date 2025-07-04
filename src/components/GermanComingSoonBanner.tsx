@@ -44,7 +44,7 @@ const GermanComingSoonBanner = () => {
             <img
               src="/bes-logo-habano.png"
               alt="Berlin En Salsa Logo"
-              className="h-12 w-12"
+              className="h-15 w-auto"
             />
           </motion.div>
           <div>

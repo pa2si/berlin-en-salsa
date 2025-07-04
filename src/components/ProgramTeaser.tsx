@@ -77,7 +77,7 @@ const ProgramTeaser = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="bg-bes-red bg-opacity-95 relative max-w-3xl rounded-lg p-4 shadow-2xl sm:p-8"
+              className="bg-bes-red bg-opacity-95 relative max-h-[90vh] max-w-3xl overflow-y-auto rounded-lg p-4 shadow-2xl sm:p-8"
             >
               {/* Close button */}
               <button
@@ -108,7 +108,7 @@ const ProgramTeaser = () => {
                   <img
                     src="/bes-logo-habano.png"
                     alt="Berlin En Salsa Logo"
-                    className="h-20 w-20"
+                    className="h-25 w-auto"
                   />
                 </motion.div>
               </div>

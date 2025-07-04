@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 0.1.47
+
+- added overflow-y-auto
+- corrected dimensions for bes logo in ProgramTeaser and ComingSoonBanner
+
 v 0.1.46
 
 - added <h2> for each Section
