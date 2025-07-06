@@ -353,29 +353,15 @@ export default function FestivalTimetable() {
                                     (nextSlotWithShow, i) =>
                                       nextSlotWithShow.hasShow &&
                                       nextSlotWithShow.danceShow && (
-                                        <motion.div
+                                        <div
                                           key={`show-${slotIndex}-${i}`}
-                                          initial={{ scale: 0.9 }}
-                                          animate={{
-                                            scale: [0.9, 1.05, 0.9],
-                                            boxShadow: [
-                                              "0 4px 6px rgba(0,0,0,0.1)",
-                                              "0 8px 12px rgba(0,0,0,0.2)",
-                                              "0 4px 6px rgba(0,0,0,0.1)",
-                                            ],
-                                          }}
-                                          transition={{
-                                            repeat: Infinity,
-                                            duration: 3,
-                                            ease: "easeInOut",
-                                          }}
-                                          className="bg-bes-purple absolute -right-2 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-[8px] font-black text-white shadow-lg"
+                                          className="bg-bes-purple absolute -right-2 z-30 flex items-center justify-center rounded-md px-2 py-1 text-xs font-bold text-white normal-case shadow-lg"
                                           style={{
                                             top: "calc(50% + 16px)", // Position in the second half of the combined slot
                                           }}
                                         >
                                           {nextSlotWithShow.danceShow}
-                                        </motion.div>
+                                        </div>
                                       ),
                                   )}
 
@@ -383,25 +369,9 @@ export default function FestivalTimetable() {
                               {slot.hasShow &&
                                 slot.danceShow &&
                                 !isContinuation && (
-                                  <motion.div
-                                    initial={{ scale: 0.9 }}
-                                    animate={{
-                                      scale: [0.9, 1.05, 0.9],
-                                      boxShadow: [
-                                        "0 4px 6px rgba(0,0,0,0.1)",
-                                        "0 8px 12px rgba(0,0,0,0.2)",
-                                        "0 4px 6px rgba(0,0,0,0.1)",
-                                      ],
-                                    }}
-                                    transition={{
-                                      repeat: Infinity,
-                                      duration: 3,
-                                      ease: "easeInOut",
-                                    }}
-                                    className="bg-bes-purple absolute -top-2 -right-2 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-[8px] font-black text-white shadow-lg"
-                                  >
+                                  <div className="bg-bes-purple rounded-mdpx-2 absolute -top-2 -right-2 z-30 flex items-center justify-center py-1 text-[13px] font-bold text-white normal-case shadow-lg">
                                     {slot.danceShow}
-                                  </motion.div>
+                                  </div>
                                 )}
                             </motion.div>
                           )}

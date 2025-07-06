@@ -48,7 +48,7 @@ export const saturdayTimetableData: Column[] = [
         description:
           "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
         hasShow: true,
-        danceShow: "TANZSHOW 1",
+        danceShow: "Afro-Cuban Dance Show",
       },
       {
         time: "16:00",
@@ -67,19 +67,19 @@ export const saturdayTimetableData: Column[] = [
       { time: "17:00" }, // Removed soundcheck
       {
         time: "17:30",
-        event: "Tempo Havanna",
+        event: "Live: Tempo Havanna",
         type: "main",
         description:
           "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
       },
       {
         time: "18:00",
-        event: "Tempo Havanna",
+        event: "Live: Tempo Havanna",
         type: "main",
         description:
           "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
         hasShow: true,
-        danceShow: "TANZSHOW 2",
+        danceShow: "Son Cubano Dance Show",
       },
       {
         time: "18:30",
@@ -98,19 +98,19 @@ export const saturdayTimetableData: Column[] = [
       { time: "19:30" }, // Removed soundcheck
       {
         time: "20:00",
-        event: "La Melodica",
+        event: "Live: La Melodica",
         type: "main",
         description:
           "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
       },
       {
         time: "20:30",
-        event: "La Melodica",
+        event: "Live: La Melodica",
         type: "main",
         description:
           "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
         hasShow: true,
-        danceShow: "TANZSHOW 3",
+        danceShow: "Salsa Caleña Dance Show",
       },
       {
         time: "21:00",

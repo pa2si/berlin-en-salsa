@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.4
+
+- modified Dance Show Bubbles
+
 v1.1.0-timetable.3
 
 - hover with hand over the date buttons

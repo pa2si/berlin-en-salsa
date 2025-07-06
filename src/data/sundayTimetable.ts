@@ -33,6 +33,8 @@ export const sundayTimetableData: Column[] = [
         type: "main",
         description:
           "Experience the electrifying performance of Mercadonegro Berlin, a collective bringing authentic Afro-Latin sounds with their full orchestra setup.",
+        hasShow: true,
+        danceShow: "NY On 2 Dance Show",
       },
       {
         time: "15:00",
@@ -57,11 +59,13 @@ export const sundayTimetableData: Column[] = [
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
       },
       {
-        time: "17:30",
+        time: "17:00",
         event: "Live: Burundanga",
         type: "main",
         description:
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
+        hasShow: true,
+        danceShow: "Casino Cubano Dance Show",
       },
       {
         time: "17:30",
@@ -80,14 +84,14 @@ export const sundayTimetableData: Column[] = [
       { time: "18:30" },
       {
         time: "19:00",
-        event: "Cayeye",
+        event: "Live: Cayeye",
         type: "main",
         description:
           "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
       },
       {
         time: "19:30",
-        event: "Cayeye",
+        event: "Live: Cayeye",
         type: "main",
         description:
           "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
@@ -108,7 +112,7 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "21:00",
-        event: "Berlin En Salsa Host DJs",
+        event: "DJ Set: Berlin En Salsa Host DJs",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
         description:
@@ -116,7 +120,7 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "21:30",
-        event: "Berlin En Salsa Host DJs",
+        event: "DJ Set: Berlin En Salsa Host DJs",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
         image: "/el-melomano-aleman.webp",
