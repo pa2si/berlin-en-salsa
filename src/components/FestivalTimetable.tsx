@@ -131,7 +131,7 @@ export default function FestivalTimetable() {
         {/* Day selection buttons on the right */}
         <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-y-0 sm:space-x-4 md:w-2/3">
           <button
-            className={`relative w-full transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "saturday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
+            className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "saturday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
             onClick={() => setCurrentDay("saturday")}
           >
             <Image
@@ -154,7 +154,7 @@ export default function FestivalTimetable() {
           </button>
 
           <button
-            className={`relative w-full transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "sunday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
+            className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "sunday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
             onClick={() => setCurrentDay("sunday")}
           >
             <Image
