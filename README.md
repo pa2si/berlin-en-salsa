@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.2
+
+- updated timetable for saturday and sunday.
+- added sections: presenter and host for Salsa Talks
+
 v1.1.0-timetable.1
 
 - Alternating bg color

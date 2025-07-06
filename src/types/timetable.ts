@@ -2,6 +2,8 @@ export interface TimeSlot {
   time: string;
   event?: string;
   instructor?: string;
+  presenter?: string;
+  host?: string;
   djs?: string;
   type?: "main" | "dance-show" | "workshop" | "talk";
   isExtended?: boolean; // Flag to indicate if this slot extends from previous time slot

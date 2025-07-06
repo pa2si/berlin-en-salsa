@@ -20,6 +20,8 @@ export default function FestivalTimetable() {
     endTime?: string;
     timeRange?: string;
     instructor?: string;
+    presenter?: string;
+    host?: string;
     djs?: string;
     description?: string;
     image?: string;
@@ -267,6 +269,12 @@ export default function FestivalTimetable() {
                                       .slice(slotIndex, slotIndex + count)
                                       .find((s) => s.hasShow) || slot;
 
+                                  // Try to find image in any of the slots with the same event
+                                  const slotWithImage =
+                                    column.slots
+                                      .slice(slotIndex, slotIndex + count)
+                                      .find((s) => s.image) || showSlot;
+
                                   setSelectedEventDetails({
                                     event: slot.event,
                                     time: slot.time,
@@ -274,10 +282,16 @@ export default function FestivalTimetable() {
                                     timeRange,
                                     instructor:
                                       showSlot.instructor || slot.instructor,
+                                    presenter:
+                                      showSlot.presenter || slot.presenter,
+                                    host: showSlot.host || slot.host,
                                     djs: showSlot.djs || slot.djs,
                                     description:
                                       showSlot.description || slot.description,
-                                    image: showSlot.image || slot.image,
+                                    image:
+                                      slotWithImage.image ||
+                                      showSlot.image ||
+                                      slot.image,
                                     hasShow: !!showSlot.hasShow,
                                     danceShow: showSlot.danceShow,
                                   });
@@ -470,6 +484,16 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.djs && (
                     <span className="text-sm text-gray-700">
                       DJs: {selectedEventDetails.djs}
+                    </span>
+                  )}
+                  {selectedEventDetails.presenter && (
+                    <span className="text-sm text-gray-700">
+                      Presenter: {selectedEventDetails.presenter}
+                    </span>
+                  )}
+                  {selectedEventDetails.host && (
+                    <span className="text-sm text-gray-700">
+                      Host: {selectedEventDetails.host}
                     </span>
                   )}
                   {selectedEventDetails.hasShow &&

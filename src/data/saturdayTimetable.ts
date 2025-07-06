@@ -36,14 +36,14 @@ export const saturdayTimetableData: Column[] = [
       { time: "14:30" }, // Removed soundcheck
       {
         time: "15:00",
-        event: "Alafía con Iré",
+        event: "Live: Alafía con Iré",
         type: "main",
         description:
           "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
       },
       {
         time: "15:30",
-        event: "Alafía con Iré",
+        event: "Live: Alafía con Iré",
         type: "main",
         description:
           "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
@@ -135,33 +135,61 @@ export const saturdayTimetableData: Column[] = [
     title: "Dance Workshops",
     slots: [
       {
-        time: "12:30",
-        event: "N.Y. On2",
-        instructor: "by Niya",
+        time: "13:00",
+        event: "Afro-Cuban Dance",
+        instructor: "by Leidiana",
         type: "workshop",
         description:
-          "Learn the fundamentals of New York style On2 salsa with instructor Niya. This workshop covers timing, footwork, and basic turn patterns suitable for beginners and intermediate dancers.",
+          "Learn the fundamentals of Afro-Cuban style with instructor Leidiana. This workshop covers timing, footwork, and basic turn patterns suitable for beginners and intermediate dancers.",
       },
-      { time: "13:00" },
+      {
+        time: "13:30",
+        event: "Afro-Cuban Dance",
+        instructor: "by Leidiana",
+        type: "workshop",
+        description:
+          "Learn the fundamentals of Afro-Cuban style with instructor Leidiana. This workshop covers timing, footwork, and basic turn patterns suitable for beginners and intermediate dancers.",
+      },
       { time: "13:30" },
       { time: "14:00" },
       { time: "14:30" },
+      { time: "15:00" },
+      { time: "15:30" },
       {
-        time: "15:00",
-        event: "Casino Cubano",
-        instructor: "by Lej",
+        time: "16:00",
+        event: "Son Cubano",
+        instructor: "Yago y Helen",
         type: "workshop",
         description:
-          "Dive into the rhythmic world of Cuban-style salsa casino with Lej. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+          "Dive into the rhythmic world of Son Cubano with Yago y Helen. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
       },
-      { time: "15:30" },
-      { time: "16:00" },
-      { time: "16:30" },
+      {
+        time: "16:30",
+        event: "Son Cubano",
+        instructor: "Yago y Helen",
+        type: "workshop",
+        description:
+          "Dive into the rhythmic world of Son Cubano with Yago y Helen. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+      },
       { time: "17:00" },
       { time: "17:30" },
       { time: "18:00" },
-      { time: "18:30" },
-      { time: "19:00" },
+      {
+        time: "18:30",
+        event: "Salsa Caleña",
+        instructor: "Julian y Jessica",
+        type: "workshop",
+        description:
+          "Dive into the rhythmic world of Salsa Caleña with Julian y Jessica. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+      },
+      {
+        time: "19:00",
+        event: "Salsa Caleña",
+        instructor: "Julian y Jessica",
+        type: "workshop",
+        description:
+          "Dive into the rhythmic world of Salsa Caleña with Julian y Jessica. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+      },
       { time: "19:30" },
       { time: "20:00" },
       { time: "20:30" },
@@ -173,26 +201,41 @@ export const saturdayTimetableData: Column[] = [
   {
     title: "Music Workshops",
     slots: [
+      { time: "12:30" },
       {
-        time: "12:30",
-        event: "Campana Workshop",
-        instructor: "Chucho",
+        time: "13:00",
+        event: "Clave Rhythm",
+        instructor: "Guillermo",
         type: "workshop",
         description:
-          "Master the art of campana (bell pattern) rhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
+          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
       },
-      { time: "13:00" },
-      { time: "13:30" },
-      { time: "14:00" },
-      { time: "14:30" },
       {
-        time: "15:00",
-        event: "Soneo Workshop",
-        instructor: "Hardy Munoz",
+        time: "13:30",
+        event: "Clave Rhythm",
+        instructor: "Guillermo",
         type: "workshop",
         description:
-          "Join vocalist Hardy Munoz for this interactive workshop on soneo (vocal improvisation) in salsa music. Learn techniques for creating and delivering improvised verses that respond to the chorus.",
+          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
       },
+
+      {
+        time: "14:00",
+        event: "Introduction to Polyrhythm",
+        instructor: "Angel Candeaux",
+        type: "workshop",
+        description:
+          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
+      },
+      {
+        time: "14:30",
+        event: "Introduction to Polyrhythm",
+        instructor: "Angel Candeaux",
+        type: "workshop",
+        description:
+          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
+      },
+      { time: "15:00" },
       { time: "15:30" },
       { time: "16:00" },
       { time: "16:30" },
@@ -215,53 +258,67 @@ export const saturdayTimetableData: Column[] = [
       { time: "12:30" },
       { time: "13:00" },
       { time: "13:30" },
-      { time: "14:00" },
-      { time: "14:30" },
       {
-        time: "15:00",
-        event: "Aviatrix Listening Session",
+        time: "14:00",
+        event: "TBA",
         type: "talk",
         description:
           "Join us for a guided listening experience featuring rare salsa recordings, with in-depth discussion of the musical elements, historical context, and cultural significance.",
       },
       {
-        time: "15:30",
-        event: "Aviatrix Listening Session2",
+        time: "14:00",
+        event: "TBA 2",
         type: "talk",
         description:
-          "Part 2 of our guided listening experience continues with analysis of classic arrangements and the evolution of the salsa sound through different eras.",
+          "Join us for a guided listening experience featuring rare salsa recordings, with in-depth discussion of the musical elements, historical context, and cultural significance.",
+      },
+      {
+        time: "15:00",
+      },
+      {
+        time: "15:30",
       },
       {
         time: "16:00",
-        event: "Aviatrix Listening Session3",
+        event: "echando palante (eddie palmieri)",
+        presenter: "DJ Christian",
+        host: "Aviatrix",
         type: "talk",
         description:
           "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
       },
-      { time: "16:30" },
-      { time: "17:00" },
       {
-        time: "17:30",
-        event: "Jorg",
+        time: "16:30",
+        event: "disco por confirmar",
+        presenter: "Sindicato del Vinilo",
+        host: "Aviatrix",
         type: "talk",
         description:
-          "Join salsa historian Jorg for an engaging talk on the evolution of salsa music from its roots in Cuba and Puerto Rico to its global impact today.",
+          "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
       },
       {
-        time: "18:00",
-        event: "Jorg",
+        time: "17:00",
+        event: "Frankie Dante con Larry Harlow",
+        presenter: "Mike de Son Obrero",
+        host: "Aviatrix",
         type: "talk",
         description:
-          "Join salsa historian Jorg for an engaging talk on the evolution of salsa music from its roots in Cuba and Puerto Rico to its global impact today.",
+          "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
       },
+      { time: "17:30" },
+
+      { time: "18:00" },
+
       {
         time: "18:30",
-        event: "Jorg",
+        event:
+          "Transbarrio dialogues: Las raices afroestadounidenses de la salsa",
+        presenter: "Matti Steinitz",
         type: "talk",
         description:
           "Join salsa historian Jorg for an engaging talk on the evolution of salsa music from its roots in Cuba and Puerto Rico to its global impact today.",
       },
-      { time: "19:00" },
+
       { time: "19:30" },
       { time: "20:00" },
       { time: "20:30" },
