@@ -191,15 +191,14 @@ export default function FestivalTimetable() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: columnIndex * 0.1 }}
-              className="rounded-xl border border-white/20 bg-white/10 px-3 py-4 shadow-lg backdrop-blur-sm"
+              className="overflow-visible rounded-xl border border-white/20 bg-white/10 px-3 py-4 shadow-lg backdrop-blur-sm"
             >
               <h3 className="text-bes-red mb-3 text-center text-lg font-black tracking-wide uppercase md:text-xl">
                 {column.title}
               </h3>
 
-              <div className="space-y-1">
-                {" "}
-                {/* Small spacing between slots for visual separation */}
+              <div className="border-lg space-y-1 overflow-visible">
+                {/* Small spacing between slots with visible overflow for bubbles */}
                 {column.slots.map((slot, slotIndex) => {
                   // Check if this is a continuation slot that should be visually hidden
                   const isContinuation = slot.isContinuation === true;
@@ -213,16 +212,25 @@ export default function FestivalTimetable() {
 
                   // We don't need to calculate isFirstInSeries here as it's equivalent to !isContinuation
 
+                  // Alternating background colors for time slots
+                  const bgColor =
+                    slotIndex % 2 === 0 ? "bg-bes-amber" : "bg-bes-red/10";
+
                   // Always render the time marker for each slot
                   return (
-                    <div key={slotIndex} className="flex h-[35px] items-start">
-                      <div className="w-14 flex-shrink-0 pt-1 text-xs font-bold text-gray-700">
-                        {slot.time}
-                      </div>
+                    <div
+                      key={slotIndex}
+                      className={`flex h-[35px] items-start ${bgColor}`}
+                    >
+                      {
+                        <div className="my-auto w-14 flex-shrink-0 pl-2 text-xs font-bold text-gray-700">
+                          {slot.time}
+                        </div>
 
-                      {/* For empty slots, add a subtle background to make them visible */}
+                        /* For empty slots, add a subtle background to make them visible */
+                      }
                       {!slot.event && (
-                        <div className="ml-2 flex-1 rounded-full border border-gray-200/20 bg-white/5"></div>
+                        <div className="ml-2 flex-1 rounded-full"></div>
                       )}
 
                       {/* For slots with events */}
@@ -233,7 +241,7 @@ export default function FestivalTimetable() {
                             <motion.div
                               whileHover={{ scale: 1.02, y: -2 }}
                               whileTap={{ scale: 0.98 }}
-                              className={`ml-2 flex-1 cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type, !!slot.hasShow)}`}
+                              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type, !!slot.hasShow)}`}
                               onClick={() => {
                                 setSelectedEvent(slot.event || null);
                                 if (slot.event) {
@@ -297,8 +305,8 @@ export default function FestivalTimetable() {
                                 flexDirection: "column",
                                 justifyContent: "center",
                                 position: "relative", // Needed for absolute positioning of dance show bubble
-                                top: "0px",
-                                overflow: "hidden",
+                                top: "2px",
+                                overflow: "visible",
                                 marginBottom: "auto", // No negative margin to ensure slots don't touch
                                 marginTop: "auto", // No negative margin to ensure slots don't touch
                                 zIndex: isContinuation ? "10" : "20", // Ensure proper stacking order
@@ -309,12 +317,12 @@ export default function FestivalTimetable() {
                                 <span>{slot.event}</span>
                               </div>
                               {slot.instructor && (
-                                <div className="text-[10px] font-normal normal-case opacity-90 sm:text-xs">
+                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
                                   {slot.instructor}
                                 </div>
                               )}
                               {slot.djs && (
-                                <div className="text-[10px] font-normal normal-case opacity-90 sm:text-xs">
+                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
                                   {slot.djs}
                                 </div>
                               )}
@@ -347,7 +355,7 @@ export default function FestivalTimetable() {
                                             duration: 3,
                                             ease: "easeInOut",
                                           }}
-                                          className="bg-bes-purple absolute -right-2 flex h-10 w-10 items-center justify-center rounded-full text-[8px] font-black text-white shadow-lg"
+                                          className="bg-bes-purple absolute -right-2 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-[8px] font-black text-white shadow-lg"
                                           style={{
                                             top: "calc(50% + 16px)", // Position in the second half of the combined slot
                                           }}
@@ -376,7 +384,7 @@ export default function FestivalTimetable() {
                                       duration: 3,
                                       ease: "easeInOut",
                                     }}
-                                    className="bg-bes-purple absolute -top-2 -right-2 flex h-10 w-10 items-center justify-center rounded-full text-[8px] font-black text-white shadow-lg"
+                                    className="bg-bes-purple absolute -top-2 -right-2 z-30 flex h-10 w-10 items-center justify-center rounded-full border border-white/60 text-[8px] font-black text-white shadow-lg"
                                   >
                                     {slot.danceShow}
                                   </motion.div>
@@ -386,7 +394,7 @@ export default function FestivalTimetable() {
 
                           {/* For continuation slots, we render a hidden placeholder to maintain the grid structure */}
                           {isContinuation && (
-                            <div className="ml-2 flex-1 opacity-0" />
+                            <div className="mx-auto w-[85%] opacity-0" />
                           )}
                         </>
                       )}

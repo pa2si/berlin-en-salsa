@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.1
+
+- Alternating bg color
+- adapted bubble sizes
+- text now with bes-amber
+
 v1.1.0-timetable.0
 
 - (version naming targets the future v1.1.0 (a minor version bump for new features).)
