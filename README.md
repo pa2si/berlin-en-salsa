@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.5
+
+- Added actType attribute to display performance type (DJ Set, Live) under event name
+- Changed dance show text to normal case (not uppercase)
+- Moved DJs information to only show in the modal (not in the timeline)
+
 v1.1.0-timetable.4
 
 - modified Dance Show Bubbles

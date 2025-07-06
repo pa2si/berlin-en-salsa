@@ -7,28 +7,32 @@ export const saturdayTimetableData: Column[] = [
     slots: [
       {
         time: "12:30",
-        event: "DJ Set: Rodo Le Fou & El Profe",
+        event: "Rodo Le Fou & El Profe",
+        actType: "DJ Set",
         type: "main",
         description:
           "Get the festival started with Rodo and Raul's energetic mix of classic salsa hits and contemporary Latin beats.",
       },
       {
         time: "13:00",
-        event: "DJ Set: Rodo Le Fou & El Profe",
+        event: "Rodo Le Fou & El Profe",
+        actType: "DJ Set",
         type: "main",
         description:
           "Get the festival started with Rodo and Raul's energetic mix of classic salsa hits and contemporary Latin beats.",
       },
       {
         time: "13:30",
-        event: "DJ Set: EC Kuba DJ",
+        event: "EC Kuba DJ",
+        actType: "DJ Set",
         type: "main",
         description:
           "EC Kuba DJ brings his unique selection of Cuban rhythms and tropical beats to warm up the crowd.",
       },
       {
         time: "14:00",
-        event: "DJ Set: EC Kuba DJ",
+        event: "EC Kuba DJ",
+        actType: "DJ Set",
         type: "main",
         description:
           "EC Kuba DJ brings his unique selection of Cuban rhythms and tropical beats to warm up the crowd.",
@@ -36,14 +40,16 @@ export const saturdayTimetableData: Column[] = [
       { time: "14:30" }, // Removed soundcheck
       {
         time: "15:00",
-        event: "Live: Alafía con Iré",
+        event: "Alafía con Iré",
+        actType: "Live",
         type: "main",
         description:
           "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
       },
       {
         time: "15:30",
-        event: "Live: Alafía con Iré",
+        event: "Alafía con Iré",
+        actType: "Live",
         type: "main",
         description:
           "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
@@ -52,14 +58,16 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "16:00",
-        event: "DJ Set: DJ Feikes",
+        event: "DJ Feikes",
+        actType: "DJ Set",
         type: "main",
         description:
           "DJ Feikes takes over the decks with a masterful selection of salsa, timba, and Latin beats to keep the party going.",
       },
       {
         time: "16:30",
-        event: "DJ Set: DJ Feikes",
+        event: "DJ Feikes",
+        actType: "DJ Set",
         type: "main",
         description:
           "DJ Feikes takes over the decks with a masterful selection of salsa, timba, and Latin beats to keep the party going.",
@@ -67,14 +75,16 @@ export const saturdayTimetableData: Column[] = [
       { time: "17:00" }, // Removed soundcheck
       {
         time: "17:30",
-        event: "Live: Tempo Havanna",
+        event: "Tempo Havanna",
+        actType: "Live",
         type: "main",
         description:
           "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
       },
       {
         time: "18:00",
-        event: "Live: Tempo Havanna",
+        event: "Tempo Havanna",
+        actType: "Live",
         type: "main",
         description:
           "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
@@ -83,14 +93,16 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "18:30",
-        event: "DJ Set: Necios",
+        event: "Necios",
+        actType: "DJ Set",
         type: "main",
         description:
           "Necios brings their unique blend of traditional salsa with modern influences, creating an irresistible sound that will have everyone dancing.",
       },
       {
         time: "19:00",
-        event: "DJ Set: Necios",
+        event: "Necios",
+        actType: "DJ Set",
         type: "main",
         description:
           "Necios brings their unique blend of traditional salsa with modern influences, creating an irresistible sound that will have everyone dancing.",
@@ -98,14 +110,16 @@ export const saturdayTimetableData: Column[] = [
       { time: "19:30" }, // Removed soundcheck
       {
         time: "20:00",
-        event: "Live: La Melodica",
+        event: "La Melodica",
+        actType: "Live",
         type: "main",
         description:
           "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
       },
       {
         time: "20:30",
-        event: "Live: La Melodica",
+        event: "La Melodica",
+        actType: "Live",
         type: "main",
         description:
           "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
@@ -114,7 +128,8 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "21:00",
-        event: "DJ Set: Saca Sal",
+        event: "Saca Sal",
+        actType: "DJ Set",
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
         description:
@@ -122,7 +137,8 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "21:30",
-        event: "DJ Set: Saca Sal",
+        event: "Saca Sal",
+        actType: "DJ Set",
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
         description:

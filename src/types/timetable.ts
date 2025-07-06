@@ -5,6 +5,7 @@ export interface TimeSlot {
   presenter?: string;
   host?: string;
   djs?: string;
+  actType?: string; // Type of act (e.g., "Live", "DJ Set")
   type?: "main" | "dance-show" | "workshop" | "talk";
   isExtended?: boolean; // Flag to indicate if this slot extends from previous time slot
   durationSlots?: number; // Number of time slots this event spans (for continuous events)

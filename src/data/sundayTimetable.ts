@@ -7,14 +7,16 @@ export const sundayTimetableData: Column[] = [
     slots: [
       {
         time: "12:30",
-        event: "DJ SET: Bongo",
+        event: "Bongo",
+        actType: "DJ Set",
         type: "main",
         description:
           "Day 2 kicks off with DJ Salero bringing smooth Latin vibes and infectious rhythms to warm up the festival crowd.",
       },
       {
         time: "13:00",
-        event: "DJ SET: Bongo",
+        event: "Bongo",
+        actType: "DJ Set",
         type: "main",
         description:
           "Day 2 kicks off with DJ Salero bringing smooth Latin vibes and infectious rhythms to warm up the festival crowd.",
@@ -22,14 +24,16 @@ export const sundayTimetableData: Column[] = [
       { time: "13:30" },
       {
         time: "14:00",
-        event: "Live: La Sonora Berlin",
+        event: "La Sonora Berlin",
+        actType: "Live",
         type: "main",
         description:
           "Experience the electrifying performance of Mercadonegro Berlin, a collective bringing authentic Afro-Latin sounds with their full orchestra setup.",
       },
       {
         time: "14:30",
-        event: "Live: La Sonora Berlin",
+        event: "La Sonora Berlin",
+        actType: "Live",
         type: "main",
         description:
           "Experience the electrifying performance of Mercadonegro Berlin, a collective bringing authentic Afro-Latin sounds with their full orchestra setup.",
@@ -38,14 +42,16 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "15:00",
-        event: "DJ SET: El Puma",
+        event: "El Puma",
+        actType: "DJ Set",
         type: "main",
         description:
           "DJ Yuri takes over the decks with his impressive collection of classic and contemporary salsa hits that showcase the diversity of the genre.",
       },
       {
         time: "15:30",
-        event: "DJ SET: El Puma",
+        event: "El Puma",
+        actType: "DJ Set",
         type: "main",
         description:
           "DJ Yuri takes over the decks with his impressive collection of classic and contemporary salsa hits that showcase the diversity of the genre.",
@@ -53,14 +59,16 @@ export const sundayTimetableData: Column[] = [
       { time: "16:00" },
       {
         time: "16:30",
-        event: "Live: Burundanga",
+        event: "Burundanga",
+        actType: "Live",
         type: "main",
         description:
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
       },
       {
         time: "17:00",
-        event: "Live: Burundanga",
+        event: "Burundanga",
+        actType: "Live",
         type: "main",
         description:
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
@@ -69,14 +77,16 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "17:30",
-        event: "DJ SET: Anacaona & La Vecina",
+        event: "Anacaona & La Vecina",
+        actType: "DJ Set",
         type: "main",
         description:
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
       },
       {
         time: "18:00",
-        event: "DJ SET: Anacaona & La Vecina",
+        event: "Anacaona & La Vecina",
+        actType: "DJ Set",
         type: "main",
         description:
           "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
@@ -84,35 +94,40 @@ export const sundayTimetableData: Column[] = [
       { time: "18:30" },
       {
         time: "19:00",
-        event: "Live: Cayeye",
+        event: "Cayeye",
+        actType: "Live",
         type: "main",
         description:
           "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
       },
       {
         time: "19:30",
-        event: "Live: Cayeye",
+        event: "Cayeye",
+        actType: "Live",
         type: "main",
         description:
           "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
       },
       {
         time: "20:00",
-        event: "DJ SET: FLori % Wilber",
+        event: "FLori % Wilber",
+        actType: "DJ Set",
         type: "main",
         description:
           "Son Palenque delivers authentic Colombian champeta and Afro-Caribbean sounds with their dynamic percussion section and captivating vocals.",
       },
       {
         time: "20:30",
-        event: "DJ SET: FLori % Wilber",
+        event: "FLori % Wilber",
+        actType: "DJ Set",
         type: "main",
         description:
           "Son Palenque delivers authentic Colombian champeta and Afro-Caribbean sounds with their dynamic percussion section and captivating vocals.",
       },
       {
         time: "21:00",
-        event: "DJ Set: Berlin En Salsa Host DJs",
+        event: "Berlin En Salsa Host DJs",
+        actType: "DJ Set",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
         description:
@@ -120,7 +135,8 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "21:30",
-        event: "DJ Set: Berlin En Salsa Host DJs",
+        event: "Berlin En Salsa Host DJs",
+        actType: "DJ Set",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
         image: "/el-melomano-aleman.webp",
@@ -270,7 +286,7 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "16:00",
-        event: "Me le fugue a la andela (Joe Arroyo)",
+        event: "Me le fugué a la candela (Joe Arroyo)",
         presenter: "Enilce",
         host: "Aviatrix",
         type: "talk",

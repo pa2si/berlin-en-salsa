@@ -25,6 +25,7 @@ export default function FestivalTimetable() {
     djs?: string;
     description?: string;
     image?: string;
+    actType?: string;
     hasShow?: boolean;
     danceShow?: string;
   } | null>(null);
@@ -286,6 +287,7 @@ export default function FestivalTimetable() {
                                       showSlot.presenter || slot.presenter,
                                     host: showSlot.host || slot.host,
                                     djs: showSlot.djs || slot.djs,
+                                    actType: showSlot.actType || slot.actType,
                                     description:
                                       showSlot.description || slot.description,
                                     image:
@@ -330,14 +332,14 @@ export default function FestivalTimetable() {
                               <div className="text-bes-amber flex items-center justify-center text-xs sm:text-sm">
                                 <span>{slot.event}</span>
                               </div>
+                              {slot.actType && (
+                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
+                                  {slot.actType}
+                                </div>
+                              )}
                               {slot.instructor && (
                                 <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
                                   {slot.instructor}
-                                </div>
-                              )}
-                              {slot.djs && (
-                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
-                                  {slot.djs}
                                 </div>
                               )}
 
@@ -446,6 +448,11 @@ export default function FestivalTimetable() {
                     {selectedEventDetails.timeRange ||
                       selectedEventDetails.time}
                   </span>
+                  {selectedEventDetails.actType && (
+                    <span className="text-sm text-gray-700">
+                      Type: {selectedEventDetails.actType}
+                    </span>
+                  )}
                   {selectedEventDetails.instructor && (
                     <span className="text-sm text-gray-700">
                       Instructor: {selectedEventDetails.instructor}
