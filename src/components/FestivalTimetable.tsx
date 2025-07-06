@@ -330,7 +330,11 @@ export default function FestivalTimetable() {
                               }}
                             >
                               <div className="text-bes-amber flex items-center justify-center text-xs sm:text-sm">
-                                <span>{slot.event}</span>
+                                <span title="Click for details">
+                                  {slot.event && slot.event.length > 30
+                                    ? `${slot.event.substring(0, 30)}...`
+                                    : slot.event}
+                                </span>
                               </div>
                               {slot.actType && (
                                 <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">

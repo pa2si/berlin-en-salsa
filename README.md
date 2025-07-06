@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.6
+
+- Truncated event names in the timeline to max 30 characters with "..." for longer names
+- - Added "Click for details" tooltip on event names for better usability
+
 v1.1.0-timetable.5
 
 - Added actType attribute to display performance type (DJ Set, Live) under event name
