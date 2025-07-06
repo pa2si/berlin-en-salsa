@@ -2,10 +2,20 @@ Versions:
 
 whats's done:
 
+v1.1.0-timetable.7
+
+- Added slider functionality in event modals for multiple DJs
+- Added individual DJ cards with name, image and description
+- Implemented swipe gestures for mobile users
+- Added keyboard navigation with arrow keys
+- Added visual pills for quick navigation between DJs
+- Restructured the timetable data to support multiple slides per event
+- translated the timetables to spanish
+
 v1.1.0-timetable.6
 
 - Truncated event names in the timeline to max 30 characters with "..." for longer names
-- - Added "Click for details" tooltip on event names for better usability
+- Added "Click for details" tooltip on event names for better usability
 
 v1.1.0-timetable.5
 

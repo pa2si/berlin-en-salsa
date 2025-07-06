@@ -3,15 +3,28 @@ import { Column } from "../types/timetable";
 // Saturday timetable data
 export const saturdayTimetableData: Column[] = [
   {
-    title: "Main Stage",
+    title: "Tarima Principal",
     slots: [
       {
         time: "12:30",
         event: "Rodo Le Fou & El Profe",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Get the festival started with Rodo and Raul's energetic mix of classic salsa hits and contemporary Latin beats.",
+        description: "",
+        slides: [
+          {
+            djName: "Rodo Le Fou",
+            image: "/rodo-le-fou.webp",
+            description:
+              "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
+          },
+          {
+            djName: "El Profe",
+            image: "/el-profe.webp",
+            description:
+              "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como “LA NOCHE” and “It’s a SALSA BRAVA Thing, eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
+          },
+        ],
       },
       {
         time: "13:00",
@@ -20,6 +33,20 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         description:
           "Get the festival started with Rodo and Raul's energetic mix of classic salsa hits and contemporary Latin beats.",
+        slides: [
+          {
+            djName: "Rodo Le Fou",
+            image: "/rodo-le-fou.webp",
+            description:
+              "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
+          },
+          {
+            djName: "El Profe",
+            image: "/el-profe.webp",
+            description:
+              "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como “LA NOCHE” and “It’s a SALSA BRAVA Thing, eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
+          },
+        ],
       },
       {
         time: "13:30",
@@ -134,6 +161,20 @@ export const saturdayTimetableData: Column[] = [
         djs: "Calamidades Lola & Amuleto Manuela",
         description:
           "Experience the unique sounds selected by Calamidades Lola & Amuleto Manuela as they close the night with an eclectic mix of Latin beats.",
+        slides: [
+          {
+            djName: "Calamidades Lola",
+            image: "/calamidades-lola-dj.webp",
+            description:
+              "Calamidades Lola brings her signature selection of rare vinyl gems and infectious rhythms to create an unforgettable dance experience.",
+          },
+          {
+            djName: "Amuleto Manuela",
+            image: "/amuleto-manuela-dj.webp",
+            description:
+              "Amuleto Manuela's distinctive style blends traditional salsa with contemporary influences, guaranteed to keep you moving all night long.",
+          },
+        ],
       },
       {
         time: "21:30",
@@ -143,12 +184,26 @@ export const saturdayTimetableData: Column[] = [
         djs: "Calamidades Lola & Amuleto Manuela",
         description:
           "Experience the unique sounds selected by Calamidades Lola & Amuleto Manuela as they close the night with an eclectic mix of Latin beats.",
+        slides: [
+          {
+            djName: "Calamidades Lola",
+            image: "/calamidades-lola-dj.webp",
+            description:
+              "Calamidades Lola brings her signature selection of rare vinyl gems and infectious rhythms to create an unforgettable dance experience.",
+          },
+          {
+            djName: "Amuleto Manuela",
+            image: "/amuleto-manuela-dj.webp",
+            description:
+              "Amuleto Manuela's distinctive style blends traditional salsa with contemporary influences, guaranteed to keep you moving all night long.",
+          },
+        ],
       },
       { time: "22:00" },
     ],
   },
   {
-    title: "Dance Workshops",
+    title: "Talleres de Baile",
     slots: [
       {
         time: "13:00",
@@ -215,7 +270,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Music Workshops",
+    title: "Talleres de música",
     slots: [
       { time: "12:30" },
       {
@@ -269,7 +324,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Salsa Talks",
+    title: "Charlas Salseras",
     slots: [
       { time: "12:30" },
       { time: "13:00" },

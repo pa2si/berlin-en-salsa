@@ -13,6 +13,13 @@ export default function FestivalTimetable() {
     "saturday",
   );
 
+  // State for the current slide in the modal
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  // Touch swipe state
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
   // State for the selected event details
   const [selectedEventDetails, setSelectedEventDetails] = useState<{
     event: string;
@@ -25,6 +32,7 @@ export default function FestivalTimetable() {
     djs?: string;
     description?: string;
     image?: string;
+    slides?: { image?: string; description?: string; djName?: string }[];
     actType?: string;
     hasShow?: boolean;
     danceShow?: string;
@@ -276,6 +284,53 @@ export default function FestivalTimetable() {
                                       .slice(slotIndex, slotIndex + count)
                                       .find((s) => s.image) || showSlot;
 
+                                  // Reset current slide index when opening a new modal
+                                  setCurrentSlideIndex(0);
+
+                                  // Generate slides based on slot data
+                                  const slides = [];
+
+                                  // Check if the slot has custom slides first
+                                  if (
+                                    showSlot.slides &&
+                                    showSlot.slides.length > 0
+                                  ) {
+                                    // If we have custom slides, use them exclusively
+                                    slides.push(...showSlot.slides);
+                                  } else {
+                                    // No custom slides, use the main image/description as a single slide
+                                    if (
+                                      slotWithImage.image ||
+                                      showSlot.description
+                                    ) {
+                                      slides.push({
+                                        image:
+                                          slotWithImage.image ||
+                                          showSlot.image ||
+                                          slot.image,
+                                        description:
+                                          showSlot.description ||
+                                          slot.description,
+                                      });
+                                    }
+                                  }
+
+                                  // Check for slides in merged slots too (if this event spans multiple slots)
+                                  if (slides.length === 0 || !showSlot.slides) {
+                                    // Look for slides in other slots with the same event
+                                    column.slots
+                                      .slice(slotIndex, slotIndex + count)
+                                      .filter(
+                                        (s) =>
+                                          s.slides &&
+                                          s.slides.length > 0 &&
+                                          s !== showSlot,
+                                      )
+                                      .forEach((s) => {
+                                        if (s.slides) slides.push(...s.slides);
+                                      });
+                                  }
+
                                   setSelectedEventDetails({
                                     event: slot.event,
                                     time: slot.time,
@@ -294,6 +349,8 @@ export default function FestivalTimetable() {
                                       slotWithImage.image ||
                                       showSlot.image ||
                                       slot.image,
+                                    slides:
+                                      slides.length > 0 ? slides : undefined,
                                     hasShow: !!showSlot.hasShow,
                                     danceShow: showSlot.danceShow,
                                   });
@@ -438,6 +495,28 @@ export default function FestivalTimetable() {
               }}
               className="mx-4 max-h-[90vh] w-full max-w-md overflow-y-auto rounded-xl bg-white p-6 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
+              onKeyDown={(e) => {
+                // Add keyboard navigation for the slider
+                if (
+                  selectedEventDetails?.slides &&
+                  selectedEventDetails.slides.length > 1
+                ) {
+                  if (e.key === "ArrowLeft") {
+                    setCurrentSlideIndex((prev) =>
+                      prev === 0
+                        ? selectedEventDetails.slides!.length - 1
+                        : prev - 1,
+                    );
+                  } else if (e.key === "ArrowRight") {
+                    setCurrentSlideIndex((prev) =>
+                      prev === selectedEventDetails.slides!.length - 1
+                        ? 0
+                        : prev + 1,
+                    );
+                  }
+                }
+              }}
+              tabIndex={0}
             >
               <div className="flex flex-col">
                 {/* Event title */}
@@ -486,24 +565,190 @@ export default function FestivalTimetable() {
                     )}
                 </div>
 
-                {/* Event image if available */}
-                {selectedEventDetails.image && (
-                  <div className="mb-4 overflow-hidden rounded-lg">
-                    <Image
-                      src={selectedEventDetails.image}
-                      alt={selectedEvent}
-                      width={400}
-                      height={300}
-                      className="h-auto w-full object-cover"
-                    />
-                  </div>
-                )}
+                {/* Slider for images and descriptions */}
+                {selectedEventDetails.slides &&
+                selectedEventDetails.slides.length > 0 ? (
+                  <div className="mb-6">
+                    {" "}
+                    {/* Current Slide Content with touch swipe support */}
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={currentSlideIndex}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        onTouchStart={(e) => {
+                          if (
+                            selectedEventDetails?.slides &&
+                            selectedEventDetails.slides.length > 1
+                          ) {
+                            setTouchStart(e.targetTouches[0].clientX);
+                          }
+                        }}
+                        onTouchMove={(e) => {
+                          if (
+                            selectedEventDetails?.slides &&
+                            selectedEventDetails.slides.length > 1
+                          ) {
+                            setTouchEnd(e.targetTouches[0].clientX);
+                          }
+                        }}
+                        onTouchEnd={() => {
+                          if (
+                            selectedEventDetails?.slides &&
+                            selectedEventDetails.slides.length > 1
+                          ) {
+                            if (
+                              touchStart - touchEnd > 50 &&
+                              selectedEventDetails.slides
+                            ) {
+                              // Swipe left
+                              setCurrentSlideIndex((prev) =>
+                                prev === selectedEventDetails.slides!.length - 1
+                                  ? 0
+                                  : prev + 1,
+                              );
+                            }
 
-                {/* Event description */}
-                {selectedEventDetails.description && (
-                  <p className="mb-6 text-gray-700">
-                    {selectedEventDetails.description}
-                  </p>
+                            if (
+                              touchStart - touchEnd < -50 &&
+                              selectedEventDetails.slides
+                            ) {
+                              // Swipe right
+                              setCurrentSlideIndex((prev) =>
+                                prev === 0
+                                  ? selectedEventDetails.slides!.length - 1
+                                  : prev - 1,
+                              );
+                            }
+                          }
+                        }}
+                      >
+                        {/* DJ Name if available */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.djName && (
+                          <h4 className="text-bes-red mb-3 text-lg font-bold">
+                            {
+                              selectedEventDetails.slides[currentSlideIndex]
+                                .djName
+                            }
+                          </h4>
+                        )}
+
+                        {/* Image */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.image && (
+                          <div className="mb-4 overflow-hidden rounded-lg">
+                            <Image
+                              src={
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  .image!
+                              }
+                              alt={
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  .djName ||
+                                `${selectedEvent} - Slide ${currentSlideIndex + 1}`
+                              }
+                              width={300}
+                              height={400}
+                              className="h-auto w-full object-cover"
+                            />
+                          </div>
+                        )}
+
+                        {/* Description */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.description && (
+                          <p className="mb-4 text-gray-700">
+                            {
+                              selectedEventDetails.slides[currentSlideIndex]
+                                .description
+                            }
+                          </p>
+                        )}
+                      </motion.div>
+                    </AnimatePresence>
+                    {/* Slider Navigation (only show if multiple slides) */}
+                    {selectedEventDetails.slides.length > 1 && (
+                      <div className="mt-4 flex flex-col space-y-3">
+                        {/* Navigation Buttons */}
+                        <div className="flex items-center justify-between">
+                          <button
+                            onClick={() =>
+                              setCurrentSlideIndex((prev) =>
+                                prev === 0
+                                  ? selectedEventDetails.slides!.length - 1
+                                  : prev - 1,
+                              )
+                            }
+                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors"
+                            aria-label="Previous slide"
+                          >
+                            ←
+                          </button>
+
+                          <div className="text-xs text-gray-500">
+                            {currentSlideIndex + 1} /{" "}
+                            {selectedEventDetails.slides.length}
+                          </div>
+
+                          <button
+                            onClick={() =>
+                              setCurrentSlideIndex((prev) =>
+                                prev === selectedEventDetails.slides!.length - 1
+                                  ? 0
+                                  : prev + 1,
+                              )
+                            }
+                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors"
+                            aria-label="Next slide"
+                          >
+                            →
+                          </button>
+                        </div>
+
+                        {/* DJ Navigation Pills */}
+                        <div className="flex flex-wrap justify-center gap-2">
+                          {selectedEventDetails.slides.map((slide, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentSlideIndex(index)}
+                              className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                                currentSlideIndex === index
+                                  ? "bg-bes-red text-white"
+                                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                              }`}
+                            >
+                              {slide.djName || `Slide ${index + 1}`}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <>
+                    {/* Fallback to single image if no slides */}
+                    {selectedEventDetails.image && (
+                      <div className="mb-4 overflow-hidden rounded-lg">
+                        <Image
+                          src={selectedEventDetails.image}
+                          alt={selectedEvent}
+                          width={400}
+                          height={300}
+                          className="h-auto w-full object-cover"
+                        />
+                      </div>
+                    )}
+
+                    {/* Fallback to single description if no slides */}
+                    {selectedEventDetails.description && (
+                      <p className="mb-6 text-gray-700">
+                        {selectedEventDetails.description}
+                      </p>
+                    )}
+                  </>
                 )}
 
                 {/* Close button */}

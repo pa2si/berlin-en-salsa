@@ -1,3 +1,9 @@
+export interface SlideContent {
+  image?: string;
+  description?: string;
+  djName?: string;
+}
+
 export interface TimeSlot {
   time: string;
   event?: string;
@@ -11,6 +17,7 @@ export interface TimeSlot {
   durationSlots?: number; // Number of time slots this event spans (for continuous events)
   description?: string; // Detailed description of the event for the modal
   image?: string; // Path to the image for the event
+  slides?: SlideContent[]; // Multiple images and descriptions for slider
   hasShow?: boolean; // Flag to indicate if this slot has an overlapping dance show
   danceShow?: string; // The name of the dance show (e.g., "TANZSHOW 1")
   isContinuation?: boolean; // Flag to indicate if this slot is a continuation of the same event from the previous slot

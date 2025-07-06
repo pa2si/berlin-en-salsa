@@ -132,6 +132,32 @@ export const sundayTimetableData: Column[] = [
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
         description:
           "Join us for the festival finale as Berlin's finest DJs close out the weekend with a high-energy set of the best salsa, bachata, and Latin rhythms.",
+        slides: [
+          {
+            djName: "Dracaena",
+            image: "/dracaena.webp",
+            description:
+              "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Sus sets son enérgicos y envolventes, con un enfoque en potentes solos de percusión y piano, pensados tanto para bailar como para escuchar con atención. Su propuesta gira en torno a la salsa y los sonidos de la diáspora, especialmente ritmos afrocaribeños, afrolatinos y latinoamericanos. Es parte activa de la comunidad de coleccionistas en Berlín y del equipo organizador del Berlin en Salsa Festival. Dracaena también ha participado en charlas y paneles —entre ellos con DLD— compartiendo su experiencia como selectora y coleccionista en el cruce entre música, cultura e identidad.",
+          },
+          {
+            djName: "El Vago",
+            image: "/el-vago.webp",
+            description:
+              "El Vago es un DJ, coleccionista y gestor cultural radicado en Berlín. Desde hace varios años, es el co-host de La Regla Party, una de las fiestas más emblemáticas y queridas dentro de la escena latina de la ciudad. Actualmente coordina el Festival Berlín en Salsa.",
+          },
+          {
+            djName: "El Melómano Alemán",
+            image: "/el-melomano-aleman.webp",
+            description:
+              "Apasionado coleccionista de vinilos con un oído fino para los ritmos latinoamericanos, ha cultivado desde 2006 una profunda conexión con la cultura musical colombiana. La salsa, en especial, ha capturado su atención hasta convertirse en el eje central de su colección. El sonido clásico de los años 50 a los 70 hace hervir su sangre, décadas donde considera que reside la esencia pura y vibrante de esa magistral mezcla de géneros.",
+          },
+          {
+            djName: "Andrelux",
+            image: "/andrelux-dj.webp",
+            description:
+              "Andrelux brings a unique blend of classic salsa and contemporary Latin hits, creating an unmissable dance experience.",
+          },
+        ],
       },
       {
         time: "21:30",
@@ -139,9 +165,32 @@ export const sundayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
-        image: "/el-melomano-aleman.webp",
-        description:
-          "Join us for the festival finale as Berlin's finest DJs close out the weekend with a high-energy set of the best salsa, bachata, and Latin rhythms.",
+        slides: [
+          {
+            djName: "Andrelux",
+            image: "/andrelux-dj.webp",
+            description:
+              "Andrelux brings a unique blend of classic salsa and contemporary Latin hits, creating an unmissable dance experience.",
+          },
+          {
+            djName: "Dracaena",
+            image: "/dracaena-dj.webp",
+            description:
+              "Known for her infectious energy, Dracaena specializes in bachata and salsa fusion that keeps the dance floor packed.",
+          },
+          {
+            djName: "El Vago",
+            image: "/el-vago-dj.webp",
+            description:
+              "El Vago's signature selection ranges from timeless salsa classics to cutting-edge Latin beats, creating the perfect festival atmosphere.",
+          },
+          {
+            djName: "El Melómano Alemán",
+            image: "/el-melomano-aleman.webp",
+            description:
+              "The German music lover brings his passion for authentic Latin sounds, offering a carefully curated selection of dance floor favorites.",
+          },
+        ],
       },
       { time: "22:00" },
     ],
