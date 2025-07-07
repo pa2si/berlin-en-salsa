@@ -2,9 +2,15 @@ Versions:
 
 whats's done:
 
+v 1.0.4
+
+- Fixed download functionality by adding MIME type to ensure proper filename preservation
+- Set clear descriptive filenames for downloaded program images
+
 v 1.0.3
 
-- retouched the design of the buttons in downloadModal
+- Retouched the design of the tabs in downloadModal for clearer active state indication
+- Improved tab navigation with visual indicators for active tab selection
 
 v 1.0.2
 

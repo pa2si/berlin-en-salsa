@@ -160,6 +160,7 @@ const ProgramDownloadModal = ({
               <motion.a
                 href="/program-saturday.jpeg"
                 download="Berlin-En-Salsa-Programa-Sabado.jpeg"
+                type="image/jpeg"
                 className={`bg-bes-amber text-bes-red flex items-center justify-center space-x-2 rounded-lg px-6 py-3 font-bold shadow-lg transition ${
                   activeTab === "saturday" ? "ring-2 ring-white" : ""
                 }`}
@@ -189,6 +190,7 @@ const ProgramDownloadModal = ({
               <motion.a
                 href="/program-sunday.jpeg"
                 download="Berlin-En-Salsa-Programa-Domingo.jpeg"
+                type="image/jpeg"
                 className={`bg-bes-amber text-bes-red flex items-center justify-center space-x-2 rounded-lg px-6 py-3 font-bold shadow-lg transition ${
                   activeTab === "sunday" ? "ring-2 ring-white" : ""
                 }`}
