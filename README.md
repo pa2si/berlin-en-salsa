@@ -2,6 +2,17 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.7
+
+- merged changes from main branch
+- Added fly-in animation effect for date/location text in both Spanish and German versions of SectionOne
+- Converted both SectionOne components to client components
+- Implemented Framer Motion for smooth animations
+- Added spring physics for more natural movement
+- Trigger animations when components enter viewport
+- Consistent animation experience across language versions
+- Implemented also animation for the T-shirts in SectionFive
+
 v1.1.0-timetable.7
 
 - Added slider functionality in event modals for multiple DJs
