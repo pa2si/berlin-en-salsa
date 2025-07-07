@@ -85,30 +85,56 @@ const GermanProgramDownloadModal = ({
 
           {/* Tab navigation */}
           <div className="mb-6 flex justify-center space-x-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveTab("saturday")}
-              className={`rounded-lg px-4 py-2 font-medium ${
-                activeTab === "saturday"
-                  ? "bg-bes-amber text-bes-red"
-                  : "bg-opacity-10 bg-white text-white"
-              }`}
-            >
-              Samstag
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveTab("sunday")}
-              className={`rounded-lg px-4 py-2 font-medium ${
-                activeTab === "sunday"
-                  ? "bg-bes-amber text-bes-red"
-                  : "bg-opacity-10 bg-white text-white"
-              }`}
-            >
-              Sonntag
-            </motion.button>
+            <motion.div className="relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveTab("saturday")}
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+              >
+                Samstag
+                {activeTab === "saturday" && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 rounded-lg ring-2 ring-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.button>
+              {activeTab === "saturday" && (
+                <motion.div
+                  layoutId="activeIndicator"
+                  className="absolute right-0 -bottom-1 left-0 mx-auto h-1 w-4 rounded-full bg-white"
+                />
+              )}
+            </motion.div>
+            <motion.div className="relative">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveTab("sunday")}
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+              >
+                Sonntag
+                {activeTab === "sunday" && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute inset-0 rounded-lg ring-2 ring-white"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </motion.button>
+              {activeTab === "sunday" && (
+                <motion.div
+                  layoutId="activeIndicator"
+                  className="absolute right-0 -bottom-1 left-0 mx-auto h-1 w-4 rounded-full bg-white"
+                />
+              )}
+            </motion.div>
           </div>
 
           {/* Program preview and download */}

@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 1.0.3
+
+- retouched the design of the buttons in downloadModal
+
 v 1.0.2
 
 - Moved countdown to ComingSoonBanner with animated close button and enhanced visibility
