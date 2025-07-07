@@ -2,6 +2,16 @@ Versions:
 
 whats's done:
 
+v 1.0.1
+
+- Added fly-in animation effect for date/location text in both Spanish and German versions of SectionOne
+- Converted both SectionOne components to client components
+- Implemented Framer Motion for smooth animations
+- Added spring physics for more natural movement
+- Trigger animations when components enter viewport
+- Consistent animation experience across language versions
+- Implemented also animation for the T-shirts in SectionFive
+
 v 1.0.0
 
 - release version (same as 0.1.47).

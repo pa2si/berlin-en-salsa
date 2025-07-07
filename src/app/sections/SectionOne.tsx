@@ -1,7 +1,18 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const SectionOne = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
-      <div className="bg-bes-amber flex h-svh items-center justify-center sm:w-1/2">
+      <div
+        ref={sectionRef}
+        className="bg-bes-amber flex h-svh items-center justify-center sm:w-1/2"
+      >
         <div className="flex flex-col items-center">
           <h1 className="sr-only">
             Berlin En Salsa - Festival de Salsa en Berlín para todos
@@ -11,9 +22,19 @@ const SectionOne = () => {
             alt="Berlin en Salsa Logo"
             className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-w-[100%] lg:min-w-[60%]"
           />
-          <p className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]">
+          <motion.p
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 12,
+            }}
+            className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
+          >
             19 y 20 de julio <br /> Neulich Biergarten
-          </p>
+          </motion.p>
         </div>
       </div>
 

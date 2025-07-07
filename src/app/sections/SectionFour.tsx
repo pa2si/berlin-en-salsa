@@ -1,8 +1,39 @@
+"use client";
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 const SectionFour = () => {
+  const mobileWhiteTshirtRef = useRef(null);
+  const mobileBlackTshirtRef = useRef(null);
+  const smWhiteTshirtRef = useRef(null);
+  const smBlackTshirtRef = useRef(null);
+
+  // Lower threshold and add margin to detect earlier
+  const isInViewMobileWhite = useInView(mobileWhiteTshirtRef, {
+    once: true,
+    amount: 0.05,
+    margin: "0px 0px -200px 0px",
+  });
+  const isInViewMobileBlack = useInView(mobileBlackTshirtRef, {
+    once: true,
+    amount: 0.05,
+    margin: "0px 0px -200px 0px",
+  });
+  const isInViewSmWhite = useInView(smWhiteTshirtRef, {
+    once: true,
+    amount: 0.05,
+    margin: "0px 0px -200px 0px",
+  });
+  const isInViewSmBlack = useInView(smBlackTshirtRef, {
+    once: true,
+    amount: 0.05,
+    margin: "0px 0px -200px 0px",
+  });
   return (
     <>
       {/* Mobile layout (only visible below sm) */}
-      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto sm:hidden">
+      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto pb-8 sm:hidden">
         <h2 className="sr-only">¿Cómo se financia Berlin en Salsa?</h2>
         <img
           src="/como-se-financia-berlin-en-salsa.svg"
@@ -28,15 +59,31 @@ const SectionFour = () => {
         />
 
         <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
-          <img
+          <motion.img
+            ref={mobileWhiteTshirtRef}
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
             className="w-[40vw] max-w-[15rem] min-w-[6rem]"
+            initial={{ opacity: 0, x: -100 }}
+            animate={
+              isInViewMobileWhite
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0, x: -100 }
+            }
+            transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
           />
-          <img
+          <motion.img
+            ref={mobileBlackTshirtRef}
             src="/bes-camiseta-black.webp"
             alt="Berlin en Salsa black t-shirt"
             className="w-[40vw] max-w-[15rem] min-w-[6rem]"
+            initial={{ opacity: 0, x: 100 }}
+            animate={
+              isInViewMobileBlack
+                ? { opacity: 1, x: 0 }
+                : { opacity: 0, x: 100 }
+            }
+            transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
           />
         </div>
       </div>
@@ -74,15 +121,27 @@ const SectionFour = () => {
           />
 
           <div className="flex flex-row items-center justify-center gap-4">
-            <img
+            <motion.img
+              ref={smWhiteTshirtRef}
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa white t-shirt"
               className="w-[45%] max-w-[12rem]"
+              initial={{ opacity: 0, x: -100 }}
+              animate={
+                isInViewSmWhite ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
+              }
+              transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
             />
-            <img
+            <motion.img
+              ref={smBlackTshirtRef}
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa black t-shirt"
               className="w-[45%] max-w-[12rem]"
+              initial={{ opacity: 0, x: 100 }}
+              animate={
+                isInViewSmBlack ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
+              }
+              transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
             />
           </div>
         </div>
@@ -123,15 +182,23 @@ const SectionFour = () => {
           />
 
           <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
-            <img
+            <motion.img
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa white t-shirt"
               className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
             />
-            <img
+            <motion.img
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa black t-shirt"
               className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
+              initial={{ opacity: 0, x: 100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
             />
           </div>
         </div>
@@ -140,10 +207,14 @@ const SectionFour = () => {
       {/* Desktop layout (only visible at xl and above) */}
       <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-auto px-8 xl:grid">
         <div className="flex items-center justify-center">
-          <img
+          <motion.img
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
             className="w-full px-4"
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
           />
         </div>
         <div className="flex flex-col items-center justify-center px-4 sm:space-y-4 md:space-y-2 lg:space-y-6 2xl:gap-8">
@@ -171,10 +242,14 @@ const SectionFour = () => {
           />
         </div>
         <div className="flex items-center justify-center">
-          <img
+          <motion.img
             src="/bes-camiseta-black.webp"
             alt="Berlin en Salsa black t-shirt"
             className="w-full px-4"
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
           />
         </div>
       </div>
