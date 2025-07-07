@@ -2,6 +2,18 @@ Versions:
 
 whats's done:
 
+v 1.0.5
+
+- download button is now hidden
+- Enhanced UI/UX of ComingSoonBanner in both languages:
+  - Repositioned close button to bottom-right for improved mobile accessibility
+  - Adjusted close button size on mobile devices for better touch targets
+  - Improved spacing between title text and countdown elements
+  - Enhanced vertical alignment of countdown elements on desktop displays
+  - Added proper vertical centering for better visual balance
+  - Improved responsive layout for all screen sizes
+  - Maintained consistent design across Spanish and German versions
+
 v 1.0.4
 
 - Fixed download functionality by adding MIME type to ensure proper filename preservation

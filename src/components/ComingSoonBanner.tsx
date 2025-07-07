@@ -67,77 +67,7 @@ const ComingSoonBanner = () => {
       }}
       className="bg-bes-red bg-opacity-95 fixed top-0 right-0 left-0 z-50 px-4 py-3 text-center shadow-lg backdrop-blur-sm"
     >
-      <motion.div
-        initial={{ scale: 0.8 }}
-        animate={{ scale: [0.8, 1.1, 1] }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="mx-auto flex max-w-6xl flex-col items-center justify-between space-y-2 sm:flex-row sm:space-y-0"
-      >
-        <div className="flex items-center">
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
-            className="mr-4 hidden sm:block"
-          >
-            <img
-              src="/bes-logo-habano.png"
-              alt="Berlin En Salsa Logo"
-              className="h-15 w-auto"
-            />
-          </motion.div>
-          <div>
-            <h3 className="text-bes-amber text-xl font-bold sm:text-2xl">
-              ¡Cuenta regresiva hasta Berlin En Salsa!
-            </h3>
-            <div className="flex flex-wrap items-center justify-center gap-2 text-sm text-white sm:justify-start sm:text-base">
-              <AnimatePresence>
-                {days > 0 && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    className="flex items-center"
-                  >
-                    <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
-                      {days}
-                    </span>
-                    <span className="mx-1">días</span>
-                  </motion.div>
-                )}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center"
-                >
-                  <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
-                    {hours}
-                  </span>
-                  <span className="mx-1">h</span>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center"
-                >
-                  <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
-                    {minutes}
-                  </span>
-                  <span className="mx-1">m</span>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="flex items-center"
-                >
-                  <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
-                    {seconds}
-                  </span>
-                  <span className="mx-1">s</span>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
-        </div>
+      <div className="relative mx-auto max-w-6xl">
         <motion.button
           whileHover={{
             scale: 1.1,
@@ -147,13 +77,13 @@ const ComingSoonBanner = () => {
           onMouseEnter={() => setIsButtonHovered(true)}
           onMouseLeave={() => setIsButtonHovered(false)}
           onClick={() => setIsVisible(false)}
-          className="bg-bes-amber hover:bg-opacity-95 group text-bes-red flex items-center space-x-1 rounded-full px-3 py-2 font-bold transition-all"
-          aria-label="Close announcement"
+          className="bg-bes-amber hover:bg-opacity-95 group text-bes-red absolute -right-1 -bottom-1 flex items-center space-x-1 rounded-full px-2 py-1.5 font-bold transition-all sm:right-0 sm:bottom-0 sm:px-3 sm:py-2"
+          aria-label="Cerrar anuncio"
         >
           <span className="hidden sm:inline">Cerrar</span>
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-4 w-4 sm:h-5 sm:w-5"
             viewBox="0 0 20 20"
             fill="currentColor"
             animate={isButtonHovered ? { rotate: 90 } : { rotate: 0 }}
@@ -166,7 +96,80 @@ const ComingSoonBanner = () => {
             />
           </motion.svg>
         </motion.button>
-      </motion.div>
+
+        <motion.div
+          initial={{ scale: 0.8 }}
+          animate={{ scale: [0.8, 1.1, 1] }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col items-center justify-between space-y-2 sm:flex-row sm:items-center sm:space-y-0 sm:py-1"
+        >
+          <div className="flex items-center">
+            <motion.div
+              animate={{ rotate: [0, 10, -10, 10, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
+              className="mr-4 hidden sm:block"
+            >
+              <img
+                src="/bes-logo-habano.png"
+                alt="Berlin En Salsa Logo"
+                className="h-15 w-auto"
+              />
+            </motion.div>
+            <div className="sm:flex sm:flex-col sm:justify-center">
+              <h3 className="text-bes-amber text-xl font-bold sm:text-2xl">
+                ¡Cuenta regresiva hasta Berlin En Salsa!
+              </h3>
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-sm text-white sm:justify-start sm:text-base">
+                <AnimatePresence>
+                  {days > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      className="flex items-center"
+                    >
+                      <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
+                        {days}
+                      </span>
+                      <span className="mx-1">días</span>
+                    </motion.div>
+                  )}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex items-center"
+                  >
+                    <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
+                      {hours}
+                    </span>
+                    <span className="mx-1">h</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex items-center"
+                  >
+                    <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
+                      {minutes}
+                    </span>
+                    <span className="mx-1">m</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex items-center"
+                  >
+                    <span className="bg-bes-amber text-bes-red inline-block rounded px-2 py-0.5 font-bold">
+                      {seconds}
+                    </span>
+                    <span className="mx-1">s</span>
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 };
