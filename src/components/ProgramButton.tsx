@@ -2,42 +2,69 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import ProgramDownloadModal from "./ProgramDownloadModal";
 
-const ProgramButton = ({ onClick }: { onClick: () => void }) => {
+const ProgramButton = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
 
   return (
-    <motion.button
-      className="bg-bes-red fixed right-6 bottom-6 z-40 flex items-center space-x-2 rounded-full px-3 py-3 shadow-lg sm:px-4"
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={onClick}
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 2, type: "spring" }}
-    >
-      <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="text-bes-amber h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        animate={isHovered ? { rotate: 360 } : {}}
-        transition={{ duration: 1.5, ease: "linear" }}
+    <>
+      <motion.div
+        className="fixed right-6 bottom-6 z-40"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 1, type: "spring" }}
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+        {/* Pulsing background effect */}
+        <motion.div
+          className="bg-bes-amber absolute inset-0 rounded-full opacity-30"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.2, 0.3],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
         />
-      </motion.svg>
-      <span className="text-bes-amber hidden font-bold sm:inline">
-        Ver Programa
-      </span>
-    </motion.button>
+        <motion.button
+          className="bg-bes-red relative z-10 flex items-center space-x-2 rounded-full px-3 py-3 shadow-lg sm:px-4"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onClick={() => setShowDownloadModal(true)}
+        >
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="text-bes-amber h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            animate={isHovered ? { rotate: 360 } : {}}
+            transition={{ duration: 1.5, ease: "linear" }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+          </motion.svg>
+          <span className="text-bes-amber hidden font-bold sm:inline">
+            Descargar Programa
+          </span>
+        </motion.button>
+      </motion.div>
+
+      {/* Program Download Modal */}
+      <ProgramDownloadModal
+        isOpen={showDownloadModal}
+        onClose={() => setShowDownloadModal(false)}
+      />
+    </>
   );
 };
 

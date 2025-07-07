@@ -64,7 +64,7 @@ const GermanProgramTeaser = () => {
 
   return (
     <>
-      {showButton && <GermanProgramButton onClick={() => setShowModal(true)} />}
+      {showButton && <GermanProgramButton />}
       <AnimatePresence>
         {showModal && (
           <motion.div

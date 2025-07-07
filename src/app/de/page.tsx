@@ -4,7 +4,7 @@ import SectionOne from "./sections/SectionOne";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import GermanComingSoonBanner from "@/components/GermanComingSoonBanner";
-import GermanProgramTeaser from "@/components/GermanProgramTeaser";
+import GermanProgramButton from "@/components/GermanProgramButton";
 import type { Metadata } from "next";
 
 // Base URL for absolute URLs in metadata
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main>
       <GermanComingSoonBanner />
-      <GermanProgramTeaser />
+      <GermanProgramButton />
       <SectionOne />
       <SectionTwo />
       <SectionThree />

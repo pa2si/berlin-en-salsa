@@ -10,33 +10,32 @@ const ProgramTeaser = () => {
   const [showButton, setShowButton] = useState(false);
   const [currentTeaser, setCurrentTeaser] = useState(0);
 
-  // Program teasers - replace with actual program highlights
+  // Program highlights - now with actual program information
   const teasers = [
     {
       title: "Orquestas en vivo",
-      description: "Las mejores orquestas de salsa de Berlín tocarán en vivo.",
+      description: "6 orquestas de salsa en vivo durante todo el festival.",
       icon: "🎵",
     },
     {
-      title: "Talleres de baile",
-      description:
-        "Aprende diferentes estilos de baile y déjate llevar por el ritmo.",
-      icon: "💃",
-    },
-    {
-      title: "Talleres de música",
-      description:
-        "Explora el alma de la salsa con clases de percusión, ritmo y más",
-      icon: "🎹",
-    },
-    {
-      title: "DJs Legendarios",
-      description: "Selecciones musicales que te harán bailar todo el dia.",
+      title: "20 DJs Legendarios",
+      description: "Los mejores DJ's de la escena salsera de Berlín y Europa.",
       icon: "🎧",
     },
     {
-      title: "Cultura y arte",
-      description: "Mercado De Vinilo, charlas y más actividades culturales.",
+      title: "Shows de baile",
+      description: "5 shows de baile con los mejores bailarines de Berlín.",
+      icon: "💃",
+    },
+    {
+      title: "Talleres y Charlas",
+      description:
+        "Workshops de música y baile, charlas sobre la cultura salsera.",
+      icon: "�",
+    },
+    {
+      title: "Mercado de Vinilos",
+      description: "Coleccionistas y vendedores de vinilos de salsa y más.",
       icon: "disco", // Using "disco" to indicate we'll use the image instead of emoji
     },
   ];
@@ -63,7 +62,7 @@ const ProgramTeaser = () => {
 
   return (
     <>
-      {showButton && <ProgramButton onClick={() => setShowModal(true)} />}
+      {showButton && <ProgramButton />}
       <AnimatePresence>
         {showModal && (
           <motion.div
@@ -79,36 +78,58 @@ const ProgramTeaser = () => {
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
               className="bg-bes-red bg-opacity-95 relative max-h-[90vh] max-w-3xl overflow-y-auto rounded-lg p-4 shadow-2xl sm:p-8"
             >
-              {/* Close button */}
-              <button
+              {/* Close button with animation */}
+              <motion.button
                 onClick={() => setShowModal(false)}
-                className="text-bes-amber hover:bg-opacity-10 absolute top-4 right-4 rounded-full p-2 hover:bg-white"
+                className="text-bes-amber hover:bg-opacity-10 absolute top-4 right-4 rounded-full p-3 hover:bg-white"
+                whileHover={{
+                  scale: 1.2,
+                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  rotate: [0, -10, 10, -5, 5, 0],
+                }}
+                transition={{
+                  rotate: { duration: 0.5, ease: "easeInOut" },
+                  scale: { duration: 0.2 },
+                }}
                 aria-label="Cerrar"
               >
-                <svg
+                <motion.svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
                   viewBox="0 0 20 20"
                   fill="currentColor"
+                  whileHover={{ fill: "#FFA500" }}
                 >
                   <path
                     fillRule="evenodd"
                     d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
                     clipRule="evenodd"
                   />
-                </svg>
-              </button>
+                </motion.svg>
+              </motion.button>
 
-              {/* Top disco animation */}
+              {/* Enhanced logo animation */}
               <div className="mb-6 flex justify-center">
                 <motion.div
-                  animate={{ rotate: [0, 15, -15, 0] }}
-                  transition={{ repeat: Infinity, duration: 3 }}
+                  animate={{
+                    rotate: [0, 10, -10, 0],
+                    scale: [1, 1.05, 0.95, 1],
+                  }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 3,
+                    times: [0, 0.3, 0.7, 1],
+                  }}
                 >
-                  <img
+                  <motion.img
                     src="/bes-logo-habano.png"
                     alt="Berlin En Salsa Logo"
                     className="h-25 w-auto"
+                    whileHover={{
+                      scale: 1.1,
+                      filter: "brightness(1.2)",
+                    }}
+                    transition={{ duration: 0.3 }}
                   />
                 </motion.div>
               </div>
@@ -120,7 +141,7 @@ const ProgramTeaser = () => {
                 transition={{ delay: 0.2 }}
                 className="text-bes-amber mb-4 text-center text-3xl font-bold sm:text-4xl"
               >
-                ¡Programa Completo Muy Pronto!
+                ¡Programa Completo Disponible!
               </motion.h2>
 
               {/* Teaser section */}
@@ -192,6 +213,14 @@ const ProgramTeaser = () => {
                 <p className="text-bes-amber mb-2 italic">
                   *Todas las actividades serán gratis y para toda la familia
                 </p>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.2 }}
+                  className="mt-4 text-lg font-bold text-white"
+                >
+                  ¡Te esperamos el 19 y 20 de julio en Neulich Biergarten!
+                </motion.p>
               </motion.div>
             </motion.div>
           </motion.div>

@@ -2,6 +2,19 @@ Versions:
 
 whats's done:
 
+v 1.0.2
+
+- Moved countdown to ComingSoonBanner with animated close button and enhanced visibility
+- Updated ComingSoonBanner in both Spanish and German to show days, hours, minutes, and seconds
+- Created new ProgramDownloadModal allowing users to download festival program images
+- Added tab navigation in download modal to toggle between Saturday and Sunday program
+- Replaced ProgramButton functionality to open download modal instead of teaser
+- Added animated download buttons with visual feedback for better user experience
+- Implemented pulsing background effect on ProgramButton for increased visibility
+- Fixed UI issues to prevent language button from being obscured
+- Maintained full bilingual support with identical features in Spanish and German
+- Improved mobile responsiveness across all new components
+
 v 1.0.1
 
 - Added fly-in animation effect for date/location text in both Spanish and German versions of SectionOne
