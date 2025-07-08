@@ -2,6 +2,18 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.8
+
+- updated text for Timetable in parts and images imported
+  - alafia con ire
+  - dj bongo
+  - dj feikes
+  - ec-kuba
+  - la melodica
+  - la sonora berlin
+  - necios
+  - tempo havana
+
 v1.1.1-timetable.7
 
 - merged changes from main branch

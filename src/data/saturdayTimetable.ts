@@ -10,7 +10,6 @@ export const saturdayTimetableData: Column[] = [
         event: "Rodo Le Fou & El Profe",
         actType: "DJ Set",
         type: "main",
-        description: "",
         slides: [
           {
             djName: "Rodo Le Fou",
@@ -31,8 +30,6 @@ export const saturdayTimetableData: Column[] = [
         event: "Rodo Le Fou & El Profe",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Get the festival started with Rodo and Raul's energetic mix of classic salsa hits and contemporary Latin beats.",
         slides: [
           {
             djName: "Rodo Le Fou",
@@ -54,32 +51,30 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "EC Kuba DJ brings his unique selection of Cuban rhythms and tropical beats to warm up the crowd.",
+          "Nacido en la cuidad donde se creó la rumba Ciudad de Matanzas Cuba. Reside en Berlín ya hace varios años y dando a conocer lo mejor de la música cubana en diferentes eventos y festivales como festival  Berlín fiesta Elegante, Bérgamo en Salsa Italia , Berlín Salsa congresos ,entre otros y sociales como Soda Club Berlin .Amante de la música De su tierra y siempre interesado por otra culturas musicalmente. Berlín en Salsa preparó un set de Timba, Salsa y Son Cubano.",
+        image: "/ec-kuba.webp",
       },
       {
         time: "14:00",
         event: "EC Kuba DJ",
         actType: "DJ Set",
         type: "main",
-        description:
-          "EC Kuba DJ brings his unique selection of Cuban rhythms and tropical beats to warm up the crowd.",
       },
-      { time: "14:30" }, // Removed soundcheck
+      { time: "14:30" },
       {
         time: "15:00",
         event: "Alafía con Iré",
         actType: "Live",
         type: "main",
         description:
-          "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
+          "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
+        image: "/alafia-con-ire.webp",
       },
       {
         time: "15:30",
         event: "Alafía con Iré",
         actType: "Live",
         type: "main",
-        description:
-          "Experience the powerful Afro-Cuban sounds of Alafía con Iré, bringing authentic rhythms and vibrant energy to the stage.",
         hasShow: true,
         danceShow: "Afro-Cuban Dance Show",
       },
@@ -89,32 +84,30 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "DJ Feikes takes over the decks with a masterful selection of salsa, timba, and Latin beats to keep the party going.",
+          "DJ Feikes lleva más de 35 años recorriendo el Caribe con los oídos siempre atentos. Y tras cada viaje, le acompaña el mismo dilema: ¿cómo meter todos esos discos en el avión y traerlos sanos y salvos hasta Berlín? Cada primer miércoles de mes, DJ Feikes y su compañero DJ Christian presentan su “Salsa Café” en el Club  «wilder als erwartet», frente al Nordbahnhof. Estos dos apasionados de la música ofrecen a su público una exquisita selección de su extensa colección de discos: desde los clásicos cubanos de los años 50 —con mambo, danzón y charanga—, pasando por la enérgica “salsa callejera” del Nueva York de los 60, la poderosa “salsa brava” orquestada de los 70, la salsa más melódica de los 80, hasta llegar a los sonidos románticos de los 90. Además, también suenan otros ritmos afrocaribeños como la cumbia colombiana, el merengue dominicano o incluso la salsa africana con raíces cubanas. Lo esencial: ¡que la música te conquiste y se sienta el swing!",
+        image: "/dj-feikes.webp",
       },
       {
         time: "16:30",
         event: "DJ Feikes",
         actType: "DJ Set",
         type: "main",
-        description:
-          "DJ Feikes takes over the decks with a masterful selection of salsa, timba, and Latin beats to keep the party going.",
       },
-      { time: "17:00" }, // Removed soundcheck
+      { time: "17:00" },
       {
         time: "17:30",
         event: "Tempo Havanna",
         actType: "Live",
         type: "main",
         description:
-          "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
+          "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir. Desde lo romántico y animado hasta lo enérgico, estos sonidos evocan recuerdos de noches calurosas y bebidas frescas al atardecer. Tempo Havanna inspira a su público a atreverse a desacelerar al estilo del sur, a disfrutar la vida en su forma más pura y a celebrar la alegría del baile, todo al compás del tempo de La Habana.",
+        image: "/tempo-havana.webp",
       },
       {
         time: "18:00",
         event: "Tempo Havanna",
         actType: "Live",
         type: "main",
-        description:
-          "Feel the rhythm of Tempo Havanna as they deliver authentic Cuban sounds with their vibrant percussion and soulful vocals.",
         hasShow: true,
         danceShow: "Son Cubano Dance Show",
       },
@@ -124,32 +117,29 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "Necios brings their unique blend of traditional salsa with modern influences, creating an irresistible sound that will have everyone dancing.",
+          "Emergiendo de las profundidades de noches llenas de ritmos de cumbia y 'baldosas de salsa', un profundo amor por la música transformó a tres amigos en NECIOS. Originalmente de Colombia y Ecuador, este colectivo de SELECTORES SONOROS, con sede en Berlín, ha dado vida a un viaje impulsado por vinilos y agujas. Su colección es una fusión fascinante de sonidos que abarca la amplitud y longitud de América Latina, explorando sus raíces más profundas y nuevos horizontes electrónicos. 'Necio' o 'Necia' es alguien testarudo, que va hasta las últimas consecuencias por lo que realmente cree. ¡Aunque eso signifique no seguir las reglas!",
       },
       {
         time: "19:00",
         event: "Necios",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Necios brings their unique blend of traditional salsa with modern influences, creating an irresistible sound that will have everyone dancing.",
       },
-      { time: "19:30" }, // Removed soundcheck
+      { time: "19:30" },
       {
         time: "20:00",
         event: "La Melodica",
         actType: "Live",
         type: "main",
         description:
-          "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
+          "¡La Melodica – Salsa Dura sin compromisos! Diez músicos de primer nivel, un ritmo arrollador y pura energía: La Melodica representa la Salsa Dura en su forma más potente. Bajo la dirección del pianista Jonatan Morgenstern, la banda lleva a escena un sonido explosivo, con metales contundentes, percusiones virtuosas y una voz que arrastra al público al baile.",
+        image: "/la-melodica.webp",
       },
       {
         time: "20:30",
         event: "La Melodica",
         actType: "Live",
         type: "main",
-        description:
-          "La Melodica delivers a powerful performance with their rich orchestral sound, blending classic salsa arrangements with contemporary influences.",
         hasShow: true,
         danceShow: "Salsa Caleña Dance Show",
       },
@@ -160,21 +150,8 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
         description:
-          "Experience the unique sounds selected by Calamidades Lola & Amuleto Manuela as they close the night with an eclectic mix of Latin beats.",
-        slides: [
-          {
-            djName: "Calamidades Lola",
-            image: "/calamidades-lola-dj.webp",
-            description:
-              "Calamidades Lola brings her signature selection of rare vinyl gems and infectious rhythms to create an unforgettable dance experience.",
-          },
-          {
-            djName: "Amuleto Manuela",
-            image: "/amuleto-manuela-dj.webp",
-            description:
-              "Amuleto Manuela's distinctive style blends traditional salsa with contemporary influences, guaranteed to keep you moving all night long.",
-          },
-        ],
+          "SACA SAL es un ritual colectivo musical guiado por ritmos y ecos de nuestros ancestros que nos invita a un espacio de alegría y liberación. Con música del llamado sur global en formato vinilo, este ritual colectivo cataliza y sacude emociones, dolores, miedos, y les da la bienvenida para ser transformados a través del movimiento corporal y la escucha del cuerpo. Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas. SACA SAL son Calamidades Lola @pissandlove & @amuletomanuela Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación. Radicada en Berlín, gran parte de su colección y selección musical está guiada por su experiencia migratoria. Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos (paisajes sonoros, esculturas sonoras, prácticas colectivas de escucha y programas de radio), la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro. Aborda temas de diáspora e identidad con el deseo de desaprender y recordar otras formas de habitar nuestra experiencia colectiva de vida.",
+        image: "/saca-sal.webp",
       },
       {
         time: "21:30",
@@ -182,22 +159,6 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
-        description:
-          "Experience the unique sounds selected by Calamidades Lola & Amuleto Manuela as they close the night with an eclectic mix of Latin beats.",
-        slides: [
-          {
-            djName: "Calamidades Lola",
-            image: "/calamidades-lola-dj.webp",
-            description:
-              "Calamidades Lola brings her signature selection of rare vinyl gems and infectious rhythms to create an unforgettable dance experience.",
-          },
-          {
-            djName: "Amuleto Manuela",
-            image: "/amuleto-manuela-dj.webp",
-            description:
-              "Amuleto Manuela's distinctive style blends traditional salsa with contemporary influences, guaranteed to keep you moving all night long.",
-          },
-        ],
       },
       { time: "22:00" },
     ],

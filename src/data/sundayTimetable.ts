@@ -11,15 +11,14 @@ export const sundayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "Day 2 kicks off with DJ Salero bringing smooth Latin vibes and infectious rhythms to warm up the festival crowd.",
+          "Desde Cali, DJ Bongo revive el espíritu de la vieja escuela: salsa brava, calle y sudor. Un sonido sin adornos, directo al alma del bailador. ¡Salsa con corazón!",
+        image: "/dj-bongo.webp",
       },
       {
         time: "13:00",
         event: "Bongo",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Day 2 kicks off with DJ Salero bringing smooth Latin vibes and infectious rhythms to warm up the festival crowd.",
       },
       { time: "13:30" },
       {
@@ -28,15 +27,14 @@ export const sundayTimetableData: Column[] = [
         actType: "Live",
         type: "main",
         description:
-          "Experience the electrifying performance of Mercadonegro Berlin, a collective bringing authentic Afro-Latin sounds with their full orchestra setup.",
+          "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas.",
+        image: "/la-sonora-berlin.webp",
       },
       {
         time: "14:30",
         event: "La Sonora Berlin",
         actType: "Live",
         type: "main",
-        description:
-          "Experience the electrifying performance of Mercadonegro Berlin, a collective bringing authentic Afro-Latin sounds with their full orchestra setup.",
         hasShow: true,
         danceShow: "NY On 2 Dance Show",
       },
