@@ -2,7 +2,21 @@ Versions:
 
 whats's done:
 
-v 1.0.6
+v 1.0.7
+
+- Updated program images in download modals:
+  - Changed image file format from JPEG to PNG for better quality
+  - Updated file paths to use new naming convention (program-sabado.png, program-domingo.png)
+  - Updated download attributes and MIME types to match new PNG format
+- Improved icon display in buttons and modals:
+  - ProgramButton and GermanProgramButton now show:
+    - Download icon on desktop (sm+) with rotation animation on hover
+    - Program sheet icon on mobile (below sm) with pulse animation on hover
+  - Download Modal buttons always show download icons with bounce animation for consistency
+  - Maintained consistent UI/UX across Spanish and German versions
+- Download button is now visible again
+
+  1.0.6
 
 - New images for Program to download
 - Donwloadbutton not hidden anymore
