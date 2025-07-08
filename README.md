@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 1.0.6
+
+- New images for Program to download
+- Donwloadbutton not hidden anymore
+
 v 1.0.5
 
 - download button is now hidden
