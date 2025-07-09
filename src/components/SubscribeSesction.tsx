@@ -87,7 +87,7 @@ export const SubscribeSection = () => {
           </div>
 
           <div className="flex w-full flex-col items-center gap-4 sm:gap-2 md:gap-3 lg:gap-8">
-            <div className="flex w-full items-start gap-2 sm:gap-1 md:gap-1.5 lg:gap-2">
+            <div className="flex w-full items-start gap-2 font-semibold sm:gap-1 md:gap-1.5 lg:gap-2">
               <input
                 type="checkbox"
                 id="privacy-checkbox"
@@ -98,7 +98,7 @@ export const SubscribeSection = () => {
               />
               <label
                 htmlFor="privacy-checkbox"
-                className="text-bes-purple text-sm sm:text-xs md:text-xs lg:text-sm"
+                className="text-bes-purple text-sm font-semibold sm:text-xs md:text-xs lg:text-sm"
               >
                 Acepto la{" "}
                 <a

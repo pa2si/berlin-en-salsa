@@ -63,7 +63,7 @@ const SectionThree = () => {
             alt="Berlin en Salsa se viene con todo!"
             className="mx-auto -ml-1 h-auto w-[90%] max-w-[24rem] sm:max-w-[16rem] md:-mb-6 md:max-w-[20rem] lg:h-[clamp(6rem,12vh,10rem)] lg:max-w-[30rem] xl:h-[clamp(8rem,15vh,12rem)] 2xl:h-[clamp(9rem,18vh,14rem)]"
           />
-          <div className="flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] md:gap-1 md:text-[clamp(1.2rem,2.5vw,1.8rem)] lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3">
+          <div className="flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] font-semibold sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] md:gap-1 md:text-[clamp(1.2rem,2.5vw,1.8rem)] lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3">
             <p>2 días de pura salsa!</p>
             <p>6 orquestas en vivo</p>
             <p>5 shows de baile</p>

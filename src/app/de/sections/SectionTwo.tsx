@@ -77,7 +77,7 @@ const SectionTwo = () => {
             className="mb-4 h-auto max-h-[4vh] min-h-[80px] w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[15vh]"
           />
 
-          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[95%] flex-col justify-between gap-y-5 px-4 text-center sm:h-[65%] sm:max-w-[95%] sm:gap-y-5 sm:px-6 xl:gap-y-3">
+          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[95%] flex-col justify-between gap-y-5 px-4 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-5 sm:px-6 xl:gap-y-3">
             <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
               Ein Wochenende organisiert von und für die Salsa-Community in
               Berlin. Genieße es!

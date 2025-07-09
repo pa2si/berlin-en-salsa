@@ -77,7 +77,7 @@ const ProgramDownloadModal = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mb-6 text-center text-white"
+            className="mb-6 text-center font-semibold text-white"
           >
             Descarga el programa completo para tenerlo siempre a mano.
           </motion.p>
@@ -89,7 +89,7 @@ const ProgramDownloadModal = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab("saturday")}
-                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-semibold shadow-md"
               >
                 Sábado
                 {activeTab === "saturday" && (
@@ -114,7 +114,7 @@ const ProgramDownloadModal = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab("sunday")}
-                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-semibold shadow-md"
               >
                 Domingo
                 {activeTab === "sunday" && (
@@ -224,7 +224,7 @@ const ProgramDownloadModal = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-6 text-center text-sm text-white"
+            className="mt-6 text-center text-sm font-semibold text-white"
           >
             *Todos los eventos son de entrada libre y gratuita
           </motion.p>

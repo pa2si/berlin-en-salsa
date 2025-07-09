@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="text-bes-red pb-12 text-center md:pb-4">
+    <footer className="text-bes-red pb-12 text-center font-medium md:pb-4">
       <div className="container mx-auto">
-        <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium md:gap-4">
+        <div className="semibold flex flex-wrap items-center justify-center gap-2 text-sm md:gap-4">
           <Link
             href="/de/datenschutz"
             className="hover:text-bes-red/80 transition-colors hover:underline"

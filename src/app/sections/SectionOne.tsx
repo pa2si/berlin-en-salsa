@@ -31,7 +31,7 @@ const SectionOne = () => {
               stiffness: 100,
               damping: 12,
             }}
-            className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
+            className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] font-bold sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
           >
             19 y 20 de julio <br /> Neulich Biergarten
           </motion.p>
@@ -45,7 +45,7 @@ const SectionOne = () => {
           backgroundPosition: "100% 40%",
         }}
       >
-        <div className="text-bes-amber flex h-[65%] flex-col items-center justify-between gap-0 -space-y-[0.35em] py-1.5 lg:h-[70%]">
+        <div className="text-bes-amber flex h-[65%] flex-col items-center justify-between gap-0 -space-y-[0.35em] py-1.5 font-bold tracking-widest lg:h-[70%]">
           <p className="text-[clamp(2rem,7vh,7.5rem)] xl:text-[clamp(2.5rem,10vh,9.5rem)]">
             ¡Un festival
           </p>

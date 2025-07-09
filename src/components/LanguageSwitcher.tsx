@@ -1,10 +1,9 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 
 const LanguageSwitcher = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const [currentLang, setCurrentLang] = useState("es");
   const [isVisible, setIsVisible] = useState(true);
@@ -79,27 +78,28 @@ const LanguageSwitcher = () => {
   const switchLanguage = (lang: string) => {
     if (lang === currentLang) return;
 
+    // Use window.location for a full page refresh to properly apply layout changes
     if (lang === "de") {
       // Handle switching from Spanish to German
       if (pathname === "/") {
-        router.push("/de");
+        window.location.href = "/de";
       } else if (pathname === "/privacy") {
-        router.push("/de/privacy");
+        window.location.href = "/de/privacy";
       } else if (pathname === "/impressum") {
-        router.push("/de/legal");
+        window.location.href = "/de/legal";
       } else {
-        router.push("/de");
+        window.location.href = "/de";
       }
     } else {
       // Handle switching from German to Spanish
       if (pathname === "/de") {
-        router.push("/");
+        window.location.href = "/";
       } else if (pathname === "/de/privacy") {
-        router.push("/privacy");
+        window.location.href = "/privacy";
       } else if (pathname === "/de/legal") {
-        router.push("/impressum");
+        window.location.href = "/impressum";
       } else {
-        router.push("/");
+        window.location.href = "/";
       }
     }
   };
@@ -112,9 +112,9 @@ const LanguageSwitcher = () => {
           : "translate-y-0 opacity-100"
       }`}
     >
-      <div className="flex overflow-hidden rounded-full bg-gray-900/40 p-1 shadow-lg backdrop-blur-md">
+      <div className="backdrop-blur-m flex overflow-hidden rounded-full bg-gray-900/40 p-1 shadow-lg">
         <button
-          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
+          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-200 ${
             currentLang === "es"
               ? "bg-bes-amber text-bes-red shadow-inner"
               : "text-gray-300 hover:text-white"
@@ -124,7 +124,7 @@ const LanguageSwitcher = () => {
           ES
         </button>
         <button
-          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
+          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-200 ${
             currentLang === "de"
               ? "bg-bes-amber text-bes-red shadow-inner"
               : "text-gray-300 hover:text-white"

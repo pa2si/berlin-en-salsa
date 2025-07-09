@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { Instrument_Serif } from "next/font/google";
 import "../globals.css";
+
+// Configure the Instrument Serif font
+const instrumentSerif = Instrument_Serif({
+  weight: ["400"],
+  style: ["normal"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 // Base URL for absolute URLs in metadata
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
@@ -108,7 +117,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <body className="overflow-x-hidden antialiased">
+      <body
+        className={`overflow-x-hidden antialiased ${instrumentSerif.className}`}
+      >
         <LanguageSwitcher />
         {children}
       </body>

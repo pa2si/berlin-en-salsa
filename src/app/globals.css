@@ -1,16 +1,9 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "NewSpirit";
-  src: url("/fonts/new-spirit-medium-condensed.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-new-spirit: "NewSpirit", Arial, sans-serif;
+  /* Font family is now handled by Next.js font module */
 }
 
 @theme inline {
@@ -31,6 +24,6 @@
 
 body {
   color: var(--foreground);
-  font-family: var(--font-new-spirit);
+  /* Font family now handled by Next.js font module */
   overflow-x: hidden;
 }

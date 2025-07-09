@@ -98,7 +98,7 @@ export const SubscribeSection = () => {
               />
               <label
                 htmlFor="privacy-checkbox"
-                className="text-bes-purple text-sm sm:text-xs md:text-xs lg:text-sm"
+                className="text-bes-purple text-sm font-semibold sm:text-xs md:text-xs lg:text-sm"
               >
                 Ich akzeptiere die{" "}
                 <a

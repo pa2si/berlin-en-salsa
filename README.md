@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 1.0.8
+
+- Changed the Font
+  - deleted all adobe new spirit font imports and usage of that in the website.
+  - now using Instrument Serif
+
 v 1.0.7
 
 - Updated program images in download modals:

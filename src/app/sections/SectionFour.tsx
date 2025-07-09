@@ -226,11 +226,11 @@ const SectionFour = () => {
             />
           </div>
 
-          <p className="text-bes-amber text-center lg:text-2xl xl:text-3xl">
+          <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-3xl">
             Berlin en Salsa no cuenta con financiación pública ni patrocinio
             comercial.
           </p>
-          <p className="text-bes-amber text-center lg:text-2xl xl:text-3xl">
+          <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-3xl">
             Somos un festival hecho por y para la comunidad salsera, y nos
             financiamos únicamente a través de la venta de camisetas y sus
             donaciones.

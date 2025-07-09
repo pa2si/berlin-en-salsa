@@ -77,7 +77,7 @@ const GermanProgramDownloadModal = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="mb-6 text-center text-white"
+            className="mb-6 text-center font-semibold text-white"
           >
             Lade das komplette Programm herunter, damit du es immer griffbereit
             hast.
@@ -90,7 +90,7 @@ const GermanProgramDownloadModal = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab("saturday")}
-                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-semibold shadow-md"
               >
                 Samstag
                 {activeTab === "saturday" && (
@@ -115,7 +115,7 @@ const GermanProgramDownloadModal = ({
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveTab("sunday")}
-                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-medium shadow-md"
+                className="bg-bes-amber text-bes-red relative rounded-lg px-4 py-2 font-semibold shadow-md"
               >
                 Sonntag
                 {activeTab === "sunday" && (
@@ -225,7 +225,7 @@ const GermanProgramDownloadModal = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="mt-6 text-center text-sm text-white"
+            className="mt-6 text-center text-sm font-semibold text-white"
           >
             *Alle Veranstaltungen sind kostenlos und öffentlich zugänglich
           </motion.p>
