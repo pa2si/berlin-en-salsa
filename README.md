@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.9
+
+- new font Instrument Serif and deleted adobe font
+
 v1.1.1-timetable.8
 
 - updated text for Timetable in parts and images imported
