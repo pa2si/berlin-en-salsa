@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 1.0.9
+
+- updated Privacy for the new font
+- corrected title for german SectionOne title under the main logo (19. und 20. Jui)
+- SectionTwo corrected double "und" in german version
+
 v 1.0.8
 
 - Changed the Font

@@ -33,7 +33,7 @@ const SectionOne = () => {
             }}
             className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] font-bold sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
           >
-            19 und 20 de julio <br /> Neulich Biergarten
+            19. und 20. Juli <br /> Neulich Biergarten
           </motion.p>
         </div>
       </div>

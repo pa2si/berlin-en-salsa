@@ -88,8 +88,8 @@ const SectionTwo = () => {
               mehr.
             </p>
             <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
-              Eine Veranstaltung, die in Zeiten von Kürzungen und und Rechtsruck
-              auf Solidarität, Kultur und Community setzt.
+              Eine Veranstaltung, die in Zeiten von Kürzungen und Rechtsruck auf
+              Solidarität, Kultur und Community setzt.
             </p>
             <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
               Komm, teile, unterstütze und feiere mit uns die Salsa-Kultur
