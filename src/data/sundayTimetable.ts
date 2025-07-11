@@ -26,9 +26,6 @@ export const sundayTimetableData: Column[] = [
         event: "La Sonora Berlin",
         actType: "Live",
         type: "main",
-        description:
-          "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas.",
-        image: "/la-sonora-berlin.webp",
       },
       {
         time: "14:30",
@@ -37,6 +34,23 @@ export const sundayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "NY On 2 Dance Show",
+        dancers: "Niya",
+        slides: [
+          {
+            image: "/sonora-berlin.webp",
+            bandName: "Sonora Berlin",
+            description:
+              "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas.",
+          },
+          {
+            image: "/jessi-julian.webp",
+            dancerOne: "Jessica",
+            dancerTwo: "Julian",
+            dancerOneDescription: "tba",
+            dancerTwoDescription:
+              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+          },
+        ],
       },
       {
         time: "15:00",
@@ -67,10 +81,25 @@ export const sundayTimetableData: Column[] = [
         event: "Burundanga",
         actType: "Live",
         type: "main",
-        description:
-          "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
         hasShow: true,
         danceShow: "Casino Cubano Dance Show",
+        dancers: "Jessica & Julian",
+        slides: [
+          {
+            image: "/burundanga.webp",
+            bandName: "Burundanga",
+            description:
+              "Ocho burundangueras de Colombia, India y Alemania sacan a cualquiera del asiento con su ardiente mezcla de salsa, merengue y rumba. Combinando elementos de jazz y flamenco, presentan versiones reinterpretadas de arreglos tradicionales de salsa. Fundada en 1992 como una banda de salsa integrada exclusivamente por mujeres, el grupo ha evolucionado hasta convertirse en una banda emocionante, multicultural y abierta, que mira hacia atrás con orgullo por los muchos conciertos y experiencias compartidas en diversas formaciones. Frente a esta poderosa formación de músicos experimentados, canta, baila, cuenta historias, bromea y ríe Sonia Solarte — poeta y cantante de Cali, la capital salsera de Colombia. Con Doris Alzarte, oriunda de Medellín, estas dos mujeres llenas de energía traen la alegría de vivir de América Latina a Berlín.",
+          },
+          {
+            image: "/jessi-julian.webp",
+            dancerOne: "Jessica",
+            dancerTwo: "Julian",
+            dancerOneDescription: "tba",
+            dancerTwoDescription:
+              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+          },
+        ],
       },
       {
         time: "17:30",

@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.19
+
+- Main Stage except for dance shows done for monday
+
 v1.1.1-timetable.18
 
 - Main Stage DJs sunday now also completed
