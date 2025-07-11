@@ -148,7 +148,7 @@ const ProgramDownloadModal = ({
                 className="mb-6 h-64 w-full overflow-hidden rounded-lg sm:h-80 md:h-96"
               >
                 <img
-                  src={`/program-${activeTab === "saturday" ? "sabado" : "domingo"}.png`}
+                  src={`/program-${activeTab === "saturday" ? "sabado" : "domingo"}.jpg`}
                   alt={`Programa ${activeTab === "saturday" ? "del Sábado" : "del Domingo"}`}
                   className="h-full w-full object-contain"
                 />
@@ -158,9 +158,9 @@ const ProgramDownloadModal = ({
             {/* Download buttons */}
             <div className="mt-4 flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
               <motion.a
-                href="/program-sabado.png"
-                download="Berlin-En-Salsa-Programa-Sabado.png"
-                type="image/png"
+                href="/program-sabado.jpg"
+                download="Berlin-En-Salsa-Programa-Sabado.jpg"
+                type="image/jpg"
                 className={`bg-bes-amber text-bes-red flex items-center justify-center space-x-2 rounded-lg px-6 py-3 font-bold shadow-lg transition ${
                   activeTab === "saturday" ? "ring-2 ring-white" : ""
                 }`}
@@ -188,9 +188,9 @@ const ProgramDownloadModal = ({
                 <span>Programa Sábado</span>
               </motion.a>
               <motion.a
-                href="/program-domingo.png"
-                download="Berlin-En-Salsa-Programa-Domingo.png"
-                type="image/png"
+                href="/program-domingo.jpg"
+                download="Berlin-En-Salsa-Programa-Domingo.jpg"
+                type="image/jpg"
                 className={`bg-bes-amber text-bes-red flex items-center justify-center space-x-2 rounded-lg px-6 py-3 font-bold shadow-lg transition ${
                   activeTab === "sunday" ? "ring-2 ring-white" : ""
                 }`}

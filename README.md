@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 1.0.10
+
+- updated Program for download
+
 v 1.0.9
 
 - updated Privacy for the new font
