@@ -12,6 +12,7 @@ export interface SlideContent {
   djOneDescription?: string; // Description for first DJ
   djTwoDescription?: string; // Description for second DJ
   bandName?: string;
+  genreDescription?: string; // Description of the dance genre/style
 }
 
 export interface TimeSlot {

@@ -46,6 +46,7 @@ export default function FestivalTimetable() {
       djTwo?: string;
       djOneDescription?: string;
       djTwoDescription?: string;
+      genreDescription?: string;
     }[];
     actType?: string;
     hasShow?: boolean;
@@ -809,6 +810,19 @@ export default function FestivalTimetable() {
                               </p>
                             </div>
                           )}
+
+                        {/* Genre Description */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.genreDescription && (
+                          <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
+                            <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              {
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  ?.genreDescription
+                              }
+                            </p>
+                          </div>
+                        )}
                       </motion.div>
                     </AnimatePresence>
                     {/* Slider Navigation (only show if multiple slides) */}

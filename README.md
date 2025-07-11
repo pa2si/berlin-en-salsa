@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.14
+
+- Added support for dance genre descriptions with a new genreDescription field
+- Added a stylized display box for genre descriptions with light amber background
+- Added Son Cubano genre description to the Tempo Havanna dance show
+- The genre descriptions provide cultural and historical context about dance styles
+
 v1.1.1-timetable.13
 
 - Simplified the modal interface by removing redundant DJ names that appeared above the image
