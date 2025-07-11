@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.11
+
+- hover cursor in modal for multiple acts
+
 v1.1.1-timetable.10
 
 - adapted fonts in timetable and color for description in modal

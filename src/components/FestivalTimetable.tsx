@@ -682,7 +682,7 @@ export default function FestivalTimetable() {
                                   : prev - 1,
                               )
                             }
-                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors"
+                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
                             aria-label="Previous slide"
                           >
                             ←
@@ -701,7 +701,7 @@ export default function FestivalTimetable() {
                                   : prev + 1,
                               )
                             }
-                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors"
+                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
                             aria-label="Next slide"
                           >
                             →
@@ -714,7 +714,7 @@ export default function FestivalTimetable() {
                             <button
                               key={index}
                               onClick={() => setCurrentSlideIndex(index)}
-                              className={`rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                              className={`rounded-full px-3 py-1 text-xs font-medium transition-all hover:cursor-pointer ${
                                 currentSlideIndex === index
                                   ? "bg-bes-red text-white"
                                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
