@@ -32,7 +32,7 @@ export interface TimeSlot {
   hasShow?: boolean; // Flag to indicate if this slot has an overlapping dance show
   danceShow?: string; // The name of the dance show (e.g., "TANZSHOW 1")
   dancers?: string; // The names of the dancers in the show (legacy field)
-  danceShowImage?: string; // Path to the image for the dance show (legacy field)
+  danceShowImage?: string; // @deprecated - No longer needed as images are now stored in slides
   isContinuation?: boolean; // Flag to indicate if this slot is a continuation of the same event from the previous slot
 }
 

@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.15
+
+- Removed redundant danceShowImage field as images are now fully managed in slides
+- Improved code to no longer depend on the deprecated field
+- Maintained backward compatibility for existing data
+- Simplified data structure by consolidating all visual content in the slides array
+
 v1.1.1-timetable.14
 
 - Added support for dance genre descriptions with a new genreDescription field

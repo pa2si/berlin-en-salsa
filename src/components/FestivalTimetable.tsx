@@ -52,6 +52,7 @@ export default function FestivalTimetable() {
     hasShow?: boolean;
     danceShow?: string;
     dancers?: string;
+    // danceShowImage is deprecated but kept for backward compatibility
     danceShowImage?: string;
   } | null>(null);
 
@@ -349,21 +350,25 @@ export default function FestivalTimetable() {
                                   }
 
                                   // Add dance show details as a slide if it exists and isn't already included
-                                  if (
-                                    showSlot.hasShow &&
-                                    showSlot.danceShowImage
-                                  ) {
+                                  if (showSlot.hasShow && showSlot.danceShow) {
                                     // Check if the dance show slide is not already in the slides array
                                     const hasDanceShowSlide = slides.some(
                                       (slide) =>
                                         slide.dancerName === showSlot.dancers ||
-                                        slide.image === showSlot.danceShowImage,
+                                        (slide.dancerOne && slide.dancerTwo),
                                     );
 
-                                    if (!hasDanceShowSlide) {
-                                      // We'll create a dance show slide with the available information
+                                    if (
+                                      !hasDanceShowSlide &&
+                                      showSlot.dancers
+                                    ) {
+                                      // We'll create a dance show slide - but only if there isn't already a slide with dancer info
+                                      // This should not happen with the new slide structure where dancers info is integrated
                                       slides.push({
-                                        image: showSlot.danceShowImage,
+                                        // Legacy support - if danceShowImage exists use it, but this is deprecated
+                                        image:
+                                          showSlot.danceShowImage ||
+                                          "/son-cubano.webp",
                                         dancerName: showSlot.dancers, // Keep for backward compatibility
                                       });
                                     }
@@ -392,6 +397,7 @@ export default function FestivalTimetable() {
                                     hasShow: !!showSlot.hasShow,
                                     danceShow: showSlot.danceShow,
                                     dancers: showSlot.dancers,
+                                    // danceShowImage is kept for backward compatibility but marked for removal
                                     danceShowImage: showSlot.danceShowImage,
                                   });
                                 } else {

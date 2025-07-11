@@ -111,7 +111,8 @@ export const saturdayTimetableData: Column[] = [
         hasShow: true,
         danceShow: "Son Cubano Dance Show",
         dancers: "Helen & Yago",
-        danceShowImage: "/son-cubano.webp",
+        // danceShowImage no longer needed as image is now in slides
+        // danceShowImage: "/son-cubano.webp",
         slides: [
           {
             image: "/tempo-havana.webp",
