@@ -66,9 +66,6 @@ export const saturdayTimetableData: Column[] = [
         event: "Alafía con Iré",
         actType: "Live",
         type: "main",
-        description:
-          "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
-        image: "/alafia-con-ire.webp",
       },
       {
         time: "15:30",
@@ -77,6 +74,23 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Afro-Cuban Dance Show",
+        dancers: "Lei",
+        slides: [
+          {
+            image: "/alafia-con-ire.webp",
+            bandName: "Alafía con Iré",
+            description:
+              "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
+          },
+          {
+            image: "/lei.webp",
+            dancerOne: "Lei",
+            genreDescription:
+              "Mas que baile, es pura gozadera! El casino cubano es un estilo de baile social originado en Cuba, caracterizado por su alegría, sabor caribeño y movimientos circulares. Se baila en pareja y en rueda, destacando la improvisación, la conexión y la energía del son, la salsa y otros ritmos afrocubanos. ¡Pura fiesta y sabor cubano en movimiento! 🇨🇺💃🕺",
+            combinedDancersDescription:
+              "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
+          },
+        ],
       },
       {
         time: "16:00",
@@ -99,9 +113,6 @@ export const saturdayTimetableData: Column[] = [
         event: "Tempo Havanna",
         actType: "Live",
         type: "main",
-        description:
-          "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir. Desde lo romántico y animado hasta lo enérgico, estos sonidos evocan recuerdos de noches calurosas y bebidas frescas al atardecer. Tempo Havanna inspira a su público a atreverse a desacelerar al estilo del sur, a disfrutar la vida en su forma más pura y a celebrar la alegría del baile, todo al compás del tempo de La Habana.",
-        image: "/tempo-havana.webp",
       },
       {
         time: "18:00",
@@ -111,8 +122,6 @@ export const saturdayTimetableData: Column[] = [
         hasShow: true,
         danceShow: "Son Cubano Dance Show",
         dancers: "Helen & Yago",
-        // danceShowImage no longer needed as image is now in slides
-        // danceShowImage: "/son-cubano.webp",
         slides: [
           {
             image: "/tempo-havana.webp",
@@ -154,9 +163,6 @@ export const saturdayTimetableData: Column[] = [
         event: "La Melodica",
         actType: "Live",
         type: "main",
-        description:
-          "¡La Melodica – Salsa Dura sin compromisos! Diez músicos de primer nivel, un ritmo arrollador y pura energía: La Melodica representa la Salsa Dura en su forma más potente. Bajo la dirección del pianista Jonatan Morgenstern, la banda lleva a escena un sonido explosivo, con metales contundentes, percusiones virtuosas y una voz que arrastra al público al baile.",
-        image: "/la-melodica.webp",
       },
       {
         time: "20:30",
@@ -165,6 +171,25 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Salsa Caleña Dance Show",
+        dancers: "Jessica & Julian",
+        slides: [
+          {
+            image: "/la-melodica.webp",
+            bandName: "La Melodica",
+            description:
+              "¡La Melodica – Salsa Dura sin compromisos! Diez músicos de primer nivel, un ritmo arrollador y pura energía: La Melodica representa la Salsa Dura en su forma más potente. Bajo la dirección del pianista Jonatan Morgenstern, la banda lleva a escena un sonido explosivo, con metales contundentes, percusiones virtuosas y una voz que arrastra al público al baile.",
+          },
+          {
+            image: "/jessi-julian.webp",
+            dancerOne: "Jessica",
+            dancerTwo: "Julian",
+            genreDescription:
+              "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida! 🔥",
+            dancerOneDescription: "tba",
+            dancerTwoDescription:
+              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+          },
+        ],
       },
       {
         time: "21:00",
@@ -220,16 +245,14 @@ export const saturdayTimetableData: Column[] = [
         event: "Afro-Cuban Dance",
         instructor: "by Leidiana",
         type: "workshop",
-        description:
-          "Learn the fundamentals of Afro-Cuban style with instructor Leidiana. This workshop covers timing, footwork, and basic turn patterns suitable for beginners and intermediate dancers.",
+        description: "tba",
       },
       {
         time: "13:30",
         event: "Afro-Cuban Dance",
         instructor: "by Leidiana",
         type: "workshop",
-        description:
-          "Learn the fundamentals of Afro-Cuban style with instructor Leidiana. This workshop covers timing, footwork, and basic turn patterns suitable for beginners and intermediate dancers.",
+        description: "tba",
       },
       { time: "13:30" },
       { time: "14:00" },

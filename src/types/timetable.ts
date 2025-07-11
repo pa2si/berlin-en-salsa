@@ -7,6 +7,7 @@ export interface SlideContent {
   dancerTwo?: string; // Second dancer's name
   dancerOneDescription?: string; // Description for first dancer
   dancerTwoDescription?: string; // Description for second dancer
+  combinedDancersDescription?: string; // Combined description for both dancers when individual descriptions aren't available
   djOne?: string; // First DJ's name
   djTwo?: string; // Second DJ's name
   djOneDescription?: string; // Description for first DJ

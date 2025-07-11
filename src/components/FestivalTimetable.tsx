@@ -42,6 +42,7 @@ export default function FestivalTimetable() {
       dancerTwo?: string;
       dancerOneDescription?: string;
       dancerTwoDescription?: string;
+      combinedDancersDescription?: string;
       djOne?: string;
       djTwo?: string;
       djOneDescription?: string;
@@ -355,6 +356,7 @@ export default function FestivalTimetable() {
                                     const hasDanceShowSlide = slides.some(
                                       (slide) =>
                                         slide.dancerName === showSlot.dancers ||
+                                        slide.dancerOne || // Consider any slide with dancer info
                                         (slide.dancerOne && slide.dancerTwo),
                                     );
 
@@ -679,20 +681,21 @@ export default function FestivalTimetable() {
                           ?.dancerName ||
                           selectedEventDetails.slides[currentSlideIndex]
                             ?.bandName ||
-                          (selectedEventDetails.slides[currentSlideIndex]
-                            ?.dancerOne &&
-                            selectedEventDetails.slides[currentSlideIndex]
-                              ?.dancerTwo)) && (
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerOne) && (
                           <h4 className="text-bes-red mb-3 text-lg font-bold">
                             {selectedEventDetails.slides[currentSlideIndex]
                               ?.dancerName ||
                               selectedEventDetails.slides[currentSlideIndex]
                                 ?.bandName ||
                               (selectedEventDetails.slides[currentSlideIndex]
-                                ?.dancerOne &&
-                              selectedEventDetails.slides[currentSlideIndex]
-                                ?.dancerTwo
-                                ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                ?.dancerOne
+                                ? selectedEventDetails.slides[currentSlideIndex]
+                                    ?.dancerTwo
+                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                  : selectedEventDetails.slides[
+                                      currentSlideIndex
+                                    ]?.dancerOne
                                 : null)}
                           </h4>
                         )}
@@ -710,10 +713,14 @@ export default function FestivalTimetable() {
                                 selectedEventDetails.slides[currentSlideIndex]
                                   .dancerName ||
                                 (selectedEventDetails.slides[currentSlideIndex]
-                                  .dancerOne &&
-                                selectedEventDetails.slides[currentSlideIndex]
-                                  .dancerTwo
-                                  ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} y ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
+                                  .dancerOne
+                                  ? selectedEventDetails.slides[
+                                      currentSlideIndex
+                                    ].dancerTwo
+                                    ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} y ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
+                                    : selectedEventDetails.slides[
+                                        currentSlideIndex
+                                      ].dancerOne
                                   : `${selectedEvent} - Slide ${currentSlideIndex + 1}`)
                               }
                               width={600}
@@ -771,6 +778,35 @@ export default function FestivalTimetable() {
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.dancerTwoDescription
+                                }
+                              </p>
+                            </div>
+                          )}
+
+                        {/* Combined Dancers Description - only show if individual descriptions aren't available */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.dancerOne &&
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.combinedDancersDescription &&
+                          !selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerOneDescription &&
+                          (!selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerTwo ||
+                            !selectedEventDetails.slides[currentSlideIndex]
+                              ?.dancerTwoDescription) && (
+                            <div className="mb-4">
+                              <h5 className="text-bes-red text-md mb-2 font-bold">
+                                {selectedEventDetails.slides[currentSlideIndex]
+                                  ?.dancerTwo
+                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                  : selectedEventDetails.slides[
+                                      currentSlideIndex
+                                    ]?.dancerOne}
+                              </h5>
+                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.combinedDancersDescription
                                 }
                               </p>
                             </div>
@@ -885,8 +921,10 @@ export default function FestivalTimetable() {
                               {slide.djName ||
                                 slide.dancerName ||
                                 slide.bandName ||
-                                (slide.dancerOne && slide.dancerTwo
-                                  ? `${slide.dancerOne} y ${slide.dancerTwo}`
+                                (slide.dancerOne
+                                  ? slide.dancerTwo
+                                    ? `${slide.dancerOne} y ${slide.dancerTwo}`
+                                    : slide.dancerOne
                                   : slide.djOne && slide.djTwo
                                     ? `${slide.djOne} y ${slide.djTwo}`
                                     : `Slide ${index + 1}`)}

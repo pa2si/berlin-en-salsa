@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.16
+
+- Added combinedDancersDescription field for slides with multiple dancers
+- Allows for a single combined description for both dancers as an alternative to individual descriptions
+- Shows combined description only when individual descriptions aren't available
+- Provides more flexibility in how dancer information is presented
+
 v1.1.1-timetable.15
 
 - Removed redundant danceShowImage field as images are now fully managed in slides
