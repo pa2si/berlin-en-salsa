@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.13
+
+- Simplified the modal interface by removing redundant DJ names that appeared above the image
+- Kept DJ names in the "DJs:" field at the top of the modal for cleaner presentation
+- Maintained DJ descriptions for individual artists in the content area
+
 v1.1.1-timetable.12
 
 - now the dance shows are displayed in the live act modal as a slide

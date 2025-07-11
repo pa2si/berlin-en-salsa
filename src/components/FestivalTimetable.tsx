@@ -667,26 +667,18 @@ export default function FestivalTimetable() {
                           }
                         }}
                       >
-                        {/* DJ, Band or Dancer Name if available */}
+                        {/* Band or Dancer Name if available - no DJ names since they're already in the DJs field */}
                         {(selectedEventDetails.slides[currentSlideIndex]
-                          ?.djName ||
-                          selectedEventDetails.slides[currentSlideIndex]
-                            ?.dancerName ||
+                          ?.dancerName ||
                           selectedEventDetails.slides[currentSlideIndex]
                             ?.bandName ||
                           (selectedEventDetails.slides[currentSlideIndex]
                             ?.dancerOne &&
                             selectedEventDetails.slides[currentSlideIndex]
-                              ?.dancerTwo) ||
-                          (selectedEventDetails.slides[currentSlideIndex]
-                            ?.djOne &&
-                            selectedEventDetails.slides[currentSlideIndex]
-                              ?.djTwo)) && (
+                              ?.dancerTwo)) && (
                           <h4 className="text-bes-red mb-3 text-lg font-bold">
                             {selectedEventDetails.slides[currentSlideIndex]
-                              ?.djName ||
-                              selectedEventDetails.slides[currentSlideIndex]
-                                ?.dancerName ||
+                              ?.dancerName ||
                               selectedEventDetails.slides[currentSlideIndex]
                                 ?.bandName ||
                               (selectedEventDetails.slides[currentSlideIndex]
@@ -694,12 +686,6 @@ export default function FestivalTimetable() {
                               selectedEventDetails.slides[currentSlideIndex]
                                 ?.dancerTwo
                                 ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
-                                : null) ||
-                              (selectedEventDetails.slides[currentSlideIndex]
-                                ?.djOne &&
-                              selectedEventDetails.slides[currentSlideIndex]
-                                ?.djTwo
-                                ? `${selectedEventDetails.slides[currentSlideIndex]?.djOne} y ${selectedEventDetails.slides[currentSlideIndex]?.djTwo}`
                                 : null)}
                           </h4>
                         )}
@@ -715,22 +701,13 @@ export default function FestivalTimetable() {
                               }
                               alt={
                                 selectedEventDetails.slides[currentSlideIndex]
-                                  .djName ||
-                                selectedEventDetails.slides[currentSlideIndex]
                                   .dancerName ||
                                 (selectedEventDetails.slides[currentSlideIndex]
                                   .dancerOne &&
                                 selectedEventDetails.slides[currentSlideIndex]
                                   .dancerTwo
                                   ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} y ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
-                                  : selectedEventDetails.slides[
-                                        currentSlideIndex
-                                      ].djOne &&
-                                      selectedEventDetails.slides[
-                                        currentSlideIndex
-                                      ].djTwo
-                                    ? `${selectedEventDetails.slides[currentSlideIndex].djOne} y ${selectedEventDetails.slides[currentSlideIndex].djTwo}`
-                                    : `${selectedEvent} - Slide ${currentSlideIndex + 1}`)
+                                  : `${selectedEvent} - Slide ${currentSlideIndex + 1}`)
                               }
                               width={600}
                               height={400}
