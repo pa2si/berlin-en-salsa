@@ -85,8 +85,6 @@ export const saturdayTimetableData: Column[] = [
           {
             image: "/lei.webp",
             dancerOne: "Lei",
-            genreDescription:
-              "Mas que baile, es pura gozadera! El casino cubano es un estilo de baile social originado en Cuba, caracterizado por su alegría, sabor caribeño y movimientos circulares. Se baila en pareja y en rueda, destacando la improvisación, la conexión y la energía del son, la salsa y otros ritmos afrocubanos. ¡Pura fiesta y sabor cubano en movimiento! 🇨🇺💃🕺",
             combinedDancersDescription:
               "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
           },
@@ -133,8 +131,6 @@ export const saturdayTimetableData: Column[] = [
             image: "/son-cubano.webp",
             dancerOne: "Helen",
             dancerTwo: "Yago",
-            genreDescription:
-              "🎶 Son Cubano \nEl son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
             dancerOneDescription:
               "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de “seguimiento activo” para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofía de Endaya, Sassan AliValiollahi y Luis Duarte.",
             dancerTwoDescription:
@@ -183,8 +179,6 @@ export const saturdayTimetableData: Column[] = [
             image: "/jessi-julian.webp",
             dancerOne: "Jessica",
             dancerTwo: "Julian",
-            genreDescription:
-              "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida! 🔥",
             dancerOneDescription: "tba",
             dancerTwoDescription:
               "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
@@ -245,14 +239,14 @@ export const saturdayTimetableData: Column[] = [
         event: "Afro-Cuban Dance",
         instructor: "by Leidiana",
         type: "workshop",
-        description: "tba",
+        description:
+          "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes. 🌍🔥",
       },
       {
         time: "13:30",
         event: "Afro-Cuban Dance",
         instructor: "by Leidiana",
         type: "workshop",
-        description: "tba",
       },
       { time: "13:30" },
       { time: "14:00" },
@@ -265,15 +259,13 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Yago y Helen",
         type: "workshop",
         description:
-          "Dive into the rhythmic world of Son Cubano with Yago y Helen. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+          "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa. 🎩🇨🇺",
       },
       {
         time: "16:30",
         event: "Son Cubano",
         instructor: "Yago y Helen",
         type: "workshop",
-        description:
-          "Dive into the rhythmic world of Son Cubano with Yago y Helen. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
       },
       { time: "17:00" },
       { time: "17:30" },
@@ -284,15 +276,13 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Julian y Jessica",
         type: "workshop",
         description:
-          "Dive into the rhythmic world of Salsa Caleña with Julian y Jessica. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
+          "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida! 🔥👟",
       },
       {
         time: "19:00",
         event: "Salsa Caleña",
         instructor: "Julian y Jessica",
         type: "workshop",
-        description:
-          "Dive into the rhythmic world of Salsa Caleña with Julian y Jessica. This workshop focuses on circular movements, partner work, and the improvisational aspects that make Cuban salsa unique.",
       },
       { time: "19:30" },
       { time: "20:00" },

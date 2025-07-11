@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.17
+
+- timetable sabado for that moment
+
 v1.1.1-timetable.16
 
 - Added combinedDancersDescription field for slides with multiple dancers
