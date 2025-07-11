@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.12
+
+- now the dance shows are displayed in the live act modal as a slide
+  - added for Son Cubano show Helen y Yago
+- now the 2 DJs can be displayed in a DJS Slot as slide
+  - Updated the Saca Sal entry with separate descriptions for both DJs (Calamidades Lola and Amuleto Manuela)
+
 v1.1.1-timetable.11
 
 - hover cursor in modal for multiple acts

@@ -110,6 +110,25 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Son Cubano Dance Show",
+        dancers: "Helen & Yago",
+        danceShowImage: "/son-cubano.webp",
+        slides: [
+          {
+            image: "/tempo-havana.webp",
+            bandName: "Tempo Havanna",
+            description:
+              "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir.",
+          },
+          {
+            image: "/son-cubano.webp",
+            dancerOne: "Helen",
+            dancerTwo: "Yago",
+            dancerOneDescription:
+              "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de “seguimiento activo” para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofía de Endaya, Sassan AliValiollahi y Luis Duarte.",
+            dancerTwoDescription:
+              "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
+          },
+        ],
       },
       {
         time: "18:30",
@@ -118,6 +137,7 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         description:
           "Emergiendo de las profundidades de noches llenas de ritmos de cumbia y 'baldosas de salsa', un profundo amor por la música transformó a tres amigos en NECIOS. Originalmente de Colombia y Ecuador, este colectivo de SELECTORES SONOROS, con sede en Berlín, ha dado vida a un viaje impulsado por vinilos y agujas. Su colección es una fusión fascinante de sonidos que abarca la amplitud y longitud de América Latina, explorando sus raíces más profundas y nuevos horizontes electrónicos. 'Necio' o 'Necia' es alguien testarudo, que va hasta las últimas consecuencias por lo que realmente cree. ¡Aunque eso signifique no seguir las reglas!",
+        image: "/necios.webp",
       },
       {
         time: "19:00",
@@ -150,8 +170,21 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
         description:
-          "SACA SAL es un ritual colectivo musical guiado por ritmos y ecos de nuestros ancestros que nos invita a un espacio de alegría y liberación. Con música del llamado sur global en formato vinilo, este ritual colectivo cataliza y sacude emociones, dolores, miedos, y les da la bienvenida para ser transformados a través del movimiento corporal y la escucha del cuerpo. Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas. SACA SAL son Calamidades Lola @pissandlove & @amuletomanuela Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación. Radicada en Berlín, gran parte de su colección y selección musical está guiada por su experiencia migratoria. Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos (paisajes sonoros, esculturas sonoras, prácticas colectivas de escucha y programas de radio), la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro. Aborda temas de diáspora e identidad con el deseo de desaprender y recordar otras formas de habitar nuestra experiencia colectiva de vida.",
+          "SACA SAL es un ritual colectivo musical guiado por ritmos y ecos de nuestros ancestros que nos invita a un espacio de alegría y liberación. Con música del llamado sur global en formato vinilo, este ritual colectivo cataliza y sacude emociones, dolores, miedos, y les da la bienvenida para ser transformados a través del movimiento corporal y la escucha del cuerpo.",
         image: "/saca-sal.webp",
+        slides: [
+          {
+            image: "/saca-sal.webp",
+            description:
+              "Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas.",
+            djOne: "Calamidades Lola",
+            djTwo: "Amuleto Manuela",
+            djOneDescription:
+              "Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación. Radicada en Berlín, gran parte de su colección y selección musical está guiada por su experiencia migratoria.",
+            djTwoDescription:
+              "Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos (paisajes sonoros, esculturas sonoras, prácticas colectivas de escucha y programas de radio), la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro. Aborda temas de diáspora e identidad con el deseo de desaprender y recordar otras formas de habitar nuestra experiencia colectiva de vida.",
+          },
+        ],
       },
       {
         time: "21:30",
@@ -159,6 +192,19 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
+        slides: [
+          {
+            image: "/saca-sal.webp",
+            description:
+              "Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas.",
+            djOne: "Calamidades Lola",
+            djTwo: "Amuleto Manuela",
+            djOneDescription:
+              "Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación.",
+            djTwoDescription:
+              "Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos, la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro.",
+          },
+        ],
       },
       { time: "22:00" },
     ],

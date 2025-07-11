@@ -32,10 +32,26 @@ export default function FestivalTimetable() {
     djs?: string;
     description?: string;
     image?: string;
-    slides?: { image?: string; description?: string; djName?: string }[];
+    slides?: {
+      image?: string;
+      description?: string;
+      djName?: string;
+      dancerName?: string;
+      bandName?: string;
+      dancerOne?: string;
+      dancerTwo?: string;
+      dancerOneDescription?: string;
+      dancerTwoDescription?: string;
+      djOne?: string;
+      djTwo?: string;
+      djOneDescription?: string;
+      djTwoDescription?: string;
+    }[];
     actType?: string;
     hasShow?: boolean;
     danceShow?: string;
+    dancers?: string;
+    danceShowImage?: string;
   } | null>(null);
 
   // Helper function to calculate the end time based on start time and duration
@@ -331,6 +347,27 @@ export default function FestivalTimetable() {
                                       });
                                   }
 
+                                  // Add dance show details as a slide if it exists and isn't already included
+                                  if (
+                                    showSlot.hasShow &&
+                                    showSlot.danceShowImage
+                                  ) {
+                                    // Check if the dance show slide is not already in the slides array
+                                    const hasDanceShowSlide = slides.some(
+                                      (slide) =>
+                                        slide.dancerName === showSlot.dancers ||
+                                        slide.image === showSlot.danceShowImage,
+                                    );
+
+                                    if (!hasDanceShowSlide) {
+                                      // We'll create a dance show slide with the available information
+                                      slides.push({
+                                        image: showSlot.danceShowImage,
+                                        dancerName: showSlot.dancers, // Keep for backward compatibility
+                                      });
+                                    }
+                                  }
+
                                   setSelectedEventDetails({
                                     event: slot.event,
                                     time: slot.time,
@@ -353,6 +390,8 @@ export default function FestivalTimetable() {
                                       slides.length > 0 ? slides : undefined,
                                     hasShow: !!showSlot.hasShow,
                                     danceShow: showSlot.danceShow,
+                                    dancers: showSlot.dancers,
+                                    danceShowImage: showSlot.danceShowImage,
                                   });
                                 } else {
                                   setSelectedEventDetails(null);
@@ -386,7 +425,7 @@ export default function FestivalTimetable() {
                                 boxSizing: "border-box", // Ensure padding doesn't affect overall height
                               }}
                             >
-                              <div className="text-bes-amber flex items-center justify-center text-xs sm:text-[1rem]">
+                              <div className="text-bes-amber flex items-center justify-center text-xs text-[1rem]">
                                 <span title="Click for details">
                                   {slot.event && slot.event.length > 30
                                     ? `${slot.event.substring(0, 30)}...`
@@ -394,12 +433,12 @@ export default function FestivalTimetable() {
                                 </span>
                               </div>
                               {slot.actType && (
-                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-sm">
+                                <div className="text-center text-[0.9rem] font-normal normal-case opacity-90">
                                   {slot.actType}
                                 </div>
                               )}
                               {slot.instructor && (
-                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-sm">
+                                <div className="text-center text-[0.9rem] font-normal normal-case opacity-90">
                                   {slot.instructor}
                                 </div>
                               )}
@@ -561,6 +600,9 @@ export default function FestivalTimetable() {
                       <span className="text-bes-purple mt-1 flex items-center text-sm font-bold">
                         <span className="bg-bes-purple mr-2 inline-block h-3 w-3 rounded-full"></span>
                         {selectedEventDetails.danceShow}
+                        {selectedEventDetails.dancers
+                          ? `: ${selectedEventDetails.dancers}`
+                          : ""}
                       </span>
                     )}
                 </div>
@@ -625,14 +667,40 @@ export default function FestivalTimetable() {
                           }
                         }}
                       >
-                        {/* DJ Name if available */}
-                        {selectedEventDetails.slides[currentSlideIndex]
-                          ?.djName && (
+                        {/* DJ, Band or Dancer Name if available */}
+                        {(selectedEventDetails.slides[currentSlideIndex]
+                          ?.djName ||
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerName ||
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.bandName ||
+                          (selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerOne &&
+                            selectedEventDetails.slides[currentSlideIndex]
+                              ?.dancerTwo) ||
+                          (selectedEventDetails.slides[currentSlideIndex]
+                            ?.djOne &&
+                            selectedEventDetails.slides[currentSlideIndex]
+                              ?.djTwo)) && (
                           <h4 className="text-bes-red mb-3 text-lg font-bold">
-                            {
+                            {selectedEventDetails.slides[currentSlideIndex]
+                              ?.djName ||
                               selectedEventDetails.slides[currentSlideIndex]
-                                .djName
-                            }
+                                ?.dancerName ||
+                              selectedEventDetails.slides[currentSlideIndex]
+                                ?.bandName ||
+                              (selectedEventDetails.slides[currentSlideIndex]
+                                ?.dancerOne &&
+                              selectedEventDetails.slides[currentSlideIndex]
+                                ?.dancerTwo
+                                ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                : null) ||
+                              (selectedEventDetails.slides[currentSlideIndex]
+                                ?.djOne &&
+                              selectedEventDetails.slides[currentSlideIndex]
+                                ?.djTwo
+                                ? `${selectedEventDetails.slides[currentSlideIndex]?.djOne} y ${selectedEventDetails.slides[currentSlideIndex]?.djTwo}`
+                                : null)}
                           </h4>
                         )}
 
@@ -648,25 +716,122 @@ export default function FestivalTimetable() {
                               alt={
                                 selectedEventDetails.slides[currentSlideIndex]
                                   .djName ||
-                                `${selectedEvent} - Slide ${currentSlideIndex + 1}`
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  .dancerName ||
+                                (selectedEventDetails.slides[currentSlideIndex]
+                                  .dancerOne &&
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  .dancerTwo
+                                  ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} y ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
+                                  : selectedEventDetails.slides[
+                                        currentSlideIndex
+                                      ].djOne &&
+                                      selectedEventDetails.slides[
+                                        currentSlideIndex
+                                      ].djTwo
+                                    ? `${selectedEventDetails.slides[currentSlideIndex].djOne} y ${selectedEventDetails.slides[currentSlideIndex].djTwo}`
+                                    : `${selectedEvent} - Slide ${currentSlideIndex + 1}`)
                               }
-                              width={300}
+                              width={600}
                               height={400}
                               className="h-auto w-full object-cover"
                             />
                           </div>
                         )}
 
-                        {/* Description */}
+                        {/* Description Section */}
+                        {/* Regular description */}
                         {selectedEventDetails.slides[currentSlideIndex]
                           ?.description && (
-                          <p className="mb-4 text-gray-900">
+                          <p className="mb-4 text-gray-900 md:text-lg md:leading-relaxed">
                             {
                               selectedEventDetails.slides[currentSlideIndex]
                                 .description
                             }
                           </p>
                         )}
+
+                        {/* Dancer descriptions */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.dancerOne &&
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerOneDescription && (
+                            <div className="mb-4">
+                              <h5 className="text-bes-red text-md mb-2 font-bold">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.dancerOne
+                                }
+                              </h5>
+                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.dancerOneDescription
+                                }
+                              </p>
+                            </div>
+                          )}
+
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.dancerTwo &&
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.dancerTwoDescription && (
+                            <div className="mb-4">
+                              <h5 className="text-bes-red text-md mb-2 font-bold">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.dancerTwo
+                                }
+                              </h5>
+                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.dancerTwoDescription
+                                }
+                              </p>
+                            </div>
+                          )}
+
+                        {/* DJ descriptions */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.djOne &&
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.djOneDescription && (
+                            <div className="mb-4">
+                              <h5 className="text-bes-red text-md mb-2 font-bold">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.djOne
+                                }
+                              </h5>
+                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.djOneDescription
+                                }
+                              </p>
+                            </div>
+                          )}
+
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.djTwo &&
+                          selectedEventDetails.slides[currentSlideIndex]
+                            ?.djTwoDescription && (
+                            <div className="mb-4">
+                              <h5 className="text-bes-red text-md mb-2 font-bold">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.djTwo
+                                }
+                              </h5>
+                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                                {
+                                  selectedEventDetails.slides[currentSlideIndex]
+                                    ?.djTwoDescription
+                                }
+                              </p>
+                            </div>
+                          )}
                       </motion.div>
                     </AnimatePresence>
                     {/* Slider Navigation (only show if multiple slides) */}
@@ -720,7 +885,14 @@ export default function FestivalTimetable() {
                                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
                               }`}
                             >
-                              {slide.djName || `Slide ${index + 1}`}
+                              {slide.djName ||
+                                slide.dancerName ||
+                                slide.bandName ||
+                                (slide.dancerOne && slide.dancerTwo
+                                  ? `${slide.dancerOne} y ${slide.dancerTwo}`
+                                  : slide.djOne && slide.djTwo
+                                    ? `${slide.djOne} y ${slide.djTwo}`
+                                    : `Slide ${index + 1}`)}
                             </button>
                           ))}
                         </div>
@@ -735,8 +907,8 @@ export default function FestivalTimetable() {
                         <Image
                           src={selectedEventDetails.image}
                           alt={selectedEvent}
-                          width={400}
-                          height={300}
+                          width={600}
+                          height={400}
                           className="h-auto w-full object-cover"
                         />
                       </div>
@@ -744,7 +916,7 @@ export default function FestivalTimetable() {
 
                     {/* Fallback to single description if no slides */}
                     {selectedEventDetails.description && (
-                      <p className="mb-6 text-gray-700">
+                      <p className="mb-6 text-gray-700 md:text-lg md:leading-relaxed">
                         {selectedEventDetails.description}
                       </p>
                     )}
