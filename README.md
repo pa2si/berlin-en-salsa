@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.10
+
+- adapted fonts in timetable and color for description in modal
+- close button in modal now when hovering over it with pointer
+
 v1.1.1-timetable.9
 
 - new font Instrument Serif and deleted adobe font

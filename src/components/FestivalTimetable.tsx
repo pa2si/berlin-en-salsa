@@ -204,7 +204,7 @@ export default function FestivalTimetable() {
               transition={{ delay: columnIndex * 0.1 }}
               className="overflow-visible rounded-xl border border-white/20 bg-white/10 px-3 py-4 shadow-lg backdrop-blur-sm"
             >
-              <h3 className="text-bes-red mb-3 text-center text-lg font-black tracking-wide uppercase md:text-xl">
+              <h3 className="text-bes-red mb-3 text-center text-lg font-black tracking-wide uppercase md:text-2xl">
                 {column.title}
               </h3>
 
@@ -386,7 +386,7 @@ export default function FestivalTimetable() {
                                 boxSizing: "border-box", // Ensure padding doesn't affect overall height
                               }}
                             >
-                              <div className="text-bes-amber flex items-center justify-center text-xs sm:text-sm">
+                              <div className="text-bes-amber flex items-center justify-center text-xs sm:text-[1rem]">
                                 <span title="Click for details">
                                   {slot.event && slot.event.length > 30
                                     ? `${slot.event.substring(0, 30)}...`
@@ -394,12 +394,12 @@ export default function FestivalTimetable() {
                                 </span>
                               </div>
                               {slot.actType && (
-                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
+                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-sm">
                                   {slot.actType}
                                 </div>
                               )}
                               {slot.instructor && (
-                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-xs">
+                                <div className="text-center text-[10px] font-normal normal-case opacity-90 sm:text-sm">
                                   {slot.instructor}
                                 </div>
                               )}
@@ -533,7 +533,7 @@ export default function FestivalTimetable() {
                   </span>
                   {selectedEventDetails.actType && (
                     <span className="text-sm text-gray-700">
-                      Type: {selectedEventDetails.actType}
+                      {selectedEventDetails.actType}
                     </span>
                   )}
                   {selectedEventDetails.instructor && (
@@ -660,7 +660,7 @@ export default function FestivalTimetable() {
                         {/* Description */}
                         {selectedEventDetails.slides[currentSlideIndex]
                           ?.description && (
-                          <p className="mb-4 text-gray-700">
+                          <p className="mb-4 text-gray-900">
                             {
                               selectedEventDetails.slides[currentSlideIndex]
                                 .description
@@ -758,7 +758,7 @@ export default function FestivalTimetable() {
                       setSelectedEvent(null);
                       setSelectedEventDetails(null);
                     }}
-                    className="bg-bes-red hover:bg-bes-red/90 rounded-full px-6 py-2 font-bold text-white shadow-md transition-colors"
+                    className="bg-bes-red hover:bg-bes-red/90 rounded-full px-6 py-2 font-bold text-white shadow-md transition-colors hover:cursor-pointer"
                   >
                     Close
                   </button>
