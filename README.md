@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.18
+
+- Main Stage DJs sunday now also completed
+
 v1.1.1-timetable.17
 
 - timetable sabado for that moment

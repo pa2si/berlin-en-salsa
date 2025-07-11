@@ -7,16 +7,16 @@ export const sundayTimetableData: Column[] = [
     slots: [
       {
         time: "12:30",
-        event: "Bongo",
+        event: "FLori % Wilber",
         actType: "DJ Set",
         type: "main",
         description:
-          "Desde Cali, DJ Bongo revive el espíritu de la vieja escuela: salsa brava, calle y sudor. Un sonido sin adornos, directo al alma del bailador. ¡Salsa con corazón!",
-        image: "/dj-bongo.webp",
+          "DJ Flori y DJ Wilber son dos hermanos peruanos que hacen vibrar la escena salsera de Berlín. Crecieron con los sonidos clásicos de La Fania y La Sonora Matancera, y hoy hacen bailar al público con Mambo, Cha-Cha-Cha y Salsa al estilo 70' de New York. En Berlín, su hogar musical, unen a salseros de todo el mundo bajo un mismo ritmo. Han puesto a bailar a miles en fiestas legendarias como Tu Candela, Mi Salsa y Zuckerbrot. ¡Donde pinchan Flori y Wilber, la pista se enciende con sabor de guaguanco!",
+        image: "/flori-wilber.webp",
       },
       {
-        time: "13:00",
-        event: "Bongo",
+        time: "12:00",
+        event: "FLori % Wilber",
         actType: "DJ Set",
         type: "main",
       },
@@ -44,15 +44,14 @@ export const sundayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "DJ Yuri takes over the decks with his impressive collection of classic and contemporary salsa hits that showcase the diversity of the genre.",
+          "El Puma Dj nacido en Venezuela y criado en Colombia lleva la salsa en la sangre por su familia, su tío melómano y locutor y su hermano melómano y coleccionista de vinilos heredó la salsa con tanta pasión que se ha ganado el respeto de grandes djs y me molomanos de Europa.",
+        image: "/el-puma.webp",
       },
       {
         time: "15:30",
         event: "El Puma",
         actType: "DJ Set",
         type: "main",
-        description:
-          "DJ Yuri takes over the decks with his impressive collection of classic and contemporary salsa hits that showcase the diversity of the genre.",
       },
       { time: "16:00" },
       {
@@ -78,16 +77,27 @@ export const sundayTimetableData: Column[] = [
         event: "Anacaona & La Vecina",
         actType: "DJ Set",
         type: "main",
-        description:
-          "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
+        djs: "Anacaona, La Vecina",
+        slides: [
+          {
+            djOne: "Anacaona",
+            djTwo: "La Vecina",
+            image: "/la-vecina-anacaona.webp",
+            djOneDescription:
+              "La prodigiosa bruja de Caracas, Anacaona, ha hecho vibrar la escena latina de Berlín con sus potentes mezclas de salsa, merengue y boogaloo, tanto en las fiestas más importantes como en su programa “Camino a Casa” en 1btn radio. Su estilo aporta arte y sigilo a la ciudad, consolidándose como una selectress y artista visual de 0% compromiso, con una profunda pasión por el alma afrocaribeña y la salsa old school.",
+            djTwoDescription:
+              "La Vecina, melómana y musicóloga colombiana, es curiosa por explorar la historia de las migraciones musicales entre Abya Yala y África. Sus sets se centran en lo afrocaribeño, la cumbia, la salsa y otros ritmos que invitan a “echar paso” y evocan la riqueza de la diáspora africana en la música latina.",
+            descriptionTwoDjsTogether:
+              "Para esta ocasión especial, ambas unirán fuerzas en una selección que explora las raíces africanas del universo de la salsa, presentes en ritmos como el afrocubano, oriza, plenas, bombas y mozambique. Así, rinden homenaje a estos sonidos de resistencia, portadores de saberes y memorias culturales.",
+          },
+        ],
       },
       {
         time: "18:00",
         event: "Anacaona & La Vecina",
         actType: "DJ Set",
         type: "main",
-        description:
-          "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
+        djs: "Anacaona, La Vecina",
       },
       { time: "18:30" },
       {
@@ -96,31 +106,29 @@ export const sundayTimetableData: Column[] = [
         actType: "Live",
         type: "main",
         description:
-          "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
+          "Cayeye, un plato originario del Caribe a base de plátano verde y mucha salsa, da nombre a una banda de Salsa Brava de 10 integrantes con sede en Berlín. Así como sus diversos ingredientes convierten al Cayeye en un plato dulce y muy popular en el norte de Colombia, la banda interpreta sonidos cálidos y bailables que evocan la tradición musical latinoamericana de los años 70. Al igual que en la receta del plato, en la banda también se mezclan distintos sabores: lxs integrantes de la orquesta fusionan influencias de Europa y América Latina para crear una experiencia musical vibrante sobre el escenario. La banda se formó a principios de 2022 y ofrece un repertorio amplio de salsa latinoamericana, tocando e improvisando con energía y pasión. ¡El Cayeye se disfruta mejor recién salido de la sartén! En vivo, en el club, donde clásicos, composiciones propias y arreglos originales se funden en un verdadero espectáculo de ritmos. Ven a nuestra fiesta, baila con nosotros toda la noche y siente el verdadero calor de América Latina – ¡Salsa pura, directa al corazón y a las caderas! —",
+        image: "/cayeye.webp",
       },
       {
         time: "19:30",
         event: "Cayeye",
         actType: "Live",
         type: "main",
-        description:
-          "The highlight of the festival - watch Berlin's top salsa performers showcase choreographed routines featuring various Latin dance styles in this spectacular performance.",
       },
       {
         time: "20:00",
-        event: "FLori % Wilber",
+        event: "Bongo",
         actType: "DJ Set",
         type: "main",
         description:
-          "Son Palenque delivers authentic Colombian champeta and Afro-Caribbean sounds with their dynamic percussion section and captivating vocals.",
+          "Desde Cali, DJ Bongo revive el espíritu de la vieja escuela: salsa brava, calle y sudor. Un sonido sin adornos, directo al alma del bailador. ¡Salsa con corazón!",
+        image: "/dj-bongo.webp",
       },
       {
         time: "20:30",
-        event: "FLori % Wilber",
+        event: "Bongo",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Son Palenque delivers authentic Colombian champeta and Afro-Caribbean sounds with their dynamic percussion section and captivating vocals.",
       },
       {
         time: "21:00",

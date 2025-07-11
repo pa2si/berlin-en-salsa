@@ -12,6 +12,7 @@ export interface SlideContent {
   djTwo?: string; // Second DJ's name
   djOneDescription?: string; // Description for first DJ
   djTwoDescription?: string; // Description for second DJ
+  descriptionTwoDjsTogether?: string; // Combined description for both DJs together
   bandName?: string;
   genreDescription?: string; // Description of the dance genre/style
 }

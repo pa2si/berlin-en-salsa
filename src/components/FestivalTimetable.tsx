@@ -47,6 +47,7 @@ export default function FestivalTimetable() {
       djTwo?: string;
       djOneDescription?: string;
       djTwoDescription?: string;
+      descriptionTwoDjsTogether?: string;
       genreDescription?: string;
     }[];
     actType?: string;
@@ -852,6 +853,27 @@ export default function FestivalTimetable() {
                               </p>
                             </div>
                           )}
+
+                        {/* Combined DJs Description */}
+                        {selectedEventDetails.slides[currentSlideIndex]
+                          ?.descriptionTwoDjsTogether && (
+                          <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
+                            <h5 className="text-bes-red text-md mb-2 font-bold">
+                              {selectedEventDetails.slides[currentSlideIndex]
+                                ?.djOne &&
+                              selectedEventDetails.slides[currentSlideIndex]
+                                ?.djTwo
+                                ? `${selectedEventDetails.slides[currentSlideIndex]?.djOne} & ${selectedEventDetails.slides[currentSlideIndex]?.djTwo} juntos`
+                                : "Colaboración"}
+                            </h5>
+                            <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              {
+                                selectedEventDetails.slides[currentSlideIndex]
+                                  ?.descriptionTwoDjsTogether
+                              }
+                            </p>
+                          </div>
+                        )}
 
                         {/* Genre Description */}
                         {selectedEventDetails.slides[currentSlideIndex]

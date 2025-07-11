@@ -30,20 +30,6 @@ export const saturdayTimetableData: Column[] = [
         event: "Rodo Le Fou & El Profe",
         actType: "DJ Set",
         type: "main",
-        slides: [
-          {
-            djName: "Rodo Le Fou",
-            image: "/rodo-le-fou.webp",
-            description:
-              "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
-          },
-          {
-            djName: "El Profe",
-            image: "/el-profe.webp",
-            description:
-              "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como “LA NOCHE” and “It’s a SALSA BRAVA Thing, eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
-          },
-        ],
       },
       {
         time: "13:30",
@@ -214,19 +200,6 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
-        slides: [
-          {
-            image: "/saca-sal.webp",
-            description:
-              "Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas.",
-            djOne: "Calamidades Lola",
-            djTwo: "Amuleto Manuela",
-            djOneDescription:
-              "Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación.",
-            djTwoDescription:
-              "Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos, la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro.",
-          },
-        ],
       },
       { time: "22:00" },
     ],
