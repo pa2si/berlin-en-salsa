@@ -78,6 +78,11 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: "salsa-berlin.de",
       image: "/salsa-berlin-468X98.gif",
     },
+    {
+      url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",
+      title: "THF Berlin En Salsa Event",
+      image: "/logo-thf.svg",
+    },
   ];
 
   const title = language === "es" ? "Enlaces" : "Links";
@@ -134,9 +139,7 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
                     />
                   </div>
                   <span className="text-bes-red text-center font-medium sm:text-left">
-                    {link.url.includes("salsa-berlin")
-                      ? "salsa-berlin.de"
-                      : 'Berlin En Salsa Documentary "by El Son Obrero"'}
+                    {link.title}
                   </span>
                 </a>
               </li>

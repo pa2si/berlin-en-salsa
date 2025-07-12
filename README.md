@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v 1.0.14
+
+- THF Link added
+
 v 1.0.13
 
 - Added "Links" section to Footer
