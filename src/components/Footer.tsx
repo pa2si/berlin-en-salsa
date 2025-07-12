@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export const Footer = () => {
   return (
-    <footer className="text-bes-red pb-12 text-center md:pb-4">
-      <div className="container mx-auto">
+    <footer className="text-bes-red py-6 text-center lg:py-4">
+      <div className="container mx-auto px-4">
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium md:gap-4">
           <Link
             href="/privacidad"

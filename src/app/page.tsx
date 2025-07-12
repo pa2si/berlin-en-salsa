@@ -5,6 +5,7 @@ import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import ComingSoonBanner from "@/components/ComingSoonBanner";
 import ProgramButton from "@/components/ProgramButton";
+import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 
 // Base URL for absolute URLs in metadata
@@ -35,7 +36,14 @@ export default function Home() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      <SectionFive />
+      <div className="lg:flex lg:h-svh lg:flex-col">
+        <div className="lg:flex-grow">
+          <SectionFive />
+        </div>
+        <div className="bg-bes-amber lg:flex-shrink-0">
+          <Footer />
+        </div>
+      </div>
     </main>
   );
 }

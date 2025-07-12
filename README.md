@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v 1.0.11
+
+- Map included in SectionFive
+  - Links are now not included in Form
+  - Footer is now an own component
+
 v 1.0.10
 
 - updated Program for download
