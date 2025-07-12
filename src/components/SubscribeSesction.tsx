@@ -126,20 +126,22 @@ export const SubscribeSection = () => {
               >
                 {isPending ? "Enviando..." : "SUSCRIBIR"}
               </button>
-              {!privacyChecked && (
-                <p
-                  id="privacy-error"
-                  className="text-bes-red mt-2 text-center text-sm sm:mt-1 sm:text-xs md:mt-1.5 md:text-xs lg:mt-2 lg:text-sm"
-                  role="alert"
-                  aria-live="polite"
-                >
-                  Por favor, acepta la política de privacidad para continuar
-                </p>
-              )}
+              <div className="h-6 sm:h-5 md:h-5 lg:h-6">
+                {!privacyChecked && (
+                  <p
+                    id="privacy-error"
+                    className="text-bes-red mt-2 text-center text-sm sm:mt-1 sm:text-xs md:mt-1.5 md:text-xs lg:mt-2 lg:text-sm"
+                    role="alert"
+                    aria-live="polite"
+                  >
+                    Por favor, acepta la política de privacidad para continuar
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </form>
-        <div className="mt-1 flex items-center justify-center sm:mt-1 md:mt-1.5 lg:mt-2">
+        <div className="mt-1 flex items-center justify-center sm:mt-1 md:mt-1.5 lg:mt-2 lg:h-10">
           {subscribeSuccess && (
             <p className="bg-bes-purple/10 text-bes-purple rounded-lg px-3 py-1 text-sm font-bold sm:px-2 sm:py-0.5 sm:text-xs md:px-3 md:py-1 md:text-xs lg:px-4 lg:py-2 lg:text-sm">
               {subscribeSuccess}
