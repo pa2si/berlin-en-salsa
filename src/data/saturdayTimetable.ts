@@ -210,15 +210,15 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "13:00",
         event: "Afro-Cuban Dance",
-        instructor: "by Leidiana",
+        instructor: "Leidiana",
         type: "workshop",
         description:
-          "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes. 🌍🔥",
+          "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes.",
       },
       {
         time: "13:30",
         event: "Afro-Cuban Dance",
-        instructor: "by Leidiana",
+        instructor: "Leidiana",
         type: "workshop",
       },
       { time: "13:30" },
@@ -232,7 +232,7 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Yago y Helen",
         type: "workshop",
         description:
-          "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa. 🎩🇨🇺",
+          "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
       },
       {
         time: "16:30",
@@ -249,7 +249,7 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Julian y Jessica",
         type: "workshop",
         description:
-          "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida! 🔥👟",
+          "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida!",
       },
       {
         time: "19:00",
@@ -271,19 +271,17 @@ export const saturdayTimetableData: Column[] = [
       { time: "12:30" },
       {
         time: "13:00",
-        event: "Clave Rhythm",
+        event: "Ritmo de Clave",
         instructor: "Guillermo",
         type: "workshop",
         description:
-          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
+          "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
       },
       {
         time: "13:30",
-        event: "Clave Rhythm",
+        event: "Ritmo de Clave",
         instructor: "Guillermo",
         type: "workshop",
-        description:
-          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
       },
 
       {
@@ -292,15 +290,15 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Angel Candeaux",
         type: "workshop",
         description:
-          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
+          "¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva. ¿Qué Vivirás en el Taller? - Exploración de tu ritmo interno: Aprende a mantener tu propio patrón mientras escuchas y dialogas con el grupo. - Conexión auténtica: Ejercicios de percusión grupal que fortalecen los lazos y la comunicación no verbal. - Equilibrio entre estructura y libertad: Descubre cómo seguir el pulso colectivo y, a la vez, atreverte a romper el patrón para expresar tu individualidad. - Momentos de comunión y expresión personal: Alterna entre el unísono grupal y la oportunidad de alzar tu propia voz rítmica. - Desarrollo de habilidades cognitivas y emocionales: Mejora la concentración, la coordinación y la apertura sensorial. ¿Por Qué Participar? - No necesitas experiencia previa, solo ganas de explorar y dejarte llevar por el ritmo. - Descubrirás herramientas para fortalecer la comunicación, la empatía y el trabajo en equipo. - Vivirás una experiencia transformadora que une cuerpo, mente y comunidad a través de la música. Angel Candeaux te invita a sumergirte en la polirritmia: un viaje donde cada latido cuenta y la suma de las diferencias crea armonía.",
+        image: "/angel-candeaux.jpeg",
+        bio: 'Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto "desapalencao", Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo. ¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva.',
       },
       {
         time: "14:30",
         event: "Introduction to Polyrhythm",
         instructor: "Angel Candeaux",
         type: "workshop",
-        description:
-          "Master the art of Claverhythms essential to Afro-Cuban music with percussionist Chucho. Perfect for musicians and dancers wanting to deepen their understanding of salsa's rhythmic foundation.",
       },
       { time: "15:00" },
       { time: "15:30" },
@@ -327,17 +325,19 @@ export const saturdayTimetableData: Column[] = [
       { time: "13:30" },
       {
         time: "14:00",
-        event: "TBA",
+        event:
+          "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo",
         type: "talk",
+        presenter: "Sarah Balzat",
         description:
-          "Join us for a guided listening experience featuring rare salsa recordings, with in-depth discussion of the musical elements, historical context, and cultural significance.",
+          "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria.",
       },
       {
         time: "14:00",
-        event: "TBA 2",
+        event: "Musical Style or Dance Style? Both and Neither!",
         type: "talk",
-        description:
-          "Join us for a guided listening experience featuring rare salsa recordings, with in-depth discussion of the musical elements, historical context, and cultural significance.",
+        presenter: "Jessi y Vane",
+        description: "",
       },
       {
         time: "15:00",
@@ -347,30 +347,42 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "16:00",
-        event: "echando palante (eddie palmieri)",
+        event: "Aviatrix & DJ Christian",
         presenter: "DJ Christian",
         host: "Aviatrix",
         type: "talk",
-        description:
-          "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
+        image: "/eddie-palmieri.jpeg",
+        artist: "Eddie Palmieri",
+        record: "Echando Pa’lante (Straight Ahead)",
+        bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",
+        comment:
+          "Elegí el álbum “Echando Pa’lante (Straight Ahead)” porque es una obra importante en la historia de la salsa y muestra el estilo innovador de Eddie Palmieri, así como el talento de su banda. Lanzado en 1964, el álbum es celebrado por sus potentes ritmos, arreglos complejos y el sonido distintivo de la “trombanga”, que introdujo los trombones en la música tradicional latinoamericana.",
       },
       {
         time: "16:30",
         event: "disco por confirmar",
         presenter: "Sindicato del Vinilo",
-        host: "Aviatrix",
         type: "talk",
-        description:
+        host: "Aviatrix",
+        artist: "Eddie Palmieri",
+        record: "Echando Pa’lante (Straight Ahead)",
+        bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",
+
+        comment:
           "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
       },
       {
         time: "17:00",
-        event: "Frankie Dante con Larry Harlow",
-        presenter: "Mike de Son Obrero",
-        host: "Aviatrix",
+        event: "Aviatrix & Raicez Koncretaz",
+        presenter: "Raicez Koncretaz",
         type: "talk",
-        description:
-          "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
+        host: "Aviatrix",
+        image: "/francisco-aguabella.webp",
+        artist: "Francisco Aguabella",
+        record: "Hitting Hard",
+        bio: "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen cómo objetivo no dejar morir el formato análogo y mantenerlo vivo.",
+        comment:
+          "Se escogió este disco por la gran variedad de Ritmos que pueden Converger en una producción músical y que La salsa así como muchos géneros tiene muchas influencias de otros géneros musicales",
       },
       { time: "17:30" },
 
@@ -382,8 +394,7 @@ export const saturdayTimetableData: Column[] = [
           "Transbarrio dialogues: Las raices afroestadounidenses de la salsa",
         presenter: "Matti Steinitz",
         type: "talk",
-        description:
-          "Join salsa historian Jorg for an engaging talk on the evolution of salsa music from its roots in Cuba and Puerto Rico to its global impact today.",
+        description: "",
       },
 
       { time: "19:30" },

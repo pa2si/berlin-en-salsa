@@ -31,7 +31,13 @@ export default function FestivalTimetable() {
     host?: string;
     djs?: string;
     description?: string;
+    bio?: string; // Biographical information for instructors
+    record?: string; // For Charlas Salseras - information about the record/album being discussed
+    artist?: string; // For Charlas Salseras - information about the artist of the record
+    text?: string; // For Charlas Salseras - additional explanatory text about the talk
+    comment?: string; // For Charlas Salseras - comment from the presenter
     image?: string;
+    type?: "main" | "dance-show" | "workshop" | "talk";
     slides?: {
       image?: string;
       description?: string;
@@ -328,9 +334,12 @@ export default function FestivalTimetable() {
                                           slotWithImage.image ||
                                           showSlot.image ||
                                           slot.image,
+                                        // For talk events, NEVER use description in slides to avoid any possibility of duplication
                                         description:
-                                          showSlot.description ||
-                                          slot.description,
+                                          showSlot.type === "talk"
+                                            ? undefined // Skip description for ALL talk events
+                                            : showSlot.description ||
+                                              slot.description,
                                       });
                                     }
                                   }
@@ -389,8 +398,14 @@ export default function FestivalTimetable() {
                                     host: showSlot.host || slot.host,
                                     djs: showSlot.djs || slot.djs,
                                     actType: showSlot.actType || slot.actType,
+                                    type: showSlot.type || slot.type,
                                     description:
                                       showSlot.description || slot.description,
+                                    bio: showSlot.bio || slot.bio,
+                                    record: showSlot.record || slot.record,
+                                    artist: showSlot.artist || slot.artist,
+                                    text: showSlot.text || slot.text,
+                                    comment: showSlot.comment || slot.comment,
                                     image:
                                       slotWithImage.image ||
                                       showSlot.image ||
@@ -435,7 +450,7 @@ export default function FestivalTimetable() {
                                 boxSizing: "border-box", // Ensure padding doesn't affect overall height
                               }}
                             >
-                              <div className="text-bes-amber flex items-center justify-center text-xs text-[1rem]">
+                              <div className="text-bes-amber flex items-center justify-center text-xs text-[1rem] leading-4">
                                 <span title="Click for details">
                                   {slot.event && slot.event.length > 30
                                     ? `${slot.event.substring(0, 30)}...`
@@ -443,12 +458,12 @@ export default function FestivalTimetable() {
                                 </span>
                               </div>
                               {slot.actType && (
-                                <div className="text-center text-[0.9rem] font-normal normal-case opacity-90">
+                                <div className="mt-0.5 text-center text-[0.9rem] leading-none font-normal normal-case opacity-90">
                                   {slot.actType}
                                 </div>
                               )}
                               {slot.instructor && (
-                                <div className="text-center text-[0.9rem] font-normal normal-case opacity-90">
+                                <div className="mt-0.5 text-center text-[0.9rem] leading-none font-normal normal-case opacity-90">
                                   {slot.instructor}
                                 </div>
                               )}
@@ -575,8 +590,21 @@ export default function FestivalTimetable() {
 
                 {/* Time and instructor info */}
                 <div className="mb-4 flex flex-col">
-                  <span className="text-sm font-bold text-gray-700">
-                    Time:{" "}
+                  <span className="flex items-center text-sm font-bold text-gray-700">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="mr-1 h-4 w-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
                     {selectedEventDetails.timeRange ||
                       selectedEventDetails.time}
                   </span>
@@ -587,7 +615,10 @@ export default function FestivalTimetable() {
                   )}
                   {selectedEventDetails.instructor && (
                     <span className="text-sm text-gray-700">
-                      Instructor: {selectedEventDetails.instructor}
+                      {selectedEventDetails.type === "workshop"
+                        ? "Profesor*a:"
+                        : "Instructor:"}{" "}
+                      {selectedEventDetails.instructor}
                     </span>
                   )}
                   {selectedEventDetails.djs && (
@@ -595,16 +626,35 @@ export default function FestivalTimetable() {
                       DJs: {selectedEventDetails.djs}
                     </span>
                   )}
-                  {selectedEventDetails.presenter && (
-                    <span className="text-sm text-gray-700">
-                      Presenter: {selectedEventDetails.presenter}
-                    </span>
-                  )}
-                  {selectedEventDetails.host && (
-                    <span className="text-sm text-gray-700">
-                      Host: {selectedEventDetails.host}
-                    </span>
-                  )}
+
+                  {/* For talk events, show Host and Presenter with appropriate labels */}
+                  {selectedEventDetails.type === "talk" &&
+                    selectedEventDetails.host && (
+                      <span className="text-sm text-gray-700">
+                        Host: {selectedEventDetails.host}
+                      </span>
+                    )}
+                  {selectedEventDetails.type === "talk" &&
+                    selectedEventDetails.presenter && (
+                      <span className="text-sm text-gray-700">
+                        Presentador*a: {selectedEventDetails.presenter}
+                      </span>
+                    )}
+
+                  {/* For non-talk events, use the original presenter display */}
+                  {selectedEventDetails.type !== "talk" &&
+                    selectedEventDetails.presenter && (
+                      <span className="text-sm text-gray-700">
+                        Presenter: {selectedEventDetails.presenter}
+                      </span>
+                    )}
+                  {selectedEventDetails.type !== "talk" &&
+                    selectedEventDetails.host && (
+                      <span className="text-sm text-gray-700">
+                        Host: {selectedEventDetails.host}
+                      </span>
+                    )}
+
                   {selectedEventDetails.hasShow &&
                     selectedEventDetails.danceShow && (
                       <span className="text-bes-purple mt-1 flex items-center text-sm font-bold">
@@ -971,14 +1021,112 @@ export default function FestivalTimetable() {
                       </div>
                     )}
 
-                    {/* Fallback to single description if no slides */}
-                    {selectedEventDetails.description && (
-                      <p className="mb-6 text-gray-700 md:text-lg md:leading-relaxed">
-                        {selectedEventDetails.description}
-                      </p>
-                    )}
+                    {/* Fallback to single description if no slides - but not for talk events which have dedicated description sections */}
+                    {selectedEventDetails.description &&
+                      selectedEventDetails.type !== "talk" && (
+                        <p className="mb-6 text-gray-700 md:text-lg md:leading-relaxed">
+                          {selectedEventDetails.description}
+                        </p>
+                      )}
                   </>
                 )}
+
+                {/* Bio section */}
+                {/* For workshop events */}
+                {selectedEventDetails.type === "workshop" &&
+                  selectedEventDetails.bio && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-lg font-bold">
+                        Biografía de {selectedEventDetails.instructor}
+                      </h4>
+                      <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                        {selectedEventDetails.bio}
+                      </p>
+                    </div>
+                  )}
+
+                {/* CHARLAS SALSERAS CONTENT */}
+                {/* Case 1: Aviatrix hosted events (with host attribute) */}
+                {selectedEventDetails.type === "talk" &&
+                  selectedEventDetails.host && (
+                    <>
+                      {/* Record info */}
+                      {selectedEventDetails.record && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            {selectedEventDetails.record}
+                            {selectedEventDetails.artist && (
+                              <span> de {selectedEventDetails.artist}</span>
+                            )}
+                          </h4>
+                        </div>
+                      )}
+
+                      {/* Bio */}
+                      {selectedEventDetails.bio && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            Bio de {selectedEventDetails.presenter}
+                          </h4>
+                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                            {selectedEventDetails.bio}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Comment */}
+                      {selectedEventDetails.comment && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            Comentario
+                          </h4>
+                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                            {selectedEventDetails.comment}
+                          </p>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                {/* Case 2: Regular talk events (without host) */}
+                {selectedEventDetails.type === "talk" &&
+                  !selectedEventDetails.host && (
+                    <>
+                      {/* Bio (if available) */}
+                      {selectedEventDetails.bio && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            Bio de {selectedEventDetails.presenter}
+                          </h4>
+                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                            {selectedEventDetails.bio}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Description */}
+                      {selectedEventDetails.description && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            {selectedEventDetails.bio ? "Descripción" : ""}
+                          </h4>
+                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                            {selectedEventDetails.description}
+                          </p>
+                        </div>
+                      )}
+                    </>
+                  )}
+
+                {/* Additional text for Charlas Salseras - always at the end */}
+                {selectedEventDetails.type === "talk" &&
+                  selectedEventDetails.text && (
+                    <div className="border-bes-red mb-6 rounded-lg border-l-4 bg-gray-50 p-4">
+                      <p className="text-gray-700 italic md:text-lg md:leading-relaxed">
+                        &quot;{selectedEventDetails.text}&quot;
+                      </p>
+                    </div>
+                  )}
 
                 {/* Close button */}
                 <div className="flex justify-end">

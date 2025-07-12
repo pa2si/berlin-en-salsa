@@ -29,6 +29,7 @@ export interface TimeSlot {
   isExtended?: boolean; // Flag to indicate if this slot extends from previous time slot
   durationSlots?: number; // Number of time slots this event spans (for continuous events)
   description?: string; // Detailed description of the event for the modal
+  bio?: string; // Biographical information for the instructor, especially for workshop events
   image?: string; // Path to the image for the event
   slides?: SlideContent[]; // Multiple images and descriptions for slider
   hasShow?: boolean; // Flag to indicate if this slot has an overlapping dance show
@@ -36,6 +37,10 @@ export interface TimeSlot {
   dancers?: string; // The names of the dancers in the show (legacy field)
   danceShowImage?: string; // @deprecated - No longer needed as images are now stored in slides
   isContinuation?: boolean; // Flag to indicate if this slot is a continuation of the same event from the previous slot
+  comment?: string; // For Charlas Salseras - text of the comment from the artist who is presenting
+  artist?: string; // For Charlas Salseras - information about the artist being discussed
+  record?: string; // For Charlas Salseras - information about the record/album being discussed
+  text?: string; // For Charlas Salseras - additional explanatory text about the talk
 }
 
 export interface Column {

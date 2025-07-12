@@ -291,19 +291,19 @@ export const sundayTimetableData: Column[] = [
       { time: "12:30" },
       {
         time: "13:00",
-        event: "La Campana",
+        event: "Taller de Campana",
         instructor: "Chucho Palma",
         type: "workshop",
+        image: "/chucho-palma.webp",
+        bio: "Percusionista venezolano radicado en Berlin, actual bongocero de la orquesta La Melodíca.",
         description:
-          "Learn how to play the güiro, a traditional Latin American percussion instrument essential to salsa music. Linda will teach proper technique and rhythmic patterns for this distinctive scraper.",
+          "Muestra de los fundamentos basicos de la campana de mano en los diferentes ritmos latinos donde ella se ejecuta. Muestra de como ejecutar un solo de campana utilizando los patrones de solos de la conga, el timbal y el bongo",
       },
       {
         time: "13:30",
-        event: "La Campana",
+        event: "Taller de Campana",
         instructor: "Chucho Palma",
         type: "workshop",
-        description:
-          "Learn how to play the güiro, a traditional Latin American percussion instrument essential to salsa music. Linda will teach proper technique and rhythmic patterns for this distinctive scraper.",
       },
       { time: "14:00" },
       {
@@ -317,8 +317,9 @@ export const sundayTimetableData: Column[] = [
         event: "Soneo Workshop",
         instructor: "Harry Muñoz",
         type: "workshop",
+        image: "/harry-munoz.webp",
         description:
-          "Join vocalist Hardy Munoz for this interactive workshop on soneo (vocal improvisation) in salsa music. Learn techniques for creating and delivering improvised verses that respond to the chorus.",
+          "En una orquesta, una delantera; en una delantera, unos cantantes… ¡y entre ellos, los soneros! Estaremos hablando de esta especial categoría de intérprete dentro del género salsero. ¿Y quién sabe? De pronto, y de repente… ¡nos ponemos a sonear! Nos vemos el 20 de julio.",
       },
       {
         time: "16:00",
@@ -370,12 +371,16 @@ export const sundayTimetableData: Column[] = [
       },
       {
         time: "16:00",
-        event: "Me le fugué a la candela (Joe Arroyo)",
-        presenter: "Enilce",
+        event: "Avaitrix & Enilce Feikes Álvarez",
+        presenter: "Enilce Feikes Álvarez",
         host: "Aviatrix",
         type: "talk",
-        description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
+        image: "/joe-arroyo.jpg",
+        artist: "Joe Arroyo",
+        record: "Me Le Fugue A La Candela",
+        bio: "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
+        comment:
+          "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozona y admiradora profunda de Joe Arroyo.",
       },
       { time: "16:30" },
       {
@@ -384,29 +389,23 @@ export const sundayTimetableData: Column[] = [
       {
         time: "17:30",
         event: "No Le llamen salsa a mi son",
-        presenter: "DJ Feikes, Christoph Twickel & Guests",
-        host: "DJ Feikes, Christoph Twickel",
+        presenter: "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
         type: "talk",
+        image: "/no-le-llamen-salsa-a-mi-son.webp",
         description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
+          "El tulo de la canción „No le llamen Salsa a mi Son... dile música Cubana“ del cantante cubano Monguito “El Único” lo deja claro: la 'Salsa' no fue en un principio más que una etqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimento colectvo de muchas comunidades latnas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creatvos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el Salsomano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana.",
       },
       {
         time: "18:00",
         event: "No Le llamen salsa a mi son",
-        presenter: "DJ Feikes, Christoph Twickel & Guests",
-        host: "DJ Feikes, Christoph Twickel",
+        presenter: "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
         type: "talk",
-        description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
       },
       {
         time: "18:30",
         event: "No Le llamen salsa a mi son",
-        presenter: "DJ Feikes, Christoph Twickel & Guests",
-        host: "DJ Feikes, Christoph Twickel",
+        presenter: "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
         type: "talk",
-        description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
       },
       { time: "19:00" },
       { time: "19:30" },

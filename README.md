@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.20
+
+- modifications for the modal in Charlas
+- more slots filled with infos
+
 v1.1.1-timetable.19
 
 - Main Stage except for dance shows done for monday
