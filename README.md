@@ -2,9 +2,17 @@ Versions:
 
 whats's done:
 
+v 1.0.13
+
+- Added "Links" section to Footer
+  - Implemented modal popup for external links
+  - Added two external links (salsa-berlin.de and Berlin En Salsa Documentary)
+  - Responsive design with two-row layout on mobile and one-row on desktop
+  - Links modal accessible in both Spanish and German versions
+
 v 1.0.12
 
-- apated height for form
+- Adapted height for form to prevent layout shifts when toggling privacy checkbox
 
 v 1.0.11
 
