@@ -60,7 +60,7 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Afro-Cuban Dance Show",
-        // dancers: "",
+        dancers: "Leidiana & Roger",
         slides: [
           {
             image: "/alafia-con-ire.webp",
@@ -68,7 +68,12 @@ export const saturdayTimetableData: Column[] = [
             description:
               "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
           },
-          {},
+          {
+            dancerOne: "Leidiana",
+            dancerTwo: "Roger",
+            description:
+              "Leijana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana. Con su estilo único y la alegría de vivir que trae de su tierra natal, llena de luz cualquier lugar al que va. Para ella, bailar no es solo una profesión, sino una verdadera pasión",
+          },
         ],
       },
       {
@@ -225,16 +230,20 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "16:00",
         event: "Son Cubano",
-        instructor: "Yago y Helen",
+        instructor: "Helen",
+        instructorTwo: "Yago",
         type: "workshop",
-        bio: "Helen Lleva más de cinco años enseñando en Berlín, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubana enriquece enormemente su excepcional capacidad para enseñar y bailar. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse de manera libre, elegante y femenina, celebrando la esencia de la mujer. Helen es una firme defensora del empoderamiento de sus estudiantes, alentándolos a disfrutar del baile como una experiencia compartida entre parejas, donde tanto quien guía como quien sigue tienen un papel igual de importante. Ha desarrollado principios específicos de 'seguimiento activo' para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofia de Endaya, Sassan AliValiollahi y Luis Duarte. Yago Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es fundamental ser un líder preciso y atento, con el fin de brindar a su pareja una experiencia de baile de calidad. Gracias a su formación en ciencias del deporte, Yago ofrece explicaciones claras y detecta rápidamente limitaciones físicas para proporcionar correcciones efectivas. Enseña con gran pasión y considera que el baile es la máxima purificación del alma. Afirma que, cuando una persona se entrega por completo a la música y al movimiento, alcanza el estado más alto de presencia. Yago ha perfeccionado sus habilidades bajo la guía de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
+        bio: "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de 'seguimiento activo' para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofia de Endaya, Sassan AliValiollahi y Luis Duarte.",
+        bioTwo:
+          "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
         description:
           "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
       },
       {
         time: "16:30",
         event: "Son Cubano",
-        instructor: "Yago",
+        instructor: "Helen",
+        instructorTwo: "Yago",
         type: "workshop",
       },
       { time: "17:00" },
@@ -252,7 +261,7 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "19:00",
         event: "Salsa Caleña",
-        instructor: "Julian y Jessica",
+        instructor: "Julian",
         type: "workshop",
       },
       { time: "19:30" },

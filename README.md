@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.23
+
+- more updates in the program.
+  - for now everything i have
+- instructors can now have two bios also in dance workshops
+- also in the timeline we can now display two instructrs in the slots
+
 v1.1.1-timetable.22
 
 - more updates in the program

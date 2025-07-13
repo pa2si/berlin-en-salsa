@@ -27,11 +27,13 @@ export default function FestivalTimetable() {
     endTime?: string;
     timeRange?: string;
     instructor?: string;
+    instructorTwo?: string; // Second instructor for workshops with multiple teachers
     presenter?: string;
     host?: string;
     djs?: string;
     description?: string;
     bio?: string; // Biographical information for instructors
+    bioTwo?: string; // Biographical information for the second instructor
     record?: string; // For Charlas Salseras - information about the record/album being discussed
     artist?: string; // For Charlas Salseras - information about the artist of the record
     text?: string; // For Charlas Salseras - additional explanatory text about the talk
@@ -410,6 +412,9 @@ export default function FestivalTimetable() {
                                     timeRange,
                                     instructor:
                                       showSlot.instructor || slot.instructor,
+                                    instructorTwo:
+                                      showSlot.instructorTwo ||
+                                      slot.instructorTwo,
                                     presenter:
                                       showSlot.presenter || slot.presenter,
                                     host: showSlot.host || slot.host,
@@ -419,6 +424,7 @@ export default function FestivalTimetable() {
                                     description:
                                       showSlot.description || slot.description,
                                     bio: showSlot.bio || slot.bio,
+                                    bioTwo: showSlot.bioTwo || slot.bioTwo,
                                     record: showSlot.record || slot.record,
                                     artist: showSlot.artist || slot.artist,
                                     text: showSlot.text || slot.text,
@@ -486,6 +492,8 @@ export default function FestivalTimetable() {
                               {slot.instructor && (
                                 <div className="mt-0.5 text-center text-[0.9rem] leading-none font-normal normal-case opacity-90">
                                   {slot.instructor}
+                                  {slot.instructorTwo &&
+                                    ` y ${slot.instructorTwo}`}
                                 </div>
                               )}
 
@@ -640,6 +648,8 @@ export default function FestivalTimetable() {
                         ? "Dirigido por:"
                         : "Instructor:"}{" "}
                       {selectedEventDetails.instructor}
+                      {selectedEventDetails.instructorTwo &&
+                        ` y ${selectedEventDetails.instructorTwo}`}
                     </span>
                   )}
                   {selectedEventDetails.djs && (
@@ -1154,17 +1164,32 @@ export default function FestivalTimetable() {
 
                 {/* Bio section */}
                 {/* For workshop events */}
-                {selectedEventDetails.type === "workshop" &&
-                  selectedEventDetails.bio && (
-                    <div className="mb-6">
-                      <h4 className="text-bes-red mb-2 text-lg font-bold">
-                        Biografía de {selectedEventDetails.instructor}
-                      </h4>
-                      <p className="text-gray-700 md:text-lg md:leading-relaxed">
-                        {selectedEventDetails.bio}
-                      </p>
-                    </div>
-                  )}
+                {selectedEventDetails.type === "workshop" && (
+                  <>
+                    {selectedEventDetails.bio && (
+                      <div className="mb-6">
+                        <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          Biografía de {selectedEventDetails.instructor}
+                        </h4>
+                        <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          {selectedEventDetails.bio}
+                        </p>
+                      </div>
+                    )}
+
+                    {selectedEventDetails.bioTwo &&
+                      selectedEventDetails.instructorTwo && (
+                        <div className="mb-6">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                            Biografía de {selectedEventDetails.instructorTwo}
+                          </h4>
+                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                            {selectedEventDetails.bioTwo}
+                          </p>
+                        </div>
+                      )}
+                  </>
+                )}
 
                 {/* CHARLAS SALSERAS CONTENT */}
                 {/* Case 1: Aviatrix hosted events (with host attribute) */}

@@ -21,6 +21,7 @@ export interface TimeSlot {
   time: string;
   event?: string;
   instructor?: string;
+  instructorTwo?: string; // Second instructor for workshops with multiple teachers
   presenter?: string;
   host?: string;
   djs?: string;
@@ -30,6 +31,7 @@ export interface TimeSlot {
   durationSlots?: number; // Number of time slots this event spans (for continuous events)
   description?: string; // Detailed description of the event for the modal
   bio?: string; // Biographical information for the instructor, especially for workshop events
+  bioTwo?: string; // Biographical information for the second instructor
   image?: string; // Path to the image for the event
   imageTwo?: string; // Path to the second image for the event
   slides?: SlideContent[]; // Multiple images and descriptions for slider
