@@ -1,9 +1,9 @@
 import { Column } from "../types/timetable";
 
 // Saturday timetable data
-export const saturdayTimetableData: Column[] = [
+export const GermanSaturdayTimetableData: Column[] = [
   {
-    title: "Tarima Principal",
+    title: "Hauptbühne",
     slots: [
       {
         time: "12:30",
@@ -15,13 +15,13 @@ export const saturdayTimetableData: Column[] = [
             djName: "Rodo Le Fou",
             image: "/rodo-le-fou.webp",
             description:
-              "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
+              "DJ, Plattensammler und Liebhaber der tropischen Musik. Er ist Mitbegründer des Kollektivs La Noche und der Aviatrix Listening Sessions sowie Mitglied der Salsa-Band Cayeye und der Punkband Severo Esfínter.",
           },
           {
             djName: "El Profe",
             image: "/el-profe.webp",
             description:
-              "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como “LA NOCHE” and “It’s a SALSA BRAVA Thing, eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
+              "El Profe ist das Alias von Raúl Payares, einem afrokolumbianischen Selector mit Wohnsitz in Berlin. Raúl ist leidenschaftlicher Vinylsammler und bringt seit über vier Jahren die Tanzflächen zum Beben – mit kraftvollen Sets voller Salsa Brava, traditioneller Cumbia, karibischer Rhythmen, klassischem Vallenato und afrikanischen Perlen aus den 60er-, 70er- und 80er-Jahren. Geboren in Cartagena, Kolumbien, und aufgewachsen zwischen Trommeln, Akkordeons und Picos, verbindet El Profe seine afro-kolumbianische Herkunft mit einer tiefgehenden, tanzbaren und ehrlichen Musikauswahl. Er ist der Gründer von Partys wie LA NOCHE und It’s a SALSA BRAVA Thing – Veranstaltungen, die die alternative Szene Berlins geprägt haben und Räume schaffen, in denen afro-lateinamerikanische Musik in ihrer ursprünglichsten Form gefeiert wird: auf Vinyl und mit Herz. Jedes seiner Sets ist mehr als nur Musik zum Tanzen – es ist eine klangliche Reise, die Kulturen, Körper und Erinnerungen miteinander verbindet.",
           },
         ],
       },
@@ -36,9 +36,9 @@ export const saturdayTimetableData: Column[] = [
         event: "EC Kuba DJ",
         actType: "DJ Set",
         type: "main",
-        description:
-          "Nacido en la cuidad donde se creó la rumba Ciudad de Matanzas Cuba. Reside en Berlín ya hace varios años y dando a conocer lo mejor de la música cubana en diferentes eventos y festivales como festival  Berlín fiesta Elegante, Bérgamo en Salsa Italia , Berlín Salsa congresos ,entre otros y sociales como Soda Club Berlin .Amante de la música De su tierra y siempre interesado por otra culturas musicalmente. Berlín en Salsa preparó un set de Timba, Salsa y Son Cubano.",
         image: "/ec-kuba.webp",
+        description:
+          "Geboren in der Stadt, in der die Rumba entstand – Matanzas, Kuba – lebt er seit mehreren Jahren in Berlin und bringt dort das Beste der kubanischen Musik auf die Bühne. Er ist auf zahlreichen Events und Festivals vertreten, darunter das Festival Berlín Fiesta Elegante, Bérgamo en Salsa (Italien), der Berlin Salsa Congress und viele weitere – auch in bekannten sozialen Locations wie dem Soda Club Berlin. Als leidenschaftlicher Liebhaber der Musik seiner Heimat zeigt er zugleich großes Interesse an anderen Kulturen und deren musikalischen Ausdrucksformen. Für Berlín en Salsa hat er ein Set mit Timba, Salsa und Son Cubano vorbereitet.",
       },
       {
         time: "14:00",
@@ -66,13 +66,13 @@ export const saturdayTimetableData: Column[] = [
             image: "/alafia-con-ire.webp",
             bandName: "Alafía con Iré",
             description:
-              "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
+              "Im Jahr 2004 gründeten jugendliche Musiker in Havanna die Band Alafia con Iré aufgrund ihrer großen Leidenschaft für Musik und dem Wunsch, selbst die vielfältige Musik ihres Heimatlandes zu spielen. Mit Rasiel Almanza Cairo gelangte diese Idee 2022 nach Berlin, wo das Projekt in überwiegend neuer Besetzung wieder ins Leben gerufen wurde. Alafia con Iré spielt unter anderem afrokubanische Musik, insbesondere auch Rumba, und zudem eigene Kompositionen. Der Name der Band stammt aus der afrokubanischen Religion 'Regla de Ocha'. Alafia bedeutet auf Yoruba so viel wie Wohlbefinden und innerer Frieden und Iré stellt eine zusätzliche Verstärkung dar.",
           },
           {
             dancerOne: "Leidiana",
             dancerTwo: "Roger",
             description:
-              "Roger y Leidiana son un dúo de bailarines cubanos reconocidos por fusionar la tradición con la modernidad en cada presentación. Su estilo único combina la fuerza del movimiento urbano, la elegancia de la danza tradicional cubana y la profundidad expresiva del afro-contemporáneo.",
+              "Roger und Leidiana sind ein Duo kubanischer Tänzer, die dafür anerkannt sind, Tradition mit Moderne bei jeder Aufführung zu verschmelzen Sein einzigartiger Stil vereint die Stärke der urbanen Bewegung, die Eleganz des traditionellen kubanischen Tanzes und die ausdrucksstarke Tiefe des Afro-Contemporanen",
           },
         ],
       },
@@ -82,7 +82,7 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "DJ Feikes lleva más de 35 años recorriendo el Caribe con los oídos siempre atentos. Y tras cada viaje, le acompaña el mismo dilema: ¿cómo meter todos esos discos en el avión y traerlos sanos y salvos hasta Berlín? Cada primer miércoles de mes, DJ Feikes y su compañero DJ Christian presentan su “Salsa Café” en el Club  «wilder als erwartet», frente al Nordbahnhof. Estos dos apasionados de la música ofrecen a su público una exquisita selección de su extensa colección de discos: desde los clásicos cubanos de los años 50 —con mambo, danzón y charanga—, pasando por la enérgica “salsa callejera” del Nueva York de los 60, la poderosa “salsa brava” orquestada de los 70, la salsa más melódica de los 80, hasta llegar a los sonidos románticos de los 90. Además, también suenan otros ritmos afrocaribeños como la cumbia colombiana, el merengue dominicano o incluso la salsa africana con raíces cubanas. Lo esencial: ¡que la música te conquiste y se sienta el swing!",
+          "DJ Feikes bereist seit über 35 Jahren mit wachem Ohr die Karibik – und steht bei der Rückreise jedes Mal vor derselben Herausforderung: Wie bekomme ich bloß all die Schallplatten heil ins Flugzeug und sicher nach Berlin? An jedem ersten Mittwoch im Monat präsentieren DJ Feikes und sein DJ-Partner Christian ihr „Salsa Café“ im Club „wilder al -erwartet“ am Nordbahnhof. Die beiden Musikliebhaber bringen ihrem Publikum eine exquisite Auswahl aus ihrer umfangreichen Plattensammlung mit: von kubanischen Klassikern der 50er Jahre – mit Mambo, Danzón und Charanga – über die kraftvolle „Street Salsa“ aus dem New York der späten 60er, die opulent arrangierte „Salsa Brava“ der 70er, die melodische Salsa der 80er bis hin zur romantischen Salsa der 90er – alles ist dabei. Auch andere afrokubanische und karibische Rhythmen finden ihren Platz, darunter Cumbia aus Kolumbien, Merengue und Bachata aus der Dominikanischen Republik oder kubanisch inspirierte afrikanische Salsa. Hauptsache, die Musik geht ins Ohr und bringt den richtigen Swing auf die Tanzfläche!",
         image: "/dj-feikes.webp",
       },
       {
@@ -111,16 +111,16 @@ export const saturdayTimetableData: Column[] = [
             image: "/tempo-havana.webp",
             bandName: "Tempo Havanna",
             description:
-              "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir.",
+              "Tempo Havanna lassen die musikalische Seele Kubas erklingen, festgehalten in mitreißenden eigenen Kompositionen, modern und urban-kubanisch. Lateinamerikanische Rhythmen von Salsa und Son bis Bolero und Cha Cha Cha tragen das Flair Havannas im Reisegepäck und stillen die Sehnsucht nach karibischer Leichtigkeit, Leidenschaft und Lebenslust. Romantisch-beschwingt bis energetisch, bei diesen Klängen werden Erinnerungen an heiße Abende und kühle Drinks im Sonnenuntergang wach. Tempo Havanna inspiriert sein Publikum, südländische Entschleunigung zu wagen, das Leben pur zu genießen und die Freude am Tanz zu feiern - ganz im Tempo Havanna.",
           },
           {
             image: "/son-cubano.webp",
             dancerOne: "Helen",
             dancerTwo: "Yago",
             dancerOneDescription:
-              "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de “seguimiento activo” para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofía de Endaya, Sassan AliValiollahi y Luis Duarte.",
+              "Seit über fünf Jahren unterrichtet sie in Berlin mit dem Schwerpunkt auf Rueda de Casino. Ihre Leidenschaft für die kubanische Kultur und den Tanz bereichert ihr außergewöhnliches Talent als Tänzerin und Lehrerin. Besonders die Rumba liegt ihr am Herzen – sie ermöglicht es ihr, sich auf anmutige und feminine Weise frei auszudrücken und die Weiblichkeit zu feiern.",
             dancerTwoDescription:
-              "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
+              "Yago ist bekannt für seine Spontanität und sein improvisatorisches Gespür auf der Tanzfläche. Es ist ihm sehr wichtig, ein präziser und einfühlsamer Führender zu sein, um demder Tanzpartnerin ein angenehmes Tanzerlebnis zu ermöglichen. Dank seines sportwissenschaftlichen Hintergrunds gibt Yago gezielte Erklärungen und erkennt körperliche Einschränkungen schnell, um wirksame Korrekturen vorzunehmen. Mit großer Leidenschaft unterrichtend, betrachtet er das Tanzen als die ultimative Reinigung der Seele. Wenn sich ein Mensch ganz der Musik und dem Tanz hingibt, so meint er, erreicht er den höchsten Zustand der Präsenz. Yago hat seine Fähigkeiten unter der Anleitung international anerkannter Lehrer wie Cristian Mauricio, Luis Duarte und Leiván García – dem Direktor des Conjunto Folklórico Nacional – entwickelt.",
           },
         ],
       },
@@ -130,7 +130,7 @@ export const saturdayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         description:
-          "Emergiendo de las profundidades de noches llenas de ritmos de cumbia y 'baldosas de salsa', un profundo amor por la música transformó a tres amigos en NECIOS. Originalmente de Colombia y Ecuador, este colectivo de SELECTORES SONOROS, con sede en Berlín, ha dado vida a un viaje impulsado por vinilos y agujas. Su colección es una fusión fascinante de sonidos que abarca la amplitud y longitud de América Latina, explorando sus raíces más profundas y nuevos horizontes electrónicos. 'Necio' o 'Necia' es alguien testarudo, que va hasta las últimas consecuencias por lo que realmente cree. ¡Aunque eso signifique no seguir las reglas!",
+          "Aus den Tiefen von Nächten voller Cumbia-Rhythmen und 'Salsa Baldosas' auftauchend, verwandelte eine tiefe Liebe zur Musik drei Freunde in NECIOS. Ursprünglich aus Kolumbien und Ecuador stammend, hat dieses in Berlin ansässige Kollektiv von KLANGSELEKTOREN eine Reise ins Leben gerufen, die von Vinyl und Nadeln angetrieben wird. Ihre Sammlung ist eine faszinierende Fusion von Klängen, die die gesamte Breite und Länge Lateinamerikas umfasst und sowohl tief verwurzelte Traditionen als auch neue elektronische Horizonte erforscht. 'Necio' oder 'Necia' bezeichnet jemanden, der stur ist und bis zum Äußersten für das eintritt, woran er wirklich glaubt – selbst wenn das bedeutet, die Regeln zu brechen!",
         image: "/necios.webp",
       },
       {
@@ -159,15 +159,12 @@ export const saturdayTimetableData: Column[] = [
             image: "/la-melodica.webp",
             bandName: "La Melodica",
             description:
-              "¡La Melodica – Salsa Dura sin compromisos! Diez músicos de primer nivel, un ritmo arrollador y pura energía: La Melodica representa la Salsa Dura en su forma más potente. Bajo la dirección del pianista Jonatan Morgenstern, la banda lleva a escena un sonido explosivo, con metales contundentes, percusiones virtuosas y una voz que arrastra al público al baile.",
+              "Zehn erstklassige Musiker, ein treibender Groove und pure Energie: La Melodica steht für Salsa Dura in ihrer kraftvollsten Form! Unter der Leitung des Pianisten Jonatan Morgenstern bringt die Band einen explosiven Sound auf die Bühne – mit scharfen Bläsern, virtuosen Percussions und mitreißendem Gesang.",
           },
           {
             image: "/jessi-julian.webp",
             dancerOne: "Jessica",
             dancerTwo: "Julian",
-            dancerOneDescription: "tba",
-            dancerTwoDescription:
-              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
           },
         ],
       },
@@ -181,13 +178,13 @@ export const saturdayTimetableData: Column[] = [
           {
             image: "/saca-sal.webp",
             description:
-              "Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas.",
+              "SACA SAL ist ein kollektives musikalisches Ritual, das von Rhythmen und Echos unserer Vorfahren geleitet wird und uns in einen Raum der Freude und Befreiung einlädt. Mit Musik aus dem sogenannten globalen Süden, aufgelegt auf Vinyl, katalysiert und erschüttert dieses kollektive Ritual Emotionen, Schmerzen und Ängste – und heißt sie willkommen, um durch Körperbewegung und das Lauschen auf den eigenen Körper transformiert zu werden. SACA SAL ist ein Ritual in Form eines Klangraums, der auf der Tanzfläche entsteht, wenn sich ein Kollektiv von Menschen versammelt, um zu tanzen und sich von den ausgewählten Rhythmen und Echos seiner beiden Gastgeberinnen mitreißen zu lassen. SACA SAL sind Calamidades Lola @pissandlove & @amuletomanuela.",
             djOne: "Calamidades Lola",
             djTwo: "Amuleto Manuela",
             djOneDescription:
-              "Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación. Radicada en Berlín, gran parte de su colección y selección musical está guiada por su experiencia migratoria.",
+              "Calamidades Lola ist eine Plattensammlerin und DJ/Selector, geboren und aufgewachsen in Barranquilla – einer Stadt an der karibischen Küste Kolumbiens mit einer kraftvollen Festkultur, in der Musik ein sicherer Weg zu Freude und Befreiung ist. Heute lebt sie in Berlin, und ein Großteil ihrer Musiksammlung und Auswahl wird von ihrer Migrationserfahrung geprägt.",
             djTwoDescription:
-              "Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos (paisajes sonoros, esculturas sonoras, prácticas colectivas de escucha y programas de radio), la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro. Aborda temas de diáspora e identidad con el deseo de desaprender y recordar otras formas de habitar nuestra experiencia colectiva de vida.",
+              "Amuleto Manuela ist eine Klangkünstlerin und DJ aus Kolumbien, die in Berlin lebt. In ihrer prozessorientierten Arbeit – bestehend aus Klanglandschaften, Klangskulpturen, kollektiven Hörpraktiken und Radiosendungen – steht das Hören im Mittelpunkt und entsteht als kontextuelle Antwort auf die Suche nach Begegnungsräumen. Sie setzt sich mit Themen wie Diaspora und Identität auseinander, mit dem Wunsch, zu verlernen und sich an andere Formen zu erinnern, wie wir unsere kollektive Lebenserfahrung bewohnen können.",
           },
         ],
       },
@@ -202,16 +199,16 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Talleres de Baile",
+    title: "Tanz-Workshops",
     slots: [
       {
         time: "13:00",
         event: "Afro-Cuban Dance",
         instructor: "Leidiana",
         type: "workshop",
-        bio: "Leidiana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana. Con su estilo único y la alegría de vivir que trae de su tierra natal, llena de luz cualquier lugar al que va. Para ella, bailar no es solo una profesión, sino una verdadera pasión",
+        bio: "Leijana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",
         description:
-          "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes.",
+          "Afrokubanischer Tanz ist Wurzel, Körper und tiefe Verbindung zur Erde. Er entstand aus afrikanischen Traditionen, die nach Kuba gebracht wurden. In jedem Rumba-Schritt, jeder Torso-Bewegung und jedem spirituellen Ausdruck lebt seine Kraft. Er ist das rhythmische und körperliche Fundament vieler Salsa-Stile. Afrokubanisch zu tanzen heißt, die Wurzeln zu ehren.",
       },
       {
         time: "13:30",
@@ -230,11 +227,11 @@ export const saturdayTimetableData: Column[] = [
         instructor: "Helen",
         instructorTwo: "Yago",
         type: "workshop",
-        bio: "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de 'seguimiento activo' para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofia de Endaya, Sassan AliValiollahi y Luis Duarte.",
+        bio: "Seit über fünf Jahren unterrichtet sie in Berlin mit dem Schwerpunkt auf Rueda de Casino. Ihre Leidenschaft für die kubanische Kultur und den Tanz bereichert ihre außergewöhnlichen Fähigkeiten als Tänzerin und Lehrerin. Besonders die Rumba hat einen besonderen Platz in ihrem Herzen – sie ermöglicht ihr, sich frei, anmutig und feminin auszudrücken und dabei die Weiblichkeit zu feiern. Helen setzt sich mit Überzeugung dafür ein, ihre Schülerinnen zu ermutigen, das Tanzen als gemeinsames Erlebnis zwischen beiden Partnerinnen zu schätzen und zu genießen – ein Zusammenspiel, bei dem Führende und Folgende gleichermaßen beitragen. Sie entwickelt kontinuierlich spezifische Prinzipien des „aktiven Folgens“, um die Idee zu fördern, dass Folgende innerhalb der Berliner Tanzszene die gleiche Anerkennung verdienen. Ihr Tanzstil wurde vor allem von Sofia de Endaya, Sassan AliValiollahi und Luis Duarte geprägt.",
         bioTwo:
-          "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
+          "Yago ist bekannt für seine Spontanität und sein improvisatorisches Gespür auf der Tanzfläche. Es ist ihm besonders wichtig, ein präziser und achtsamer Führender zu sein, um seinemseiner Tanzpartnerin ein angenehmes und bereicherndes Tanzerlebnis zu ermöglichen. Mit seinem sportwissenschaftlichen Hintergrund gibt Yago gezielte Erklärungen und erkennt körperliche Einschränkungen schnell, um wirksame Korrekturen vorzunehmen. Er unterrichtet mit großer Leidenschaft und ist überzeugt davon, dass Tanzen die ultimative Reinigung der Seele ist. Wenn ein Mensch ganz in der Musik und im Tanz aufgeht, so meint er, erreicht er den höchsten Zustand von Präsenz. Yago hat seine tänzerischen Fähigkeiten unter der Anleitung international anerkannter Lehrer wie Cristian Mauricio, Luis Duarte und Leiván García – dem Direktor des Conjunto Folklórico Nacional – weiterentwickelt.",
         description:
-          "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
+          "Son Cubano ist das elegante Herz der Salsa. Geboren im Osten Kubas, wo Trommeln und Saiten zusammenkamen, um Geschichten zu erzählen. Mit seinem sanften, fließenden Grundschritt gab der Son der Salsa ihre Struktur und ihren Geschmack. Ohne Son – keine Salsa.",
       },
       {
         time: "16:30",
@@ -251,9 +248,9 @@ export const saturdayTimetableData: Column[] = [
         event: "Salsa Caleña",
         instructor: "Julian",
         type: "workshop",
-        bio: "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina.",
+        bio: "Julian ist ein leidenschaftlicher Salsa-Caleña-Tänzer und -Lehrer mit über sechs Jahren Erfahrung und mehr als drei Jahren Unterrichtstätigkeit in Berlin. Er hat bei zahlreichen Festivals und Events in ganz Deutschland getanzt. Ursprünglich aus Kolumbien stammend, unterrichtet er im Dolce Vita Dance Studio – mit einem Fokus auf schnellem Fußspiel sowie präziser Lead-&-Follow-Technik. In seinen Kursen geht es um mehr als nur Schritte – im Mittelpunkt stehen Verbindung, Intention und Musikalität. Dabei ehrt und vermittelt er die Rhythmen und die Kultur Lateinamerikas.",
         description:
-          "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida!",
+          "Salsa, sabor y control - Aus der Welthauptstadt der Salsa: Cali, Kolumbien. Dieser Stil zeichnet sich durch seine Schnelligkeit und präzisen Schritte aus. Er ist dynamisch, mit Fokus auf ausgefeiltem Footwork und den schnellen, Drehungen, die den Cali Style ausmachen. Jeder Schritt feiert die kulturelle Identität von Cali. Authentisch, kraftvoll und voller Leben!",
       },
       {
         time: "19:00",
@@ -270,7 +267,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Talleres de música",
+    title: "Musik-Workshops",
     slots: [
       { time: "12:30" },
       {
@@ -322,7 +319,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Charlas Salseras",
+    title: "Salsa-Talks",
     slots: [
       { time: "12:30" },
       { time: "13:00" },

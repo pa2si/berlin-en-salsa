@@ -4,21 +4,21 @@ import type { Metadata } from "next";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
 
 export const metadata: Metadata = {
-  title: "Programa",
+  title: "Programm",
   description:
-    "Programa completo del Festival Berlin En Salsa. Consulta los horarios de todos los talleres, shows y conciertos.",
+    "Vollständiges Programm des Berlin En Salsa Festivals. Sieh dir die Zeitpläne aller Workshops, Shows und Konzerte an.",
   alternates: {
-    canonical: `${baseUrl}/timetable`,
+    canonical: `${baseUrl}/de/timetable`,
     languages: {
       es: `${baseUrl}/timetable`,
       de: `${baseUrl}/de/timetable`,
     },
   },
   openGraph: {
-    title: "Berlin En Salsa | Programa",
+    title: "Berlin En Salsa | Programm",
     description:
-      "Consulta los horarios de todos los talleres, shows y conciertos del Festival Berlin En Salsa.",
-    url: `${baseUrl}/timetable`,
+      "Sieh dir die Zeitpläne aller Workshops, Shows und Konzerte des Berlin En Salsa Festivals an.",
+    url: `${baseUrl}/de/timetable`,
   },
 };
 

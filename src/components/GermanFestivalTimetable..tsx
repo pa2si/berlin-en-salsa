@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { saturdayTimetableData } from "../data/saturdayTimetable";
-import { sundayTimetableData } from "../data/sundayTimetable";
+import { GermanSaturdayTimetableData } from "../data/GermanSaturdayTimetable";
+import { GermanSundayTimetableData } from "../data/GermanSundayTimetable";
 import { Column } from "../types/timetable";
 
-export default function FestivalTimetable() {
+export default function GermanFestivalTimetable() {
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [currentDay, setCurrentDay] = useState<"saturday" | "sunday">(
     "saturday",
@@ -93,7 +93,9 @@ export default function FestivalTimetable() {
 
   // Choose the timetable data based on the selected day
   const timetableData =
-    currentDay === "saturday" ? saturdayTimetableData : sundayTimetableData;
+    currentDay === "saturday"
+      ? GermanSaturdayTimetableData
+      : GermanSundayTimetableData;
 
   // Process the timetable data to identify consecutive slots with the same event
   const processedTimetableData: Column[] = timetableData.map((column) => {
@@ -281,7 +283,7 @@ export default function FestivalTimetable() {
                             <motion.div
                               whileHover={{ scale: 1.02, y: -2 }}
                               whileTap={{ scale: 0.98 }}
-                              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type, !!slot.hasShow)}`}
+                              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center font-serif text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type, !!slot.hasShow)}`}
                               onClick={() => {
                                 setSelectedEvent(slot.event || null);
                                 if (slot.event) {
@@ -645,7 +647,7 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.instructor && (
                     <span className="text-md text-gray-700">
                       {selectedEventDetails.type === "workshop"
-                        ? "Dirigido por:"
+                        ? "Geleitet von:"
                         : "Instructor:"}{" "}
                       {selectedEventDetails.instructor}
                       {selectedEventDetails.instructorTwo &&
@@ -668,7 +670,7 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.presenter && (
                       <span className="text-md text-gray-700">
-                        Presentado por: {selectedEventDetails.presenter}
+                        Präsentiert von: {selectedEventDetails.presenter}
                       </span>
                     )}
 
@@ -984,7 +986,7 @@ export default function FestivalTimetable() {
                                     : prev - 1,
                                 )
                               }
-                              className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full font-bold text-white transition-colors hover:cursor-pointer"
+                              className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
                               aria-label="Previous slide"
                             >
                               ←
@@ -1020,7 +1022,7 @@ export default function FestivalTimetable() {
                                   <button
                                     key={index}
                                     onClick={() => setCurrentSlideIndex(index)}
-                                    className={`rounded-full px-3 py-1 font-serif text-xs font-medium transition-all hover:cursor-pointer ${
+                                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all hover:cursor-pointer ${
                                       currentSlideIndex === index
                                         ? "bg-bes-red text-white"
                                         : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -1300,7 +1302,7 @@ export default function FestivalTimetable() {
                     }}
                     className="bg-bes-red hover:bg-bes-red/90 rounded-full px-6 py-2 font-bold text-white shadow-md transition-colors hover:cursor-pointer"
                   >
-                    Cerrar
+                    Schließen
                   </button>
                 </div>
               </div>

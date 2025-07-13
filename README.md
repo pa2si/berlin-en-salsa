@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.26
+
+- now with german route for timetable
+  - translated until music workshops
+  - now with font-serif for the slider names in modal
+  - now the instructors in the timeline slots are also with font-serif
+
 v1.1.1-timetable.25
 
 - added a layout.tsx for timetable
