@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.24
+
+- now its says "cerrar" instead of "close" in the modal for spanish version
+
 v1.1.1-timetable.23
 
 - more updates in the program.

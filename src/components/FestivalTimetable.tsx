@@ -1212,7 +1212,7 @@ export default function FestivalTimetable() {
                       {selectedEventDetails.bio && (
                         <div className="mb-6">
                           <h4 className="text-bes-red mb-2 text-lg font-bold">
-                            Bio de {selectedEventDetails.presenter}
+                            Biografía de {selectedEventDetails.presenter}
                           </h4>
                           <p className="text-gray-700 md:text-lg md:leading-relaxed">
                             {selectedEventDetails.bio}
@@ -1283,7 +1283,7 @@ export default function FestivalTimetable() {
                     }}
                     className="bg-bes-red hover:bg-bes-red/90 rounded-full px-6 py-2 font-bold text-white shadow-md transition-colors hover:cursor-pointer"
                   >
-                    Close
+                    Cerrar
                   </button>
                 </div>
               </div>
