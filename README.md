@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.21
+
+- updated Modal saying now dirigido por
+
 v1.1.1-timetable.20
 
 - modifications for the modal in Charlas

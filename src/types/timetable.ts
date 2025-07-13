@@ -31,6 +31,7 @@ export interface TimeSlot {
   description?: string; // Detailed description of the event for the modal
   bio?: string; // Biographical information for the instructor, especially for workshop events
   image?: string; // Path to the image for the event
+  imageTwo?: string; // Path to the second image for the event
   slides?: SlideContent[]; // Multiple images and descriptions for slider
   hasShow?: boolean; // Flag to indicate if this slot has an overlapping dance show
   danceShow?: string; // The name of the dance show (e.g., "TANZSHOW 1")

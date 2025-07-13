@@ -352,6 +352,7 @@ export const saturdayTimetableData: Column[] = [
         host: "Aviatrix",
         type: "talk",
         image: "/eddie-palmieri.jpeg",
+        imageTwo: "/christian.webp",
         artist: "Eddie Palmieri",
         record: "Echando Pa’lante (Straight Ahead)",
         bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",

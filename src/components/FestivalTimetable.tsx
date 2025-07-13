@@ -37,6 +37,7 @@ export default function FestivalTimetable() {
     text?: string; // For Charlas Salseras - additional explanatory text about the talk
     comment?: string; // For Charlas Salseras - comment from the presenter
     image?: string;
+    imageTwo?: string; // Second image for the event
     type?: "main" | "dance-show" | "workshop" | "talk";
     slides?: {
       image?: string;
@@ -308,7 +309,8 @@ export default function FestivalTimetable() {
                                   const slotWithImage =
                                     column.slots
                                       .slice(slotIndex, slotIndex + count)
-                                      .find((s) => s.image) || showSlot;
+                                      .find((s) => s.image || s.imageTwo) ||
+                                    showSlot;
 
                                   // Reset current slide index when opening a new modal
                                   setCurrentSlideIndex(0);
@@ -324,16 +326,31 @@ export default function FestivalTimetable() {
                                     // If we have custom slides, use them exclusively
                                     slides.push(...showSlot.slides);
                                   } else {
-                                    // No custom slides, use the main image/description as a single slide
-                                    if (
+                                    // If we have both image and imageTwo, create two slides
+                                    const hasImage =
                                       slotWithImage.image ||
-                                      showSlot.description
-                                    ) {
+                                      showSlot.image ||
+                                      slot.image;
+                                    const hasImageTwo =
+                                      slotWithImage.imageTwo ||
+                                      showSlot.imageTwo ||
+                                      slot.imageTwo;
+
+                                    if (hasImage && hasImageTwo) {
+                                      // First slide with the main image
                                       slides.push({
-                                        image:
-                                          slotWithImage.image ||
-                                          showSlot.image ||
-                                          slot.image,
+                                        image: hasImage,
+                                      });
+
+                                      // Second slide with the second image
+                                      slides.push({
+                                        image: hasImageTwo,
+                                      });
+                                    }
+                                    // No custom slides and no imageTwo, use the main image/description as a single slide
+                                    else if (hasImage || showSlot.description) {
+                                      slides.push({
+                                        image: hasImage,
                                         // For talk events, NEVER use description in slides to avoid any possibility of duplication
                                         description:
                                           showSlot.type === "talk"
@@ -410,6 +427,10 @@ export default function FestivalTimetable() {
                                       slotWithImage.image ||
                                       showSlot.image ||
                                       slot.image,
+                                    imageTwo:
+                                      slotWithImage.imageTwo ||
+                                      showSlot.imageTwo ||
+                                      slot.imageTwo,
                                     slides:
                                       slides.length > 0 ? slides : undefined,
                                     hasShow: !!showSlot.hasShow,
@@ -616,7 +637,7 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.instructor && (
                     <span className="text-sm text-gray-700">
                       {selectedEventDetails.type === "workshop"
-                        ? "Profesor*a:"
+                        ? "Dirigido por:"
                         : "Instructor:"}{" "}
                       {selectedEventDetails.instructor}
                     </span>
@@ -637,7 +658,7 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.presenter && (
                       <span className="text-sm text-gray-700">
-                        Presentador*a: {selectedEventDetails.presenter}
+                        Presentado por: {selectedEventDetails.presenter}
                       </span>
                     )}
 
@@ -1008,16 +1029,116 @@ export default function FestivalTimetable() {
                   </div>
                 ) : (
                   <>
-                    {/* Fallback to single image if no slides */}
+                    {/* Fallback to single image or image carousel if no slides */}
                     {selectedEventDetails.image && (
                       <div className="mb-4 overflow-hidden rounded-lg">
-                        <Image
-                          src={selectedEventDetails.image}
-                          alt={selectedEvent}
-                          width={600}
-                          height={400}
-                          className="h-auto w-full object-cover"
-                        />
+                        {selectedEventDetails.imageTwo ? (
+                          /* If we have two images, create a simple image carousel */
+                          <div className="relative">
+                            {/* Image carousel buttons */}
+                            <div className="absolute top-1/2 right-0 left-0 z-10 flex -translate-y-1/2 justify-between px-4">
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setCurrentSlideIndex(0);
+                                }}
+                                className="rounded-full bg-black/50 p-2 text-white"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M15 19l-7-7 7-7"
+                                  />
+                                </svg>
+                              </button>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setCurrentSlideIndex(1);
+                                }}
+                                className="rounded-full bg-black/50 p-2 text-white"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  className="h-6 w-6"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke="currentColor"
+                                >
+                                  <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                  />
+                                </svg>
+                              </button>
+                            </div>
+
+                            {/* Images */}
+                            <div className="relative">
+                              <div
+                                className={`transition-opacity duration-500 ${currentSlideIndex === 0 ? "opacity-100" : "absolute inset-0 opacity-0"}`}
+                              >
+                                <Image
+                                  src={selectedEventDetails.image}
+                                  alt={`${selectedEvent} - Image 1`}
+                                  width={600}
+                                  height={400}
+                                  className="h-auto w-full object-cover"
+                                />
+                              </div>
+                              <div
+                                className={`transition-opacity duration-500 ${currentSlideIndex === 1 ? "opacity-100" : "absolute inset-0 opacity-0"}`}
+                              >
+                                <Image
+                                  src={selectedEventDetails.imageTwo}
+                                  alt={`${selectedEvent} - Image 2`}
+                                  width={600}
+                                  height={400}
+                                  className="h-auto w-full object-cover"
+                                />
+                              </div>
+                            </div>
+
+                            {/* Image indicator dots */}
+                            <div className="absolute right-0 bottom-2 left-0">
+                              <div className="flex justify-center space-x-2">
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setCurrentSlideIndex(0);
+                                  }}
+                                  className={`h-2 w-2 rounded-full ${currentSlideIndex === 0 ? "bg-white" : "bg-white/50"}`}
+                                />
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setCurrentSlideIndex(1);
+                                  }}
+                                  className={`h-2 w-2 rounded-full ${currentSlideIndex === 1 ? "bg-white" : "bg-white/50"}`}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        ) : (
+                          /* Otherwise, just show the single image */
+                          <Image
+                            src={selectedEventDetails.image}
+                            alt={selectedEvent}
+                            width={600}
+                            height={400}
+                            className="h-auto w-full object-cover"
+                          />
+                        )}
                       </div>
                     )}
 

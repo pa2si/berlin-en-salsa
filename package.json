@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "1.1.1-timetable.20",
+  "version": "1.1.1-timetable.21",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
