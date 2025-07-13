@@ -1174,7 +1174,7 @@ export default function FestivalTimetable() {
                       {/* Record info */}
                       {selectedEventDetails.record && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-purple mb-2 text-lg font-bold">
                             {selectedEventDetails.record}
                             {selectedEventDetails.artist && (
                               <span> de {selectedEventDetails.artist}</span>

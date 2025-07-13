@@ -43,12 +43,10 @@ export const sundayTimetableData: Column[] = [
               "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas.",
           },
           {
-            image: "/jessi-julian.webp",
-            dancerOne: "Jessica",
-            dancerTwo: "Julian",
-            dancerOneDescription: "tba",
-            dancerTwoDescription:
-              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+            image: "",
+            dancerName: "Niya",
+            description:
+              "Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
           },
         ],
       },
@@ -83,7 +81,7 @@ export const sundayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Casino Cubano Dance Show",
-        dancers: "Jessica & Julian",
+        dancers: "Lei y Ayna",
         slides: [
           {
             image: "/burundanga.webp",
@@ -92,12 +90,13 @@ export const sundayTimetableData: Column[] = [
               "Ocho burundangueras de Colombia, India y Alemania sacan a cualquiera del asiento con su ardiente mezcla de salsa, merengue y rumba. Combinando elementos de jazz y flamenco, presentan versiones reinterpretadas de arreglos tradicionales de salsa. Fundada en 1992 como una banda de salsa integrada exclusivamente por mujeres, el grupo ha evolucionado hasta convertirse en una banda emocionante, multicultural y abierta, que mira hacia atrás con orgullo por los muchos conciertos y experiencias compartidas en diversas formaciones. Frente a esta poderosa formación de músicos experimentados, canta, baila, cuenta historias, bromea y ríe Sonia Solarte — poeta y cantante de Cali, la capital salsera de Colombia. Con Doris Alzarte, oriunda de Medellín, estas dos mujeres llenas de energía traen la alegría de vivir de América Latina a Berlín.",
           },
           {
-            image: "/jessi-julian.webp",
-            dancerOne: "Jessica",
-            dancerTwo: "Julian",
-            dancerOneDescription: "tba",
-            dancerTwoDescription:
-              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+            image: "",
+            dancerOne: "Lei",
+            dancerTwo: "Ayna",
+
+            dancerOneDescription:
+              "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
+            dancerTwoDescription: "tba",
           },
         ],
       },
@@ -238,16 +237,15 @@ export const sundayTimetableData: Column[] = [
         event: "New York On 2",
         instructor: "Niya",
         type: "workshop",
+        bio: "¡Hola a todos! Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
         description:
-          "Explore the sensual style of bachata with Maria & Carlos. This workshop focuses on body movement, connection, and expressive techniques that characterize the modern sensual bachata style.",
+          "Precisión, elegancia y musicalidad. La salsa estilo New York (On2) nació en la Gran Manzana, influenciada por el jazz, el mambo y la migración latina. Se baila 'en línea', con énfasis en los tiempos 2 y 6. Es un estilo técnico y expresivo, ideal para contar historias con el cuerpo.",
       },
       {
         time: "13:00",
         event: "New York On 2",
         instructor: "Niya",
         type: "workshop",
-        description:
-          "Explore the sensual style of bachata with Maria & Carlos. This workshop focuses on body movement, connection, and expressive techniques that characterize the modern sensual bachata style.",
       },
       { time: "13:30" },
       {
@@ -260,8 +258,9 @@ export const sundayTimetableData: Column[] = [
         event: "Casino Cubano",
         instructor: "Lei",
         type: "workshop",
+        bio: "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
         description:
-          "Experience the distinctive style of Colombian salsa with Diana & Juan. This workshop focuses on the fast footwork, unique styling, and energetic movements characteristic of Cali-style salsa.",
+          "Mas que baile, es pura gozadera! El casino cubano es un estilo de baile social originado en Cuba, caracterizado por su alegría, sabor caribeño y movimientos circulares. Se baila en pareja y en rueda, destacando la improvisación, la conexión y la energía del son, la salsa y otros ritmos afrocubanos. ¡Pura fiesta y sabor cubano en movimiento!",
       },
       {
         time: "15:30",
@@ -353,21 +352,29 @@ export const sundayTimetableData: Column[] = [
       { time: "14:30" },
       {
         time: "15:00",
-        event: "The Hustler (Willie colon/Hector lavoe)",
+        event: " Aviatrix & Suena Chelo",
         presenter: "Suena Chelo",
         host: "Aviatrix",
         type: "talk",
-        description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
+        record: "The Hustler",
+        artist: "Willie Colon & Hector Lavoe",
+        image: "/the-hustler.webp",
+        imageTwo: "/suena-chelo.webp",
+        bio: "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs",
       },
       {
         time: "15:30",
-        event: "Cielo De Tambores (Grupo Niche)",
+        event: "Aviatrix & Dracaena",
         presenter: "Dracaena",
         host: "Aviatrix",
         type: "talk",
-        description:
-          "Professor Martinez presents a comprehensive overview of salsa's rich history, from its origins in Cuba and Puerto Rico to its evolution and global influence across different regions and eras.",
+        artist: "Grupo Niche",
+        record: "Cielo de Tambores",
+        image: "/cielo-de-tambores.webp",
+        imageTwo: "/dracaena-charla.webp",
+        bio: "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile. ",
+        comment:
+          "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina.",
       },
       {
         time: "16:00",
@@ -376,6 +383,7 @@ export const sundayTimetableData: Column[] = [
         host: "Aviatrix",
         type: "talk",
         image: "/joe-arroyo.jpg",
+        imageTwo: "/enilce.webp",
         artist: "Joe Arroyo",
         record: "Me Le Fugue A La Candela",
         bio: "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",

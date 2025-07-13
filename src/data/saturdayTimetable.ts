@@ -60,7 +60,7 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         hasShow: true,
         danceShow: "Afro-Cuban Dance Show",
-        dancers: "Lei",
+        // dancers: "",
         slides: [
           {
             image: "/alafia-con-ire.webp",
@@ -68,12 +68,7 @@ export const saturdayTimetableData: Column[] = [
             description:
               "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
           },
-          {
-            image: "/lei.webp",
-            dancerOne: "Lei",
-            combinedDancersDescription:
-              "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
-          },
+          {},
         ],
       },
       {
@@ -212,6 +207,7 @@ export const saturdayTimetableData: Column[] = [
         event: "Afro-Cuban Dance",
         instructor: "Leidiana",
         type: "workshop",
+        bio: "Leidiana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana. Con su estilo único y la alegría de vivir que trae de su tierra natal, llena de luz cualquier lugar al que va. Para ella, bailar no es solo una profesión, sino una verdadera pasión",
         description:
           "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes.",
       },
@@ -231,13 +227,14 @@ export const saturdayTimetableData: Column[] = [
         event: "Son Cubano",
         instructor: "Yago y Helen",
         type: "workshop",
+        bio: "Helen Lleva más de cinco años enseñando en Berlín, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubana enriquece enormemente su excepcional capacidad para enseñar y bailar. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse de manera libre, elegante y femenina, celebrando la esencia de la mujer. Helen es una firme defensora del empoderamiento de sus estudiantes, alentándolos a disfrutar del baile como una experiencia compartida entre parejas, donde tanto quien guía como quien sigue tienen un papel igual de importante. Ha desarrollado principios específicos de 'seguimiento activo' para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofia de Endaya, Sassan AliValiollahi y Luis Duarte. Yago Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es fundamental ser un líder preciso y atento, con el fin de brindar a su pareja una experiencia de baile de calidad. Gracias a su formación en ciencias del deporte, Yago ofrece explicaciones claras y detecta rápidamente limitaciones físicas para proporcionar correcciones efectivas. Enseña con gran pasión y considera que el baile es la máxima purificación del alma. Afirma que, cuando una persona se entrega por completo a la música y al movimiento, alcanza el estado más alto de presencia. Yago ha perfeccionado sus habilidades bajo la guía de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
         description:
           "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
       },
       {
         time: "16:30",
         event: "Son Cubano",
-        instructor: "Yago y Helen",
+        instructor: "Yago",
         type: "workshop",
       },
       { time: "17:00" },
@@ -246,8 +243,9 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "18:30",
         event: "Salsa Caleña",
-        instructor: "Julian y Jessica",
+        instructor: "Julian",
         type: "workshop",
+        bio: "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina.",
         description:
           "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida!",
       },
@@ -361,29 +359,31 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "16:30",
-        event: "disco por confirmar",
-        presenter: "Sindicato del Vinilo",
-        type: "talk",
-        host: "Aviatrix",
-        artist: "Eddie Palmieri",
-        record: "Echando Pa’lante (Straight Ahead)",
-        bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",
-
-        comment:
-          "The final segment of our listening session explores contemporary salsa innovations and fusion genres that are shaping the future of Latin music.",
-      },
-      {
-        time: "17:00",
         event: "Aviatrix & Raicez Koncretaz",
         presenter: "Raicez Koncretaz",
         type: "talk",
         host: "Aviatrix",
         image: "/francisco-aguabella.webp",
+        imageTwo: "/raicez-concretaz.webp",
         artist: "Francisco Aguabella",
         record: "Hitting Hard",
         bio: "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen cómo objetivo no dejar morir el formato análogo y mantenerlo vivo.",
         comment:
           "Se escogió este disco por la gran variedad de Ritmos que pueden Converger en una producción músical y que La salsa así como muchos géneros tiene muchas influencias de otros géneros musicales",
+      },
+      {
+        time: "17:00",
+        event: "Aviatrix & DJ Mc0ld",
+        presenter: "DJ Mc0ld",
+        type: "talk",
+        host: "Aviatrix",
+        image: "/frankie-dante.jpg",
+        imageTwo: "/dj-Mc0ld.webp",
+        artist: "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
+        record: "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
+        bio: "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mi. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
+        comment:
+          "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla",
       },
       { time: "17:30" },
 
@@ -391,11 +391,21 @@ export const saturdayTimetableData: Column[] = [
 
       {
         time: "18:30",
+        event: "Salsancó y los comienzos de la salsa en Berlín",
+        presenter: "tba",
+        image: "/salsanco.webp",
+        type: "talk",
+        description:
+          "Eduardo Villegas y Rolo Rodriguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida.",
+      },
+      {
+        time: "19:00",
         event:
           "Transbarrio dialogues: Las raices afroestadounidenses de la salsa",
         presenter: "Matti Steinitz",
+        image: "/matti.webp",
         type: "talk",
-        description: "",
+        bio: "DJ Matatu aka Dr. Matti Steinitz es coleccionista de vinilos e investigador de los sonidos y movimientos de la diáspora africana en las Américas. Recién salió su libro sobre los diálogos transnacionales entre comunidades afroestadounidenses y afrolatinoamericanos en la época de los 1960 y 1970 y como éstas se han manifestado en el surgimiento de escenas de Afro-Latin Soul en zonas de contacto como Nueva York, Panamá y Rio de Janeiro. (https://www.degruyterbrill.com/document/doi/10.1515/9783110665550/html)",
       },
 
       { time: "19:30" },

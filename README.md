@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.22
+
+- more updates in the program
+
 v1.1.1-timetable.21
 
 - updated Modal saying now dirigido por
