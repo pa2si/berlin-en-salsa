@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.25
+
+- added a layout.tsx for timetable
+- adapted a few things in modal
+
 v1.1.1-timetable.24
 
 - now its says "cerrar" instead of "close" in the modal for spanish version

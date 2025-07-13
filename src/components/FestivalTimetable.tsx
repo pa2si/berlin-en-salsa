@@ -619,7 +619,7 @@ export default function FestivalTimetable() {
 
                 {/* Time and instructor info */}
                 <div className="mb-4 flex flex-col">
-                  <span className="flex items-center text-sm font-bold text-gray-700">
+                  <span className="text-md flex items-center font-bold text-gray-700">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="mr-1 h-4 w-4"
@@ -638,12 +638,12 @@ export default function FestivalTimetable() {
                       selectedEventDetails.time}
                   </span>
                   {selectedEventDetails.actType && (
-                    <span className="text-sm text-gray-700">
+                    <span className="text-md text-gray-700">
                       {selectedEventDetails.actType}
                     </span>
                   )}
                   {selectedEventDetails.instructor && (
-                    <span className="text-sm text-gray-700">
+                    <span className="text-md text-gray-700">
                       {selectedEventDetails.type === "workshop"
                         ? "Dirigido por:"
                         : "Instructor:"}{" "}
@@ -653,7 +653,7 @@ export default function FestivalTimetable() {
                     </span>
                   )}
                   {selectedEventDetails.djs && (
-                    <span className="text-sm text-gray-700">
+                    <span className="text-md text-gray-700">
                       DJs: {selectedEventDetails.djs}
                     </span>
                   )}
@@ -661,13 +661,13 @@ export default function FestivalTimetable() {
                   {/* For talk events, show Host and Presenter with appropriate labels */}
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.host && (
-                      <span className="text-sm text-gray-700">
+                      <span className="text-md text-gray-700">
                         Host: {selectedEventDetails.host}
                       </span>
                     )}
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.presenter && (
-                      <span className="text-sm text-gray-700">
+                      <span className="text-md text-gray-700">
                         Presentado por: {selectedEventDetails.presenter}
                       </span>
                     )}
@@ -675,13 +675,13 @@ export default function FestivalTimetable() {
                   {/* For non-talk events, use the original presenter display */}
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.presenter && (
-                      <span className="text-sm text-gray-700">
+                      <span className="text-md text-gray-700">
                         Presenter: {selectedEventDetails.presenter}
                       </span>
                     )}
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.host && (
-                      <span className="text-sm text-gray-700">
+                      <span className="text-md text-gray-700">
                         Host: {selectedEventDetails.host}
                       </span>
                     )}
@@ -971,71 +971,88 @@ export default function FestivalTimetable() {
                       </motion.div>
                     </AnimatePresence>
                     {/* Slider Navigation (only show if multiple slides) */}
-                    {selectedEventDetails.slides.length > 1 && (
-                      <div className="mt-4 flex flex-col space-y-3">
-                        {/* Navigation Buttons */}
-                        <div className="flex items-center justify-between">
-                          <button
-                            onClick={() =>
-                              setCurrentSlideIndex((prev) =>
-                                prev === 0
-                                  ? selectedEventDetails.slides!.length - 1
-                                  : prev - 1,
-                              )
-                            }
-                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
-                            aria-label="Previous slide"
-                          >
-                            ←
-                          </button>
+                    {selectedEventDetails.slides &&
+                      selectedEventDetails.slides.length > 1 && (
+                        <div className="mt-4 flex flex-col space-y-3">
+                          {/* Navigation Buttons */}
+                          <div className="flex items-center justify-between">
+                            <button
+                              onClick={() =>
+                                setCurrentSlideIndex((prev) =>
+                                  prev === 0
+                                    ? selectedEventDetails.slides!.length - 1
+                                    : prev - 1,
+                                )
+                              }
+                              className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
+                              aria-label="Previous slide"
+                            >
+                              ←
+                            </button>
 
-                          <div className="text-xs text-gray-500">
-                            {currentSlideIndex + 1} /{" "}
-                            {selectedEventDetails.slides.length}
+                            <div className="text-xs text-gray-500">
+                              {currentSlideIndex + 1} /{" "}
+                              {selectedEventDetails.slides &&
+                                selectedEventDetails.slides.length}
+                            </div>
+
+                            <button
+                              onClick={() =>
+                                setCurrentSlideIndex((prev) =>
+                                  prev ===
+                                  selectedEventDetails.slides!.length - 1
+                                    ? 0
+                                    : prev + 1,
+                                )
+                              }
+                              className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
+                              aria-label="Next slide"
+                            >
+                              →
+                            </button>
                           </div>
 
-                          <button
-                            onClick={() =>
-                              setCurrentSlideIndex((prev) =>
-                                prev === selectedEventDetails.slides!.length - 1
-                                  ? 0
-                                  : prev + 1,
-                              )
-                            }
-                            className="bg-bes-red hover:bg-bes-red/80 flex h-8 w-8 items-center justify-center rounded-full text-white transition-colors hover:cursor-pointer"
-                            aria-label="Next slide"
-                          >
-                            →
-                          </button>
+                          {/* DJ Navigation Pills */}
+                          <div className="flex flex-wrap justify-center gap-2">
+                            {selectedEventDetails.slides &&
+                              selectedEventDetails.slides.map(
+                                (slide, index) => (
+                                  <button
+                                    key={index}
+                                    onClick={() => setCurrentSlideIndex(index)}
+                                    className={`rounded-full px-3 py-1 text-xs font-medium transition-all hover:cursor-pointer ${
+                                      currentSlideIndex === index
+                                        ? "bg-bes-red text-white"
+                                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                    }`}
+                                  >
+                                    {
+                                      // For Charlas Salseras events with presenter/record
+                                      selectedEventDetails.type === "talk" &&
+                                      selectedEventDetails.presenter &&
+                                      selectedEventDetails.record &&
+                                      selectedEventDetails.slides &&
+                                      selectedEventDetails.slides.length === 2
+                                        ? index === 0
+                                          ? selectedEventDetails.presenter // First slide shows presenter name
+                                          : selectedEventDetails.record // Second slide shows record name
+                                        : slide.djName ||
+                                          slide.dancerName ||
+                                          slide.bandName ||
+                                          (slide.dancerOne
+                                            ? slide.dancerTwo
+                                              ? `${slide.dancerOne} y ${slide.dancerTwo}`
+                                              : slide.dancerOne
+                                            : slide.djOne && slide.djTwo
+                                              ? `${slide.djOne} y ${slide.djTwo}`
+                                              : `Slide ${index + 1}`)
+                                    }
+                                  </button>
+                                ),
+                              )}
+                          </div>
                         </div>
-
-                        {/* DJ Navigation Pills */}
-                        <div className="flex flex-wrap justify-center gap-2">
-                          {selectedEventDetails.slides.map((slide, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentSlideIndex(index)}
-                              className={`rounded-full px-3 py-1 text-xs font-medium transition-all hover:cursor-pointer ${
-                                currentSlideIndex === index
-                                  ? "bg-bes-red text-white"
-                                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                              }`}
-                            >
-                              {slide.djName ||
-                                slide.dancerName ||
-                                slide.bandName ||
-                                (slide.dancerOne
-                                  ? slide.dancerTwo
-                                    ? `${slide.dancerOne} y ${slide.dancerTwo}`
-                                    : slide.dancerOne
-                                  : slide.djOne && slide.djTwo
-                                    ? `${slide.djOne} y ${slide.djTwo}`
-                                    : `Slide ${index + 1}`)}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+                      )}
                   </div>
                 ) : (
                   <>
@@ -1199,7 +1216,7 @@ export default function FestivalTimetable() {
                       {/* Record info */}
                       {selectedEventDetails.record && (
                         <div className="mb-6">
-                          <h4 className="text-bes-purple mb-2 text-lg font-bold">
+                          <h4 className="mb-2 text-lg font-bold text-gray-700">
                             {selectedEventDetails.record}
                             {selectedEventDetails.artist && (
                               <span> de {selectedEventDetails.artist}</span>
