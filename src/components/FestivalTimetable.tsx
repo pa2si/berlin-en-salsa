@@ -637,11 +637,15 @@ export default function FestivalTimetable() {
                     {selectedEventDetails.timeRange ||
                       selectedEventDetails.time}
                   </span>
-                  {selectedEventDetails.actType && (
+                  {selectedEventDetails.actType ? (
                     <span className="text-md text-gray-700">
                       {selectedEventDetails.actType}
                     </span>
-                  )}
+                  ) : selectedEventDetails.type === "workshop" ? (
+                    <span className="text-md text-gray-700">Taller</span>
+                  ) : selectedEventDetails.type === "talk" ? (
+                    <span className="text-md text-gray-700">Charla</span>
+                  ) : null}
                   {selectedEventDetails.instructor && (
                     <span className="text-md text-gray-700">
                       {selectedEventDetails.type === "workshop"

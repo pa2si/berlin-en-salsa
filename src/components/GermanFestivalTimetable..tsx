@@ -639,11 +639,15 @@ export default function GermanFestivalTimetable() {
                     {selectedEventDetails.timeRange ||
                       selectedEventDetails.time}
                   </span>
-                  {selectedEventDetails.actType && (
+                  {selectedEventDetails.actType ? (
                     <span className="text-md text-gray-700">
                       {selectedEventDetails.actType}
                     </span>
-                  )}
+                  ) : selectedEventDetails.type === "workshop" ? (
+                    <span className="text-md text-gray-700">Workshop</span>
+                  ) : selectedEventDetails.type === "talk" ? (
+                    <span className="text-md text-gray-700">Talk</span>
+                  ) : null}
                   {selectedEventDetails.instructor && (
                     <span className="text-md text-gray-700">
                       {selectedEventDetails.type === "workshop"
