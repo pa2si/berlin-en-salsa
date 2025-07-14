@@ -272,33 +272,33 @@ export const GermanSaturdayTimetableData: Column[] = [
       { time: "12:30" },
       {
         time: "13:00",
-        event: "Ritmo de Clave",
+        event: "Der Clave-Rhythmus",
         instructor: "Guillermo Diaz",
         type: "workshop",
         image: "/guillermo-diaz.jpeg",
         description:
-          "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
+          "Salsa, wie viele andere Musikrichtungen, besteht sowohl aus ihrer Instrumentierung und Interpretation als auch aus dem Hören und Tanzen. Für ihre Interpretation ist das Verständnis der Clave von zentraler Bedeutung, da sich die gesamte Instrumentierung um dieses rhythmische Element dreht. Die Clave ist sozusagen die DNA der Salsa und vieler anderer Musikstile mit stark afrikanischem Ursprung – ein nahezu unverzichtbares, vor allem aber äußerst nützliches Mittel, um Salsa auf jeder Ebene und in jeder Form der Interaktion zu verstehen. In diesem Workshop tauchen wir kurz in das bestgehütete Geheimnis der Salsa ein: die Clave. Ziel des Workshops ist es, ein grundlegendes, aber wesentliches Verständnis zu vermitteln, um diese Musik, die wir so sehr lieben, mit mehr Vertrautheit und Nähe spielen, tanzen und hören zu können. Der Workshop richtet sich sowohl an Anfänger:innen als auch an Personen ohne musikalische Vorkenntnisse. Es wird empfohlen, ein beliebiges Perkussionsinstrument mitzubringen – von Trommeln, Claves und Kuhglocken bis hin zu Tassen, Pfannen oder Holzlöffeln.",
       },
       {
         time: "13:30",
-        event: "Ritmo de Clave",
+        event: "Der Clave-Rhythmus",
         instructor: "Guillermo Diaz",
         type: "workshop",
       },
 
       {
         time: "14:00",
-        event: "Introduction to Polyrhythm",
+        event: "Einführung in die Polyrhythmik",
         instructor: "Angel Candeaux",
         type: "workshop",
         description:
-          "¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva. ¿Qué Vivirás en el Taller? - Exploración de tu ritmo interno: Aprende a mantener tu propio patrón mientras escuchas y dialogas con el grupo. - Conexión auténtica: Ejercicios de percusión grupal que fortalecen los lazos y la comunicación no verbal. - Equilibrio entre estructura y libertad: Descubre cómo seguir el pulso colectivo y, a la vez, atreverte a romper el patrón para expresar tu individualidad. - Momentos de comunión y expresión personal: Alterna entre el unísono grupal y la oportunidad de alzar tu propia voz rítmica. - Desarrollo de habilidades cognitivas y emocionales: Mejora la concentración, la coordinación y la apertura sensorial. ¿Por Qué Participar? - No necesitas experiencia previa, solo ganas de explorar y dejarte llevar por el ritmo. - Descubrirás herramientas para fortalecer la comunicación, la empatía y el trabajo en equipo. - Vivirás una experiencia transformadora que une cuerpo, mente y comunidad a través de la música. Angel Candeaux te invita a sumergirte en la polirritmia: un viaje donde cada latido cuenta y la suma de las diferencias crea armonía.",
+          "Hast du dich schon einmal gefragt, wie verschiedene Rhythmen gleichzeitig existieren und dabei eine kraftvolle kollektive Erfahrung schaffen können? Dieser Workshop unter der Leitung von Ángel Candeaux ist eine Einladung, die Magie der afrokubanischen Polyrhythmik und ihre Wirkung auf menschliche Verbindung zu entdecken. Polyrhythmik ist die Kunst, mehrere eigenständige Rhythmen übereinanderzulegen – sie erzeugt eine klangliche Vielfalt und ein einzigartiges Gruppenerlebnis. In der afrokubanischen Tradition spielt jeder Trommler sein eigenes rhythmisches Muster, doch gemeinsam entsteht ein musikalischer Dialog, der zum Zuhören, zur Konzentration und zur kollektiven Kreativität einlädt. Was erwartet dich im Workshop? Erforschung deines inneren Rhythmus: Lerne, deinen eigenen Rhythmus zu halten und gleichzeitig im musikalischen Austausch mit der Gruppe zu bleiben. Authentische Verbindung: Gruppen-Percussion-Übungen stärken die nonverbale Kommunikation und das Gemeinschaftsgefühl. Gleichgewicht zwischen Struktur und Freiheit: Erlebe, wie du dich im kollektiven Puls bewegst – und gleichzeitig den Mut entwickelst, aus dem Muster auszubrechen, um deine Individualität auszudrücken. Momente der Gemeinschaft und der persönlichen Entfaltung: Wechsle zwischen dem gemeinsamen Unisono und dem Raum, deine eigene rhythmische Stimme zu erheben. Förderung kognitiver und emotionaler Fähigkeiten: Verbessere deine Konzentration, Koordination und sensorische Wahrnehmung. Warum solltest du teilnehmen? Du brauchst keine Vorkenntnisse – nur die Lust, dich auf den Rhythmus einzulassen. Du lernst Werkzeuge kennen, um Kommunikation, Empathie und Teamfähigkeit zu stärken. Du machst eine transformierende Erfahrung, die Körper, Geist und Gemeinschaft durch Musik verbindet. Ángel Candeaux lädt dich ein, in die Welt der Polyrhythmik einzutauchen: Eine Reise, bei der jeder Herzschlag zählt – und aus der Vielfalt Harmonie entsteht.",
         image: "/angel-candeaux.jpeg",
-        bio: 'Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto "desapalencao", Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo. ¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva.',
+        bio: "Ángel Candeaux ist ein Kubaner aus Havanna, der den Rhythmus im Blut und die Neugier im Kopf trägt. Als ausgebildeter Psychologe und leidenschaftlicher Perkussionist bewegt er sich zwischen afrokubanischer Tradition und neuen Wegen, Menschen miteinander zu verbinden – sowohl in Kuba als auch in Europa und den USA. Seit 2006 lebt er in Berlin, wo er nicht nur Trommeln spielt, sondern Räume schafft, in denen Menschen einander begegnen, einander zuhören und ihren eigenen Rhythmus entdecken können. Als Gründer des Projekts „Desapalencao“ gehört Ángel zu jenen, die fest daran glauben, dass Musik nicht nur den Tag – sondern auch das Leben verändern kann. Und dass jeder Mensch einen einzigartigen Puls hat, den er in die Gruppe einbringen kann.",
       },
       {
         time: "14:30",
-        event: "Introduction to Polyrhythm",
+        event: "Einführung in die Polyrhythmik",
         instructor: "Angel Candeaux",
         type: "workshop",
       },
@@ -328,11 +328,11 @@ export const GermanSaturdayTimetableData: Column[] = [
       {
         time: "14:00",
         event:
-          "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo",
+          "Geschichten verschmelzen: Persönlicher Stil als Dialog zwischen Tradition und Selbst",
         type: "talk",
         presenter: "Sarah Balzat",
         description:
-          "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria.",
+          "Persönlicher Stil im Tanz entsteht nicht im luftleeren Raum, er wird geschmiedet im Spannungsfeld zwischen individueller und kollektiver Geschichte. Anhand von Salsa erkunden wir, wie Tradition kein starres Erbe ist, sondern ein lebendiger Dialog: zwischen denen, die vor uns getanzt haben, und dem, was wir selbst in uns tragen. Aus diesem Dialog entsteht kein bloßes Nachahmen, sondern ein individueller Ausdruck, der auf Bewusstsein basiert, durch Praxis geformt und von Erinnerung genährt ist.",
       },
       {
         time: "14:00",
@@ -357,9 +357,9 @@ export const GermanSaturdayTimetableData: Column[] = [
         imageTwo: "/christian.webp",
         artist: "Eddie Palmieri",
         record: "Echando Pa’lante (Straight Ahead)",
-        bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",
+        bio: "DJ Christian ist Mitbegründer von @salsacafeberlin, wo er gemeinsam mit @hijodesiboney jeden ersten Mittwoch im Monat die Tanzfläche zum Beben bringt. Seine Liebe zu den lateinamerikanischen Rhythmen entspringt seiner engen Verbindung zur Latinx-Community in Berlin. Dort engagiert er sich aktiv in Initiativen und Räumen der lateinamerikanischen Diaspora – inspiriert von seiner interkulturellen Familiengeschichte. Obwohl er alle Musikrichtungen schätzt, fühlt er sich besonders zur Musik mit afrikanischen Wurzeln hingezogen – deren Spuren sich in fast jedem Genre wiederfinden lassen.",
         comment:
-          "Elegí el álbum “Echando Pa’lante (Straight Ahead)” porque es una obra importante en la historia de la salsa y muestra el estilo innovador de Eddie Palmieri, así como el talento de su banda. Lanzado en 1964, el álbum es celebrado por sus potentes ritmos, arreglos complejos y el sonido distintivo de la “trombanga”, que introdujo los trombones en la música tradicional latinoamericana.",
+          "Ich habe das Album „Echando Pa’lante (Straight Ahead)“ ausgewählt, weil es ein bedeutendes Werk in der Geschichte der Salsa ist und den innovativen Stil von Eddie Palmieri sowie das Talent seiner Band zeigt. Veröffentlicht im Jahr 1964, wird das Album für seine kraftvollen Rhythmen, komplexen Arrangements und den unverwechselbaren Klang der sogenannten „Trombanga“ gefeiert – einer Besetzung, die Posaunen in die traditionelle lateinamerikanische Musik einführte.",
       },
       {
         time: "16:30",
@@ -371,9 +371,9 @@ export const GermanSaturdayTimetableData: Column[] = [
         imageTwo: "/raicez-concretaz.webp",
         artist: "Francisco Aguabella",
         record: "Hitting Hard",
-        bio: "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen cómo objetivo no dejar morir el formato análogo y mantenerlo vivo.",
+        bio: "Es handelt sich um ein Kollektiv von Crate Diggers und Turntable-Enthusiasten aus Kolumbien, das sich zum Ziel gesetzt hat, das analoge Format am Leben zu erhalten und sein Weiterbestehen zu sichern.",
         comment:
-          "Se escogió este disco por la gran variedad de Ritmos que pueden Converger en una producción músical y que La salsa así como muchos géneros tiene muchas influencias de otros géneros musicales",
+          "Dieses Album wurde ausgewählt, weil es die große Vielfalt an Rhythmen zeigt, die in einer Musikproduktion zusammenfließen können. Salsa – wie viele andere Musikrichtungen – ist stark von verschiedenen musikalischen Genres beeinflusst.",
       },
       {
         time: "17:00",
@@ -385,9 +385,9 @@ export const GermanSaturdayTimetableData: Column[] = [
         imageTwo: "/dj-Mc0ld.webp",
         artist: "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
         record: "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
-        bio: "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mi. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
+        bio: "Ich bin DJ Mc0ld, Teil von Son Obrero. Geboren im Norden von Cali, aufgewachsen zwischen den Vinylplatten meines Vaters und dem Punkrock der Straße. Nach einiger Zeit in Deutschland begann ich, mich wieder mit meinem Viertel und meinen Wurzeln zu verbinden – und dabei entdeckte ich etwas, das mir vorher nicht bewusst war: Wie tief die Salsa in mir verankert ist. Seitdem erkunde ich die tanzbaren Strömungen der lateinamerikanischen Underground-Szene. Mein Set auf Vinyl ist orthodoxe Salsa. Ich lege auch digital auf – aber das ist eine ganz andere Reise.",
         comment:
-          "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla",
+          "Ich habe das Album Frankie Dante & Orquesta Flamboyán mit Larry Harlow ausgewählt, weil es eine einzigartige Fusion verkörpert: die musikalische Magie von Harlow mit der Rohheit und Rebellion von Frankie Dante – einem Salsero, der sich nie verbiegen ließ. Seine politischen Überzeugungen haben ihm viele Türen verschlossen, aber sein Mut und sein Talent haben andere geöffnet. Dieser rebellische und aufrichtige Geist spiegelt wider, wer ich bin und was ich mit jedem meiner Sets teilen möchte.",
       },
       { time: "17:30" },
 
@@ -395,21 +395,20 @@ export const GermanSaturdayTimetableData: Column[] = [
 
       {
         time: "18:30",
-        event: "Salsancó y los comienzos de la salsa en Berlín",
+        event: "Salsancó und die Anfänge der Salsa in Berlin",
         presenter: "tba",
         image: "/salsanco.webp",
         type: "talk",
         description:
-          "Eduardo Villegas y Rolo Rodriguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida.",
+          "Eduardo Villegas und Rolo Rodríguez erzählen, wie 1977 das erste Salsa-Orchester in Berlin entstand. Inspiriert von Santana und Eddie Palmieri gründeten sie gemeinsam mit Musikern aus den Big Bands des RIAS und des SFB ihr eigenes Projekt. Sie berichten von den Proben, den ersten Auftritten und dem unverwechselbaren Sound, der die Berliner Clubszene prägte. Ein Gespräch über Pionierarbeit und eine lebendig gelebte Musikszene.",
       },
       {
         time: "19:00",
-        event:
-          "Transbarrio dialogues: Las raices afroestadounidenses de la salsa",
+        event: "Transbarrio-Dialoge: Die afroamerikanischen Wurzeln der Salsa",
         presenter: "Matti Steinitz",
         image: "/matti.webp",
         type: "talk",
-        bio: "DJ Matatu aka Dr. Matti Steinitz es coleccionista de vinilos e investigador de los sonidos y movimientos de la diáspora africana en las Américas. Recién salió su libro sobre los diálogos transnacionales entre comunidades afroestadounidenses y afrolatinoamericanos en la época de los 1960 y 1970 y como éstas se han manifestado en el surgimiento de escenas de Afro-Latin Soul en zonas de contacto como Nueva York, Panamá y Rio de Janeiro. (https://www.degruyterbrill.com/document/doi/10.1515/9783110665550/html)",
+        bio: "DJ Matatu alias Dr. Matti Steinitz ist Platten-Sammler und Forscher der Sounds und Bewegungen der afrikanischen Diaspora in Nord-, Mittel- und Südamerika. Vor kurzem ist sein Buch über die transnationalen Dialoge zwischen afro-amerikanischen und afro-lateinamerikanischen Gemeinschaften in der Ära der 1960er und 1970er Jahre erschienen und wie diese sich in der Entstehung von Afro-Latin Soul Szenen in Kontaktzonen wie New York, Panama und Rio de Janeiro manifestiert haben. (https://www.degruyterbrill.com/document/doi/10.1515/9783110665550/html)",
       },
 
       { time: "19:30" },

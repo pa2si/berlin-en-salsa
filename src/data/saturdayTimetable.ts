@@ -339,7 +339,7 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "14:00",
-        event: "Musical Style or Dance Style? Both and Neither!",
+        event: "¿Estilo musical o estilo de baile? ¡Ambos y ninguno!",
         type: "talk",
         presenter: "Jessi y Vane",
         description: "",
@@ -360,9 +360,9 @@ export const saturdayTimetableData: Column[] = [
         imageTwo: "/christian.webp",
         artist: "Eddie Palmieri",
         record: "Echando Pa’lante (Straight Ahead)",
-        bio: "DJ Christian es miembro cofundador de @salsacafeberlin, donde enciende la pista de baile cada primer miércoles del mes junto a @hijodesiboney. Su amor por los ritmos latinoamericanos nace de su estrecha conexión con la comunidad latinx en Berlín, donde participa activamente en iniciativas y espacios de la diáspora latinoamericana, inspirándose en su familia intercultural. Aunque disfruta de todos los géneros musicales, siente una especial afinidad por la música de raíces africanas, cuyas huellas se pueden rastrear en casi cualquier estilo.",
+        bio: "DJ Christian ist Mitbegründer von @salsacafeberlin, wo er gemeinsam mit @hijodesiboney jeden ersten Mittwoch im Monat die Tanzfläche zum Beben bringt. Seine Liebe zu den lateinamerikanischen Rhythmen entspringt seiner engen Verbindung zur Latinx-Community in Berlin. Dort engagiert er sich aktiv in Initiativen und Räumen der lateinamerikanischen Diaspora – inspiriert von seiner interkulturellen Familiengeschichte. Obwohl er alle Musikrichtungen schätzt, fühlt er sich besonders zur Musik mit afrikanischen Wurzeln hingezogen – deren Spuren sich in fast jedem Genre wiederfinden lassen.",
         comment:
-          "Elegí el álbum “Echando Pa’lante (Straight Ahead)” porque es una obra importante en la historia de la salsa y muestra el estilo innovador de Eddie Palmieri, así como el talento de su banda. Lanzado en 1964, el álbum es celebrado por sus potentes ritmos, arreglos complejos y el sonido distintivo de la “trombanga”, que introdujo los trombones en la música tradicional latinoamericana.",
+          "Ich habe das Album „Echando Pa’lante (Straight Ahead)“ ausgewählt, weil es ein bedeutendes Werk in der Geschichte der Salsa ist und den innovativen Stil von Eddie Palmieri sowie das Talent seiner Band zeigt. Veröffentlicht im Jahr 1964, wird das Album für seine kraftvollen Rhythmen, komplexen Arrangements und den unverwechselbaren Klang der sogenannten „Trombanga“ gefeiert – einer Besetzung, die Posaunen in die traditionelle lateinamerikanische Musik einführte.",
       },
       {
         time: "16:30",

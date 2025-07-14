@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.28
+
+- Programm weiter aktualisiert
+
 v1.1.1-timetable.27
 
 - images updated for the music workshop instructors

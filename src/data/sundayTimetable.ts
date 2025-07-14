@@ -40,7 +40,7 @@ export const sundayTimetableData: Column[] = [
             image: "/sonora-berlin.webp",
             bandName: "Sonora Berlin",
             description:
-              "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas.",
+              "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas. Más impresiones: https://www.youtube.com/watch?v=o4Evwcrc1vA https://www.instagram.com/sonora_berlin/",
           },
           {
             image: "",
@@ -72,7 +72,7 @@ export const sundayTimetableData: Column[] = [
         actType: "Live",
         type: "main",
         description:
-          "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment.",
+          "The internationally acclaimed Che Sudaka brings their powerful fusion of Latin rhythms, reggae, and punk energy to create an unforgettable festival moment. Formación: Sonia Solarte – Voz Doris Alzarte – Voz Susanne Schulz – Piano, Violín Ramani Krishna – Bajo Philipp Beerwald – Congas Doro Wesseling – Batería Gisela Meßollen – Trompeta Tanja Becker – Trombón",
       },
       {
         time: "17:00",
@@ -187,9 +187,9 @@ export const sundayTimetableData: Column[] = [
           },
           {
             djName: "Andrelux",
-            image: "/andrelux-dj.webp",
+            image: "/andrelux.webp",
             description:
-              "Andrelux brings a unique blend of classic salsa and contemporary Latin hits, creating an unmissable dance experience.",
+              "@_andreluxx_ es un DJ y coleccionista que lleva más de 20 años creando espacios en los cuales se promueve y se celebra la cultura latinoamericana en Alemania. Desde luego ya perdió la cuenta de cuantas fiestas ha montado pero sigue convencido de que la rumba es el escenario ideal para acercar a la gente y tender puentes entre culturas.Actualmente hace parte del equipo de @berlinensalsa y es quien dio vida y forma a su identidad visual",
           },
         ],
       },
@@ -199,32 +199,6 @@ export const sundayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
-        slides: [
-          {
-            djName: "Andrelux",
-            image: "/andrelux-dj.webp",
-            description:
-              "Andrelux brings a unique blend of classic salsa and contemporary Latin hits, creating an unmissable dance experience.",
-          },
-          {
-            djName: "Dracaena",
-            image: "/dracaena-dj.webp",
-            description:
-              "Known for her infectious energy, Dracaena specializes in bachata and salsa fusion that keeps the dance floor packed.",
-          },
-          {
-            djName: "El Vago",
-            image: "/el-vago-dj.webp",
-            description:
-              "El Vago's signature selection ranges from timeless salsa classics to cutting-edge Latin beats, creating the perfect festival atmosphere.",
-          },
-          {
-            djName: "El Melómano Alemán",
-            image: "/el-melomano-aleman.webp",
-            description:
-              "The German music lover brings his passion for authentic Latin sounds, offering a carefully curated selection of dance floor favorites.",
-          },
-        ],
       },
       { time: "22:00" },
     ],
@@ -267,8 +241,6 @@ export const sundayTimetableData: Column[] = [
         event: "Casino Cubano",
         instructor: "Lei",
         type: "workshop",
-        description:
-          "Experience the distinctive style of Colombian salsa with Diana & Juan. This workshop focuses on the fast footwork, unique styling, and energetic movements characteristic of Cali-style salsa.",
       },
       { time: "16:30" },
       { time: "17:00" },
@@ -325,8 +297,6 @@ export const sundayTimetableData: Column[] = [
         event: "Soneo Workshop",
         instructor: "Harry Muñoz",
         type: "workshop",
-        description:
-          "Join vocalist Hardy Munoz for this interactive workshop on soneo (vocal improvisation) in salsa music. Learn techniques for creating and delivering improvised verses that respond to the chorus.",
       },
       { time: "16:30" },
       { time: "17:00" },
