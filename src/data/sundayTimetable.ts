@@ -43,7 +43,7 @@ export const sundayTimetableData: Column[] = [
               "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas. Más impresiones: https://www.youtube.com/watch?v=o4Evwcrc1vA https://www.instagram.com/sonora_berlin/",
           },
           {
-            image: "",
+            image: "/niya.webp",
             dancerName: "Niya",
             description:
               "Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
@@ -90,7 +90,7 @@ export const sundayTimetableData: Column[] = [
               "Ocho burundangueras de Colombia, India y Alemania sacan a cualquiera del asiento con su ardiente mezcla de salsa, merengue y rumba. Combinando elementos de jazz y flamenco, presentan versiones reinterpretadas de arreglos tradicionales de salsa. Fundada en 1992 como una banda de salsa integrada exclusivamente por mujeres, el grupo ha evolucionado hasta convertirse en una banda emocionante, multicultural y abierta, que mira hacia atrás con orgullo por los muchos conciertos y experiencias compartidas en diversas formaciones. Frente a esta poderosa formación de músicos experimentados, canta, baila, cuenta historias, bromea y ríe Sonia Solarte — poeta y cantante de Cali, la capital salsera de Colombia. Con Doris Alzarte, oriunda de Medellín, estas dos mujeres llenas de energía traen la alegría de vivir de América Latina a Berlín.",
           },
           {
-            image: "",
+            image: "lei-ayna.webp",
             dancerOne: "Lei",
             dancerTwo: "Ayna",
 
@@ -210,6 +210,7 @@ export const sundayTimetableData: Column[] = [
         time: "12:30",
         event: "New York On 2",
         instructor: "Niya",
+        image: "/niya.webp",
         type: "workshop",
         bio: "¡Hola a todos! Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
         description:
@@ -231,6 +232,7 @@ export const sundayTimetableData: Column[] = [
         time: "15:00",
         event: "Casino Cubano",
         instructor: "Lei",
+        image: "/lei.webp",
         type: "workshop",
         bio: "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
         description:

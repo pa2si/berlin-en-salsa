@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.31
+
+- last infos entered
+
 v1.1.1-timetable.30
 
 - Modal now displays if its a workshop or a talk as well

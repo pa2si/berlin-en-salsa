@@ -71,6 +71,7 @@ export const GermanSaturdayTimetableData: Column[] = [
           {
             dancerOne: "Leidiana",
             dancerTwo: "Roger",
+            image: "/leidiana-roger.webp",
             description:
               "Roger und Leidiana sind ein Duo kubanischer Tänzer, die dafür anerkannt sind, Tradition mit Moderne bei jeder Aufführung zu verschmelzen Sein einzigartiger Stil vereint die Stärke der urbanen Bewegung, die Eleganz des traditionellen kubanischen Tanzes und die ausdrucksstarke Tiefe des Afro-Contemporanen",
           },
@@ -114,7 +115,7 @@ export const GermanSaturdayTimetableData: Column[] = [
               "Tempo Havanna lassen die musikalische Seele Kubas erklingen, festgehalten in mitreißenden eigenen Kompositionen, modern und urban-kubanisch. Lateinamerikanische Rhythmen von Salsa und Son bis Bolero und Cha Cha Cha tragen das Flair Havannas im Reisegepäck und stillen die Sehnsucht nach karibischer Leichtigkeit, Leidenschaft und Lebenslust. Romantisch-beschwingt bis energetisch, bei diesen Klängen werden Erinnerungen an heiße Abende und kühle Drinks im Sonnenuntergang wach. Tempo Havanna inspiriert sein Publikum, südländische Entschleunigung zu wagen, das Leben pur zu genießen und die Freude am Tanz zu feiern - ganz im Tempo Havanna.",
           },
           {
-            image: "/son-cubano.webp",
+            image: "/yago-helen.webp",
             dancerOne: "Helen",
             dancerTwo: "Yago",
             dancerOneDescription:
@@ -165,6 +166,10 @@ export const GermanSaturdayTimetableData: Column[] = [
             image: "/jessi-julian.webp",
             dancerOne: "Jessica",
             dancerTwo: "Julian",
+            dancerOneDescription:
+              "Jessica kommt aus Cali, Kolumbien, und tanzt seit über 10 Jahren professionell und sozial Salsa Caleña. In Berlin bringt sie die Essenz des Salsas über den Unterricht hinaus: Sie unterrichtet nicht nur, sondern präsentiert und vermittelt die Salsa Caleña auch als lebendige kulturelle Ausdrucksform, so wie sie in Cali gelebt wird. Sie hatte die Gelegenheit, bei den Konzerten von Grupo Niche und Gilberto Santa Rosa in Berlin aufzutreten, Salsa Caleña beim Berliner Salsa Kongress zu unterrichten und Teil des Organisationsteams des Events Berlin en Salsa zu sein.",
+            dancerTwoDescription:
+              "Julian ist ein leidenschaftlicher Tänzer und Lehrer für Salsa Caleña mit über sechs Jahren Erfahrung und mehr als drei Jahren Unterrichtserfahrung in Berlin. Er hat bei zahlreichen Festivals und Veranstaltungen in ganz Deutschland aufgetreten. Ursprünglich aus Kolumbien, unterrichtet er im Dolce Vita Dance Studio und legt dabei den Fokus auf schnelle Fußarbeit sowie auf die Technik von Führen und Folgen. Mehr als nur Schritte – in seinen Kursen geht es um Verbindung, Intention und Musikalität, immer mit dem Ziel, die Rhythmen und die Kultur Lateinamerikas zu ehren und weiterzugeben.",
           },
         ],
       },
@@ -205,6 +210,7 @@ export const GermanSaturdayTimetableData: Column[] = [
         time: "13:00",
         event: "Afro-Cuban Dance",
         instructor: "Leidiana",
+        image: "/leidiana.webp",
         type: "workshop",
         bio: "Leijana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",
         description:
@@ -225,6 +231,7 @@ export const GermanSaturdayTimetableData: Column[] = [
         time: "16:00",
         event: "Son Cubano",
         instructor: "Helen",
+        image: "/yago-helen.webp",
         instructorTwo: "Yago",
         type: "workshop",
         bio: "Seit über fünf Jahren unterrichtet sie in Berlin mit dem Schwerpunkt auf Rueda de Casino. Ihre Leidenschaft für die kubanische Kultur und den Tanz bereichert ihre außergewöhnlichen Fähigkeiten als Tänzerin und Lehrerin. Besonders die Rumba hat einen besonderen Platz in ihrem Herzen – sie ermöglicht ihr, sich frei, anmutig und feminin auszudrücken und dabei die Weiblichkeit zu feiern. Helen setzt sich mit Überzeugung dafür ein, ihre Schülerinnen zu ermutigen, das Tanzen als gemeinsames Erlebnis zwischen beiden Partnerinnen zu schätzen und zu genießen – ein Zusammenspiel, bei dem Führende und Folgende gleichermaßen beitragen. Sie entwickelt kontinuierlich spezifische Prinzipien des „aktiven Folgens“, um die Idee zu fördern, dass Folgende innerhalb der Berliner Tanzszene die gleiche Anerkennung verdienen. Ihr Tanzstil wurde vor allem von Sofia de Endaya, Sassan AliValiollahi und Luis Duarte geprägt.",
@@ -247,6 +254,7 @@ export const GermanSaturdayTimetableData: Column[] = [
         time: "18:30",
         event: "Salsa Caleña",
         instructor: "Julian",
+        image: "/julian.webp",
         type: "workshop",
         bio: "Julian ist ein leidenschaftlicher Salsa-Caleña-Tänzer und -Lehrer mit über sechs Jahren Erfahrung und mehr als drei Jahren Unterrichtstätigkeit in Berlin. Er hat bei zahlreichen Festivals und Events in ganz Deutschland getanzt. Ursprünglich aus Kolumbien stammend, unterrichtet er im Dolce Vita Dance Studio – mit einem Fokus auf schnellem Fußspiel sowie präziser Lead-&-Follow-Technik. In seinen Kursen geht es um mehr als nur Schritte – im Mittelpunkt stehen Verbindung, Intention und Musikalität. Dabei ehrt und vermittelt er die Rhythmen und die Kultur Lateinamerikas.",
         description:
@@ -335,11 +343,15 @@ export const GermanSaturdayTimetableData: Column[] = [
           "Persönlicher Stil im Tanz entsteht nicht im luftleeren Raum, er wird geschmiedet im Spannungsfeld zwischen individueller und kollektiver Geschichte. Anhand von Salsa erkunden wir, wie Tradition kein starres Erbe ist, sondern ein lebendiger Dialog: zwischen denen, die vor uns getanzt haben, und dem, was wir selbst in uns tragen. Aus diesem Dialog entsteht kein bloßes Nachahmen, sondern ein individueller Ausdruck, der auf Bewusstsein basiert, durch Praxis geformt und von Erinnerung genährt ist.",
       },
       {
-        time: "14:00",
-        event: "Musical Style or Dance Style? Both and Neither!",
+        time: "14:30",
+        event:
+          "Musikstil oder Tanzstil: Beides oder Keines von beiden? Eine Reflexion über die starren Kategorien im Salsa.",
         type: "talk",
         presenter: "Jessi y Vane",
-        description: "",
+        image: "/jessi.jpeg",
+        imageTwo: "/vane.jpg",
+        description:
+          "Tanzt du Linien-Salsa oder kubanische Salsa? Bevorzugst du Timba, Salsa Dura oder Boogaloo? In der Salsa-Welt scheinen die „Stile“ alles vorzugeben: wie wir tanzen, welche Musik wir hören, sogar wem wir uns zugehörig fühlen. Aber … was, wenn uns diese Kategorien mehr einschränken, als dass sie uns leiten? In diesem Talk eröffnen wir die Debatte: Wie viel unseres Tanzes ist eine Reaktion auf die Musik, wie viel auf die Technik und wie viel auf die Identität? Ist es möglich, sich zwischen den Stilen zu bewegen, ohne an Authentizität zu verlieren? Eine Einladung, die festgefahrenen Vorstellungen über Tanzstile, die an konkrete Musikstile gebunden sind, zu hinterfragen.",
       },
       {
         time: "15:00",

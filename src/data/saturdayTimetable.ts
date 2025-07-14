@@ -71,6 +71,7 @@ export const saturdayTimetableData: Column[] = [
           {
             dancerOne: "Leidiana",
             dancerTwo: "Roger",
+            image: "/leidiana-roger.webp",
             description:
               "Roger y Leidiana son un dúo de bailarines cubanos reconocidos por fusionar la tradición con la modernidad en cada presentación. Su estilo único combina la fuerza del movimiento urbano, la elegancia de la danza tradicional cubana y la profundidad expresiva del afro-contemporáneo.",
           },
@@ -114,7 +115,7 @@ export const saturdayTimetableData: Column[] = [
               "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir.",
           },
           {
-            image: "/son-cubano.webp",
+            image: "/yago-helen.webp",
             dancerOne: "Helen",
             dancerTwo: "Yago",
             dancerOneDescription:
@@ -165,9 +166,10 @@ export const saturdayTimetableData: Column[] = [
             image: "/jessi-julian.webp",
             dancerOne: "Jessica",
             dancerTwo: "Julian",
-            dancerOneDescription: "tba",
+            dancerOneDescription:
+              "Jessica es de Cali, Colombia, y lleva más de 10 años bailando salsa caleña de forma profesional y social. En Berlín lleva la esencia de la salsa más allá del aula: no solo enseña, sino que también expone y comparte la salsa caleña como una expresión cultural viva, tal como se vive en Cali. Ha tenido la oportunidad de participar abriendo los conciertos del Grupo Niche y Gilberto Santa Rosa en Berlín, dar clases de salsa caleña en el Congreso de Salsa de Berlín y formar parte del equipo organizador del evento Berlin en Salsa.",
             dancerTwoDescription:
-              "A passionate salsa caleña dancer and instructor with over six years of experience and more than three years of teaching in Berlin, Julian has performed at multiple festivals and events across Germany. Originally from Colombia, he teaches at Dolce Vita Dance Studio, focusing on fast footwork and lead & follow technique. More than just steps — his classes are about connection, intention, and musicality, honoring and promoting the rhythms and culture of Latin America.",
+              "Julián es un apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín. Ha participado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en la academia Dolce Vita Dance Studio, enfocándose en el trabajo de pies rápido y la técnica de guía y seguimiento. Más que solo pasos: sus clases se centran en la conexión, la intención y la musicalidad, siempre honrando y promoviendo los ritmos y la cultura de América Latina.",
           },
         ],
       },
@@ -208,6 +210,7 @@ export const saturdayTimetableData: Column[] = [
         time: "13:00",
         event: "Afro-Cuban Dance",
         instructor: "Leidiana",
+        image: "/leidiana.webp",
         type: "workshop",
         bio: "Leidiana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana. Con su estilo único y la alegría de vivir que trae de su tierra natal, llena de luz cualquier lugar al que va. Para ella, bailar no es solo una profesión, sino una verdadera pasión",
         description:
@@ -229,6 +232,7 @@ export const saturdayTimetableData: Column[] = [
         event: "Son Cubano",
         instructor: "Helen",
         instructorTwo: "Yago",
+        image: "/yago-helen.webp",
         type: "workshop",
         bio: "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de 'seguimiento activo' para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofia de Endaya, Sassan AliValiollahi y Luis Duarte.",
         bioTwo:
@@ -250,6 +254,7 @@ export const saturdayTimetableData: Column[] = [
         time: "18:30",
         event: "Salsa Caleña",
         instructor: "Julian",
+        image: "/julian.webp",
         type: "workshop",
         bio: "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina.",
         description:
@@ -331,18 +336,22 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "14:00",
         event:
-          "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo",
+          "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo. ",
         type: "talk",
         presenter: "Sarah Balzat",
         description:
           "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria.",
       },
       {
-        time: "14:00",
-        event: "¿Estilo musical o estilo de baile? ¡Ambos y ninguno!",
+        time: "14:30",
+        event:
+          "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
         type: "talk",
         presenter: "Jessi y Vane",
-        description: "",
+        image: "/jessi.jpeg",
+        imageTwo: "/vane.jpg",
+        description:
+          '¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los "estilos" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos.',
       },
       {
         time: "15:00",

@@ -43,7 +43,7 @@ export const GermanSundayTimetableData: Column[] = [
               "Sonora Berlín ist eine elfköpfige Salsa-Band aus Berlin, bestehend aus Musikern aus verschiedenen Ländern, die eine gemeinsame Leidenschaft für Salsa-Musik verbindet. Ihr Repertoire kombiniert bekannte Salsa-Klassiker mit eigenen Kompositionen – kraftvoll, tanzbar und voller Spielfreude. Die Band existiert seit 2023 und steht für eine energiegeladene Bühnenpräsenz und musikalische Präzision. Ihre Auftritte schaffen eine mitreißende Atmosphäre, die sowohl Tänzerinnen als auch Musikliebhaberinnen begeistert. Sonora Berlín war bereits auf renommierten Bühnen und Events zu erleben, darunter: – das 75. Jubiläum des Deutschen Bundestags im Rahmen des Demokratiefests – die Volksbühne Berlin (Grüner Salon) – das nHow Hotel – die Bikini Mall Berlin – und zahlreiche Clubnächte und Open-Air-Events Mit ihrer Musik bringt Sonora Berlín die rhythmische Kraft und Lebensfreude der Salsa auf jede Bühne – ob Festival, Kulturveranstaltung oder private Feier. Weitere Informationen und Eindrücke: https://www.youtube.com/watch?v=o4Evwcrc1vA https://www.instagram.com/sonora_berlin/",
           },
           {
-            image: "",
+            image: "niya.webp",
             dancerName: "Niya",
             description:
               "Hallo zusammen! Ich bin Niya, geboren in Sofia, Bulgarien, wo meine tänzerische Reise mit Ballett, Modern Dance und Hip Hop begann. Später fand ich meine große Leidenschaft: Salsa – und ganz besonders Mambo. Als Mitglied eines Salsa-Teams durfte ich Bulgarien auf internationalen Festivals vertreten und sammelte dabei wertvolle Erfahrungen in Salsa, Bachata und Cha Cha Cha. Seit 2023 unterrichte ich in Berlin. In meinem Unterricht stehen Koordination, Bewegungsbewusstsein und technische Klarheit im Mittelpunkt. Was mir besonders am Herzen liegt: meine Begeisterung für Mambo weiterzugeben – und euch dabei zu unterstützen, eure eigene Liebe zur Musik zu entdecken. Ich freue mich darauf, euch beim Festival zu sehen und gemeinsam mit euch zu tanzen!",
@@ -88,12 +88,12 @@ export const GermanSundayTimetableData: Column[] = [
               "8 Burundanguer-as- und -itos  aus Kolumbien, Indien und Deutschland locken mit ihrer heißen Mischung aus  Salsa , Merengue und Rumba jeden aus dem Sessel. Ergänzt  mit Elementen aus Jazz und Flamenco präsentieren sie  Bearbeitungen traditioneller Salsa -  Arrangements. 1992 als reine Frauen Salsa Band gegründet, haben sie sich zu einer spannenden, multikulturellen und offenen Band entwickelt, die auf viele schöne Konzerte und Erlebnisse in verschiedenen Besetzungen zurückblicken kann. Vor der starken Formation aus versierten Musiker:Innen singt, tanzt, erzählt, scherzt und lacht Sonia Solarte - Dichterin und Sängerin aus Cali, der Salsa-Metropole Kolumbiens. Mit Doris Alzarte aus Medellin bringen die beiden Power Frauen die Lebensfreude Lateinamerikas nach Berlin! Besetzung: Sonia Solarte  Voc Doris Alzarte  Voc Susanne Schulz   Piano, Violin Ramani Krishna  Bass Philipp Beerwald  Congas Doro Wesseling  Drums Gisela Meßollen Trompete Tanja Becker   Posaune",
           },
           {
-            image: "",
+            image: "lei-ayna.webp",
             dancerOne: "Lei",
             dancerTwo: "Ayna",
 
             dancerOneDescription:
-              "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
+              "Schon als Kind interessierte er sich für künstlerische Ausdrucksformen und trat mit 15 Jahren in die Schule für Kunsterzieher in seiner Heimatstadt ein, mit dem Schwerpunkt Theater. Nach seinem Abschluss machte er sich als Show- und Varieté-Tänzer selbstständig und war seither in diesem Bereich tätig, bis er 2021 nach Deutschland zog. Hier arbeitet er als Lehrer für kubanische und lateinamerikanische Rhythmen in Berlin, tritt bei Veranstaltungen und Festivals auf und bereitet Paare für Hochzeiten und andere Anlässe vor und berät sie.",
             dancerTwoDescription: "tba",
           },
         ],
@@ -205,6 +205,7 @@ export const GermanSundayTimetableData: Column[] = [
         time: "12:30",
         event: "New York On 2",
         instructor: "Niya",
+        image: "/niya.webp",
         type: "workshop",
         bio: "Hallo zusammen! Ich bin Niya, geboren in Sofia, Bulgarien, wo meine tänzerische Reise mit Ballett, Modern Dance und Hip Hop begann. Später fand ich meine große Leidenschaft: Salsa – und ganz besonders Mambo. Als Mitglied eines Salsa-Teams durfte ich Bulgarien auf internationalen Festivals vertreten und sammelte dabei wertvolle Erfahrungen in Salsa, Bachata und Cha Cha Cha. Seit 2023 unterrichte ich in Berlin. In meinem Unterricht stehen Koordination, Bewegungsbewusstsein und technische Klarheit im Mittelpunkt. Was mir besonders am Herzen liegt: meine Begeisterung für Mambo weiterzugeben – und euch dabei zu unterstützen, eure eigene Liebe zur Musik zu entdecken. Ich freue mich darauf, euch beim Festival zu sehen und gemeinsam mit euch zu tanzen!",
         description:
@@ -227,6 +228,7 @@ export const GermanSundayTimetableData: Column[] = [
         event: "Casino Cubano",
         instructor: "Lei",
         type: "workshop",
+        image: "/lei.webp",
         bio: "Schon als Kind interessierte er sich für künstlerische Ausdrucksformen und trat mit 15 Jahren in die Schule für Kunsterzieher in seiner Heimatstadt ein, mit dem Schwerpunkt Theater. Nach seinem Abschluss machte er sich als Show- und Varieté-Tänzer selbstständig und war seither in diesem Bereich tätig, bis er 2021 nach Deutschland zog. Hier arbeitet er als Lehrer für kubanische und lateinamerikanische Rhythmen in Berlin, tritt bei Veranstaltungen und Festivals auf und bereitet Paare für Hochzeiten und andere Anlässe vor und berät sie.",
         description:
           "Mehr als nur Tanz – pures Lebensgefühl! Kubanisches Casino ist ein sozialer Tanzstil aus Kuba, bekannt für seine Lebensfreude, seinen karibischen Flair und die typischen Kreisbewegungen. Man tanzt es als Paar oder in der Rueda, mit viel Improvisation, Verbindung und der mitreißenden Energie von Son, Salsa und afrokubanischen Rhythmen. Eine echte Feier kubanischer Lebensfreude in Bewegung!",
@@ -236,8 +238,6 @@ export const GermanSundayTimetableData: Column[] = [
         event: "Casino Cubano",
         instructor: "Lei",
         type: "workshop",
-        description:
-          "Experience the distinctive style of Colombian salsa with Diana & Juan. This workshop focuses on the fast footwork, unique styling, and energetic movements characteristic of Cali-style salsa.",
       },
       { time: "16:30" },
       { time: "17:00" },
