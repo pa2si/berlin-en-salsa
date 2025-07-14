@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.29
+
+- scrollbar hidden in Modal
+
 v1.1.1-timetable.28
 
 - Programm weiter aktualisiert

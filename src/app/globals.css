@@ -27,3 +27,14 @@ body {
   /* Font family now handled by Next.js font module */
   overflow-x: hidden;
 }
+
+/* Custom scrollbar utility class */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

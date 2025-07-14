@@ -588,7 +588,7 @@ export default function GermanFestivalTimetable() {
                 stiffness: 300,
                 damping: 25,
               }}
-              className="mx-4 max-h-[90vh] w-full max-w-md overflow-y-auto rounded-xl bg-white p-6 shadow-2xl"
+              className="scrollbar-hide mx-4 max-h-[90vh] w-full max-w-md overflow-y-auto rounded-xl bg-white p-6 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
               onKeyDown={(e) => {
                 // Add keyboard navigation for the slider
