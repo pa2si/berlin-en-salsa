@@ -273,15 +273,16 @@ export const GermanSaturdayTimetableData: Column[] = [
       {
         time: "13:00",
         event: "Ritmo de Clave",
-        instructor: "Guillermo",
+        instructor: "Guillermo Diaz",
         type: "workshop",
+        image: "/guillermo-diaz.jpeg",
         description:
           "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
       },
       {
         time: "13:30",
         event: "Ritmo de Clave",
-        instructor: "Guillermo",
+        instructor: "Guillermo Diaz",
         type: "workshop",
       },
 

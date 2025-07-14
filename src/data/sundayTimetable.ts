@@ -293,7 +293,7 @@ export const sundayTimetableData: Column[] = [
         event: "Taller de Campana",
         instructor: "Chucho Palma",
         type: "workshop",
-        image: "/chucho-palma.webp",
+        image: "/chucho-palma.jpeg",
         bio: "Percusionista venezolano radicado en Berlin, actual bongocero de la orquesta La Melodíca.",
         description:
           "Muestra de los fundamentos basicos de la campana de mano en los diferentes ritmos latinos donde ella se ejecuta. Muestra de como ejecutar un solo de campana utilizando los patrones de solos de la conga, el timbal y el bongo",
@@ -316,7 +316,7 @@ export const sundayTimetableData: Column[] = [
         event: "Soneo Workshop",
         instructor: "Harry Muñoz",
         type: "workshop",
-        image: "/harry-munoz.webp",
+        image: "/harry-munoz.jpeg",
         description:
           "En una orquesta, una delantera; en una delantera, unos cantantes… ¡y entre ellos, los soneros! Estaremos hablando de esta especial categoría de intérprete dentro del género salsero. ¿Y quién sabe? De pronto, y de repente… ¡nos ponemos a sonear! Nos vemos el 20 de julio.",
       },
