@@ -619,10 +619,10 @@ export default function FestivalTimetable() {
 
                 {/* Time and instructor info */}
                 <div className="mb-4 flex flex-col">
-                  <span className="text-md flex items-center font-bold text-gray-700">
+                  <span className="flex items-center text-lg font-bold text-gray-700">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      className="mr-1 h-4 w-4"
+                      className="mr-1 h-5 w-5"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -638,16 +638,16 @@ export default function FestivalTimetable() {
                       selectedEventDetails.time}
                   </span>
                   {selectedEventDetails.actType ? (
-                    <span className="text-md text-gray-700">
+                    <span className="text-lg text-gray-700">
                       {selectedEventDetails.actType}
                     </span>
                   ) : selectedEventDetails.type === "workshop" ? (
-                    <span className="text-md text-gray-700">Taller</span>
+                    <span className="text-lg text-gray-700">Taller</span>
                   ) : selectedEventDetails.type === "talk" ? (
-                    <span className="text-md text-gray-700">Charla</span>
+                    <span className="text-lg text-gray-700">Charla</span>
                   ) : null}
                   {selectedEventDetails.instructor && (
-                    <span className="text-md text-gray-700">
+                    <span className="text-lg text-gray-700">
                       {selectedEventDetails.type === "workshop"
                         ? "Dirigido por:"
                         : "Instructor:"}{" "}
@@ -657,7 +657,7 @@ export default function FestivalTimetable() {
                     </span>
                   )}
                   {selectedEventDetails.djs && (
-                    <span className="text-md text-gray-700">
+                    <span className="text-lg text-gray-700">
                       DJs: {selectedEventDetails.djs}
                     </span>
                   )}
@@ -665,13 +665,13 @@ export default function FestivalTimetable() {
                   {/* For talk events, show Host and Presenter with appropriate labels */}
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.host && (
-                      <span className="text-md text-gray-700">
+                      <span className="text-lg text-gray-700">
                         Host: {selectedEventDetails.host}
                       </span>
                     )}
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.presenter && (
-                      <span className="text-md text-gray-700">
+                      <span className="text-lg text-gray-700">
                         Presentado por: {selectedEventDetails.presenter}
                       </span>
                     )}
@@ -679,20 +679,20 @@ export default function FestivalTimetable() {
                   {/* For non-talk events, use the original presenter display */}
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.presenter && (
-                      <span className="text-md text-gray-700">
+                      <span className="text-lg text-gray-700">
                         Presenter: {selectedEventDetails.presenter}
                       </span>
                     )}
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.host && (
-                      <span className="text-md text-gray-700">
+                      <span className="text-lg text-gray-700">
                         Host: {selectedEventDetails.host}
                       </span>
                     )}
 
                   {selectedEventDetails.hasShow &&
                     selectedEventDetails.danceShow && (
-                      <span className="text-bes-purple mt-1 flex items-center text-sm font-bold">
+                      <span className="text-bes-purple mt-1 flex items-center text-base font-bold">
                         <span className="bg-bes-purple mr-2 inline-block h-3 w-3 rounded-full"></span>
                         {selectedEventDetails.danceShow}
                         {selectedEventDetails.dancers
@@ -820,7 +820,7 @@ export default function FestivalTimetable() {
                         {/* Regular description */}
                         {selectedEventDetails.slides[currentSlideIndex]
                           ?.description && (
-                          <p className="mb-4 text-gray-900 md:text-lg md:leading-relaxed">
+                          <p className="mb-4 text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {
                               selectedEventDetails.slides[currentSlideIndex]
                                 .description
@@ -840,7 +840,7 @@ export default function FestivalTimetable() {
                                     ?.dancerOne
                                 }
                               </h5>
-                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.dancerOneDescription
@@ -860,7 +860,7 @@ export default function FestivalTimetable() {
                                     ?.dancerTwo
                                 }
                               </h5>
-                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.dancerTwoDescription
@@ -889,7 +889,7 @@ export default function FestivalTimetable() {
                                       currentSlideIndex
                                     ]?.dancerOne}
                               </h5>
-                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.combinedDancersDescription
@@ -910,7 +910,7 @@ export default function FestivalTimetable() {
                                     ?.djOne
                                 }
                               </h5>
-                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.djOneDescription
@@ -930,7 +930,7 @@ export default function FestivalTimetable() {
                                     ?.djTwo
                                 }
                               </h5>
-                              <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                              <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                                 {
                                   selectedEventDetails.slides[currentSlideIndex]
                                     ?.djTwoDescription
@@ -951,7 +951,7 @@ export default function FestivalTimetable() {
                                 ? `${selectedEventDetails.slides[currentSlideIndex]?.djOne} & ${selectedEventDetails.slides[currentSlideIndex]?.djTwo} juntos`
                                 : "Colaboración"}
                             </h5>
-                            <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                            <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                               {
                                 selectedEventDetails.slides[currentSlideIndex]
                                   ?.descriptionTwoDjsTogether
@@ -964,7 +964,7 @@ export default function FestivalTimetable() {
                         {selectedEventDetails.slides[currentSlideIndex]
                           ?.genreDescription && (
                           <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
-                            <p className="text-gray-900 md:text-lg md:leading-relaxed">
+                            <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                               {
                                 selectedEventDetails.slides[currentSlideIndex]
                                   ?.genreDescription
@@ -994,7 +994,7 @@ export default function FestivalTimetable() {
                               ←
                             </button>
 
-                            <div className="text-xs text-gray-500">
+                            <div className="md:text-md text-gray-500">
                               {currentSlideIndex + 1} /{" "}
                               {selectedEventDetails.slides &&
                                 selectedEventDetails.slides.length}
@@ -1176,7 +1176,7 @@ export default function FestivalTimetable() {
                     {/* Fallback to single description if no slides - but not for talk events which have dedicated description sections */}
                     {selectedEventDetails.description &&
                       selectedEventDetails.type !== "talk" && (
-                        <p className="mb-6 text-gray-700 md:text-lg md:leading-relaxed">
+                        <p className="mb-6 text-lg text-gray-700 md:text-xl md:leading-relaxed">
                           {selectedEventDetails.description}
                         </p>
                       )}
@@ -1189,10 +1189,10 @@ export default function FestivalTimetable() {
                   <>
                     {selectedEventDetails.bio && (
                       <div className="mb-6">
-                        <h4 className="text-bes-red mb-2 text-lg font-bold">
+                        <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                           Biografía de {selectedEventDetails.instructor}
                         </h4>
-                        <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                        <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                           {selectedEventDetails.bio}
                         </p>
                       </div>
@@ -1201,10 +1201,10 @@ export default function FestivalTimetable() {
                     {selectedEventDetails.bioTwo &&
                       selectedEventDetails.instructorTwo && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                             Biografía de {selectedEventDetails.instructorTwo}
                           </h4>
-                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {selectedEventDetails.bioTwo}
                           </p>
                         </div>
@@ -1220,7 +1220,7 @@ export default function FestivalTimetable() {
                       {/* Record info */}
                       {selectedEventDetails.record && (
                         <div className="mb-6">
-                          <h4 className="mb-2 text-lg font-bold text-gray-700">
+                          <h4 className="mb-2 text-lg font-bold text-gray-600">
                             {selectedEventDetails.record}
                             {selectedEventDetails.artist && (
                               <span> de {selectedEventDetails.artist}</span>
@@ -1232,10 +1232,10 @@ export default function FestivalTimetable() {
                       {/* Bio */}
                       {selectedEventDetails.bio && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                             Biografía de {selectedEventDetails.presenter}
                           </h4>
-                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {selectedEventDetails.bio}
                           </p>
                         </div>
@@ -1244,10 +1244,10 @@ export default function FestivalTimetable() {
                       {/* Comment */}
                       {selectedEventDetails.comment && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                             Comentario
                           </h4>
-                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {selectedEventDetails.comment}
                           </p>
                         </div>
@@ -1262,10 +1262,10 @@ export default function FestivalTimetable() {
                       {/* Bio (if available) */}
                       {selectedEventDetails.bio && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                             Bio de {selectedEventDetails.presenter}
                           </h4>
-                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {selectedEventDetails.bio}
                           </p>
                         </div>
@@ -1274,10 +1274,10 @@ export default function FestivalTimetable() {
                       {/* Description */}
                       {selectedEventDetails.description && (
                         <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-lg font-bold">
+                          <h4 className="text-bes-red mb-2 text-lg font-bold md:text-xl">
                             {selectedEventDetails.bio ? "Descripción" : ""}
-                          </h4>
-                          <p className="text-gray-700 md:text-lg md:leading-relaxed">
+                          </h4>{" "}
+                          <p className="text-lg text-gray-700 md:text-xl md:leading-relaxed">
                             {selectedEventDetails.description}
                           </p>
                         </div>
@@ -1289,7 +1289,7 @@ export default function FestivalTimetable() {
                 {selectedEventDetails.type === "talk" &&
                   selectedEventDetails.text && (
                     <div className="border-bes-red mb-6 rounded-lg border-l-4 bg-gray-50 p-4">
-                      <p className="text-gray-700 italic md:text-lg md:leading-relaxed">
+                      <p className="text-lg text-gray-700 italic md:text-xl md:leading-relaxed">
                         &quot;{selectedEventDetails.text}&quot;
                       </p>
                     </div>

@@ -2,6 +2,13 @@ Versions:
 
 whats's done:
 
+v1.1.1-timetable.32
+
+- modified modal ui
+  - bigger numbers in sliders
+  - bigger text modal
+  - bigger <h4>
+
 v1.1.1-timetable.31
 
 - last infos entered
