@@ -200,7 +200,6 @@ export const GermanSaturdayTimetableData: Column[] = [
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
       },
-      { time: "22:00" },
     ],
   },
   {
@@ -271,7 +270,6 @@ export const GermanSaturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -280,22 +278,6 @@ export const GermanSaturdayTimetableData: Column[] = [
       { time: "12:30" },
       {
         time: "13:00",
-        event: "Der Clave-Rhythmus",
-        instructor: "Guillermo Diaz",
-        type: "workshop",
-        image: "/guillermo-diaz.jpeg",
-        description:
-          "Salsa, wie viele andere Musikrichtungen, besteht sowohl aus ihrer Instrumentierung und Interpretation als auch aus dem Hören und Tanzen. Für ihre Interpretation ist das Verständnis der Clave von zentraler Bedeutung, da sich die gesamte Instrumentierung um dieses rhythmische Element dreht. Die Clave ist sozusagen die DNA der Salsa und vieler anderer Musikstile mit stark afrikanischem Ursprung – ein nahezu unverzichtbares, vor allem aber äußerst nützliches Mittel, um Salsa auf jeder Ebene und in jeder Form der Interaktion zu verstehen. In diesem Workshop tauchen wir kurz in das bestgehütete Geheimnis der Salsa ein: die Clave. Ziel des Workshops ist es, ein grundlegendes, aber wesentliches Verständnis zu vermitteln, um diese Musik, die wir so sehr lieben, mit mehr Vertrautheit und Nähe spielen, tanzen und hören zu können. Der Workshop richtet sich sowohl an Anfänger:innen als auch an Personen ohne musikalische Vorkenntnisse. Es wird empfohlen, ein beliebiges Perkussionsinstrument mitzubringen – von Trommeln, Claves und Kuhglocken bis hin zu Tassen, Pfannen oder Holzlöffeln.",
-      },
-      {
-        time: "13:30",
-        event: "Der Clave-Rhythmus",
-        instructor: "Guillermo Diaz",
-        type: "workshop",
-      },
-
-      {
-        time: "14:00",
         event: "Einführung in die Polyrhythmik",
         instructor: "Angel Candeaux",
         type: "workshop",
@@ -305,9 +287,24 @@ export const GermanSaturdayTimetableData: Column[] = [
         bio: "Ángel Candeaux ist ein Kubaner aus Havanna, der den Rhythmus im Blut und die Neugier im Kopf trägt. Als ausgebildeter Psychologe und leidenschaftlicher Perkussionist bewegt er sich zwischen afrokubanischer Tradition und neuen Wegen, Menschen miteinander zu verbinden – sowohl in Kuba als auch in Europa und den USA. Seit 2006 lebt er in Berlin, wo er nicht nur Trommeln spielt, sondern Räume schafft, in denen Menschen einander begegnen, einander zuhören und ihren eigenen Rhythmus entdecken können. Als Gründer des Projekts „Desapalencao“ gehört Ángel zu jenen, die fest daran glauben, dass Musik nicht nur den Tag – sondern auch das Leben verändern kann. Und dass jeder Mensch einen einzigartigen Puls hat, den er in die Gruppe einbringen kann.",
       },
       {
-        time: "14:30",
+        time: "13:30",
         event: "Einführung in die Polyrhythmik",
         instructor: "Angel Candeaux",
+        type: "workshop",
+      },
+      {
+        time: "14:00",
+        event: "Der Clave-Rhythmus",
+        instructor: "Guillermo Diaz",
+        type: "workshop",
+        image: "/guillermo-diaz.jpeg",
+        description:
+          "Salsa, wie viele andere Musikrichtungen, besteht sowohl aus ihrer Instrumentierung und Interpretation als auch aus dem Hören und Tanzen. Für ihre Interpretation ist das Verständnis der Clave von zentraler Bedeutung, da sich die gesamte Instrumentierung um dieses rhythmische Element dreht. Die Clave ist sozusagen die DNA der Salsa und vieler anderer Musikstile mit stark afrikanischem Ursprung – ein nahezu unverzichtbares, vor allem aber äußerst nützliches Mittel, um Salsa auf jeder Ebene und in jeder Form der Interaktion zu verstehen. In diesem Workshop tauchen wir kurz in das bestgehütete Geheimnis der Salsa ein: die Clave. Ziel des Workshops ist es, ein grundlegendes, aber wesentliches Verständnis zu vermitteln, um diese Musik, die wir so sehr lieben, mit mehr Vertrautheit und Nähe spielen, tanzen und hören zu können. Der Workshop richtet sich sowohl an Anfänger:innen als auch an Personen ohne musikalische Vorkenntnisse. Es wird empfohlen, ein beliebiges Perkussionsinstrument mitzubringen – von Trommeln, Claves und Kuhglocken bis hin zu Tassen, Pfannen oder Holzlöffeln.",
+      },
+      {
+        time: "14:30",
+        event: "Der Clave-Rhythmus",
+        instructor: "Guillermo Diaz",
         type: "workshop",
       },
       { time: "15:00" },
@@ -324,7 +321,6 @@ export const GermanSaturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -428,7 +424,6 @@ export const GermanSaturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
 ];

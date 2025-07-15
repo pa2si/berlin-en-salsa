@@ -15,7 +15,7 @@ export const GermanSundayTimetableData: Column[] = [
         image: "/flori-wilber.webp",
       },
       {
-        time: "12:00",
+        time: "13:00",
         event: "FLori % Wilber",
         actType: "DJ Set",
         type: "main",
@@ -195,7 +195,6 @@ export const GermanSundayTimetableData: Column[] = [
         actType: "DJ Set",
         type: "main",
       },
-      { time: "22:00" },
     ],
   },
   {
@@ -239,6 +238,7 @@ export const GermanSundayTimetableData: Column[] = [
         instructor: "Lei",
         type: "workshop",
       },
+      { time: "16:00" },
       { time: "16:30" },
       { time: "17:00" },
       { time: "17:30" },
@@ -250,7 +250,6 @@ export const GermanSundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -306,7 +305,6 @@ export const GermanSundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -388,7 +386,6 @@ export const GermanSundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
 ];

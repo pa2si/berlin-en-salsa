@@ -200,7 +200,6 @@ export const sundayTimetableData: Column[] = [
         type: "main",
         djs: "Andrelux, Dracaena, El Vago, El Melómano Alemán",
       },
-      { time: "22:00" },
     ],
   },
   {
@@ -244,6 +243,7 @@ export const sundayTimetableData: Column[] = [
         instructor: "Lei",
         type: "workshop",
       },
+      { time: "16:00" },
       { time: "16:30" },
       { time: "17:00" },
       { time: "17:30" },
@@ -255,7 +255,6 @@ export const sundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -311,7 +310,6 @@ export const sundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -393,7 +391,6 @@ export const sundayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
 ];

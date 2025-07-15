@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v 1.1.1
+
+- Guille and Angel changed slots
+- correction of missed out empty slots in timeline
+
 v 1.1.0
 
 - interactive Program is now implemented

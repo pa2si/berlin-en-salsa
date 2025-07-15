@@ -200,7 +200,6 @@ export const saturdayTimetableData: Column[] = [
         type: "main",
         djs: "Calamidades Lola & Amuleto Manuela",
       },
-      { time: "22:00" },
     ],
   },
   {
@@ -271,7 +270,6 @@ export const saturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -280,22 +278,6 @@ export const saturdayTimetableData: Column[] = [
       { time: "12:30" },
       {
         time: "13:00",
-        event: "Ritmo de Clave",
-        instructor: "Guillermo Diaz",
-        type: "workshop",
-        image: "/guillermo-diaz.jpeg",
-        description:
-          "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
-      },
-      {
-        time: "13:30",
-        event: "Ritmo de Clave",
-        instructor: "Guillermo Diaz",
-        type: "workshop",
-      },
-
-      {
-        time: "14:00",
         event: "Introduction to Polyrhythm",
         instructor: "Angel Candeaux",
         type: "workshop",
@@ -305,9 +287,24 @@ export const saturdayTimetableData: Column[] = [
         bio: 'Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto "desapalencao", Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo. ¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva.',
       },
       {
-        time: "14:30",
+        time: "13:30",
         event: "Introduction to Polyrhythm",
         instructor: "Angel Candeaux",
+        type: "workshop",
+      },
+      {
+        time: "14:00",
+        event: "Ritmo de Clave",
+        instructor: "Guillermo Diaz",
+        type: "workshop",
+        image: "/guillermo-diaz.jpeg",
+        description:
+          "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
+      },
+      {
+        time: "14:30",
+        event: "Ritmo de Clave",
+        instructor: "Guillermo Diaz",
         type: "workshop",
       },
       { time: "15:00" },
@@ -324,7 +321,6 @@ export const saturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
   {
@@ -429,7 +425,6 @@ export const saturdayTimetableData: Column[] = [
       { time: "20:30" },
       { time: "21:00" },
       { time: "21:30" },
-      { time: "22:00" },
     ],
   },
 ];
