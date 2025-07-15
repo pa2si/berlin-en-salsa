@@ -79,8 +79,62 @@ const ProgramDownloadModal = ({
             transition={{ delay: 0.4 }}
             className="mb-6 text-center font-semibold text-white"
           >
-            Descarga el programa completo para tenerlo siempre a mano.
+            Encuentra todos los detalles en el programa interactivo o descarga
+            el programa principal!
           </motion.p>
+
+          {/* Interactive Timetable Button */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="mb-6 flex justify-center"
+          >
+            <motion.a
+              href="/timetable"
+              className="bg-bes-amber text-bes-red flex items-center justify-center space-x-2 rounded-lg border-2 border-white px-6 py-3 font-bold shadow-lg"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 15px rgba(255,255,255,0.5)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              animate={{
+                boxShadow: [
+                  "0 0 0px rgba(255,255,255,0)",
+                  "0 0 10px rgba(255,255,255,0.7)",
+                  "0 0 0px rgba(255,255,255,0)",
+                ],
+              }}
+              transition={{
+                boxShadow: {
+                  repeat: Infinity,
+                  duration: 2,
+                },
+              }}
+            >
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 3,
+                  repeatType: "reverse",
+                }}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                />
+              </motion.svg>
+              <span>Programa Interactivo</span>
+            </motion.a>
+          </motion.div>
 
           {/* Tab navigation */}
           <div className="mb-6 flex justify-center space-x-4">

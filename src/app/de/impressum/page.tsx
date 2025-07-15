@@ -38,7 +38,7 @@ export default function Impressum() {
       {/* Absolutely positioned back button - hidden on mobile */}
       <Link
         href="/de"
-        className="text-bes-red hover:text-bes-red/80 absolute top-6 right-30 hidden items-center text-sm sm:flex sm:text-base md:text-lg"
+        className="text-bes-red hover:text-bes-red/80 text-md absolute top-6 right-30 hidden items-center sm:flex sm:text-base md:text-xl"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ export default function Impressum() {
               <li>
                 <div className="flex items-center">
                   <span className="mx-1 text-gray-500">/</span>
-                  <span className="text-bes-purple text-sm sm:text-base md:text-lg">
+                  <span className="text-bes-purple text-md sm:text-base md:text-xl">
                     Impressum
                   </span>
                 </div>
