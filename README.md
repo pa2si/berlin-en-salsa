@@ -9,6 +9,8 @@ v1.2.0
 - Former SectionFive (Contact) is now SectionSix.
 - added some animations to SectionTwo, Three and Six
 - now the scrollbar in SectionFour doesnt appear when the Shirts are flying in
+- programDownload Button hidden
+- now with Suspense for the searchParams issue
 
 v1.1.2
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import FestivalTimetable from "@/components/FestivalTimetable";
@@ -61,7 +61,15 @@ export default function TimetablePage() {
       {/* Main content area */}
       <div className="container mx-auto flex-1 px-4 py-4">
         {/* Festival Timetable component */}
-        <FestivalTimetable />
+        <Suspense
+          fallback={
+            <div className="text-bes-red flex h-64 items-center justify-center text-xl">
+              Cargando horario del festival...
+            </div>
+          }
+        >
+          <FestivalTimetable />
+        </Suspense>
       </div>
 
       {/* Footer */}
