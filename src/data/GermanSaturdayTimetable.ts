@@ -205,6 +205,7 @@ export const GermanSaturdayTimetableData: Column[] = [
   {
     title: "Tanz-Workshops",
     slots: [
+      { time: "12:30" },
       {
         time: "13:00",
         event: "Afro-Cuban Dance",
@@ -221,7 +222,6 @@ export const GermanSaturdayTimetableData: Column[] = [
         instructor: "Leidiana",
         type: "workshop",
       },
-      { time: "13:30" },
       { time: "14:00" },
       { time: "14:30" },
       { time: "15:00" },

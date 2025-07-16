@@ -15,7 +15,7 @@ export const sundayTimetableData: Column[] = [
         image: "/flori-wilber.webp",
       },
       {
-        time: "12:00",
+        time: "13:00",
         event: "FLori % Wilber",
         actType: "DJ Set",
         type: "main",

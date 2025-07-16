@@ -2,7 +2,11 @@ Versions:
 
 whats's done:
 
-v 1.1.1
+v1.1.2
+
+- corrected timeslots
+
+v1.1.1
 
 - Guille and Angel changed slots
 - correction of missed out empty slots in timeline
