@@ -2,6 +2,14 @@ Versions:
 
 whats's done:
 
+v1.2.0
+
+- Created a new SectionFive which is now a Timetable Section
+  - images are screenshots from the interactive timetable
+- Former SectionFive (Contact) is now SectionSix.
+- added some animations to SectionTwo, Three and Six
+- now the scrollbar in SectionFour doesnt appear when the Shirts are flying in
+
 v1.1.2
 
 - corrected timeslots

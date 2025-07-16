@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const SectionThree = () => {
   // Define image sets for different screen sizes
@@ -56,9 +57,15 @@ const SectionThree = () => {
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
       <div className="bg-bes-red flex h-auto items-center justify-center py-12 sm:h-svh sm:w-1/2 sm:justify-start sm:py-0">
-        <div className="text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 md:gap-8 lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12">
+        <motion.div
+          className="text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 md:gap-8 lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="sr-only">Berlin en Salsa kommt mit voller Power!</h2>
-          <img
+          <motion.img
             src="/berlin-en-salsa-kommt-mit-voller-power.svg"
             alt="Berlin en Salsa kommt mit allem!"
             className="mx-auto h-[auto] w-full max-w-[24rem] sm:mx-0 sm:-ml-5 sm:max-w-[16rem] md:-mb-6 md:max-w-[20rem] lg:h-[clamp(6rem,12vh,10rem)] lg:max-w-[30rem] xl:h-[clamp(8rem,15vh,12rem)] xl:w-[30rem] 2xl:h-[clamp(9rem,18vh,14rem)]"
@@ -73,7 +80,7 @@ const SectionThree = () => {
             <p>Vinyl-Markt</p>
             <p>LATAM Spezialitäten und mehr!</p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div
         className={`relative flex h-[50vh] sm:h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}

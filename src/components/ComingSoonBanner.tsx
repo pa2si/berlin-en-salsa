@@ -20,7 +20,6 @@ const ComingSoonBanner = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Countdown logic moved from ProgramCountdown component
   useEffect(() => {
     if (!isVisible) return;
 
@@ -101,13 +100,13 @@ const ComingSoonBanner = () => {
           initial={{ scale: 0.8 }}
           animate={{ scale: [0.8, 1.1, 1] }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col items-center justify-between space-y-2 sm:flex-row sm:items-center sm:space-y-0 sm:py-1"
+          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-6 lg:py-1"
         >
           <div className="flex items-center">
             <motion.div
               animate={{ rotate: [0, 10, -10, 10, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 3 }}
-              className="mr-4 hidden sm:block"
+              className="mr-4 hidden lg:block"
             >
               <img
                 src="/bes-logo-habano.png"
@@ -115,11 +114,11 @@ const ComingSoonBanner = () => {
                 className="h-15 w-auto"
               />
             </motion.div>
-            <div className="sm:flex sm:flex-col sm:justify-center">
-              <h3 className="text-bes-amber text-xl font-bold sm:text-2xl">
+            <div className="lg:flex lg:flex-col lg:justify-center">
+              <h3 className="text-bes-amber text-xl font-bold lg:text-2xl">
                 ¡Cuenta regresiva hasta Berlin En Salsa!
               </h3>
-              <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-sm text-white sm:justify-start sm:text-base">
+              <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-sm text-white lg:justify-start lg:text-base">
                 <AnimatePresence>
                   {days > 0 && (
                     <motion.div
@@ -168,6 +167,82 @@ const ComingSoonBanner = () => {
               </div>
             </div>
           </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+            className="mt-3 flex items-center justify-center lg:mt-0"
+          >
+            <motion.a
+              href="/timetable"
+              initial={{ boxShadow: "0px 0px 0px rgba(183, 37, 232, 0)" }}
+              animate={{
+                boxShadow: [
+                  "0px 0px 0px rgba(183, 37, 232, 0)",
+                  "0px 0px 18px rgba(183, 37, 232, 0.9)",
+                  "0px 0px 8px rgba(183, 37, 232, 0.6)",
+                  "0px 0px 0px rgba(183, 37, 232, 0)",
+                ],
+              }}
+              transition={{
+                boxShadow: {
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut",
+                },
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 0px 25px rgba(183, 37, 232, 1.0)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="group bg-bes-amber hover:bg-opacity-90 text-bes-red border-bes-purple flex items-center rounded-full border-3 px-5 py-2 font-bold shadow-md transition-all"
+            >
+              <motion.div
+                className="flex items-center"
+                initial={{ x: 0 }}
+                whileHover={{ x: -3 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {/* Program Icon (same as in ProgramDownloadModal) */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-1.5 h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                  />
+                </svg>
+                Ver programa
+              </motion.div>
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ml-2 h-4 w-4 transition-all group-hover:ml-3"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                initial={{ x: 0 }}
+                animate={{ x: [0, 3, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  duration: 1.5,
+                  repeatDelay: 2,
+                }}
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                  clipRule="evenodd"
+                />
+              </motion.svg>
+            </motion.a>
+          </motion.div>
         </motion.div>
       </div>
     </motion.div>

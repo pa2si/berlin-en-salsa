@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const SectionTwo = () => {
   const images = ["/section-2-image-1.webp"];
@@ -69,9 +70,15 @@ const SectionTwo = () => {
         )}
       </div>
       <div className="bg-bes-amber flex h-auto overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
-        <div className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4">
+        <motion.div
+          className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="sr-only">Was ist Berlin en Salsa?</h2>
-          <img
+          <motion.img
             src="/was-ist-berlin-en-salsa.svg"
             alt="Was ist Berlin en Salsa?"
             className="mb-4 h-auto max-h-[4vh] min-h-[80px] w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[15vh]"
@@ -96,7 +103,7 @@ const SectionTwo = () => {
               Berlins.
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

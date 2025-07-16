@@ -6,11 +6,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GermanSaturdayTimetableData } from "../data/GermanSaturdayTimetable";
 import { GermanSundayTimetableData } from "../data/GermanSundayTimetable";
 import { Column } from "../types/timetable";
+import { useSearchParams } from "next/navigation";
 
 export default function GermanFestivalTimetable() {
+  const searchParams = useSearchParams();
+  const dayParam = searchParams.get("day");
+
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [currentDay, setCurrentDay] = useState<"saturday" | "sunday">(
-    "saturday",
+    dayParam === "sunday" ? "sunday" : "saturday",
   );
 
   // State for the current slide in the modal

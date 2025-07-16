@@ -1,10 +1,11 @@
 import SectionFive from "./sections/SectionFive";
 import SectionFour from "./sections/SectionFour";
 import SectionOne from "./sections/SectionOne";
+import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import ComingSoonBanner from "@/components/ComingSoonBanner";
-import ProgramButton from "@/components/ProgramButton";
+// import ProgramButton from "@/components/ProgramButton";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 
@@ -31,14 +32,15 @@ export default function Home() {
   return (
     <main>
       <ComingSoonBanner />
-      <ProgramButton />
+      {/* <ProgramButton /> */}
       <SectionOne />
       <SectionTwo />
       <SectionThree />
       <SectionFour />
+      <SectionFive />
       <div className="lg:flex lg:h-svh lg:flex-col">
         <div className="lg:flex-grow">
-          <SectionFive />
+          <SectionSix />
         </div>
         <div className="bg-bes-amber lg:flex-shrink-0">
           <Footer />

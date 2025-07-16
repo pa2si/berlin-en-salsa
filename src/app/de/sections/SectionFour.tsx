@@ -33,7 +33,7 @@ const SectionFour = () => {
   return (
     <>
       {/* Mobile layout (only visible below sm) */}
-      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-auto pb-8 sm:hidden">
+      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-x-hidden overflow-y-auto pb-8 sm:hidden">
         <h2 className="sr-only">Wie finanziert sich Berlin en Salsa?</h2>
         <img
           src="/wie-finanziert-sich-berlin-en-salsa.svg"
@@ -88,7 +88,7 @@ const SectionFour = () => {
       </div>
 
       {/* Small screen layout (sm only) - 2-column layout */}
-      <div className="bg-bes-purple hidden h-svh w-full grid-cols-2 overflow-auto sm:grid md:hidden">
+      <div className="bg-bes-purple hidden h-svh w-full grid-cols-2 overflow-x-hidden overflow-y-auto sm:grid md:hidden">
         {/* Left column - Financing information */}
         <div className="flex flex-col items-center justify-center p-4">
           <img
@@ -147,7 +147,7 @@ const SectionFour = () => {
       </div>
 
       {/* Medium to large layout (md to lg) - 2-row layout */}
-      <div className="bg-bes-purple hidden h-svh w-full flex-col overflow-auto md:flex lg:flex xl:hidden">
+      <div className="bg-bes-purple hidden h-svh w-full flex-col overflow-x-hidden overflow-y-auto md:flex lg:flex xl:hidden">
         {/* Top row - Financing information */}
         <div className="flex flex-1 flex-col items-center justify-center p-4 lg:p-8">
           <div className="flex h-full flex-col items-center justify-center">
@@ -204,7 +204,7 @@ const SectionFour = () => {
       </div>
 
       {/* Desktop layout (only visible at xl and above) */}
-      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-auto px-8 xl:grid">
+      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto px-8 xl:grid">
         <div className="flex items-center justify-center">
           <motion.img
             src="/bes-camiseta-white.webp"
