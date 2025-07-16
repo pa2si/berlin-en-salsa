@@ -11,28 +11,26 @@ const SectionSix = () => {
         {/* Title */}
         <motion.div
           className="mb-4 flex w-full items-center justify-center sm:mb-5"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <h2 className="sr-only">Kontakt</h2>
-          <motion.img
+          <img
             src="/kontakt.svg"
             alt="Kontakt"
             className="w-[clamp(14rem,25vh,25rem)] object-contain"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400, damping: 10 }}
           />
         </motion.div>
 
         {/* Social Media Links - Now full width and centered */}
         <motion.div
           className="mb-6 flex w-full flex-wrap items-center justify-center gap-x-[0.2rem] gap-y-2 sm:mb-8 sm:gap-x-[clamp(0.3rem,1vh,0.4rem)] md:gap-x-[clamp(1rem,1.5vh,1.5rem)]"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
           <motion.a
             href="https://www.instagram.com/berlinensalsa/"
@@ -125,18 +123,18 @@ const SectionSix = () => {
         {/* Two-Column Content */}
         <motion.div
           className="flex flex-col lg:w-full lg:flex-row lg:items-center lg:gap-6 xl:gap-10"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.4 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
           {/* Left Column - Form */}
           <motion.div
             className="flex w-full flex-col items-center justify-center lg:w-1/2"
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           >
             <SubscribeSection />
           </motion.div>
@@ -144,10 +142,10 @@ const SectionSix = () => {
           {/* Right Column - Map */}
           <motion.div
             className="mt-8 flex w-full flex-col items-center lg:mt-0 lg:w-1/2 lg:justify-center"
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
           >
             <div className="w-full max-w-xl lg:max-w-none">
               <motion.a

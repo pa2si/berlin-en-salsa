@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.1
+
+- SectionSix now has simplier animation
+
 v1.2.0
 
 - Created a new SectionFive which is now a Timetable Section
