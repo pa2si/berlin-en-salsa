@@ -5,7 +5,6 @@ import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import GermanComingSoonBanner from "@/components/GermanComingSoonBanner";
-// import GermanProgramButton from "@/components/GermanProgramButton";
 import { Footer } from "@/components/GermanFooter";
 import type { Metadata } from "next";
 
@@ -34,7 +33,6 @@ export default function Home() {
   return (
     <main>
       <GermanComingSoonBanner />
-      {/* <GermanProgramButton /> */}
       <SectionOne />
       <SectionTwo />
       <SectionThree />

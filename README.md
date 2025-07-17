@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.3
+
+- deleted programButton and ProgramDownloadModal
+
 v1.2.2
 
 - updated images for Guillermo and Angel
