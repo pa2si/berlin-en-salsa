@@ -2,6 +2,16 @@ Versions:
 
 whats's done:
 
+v1.2.7
+
+- Added loading.tsx files to all routes for better user experience
+  - Created loading components with animated Berlin En Salsa logo
+  - Added progress bar animation for visual feedback
+  - Implemented language-specific loading text (Spanish "Cargando..." and German "Wird geladen...")
+  - Added responsive design for all screen sizes
+  - Complete coverage for all routes including Spanish and German pages (main routes, timetable, legal, privacy, impressum, datenschutz)
+- added general not-found.tsx and error.tsx
+
 v1.2.6
 
 - image uploaded for sarah balzat and inserted for Charlas slot
