@@ -88,13 +88,14 @@ export const GermanSundayTimetableData: Column[] = [
               "8 Burundanguer-as- und -itos  aus Kolumbien, Indien und Deutschland locken mit ihrer heißen Mischung aus  Salsa , Merengue und Rumba jeden aus dem Sessel. Ergänzt  mit Elementen aus Jazz und Flamenco präsentieren sie  Bearbeitungen traditioneller Salsa -  Arrangements. 1992 als reine Frauen Salsa Band gegründet, haben sie sich zu einer spannenden, multikulturellen und offenen Band entwickelt, die auf viele schöne Konzerte und Erlebnisse in verschiedenen Besetzungen zurückblicken kann. Vor der starken Formation aus versierten Musiker:Innen singt, tanzt, erzählt, scherzt und lacht Sonia Solarte - Dichterin und Sängerin aus Cali, der Salsa-Metropole Kolumbiens. Mit Doris Alzarte aus Medellin bringen die beiden Power Frauen die Lebensfreude Lateinamerikas nach Berlin! Besetzung: Sonia Solarte  Voc Doris Alzarte  Voc Susanne Schulz   Piano, Violin Ramani Krishna  Bass Philipp Beerwald  Congas Doro Wesseling  Drums Gisela Meßollen Trompete Tanja Becker   Posaune",
           },
           {
-            image: "lei-ayna.webp",
+            image: "/lei-ayna.webp",
             dancerOne: "Lei",
             dancerTwo: "Ayna",
 
             dancerOneDescription:
               "Schon als Kind interessierte er sich für künstlerische Ausdrucksformen und trat mit 15 Jahren in die Schule für Kunsterzieher in seiner Heimatstadt ein, mit dem Schwerpunkt Theater. Nach seinem Abschluss machte er sich als Show- und Varieté-Tänzer selbstständig und war seither in diesem Bereich tätig, bis er 2021 nach Deutschland zog. Hier arbeitet er als Lehrer für kubanische und lateinamerikanische Rhythmen in Berlin, tritt bei Veranstaltungen und Festivals auf und bereitet Paare für Hochzeiten und andere Anlässe vor und berät sie.",
-            dancerTwoDescription: "tba",
+            dancerTwoDescription:
+              "Ayna wurde in Peru geboren und entdeckte schon in jungen Jahren ihre Leidenschaft für den Tanz durch traditionelle peruanische Tänze, insbesondere afro-peruanische Rhythmen. Nach ihrer Ankunft in Berlin verliebte sie sich in die kubanische Musik und widmet sich seither vor allem dem Casino und dem Son Cubano. In diesen Tänzen findet sie eine lebendige Ausdrucksform und eine tiefe kulturelle Verbundenheit.",
           },
         ],
       },

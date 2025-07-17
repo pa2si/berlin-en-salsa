@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.5
+
+- correct src of image for lei-ayna in Main Stage
+
 v1.2.4
 
 - image size of bes logo increased in breadcramp

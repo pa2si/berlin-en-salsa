@@ -90,13 +90,14 @@ export const sundayTimetableData: Column[] = [
               "Ocho burundangueras de Colombia, India y Alemania sacan a cualquiera del asiento con su ardiente mezcla de salsa, merengue y rumba. Combinando elementos de jazz y flamenco, presentan versiones reinterpretadas de arreglos tradicionales de salsa. Fundada en 1992 como una banda de salsa integrada exclusivamente por mujeres, el grupo ha evolucionado hasta convertirse en una banda emocionante, multicultural y abierta, que mira hacia atrás con orgullo por los muchos conciertos y experiencias compartidas en diversas formaciones. Frente a esta poderosa formación de músicos experimentados, canta, baila, cuenta historias, bromea y ríe Sonia Solarte — poeta y cantante de Cali, la capital salsera de Colombia. Con Doris Alzarte, oriunda de Medellín, estas dos mujeres llenas de energía traen la alegría de vivir de América Latina a Berlín.",
           },
           {
-            image: "lei-ayna.webp",
+            image: "/lei-ayna.webp",
             dancerOne: "Lei",
             dancerTwo: "Ayna",
 
             dancerOneDescription:
               "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
-            dancerTwoDescription: "tba",
+            dancerTwoDescription:
+              "Ayna Nació en Perú, donde desde muy temprana edad se conectó con la danza a través de las danzas folclóricas peruanas, especialmente los ritmos afroperuanos, que marcaron profundamente su identidad artística. Con su llegada a Berlín, descubrió una nueva pasión en los ritmos cubanos. Desde entonces, se ha dedicado principalmente al casino y al son cubano, encontrando en ellos una forma vibrante de expresión y conexión cultural.",
           },
         ],
       },
