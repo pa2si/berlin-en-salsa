@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.3.3
+
+- adapted again imgage in breadcrump depending on screen size
+
 v1.3.2
 
 - Added "The Berliner" article link to the LinksModal
