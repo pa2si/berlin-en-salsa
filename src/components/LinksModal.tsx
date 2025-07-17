@@ -83,6 +83,16 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: "THF Berlin En Salsa Event",
       image: "/logo-thf.svg",
     },
+    {
+      url: "https://www.the-berliner.com/berlin/what-to-do-this-weekend-best-events/",
+      title: "The Berliner: What to do this weekend in Berlin",
+      image: "/the-berliner.png",
+    },
+    {
+      url: "https://rausgegangen.de/en/events/berlin-en-salsa-festival-day-day-01-0/",
+      title: "Rausgegangen: Berlin En Salsa Festival",
+      image: "/rausgegangen.svg",
+    },
   ];
 
   const title = language === "es" ? "Enlaces" : "Links";

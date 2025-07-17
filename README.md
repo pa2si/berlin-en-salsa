@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.3.2
+
+- Added "The Berliner" article link to the LinksModal
+- Added Rausgegangen event link to the LinksModal
+
 v1.3.1
 
 - now the close Button in ComingSoonBanner says "Close" in spanish and german version
