@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.2
+
+- updated images for Guillermo and Angel
+
 v1.2.1
 
 - SectionSix now has simplier animation
