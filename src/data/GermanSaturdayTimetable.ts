@@ -335,6 +335,7 @@ export const GermanSaturdayTimetableData: Column[] = [
           "Geschichten verschmelzen: Persönlicher Stil als Dialog zwischen Tradition und Selbst",
         type: "talk",
         presenter: "Sarah Balzat",
+        image: "/sarah-balzat.jpeg",
         description:
           "Persönlicher Stil im Tanz entsteht nicht im luftleeren Raum, er wird geschmiedet im Spannungsfeld zwischen individueller und kollektiver Geschichte. Anhand von Salsa erkunden wir, wie Tradition kein starres Erbe ist, sondern ein lebendiger Dialog: zwischen denen, die vor uns getanzt haben, und dem, was wir selbst in uns tragen. Aus diesem Dialog entsteht kein bloßes Nachahmen, sondern ein individueller Ausdruck, der auf Bewusstsein basiert, durch Praxis geformt und von Erinnerung genährt ist.",
       },

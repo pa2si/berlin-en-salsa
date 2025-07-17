@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.6
+
+- image uploaded for sarah balzat and inserted for Charlas slot
+
 v1.2.5
 
 - correct src of image for lei-ayna in Main Stage

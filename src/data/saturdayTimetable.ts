@@ -335,6 +335,7 @@ export const saturdayTimetableData: Column[] = [
           "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo. ",
         type: "talk",
         presenter: "Sarah Balzat",
+        image: "/sarah-balzat.jpeg",
         description:
           "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria.",
       },
