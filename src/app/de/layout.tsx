@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Instrument_Serif } from "next/font/google";
+import { BannerProvider } from "@/context/BannerContext";
+import DarkOverlay from "@/components/DarkOverlay";
 import "../globals.css";
 
 // Configure the Instrument Serif font
@@ -120,8 +122,11 @@ export default function RootLayout({
       <body
         className={`overflow-x-hidden antialiased ${instrumentSerif.className}`}
       >
-        <LanguageSwitcher />
-        {children}
+        <BannerProvider>
+          <LanguageSwitcher />
+          <DarkOverlay />
+          {children}
+        </BannerProvider>
       </body>
     </html>
   );

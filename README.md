@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.3.0
+
+- now implemented a dark overlay when banner is visible die to new context file
+
 v1.2.7
 
 - Added loading.tsx files to all routes for better user experience

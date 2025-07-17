@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useBannerContext } from "@/context/BannerContext";
 
 const GermanComingSoonBanner = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const { isBannerVisible, setIsBannerVisible } = useBannerContext();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -14,15 +15,15 @@ const GermanComingSoonBanner = () => {
   useEffect(() => {
     // Show banner after a short delay
     const timer = setTimeout(() => {
-      setIsVisible(true);
+      setIsBannerVisible(true);
     }, 1500);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [setIsBannerVisible]);
 
   // Countdown logic
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isBannerVisible) return;
 
     // Festival starts on July 19, 2025, at 12:30
     const targetDate = new Date("July 19, 2025 12:30:00").getTime();
@@ -50,9 +51,9 @@ const GermanComingSoonBanner = () => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isVisible]);
+  }, [isBannerVisible]);
 
-  if (!isVisible) return null;
+  if (!isBannerVisible) return null;
 
   return (
     <motion.div
@@ -76,7 +77,7 @@ const GermanComingSoonBanner = () => {
           whileTap={{ scale: 0.95 }}
           onMouseEnter={() => setIsButtonHovered(true)}
           onMouseLeave={() => setIsButtonHovered(false)}
-          onClick={() => setIsVisible(false)}
+          onClick={() => setIsBannerVisible(false)}
           className="bg-bes-amber hover:bg-opacity-95 group text-bes-red absolute -right-1 -bottom-1 flex items-center space-x-1 rounded-full px-2 py-1.5 font-bold transition-all sm:right-0 sm:bottom-0 sm:px-3 sm:py-2"
           aria-label="Ankündigung schließen"
         >
