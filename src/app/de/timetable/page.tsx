@@ -41,7 +41,7 @@ export default function TimetablePage() {
                   <img
                     src="/bes-logo-color.webp"
                     alt="Berlin En Salsa"
-                    className="h-15 w-auto"
+                    className="h-20 w-auto"
                   />
                 </Link>
               </li>

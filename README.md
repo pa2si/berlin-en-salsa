@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.2.4
+
+- image size of bes logo increased in breadcramp
+
 v1.2.3
 
 - deleted programButton and ProgramDownloadModal
