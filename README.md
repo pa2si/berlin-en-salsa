@@ -2,9 +2,13 @@ Versions:
 
 whats's done:
 
+v1.3.1
+
+- now the close Button in ComingSoonBanner says "Close" in spanish and german version
+
 v1.3.0
 
-- now implemented a dark overlay when banner is visible die to new context file
+- now implemented a dark overlay when banner is visible due to new context file
 
 v1.2.7
 

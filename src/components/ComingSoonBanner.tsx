@@ -80,7 +80,7 @@ const ComingSoonBanner = () => {
           className="bg-bes-amber hover:bg-opacity-95 group text-bes-red absolute -right-1 -bottom-1 flex items-center space-x-1 rounded-full px-2 py-1.5 font-bold transition-all sm:right-0 sm:bottom-0 sm:px-3 sm:py-2"
           aria-label="Cerrar anuncio"
         >
-          <span className="hidden sm:inline">Cerrar</span>
+          <span className="hidden sm:inline">Close</span>
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 sm:h-5 sm:w-5"
