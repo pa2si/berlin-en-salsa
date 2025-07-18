@@ -413,13 +413,7 @@ export const GermanSaturdayTimetableData: Column[] = [
       },
       {
         time: "19:00",
-        event: "Transbarrio-Dialoge: Die afroamerikanischen Wurzeln der Salsa",
-        presenter: "Matti Steinitz",
-        image: "/matti.webp",
-        type: "talk",
-        bio: "DJ Matatu alias Dr. Matti Steinitz ist Platten-Sammler und Forscher der Sounds und Bewegungen der afrikanischen Diaspora in Nord-, Mittel- und Südamerika. Vor kurzem ist sein Buch über die transnationalen Dialoge zwischen afro-amerikanischen und afro-lateinamerikanischen Gemeinschaften in der Ära der 1960er und 1970er Jahre erschienen und wie diese sich in der Entstehung von Afro-Latin Soul Szenen in Kontaktzonen wie New York, Panama und Rio de Janeiro manifestiert haben. (https://www.degruyterbrill.com/document/doi/10.1515/9783110665550/html)",
       },
-
       { time: "19:30" },
       { time: "20:00" },
       { time: "20:30" },

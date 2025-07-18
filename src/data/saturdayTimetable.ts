@@ -405,7 +405,7 @@ export const saturdayTimetableData: Column[] = [
       {
         time: "18:30",
         event: "Salsancó y los comienzos de la salsa en Berlín",
-        presenter: "tba",
+        host: "Paul Welch Guerra",
         image: "/salsanco.webp",
         type: "talk",
         description:
@@ -413,12 +413,6 @@ export const saturdayTimetableData: Column[] = [
       },
       {
         time: "19:00",
-        event:
-          "Transbarrio dialogues: Las raices afroestadounidenses de la salsa",
-        presenter: "Matti Steinitz",
-        image: "/matti.webp",
-        type: "talk",
-        bio: "DJ Matatu aka Dr. Matti Steinitz es coleccionista de vinilos e investigador de los sonidos y movimientos de la diáspora africana en las Américas. Recién salió su libro sobre los diálogos transnacionales entre comunidades afroestadounidenses y afrolatinoamericanos en la época de los 1960 y 1970 y como éstas se han manifestado en el surgimiento de escenas de Afro-Latin Soul en zonas de contacto como Nueva York, Panamá y Rio de Janeiro. (https://www.degruyterbrill.com/document/doi/10.1515/9783110665550/html)",
       },
 
       { time: "19:30" },

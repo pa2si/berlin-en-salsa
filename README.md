@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.3.5
+
+- Talk of Matti Steinitz deleted
+- added host for Salsanco talk
+
 v1.3.4
 
 - Paypal link modified
