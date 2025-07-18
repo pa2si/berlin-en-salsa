@@ -27,7 +27,7 @@ export const Footer = () => {
             </Link>
             <span>|</span>
             <a
-              href="https://www.paypal.com/pools/c/9fSuynM3ot"
+              href="https://www.paypal.com/pools/c/9gEVZFeS3A"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"

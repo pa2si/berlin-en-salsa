@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.3.4
+
+- Paypal link modified
+
 v1.3.3
 
 - adapted again imgage in breadcrump depending on screen size
