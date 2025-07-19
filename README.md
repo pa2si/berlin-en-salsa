@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.3.6
+
+- updated ComingSoonBanner showing program after countdown
+
 v1.3.5
 
 - Talk of Matti Steinitz deleted
