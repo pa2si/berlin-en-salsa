@@ -4,7 +4,7 @@ import SectionOne from "./sections/SectionOne";
 import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
-import ComingSoonBanner from "@/components/ComingSoonBanner";
+import ThankYouBanner from "@/components/ThankYouBanner";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <ComingSoonBanner />
+      <ThankYouBanner />
       <SectionOne />
       <SectionTwo />
       <SectionThree />

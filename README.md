@@ -2,6 +2,12 @@ Versions:
 
 whats's done:
 
+v1.3.7
+
+- Replaced ComingSoonBanner with ThankYouBanner after the festival
+- Added custom thank you messages in both Spanish and German versions
+- Maintained animated design elements for visual consistency
+
 v1.3.6
 
 - updated ComingSoonBanner showing program after countdown
