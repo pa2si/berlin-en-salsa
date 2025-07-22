@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.3.8
+
+- resized the text-size of the ThankYouBanner text
+
 v1.3.7
 
 - Replaced ComingSoonBanner with ThankYouBanner after the festival

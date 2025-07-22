@@ -89,7 +89,7 @@ const GermanThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-2 text-sm text-white lg:text-base"
+                className="mt-2 text-[1rem] text-white lg:text-[1.2rem]"
               >
                 Das Festival ist zu Ende und es war eine unglaublich schöne
                 Erfahrung für uns alle. Wir sind überwältigt von dem herzlichen
@@ -99,7 +99,7 @@ const GermanThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
-                className="text-bes-amber mt-2 text-sm font-medium lg:text-base"
+                className="text-bes-amber text-md mt-2 font-medium lg:text-lg"
               >
                 Wir sehen uns nächstes Jahr zur zweiten Ausgabe! Oder wer weiß,
                 vielleicht schon früher...
@@ -108,7 +108,7 @@ const GermanThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-bes-amber mt-1 text-sm font-medium italic lg:text-base"
+                className="text-bes-amber text-md mt-2 font-medium lg:text-lg"
               >
                 Salsaludos, euer Berlin En Salsa Team
               </motion.p>

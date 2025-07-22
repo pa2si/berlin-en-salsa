@@ -78,7 +78,7 @@ const ThankYouBanner = () => {
               <img
                 src="/bes-logo-habano.png"
                 alt="Berlin En Salsa Logo"
-                className="h-15 w-auto"
+                className="h-20 w-20"
               />
             </motion.div>
             <div className="lg:flex lg:flex-col lg:justify-center">
@@ -89,7 +89,7 @@ const ThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="mt-2 text-sm text-white lg:text-base"
+                className="mt-2 text-[1rem] text-white lg:text-[1.2rem]"
               >
                 El Festival ha terminado y fue una experiencia increíblemente
                 hermosa para todxs nosotrxs. Se soltaron definitamente los
@@ -101,7 +101,7 @@ const ThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
-                className="text-bes-amber mt-2 text-sm font-medium lg:text-base"
+                className="text-bes-amber text-md mt-2 font-medium lg:text-lg"
               >
                 Nos vemos el próximo año con la segunda edición! O quien sabe,
                 tal vez antes...
@@ -110,7 +110,7 @@ const ThankYouBanner = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.9 }}
-                className="text-bes-amber mt-1 text-sm font-medium italic lg:text-base"
+                className="text-bes-amber text-md mt-1 font-medium italic lg:text-lg"
               >
                 Salsaludos, su equipo de Berlin En Salsa
               </motion.p>
