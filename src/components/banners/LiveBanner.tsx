@@ -6,7 +6,12 @@ import { useBannerContext } from "@/context/BannerContext";
 import { saturdayTimetableData } from "@/data/saturdayTimetable";
 import { sundayTimetableData } from "@/data/sundayTimetable";
 import { TimeSlot } from "@/types/timetable";
-import { AnimatedButton, AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
+import {
+  AnimatedButton,
+  AnimatedLogo,
+  BannerText,
+  CloseButton,
+} from "@/components/ui";
 
 const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();

@@ -3,7 +3,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
-import { AnimatedButton, AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
+import {
+  AnimatedButton,
+  AnimatedLogo,
+  BannerText,
+  CloseButton,
+} from "@/components/ui";
 
 interface CountdownBannerProps {
   targetDate: Date;
