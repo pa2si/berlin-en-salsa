@@ -6,7 +6,9 @@ interface IconProps {
   className?: string;
 }
 
-export const GalleryIcon: React.FC<IconProps> = ({ className = "mr-1.5 h-5 w-5" }) => {
+export const GalleryIcon: React.FC<IconProps> = ({
+  className = "mr-1.5 h-5 w-5",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +27,9 @@ export const GalleryIcon: React.FC<IconProps> = ({ className = "mr-1.5 h-5 w-5" 
   );
 };
 
-export const ProgramIcon: React.FC<IconProps> = ({ className = "mr-1.5 h-5 w-5" }) => {
+export const ProgramIcon: React.FC<IconProps> = ({
+  className = "mr-1.5 h-5 w-5",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +48,9 @@ export const ProgramIcon: React.FC<IconProps> = ({ className = "mr-1.5 h-5 w-5" 
   );
 };
 
-export const ArrowRightIcon: React.FC<IconProps> = ({ className = "ml-2 h-4 w-4" }) => {
+export const ArrowRightIcon: React.FC<IconProps> = ({
+  className = "ml-2 h-4 w-4",
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -2,6 +2,11 @@ Versions:
 
 whats's done:
 
+v1.4.0
+
+- Major refactor: new banner system with reusable components and three scenarios
+- Cleaned up unused components and folders
+
 v1.3.8
 
 - resized the text-size of the ThankYouBanner text

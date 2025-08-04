@@ -6,7 +6,7 @@ import { useBannerContext } from "@/context/BannerContext";
 import { AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
 // import { GalleryIcon } from "@/components/icons";
 
-const PostFestivalBanner = () => {
+const GermanPostFestivalBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
 
   useEffect(() => {
@@ -19,8 +19,6 @@ const PostFestivalBanner = () => {
   }, [setIsBannerVisible]);
 
   if (!isBannerVisible) return null;
-
-  // Using the GalleryIcon component from icons
 
   return (
     <motion.div
@@ -39,7 +37,7 @@ const PostFestivalBanner = () => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel="Anzeige schließen"
         />
 
         <motion.div
@@ -57,8 +55,8 @@ const PostFestivalBanner = () => {
 
             {/* Text content */}
             <BannerText
-              title="¡Gracias por ser parte de Berlin En Salsa!"
-              description="¡Nos vemos en la próxima edición! Quédate pendiente de nuestras próximas actividades."
+              title="Danke, dass du Teil von Berlin En Salsa bist!"
+              description="Wir sehen uns bei der nächsten Ausgabe! Bleibe auf dem Laufenden für unsere kommenden Aktivitäten."
             />
           </div>
 
@@ -70,9 +68,9 @@ const PostFestivalBanner = () => {
             className="mt-3 flex items-center justify-center lg:mt-0"
           >
             <AnimatedButton
-              href="/gallery"
+              href="/de/gallery"
               icon={<GalleryIcon />}
-              text="Ver galería"
+              text="Galerie ansehen"
               isPrimary={true}
             />
           </motion.div> */}
@@ -82,4 +80,4 @@ const PostFestivalBanner = () => {
   );
 };
 
-export default PostFestivalBanner;
+export default GermanPostFestivalBanner;

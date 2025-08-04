@@ -4,7 +4,7 @@ import SectionOne from "./sections/SectionOne";
 import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
-import GermanThankYouBanner from "@/components/GermanThankYouBanner";
+import GermanFestivalBanner from "@/components/GermanFestivalBanner";
 import { Footer } from "@/components/GermanFooter";
 import type { Metadata } from "next";
 
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <GermanThankYouBanner />
+      <GermanFestivalBanner />
       <SectionOne />
       <SectionTwo />
       <SectionThree />

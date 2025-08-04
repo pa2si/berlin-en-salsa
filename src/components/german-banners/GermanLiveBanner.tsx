@@ -14,7 +14,7 @@ import {
 } from "@/components/ui";
 import { ProgramIcon } from "@/components/icons";
 
-const LiveBanner = () => {
+const GermanLiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
   const [currentEvents, setCurrentEvents] = useState<TimeSlot[]>([]);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -124,7 +124,7 @@ const LiveBanner = () => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel="Anzeige schließen"
         />
 
         <motion.div
@@ -140,12 +140,12 @@ const LiveBanner = () => {
               alt="Berlin En Salsa Logo"
             />
             <div>
-              <BannerText title="¡Ya estamos gozando Berlin En Salsa!" />
+              <BannerText title="Berlin En Salsa läuft jetzt!" />
               {currentEvents.length > 0 ? (
                 <div className="mt-2 text-white">
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-start lg:space-x-2">
                     <span className="text-bes-amber font-semibold">
-                      {isSunday ? "Domingo" : "Sábado"} -{" "}
+                      {isSunday ? "Sonntag" : "Samstag"} -{" "}
                       {currentEvents[currentEventIndex].time}
                     </span>
                     <div className="flex flex-wrap items-center justify-center space-x-2">
@@ -162,12 +162,12 @@ const LiveBanner = () => {
                           <span className="bg-bes-amber text-bes-red rounded-full px-2 py-0.5 text-xs">
                             {currentEvents[currentEventIndex].type ===
                             "workshop"
-                              ? "Taller"
+                              ? "Workshop"
                               : currentEvents[currentEventIndex].type === "talk"
-                                ? "Charla"
+                                ? "Vortrag"
                                 : currentEvents[currentEventIndex].type ===
                                     "main"
-                                  ? "Principal"
+                                  ? "Hauptbühne"
                                   : currentEvents[currentEventIndex].type}
                           </span>
                         )}
@@ -179,7 +179,7 @@ const LiveBanner = () => {
                       <button
                         onClick={prevEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Evento anterior"
+                        aria-label="Vorheriges Ereignis"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +202,7 @@ const LiveBanner = () => {
                       <button
                         onClick={nextEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Siguiente evento"
+                        aria-label="Nächstes Ereignis"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -224,7 +224,7 @@ const LiveBanner = () => {
                 </div>
               ) : (
                 <div className="mt-2 text-white">
-                  No hay eventos actuales. Disfruta de un momento de descanso.
+                  Aktuell keine laufenden Events. Genießen Sie eine kurze Pause.
                 </div>
               )}
             </div>
@@ -237,9 +237,9 @@ const LiveBanner = () => {
             className="mt-3 flex items-center justify-center lg:mt-0"
           >
             <AnimatedButton
-              href="/timetable"
+              href="/de/timetable"
               icon={<ProgramIcon />}
-              text="Ver programa"
+              text="Programm ansehen"
               isPrimary={true}
             />
           </motion.div>
@@ -249,4 +249,4 @@ const LiveBanner = () => {
   );
 };
 
-export default LiveBanner;
+export default GermanLiveBanner;

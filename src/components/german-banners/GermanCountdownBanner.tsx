@@ -3,10 +3,20 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
-import { AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
-// import { GalleryIcon } from "@/components/icons";
+import {
+  CloseButton,
+  AnimatedButton,
+  AnimatedLogo,
+  BannerText,
+  CountdownTimer,
+} from "@/components/ui";
+import { ProgramIcon } from "@/components/icons";
 
-const PostFestivalBanner = () => {
+interface GermanCountdownBannerProps {
+  targetDate: Date;
+}
+
+const GermanCountdownBanner = ({ targetDate }: GermanCountdownBannerProps) => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
 
   useEffect(() => {
@@ -19,8 +29,6 @@ const PostFestivalBanner = () => {
   }, [setIsBannerVisible]);
 
   if (!isBannerVisible) return null;
-
-  // Using the GalleryIcon component from icons
 
   return (
     <motion.div
@@ -39,7 +47,7 @@ const PostFestivalBanner = () => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel="Anzeige schließen"
         />
 
         <motion.div
@@ -55,31 +63,31 @@ const PostFestivalBanner = () => {
               alt="Berlin En Salsa Logo"
             />
 
-            {/* Text content */}
+            {/* Banner title */}
             <BannerText
-              title="¡Gracias por ser parte de Berlin En Salsa!"
-              description="¡Nos vemos en la próxima edición! Quédate pendiente de nuestras próximas actividades."
+              title="Countdown bis Berlin En Salsa!"
+              description={<CountdownTimer targetDate={targetDate} />}
             />
           </div>
 
-          {/* Gallery button */}
-          {/* <motion.div
+          {/* Program button */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
             className="mt-3 flex items-center justify-center lg:mt-0"
           >
             <AnimatedButton
-              href="/gallery"
-              icon={<GalleryIcon />}
-              text="Ver galería"
+              href="/de/timetable"
+              icon={<ProgramIcon />}
+              text="Programm ansehen"
               isPrimary={true}
             />
-          </motion.div> */}
+          </motion.div>
         </motion.div>
       </div>
     </motion.div>
   );
 };
 
-export default PostFestivalBanner;
+export default GermanCountdownBanner;
