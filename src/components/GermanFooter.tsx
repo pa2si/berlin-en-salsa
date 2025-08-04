@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { LinksModal } from "./LinksModal";
+import { germanFooterLinks } from "../data/germanFooterLinks";
 
 export const Footer = () => {
   const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
@@ -12,29 +13,46 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="semibold flex flex-wrap items-center justify-center gap-2 text-sm md:gap-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:flex-nowrap">
-            <Link
-              href="/de/datenschutz"
-              className="hover:text-bes-red/80 transition-colors hover:underline"
-            >
-              Datenschutz
-            </Link>
-            <span>|</span>
-            <Link
-              href="/de/impressum"
-              className="hover:text-bes-red/80 transition-colors hover:underline"
-            >
-              Impressum
-            </Link>
-            <span>|</span>
-            <a
-              href="https://www.paypal.com/pools/c/9gEVZFeS3A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"
-            >
-              <span className="mr-1">Spende</span>
-              <img src="/paypal.png" alt="PayPal" className="h-4 w-auto" />
-            </a>
+            {germanFooterLinks.map((link, index) => (
+              <React.Fragment key={`footer-link-${index}`}>
+                {index > 0 && <span>|</span>}
+                {link.isExternal ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"
+                  >
+                    <span className={link.icon ? "mr-1" : ""}>
+                      {link.label}
+                    </span>
+                    {link.icon && (
+                      <img
+                        src={link.icon}
+                        alt={`${link.label} icon`}
+                        className="h-4 w-auto"
+                      />
+                    )}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"
+                  >
+                    <span className={link.icon ? "mr-1" : ""}>
+                      {link.label}
+                    </span>
+                    {link.icon && (
+                      <img
+                        src={link.icon}
+                        alt={`${link.label} icon`}
+                        className="h-4 w-auto"
+                      />
+                    )}
+                  </Link>
+                )}
+              </React.Fragment>
+            ))}
           </div>
           <span className="hidden lg:inline">|</span>
           <div className="mt-1 w-full lg:mt-0 lg:w-auto">

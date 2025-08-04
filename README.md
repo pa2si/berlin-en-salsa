@@ -2,6 +2,10 @@ Versions:
 
 whats's done:
 
+v1.4.1
+
+- Footer refactured with linklist for footer links
+
 v1.4.0
 
 - Major refactor: new banner system with reusable components and three scenarios

@@ -2,7 +2,7 @@
 
 import React, { Suspense } from "react";
 import Link from "next/link";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/GermanFooter";
 import GermanFestivalTimetable from "@/components/GermanFestivalTimetable";
 
 export default function TimetablePage() {
