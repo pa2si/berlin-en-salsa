@@ -4,9 +4,9 @@ import SectionOne from "./sections/SectionOne";
 import SectionSix from "./sections/SectionSix";
 import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
-import ThankYouBanner from "@/components/ThankYouBanner";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import FestivalBanner from "@/components/FestivalBanner";
 
 // Base URL for absolute URLs in metadata
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
-      <ThankYouBanner />
+      <FestivalBanner />
       <SectionOne />
       <SectionTwo />
       <SectionThree />
