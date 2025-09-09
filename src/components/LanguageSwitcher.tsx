@@ -1,22 +1,16 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { useRouter, usePathname } from "@/i18n/navigation";
+import { useLocale } from "next-intl";
 
 const LanguageSwitcher = () => {
+  const router = useRouter();
   const pathname = usePathname();
-  const [currentLang, setCurrentLang] = useState("es");
+  const locale = useLocale();
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
 
-  useEffect(() => {
-    // Determine current language based on URL
-    if (pathname.startsWith("/de")) {
-      setCurrentLang("de");
-    } else {
-      setCurrentLang("es");
-    }
-  }, [pathname]);
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -76,32 +70,11 @@ const LanguageSwitcher = () => {
   }, []);
 
   const switchLanguage = (lang: string) => {
-    if (lang === currentLang) return;
+    if (lang === locale) return;
 
-    // Use window.location for a full page refresh to properly apply layout changes
-    if (lang === "de") {
-      // Handle switching from Spanish to German
-      if (pathname === "/") {
-        window.location.href = "/de";
-      } else if (pathname === "/privacy") {
-        window.location.href = "/de/privacy";
-      } else if (pathname === "/impressum") {
-        window.location.href = "/de/legal";
-      } else {
-        window.location.href = "/de";
-      }
-    } else {
-      // Handle switching from German to Spanish
-      if (pathname === "/de") {
-        window.location.href = "/";
-      } else if (pathname === "/de/privacy") {
-        window.location.href = "/privacy";
-      } else if (pathname === "/de/legal") {
-        window.location.href = "/impressum";
-      } else {
-        window.location.href = "/";
-      }
-    }
+    // Use next-intl's router to navigate to the same page in different locale
+    // This will maintain the current path and just switch the locale
+    router.replace(pathname, { locale: lang });
   };
 
   return (
@@ -115,23 +88,23 @@ const LanguageSwitcher = () => {
       <div className="backdrop-blur-m flex overflow-hidden rounded-full bg-gray-900/40 p-1 shadow-lg">
         <button
           className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-200 ${
-            currentLang === "es"
-              ? "bg-bes-amber text-bes-red shadow-inner"
-              : "text-gray-300 hover:text-white"
-          }`}
-          onClick={() => switchLanguage("es")}
-        >
-          ES
-        </button>
-        <button
-          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-200 ${
-            currentLang === "de"
+            locale === "de"
               ? "bg-bes-amber text-bes-red shadow-inner"
               : "text-gray-300 hover:text-white"
           }`}
           onClick={() => switchLanguage("de")}
         >
           DE
+        </button>
+        <button
+          className={`cursor-pointer rounded-full px-3 py-1.5 text-sm font-semibold transition-colors duration-200 ${
+            locale === "es"
+              ? "bg-bes-amber text-bes-red shadow-inner"
+              : "text-gray-300 hover:text-white"
+          }`}
+          onClick={() => switchLanguage("es")}
+        >
+          ES
         </button>
       </div>
     </div>

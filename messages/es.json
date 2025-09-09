@@ -1,0 +1,120 @@
+{
+  "Sections": {
+    "SectionOne": {
+      "title": "Berlin En Salsa | Festival de Salsa en Berlín",
+      "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
+      "h1": "Berlin En Salsa - Festival de Salsa en Berlín para todos",
+      "date": "19 y 20 de julio",
+      "venue": "Neulich Biergarten",
+      "festival": {
+        "line1": "¡Un festival",
+        "line2": "de salsa",
+        "line3": "para todxs:",
+        "line4": "público",
+        "line5": "gratuito y",
+        "line6": "al aire libre!"
+      }
+    },
+    "SectionTwo": {
+      "title": "¿Qué es Berlin en Salsa?",
+      "description1": "Un fin de semana organizado por y para la comunidad salsera de Berlín. ¡Gózatelo!",
+      "description2": "Un espacio donde puedes vivir la diversidad de la cultura de la salsa: orquestas en vivo, DJs, baile, talleres, charlas, mercado de vinilos y más.",
+      "description3": "Un evento que apuesta por la solidaridad y la cultura en tiempos de recortes y avance de las derechas.",
+      "description4": "Ven a compartir, apoyar y celebrar con nosotrxs la cultura salsera de Berlín."
+    },
+    "SectionThree": {
+      "title": "¡Berlin en Salsa se viene con todo!",
+      "features": {
+        "days": "¡2 días llenos de salsa!",
+        "orchestras": "6 orquestas en vivo",
+        "shows": "5 shows de baile",
+        "djs": "20 DJs",
+        "talks": "Charlas",
+        "workshops": "Talleres de música",
+        "vinyl": "Mercado de vinilos",
+        "food": "¡Especialidades latinas y más!"
+      }
+    },
+    "SectionFour": {
+      "title": "¿Cómo se financia Berlin en Salsa?",
+      "description1": "Berlin en Salsa no cuenta con financiación pública ni patrocinio comercial.",
+      "description2": "Somos un festival hecho por y para la comunidad salsera, y nos financiamos únicamente a través de la venta de camisetas y sus donaciones.",
+      "supportTitle": "Apóyanos pidiendo tu camiseta"
+    },
+    "SectionFive": {
+      "title": "Programa del Festival",
+      "description": "Consulta nuestro horario interactivo y planifica tu experiencia en Berlin En Salsa. Haz clic en las imágenes para ver el horario completo y todos los detalles sobre los artistas, talleres y mucho más.",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "SectionSix": {
+      "title": "Contacto",
+      "newsletter": {
+        "title": "Suscríbete a nuestro boletín",
+        "description": "Mantente al día sobre Berlin En Salsa",
+        "firstNamePlaceholder": "Nombre",
+        "lastNamePlaceholder": "Apellido",
+        "emailPlaceholder": "Correo electrónico",
+        "privacyText": "Acepto la",
+        "privacyLink": "Política de Privacidad",
+        "submitButton": "SUSCRIBIR",
+        "submittingButton": "Enviando...",
+        "success": "¡Suscripción exitosa!",
+        "error": "Debes aceptar la política de privacidad para suscribirte.",
+        "privacyError": "Por favor, acepta la política de privacidad para continuar",
+        "validationPrivacy": "Por favor, acepta la política de privacidad para continuar",
+        "firstNameValidation": "Por favor, introduce un nombre válido (sólo letras, espacios y guiones)",
+        "lastNameValidation": "Por favor, introduce un apellido válido (sólo letras, espacios y guiones)",
+        "emailValidation": "Por favor, introduce una dirección de correo electrónico válida"
+      }
+    }
+  },
+  "Components": {
+    "CloseButton": {
+      "close": "Cerrar",
+      "ariaLabel": "Cerrar"
+    }
+  },
+  "Navigation": {
+    "timetable": "Horarios",
+    "impressum": "Aviso legal",
+    "datenschutz": "Privacidad",
+    "legal": "Aviso Legal",
+    "privacy": "Política de Privacidad",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "links": "Enlaces",
+    "copyright": "Todos los derechos reservados."
+  },
+  "Banners": {
+    "countdown": {
+      "title": "¡Cuenta regresiva hasta Berlin En Salsa!",
+      "closeLabel": "Cerrar anuncio",
+      "viewProgram": "Ver programa"
+    },
+    "live": {
+      "title": "¡Ya estamos gozando Berlin En Salsa!",
+      "closeLabel": "Cerrar anuncio",
+      "previousEvent": "Evento anterior",
+      "nextEvent": "Siguiente evento",
+      "viewProgram": "Ver programa"
+    },
+    "postFestival": {
+      "title": "¡Gracias por ser parte de Berlin En Salsa!",
+      "description": "¡Nos vemos en la próxima edición! Quédate pendiente de nuestras próximas actividades.",
+      "closeLabel": "Cerrar anuncio",
+      "viewGallery": "Ver galería"
+    }
+  },
+  "NotFound": {
+    "pageNotFound": "Página no encontrada"
+  },
+  "Metadata": {
+    "title": "Berlin En Salsa",
+    "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
+    "openGraph": {
+      "title": "Berlin En Salsa",
+      "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más."
+    }
+  }
+}

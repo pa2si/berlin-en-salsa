@@ -3,11 +3,13 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
+import { useTranslations } from "next-intl";
 import { AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
 // import { GalleryIcon } from "@/components/icons";
 
 const PostFestivalBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
+  const t = useTranslations("Banners.postFestival");
 
   useEffect(() => {
     // Show banner after a short delay
@@ -39,7 +41,7 @@ const PostFestivalBanner = () => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel={t("closeLabel")}
         />
 
         <motion.div
@@ -56,10 +58,7 @@ const PostFestivalBanner = () => {
             />
 
             {/* Text content */}
-            <BannerText
-              title="¡Gracias por ser parte de Berlin En Salsa!"
-              description="¡Nos vemos en la próxima edición! Quédate pendiente de nuestras próximas actividades."
-            />
+            <BannerText title={t("title")} description={t("description")} />
           </div>
 
           {/* Gallery button */}

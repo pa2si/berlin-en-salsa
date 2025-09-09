@@ -1,0 +1,120 @@
+{
+  "Sections": {
+    "SectionOne": {
+      "title": "Berlin En Salsa | Salsa-Festival in Berlin",
+      "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr.",
+      "h1": "Berlin En Salsa - Ein Salsa-Festival in Berlin für alle",
+      "date": "19. und 20. Juli",
+      "venue": "Neulich Biergarten",
+      "festival": {
+        "line1": "Ein Salsa-",
+        "line2": "Festival",
+        "line3": "für alle:",
+        "line4": "öffentlich",
+        "line5": "umsonst",
+        "line6": "und draußen!"
+      }
+    },
+    "SectionTwo": {
+      "title": "Was ist Berlin en Salsa?",
+      "description1": "Ein Wochenende organisiert von und für die Salsa-Community in Berlin. Genieße es!",
+      "description2": "Hier kannst du die Vielfalt der Salsa-Kultur erleben: Live-Orchester, DJs, Tanz, Workshops, Vorträge, Vinyl-Markt und mehr.",
+      "description3": "Eine Veranstaltung, die in Zeiten von Kürzungen und Rechtsruck auf Solidarität, Kultur und Community setzt.",
+      "description4": "Komm, teile, unterstütze und feiere mit uns die Salsa-Kultur Berlins."
+    },
+    "SectionThree": {
+      "title": "Berlin en Salsa kommt mit voller Power!",
+      "features": {
+        "days": "2 Tage voller Salsa!",
+        "orchestras": "6 Live-Orchester",
+        "shows": "5 Tanzshows",
+        "djs": "20 DJs",
+        "talks": "Vorträge",
+        "workshops": "Musikworkshops",
+        "vinyl": "Vinyl-Markt",
+        "food": "LATAM Spezialitäten und mehr!"
+      }
+    },
+    "SectionFour": {
+      "title": "Wie finanziert sich Berlin en Salsa?",
+      "description1": "Berlin en Salsa erhält keine öffentliche Finanzierung oder kommerzielle Sponsoren.",
+      "description2": "Wir sind ein Festival von und für die Salsa-Community und finanzieren uns ausschließlich durch den Verkauf von T-Shirts und Ihre Spenden.",
+      "supportTitle": "Unterstütze uns durch den Kauf eines T-Shirts"
+    },
+    "SectionFive": {
+      "title": "Festivalplan",
+      "description": "Sieh dir unseren interaktiven Zeitplan an und plane dein Berlin En Salsa Erlebnis. Klicke auf die Bilder, um den vollständigen Zeitplan sowie alle Details zu Künstlern, Workshops und mehr anzuzeigen!",
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
+    "SectionSix": {
+      "title": "Kontakt",
+      "newsletter": {
+        "title": "Melden Sie sich für unseren Newsletter an",
+        "description": "Bleib auf dem Laufenden über Berlin En Salsa",
+        "firstNamePlaceholder": "Vorname",
+        "lastNamePlaceholder": "Nachname",
+        "emailPlaceholder": "E-Mail-Adresse",
+        "privacyText": "Ich akzeptiere die",
+        "privacyLink": "Datenschutzrichtlinie",
+        "submitButton": "ANMELDEN",
+        "submittingButton": "Wird gesendet...",
+        "success": "Erfolgreich angemeldet!",
+        "error": "Sie müssen die Datenschutzrichtlinie akzeptieren, um sich anzumelden.",
+        "privacyError": "Bitte akzeptieren Sie die Datenschutzrichtlinie, um fortzufahren",
+        "validationPrivacy": "Bitte akzeptieren Sie die Datenschutzrichtlinie, um fortzufahren",
+        "firstNameValidation": "Bitte geben Sie einen gültigen Vornamen ein (nur Buchstaben, Leerzeichen und Bindestriche)",
+        "lastNameValidation": "Bitte geben Sie einen gültigen Nachnamen ein (nur Buchstaben, Leerzeichen und Bindestriche)",
+        "emailValidation": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      }
+    }
+  },
+  "Components": {
+    "CloseButton": {
+      "close": "Schließen",
+      "ariaLabel": "Schließen"
+    }
+  },
+  "Navigation": {
+    "timetable": "Zeitplan",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "legal": "Impressum",
+    "privacy": "Datenschutz",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "links": "Links",
+    "copyright": "Alle Rechte vorbehalten."
+  },
+  "Banners": {
+    "countdown": {
+      "title": "Countdown bis Berlin En Salsa!",
+      "closeLabel": "Anzeige schließen",
+      "viewProgram": "Programm ansehen"
+    },
+    "live": {
+      "title": "Berlin En Salsa läuft jetzt!",
+      "closeLabel": "Anzeige schließen",
+      "previousEvent": "Vorheriges Ereignis",
+      "nextEvent": "Nächstes Ereignis",
+      "viewProgram": "Programm ansehen"
+    },
+    "postFestival": {
+      "title": "Danke, dass du Teil von Berlin En Salsa bist!",
+      "description": "Wir sehen uns bei der nächsten Ausgabe! Bleib dran für unsere kommenden Aktivitäten.",
+      "closeLabel": "Anzeige schließen",
+      "viewGallery": "Galerie ansehen"
+    }
+  },
+  "NotFound": {
+    "pageNotFound": "Seite nicht gefunden"
+  },
+  "Metadata": {
+    "title": "Berlin En Salsa",
+    "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr.",
+    "openGraph": {
+      "title": "Berlin En Salsa",
+      "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr."
+    }
+  }
+}

@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
+import { useTranslations } from "next-intl";
 import { saturdayTimetableData } from "@/data/saturdayTimetable";
 import { sundayTimetableData } from "@/data/sundayTimetable";
 import { TimeSlot } from "@/types/timetable";
@@ -16,6 +17,7 @@ import { ProgramIcon } from "@/components/icons";
 
 const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
+  const t = useTranslations("Banners.live");
   const [currentEvents, setCurrentEvents] = useState<TimeSlot[]>([]);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [isSunday, setIsSunday] = useState(false);
@@ -124,7 +126,7 @@ const LiveBanner = () => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel={t("closeLabel")}
         />
 
         <motion.div
@@ -140,7 +142,7 @@ const LiveBanner = () => {
               alt="Berlin En Salsa Logo"
             />
             <div>
-              <BannerText title="¡Ya estamos gozando Berlin En Salsa!" />
+              <BannerText title={t("title")} />
               {currentEvents.length > 0 ? (
                 <div className="mt-2 text-white">
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-start lg:space-x-2">
@@ -179,7 +181,7 @@ const LiveBanner = () => {
                       <button
                         onClick={prevEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Evento anterior"
+                        aria-label={t("previousEvent")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -202,7 +204,7 @@ const LiveBanner = () => {
                       <button
                         onClick={nextEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Siguiente evento"
+                        aria-label={t("nextEvent")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -239,7 +241,7 @@ const LiveBanner = () => {
             <AnimatedButton
               href="/timetable"
               icon={<ProgramIcon />}
-              text="Ver programa"
+              text={t("viewProgram")}
               isPrimary={true}
             />
           </motion.div>

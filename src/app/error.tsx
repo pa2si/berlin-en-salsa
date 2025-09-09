@@ -2,8 +2,9 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { useParams } from "next/navigation";
+import { Link } from "@/i18n/navigation";
 
 export default function Error({
   reset,
@@ -11,6 +12,9 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
+  const params = useParams();
+  const locale = (params?.locale as string) || "de";
+
   return (
     <div className="fixed inset-0 z-50 flex min-h-screen flex-col items-center justify-center bg-[var(--color-bes-amber)]">
       <motion.div
@@ -44,8 +48,9 @@ export default function Error({
           Oops!
         </h1>
         <p className="mb-6 text-lg text-[var(--color-bes-black)]">
-          Something went wrong | Algo no salió como esperábamos | Etwas ist
-          nicht wie erwartet gelaufen
+          {locale === "de"
+            ? "Etwas ist nicht wie erwartet gelaufen"
+            : "Algo no salió como esperábamos"}
         </p>
       </motion.div>
 
@@ -56,7 +61,7 @@ export default function Error({
           onClick={reset}
           className="hover:bg-opacity-90 rounded-md bg-[var(--color-bes-purple)] px-6 py-2 text-white transition-colors"
         >
-          Try Again | Intentar de nuevo | Erneut versuchen
+          {locale === "de" ? "Erneut versuchen" : "Intentar de nuevo"}
         </motion.button>
       </div>
 
@@ -64,6 +69,7 @@ export default function Error({
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
             href="/"
+            locale="es"
             className="hover:bg-opacity-90 flex rounded-md bg-[var(--color-bes-red)] px-6 py-2 text-white transition-colors"
           >
             Español
@@ -72,7 +78,8 @@ export default function Error({
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
-            href="/de"
+            href="/"
+            locale="de"
             className="hover:bg-opacity-90 flex rounded-md bg-[var(--color-bes-black)] px-6 py-2 text-white transition-colors"
           >
             Deutsch

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
+import { useTranslations } from "next-intl";
 import {
   CloseButton,
   AnimatedButton,
@@ -18,6 +19,7 @@ interface CountdownBannerProps {
 
 const CountdownBanner = ({ targetDate }: CountdownBannerProps) => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
+  const t = useTranslations("Banners.countdown");
 
   useEffect(() => {
     // Show banner after a short delay
@@ -47,7 +49,7 @@ const CountdownBanner = ({ targetDate }: CountdownBannerProps) => {
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel={t("closeLabel")}
         />
 
         <motion.div
@@ -65,7 +67,7 @@ const CountdownBanner = ({ targetDate }: CountdownBannerProps) => {
 
             {/* Banner title */}
             <BannerText
-              title="¡Cuenta regresiva hasta Berlin En Salsa!"
+              title={t("title")}
               description={<CountdownTimer targetDate={targetDate} />}
             />
           </div>
@@ -80,7 +82,7 @@ const CountdownBanner = ({ targetDate }: CountdownBannerProps) => {
             <AnimatedButton
               href="/timetable"
               icon={<ProgramIcon />}
-              text="Ver programa"
+              text={t("viewProgram")}
               isPrimary={true}
             />
           </motion.div>
