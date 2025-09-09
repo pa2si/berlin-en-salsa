@@ -116,5 +116,161 @@
       "title": "Berlin En Salsa",
       "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr."
     }
+  },
+  "Privacy": {
+    "title": "Datenschutz",
+    "description": "Datenschutzerklärung von Berlin En Salsa. Informationen zur Verwendung und zum Schutz Ihrer personenbezogenen Daten.",
+    "backButton": "Zurück zur Startseite",
+    "breadcrumb": "Datenschutzerklärung",
+    "mainTitle": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert:",
+    "section1": {
+      "title": "1. Datenschutz auf einen Blick",
+      "subtitle1": "Allgemeine Hinweise",
+      "paragraph1": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.",
+      "subtitle2": "Datenerfassung auf dieser Website",
+      "subtitle2_1": "Wer ist verantwortlich für die Datenerfassung auf dieser Website?",
+      "paragraph2_1": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt 'Hinweis zur Verantwortlichen Stelle' in dieser Datenschutzerklärung entnehmen.",
+      "subtitle2_2": "Wie erfassen wir Ihre Daten?",
+      "paragraph2_2": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.",
+      "paragraph2_3": "Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.",
+      "subtitle2_3": "Wofür nutzen wir Ihre Daten?",
+      "paragraph2_4": "Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.",
+      "subtitle2_4": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
+      "paragraph2_5": "Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
+      "paragraph2_6": "Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden."
+    },
+    "section2": {
+      "title": "2. Hosting",
+      "subtitle1": "Hosting über Vercel",
+      "paragraph1": "Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet.",
+      "paragraph2": "Wenn Sie unsere Website besuchen, werden personenbezogene Daten auf den Servern von Vercel erfasst. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten handeln, die über eine Website generiert werden.",
+      "paragraph3": "Das Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
+      "subtitle2": "Datenübermittlung in die USA",
+      "paragraph4": "Vercel ist ein Dienstleister aus den USA. Eine Datenübertragung in die USA kann daher nicht ausgeschlossen werden. Wir weisen darauf hin, dass nach Meinung des Europäischen Gerichtshofs derzeit kein angemessenes Schutzniveau für den Datentransfer in die USA besteht. Dies kann für Sie Risiken bezüglich der Rechtmäßigkeit und Sicherheit der Datenverarbeitung bedeuten.",
+      "paragraph5": "Als Grundlage für die Datenverarbeitung bei Empfängern mit Sitz in Drittstaaten haben wir mit Vercel einen Vertrag zur Auftragsverarbeitung (Data Processing Addendum, DPA) geschlossen. Dieser Vertrag enthält die von der EU-Kommission genehmigten Standardvertragsklauseln (Standard Contractual Clauses – SCCs). Durch diese Klauseln verpflichtet sich Vercel, bei der Verarbeitung Ihrer Daten das europäische Datenschutzniveau einzuhalten, auch wenn die Daten in den USA gespeichert und verarbeitet werden.",
+      "paragraph6": "Den mit uns geschlossenen Vertrag (DPA), der die Standardvertragsklauseln enthält, finden Sie unter: https://vercel.com/legal/dpa",
+      "paragraph7": "Mehr über die Daten, die durch die Nutzung von Vercel verarbeitet werden, erfahren Sie in der Datenschutzerklärung von Vercel: https://vercel.com/legal/privacy-policy"
+    },
+    "section3": {
+      "title": "3. Allgemeine Hinweise und Pflichtinformationen",
+      "subtitle1": "Datenschutz",
+      "paragraph1": "Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
+      "paragraph2": "Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht.",
+      "paragraph3": "Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.",
+      "subtitle2": "Hinweis zur verantwortlichen Stelle",
+      "paragraph4": "Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
+      "paragraph5": "Paul Welch Guerra\nDrorystr. 2\n12055 Berlin",
+      "paragraph6": "Telefon: +49 176 47024026\nE-Mail: info@berlinensalsa.de",
+      "paragraph7": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet.",
+      "subtitle3": "Speicherdauer",
+      "paragraph8": "Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe.",
+      "subtitle4": "Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website",
+      "paragraph9": "Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TDDDG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert.",
+      "subtitle5": "Empfänger von personenbezogenen Daten",
+      "paragraph10": "Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine Übermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z. B. Weitergabe von Daten an Steuerbehörden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame Verarbeitung geschlossen.",
+      "subtitle6": "Widerruf Ihrer Einwilligung zur Datenverarbeitung",
+      "paragraph11": "Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.",
+      "subtitle7": "Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)",
+      "paragraph12": "WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).",
+      "paragraph13": "WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO).",
+      "subtitle8": "Beschwerderecht bei der zuständigen Aufsichtsbehörde",
+      "paragraph14": "Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe.",
+      "subtitle9": "Recht auf Datenübertragbarkeit",
+      "paragraph15": "Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen. Sofern Sie die direkte Übertragung der Daten an einen anderen Verantwortlichen verlangen, erfolgt dies nur, soweit es technisch machbar ist.",
+      "subtitle10": "Auskunft, Berichtigung und Löschung",
+      "paragraph16": "Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.",
+      "subtitle11": "Recht auf Einschränkung der Verarbeitung",
+      "paragraph17": "Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:",
+      "listItems1": [
+        "Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten personenbezogenen Daten bestreiten, benötigen wir in der Regel Zeit, um dies zu überprüfen. Für die Dauer der Prüfung haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
+        "Wenn die Verarbeitung Ihrer personenbezogenen Daten unrechtmäßig geschah/geschieht, können Sie statt der Löschung die Einschränkung der Datenverarbeitung verlangen.",
+        "Wenn wir Ihre personenbezogenen Daten nicht mehr benötigen, Sie sie jedoch zur Ausübung, Verteidigung oder Geltendmachung von Rechtsansprüchen benötigen, haben Sie das Recht, statt der Löschung die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
+        "Wenn Sie einen Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben, muss eine Abwägung zwischen Ihren und unseren Interessen vorgenommen werden. Solange noch nicht feststeht, wessen Interessen überwiegen, haben Sie das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen."
+      ],
+      "paragraph18": "Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden.",
+      "subtitle12": "SSL- bzw. TLS-Verschlüsselung",
+      "paragraph19": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Bestellungen oder Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von \"http://\" auf \"https://\" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.",
+      "paragraph20": "Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.",
+      "subtitle13": "Widerspruch gegen Werbe-E-Mails",
+      "paragraph21": "Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-E-Mails, vor."
+    },
+    "section4": {
+      "title": "4. Datenerfassung auf dieser Website",
+      "subtitle1": "Kontaktformular",
+      "paragraph1": "Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+      "paragraph2": "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.",
+      "paragraph3": "Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.",
+      "subtitle2": "Anfrage per E-Mail, Telefon oder Telefax",
+      "paragraph4": "Wenn Sie uns per E-Mail, Telefon oder Telefax kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+      "paragraph5": "Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.",
+      "paragraph6": "Die von Ihnen an uns per Kontaktanfragen übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihres Anliegens). Zwingende gesetzliche Bestimmungen – insbesondere gesetzliche Aufbewahrungsfristen – bleiben unberührt."
+    },
+    "section5": {
+      "title": "5. Newsletterversand via Mailchimp",
+      "subtitle1": "1. Beschreibung und Zweck der Datenverarbeitung",
+      "paragraph1": "Für den Versand unseres Newsletters nutzen wir den Dienst \"Mailchimp\", eine Newsletter-Versandplattform des US-Anbieters The Rocket Science Group, LLC, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA.",
+      "paragraph2": "Wenn Sie sich für unseren Newsletter anmelden, werden die von Ihnen im Anmeldeformular angegebenen Daten (in der Regel Ihre E-Mail-Adresse und optional Ihr Name) an die Server von Mailchimp in den USA übertragen und dort gespeichert.",
+      "paragraph3": "Zusätzlich zum Versand ermöglicht uns Mailchimp, den Erfolg unserer Newsletter-Kampagnen zu analysieren. So können wir sehen, ob eine Newsletter-Nachricht geöffnet und welche Links ggf. geklickt wurden. Diese Informationen helfen uns zu erkennen, welche Inhalte für unsere Leser besonders interessant sind und unseren Service stetig zu verbessern. Mailchimp nutzt diese Daten auch zur eigenen Serviceverbesserung. Eine Nutzung Ihrer Daten durch Mailchimp, um Sie direkt anzuschreiben oder an Dritte weiterzugeben, erfolgt nicht.",
+      "subtitle2": "2. Rechtsgrundlage",
+      "paragraph4": "Der Versand des Newsletters und die damit verbundene Erfolgsmessung erfolgen auf Grundlage Ihrer ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Die Anmeldung zu unserem Newsletter erfolgt in einem sog. Double-Opt-In-Verfahren. Das heißt, Sie erhalten nach der Anmeldung eine E-Mail, in der Sie um die Bestätigung Ihrer Anmeldung gebeten werden. Diese Bestätigung ist notwendig, damit sich niemand mit fremden E-Mail-Adressen anmelden kann.",
+      "subtitle3": "3. Auftragsverarbeitungsvertrag",
+      "paragraph5": "Wir haben mit Mailchimp einen sogenannten \"Data Processing Addendum\" (DPA) abgeschlossen. Hierbei handelt es sich um einen Vertrag, in dem sich Mailchimp verpflichtet, die Daten unserer Nutzer zu schützen, entsprechend dessen Datenschutzbestimmungen in unserem Auftrag zu verarbeiten und insbesondere nicht an Dritte weiterzugeben. Dieser Vertrag stellt sicher, dass Mailchimp sich an die europäischen Datenschutzstandards hält.",
+      "subtitle4": "4. Datenübertragung in die USA",
+      "paragraph6": "Die Datenverarbeitung durch Mailchimp findet in den USA statt, einem Drittland ohne von der EU-Kommission anerkanntes angemessenes Datenschutzniveau. Um den Schutz Ihrer personenbezogenen Daten dennoch zu gewährleisten, stützt sich die Datenübermittlung auf die von der EU-Kommission genehmigten Standardvertragsklauseln (Standard Contractual Clauses – SCCs), die Bestandteil des mit Mailchimp geschlossenen DPA sind. Damit verpflichtet sich Mailchimp, bei der Verarbeitung Ihrer Daten das europäische Datenschutzniveau einzuhalten.",
+      "subtitle5": "5. Speicherdauer",
+      "paragraph7": "Die von Ihnen zum Zwecke des Newsletterbezugs bei uns hinterlegten Daten werden von uns bis zu Ihrer Austragung aus dem Newsletter gespeichert und nach der Abbestellung des Newsletters sowohl von unseren Servern als auch von den Servern von Mailchimp gelöscht. Daten, die zu anderen Zwecken bei uns gespeichert wurden, bleiben hiervon unberührt.",
+      "subtitle6": "6. Widerrufsrecht",
+      "paragraph8": "Ihre Einwilligung in den Empfang des Newsletters und die damit verbundene Datenverarbeitung können Sie jederzeit für die Zukunft widerrufen. Den Widerruf können Sie durch Klick auf den in jedem Newsletter bereitgestellten \"Abmelden\"-Link, per E-Mail an info@beispielfirma.de oder durch eine Nachricht an die im Impressum angegebenen Kontaktdaten erklären. Durch den Widerruf der Einwilligung wird die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung nicht berührt."
+    },
+    "section6": {
+      "title": "6. Schriftarten",
+      "paragraph1": "Diese Website verwendet die folgenden Open-Source-Schriftarten, um die visuelle Darstellung der Inhalte zu verbessern. Diese Schriftarten werden vom Server geladen und unterliegen der im Folgenden detailliert beschriebenen Lizenz.",
+      "subtitle1": "Verwendete Schriftarten:",
+      "fontList": [
+        "Poppins: Copyright 2022 The Poppins Project Authors (https://github.com/itfoundry/poppins)",
+        "Instrument Serif: Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)"
+      ],
+      "paragraph2": "Beide Schriftarten sind unter der SIL Open Font License, Version 1.1, lizenziert. Nachfolgend finden Sie den vollständigen und originalen Lizenztext in englischer Sprache.",
+      "subtitle2": "SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007",
+      "licenseSection1": {
+        "title": "PREAMBLE",
+        "paragraph1": "The goals of the Open Font License (OFL) are to stimulate worldwide development of collaborative font projects, to support the font creation efforts of academic and linguistic communities, and to provide a free and open framework in which fonts may be shared and improved in partnership with others.",
+        "paragraph2": "The OFL allows the licensed fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. The fonts, including any derivative works, can be bundled, embedded, redistributed and/or sold with any software provided that any reserved names are not used by derivative works. The fonts and derivatives, however, cannot be released under any other type of license. The requirement for fonts to remain under this license does not apply to any document created using the fonts or their derivatives."
+      },
+      "licenseSection2": {
+        "title": "DEFINITIONS",
+        "definitions": [
+          "\"Font Software\" refers to the set of files released by the Copyright Holder(s) under this license and clearly marked as such. This may include source files, build scripts and documentation.",
+          "\"Reserved Font Name\" refers to any names specified as such after the copyright statement(s).",
+          "\"Original Version\" refers to the collection of Font Software components as distributed by the Copyright Holder(s).",
+          "\"Modified Version\" refers to any derivative made by adding to, deleting, or substituting -- in part or in whole -- any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment.",
+          "\"Author\" refers to any designer, engineer, programmer, technical writer or other person who contributed to the Font Software."
+        ]
+      },
+      "licenseSection3": {
+        "title": "PERMISSION & CONDITIONS",
+        "introText": "Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions:",
+        "conditions": [
+          "Neither the Font Software nor any of its individual components, in Original or Modified Versions, may be sold by itself.",
+          "Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the above copyright notice and this license. These can be included either as stand-alone text files, human-readable headers or in the appropriate machine-readable metadata fields within text or binary files as long as those fields can be easily viewed by the user.",
+          "No Modified Version of the Font Software may use the Reserved Font Name(s) unless explicit written permission is granted by the corresponding Copyright Holder. This restriction only applies to the primary font name as presented to the users.",
+          "The name(s) of the Copyright Holder(s) or the Author(s) of the Font Software shall not be used to promote, endorse or advertise any Modified Version, except to acknowledge the contribution(s) of the Copyright Holder(s) and the Author(s) or with their explicit written permission.",
+          "The Font Software, modified or unmodified, in part or in whole, must be distributed entirely under this license, and must not be distributed under any other license. The requirement for fonts to remain under this license does not apply to any document created using the Font Software."
+        ]
+      },
+      "licenseSection4": {
+        "title": "TERMINATION",
+        "text": "This license becomes null and void if any of the above conditions are not met."
+      },
+      "licenseSection5": {
+        "title": "DISCLAIMER",
+        "text": "THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE."
+      },
+      "additionalInfo": {
+        "source": "Quelle: https://www.e-recht24.de",
+        "mailchimpInfo": "Weitere Informationen zum Datenschutz bei Mailchimp finden Sie in deren Datenschutzbestimmungen unter: https://mailchimp.com/legal/privacy/"
+      }
+    }
   }
 }

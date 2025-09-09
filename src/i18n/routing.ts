@@ -10,4 +10,19 @@ export const routing = defineRouting({
   // Use 'as-needed' so German (default) has no prefix
   // and Spanish has /es prefix
   localePrefix: "as-needed",
+
+  // Localized pathnames - map different paths to same internal route
+  pathnames: {
+    // Home route
+    "/": "/",
+    // Privacy route with localized paths
+    "/privacy": {
+      de: "/datenschutz",
+      es: "/privacidad",
+    },
+    // Legal route - keeping same name for both locales for now
+    "/legal": "/legal",
+    // Timetable route
+    "/timetable": "/timetable",
+  },
 });

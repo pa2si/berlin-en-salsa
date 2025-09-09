@@ -17,9 +17,7 @@ export const Footer = () => {
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium md:gap-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:flex-nowrap">
             {footerLinks.map((link, index) => {
-              const href = link.dynamicHref
-                ? link.dynamicHref(locale)
-                : link.href;
+              const href = link.href;
               const label = t(link.labelKey);
 
               return (
@@ -43,7 +41,7 @@ export const Footer = () => {
                     </a>
                   ) : (
                     <Link
-                      href={href}
+                      href={href as any}
                       className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"
                     >
                       <span className={link.icon ? "mr-1" : ""}>{label}</span>

@@ -113,7 +113,9 @@ const SectionFive = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <Link href="/timetable?day=saturday">
+                <Link
+                  href={{ pathname: "/timetable", query: { day: "saturday" } }}
+                >
                   <motion.div
                     className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                     whileHover={{ scale: 1.03 }}
@@ -176,7 +178,9 @@ const SectionFive = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.3 }}
               >
-                <Link href="/timetable?day=sunday">
+                <Link
+                  href={{ pathname: "/timetable", query: { day: "sunday" } }}
+                >
                   <motion.div
                     className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                     whileHover={{ scale: 1.03 }}
@@ -248,7 +252,7 @@ const SectionFive = () => {
             <h3 className="text-bes-amber mb-4 text-2xl font-bold">
               {t("saturday")}
             </h3>
-            <Link href="/timetable?day=saturday">
+            <Link href={{ pathname: "/timetable", query: { day: "saturday" } }}>
               <motion.div
                 className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                 whileHover={{ scale: 1.03 }}
@@ -321,7 +325,7 @@ const SectionFive = () => {
             <h3 className="text-bes-amber mb-4 text-2xl font-bold">
               {t("sunday")}
             </h3>
-            <Link href="/timetable?day=sunday">
+            <Link href={{ pathname: "/timetable", query: { day: "sunday" } }}>
               <motion.div
                 className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                 whileHover={{ scale: 1.03 }}
