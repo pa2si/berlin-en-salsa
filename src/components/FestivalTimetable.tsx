@@ -3,19 +3,76 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { saturdayTimetableData } from "../data/saturdayTimetable";
-import { sundayTimetableData } from "../data/sundayTimetable";
+import { getTimetableData } from "../data/timetableService";
 import { Column } from "../types/timetable";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function FestivalTimetable() {
   const searchParams = useSearchParams();
-  const dayParam = searchParams.get("day");
+  const router = useRouter();
+  const t = useTranslations("Timetable");
+  const locale = useLocale();
+
+  // Helper functions for locale-specific URL parameters
+  const getDayParamName = (): string => {
+    return locale === "de" ? "tag" : "dia";
+  };
+
+  const getLocalizedDayParam = (day: "saturday" | "sunday"): string => {
+    if (locale === "de") {
+      return day === "saturday" ? "samstag" : "sonntag";
+    }
+    return day === "saturday" ? "sabado" : "domingo";
+  };
+
+  const parseDayParam = (): "saturday" | "sunday" => {
+    const paramName = getDayParamName();
+    let dayParam = searchParams.get(paramName);
+
+    // Check for backwards compatibility with old "day" parameter
+    if (!dayParam) {
+      dayParam = searchParams.get("day");
+    }
+
+    if (!dayParam) return "saturday";
+
+    if (locale === "de") {
+      return dayParam === "sonntag" || dayParam === "sunday"
+        ? "sunday"
+        : "saturday";
+    }
+    return dayParam === "domingo" || dayParam === "sunday"
+      ? "sunday"
+      : "saturday";
+  };
 
   const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
   const [currentDay, setCurrentDay] = useState<"saturday" | "sunday">(
-    dayParam === "sunday" ? "sunday" : "saturday",
+    parseDayParam(),
   );
+
+  // Function to update the URL with the selected day
+  const updateDayInUrl = (day: "saturday" | "sunday") => {
+    const params = new URLSearchParams(searchParams);
+    const paramName = getDayParamName();
+    const dayValue = getLocalizedDayParam(day);
+
+    // Remove old parameter names to ensure clean URLs
+    params.delete("day");
+    params.delete("tag");
+    params.delete("dia");
+
+    // Set the localized parameter
+    params.set(paramName, dayValue);
+    router.replace(`?${params.toString()}`, { scroll: false });
+  };
+
+  // Function to handle day change
+  const handleDayChange = (day: "saturday" | "sunday") => {
+    setCurrentDay(day);
+    updateDayInUrl(day);
+  };
 
   // State for the current slide in the modal
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -95,9 +152,38 @@ export default function FestivalTimetable() {
     };
   };
 
-  // Choose the timetable data based on the selected day
+  // Choose the timetable data based on the selected day and locale
+  const allTimetableData = getTimetableData(locale);
   const timetableData =
-    currentDay === "saturday" ? saturdayTimetableData : sundayTimetableData;
+    currentDay === "saturday"
+      ? allTimetableData.saturday
+      : allTimetableData.sunday;
+
+  // Function to translate column titles
+  const translateColumnTitle = (originalTitle: string): string => {
+    // Spanish titles to translation keys
+    switch (originalTitle) {
+      case "Tarima Principal":
+        return t("columns.mainStage");
+      case "Talleres de Baile":
+        return t("columns.danceWorkshops");
+      case "Charlas Salseras":
+        return t("columns.salsaTalks");
+      case "Talleres de Música":
+        return t("columns.musicWorkshops");
+      // German titles to translation keys
+      case "Hauptbühne":
+        return t("columns.mainStage");
+      case "Tanz-Workshops":
+        return t("columns.danceWorkshops");
+      case "Salsa-Talks":
+        return t("columns.salsaTalks");
+      case "Musik-Workshops":
+        return t("columns.musicWorkshops");
+      default:
+        return originalTitle;
+    }
+  };
 
   // Process the timetable data to identify consecutive slots with the same event
   const processedTimetableData: Column[] = timetableData.map((column) => {
@@ -119,7 +205,7 @@ export default function FestivalTimetable() {
     });
 
     return {
-      title: column.title,
+      title: translateColumnTitle(column.title),
       slots: processedSlots,
     };
   });
@@ -174,11 +260,11 @@ export default function FestivalTimetable() {
         <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-y-0 sm:space-x-4 md:w-2/3">
           <button
             className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "saturday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
-            onClick={() => setCurrentDay("saturday")}
+            onClick={() => handleDayChange("saturday")}
           >
             <Image
               src="/saturday.svg"
-              alt="Saturday Schedule"
+              alt={t("navigation.saturday")}
               width={250}
               height={100}
               className="h-auto w-full"
@@ -197,11 +283,11 @@ export default function FestivalTimetable() {
 
           <button
             className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "sunday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
-            onClick={() => setCurrentDay("sunday")}
+            onClick={() => handleDayChange("sunday")}
           >
             <Image
               src="/sunday.svg"
-              alt="Sunday Schedule"
+              alt={t("navigation.sunday")}
               width={250}
               height={100}
               className="h-auto w-full"
@@ -497,7 +583,7 @@ export default function FestivalTimetable() {
                                 <div className="mt-0.5 text-center font-serif text-[0.9rem] leading-none font-normal normal-case opacity-90">
                                   {slot.instructor}
                                   {slot.instructorTwo &&
-                                    ` y ${slot.instructorTwo}`}
+                                    ` ${t("modal.and")} ${slot.instructorTwo}`}
                                 </div>
                               )}
 
@@ -646,23 +732,31 @@ export default function FestivalTimetable() {
                       {selectedEventDetails.actType}
                     </span>
                   ) : selectedEventDetails.type === "workshop" ? (
-                    <span className="text-lg text-gray-700">Taller</span>
+                    <span className="text-lg text-gray-700">
+                      {t("actTypes.workshop")}
+                    </span>
                   ) : selectedEventDetails.type === "talk" ? (
-                    <span className="text-lg text-gray-700">Charla</span>
+                    <span className="text-lg text-gray-700">
+                      {t("actTypes.talk")}
+                    </span>
                   ) : null}
                   {selectedEventDetails.instructor && (
                     <span className="text-lg text-gray-700">
                       {selectedEventDetails.type === "workshop"
-                        ? "Dirigido por:"
-                        : "Instructor:"}{" "}
+                        ? selectedEventDetails.instructorTwo
+                          ? t("modal.workshopLeadersLabel")
+                          : t("modal.workshopLeaderLabel")
+                        : selectedEventDetails.instructorTwo
+                          ? t("modal.instructorsLabel")
+                          : t("modal.instructorLabel")}{" "}
                       {selectedEventDetails.instructor}
                       {selectedEventDetails.instructorTwo &&
-                        ` y ${selectedEventDetails.instructorTwo}`}
+                        ` ${t("modal.and")} ${selectedEventDetails.instructorTwo}`}
                     </span>
                   )}
                   {selectedEventDetails.djs && (
                     <span className="text-lg text-gray-700">
-                      DJs: {selectedEventDetails.djs}
+                      {t("modal.djsLabel")} {selectedEventDetails.djs}
                     </span>
                   )}
 
@@ -670,13 +764,14 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.host && (
                       <span className="text-lg text-gray-700">
-                        Host: {selectedEventDetails.host}
+                        {t("modal.hostLabel")} {selectedEventDetails.host}
                       </span>
                     )}
                   {selectedEventDetails.type === "talk" &&
                     selectedEventDetails.presenter && (
                       <span className="text-lg text-gray-700">
-                        Presentado por: {selectedEventDetails.presenter}
+                        {t("modal.presenterLabel")}{" "}
+                        {selectedEventDetails.presenter}
                       </span>
                     )}
 
@@ -684,13 +779,14 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.presenter && (
                       <span className="text-lg text-gray-700">
-                        Presenter: {selectedEventDetails.presenter}
+                        {t("modal.presenterLabel")}{" "}
+                        {selectedEventDetails.presenter}
                       </span>
                     )}
                   {selectedEventDetails.type !== "talk" &&
                     selectedEventDetails.host && (
                       <span className="text-lg text-gray-700">
-                        Host: {selectedEventDetails.host}
+                        {t("modal.hostLabel")} {selectedEventDetails.host}
                       </span>
                     )}
 
@@ -782,7 +878,7 @@ export default function FestivalTimetable() {
                                 ?.dancerOne
                                 ? selectedEventDetails.slides[currentSlideIndex]
                                     ?.dancerTwo
-                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} ${t("modal.and")} ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
                                   : selectedEventDetails.slides[
                                       currentSlideIndex
                                     ]?.dancerOne
@@ -807,7 +903,7 @@ export default function FestivalTimetable() {
                                   ? selectedEventDetails.slides[
                                       currentSlideIndex
                                     ].dancerTwo
-                                    ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} y ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
+                                    ? `${selectedEventDetails.slides[currentSlideIndex].dancerOne} ${t("modal.and")} ${selectedEventDetails.slides[currentSlideIndex].dancerTwo}`
                                     : selectedEventDetails.slides[
                                         currentSlideIndex
                                       ].dancerOne
@@ -888,7 +984,7 @@ export default function FestivalTimetable() {
                               <h5 className="text-bes-red mb-2 text-xl font-bold">
                                 {selectedEventDetails.slides[currentSlideIndex]
                                   ?.dancerTwo
-                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} y ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
+                                  ? `${selectedEventDetails.slides[currentSlideIndex]?.dancerOne} ${t("modal.and")} ${selectedEventDetails.slides[currentSlideIndex]?.dancerTwo}`
                                   : selectedEventDetails.slides[
                                       currentSlideIndex
                                     ]?.dancerOne}
@@ -1049,10 +1145,10 @@ export default function FestivalTimetable() {
                                           slide.bandName ||
                                           (slide.dancerOne
                                             ? slide.dancerTwo
-                                              ? `${slide.dancerOne} y ${slide.dancerTwo}`
+                                              ? `${slide.dancerOne} ${t("modal.and")} ${slide.dancerTwo}`
                                               : slide.dancerOne
                                             : slide.djOne && slide.djTwo
-                                              ? `${slide.djOne} y ${slide.djTwo}`
+                                              ? `${slide.djOne} ${t("modal.and")} ${slide.djTwo}`
                                               : `Slide ${index + 1}`)
                                     }
                                   </button>
@@ -1194,7 +1290,8 @@ export default function FestivalTimetable() {
                     {selectedEventDetails.bio && (
                       <div className="mb-6">
                         <h4 className="text-bes-red mb-2 text-xl font-bold">
-                          Biografía de {selectedEventDetails.instructor}
+                          {t("modal.biographyOf")}{" "}
+                          {selectedEventDetails.instructor}
                         </h4>
                         <p className="text-xl text-gray-700 md:leading-relaxed">
                           {selectedEventDetails.bio}
@@ -1206,7 +1303,8 @@ export default function FestivalTimetable() {
                       selectedEventDetails.instructorTwo && (
                         <div className="mb-6">
                           <h4 className="text-bes-red mb-2 text-xl font-bold">
-                            Biografía de {selectedEventDetails.instructorTwo}
+                            {t("modal.biographyOf")}{" "}
+                            {selectedEventDetails.instructorTwo}
                           </h4>
                           <p className="text-xl text-gray-700 md:leading-relaxed">
                             {selectedEventDetails.bioTwo}
@@ -1225,9 +1323,14 @@ export default function FestivalTimetable() {
                       {selectedEventDetails.record && (
                         <div className="mb-6">
                           <h4 className="mb-2 text-lg font-bold text-gray-600">
+                            {t("modal.recordLabel")}{" "}
                             {selectedEventDetails.record}
                             {selectedEventDetails.artist && (
-                              <span> de {selectedEventDetails.artist}</span>
+                              <span>
+                                {" "}
+                                - {t("modal.artistLabel")}{" "}
+                                {selectedEventDetails.artist}
+                              </span>
                             )}
                           </h4>
                         </div>
@@ -1237,7 +1340,8 @@ export default function FestivalTimetable() {
                       {selectedEventDetails.bio && (
                         <div className="mb-6">
                           <h4 className="text-bes-red mb-2 text-xl font-bold">
-                            Biografía de {selectedEventDetails.presenter}
+                            {t("modal.biographyOf")}{" "}
+                            {selectedEventDetails.presenter}
                           </h4>
                           <p className="text-xl text-gray-700 md:leading-relaxed">
                             {selectedEventDetails.bio}
@@ -1249,7 +1353,7 @@ export default function FestivalTimetable() {
                       {selectedEventDetails.comment && (
                         <div className="mb-6">
                           <h4 className="text-bes-red mb-2 text-xl font-bold">
-                            Comentario
+                            {t("modal.comment")}
                           </h4>
                           <p className="text-xl text-gray-700 md:leading-relaxed">
                             {selectedEventDetails.comment}
@@ -1308,7 +1412,7 @@ export default function FestivalTimetable() {
                     }}
                     className="bg-bes-red hover:bg-bes-red/90 rounded-full px-6 py-2 font-bold text-white shadow-md transition-colors hover:cursor-pointer"
                   >
-                    Cerrar
+                    {t("modal.closeButton")}
                   </button>
                 </div>
               </div>

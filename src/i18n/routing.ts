@@ -25,7 +25,10 @@ export const routing = defineRouting({
       de: "/impressum",
       es: "/legal",
     },
-    // Timetable route
-    "/timetable": "/timetable",
+    // Timetable route - localized paths
+    "/timetable": {
+      de: "/programm",
+      es: "/programa",
+    },
   },
 });

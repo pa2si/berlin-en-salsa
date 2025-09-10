@@ -1,11 +1,14 @@
 "use client";
 
 import React, { Suspense } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Footer } from "@/components/Footer";
 import FestivalTimetable from "@/components/FestivalTimetable";
+import { useTranslations } from "next-intl";
 
 export default function TimetablePage() {
+  const t = useTranslations("Timetable.page");
+
   return (
     <div className="bg-bes-amber relative flex min-h-screen flex-col">
       {/* Absolutely positioned back button - hidden on mobile */}
@@ -25,7 +28,7 @@ export default function TimetablePage() {
             clipRule="evenodd"
           />
         </svg>
-        Volver a Inicio
+        {t("backButton")}
       </Link>
 
       {/* Breadcrumb navigation */}
@@ -49,7 +52,7 @@ export default function TimetablePage() {
                 <div className="flex items-center">
                   <span className="mx-1 text-gray-500">/</span>
                   <span className="text-bes-purple text-md sm:text-base md:text-xl">
-                    Programa
+                    {t("breadcrumb")}
                   </span>
                 </div>
               </li>
@@ -64,7 +67,7 @@ export default function TimetablePage() {
         <Suspense
           fallback={
             <div className="text-bes-red flex h-64 items-center justify-center text-xl">
-              Cargando horario del festival...
+              {t("loadingMessage")}
             </div>
           }
         >

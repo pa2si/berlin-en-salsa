@@ -306,5 +306,48 @@
       },
       "generic": "¡Vaya! Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde."
     }
+  },
+  "Timetable": {
+    "page": {
+      "backButton": "Volver a Inicio",
+      "breadcrumb": "Programa",
+      "loadingMessage": "Cargando horario del festival..."
+    },
+    "navigation": {
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "columns": {
+      "mainStage": "Tarima Principal",
+      "danceWorkshops": "Talleres de Baile",
+      "salsaTalks": "Charlas Salseras",
+      "musicWorkshops": "Talleres de Música"
+    },
+    "actTypes": {
+      "live": "Live",
+      "djSet": "DJ Set",
+      "workshop": "Taller",
+      "talk": "Charla"
+    },
+    "modal": {
+      "closeButton": "Cerrar",
+      "timeLabel": "Horario:",
+      "instructorLabel": "Instructor:",
+      "instructorsLabel": "Instructores:",
+      "workshopLeaderLabel": "Dirigido por:",
+      "workshopLeadersLabel": "Dirigido por:",
+      "presenterLabel": "Presenta:",
+      "hostLabel": "Modera:",
+      "djsLabel": "DJs:",
+      "artistLabel": "Artista:",
+      "recordLabel": "Disco:",
+      "danceShowLabel": "Show de Baile:",
+      "slidePrevious": "Anterior",
+      "slideNext": "Siguiente",
+      "slideOf": "de",
+      "and": "y",
+      "biographyOf": "Biografía de",
+      "comment": "Comentario"
+    }
   }
 }

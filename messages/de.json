@@ -306,5 +306,48 @@
       },
       "generic": "Entschuldigung! Bei der Verarbeitung deiner Anfrage ist ein Problem aufgetreten. Bitte versuche es später erneut."
     }
+  },
+  "Timetable": {
+    "page": {
+      "backButton": "Zurück zur Startseite",
+      "breadcrumb": "Programm",
+      "loadingMessage": "Festival-Zeitplan wird geladen..."
+    },
+    "navigation": {
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
+    "columns": {
+      "mainStage": "Hauptbühne",
+      "danceWorkshops": "Tanz-Workshops",
+      "salsaTalks": "Salsa-Gespräche",
+      "musicWorkshops": "Musik-Workshops"
+    },
+    "actTypes": {
+      "live": "Live",
+      "djSet": "DJ Set",
+      "workshop": "Workshop",
+      "talk": "Talk"
+    },
+    "modal": {
+      "closeButton": "Schließen",
+      "timeLabel": "Zeit:",
+      "instructorLabel": "Dozent:",
+      "instructorsLabel": "Dozenten:",
+      "workshopLeaderLabel": "Geleitet von:",
+      "workshopLeadersLabel": "Geleitet von:",
+      "presenterLabel": "Präsentiert von:",
+      "hostLabel": "Moderiert von:",
+      "djsLabel": "DJs:",
+      "artistLabel": "Künstler:",
+      "recordLabel": "Platte:",
+      "danceShowLabel": "Tanzshow:",
+      "slidePrevious": "Zurück",
+      "slideNext": "Weiter",
+      "slideOf": "von",
+      "and": "und",
+      "biographyOf": "Biografie von",
+      "comment": "Kommentar"
+    }
   }
 }
