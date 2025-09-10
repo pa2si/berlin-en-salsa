@@ -2,27 +2,45 @@ import React from "react";
 import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 // Base URL for absolute URLs in metadata
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
 
-export const metadata: Metadata = {
-  title: "Legal",
-  description: "Información legal de Berlin En Salsa.",
-  alternates: {
-    canonical: `${baseUrl}/legal`,
-    languages: {
-      de: `${baseUrl}/de/impressum`,
-      es: `${baseUrl}/legal`,
-    },
-  },
-  openGraph: {
-    title: "Berlin En Salsa | Legal",
-    url: `${baseUrl}/legal`,
-  },
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const legalPath = locale === "de" ? "impressum" : "legal";
+
+  return {
+    title: locale === "de" ? "Impressum" : "Aviso Legal",
+    description:
+      locale === "de"
+        ? "Impressum von Berlin En Salsa. Rechtliche Informationen und Kontaktdaten."
+        : "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
+    alternates: {
+      canonical: `${baseUrl}/${locale === "de" ? "" : "es/"}${legalPath}`,
+      languages: {
+        de: `${baseUrl}/impressum`,
+        es: `${baseUrl}/es/legal`,
+      },
+    },
+    openGraph: {
+      title:
+        locale === "de"
+          ? "Berlin En Salsa | Impressum"
+          : "Berlin En Salsa | Aviso Legal",
+      url: `${baseUrl}/${locale === "de" ? "" : "es/"}${legalPath}`,
+    },
+  };
+}
+
 export default function Legal() {
+  const t = useTranslations("Legal");
+
   return (
     <div className="bg-bes-amber relative flex min-h-screen flex-col">
       {/* Background Logo with low opacity */}
@@ -52,7 +70,7 @@ export default function Legal() {
             clipRule="evenodd"
           />
         </svg>
-        Volver a Inicio
+        {t("backButton")}
       </Link>
 
       {/* Breadcrumb navigation */}
@@ -76,7 +94,7 @@ export default function Legal() {
                 <div className="flex items-center">
                   <span className="mx-1 text-gray-500">/</span>
                   <span className="text-bes-purple text-md sm:text-base md:text-xl">
-                    Aviso Legal
+                    {t("breadcrumb")}
                   </span>
                 </div>
               </li>
@@ -90,22 +108,30 @@ export default function Legal() {
         <div className="container mx-auto px-4 py-8">
           <div className="prose text-bes-purple mx-auto max-w-none text-center">
             <h1 className="text-bes-red mb-8 text-3xl font-bold sm:text-4xl md:text-5xl">
-              Aviso Legal
+              {t("mainTitle")}
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl">
-              Paul Welch Guerra
+              {t("contactSection.name")}
               <br />
-              Drorystr. 2
-              <br />
-              12055 Berlin
+              {t("contactSection.address")
+                .split("\n")
+                .map((line, index) => (
+                  <span key={index}>
+                    {line}
+                    {index <
+                      t("contactSection.address").split("\n").length - 1 && (
+                      <br />
+                    )}
+                  </span>
+                ))}
             </p>
 
             <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
-              Contacto
+              {t("contactSection.title")}
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl">
-              Teléfono:{" "}
+              {t("contactSection.phone")}{" "}
               <a
                 href="tel:+4917647024026"
                 className="text-bes-red hover:underline"
@@ -114,7 +140,7 @@ export default function Legal() {
               </a>
             </p>
             <p className="text-lg sm:text-xl md:text-2xl">
-              Correo electrónico:{" "}
+              {t("contactSection.email")}{" "}
               <a
                 href="mailto:info@berlinensalsa.de"
                 className="text-bes-red hover:underline"
@@ -124,14 +150,14 @@ export default function Legal() {
             </p>
 
             <p className="mt-8 text-base sm:text-lg md:text-xl">
-              Fuente:{" "}
+              {t("contactSection.source")}{" "}
               <a
                 href="https://www.e-recht24.de"
                 className="text-bes-red hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                eRecht24
+                {t("contactSection.sourceText")}
               </a>
             </p>
           </div>

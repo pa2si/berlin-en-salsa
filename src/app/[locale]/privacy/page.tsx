@@ -174,8 +174,32 @@ export default function Privacy() {
           </h3>
           <p>{t("section2.paragraph4")}</p>
           <p>{t("section2.paragraph5")}</p>
-          <p>{t("section2.paragraph6")}</p>
-          <p>{t("section2.paragraph7")}</p>
+          <p>
+            {t("section2.paragraph6").split("https://vercel.com/legal/dpa")[0]}
+            <a
+              href="https://vercel.com/legal/dpa"
+              className="text-bes-red hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://vercel.com/legal/dpa
+            </a>
+          </p>
+          <p>
+            {
+              t("section2.paragraph7").split(
+                "https://vercel.com/legal/privacy-policy",
+              )[0]
+            }
+            <a
+              href="https://vercel.com/legal/privacy-policy"
+              className="text-bes-red hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://vercel.com/legal/privacy-policy
+            </a>
+          </p>
 
           {/* Section 3: Allgemeine Hinweise und Pflichtinformationen */}
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
@@ -193,8 +217,31 @@ export default function Privacy() {
             {t("section3.subtitle2")}
           </h3>
           <p>{t("section3.paragraph4")}</p>
-          <p>{t("section3.paragraph5")}</p>
-          <p>{t("section3.paragraph6")}</p>
+          <p>
+            {t("section3.paragraph5")
+              .split("\n")
+              .map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < t("section3.paragraph5").split("\n").length - 1 && (
+                    <br />
+                  )}
+                </span>
+              ))}
+          </p>
+          <p>
+            {t("section3.paragraph6")
+              .split("\n")
+              .map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < t("section3.paragraph6").split("\n").length - 1 && (
+                    <br />
+                  )}
+                </span>
+              ))}
+          </p>
+          <br />
           <p>{t("section3.paragraph7")}</p>
 
           <h3 className="mt-6 mb-2 text-xl font-bold">
@@ -379,22 +426,24 @@ export default function Privacy() {
           <p className="uppercase">{t("section6.licenseSection5.text")}</p>
 
           <p className="mt-8 text-right">
+            {t("section6.additionalInfo.source")}{" "}
             <a
               href="https://www.e-recht24.de"
               className="text-bes-red hover:underline"
             >
-              {t("section6.additionalInfo.source")}
+              https://www.e-recht24.de
             </a>
           </p>
 
           <p className="mt-8 text-right">
+            {t("section6.additionalInfo.mailchimpInfo")}{" "}
             <a
               href="https://mailchimp.com/legal/privacy/"
               className="text-bes-red hover:underline"
               target="_blank"
               rel="noopener noreferrer"
             >
-              {t("section6.additionalInfo.mailchimpInfo")}
+              https://mailchimp.com/legal/privacy/
             </a>
           </p>
         </div>

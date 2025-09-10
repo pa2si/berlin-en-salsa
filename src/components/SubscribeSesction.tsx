@@ -2,7 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import { addSubscriber } from "@/app/actions";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export const SubscribeSection = () => {
   const [isPending, setIsPending] = useState<boolean>(false);
@@ -10,7 +11,6 @@ export const SubscribeSection = () => {
   const [subscribeError, setSubscribeError] = useState<string>("");
   const [privacyChecked, setPrivacyChecked] = useState<boolean>(false);
   const t = useTranslations("Sections.SectionSix.newsletter");
-  const locale = useLocale();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -102,12 +102,12 @@ export const SubscribeSection = () => {
                 className="text-bes-purple text-sm font-semibold sm:text-xs md:text-xs lg:text-sm"
               >
                 {t("privacyText")}{" "}
-                <a
-                  href={locale === "de" ? "/datenschutz" : "/privacidad"}
+                <Link
+                  href="/privacy"
                   className="text-bes-red hover:text-bes-red/80 underline"
                 >
                   {t("privacyLink")}
-                </a>{" "}
+                </Link>{" "}
               </label>
             </div>
 

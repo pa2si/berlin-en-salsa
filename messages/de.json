@@ -226,12 +226,11 @@
     "section6": {
       "title": "6. Schriftarten",
       "paragraph1": "Diese Website verwendet die folgenden Open-Source-Schriftarten, um die visuelle Darstellung der Inhalte zu verbessern. Diese Schriftarten werden vom Server geladen und unterliegen der im Folgenden detailliert beschriebenen Lizenz.",
-      "subtitle1": "Verwendete Schriftarten:",
+      "subtitle1": "Verwendete Schriftart:",
       "fontList": [
-        "Poppins: Copyright 2022 The Poppins Project Authors (https://github.com/itfoundry/poppins)",
         "Instrument Serif: Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)"
       ],
-      "paragraph2": "Beide Schriftarten sind unter der SIL Open Font License, Version 1.1, lizenziert. Nachfolgend finden Sie den vollständigen und originalen Lizenztext in englischer Sprache.",
+      "paragraph2": "Diese Schriftart ist unter der SIL Open Font License, Version 1.1, lizenziert. Nachfolgend finden Sie den vollständigen und originalen Lizenztext in englischer Sprache.",
       "subtitle2": "SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007",
       "licenseSection1": {
         "title": "PREAMBLE",
@@ -268,9 +267,25 @@
         "text": "THE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE."
       },
       "additionalInfo": {
-        "source": "Quelle: https://www.e-recht24.de",
-        "mailchimpInfo": "Weitere Informationen zum Datenschutz bei Mailchimp finden Sie in deren Datenschutzbestimmungen unter: https://mailchimp.com/legal/privacy/"
+        "source": "Quelle:",
+        "mailchimpInfo": "Weitere Informationen zum Datenschutz bei Mailchimp finden Sie in deren Datenschutzbestimmungen unter:"
       }
+    }
+  },
+  "Legal": {
+    "title": "Impressum",
+    "description": "Impressum von Berlin En Salsa. Rechtliche Informationen und Kontaktdaten.",
+    "backButton": "Zurück zur Startseite",
+    "breadcrumb": "Impressum",
+    "mainTitle": "Impressum",
+    "contactSection": {
+      "title": "Kontakt",
+      "name": "Paul Welch Guerra",
+      "address": "Drorystr. 2\n12055 Berlin",
+      "phone": "Telefon:",
+      "email": "E-Mail:",
+      "source": "Quelle:",
+      "sourceText": "eRecht24"
     }
   }
 }

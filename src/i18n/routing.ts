@@ -15,13 +15,16 @@ export const routing = defineRouting({
   pathnames: {
     // Home route
     "/": "/",
-    // Privacy route with localized paths
+    // Privacy route - localized paths
     "/privacy": {
       de: "/datenschutz",
       es: "/privacidad",
     },
-    // Legal route - keeping same name for both locales for now
-    "/legal": "/legal",
+    // Legal route - localized paths
+    "/legal": {
+      de: "/impressum",
+      es: "/legal",
+    },
     // Timetable route
     "/timetable": "/timetable",
   },
