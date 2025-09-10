@@ -41,7 +41,7 @@ export const Footer = () => {
                     </a>
                   ) : (
                     <Link
-                      href={href as any}
+                      href={href}
                       className="hover:text-bes-red/80 flex items-center transition-colors hover:underline"
                     >
                       <span className={link.icon ? "mr-1" : ""}>{label}</span>
