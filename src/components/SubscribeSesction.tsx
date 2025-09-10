@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { addSubscriber } from "@/app/actions";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 export const SubscribeSection = () => {
@@ -11,6 +11,7 @@ export const SubscribeSection = () => {
   const [subscribeError, setSubscribeError] = useState<string>("");
   const [privacyChecked, setPrivacyChecked] = useState<boolean>(false);
   const t = useTranslations("Sections.SectionSix.newsletter");
+  const locale = useLocale();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,11 +27,11 @@ export const SubscribeSection = () => {
     const formData = new FormData(e.currentTarget);
     formData.append("privacyAccepted", "true");
 
-    const res = await addSubscriber(formData);
+    const res = await addSubscriber(formData, locale);
     if (res.successMessage) {
-      setSubscribeSuccess(t("success"));
+      setSubscribeSuccess(res.successMessage);
     } else if (res.errorMessage) {
-      setSubscribeError(t("error"));
+      setSubscribeError(res.errorMessage);
     }
     setIsPending(false);
   };

@@ -2,6 +2,7 @@
 
 import mailchimp from "@mailchimp/mailchimp_marketing";
 import crypto from "crypto";
+import { getTranslations } from "next-intl/server";
 
 // Add this interface for Mailchimp error type
 interface MailchimpError {
@@ -43,22 +44,24 @@ const sanitizeInput = (input: string): string => {
 
 export const addSubscriber = async (
   formData: FormData,
+  locale: string,
 ): Promise<SubscriptionResponse> => {
+  const t = await getTranslations({ locale, namespace: "Subscription" });
+
   let email = formData.get("email") as string;
   const firstName = formData.get("firstName") as string;
   const lastName = formData.get("lastName") as string;
 
   // Server-side validation
   if (!email || !firstName || !lastName) {
-    return { errorMessage: "Todos los campos son obligatorios." };
+    return { errorMessage: t("validation.allFieldsRequired") };
   }
 
   // Clean and validate email
   email = email.trim().toLowerCase();
   if (!isValidEmail(email)) {
     return {
-      errorMessage:
-        "Por favor, introduce una dirección de correo electrónico válida.",
+      errorMessage: t("validation.invalidEmail"),
     };
   }
 
@@ -69,21 +72,21 @@ export const addSubscriber = async (
   // Minimum length check
   if (sanitizedFirstName.length < 2 || sanitizedLastName.length < 2) {
     return {
-      errorMessage: "El nombre y apellido deben tener al menos 2 caracteres.",
+      errorMessage: t("validation.minNameLength"),
     };
   }
 
   // Maximum length check (should rarely trigger due to sanitizeInput's slice)
   if (sanitizedFirstName.length > 50 || sanitizedLastName.length > 50) {
     return {
-      errorMessage: "El nombre y apellido no deben exceder los 50 caracteres.",
+      errorMessage: t("validation.maxNameLength"),
     };
   }
 
   // Check that names aren't just special characters or numbers
   if (!/\p{L}/u.test(sanitizedFirstName) || !/\p{L}/u.test(sanitizedLastName)) {
     return {
-      errorMessage: "El nombre y apellido deben contener al menos una letra.",
+      errorMessage: t("validation.nameRequiresLetter"),
     };
   }
 
@@ -101,7 +104,7 @@ export const addSubscriber = async (
       },
     );
     return {
-      successMessage: `¡Casi listo! Hemos enviado un correo de confirmación a ${email}. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu suscripción.`,
+      successMessage: t("success", { email }),
     };
   } catch (error: unknown) {
     const mailchimpError = error as MailchimpError;
@@ -123,15 +126,15 @@ export const addSubscriber = async (
         // Handle based on the member's status
         if (memberInfo.status === "pending") {
           return {
-            errorMessage: `Ya hemos enviado un correo de invitación a ${email}. Por favor, revisa tu bandeja de entrada (y la carpeta de spam) para encontrar el enlace de confirmación. Si necesitas que te enviemos la invitación nuevamente, contáctanos.`,
+            errorMessage: t("errors.memberExists.pending", { email }),
           };
         } else if (memberInfo.status === "subscribed") {
           return {
-            errorMessage: `${email} ya está suscrito a nuestro boletín. ¡Gracias por tu interés!`,
+            errorMessage: t("errors.memberExists.subscribed", { email }),
           };
         } else if (memberInfo.status === "unsubscribed") {
           return {
-            errorMessage: `${email} ya se ha dado de baja de nuestro boletín. Si deseas volver a suscribirte, por favor contáctanos.`,
+            errorMessage: t("errors.memberExists.unsubscribed", { email }),
           };
         }
       } catch {
@@ -140,13 +143,13 @@ export const addSubscriber = async (
 
       // Fallback message if status check fails
       return {
-        errorMessage: `Esta dirección de correo (${email}) ya existe en nuestro sistema. Si tienes alguna pregunta, por favor contáctanos.`,
+        errorMessage: t("errors.memberExists.fallback", { email }),
       };
     }
 
     // Generic error message for other errors
     return {
-      errorMessage: `¡Vaya! Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde.`,
+      errorMessage: t("errors.generic"),
     };
   }
 };

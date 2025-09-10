@@ -287,5 +287,24 @@
       "source": "Quelle:",
       "sourceText": "eRecht24"
     }
+  },
+  "Subscription": {
+    "validation": {
+      "allFieldsRequired": "Bitte fülle alle Felder aus.",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "minNameLength": "Vor- und Nachname müssen mindestens 2 Zeichen enthalten.",
+      "maxNameLength": "Vor- und Nachname dürfen maximal 50 Zeichen enthalten.",
+      "nameRequiresLetter": "Vor- und Nachname müssen mindestens einen Buchstaben enthalten."
+    },
+    "success": "Fast geschafft! Wir haben eine Bestätigungs-E-Mail an {email} gesendet. Bitte überprüfe deinen Posteingang und klicke auf den Link, um dein Abonnement abzuschließen.",
+    "errors": {
+      "memberExists": {
+        "pending": "Wir haben bereits eine Einladungs-E-Mail an {email} geschickt. Bitte überprüfe deinen Posteingang (und den Spam-Ordner) nach dem Bestätigungslink. Falls du eine neue Einladung benötigst, kontaktiere uns bitte.",
+        "subscribed": "{email} ist bereits für unseren Newsletter angemeldet. Vielen Dank für dein Interesse!",
+        "unsubscribed": "{email} wurde bereits von unserem Newsletter abgemeldet. Wenn du dich erneut anmelden möchtest, kontaktiere uns bitte.",
+        "fallback": "Diese E-Mail-Adresse ({email}) existiert bereits in unserem System. Bei Fragen wende dich bitte an uns."
+      },
+      "generic": "Entschuldigung! Bei der Verarbeitung deiner Anfrage ist ein Problem aufgetreten. Bitte versuche es später erneut."
+    }
   }
 }

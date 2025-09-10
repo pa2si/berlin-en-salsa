@@ -287,5 +287,24 @@
       "source": "Fuente:",
       "sourceText": "eRecht24"
     }
+  },
+  "Subscription": {
+    "validation": {
+      "allFieldsRequired": "Todos los campos son obligatorios.",
+      "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+      "minNameLength": "El nombre y apellido deben tener al menos 2 caracteres.",
+      "maxNameLength": "El nombre y apellido no deben exceder los 50 caracteres.",
+      "nameRequiresLetter": "El nombre y apellido deben contener al menos una letra."
+    },
+    "success": "¡Casi listo! Hemos enviado un correo de confirmación a {email}. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu suscripción.",
+    "errors": {
+      "memberExists": {
+        "pending": "Ya hemos enviado un correo de invitación a {email}. Por favor, revisa tu bandeja de entrada (y la carpeta de spam) para encontrar el enlace de confirmación. Si necesitas que te enviemos la invitación nuevamente, contáctanos.",
+        "subscribed": "{email} ya está suscrito a nuestro boletín. ¡Gracias por tu interés!",
+        "unsubscribed": "{email} ya se ha dado de baja de nuestro boletín. Si deseas volver a suscribirte, por favor contáctanos.",
+        "fallback": "Esta dirección de correo ({email}) ya existe en nuestro sistema. Si tienes alguna pregunta, por favor contáctanos."
+      },
+      "generic": "¡Vaya! Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde."
+    }
   }
 }
