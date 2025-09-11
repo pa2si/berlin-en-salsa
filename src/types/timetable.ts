@@ -47,6 +47,6 @@ export interface TimeSlot {
 }
 
 export interface Column {
-  title: string;
+  area: string;
   slots: TimeSlot[];
 }

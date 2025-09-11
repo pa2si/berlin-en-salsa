@@ -3,7 +3,7 @@ import { Column } from "../types/timetable";
 // Saturday timetable data
 export const saturdayTimetableData: Column[] = [
   {
-    title: "Tarima Principal",
+    area: "Tarima Principal",
     slots: [
       {
         time: "12:30",
@@ -203,7 +203,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Talleres de Baile",
+    area: "Talleres de Baile",
     slots: [
       { time: "12:30" },
       {
@@ -273,7 +273,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Talleres de música",
+    area: "Talleres de música",
     slots: [
       { time: "12:30" },
       {
@@ -324,7 +324,7 @@ export const saturdayTimetableData: Column[] = [
     ],
   },
   {
-    title: "Charlas Salseras",
+    area: "Charlas Salseras",
     slots: [
       { time: "12:30" },
       { time: "13:00" },

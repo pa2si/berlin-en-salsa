@@ -85,16 +85,12 @@ export default function FestivalTimetable() {
   const [selectedEventDetails, setSelectedEventDetails] = useState<{
     event: string;
     time: string;
-    endTime?: string;
-    timeRange?: string;
     instructor?: string;
-    instructorTwo?: string; // Second instructor for workshops with multiple teachers
     presenter?: string;
     host?: string;
     djs?: string;
     description?: string;
     bio?: string; // Biographical information for instructors
-    bioTwo?: string; // Biographical information for the second instructor
     record?: string; // For Charlas Salseras - information about the record/album being discussed
     artist?: string; // For Charlas Salseras - information about the artist of the record
     text?: string; // For Charlas Salseras - additional explanatory text about the talk
@@ -124,33 +120,7 @@ export default function FestivalTimetable() {
     hasShow?: boolean;
     danceShow?: string;
     dancers?: string;
-    // danceShowImage is deprecated but kept for backward compatibility
-    danceShowImage?: string;
   } | null>(null);
-
-  // Helper function to calculate the end time based on start time and duration
-  const calculateTimeRange = (startTime: string, durationSlots: number = 1) => {
-    // Extract hour and minute from the start time (format: "HH:MM")
-    const [startHour, startMinute] = startTime.split(":").map(Number);
-
-    // Calculate end time (each slot is 30 minutes)
-    const totalMinutes = startHour * 60 + startMinute + durationSlots * 30;
-    const endHour = Math.floor(totalMinutes / 60);
-    const endMinute = totalMinutes % 60;
-
-    // Format the end time as "HH:MM"
-    const endTime = `${endHour.toString().padStart(2, "0")}:${endMinute.toString().padStart(2, "0")}`;
-
-    // Format the time range in 24h format
-    const formattedStartTime = `${startHour.toString().padStart(2, "0")}:${startMinute.toString().padStart(2, "0")}`;
-    const formattedEndTime = `${endHour.toString().padStart(2, "0")}:${endMinute.toString().padStart(2, "0")}`;
-
-    // Return the formatted time range
-    return {
-      endTime,
-      timeRange: `${formattedStartTime} - ${formattedEndTime}`,
-    };
-  };
 
   // Choose the timetable data based on the selected day and locale
   const allTimetableData = getTimetableData(locale);
@@ -159,10 +129,10 @@ export default function FestivalTimetable() {
       ? allTimetableData.saturday
       : allTimetableData.sunday;
 
-  // Function to translate column titles
-  const translateColumnTitle = (originalTitle: string): string => {
-    // Spanish titles to translation keys
-    switch (originalTitle) {
+  // Function to translate column areas
+  const translateColumnArea = (originalArea: string): string => {
+    // Spanish areas to translation keys
+    switch (originalArea) {
       case "Tarima Principal":
         return t("columns.mainStage");
       case "Talleres de Baile":
@@ -171,7 +141,7 @@ export default function FestivalTimetable() {
         return t("columns.salsaTalks");
       case "Talleres de Música":
         return t("columns.musicWorkshops");
-      // German titles to translation keys
+      // German areas to translation keys
       case "Hauptbühne":
         return t("columns.mainStage");
       case "Tanz-Workshops":
@@ -181,7 +151,7 @@ export default function FestivalTimetable() {
       case "Musik-Workshops":
         return t("columns.musicWorkshops");
       default:
-        return originalTitle;
+        return originalArea;
     }
   };
 
@@ -205,7 +175,7 @@ export default function FestivalTimetable() {
     });
 
     return {
-      title: translateColumnTitle(column.title),
+      area: translateColumnArea(column.area),
       slots: processedSlots,
     };
   });
@@ -317,14 +287,14 @@ export default function FestivalTimetable() {
         >
           {processedTimetableData.map((column, columnIndex) => (
             <motion.div
-              key={column.title}
+              key={column.area}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: columnIndex * 0.1 }}
               className="overflow-visible rounded-xl border border-white/20 bg-white/10 px-3 py-4 shadow-lg backdrop-blur-sm"
             >
               <h3 className="text-bes-red mb-3 text-center text-xl font-black tracking-wide uppercase md:text-2xl">
-                {column.title}
+                {column.area}
               </h3>
 
               <div className="border-lg space-y-1 overflow-visible">
@@ -386,10 +356,6 @@ export default function FestivalTimetable() {
                                     count++;
                                     currentIdx++;
                                   }
-
-                                  // Calculate time range based on the number of consecutive slots
-                                  const { endTime, timeRange } =
-                                    calculateTimeRange(slot.time, count);
 
                                   // For the modal, use the attributes from the slot with the dance show if it exists
                                   const showSlot =
@@ -483,13 +449,9 @@ export default function FestivalTimetable() {
                                       !hasDanceShowSlide &&
                                       showSlot.dancers
                                     ) {
-                                      // We'll create a dance show slide - but only if there isn't already a slide with dancer info
-                                      // This should not happen with the new slide structure where dancers info is integrated
+                                      // Legacy fallback - use default image
                                       slides.push({
-                                        // Legacy support - if danceShowImage exists use it, but this is deprecated
-                                        image:
-                                          showSlot.danceShowImage ||
-                                          "/son-cubano.webp",
+                                        image: "/son-cubano.webp",
                                         dancerName: showSlot.dancers, // Keep for backward compatibility
                                       });
                                     }
@@ -498,13 +460,8 @@ export default function FestivalTimetable() {
                                   setSelectedEventDetails({
                                     event: slot.event,
                                     time: slot.time,
-                                    endTime,
-                                    timeRange,
                                     instructor:
                                       showSlot.instructor || slot.instructor,
-                                    instructorTwo:
-                                      showSlot.instructorTwo ||
-                                      slot.instructorTwo,
                                     presenter:
                                       showSlot.presenter || slot.presenter,
                                     host: showSlot.host || slot.host,
@@ -514,7 +471,6 @@ export default function FestivalTimetable() {
                                     description:
                                       showSlot.description || slot.description,
                                     bio: showSlot.bio || slot.bio,
-                                    bioTwo: showSlot.bioTwo || slot.bioTwo,
                                     record: showSlot.record || slot.record,
                                     artist: showSlot.artist || slot.artist,
                                     text: showSlot.text || slot.text,
@@ -532,8 +488,6 @@ export default function FestivalTimetable() {
                                     hasShow: !!showSlot.hasShow,
                                     danceShow: showSlot.danceShow,
                                     dancers: showSlot.dancers,
-                                    // danceShowImage is kept for backward compatibility but marked for removal
-                                    danceShowImage: showSlot.danceShowImage,
                                   });
                                 } else {
                                   setSelectedEventDetails(null);
@@ -724,8 +678,7 @@ export default function FestivalTimetable() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    {selectedEventDetails.timeRange ||
-                      selectedEventDetails.time}
+                    {selectedEventDetails.time}
                   </span>
                   {selectedEventDetails.actType ? (
                     <span className="text-lg text-gray-700">
@@ -743,15 +696,9 @@ export default function FestivalTimetable() {
                   {selectedEventDetails.instructor && (
                     <span className="text-lg text-gray-700">
                       {selectedEventDetails.type === "workshop"
-                        ? selectedEventDetails.instructorTwo
-                          ? t("modal.workshopLeadersLabel")
-                          : t("modal.workshopLeaderLabel")
-                        : selectedEventDetails.instructorTwo
-                          ? t("modal.instructorsLabel")
-                          : t("modal.instructorLabel")}{" "}
+                        ? t("modal.workshopLeaderLabel")
+                        : t("modal.instructorLabel")}{" "}
                       {selectedEventDetails.instructor}
-                      {selectedEventDetails.instructorTwo &&
-                        ` ${t("modal.and")} ${selectedEventDetails.instructorTwo}`}
                     </span>
                   )}
                   {selectedEventDetails.djs && (
@@ -1298,19 +1245,6 @@ export default function FestivalTimetable() {
                         </p>
                       </div>
                     )}
-
-                    {selectedEventDetails.bioTwo &&
-                      selectedEventDetails.instructorTwo && (
-                        <div className="mb-6">
-                          <h4 className="text-bes-red mb-2 text-xl font-bold">
-                            {t("modal.biographyOf")}{" "}
-                            {selectedEventDetails.instructorTwo}
-                          </h4>
-                          <p className="text-xl text-gray-700 md:leading-relaxed">
-                            {selectedEventDetails.bioTwo}
-                          </p>
-                        </div>
-                      )}
                   </>
                 )}
 
