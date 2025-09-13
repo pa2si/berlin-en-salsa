@@ -313,6 +313,10 @@
       "breadcrumb": "Programm",
       "loadingMessage": "Festival-Zeitplan wird geladen..."
     },
+    "days": {
+      "saturday": "Samstag",
+      "sunday": "Sonntag"
+    },
     "navigation": {
       "saturday": "Samstag",
       "sunday": "Sonntag"
@@ -320,34 +324,41 @@
     "columns": {
       "mainStage": "Hauptbühne",
       "danceWorkshops": "Tanz-Workshops",
-      "salsaTalks": "Salsa-Gespräche",
+      "salsaTalks": "Salsa-Talks",
       "musicWorkshops": "Musik-Workshops"
     },
     "actTypes": {
       "live": "Live",
       "djSet": "DJ Set",
       "workshop": "Workshop",
-      "talk": "Talk"
+      "dance-workshop": "Tanz-Workshop",
+      "music-workshop": "Musik-Workshop",
+      "talk": "Talk",
+      "Aviatrix": "Aviatrix"
     },
     "modal": {
       "closeButton": "Schließen",
       "timeLabel": "Zeit:",
-      "instructorLabel": "Dozent:",
-      "instructorsLabel": "Dozenten:",
+      "formatLabel": "Format:",
+      "instructorLabel": "Präsentiert von:",
       "workshopLeaderLabel": "Geleitet von:",
       "workshopLeadersLabel": "Geleitet von:",
       "presenterLabel": "Präsentiert von:",
       "hostLabel": "Moderiert von:",
+      "moderatorLabel": "Moderiert von:",
+      "guestLabel": "Gast:",
+      "hostedByLabel": "Moderiert von:",
       "djsLabel": "DJs:",
       "artistLabel": "Künstler:",
-      "recordLabel": "Platte:",
+      "recordLabel": "LP:",
       "danceShowLabel": "Tanzshow:",
       "slidePrevious": "Zurück",
       "slideNext": "Weiter",
       "slideOf": "von",
       "and": "und",
       "biographyOf": "Biografie von",
-      "comment": "Kommentar"
+      "comment": "Kommentar",
+      "description": "Beschreibung"
     }
   }
 }

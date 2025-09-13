@@ -3,7 +3,7 @@
 import React, { Suspense } from "react";
 import { Link } from "@/i18n/navigation";
 import { Footer } from "@/components/Footer";
-import FestivalTimetable from "@/components/FestivalTimetable";
+import TimetableContainer from "@/components/timetable/TimetableContainer";
 import { useTranslations } from "next-intl";
 
 export default function TimetablePage() {
@@ -71,7 +71,7 @@ export default function TimetablePage() {
             </div>
           }
         >
-          <FestivalTimetable />
+          <TimetableContainer />
         </Suspense>
       </div>
 

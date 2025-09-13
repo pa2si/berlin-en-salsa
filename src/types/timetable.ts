@@ -22,8 +22,11 @@ export interface TimeSlot {
   event?: string;
   instructor?: string;
   instructorTwo?: string; // Second instructor for workshops with multiple teachers
+  level?: string; // Level for workshops (e.g., "Principiante", "Intermedio", "Avanzado")
   presenter?: string;
   host?: string;
+  moderator?: string; // Moderator for talks (replaces host)
+  guest?: string; // Guest for talks
   djs?: string;
   actType?: string; // Type of act (e.g., "Live", "DJ Set")
   type?: "main" | "dance-show" | "workshop" | "talk";
@@ -48,5 +51,6 @@ export interface TimeSlot {
 
 export interface Column {
   area: string;
+  originalAreaKey?: string;
   slots: TimeSlot[];
 }

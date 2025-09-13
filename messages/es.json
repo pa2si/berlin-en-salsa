@@ -327,17 +327,23 @@
       "live": "Live",
       "djSet": "DJ Set",
       "workshop": "Taller",
-      "talk": "Charla"
+      "dance-workshop": "Taller de Baile",
+      "music-workshop": "Taller de Música",
+      "talk": "Charla",
+      "Aviatrix": "Aviatrix"
     },
     "modal": {
       "closeButton": "Cerrar",
       "timeLabel": "Horario:",
-      "instructorLabel": "Instructor:",
-      "instructorsLabel": "Instructores:",
+      "formatLabel": "Formato:",
+      "instructorLabel": "Presentado por:",
       "workshopLeaderLabel": "Dirigido por:",
       "workshopLeadersLabel": "Dirigido por:",
       "presenterLabel": "Presenta:",
       "hostLabel": "Modera:",
+      "moderatorLabel": "Presentado por:",
+      "guestLabel": "Invitado:",
+      "hostedByLabel": "Presentado por:",
       "djsLabel": "DJs:",
       "artistLabel": "Artista:",
       "recordLabel": "Disco:",
@@ -347,7 +353,8 @@
       "slideOf": "de",
       "and": "y",
       "biographyOf": "Biografía de",
-      "comment": "Comentario"
+      "comment": "Comentario",
+      "description": "Descripción"
     }
   }
 }
