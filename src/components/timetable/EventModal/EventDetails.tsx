@@ -36,11 +36,13 @@ export default function EventDetails({
         <span className="text-lg text-gray-700">
           {selectedEventDetails.actType === "dance-workshop"
             ? t("actTypes.dance-workshop")
-            : selectedEventDetails.actType === "aviatrix"
-              ? `${t("modal.formatLabel")} ${t("actTypes.Aviatrix")}`
-              : selectedEventDetails.actType === "talk"
-                ? t("actTypes.talk")
-                : selectedEventDetails.actType}
+            : selectedEventDetails.actType === "music-workshop"
+              ? t("actTypes.music-workshop")
+              : selectedEventDetails.actType === "aviatrix"
+                ? `${t("modal.formatLabel")} ${t("actTypes.Aviatrix")}`
+                : selectedEventDetails.actType === "talk"
+                  ? t("actTypes.talk")
+                  : selectedEventDetails.actType}
         </span>
       ) : selectedEventDetails.type === "workshop" ? (
         <span className="text-lg text-gray-700">{t("actTypes.workshop")}</span>
