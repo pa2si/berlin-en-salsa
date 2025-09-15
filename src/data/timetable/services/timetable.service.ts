@@ -1,8 +1,10 @@
 import { AreaType, AREA_DEFINITIONS } from "../types/area.types";
 import { TimeSlot } from "../types/event.types";
+import { TranslatableTimeSlot } from "../types/translatable.types";
 import { Column } from "../types/timetable.types";
+import { translateTimeSlotsServer } from "../utils/timetableTranslation";
 
-// Import area data - Spanish (default) locale
+// Import translatable data - single source of truth
 import { mainStageSaturday } from "../areas/main-stage/saturday";
 import { mainStageSunday } from "../areas/main-stage/sunday";
 import { danceWorkshopsSaturday } from "../areas/dance-workshops/saturday";
@@ -12,106 +14,139 @@ import { musicWorkshopsSunday } from "../areas/music-workshops/sunday";
 import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
 import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
 
-// Import German locale data
-import { mainStageSaturday as mainStageSaturdayDe } from "../areas/main-stage/de/saturday";
-import { mainStageSunday as mainStageSundayDe } from "../areas/main-stage/de/sunday";
-import { danceWorkshopsSaturday as danceWorkshopsSaturdayDe } from "../areas/dance-workshops/de/saturday";
-import { danceWorkshopsSunday as danceWorkshopsSundayDe } from "../areas/dance-workshops/de/sunday";
-import { musicWorkshopsSaturday as musicWorkshopsSaturdayDe } from "../areas/music-workshops/de/saturday";
-import { musicWorkshopsSunday as musicWorkshopsSundayDe } from "../areas/music-workshops/de/sunday";
-import { salsaTalksSaturday as salsaTalksSaturdayDe } from "../areas/salsa-talks/de/saturday";
-import { salsaTalksSunday as salsaTalksSundayDe } from "../areas/salsa-talks/de/sunday";
+// Import existing data for areas not yet migrated (none remaining)
+// import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
+// import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
+
+// Import German locale data for areas not yet migrated (now only for non-main-stage areas)
+// Note: Other German imports will be added as we migrate each area
 
 /**
- * Service to aggregate timetable data from different areas
+ * Service for timetable data that supports the translation system
+ * This service handles all timetable data with full i18n support
  */
 export class TimetableService {
-  private static getSaturdayData(
-    locale: string = "es",
-  ): Record<AreaType, TimeSlot[]> {
-    if (locale === "de") {
-      // Return German Saturday data
-      return {
-        "main-stage": mainStageSaturdayDe,
-        "dance-workshops": danceWorkshopsSaturdayDe,
-        "music-workshops": musicWorkshopsSaturdayDe,
-        "salsa-talks": salsaTalksSaturdayDe,
-      };
-    }
-
-    // Default Spanish locale
+  /**
+   * Get raw translatable data for Saturday (for areas that have been migrated)
+   */
+  private static getSaturdayTranslatableData(): Record<
+    AreaType,
+    TranslatableTimeSlot[] | TimeSlot[]
+  > {
     return {
-      "main-stage": mainStageSaturday,
-      "dance-workshops": danceWorkshopsSaturday,
-      "music-workshops": musicWorkshopsSaturday,
-      "salsa-talks": salsaTalksSaturday,
-    };
-  }
-
-  private static getSundayData(
-    locale: string = "es",
-  ): Record<AreaType, TimeSlot[]> {
-    if (locale === "de") {
-      // Return German Sunday data
-      return {
-        "main-stage": mainStageSundayDe,
-        "dance-workshops": danceWorkshopsSundayDe,
-        "music-workshops": musicWorkshopsSundayDe,
-        "salsa-talks": salsaTalksSundayDe,
-      };
-    }
-
-    // Default Spanish locale
-    return {
-      "main-stage": mainStageSunday,
-      "dance-workshops": danceWorkshopsSunday,
-      "music-workshops": musicWorkshopsSunday,
-      "salsa-talks": salsaTalksSunday,
+      "main-stage": mainStageSaturday, // Migrated to translatable format
+      "dance-workshops": danceWorkshopsSaturday, // Migrated to translatable format
+      "music-workshops": musicWorkshopsSaturday, // Migrated to translatable format
+      "salsa-talks": salsaTalksSaturday, // Migrated to translatable format
     };
   }
 
   /**
-   * Get timetable data for a specific day and locale
+   * Get raw translatable data for Sunday (for areas that have been migrated)
    */
-  static getTimetableData(
+  private static getSundayTranslatableData(): Record<
+    AreaType,
+    TranslatableTimeSlot[] | TimeSlot[]
+  > {
+    return {
+      "main-stage": mainStageSunday, // Migrated to translatable format
+      "dance-workshops": danceWorkshopsSunday, // Migrated to translatable format
+      "music-workshops": musicWorkshopsSunday, // Migrated to translatable format
+      "salsa-talks": salsaTalksSunday, // Migrated to translatable format
+    };
+  }
+
+  /**
+   * Get translated timetable data for Saturday - Server Component version
+   */
+  static async getSaturdayDataTranslated(): Promise<
+    Record<AreaType, TimeSlot[]>
+  > {
+    const rawData = this.getSaturdayTranslatableData();
+    const translatedData: Record<AreaType, TimeSlot[]> = {} as Record<
+      AreaType,
+      TimeSlot[]
+    >;
+
+    for (const [areaKey, slots] of Object.entries(rawData)) {
+      const area = areaKey as AreaType;
+
+      // All areas have been migrated to translatable format
+      translatedData[area] = await translateTimeSlotsServer(
+        slots as TranslatableTimeSlot[],
+      );
+    }
+
+    return translatedData;
+  }
+
+  /**
+   * Get translated timetable data for Sunday - Server Component version
+   */
+  static async getSundayDataTranslated(): Promise<
+    Record<AreaType, TimeSlot[]>
+  > {
+    const rawData = this.getSundayTranslatableData();
+    const translatedData: Record<AreaType, TimeSlot[]> = {} as Record<
+      AreaType,
+      TimeSlot[]
+    >;
+
+    for (const [areaKey, slots] of Object.entries(rawData)) {
+      const area = areaKey as AreaType;
+
+      // All areas have been migrated to translatable format
+      translatedData[area] = await translateTimeSlotsServer(
+        slots as TranslatableTimeSlot[],
+      );
+    }
+
+    return translatedData;
+  }
+
+  /**
+   * Get timetable data for a specific day - Server Component version
+   * This replaces the old getTimetableData method for Server Components
+   */
+  static async getTimetableDataServer(
     day: "saturday" | "sunday",
-    locale: string = "es",
-  ): Column[] {
-    const areaData =
-      day === "saturday"
-        ? this.getSaturdayData(locale)
-        : this.getSundayData(locale);
+  ): Promise<Column[]> {
+    let areaData: Record<AreaType, TimeSlot[]>;
+
+    if (day === "saturday") {
+      // Use the new translation system for Saturday
+      areaData = await this.getSaturdayDataTranslated();
+    } else {
+      // Use the new translation system for Sunday
+      areaData = await this.getSundayDataTranslated();
+    }
 
     return Object.entries(areaData).map(([areaKey, slots]) => {
       const areaType = areaKey as AreaType;
       const areaDefinition = AREA_DEFINITIONS[areaType];
 
-      // Get the localized area name
-      const localizedAreaName =
-        locale === "de"
-          ? areaDefinition.germanName
-          : areaDefinition.spanishName;
-
       return {
-        area: localizedAreaName,
+        area: areaDefinition.spanishName, // Will be replaced with translation keys later
         slots: slots,
       };
     });
   }
 
   /**
-   * Get available time slots across all areas for a given day and locale
+   * Get available time slots for a given day - Server Component version
    */
-  static getAvailableTimeSlots(
+  static async getAvailableTimeSlotsServer(
     day: "saturday" | "sunday",
-    locale: string = "es",
-  ): string[] {
-    const areaData =
-      day === "saturday"
-        ? this.getSaturdayData(locale)
-        : this.getSundayData(locale);
-    const timeSlots = new Set<string>();
+  ): Promise<string[]> {
+    let areaData: Record<AreaType, TimeSlot[]>;
 
+    if (day === "saturday") {
+      areaData = await this.getSaturdayDataTranslated();
+    } else {
+      areaData = await this.getSundayDataTranslated();
+    }
+
+    const timeSlots = new Set<string>();
     Object.values(areaData).forEach((slots) => {
       slots.forEach((slot) => timeSlots.add(slot.time));
     });
@@ -120,30 +155,39 @@ export class TimetableService {
   }
 
   /**
-   * Get all events for a specific area, day and locale
+   * Get all events for a specific area and day - Server Component version
    */
-  static getAreaEvents(
+  static async getAreaEventsServer(
     area: AreaType,
     day: "saturday" | "sunday",
-    locale: string = "es",
-  ): TimeSlot[] {
-    const areaData =
-      day === "saturday"
-        ? this.getSaturdayData(locale)
-        : this.getSundayData(locale);
+  ): Promise<TimeSlot[]> {
+    let areaData: Record<AreaType, TimeSlot[]>;
+
+    if (day === "saturday") {
+      areaData = await this.getSaturdayDataTranslated();
+    } else {
+      areaData = await this.getSundayDataTranslated();
+    }
+
     return areaData[area] || [];
   }
 
   /**
-   * Find an event by time, area, day and locale
+   * Find an event by time and area - Server Component version
    */
-  static findEvent(
+  static async findEventServer(
     time: string,
     area: AreaType,
     day: "saturday" | "sunday",
-    locale: string = "es",
-  ): TimeSlot | undefined {
-    const areaEvents = this.getAreaEvents(area, day, locale);
+  ): Promise<TimeSlot | undefined> {
+    const areaEvents = await this.getAreaEventsServer(area, day);
     return areaEvents.find((slot) => slot.time === time && slot.event);
+  }
+
+  /**
+   * Migration helper: Check if an area has been migrated to translatable format
+   */
+  static isAreaMigrated(area: AreaType, day: "saturday" | "sunday"): boolean {
+    return area === "main-stage" && day === "saturday";
   }
 }

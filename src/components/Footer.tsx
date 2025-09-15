@@ -18,7 +18,7 @@ export const Footer = () => {
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:flex-nowrap">
             {footerLinks.map((link, index) => {
               const href = link.href;
-              const label = t(link.labelKey);
+              const label = t(link.labelKey as "privacy" | "legal");
 
               return (
                 <React.Fragment key={`footer-link-${index}`}>

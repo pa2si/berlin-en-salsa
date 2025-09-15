@@ -6,7 +6,7 @@ export * from "./types/timetable.types";
 // Export services
 export * from "./services/timetable.service";
 
-// Export area data (expand as we create more files)
+// Export translatable area data
 export { mainStageSaturday } from "./areas/main-stage/saturday";
 export { mainStageSunday } from "./areas/main-stage/sunday";
 export { danceWorkshopsSaturday } from "./areas/dance-workshops/saturday";

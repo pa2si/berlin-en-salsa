@@ -1,22 +1,21 @@
-import { TimeSlot } from "../../types/event.types";
+import { TranslatableTimeSlot } from "../../types/translatable.types";
 
-export const musicWorkshopsSunday: TimeSlot[] = [
+export const musicWorkshopsSunday: TranslatableTimeSlot[] = [
   { time: "12:30" },
   {
     time: "13:00",
-    event: "Campana Workshop",
+    event: "Timetable.events.musicWorkshops.sunday.campanaWorkshop",
     type: "workshop",
     actType: "music-workshop",
-    instructor: "Chucho Palma",
-    bio: "Percusionista venezolano radicado en Berlin, actual bongocero de la orquesta La Melodíca.",
-    description:
-      "Muestra de los fundamentos basicos de la campana de mano en los diferentes ritmos latinos donde ella se ejecuta. Muestra de como ejecutar un solo de campana utilizando los patrones de solos de la conga, el timbal y el bongo",
+    instructor: "Timetable.events.artists.chuchoPalma",
+    bio: "Timetable.events.descriptions.chuchoPalma",
+    description: "Timetable.events.descriptions.campanaWorkshop",
     image: "/chucho-palma.jpeg",
   },
   {
     time: "13:30",
-    event: "Campana Workshop",
-    instructor: "Chucho Palma",
+    event: "Timetable.events.musicWorkshops.sunday.campanaWorkshop",
+    instructor: "Timetable.events.artists.chuchoPalma",
     type: "workshop",
   },
   { time: "14:00" },
@@ -24,18 +23,17 @@ export const musicWorkshopsSunday: TimeSlot[] = [
   { time: "15:00" },
   {
     time: "15:30",
-    event: "Soneo Workshop",
-    instructor: "Harry Muñoz",
+    event: "Timetable.events.musicWorkshops.sunday.soneoWorkshop",
+    instructor: "Timetable.events.artists.harryMunoz",
     type: "workshop",
     actType: "music-workshop",
-    description:
-      "En una orquesta, una delantera; en una delantera, unos cantantes… ¡y entre ellos, los soneros! Estaremos hablando de esta especial categoría de intérprete dentro del género salsero. ¿Y quién sabe? De pronto, y de repente… ¡nos ponemos a sonear! Nos vemos el 20 de julio.",
+    description: "Timetable.events.descriptions.soneoWorkshop",
     image: "/harry-munoz.jpeg",
   },
   {
     time: "16:00",
-    event: "Soneo Workshop",
-    instructor: "Harry Muñoz",
+    event: "Timetable.events.musicWorkshops.sunday.soneoWorkshop",
+    instructor: "Timetable.events.artists.harryMunoz",
     type: "workshop",
   },
   { time: "16:30" },

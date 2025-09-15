@@ -1,13 +1,11 @@
-"use client";
-
 import React, { Suspense } from "react";
 import { Link } from "@/i18n/navigation";
 import { Footer } from "@/components/Footer";
-import TimetableContainer from "@/components/timetable/TimetableContainer";
-import { useTranslations } from "next-intl";
+import TimetablePage from "@/components/timetable/TimetablePage";
+import { getTranslations } from "next-intl/server";
 
-export default function TimetablePage() {
-  const t = useTranslations("Timetable.page");
+export default async function TimetablePageRoute() {
+  const t = await getTranslations("Timetable.page");
 
   return (
     <div className="bg-bes-amber relative flex min-h-screen flex-col">
@@ -71,7 +69,7 @@ export default function TimetablePage() {
             </div>
           }
         >
-          <TimetableContainer />
+          <TimetablePage />
         </Suspense>
       </div>
 

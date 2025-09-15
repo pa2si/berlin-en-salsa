@@ -15,7 +15,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Sections.SectionOne" });
+  const t = await getTranslations({
+    locale: locale as "de" | "es",
+    namespace: "Sections.SectionOne" as const,
+  });
 
   // Base URL for absolute URLs in metadata
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";

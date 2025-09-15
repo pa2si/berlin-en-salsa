@@ -46,7 +46,10 @@ export const addSubscriber = async (
   formData: FormData,
   locale: string,
 ): Promise<SubscriptionResponse> => {
-  const t = await getTranslations({ locale, namespace: "Subscription" });
+  const t = await getTranslations({
+    locale: locale as "de" | "es",
+    namespace: "Subscription" as const,
+  });
 
   let email = formData.get("email") as string;
   const firstName = formData.get("firstName") as string;

@@ -74,7 +74,7 @@ const LanguageSwitcher = () => {
 
     // Use next-intl's router to navigate to the same page in different locale
     // This will maintain the current path and just switch the locale
-    router.replace(pathname, { locale: lang });
+    router.replace(pathname, { locale: lang as "de" | "es" });
   };
 
   return (

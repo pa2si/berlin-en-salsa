@@ -14,7 +14,10 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "Privacy" });
+  const t = await getTranslations({
+    locale: locale as "de" | "es",
+    namespace: "Privacy" as const,
+  });
 
   const isGerman = locale === "de";
   const canonicalPath = isGerman ? "/datenschutz" : "/es/privacidad";

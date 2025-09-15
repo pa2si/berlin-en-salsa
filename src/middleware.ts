@@ -22,11 +22,15 @@ export default function middleware(request: NextRequest) {
   if (pathname === "/") {
     const acceptLanguage = request.headers.get("accept-language") || "";
 
-    // Check if the browser prefers German
-    const isGermanPreferred = acceptLanguage.toLowerCase().includes("de");
+    // Check if the browser prefers German - be more specific
+    const languages = acceptLanguage.toLowerCase();
+    const hasGerman =
+      languages.includes("de-") ||
+      languages.includes("de,") ||
+      languages.startsWith("de");
 
     // If not German, redirect to Spanish
-    if (!isGermanPreferred) {
+    if (!hasGerman) {
       const url = request.nextUrl.clone();
       url.pathname = "/es";
       return NextResponse.redirect(url);

@@ -359,6 +359,236 @@
       "biographyOf": "Biografie von",
       "comment": "Kommentar",
       "description": "Beschreibung"
+    },
+    "events": {
+      "mainStage": {
+        "saturday": {
+          "rodoElProfeSet": "Rodo Le Fou & El Profe",
+          "ecKubaSet": "EC Kuba DJ",
+          "alafiaLive": "Alafía con Iré",
+          "djFeikes": "DJ Feikes",
+          "tempoHavanna": "Tempo Havanna",
+          "necios": "Necios",
+          "laMelodica": "La Melodica",
+          "sacaSal": "Saca Sal"
+        },
+        "sunday": {
+          "floriWilber": "FLori & Wilber",
+          "laSonoraBerlin": "La Sonora Berlin",
+          "elPuma": "El Puma",
+          "burundanga": "Burundanga",
+          "anacaonaLaVecina": "Anacaona & La Vecina",
+          "cayeye": "Cayeye",
+          "bongo": "Bongo",
+          "berlinEnSalsaHostDJs": "Berlin En Salsa Host DJs"
+        }
+      },
+      "danceWorkshops": {
+        "saturday": {
+          "afroCubanDance": "Afro-Cuban Dance",
+          "sonCubano": "Son Cubano",
+          "salsaCalena": "Salsa Caleña"
+        },
+        "sunday": {
+          "newYorkOn2": "New York On 2",
+          "casinoCubano": "Casino Cubano"
+        }
+      },
+      "musicWorkshops": {
+        "saturday": {
+          "polyrhythmIntroduction": "Einführung in die Polyrhythmik",
+          "ritmoDeClave": "Ritmo de Clave"
+        },
+        "sunday": {
+          "campanaWorkshop": "Campana Workshop",
+          "soneoWorkshop": "Soneo Workshop"
+        }
+      },
+      "artists": {
+        "rodoLeFou": "Rodo Le Fou",
+        "elProfe": "El Profe",
+        "ecKuba": "EC Kuba",
+        "alafía": "Alafía con Iré",
+        "djFeikes": "DJ Feikes",
+        "tempoHavanna": "Tempo Havanna",
+        "necios": "Necios",
+        "laMelodica": "La Melodica",
+        "calamidadesLola": "Calamidades Lola",
+        "amuletoManuela": "Amuleto Manuela",
+        "helen": "Helen",
+        "yago": "Yago",
+        "jessica": "Jessica",
+        "julian": "Julian",
+        "flori": "FLori",
+        "wilber": "Wilber",
+        "laSonoraBerlin": "La Sonora Berlin",
+        "elPuma": "El Puma",
+        "burundanga": "Burundanga",
+        "lei": "Lei",
+        "ayna": "Ayna",
+        "anacaona": "Anacaona",
+        "laVecina": "La Vecina",
+        "cayeye": "Cayeye",
+        "bongo": "Bongo",
+        "dracaena": "Dracaena",
+        "elVago": "El Vago",
+        "elMelomanoAleman": "El Melómano Alemán",
+        "andrelux": "Andrelux",
+        "niya": "Niya",
+        "leidiana": "Leidiana",
+        "angelCandeaux": "Angel Candeaux",
+        "guillermoDiaz": "Guillermo Diaz",
+        "chuchoPalma": "Chucho Palma",
+        "harryMunoz": "Harry Muñoz",
+        "sarahBalzat": "Sarah Balzat",
+        "jessiVane": "Jessi y Vane",
+        "djChristian": "DJ Christian",
+        "raicezKoncretaz": "Raicez Koncretaz",
+        "franciscoAguabella": "Francisco Aguabella",
+        "djMc0ld": "DJ Mc0ld",
+        "paulWelchGuerra": "Paul Welch Guerra",
+        "suenaChelo": "Suena Chelo",
+        "grupoNiche": "Grupo Niche",
+        "enilceFeikes": "Enilce Feikes Álvarez"
+      },
+      "descriptions": {
+        "rodoLeFou": "DJ, Plattensammler und Liebhaber der tropischen Musik. Er ist Mitbegründer des Kollektivs La Noche und der Aviatrix Listening Sessions sowie Mitglied der Salsa-Band Cayeye und der Punkband Severo Esfínter.",
+        "elProfe": "El Profe ist das Alias von Raúl Payares, einem afrokolumbianischen Selector mit Wohnsitz in Berlin. Raúl ist leidenschaftlicher Vinylsammler und bringt seit über vier Jahren die Tanzflächen zum Beben – mit kraftvollen Sets voller Salsa Brava, traditioneller Cumbia, karibischer Rhythmen, klassischem Vallenato und afrikanischen Perlen aus den 60er-, 70er- und 80er-Jahren. Geboren in Cartagena, Kolumbien, und aufgewachsen zwischen Trommeln, Akkordeons und Picos, verbindet El Profe seine afro-kolumbianische Herkunft mit einer tiefgehenden, tanzbaren und ehrlichen Musikauswahl. Er ist der Gründer von Partys wie LA NOCHE und It's a SALSA BRAVA Thing – Veranstaltungen, die die alternative Szene Berlins geprägt haben und Räume schaffen, in denen afro-lateinamerikanische Musik in ihrer ursprünglichsten Form gefeiert wird: auf Vinyl und mit Herz. Jedes seiner Sets ist mehr als nur Musik zum Tanzen – es ist eine klangliche Reise, die Kulturen, Körper und Erinnerungen miteinander verbindet.",
+        "ecKuba": "Geboren in der Stadt, in der die Rumba entstand – Matanzas, Kuba – lebt er seit mehreren Jahren in Berlin und bringt dort das Beste der kubanischen Musik auf die Bühne. Er ist auf zahlreichen Events und Festivals vertreten, darunter das Festival Berlín Fiesta Elegante, Bérgamo en Salsa (Italien), der Berlin Salsa Congress und viele weitere – auch in bekannten sozialen Locations wie dem Soda Club Berlin. Als leidenschaftlicher Liebhaber der Musik seiner Heimat zeigt er zugleich großes Interesse an anderen Kulturen und deren musikalischen Ausdrucksformen. Für Berlín en Salsa hat er ein Set mit Timba, Salsa und Son Cubano vorbereitet.",
+        "alafía": "Im Jahr 2004 gründeten jugendliche Musiker in Havanna die Band Alafia con Iré aufgrund ihrer großen Leidenschaft für Musik und dem Wunsch, selbst die vielfältige Musik ihres Heimatlandes zu spielen. Mit Rasiel Almanza Cairo gelangte diese Idee 2022 nach Berlin, wo das Projekt in überwiegend neuer Besetzung wieder ins Leben gerufen wurde. Alafia con Iré spielt unter anderem afrokubanische Musik, insbesondere auch Rumba, und zudem eigene Kompositionen. Der Name der Band stammt aus der afrokubanischen Religion 'Regla de Ocha'. Alafia bedeutet auf Yoruba so viel wie Wohlbefinden und innerer Frieden und Iré stellt eine zusätzliche Verstärkung dar.",
+        "djFeikes": "DJ Feikes bereist seit über 35 Jahren die Karibik, immer mit offenen Ohren. Nach jeder Reise steht er vor demselben Dilemma: Wie bekommt man all diese Platten ins Flugzeug und sicher nach Berlin? Jeden ersten Mittwoch im Monat präsentieren DJ Feikes und sein Partner DJ Christian ihr 'Salsa Café' im Club 'wilder als erwartet' gegenüber dem Nordbahnhof. Diese beiden Musikbegeisterten bieten ihrem Publikum eine exquisite Auswahl aus ihrer umfangreichen Plattensammlung: von kubanischen Klassikern der 50er Jahre – mit Mambo, Danzón und Charanga – über die energiegeladene 'Salsa Callejera' aus dem New York der 60er Jahre, die kraftvolle orquestrierte 'Salsa Brava' der 70er Jahre, die melodischere Salsa der 80er Jahre bis hin zu den romantischen Klängen der 90er Jahre. Außerdem erklingen auch andere afrokaribische Rhythmen wie kolumbianische Cumbia, dominikanischer Merengue oder sogar afrikanische Salsa mit kubanischen Wurzeln. Das Wichtigste: Die Musik soll dich erobern und den Swing spüren lassen!",
+        "tempoHavanna": "Tempo Havanna lässt die musikalische Seele Kubas erklingen, eingefangen in leidenschaftlichen Eigenkompositionen, modern und mit einem urban-kubanischen Stil. Lateinamerikanische Rhythmen, von Salsa und Son bis hin zu Bolero und Cha-Cha-Chá, bringen den Charme Havannas im Gepäck mit und stillen die Sehnsucht nach karibischer Leichtigkeit, Leidenschaft und Lebensfreude.",
+        "necios": "Aus den Tiefen von Nächten voller Cumbia-Rhythmen und 'Salsa-Fliesen' entstanden, verwandelte eine tiefe Liebe zur Musik drei Freunde in NECIOS. Ursprünglich aus Kolumbien und Ecuador stammend, hat dieses in Berlin ansässige Kollektiv von SOUND SELECTORS eine von Vinyl und Nadeln angetriebene Reise zum Leben erweckt. Ihre Sammlung ist eine faszinierende Fusion von Klängen, die die Breite und Länge Lateinamerikas umspannt und ihre tiefsten Wurzeln sowie neue elektronische Horizonte erkundet. 'Necio' oder 'Necia' ist jemand, der stur ist, der bis zum Äußersten für das geht, woran er wirklich glaubt. Auch wenn das bedeutet, nicht den Regeln zu folgen!",
+        "laMelodica": "La Melodica – Salsa Dura ohne Kompromisse! Zehn erstklassige Musiker, ein mitreißender Rhythmus und pure Energie: La Melodica repräsentiert Salsa Dura in ihrer kraftvollsten Form. Unter der Leitung des Pianisten Jonatan Morgenstern bringt die Band einen explosiven Sound auf die Bühne, mit kraftvollen Bläsern, virtuosen Perkussionen und einer Stimme, die das Publikum zum Tanzen mitreißt.",
+        "calamidadesLola": "Calamidades Lola ist eine Plattensammlerin und DJ/Selector, geboren und aufgewachsen in Barranquilla, einer Stadt an der karibischen Küste Kolumbiens mit einer kraftvollen Festkultur, wo Musik ein sicherer Weg zu Freude und Befreiung ist. Mit Wohnsitz in Berlin wird ein großer Teil ihrer Sammlung und musikalischen Auswahl von ihrer Migrationserfahrung geleitet.",
+        "amuletoManuela": "Amuleto Manuela ist eine kolumbianische Klangkünstlerin und DJ mit Wohnsitz in Berlin. In ihrer prozessbasierten Arbeit (Soundscapes, Klangskulpturen, kollektive Hörpraktiken und Radioprogramme) ist das Hören das Prinzip und entsteht als kontextuelle Antwort auf die Suche nach Begegnungsräumen. Sie behandelt Themen der Diaspora und Identität mit dem Wunsch, andere Formen des Bewohnens unserer kollektiven Lebenserfahrung zu verlernen und zu erinnern.",
+        "sacaSal": "Saca Sal ist ein Ritual in Form eines Klangraums, das auf der Tanzfläche stattfindet, wenn sich ein Kollektiv von Menschen versammelt, um zu tanzen und sich von den Echos und Rhythmen mitreißen zu lassen, die von ihren beiden Gastgeberinnen ausgewählt wurden.",
+        "afroCubanDance": "Afrokubanischer Tanz ist Wurzel, Körper und tiefe Verbindung zur Erde. Er entstand aus afrikanischen Traditionen, die nach Kuba gebracht wurden. In jedem Rumba-Schritt, jeder Torso-Bewegung und jedem spirituellen Ausdruck lebt seine Kraft. Er ist das rhythmische und körperliche Fundament vieler Salsa-Stile. Afrokubanisch zu tanzen heißt, die Wurzeln zu ehren.",
+        "sonCubano": "Son Cubano ist das elegante Herz der Salsa. Geboren im Osten Kubas, wo Trommeln und Saiten zusammenkamen, um Geschichten zu erzählen. Mit seinem sanften, fließenden Grundschritt gab der Son der Salsa ihre Struktur und ihren Geschmack. Ohne Son – keine Salsa.",
+        "salsaCalena": "Salsa, Sabor und Kontrolle - Aus der Welthauptstadt der Salsa, Cali, Kolumbien. Dieser Stil zeichnet sich durch seine Schnelligkeit und Präzision in den Schritten aus. Es ist ein dynamischer Stil, der sich auf Footwork, schnelle und kontinuierliche Drehungen charakteristisch für den Cali Style konzentriert. Jeder Schritt feiert die kulturelle Identität von Cali. Authentisch, kraftvoll und voller Leben!",
+        "newYorkOn2": "Präzision, Eleganz und Musikalität. Salsa im New York Style (On2) entstand im Big Apple, beeinflusst von Jazz, Mambo und der lateinamerikanischen Diaspora. Sie wird \"on2\", also auf den Zählzeiten 2 und 6, in einer Linie getanzt. Ein technischer und ausdrucksstarker Stil – ideal, um Geschichten mit dem Körper zu erzählen.",
+        "casinoCubano": "Mehr als Tanz – pure Lebensfreude! Das kubanische Casino ist ein geselliger Tanzstil aus Kuba, geprägt von Freude, karibischem Flair und kreisförmigen Bewegungen. Er wird paarweise und in der Rueda getanzt und betont Improvisation, Verbindung und die Energie von Son, Salsa und anderen afro-kubanischen Rhythmen. Pure Fiesta und kubanisches Flair in Bewegung!",
+        "niya": "Hallo zusammen! Ich bin Niya, geboren in Sofia, Bulgarien, wo meine tänzerische Reise mit Ballett, Modern Dance und Hip Hop begann. Später fand ich meine große Leidenschaft: Salsa – und ganz besonders Mambo. Als Mitglied eines Salsa-Teams durfte ich Bulgarien auf internationalen Festivals vertreten und sammelte dabei wertvolle Erfahrungen in Salsa, Bachata und Cha Cha Cha. Seit 2023 unterrichte ich in Berlin. In meinem Unterricht stehen Koordination, Bewegungsbewusstsein und technische Klarheit im Mittelpunkt. Was mir besonders am Herzen liegt: meine Begeisterung für Mambo weiterzugeben – und euch dabei zu unterstützen, eure eigene Liebe zur Musik zu entdecken. Ich freue mich darauf, euch beim Festival zu sehen und gemeinsam mit euch zu tanzen!",
+        "lei": "Schon als Kind interessierte er sich für künstlerische Ausdrucksformen und trat mit 15 Jahren in die Schule für Kunsterzieher in seiner Heimatstadt ein, mit dem Schwerpunkt Theater. Nach seinem Abschluss machte er sich als Show- und Varieté-Tänzer selbstständig und war seither in diesem Bereich tätig, bis er 2021 nach Deutschland zog. Hier arbeitet er als Lehrer für kubanische und lateinamerikanische Rhythmen in Berlin, tritt bei Veranstaltungen und Festivals auf und bereitet Paare für Hochzeiten und andere Anlässe vor und berät sie.",
+        "ayna": "Ayna wurde in Peru geboren und entdeckte schon in jungen Jahren ihre Leidenschaft für den Tanz durch traditionelle peruanische Tänze, insbesondere afro-peruanische Rhythmen. Nach ihrer Ankunft in Berlin verliebte sie sich in die kubanische Musik und widmet sich seither vor allem dem Casino und dem Son Cubano. In diesen Tänzen findet sie eine lebendige Ausdrucksform und eine tiefe kulturelle Verbundenheit.",
+        "angelCandeaux": "Angel Candeaux ist ein Kubaner aus Havanna, der den Rhythmus im Blut und die Neugier im Kopf trägt. Psychologe von Ausbildung und Perkussionist von Herzen, hat er Räume in Kuba, Europa und den USA durchquert und dabei afro-kubanische Tradition mit neuen Formen der Menschenverbindung vermischt. Seit 2006 lebt er in Berlin, wo er nicht nur Trommeln spielt: Er schafft Räume, damit Menschen sich begegnen, sich zuhören und ihren eigenen Rhythmus entdecken. Gründer des Projekts \"desapalencao\", Angel gehört zu denen, die glauben, dass Musik deinen Tag (und dein Leben) verändern kann und dass wir alle einen einzigartigen Puls haben, den wir zur Gruppe beitragen können.",
+        "chuchoPalma": "In Berlin lebender venezolanischer Perkussionist, derzeitiger Bongo-Spieler des Orchesters La Melodíca.",
+        "polyrhythmIntroduction": "Hast du dich jemals gefragt, wie verschiedene Rhythmen koexistieren und eine kraftvolle kollektive Erfahrung schaffen können? Dieser Workshop, geleitet von Angel Candeaux, ist eine Einladung, die Magie der afro-kubanischen Polyrhythmik und ihre Auswirkung auf menschliche Verbindungen zu entdecken. Polyrhythmik ist die Kunst, mehrere unabhängige Rhythmen zu überlagern und dabei einen klanglichen Reichtum und eine einzigartige Gruppenerfahrung zu schaffen. In der afro-kubanischen Tradition behält jede Trommel ihr eigenes Muster, aber zusammen schaffen sie einen musikalischen Dialog, der zum Zuhören, zur Konzentration und zur kollektiven Kreativität einlädt. Was wirst du im Workshop erleben? - Erforschung deines inneren Rhythmus: Lerne, dein eigenes Muster beizubehalten, während du der Gruppe zuhörst und mit ihr dialogisierst. - Authentische Verbindung: Gruppen-Percussion-Übungen, die Bindungen und nonverbale Kommunikation stärken. - Balance zwischen Struktur und Freiheit: Entdecke, wie du dem kollektiven Puls folgst und gleichzeitig wagst, das Muster zu durchbrechen, um deine Individualität auszudrücken. Angel Candeaux lädt dich ein, in die Polyrhythmik einzutauchen: eine Reise, bei der jeder Herzschlag zählt und die Summe der Unterschiede Harmonie schafft.",
+        "ritmoDeClave": "Salsa besteht, wie viele andere Genres, sowohl aus ihrer Instrumentierung und Interpretation als auch aus dem Zuhören und Tanzen. Für die Interpretation ist das Verständnis der Clave von grundlegender Bedeutung, da sich die gesamte Instrumentierung um sie dreht. Da die Clave die DNA der Salsa und vieler anderer Genres mit starkem afrikanischen Ursprung ist, ist sie eine fast unverzichtbare, aber vor allem sehr nützliche Ressource, um sie auf jeder Ebene und in jeder Form der Interaktion mit dem Genre zu verstehen. In diesem Workshop tauchen wir kurz in das bestgehütete Geheimnis der Salsa ein: die Clave. Das Ziel des Workshops ist es, ein grundlegendes aber wesentliches Verständnis zu vermitteln, um diese Musik, die wir so lieben, von einem viel vertrauteren und näheren Ort aus spielen, tanzen und hören zu können. Der Workshop richtet sich sowohl an Anfänger als auch an diejenigen ohne musikalische Ausbildung. Es wird empfohlen, jedes Percussion-Instrument mitzubringen, von Trommeln, Claves und Glocken bis hin zu Tassen, Pfannen und Holzlöffeln.",
+        "campanaWorkshop": "Demonstration der Grundlagen der Handglocke in den verschiedenen lateinamerikanischen Rhythmen, in denen sie gespielt wird. Zeigen, wie man ein Glocken-Solo ausführt unter Verwendung der Solo-Patterns von Conga, Timbal und Bongo.",
+        "soneoWorkshop": "In einem Orchester, eine Frontline; in einer Frontline, Sänger... und unter ihnen, die Soneros! Wir werden über diese spezielle Kategorie von Interpreten im Salsa-Genre sprechen. Und wer weiß? Plötzlich und unerwartet... fangen wir an zu sonear! Wir sehen uns am 20. Juli.",
+        "floriWilber": "FLori & Wilber sind ein dinamisches DJ-Duo aus Berlin, bekannt für ihre energiegeladenen Sets mit Salsa, Cumbia und anderen lateinamerikanischen Rhythmen.",
+        "laSonoraBerlin": "La Sonora Berlin ist eine Salsa-Band aus Berlin, die traditionelle lateinamerikanische Musik mit modernen Einflüssen verbindet.",
+        "elPuma": "El Puma ist ein erfahrener DJ und Musiksammler, der für seine authentischen Salsa-Sets bekannt ist.",
+        "burundanga": "8 Burundanguer-as- und -itos aus Kolumbien, Indien und Deutschland locken mit ihrer heißen Mischung aus Salsa , Merengue und Rumba jeden aus dem Sessel. Ergänzt mit Elementen aus Jazz und Flamenco präsentieren sie Bearbeitungen traditioneller Salsa - Arrangements. 1992 als reine Frauen Salsa Band gegründet, haben sie sich zu einer spannenden, multikulturellen und offenen Band entwickelt, die auf viele schöne Konzerte und Erlebnisse in verschiedenen Besetzungen zurückblicken kann. Vor der starken Formation aus versierten Musiker:Innen singt, tanzt, erzählt, scherzt und lacht Sonia Solarte - Dichterin und Sängerin aus Cali, der Salsa-Metropole Kolumbiens. Mit Doris Alzarte aus Medellin bringen die beiden Power Frauen die Lebensfreude Lateinamerikas nach Berlin! Besetzung: Sonia Solarte Voc Doris Alzarte Voc Susanne Schulz Piano, Violin Ramani Krishna Bass Philipp Beerwald Congas Doro Wesseling Drums Gisela Meßollen Trompete Tanja Becker Posaune",
+        "Anacaona": "Anacaona & La Vecina sind zwei talentierte DJanes, die die Berliner Salsa-Szene mit ihrer Musik bereichern.",
+        "laVecina": "La Vecina, melómana y musicóloga colombiana, es curiosa por explorar la historia de las migraciones musicales entre Abya Yala y África. Sus sets se centran en lo afrocaribeño, la cumbia, la salsa y otros ritmos que invitan a “echar paso” y evocan la riqueza de la diáspora africana en la música latina.",
+        "anacaonaLaVecina": "Para esta ocasión especial, ambas unirán fuerzas en una selección que explora las raíces africanas del universo de la salsa, presentes en ritmos como el afrocubano, oriza, plenas, bombas y mozambique. Así, rinden homenaje a estos sonidos de resistencia, portadores de saberes y memorias culturales.",
+        "cayeye": "Cayeye ist eine Band, die traditionelle kolumbianische und kubanische Rhythmen spielt.",
+        "bongo": "Bongo ist ein erfahrener DJ, der für seine vielfältigen lateinamerikanischen Sets bekannt ist.",
+        "berlinEnSalsaHostDJs": "Die Berlin En Salsa Host DJs sind die Veranstalter des Festivals und bringen ihre Leidenschaft für Salsa-Musik mit.",
+        "dracaena": "Dracaena ist DJ und Plattensammlerin, geboren in Cali, Kolumbien, und lebt heute in Berlin. Ihre Sets sind energiegeladen und fesselnd, mit einem besonderen Fokus auf kraftvolle Percussion- und Piano-Soli – gedacht sowohl zum Tanzen als auch zum aufmerksamen Zuhören. Ihr musikalisches Konzept dreht sich rund um Salsa und die Klänge der Diaspora, insbesondere afrokaribische, afrolateinamerikanische und lateinamerikanische Rhythmen. Sie ist ein aktives Mitglied der Berliner Sammler:innen-Community und Teil des Organisationsteams des Berlin en Salsa Festival. Dracaena hat außerdem an Talks und Panels teilgenommen – unter anderem mit DLD – und dort ihre Perspektive als DJ und Sammlerin im Spannungsfeld von Musik, Kultur und Identität geteilt.",
+        "elVago": "El Vago ist DJ, Plattensammler und Kulturschaffender mit Wohnsitz in Berlin. Seit mehreren Jahren ist er Co-Host der La Regla Party – einer der bekanntesten und beliebtesten Veranstaltungen der lateinamerikanischen Szene der Stadt. Aktuell ist er zudem Koordinator des Festivals Berlín en Salsa.",
+        "elMelomanoAleman": "Leidenschaftlicher Vinylsammler mit einem feinen Gehör für lateinamerikanische Rhythmen, hat er seit 2006 eine tiefe Verbindung zur kolumbianischen Musikkultur aufgebaut. Besonders die Salsa hat seine Aufmerksamkeit erregt und steht heute im Mittelpunkt seiner Sammlung. Der klassische Sound der 1950er bis 1970er Jahre lässt sein Blut in Wallung geraten – Jahrzehnte, in denen seiner Meinung nach das pure, lebendige Wesen dieser meisterhaften Mischung von Musikrichtungen liegt. Co-Founder of El Golpe & resident DJ at Salsa Pal Pueb",
+        "andrelux": "@andreluxx ist ein DJ und Sammler, der seit über 20 Jahren Räume schafft, in denen die lateinamerikanische Kultur in Deutschland gefördert und gefeiert wird. Er hat natürlich längst den Überblick verloren, wie viele Partys er veranstaltet hat, ist aber weiterhin davon überzeugt, dass die Rumba der ideale Schauplatz ist, um Menschen zusammenzubringen und Brücken zwischen den Kulturen zu schlagen. Aktuell ist er Teil des Teams von @berlinensalsa und hat dessen visueller Identität Leben und Form gegeben.",
+        "helen": "Helen unterrichtet seit über fünf Jahren in Berlin und spezialisiert sich auf Rueda de Casino. Ihre Leidenschaft für kubanische Kultur und Tanz bereichert ihre außergewöhnlichen Fähigkeiten als Lehrerin und Tänzerin enorm. Auch die Rumba nimmt einen besonderen Platz in ihrem Herzen ein, da sie sich dort elegant und feminin ausdrücken kann und die Weiblichkeit feiert. Helen setzt sich dafür ein, ihre Schüler zu stärken, das Tanzen als gemeinsame Erfahrung zwischen Partnern zu schätzen und zu genießen, bei der sowohl Führende als auch Folgende gleichermaßen beitragen. Sie entwickelt weiterhin spezifische Prinzipien des 'aktiven Folgens', um die Idee zu fördern, dass Folgende die gleiche Anerkennung innerhalb der Berliner Tanzgemeinschaft verdienen. Ihr Stil wurde hauptsächlich von Sofía de Endaya, Sassan AliValiollahi und Luis Duarte beeinflusst.",
+        "yago": "Yago ist bekannt für seinen spontanen und improvisierten Stil auf der Tanzfläche. Für ihn ist es sehr wichtig, ein präziser und rücksichtsvoller Führender zu sein, um seiner Partnerin eine gute Tanzerfahrung zu bieten. Dank seiner Ausbildung in Sportwissenschaften bietet Yago klare und fokussierte Erklärungen und identifiziert schnell körperliche Einschränkungen, um effektive Korrekturen anzubieten. Er unterrichtet mit viel Leidenschaft und glaubt, dass Tanzen die höchste Reinigung der Seele ist. Seiner Meinung nach erreicht eine Person, wenn sie vollständig in Musik und Tanz vertieft ist, den höchsten Zustand der Präsenz. Yago hat seine Fähigkeiten unter der Anleitung anerkannter internationaler Lehrer wie Cristian Mauricio, Luis Duarte und Leiván García, Direktor des Conjunto Folklórico Nacional, entwickelt.",
+        "jessica": "Jessica stammt aus Cali, Kolumbien, und tanzt seit über 10 Jahren professionell und gesellschaftlich Salsa Caleña. In Berlin bringt sie die Essenz der Salsa über das Klassenzimmer hinaus: Sie unterrichtet nicht nur, sondern stellt auch die Salsa Caleña als lebendigen kulturellen Ausdruck vor und teilt sie, wie sie in Cali gelebt wird. Sie hatte die Gelegenheit, bei Konzerten von Grupo Niche und Gilberto Santa Rosa in Berlin aufzutreten, Salsa Caleña-Kurse beim Berlin Salsa Congress zu geben und Teil des Organisationsteams der Veranstaltung Berlin en Salsa zu sein.",
+        "julian": "Julián ist ein leidenschaftlicher Tänzer und Lehrer für Salsa Caleña mit über sechs Jahren Erfahrung und mehr als drei Jahren Unterrichtserfahrung in Berlin. Er hat an zahlreichen Festivals und Veranstaltungen in ganz Deutschland teilgenommen. Ursprünglich aus Kolumbien stammend, unterrichtet er in der Dolce Vita Dance Studio Akademie und konzentriert sich auf schnelle Fußarbeit und Führungs- und Folgetechnik. Mehr als nur Schritte: Seine Kurse konzentrieren sich auf Verbindung, Absicht und Musikalität, wobei er immer die Rhythmen und die Kultur Lateinamerikas ehrt und fördert.",
+        "leidiana": "Leidiana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",
+        "roger": "Roger",
+        "leidianaRoger": "Roger und Leidiana sind ein Duo kubanischer Tänzer, die dafür anerkannt sind, Tradition mit Moderne bei jeder Aufführung zu verschmelzen Sein einzigartiger Stil vereint die Stärke der urbanen Bewegung, die Eleganz des traditionellen kubanischen Tanzes und die ausdrucksstarke Tiefe des Afro-Contemporanen"
+      },
+      "bios": {
+        "leidiana": "Leidiana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",
+        "helen": "Helen unterrichtet seit über fünf Jahren in Berlin und spezialisiert sich auf Rueda de Casino. Ihre Leidenschaft für kubanische Kultur und Tanz bereichert ihre außergewöhnlichen Fähigkeiten als Lehrerin und Tänzerin enorm. Auch die Rumba nimmt einen besonderen Platz in ihrem Herzen ein, da sie sich dort elegant und feminin ausdrücken kann und die Weiblichkeit feiert.",
+        "yago": "Yago ist bekannt für seinen spontanen und improvisierten Stil auf der Tanzfläche. Für ihn ist es sehr wichtig, ein präziser und rücksichtsvoller Führender zu sein, um seiner Partnerin eine gute Tanzerfahrung zu bieten.",
+        "julian": "Julián ist ein leidenschaftlicher Tänzer und Lehrer für Salsa Caleña mit über sechs Jahren Erfahrung und mehr als drei Jahren Unterrichtserfahrung in Berlin.",
+        "niya": "Hallo zusammen! Ich bin Niya, geboren in Sofia, Bulgarien, wo meine tänzerische Reise mit Ballett, Modern Dance und Hip Hop begann. Später fand ich meine große Leidenschaft: Salsa – und ganz besonders Mambo.",
+        "lei": "Schon als Kind interessierte er sich für künstlerische Ausdrucksformen und trat mit 15 Jahren in die Schule für Kunsterzieher in seiner Heimatstadt ein, mit dem Schwerpunkt Theater.",
+        "chuchoPalma": "In Berlin lebender venezolanischer Perkussionist, derzeitiger Bongo-Spieler des Orchesters La Melodíca.",
+        "harryMunoz": "Harry Muñoz ist ein erfahrener Musiker und Lehrer für lateinamerikanische Perkussion und Gesang.",
+        "angelCandeaux": "Angel Candeaux ist ein Kubaner aus Havanna, der den Rhythmus im Blut und die Neugier im Kopf trägt. Psychologe von Ausbildung und Perkussionist von Herzen."
+      },
+      "salsaTalks": {
+        "saturday": {
+          "sarahBalzatTalk": {
+            "title": "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo.",
+            "description": "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria."
+          },
+          "jessiVaneTalk": {
+            "title": "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
+            "description": "¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los \"estilos\" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos."
+          },
+          "aviatrixChristian": {
+            "title": "Aviatrix & DJ Christian",
+            "artist": "Eddie Palmieri",
+            "record": "Echando Pa'lante (Straight Ahead)",
+            "bio": "DJ Christian ist Mitbegründer von @salsacafeberlin, wo er gemeinsam mit @hijodesiboney jeden ersten Mittwoch im Monat die Tanzfläche zum Beben bringt. Seine Liebe zu den lateinamerikanischen Rhythmen entspringt seiner engen Verbindung zur Latinx-Community in Berlin. Dort engagiert er sich aktiv in Initiativen und Räumen der lateinamerikanischen Diaspora – inspiriert von seiner interkulturellen Familiengeschichte. Obwohl er alle Musikrichtungen schätzt, fühlt er sich besonders zur Musik mit afrikanischen Wurzeln hingezogen – deren Spuren sich in fast jedem Genre wiederfinden lassen.",
+            "comment": "Ich habe das Album \\\"Echando Pa'lante (Straight Ahead)\\\" ausgewählt, weil es ein bedeutendes Werk in der Geschichte der Salsa ist und den innovativen Stil von Eddie Palmieri sowie das Talent seiner Band zeigt. Veröffentlicht im Jahr 1964, wird das Album für seine kraftvollen Rhythmen, komplexen Arrangements und den unverwechselbaren Klang der sogenannten \\\"Trombanga\\\" gefeiert – einer Besetzung, die Posaunen in die traditionelle lateinamerikanische Musik einführte."
+          },
+          "aviatrixRaicez": {
+            "title": "Aviatrix & Raicez Koncretaz",
+            "artist": "Francisco Aguabella",
+            "record": "Hitting Hard",
+            "bio": "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen cómo objetivo no dejar morir el formato análogo y mantenerlo vivo.",
+            "comment": "Se escogió este disco por la gran variedad de Ritmos que pueden Converger en una producción músical y que La salsa así como muchos géneros tiene muchas influencias de otros géneros musicales"
+          },
+          "aviatrixMc0ld": {
+            "title": "Aviatrix & DJ Mc0ld",
+            "artist": "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
+            "record": "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
+            "bio": "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mi. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
+            "comment": "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla"
+          },
+          "salsancoTalk": {
+            "title": "Salsancó und die Anfänge der Salsa in Berlin",
+            "guests": "Eduardo Villegas & Rolo Rodríguez",
+            "description": "Eduardo Villegas y Rolo Rodriguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida."
+          }
+        },
+        "sunday": {
+          "aviatrixSuenaChelo": {
+            "title": "Aviatrix & Suena Chelo",
+            "artist": "Willie Colon & Hector Lavoe",
+            "record": "The Hustler",
+            "bio": "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs"
+          },
+          "aviatrixDracaena": {
+            "title": "Aviatrix & Dracaena",
+            "artist": "Grupo Niche",
+            "record": "Cielo de Tambores",
+            "bio": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile.",
+            "comment": "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina."
+          },
+          "aviatrixEnilce": {
+            "title": "Aviatrix & Enilce Feikes Álvarez",
+            "artist": "Joe Arroyo",
+            "record": "Me Le Fugue A La Candela",
+            "bio": "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
+            "comment": "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozona y admiradora profunda de Joe Arroyo."
+          },
+          "noLeLlamenSalsa": {
+            "title": "No Le llamen salsa a mi son",
+            "presenters": "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
+            "description": "El tulo de la canción \\\"No le llamen Salsa a mi Son... dile música Cubana\\\" del cantante cubano Monguito \\\"El Único\\\" lo deja claro: la 'Salsa' no fue en un principio más que una etqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimento colectvo de muchas comunidades latnas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creatvos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el Salsomano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
+          }
+        }
+      },
+      "danceShows": {
+        "afroCuban": "Afro-Cuban Dance Show",
+        "sonCubano": "Son Cubano Dance Show",
+        "salsaCaleña": "Salsa Caleña Dance Show",
+        "nyOn2": "NY On 2 Dance Show",
+        "casinoCubano": "Casino Cubano Dance Show"
+      },
+      "dancers": {
+        "leidianaRoger": "Leidiana & Roger, Laura & Kimberly",
+        "helenYago": "Helen & Yago",
+        "jessicaJulian": "Jessica & Julian",
+        "niya": "Niya",
+        "leiAyna": "Lei & Ayna"
+      }
     }
   }
 }
