@@ -120,6 +120,7 @@ export default function TimeSlot({
       const hasDanceShowSlide = slides.some(
         (slide) =>
           slide.dancerName === showSlot.dancers ||
+          slide.dancer || // Check for single dancer field
           slide.dancerOne || // Consider any slide with dancer info
           (slide.dancerOne && slide.dancerTwo),
       );

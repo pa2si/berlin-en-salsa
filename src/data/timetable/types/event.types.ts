@@ -8,13 +8,13 @@ export interface SlideDetails {
   djName?: string;
   djOne?: string;
   djTwo?: string;
-  djOneDescription?: string;
-  djTwoDescription?: string;
+  djOneBio?: string;
+  djTwoBio?: string;
   bandName?: string;
   dancerOne?: string;
   dancerTwo?: string;
-  dancerOneDescription?: string;
-  dancerTwoDescription?: string;
+  dancerOneBio?: string;
+  dancerTwoBio?: string;
   description?: string;
 }
 

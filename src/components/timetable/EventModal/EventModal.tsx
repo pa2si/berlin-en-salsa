@@ -133,6 +133,20 @@ export default function EventModal({
                 </div>
               )}
 
+            {/* Bio section for main stage DJ sets */}
+            {selectedEventDetails.type === "main" &&
+              selectedEventDetails.actType === "DJ Set" &&
+              selectedEventDetails.bio && (
+                <div className="mb-6">
+                  <h4 className="text-bes-red mb-2 text-xl font-bold">
+                    Biografía
+                  </h4>
+                  <p className="text-xl text-gray-700 md:leading-relaxed">
+                    {selectedEventDetails.bio}
+                  </p>
+                </div>
+              )}
+
             {/* Description section for dance workshops */}
             {selectedEventDetails.actType === "dance-workshop" &&
               selectedEventDetails.description && (
@@ -251,7 +265,9 @@ export default function EventModal({
                 {selectedEventDetails.bio && (
                   <div className="mb-6">
                     <h4 className="text-bes-red mb-2 text-xl font-bold">
-                      {t("modal.biographyOf")} {selectedEventDetails.presenter}
+                      {t("modal.biographyOf")}{" "}
+                      {selectedEventDetails.presenter ||
+                        selectedEventDetails.guest}
                     </h4>
                     <p className="text-xl text-gray-700 md:leading-relaxed">
                       {selectedEventDetails.bio}

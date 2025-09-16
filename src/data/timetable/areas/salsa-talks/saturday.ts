@@ -82,12 +82,11 @@ export const salsaTalksSaturday: TranslatableTimeSlot[] = [
     guest: "Timetable.events.artists.djMc0ld",
     artist: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.artist",
     record: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.record",
-    image: "/joe-arroyo.jpg",
     bio: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.bio",
     comment: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.comment",
     slides: [
       {
-        image: "/joe-arroyo.jpg",
+        image: "/frankie-dante.jpg",
       },
       {
         image: "/dj-mc0ld.webp",

@@ -37,13 +37,13 @@ export const mainStageSunday: TranslatableTimeSlot[] = [
     slides: [
       {
         image: "/sonora-berlin.webp",
-        djName: "Timetable.events.artists.laSonoraBerlin", // Using djName for band name
+        bandName: "Timetable.events.artists.laSonoraBerlin",
         description: "Timetable.events.descriptions.laSonoraBerlin",
       },
       {
         image: "/niya.webp",
-        djName: "Timetable.events.artists.niya", // Using djName for dancer name
-        description: "Timetable.events.descriptions.niya",
+        dancer: "Timetable.events.artists.niya",
+        bio: "Timetable.events.bios.niya",
       },
     ],
   },
@@ -52,7 +52,7 @@ export const mainStageSunday: TranslatableTimeSlot[] = [
     event: "Timetable.events.mainStage.sunday.elPuma",
     actType: "DJ Set",
     type: "main",
-    description: "Timetable.events.descriptions.elPuma",
+    bio: "Timetable.events.bios.elPuma",
     image: "/el-puma.webp",
   },
   {
@@ -80,14 +80,15 @@ export const mainStageSunday: TranslatableTimeSlot[] = [
     slides: [
       {
         image: "/burundanga.webp",
-        djName: "Timetable.events.artists.burundanga", // Using djName for band name
+        bandName: "Timetable.events.artists.burundanga", // Using bandName for band name
         description: "Timetable.events.descriptions.burundanga",
       },
       {
         image: "/lei-ayna.webp",
-        dancerOne: "Timetable.events.descriptions.lei",
-        dancerTwo: "Timetable.events.descriptions.ayna",
-        description: "Lei & Ayna - Casino Cubano Dance Show",
+        dancerOne: "Timetable.events.artists.lei",
+        dancerTwo: "Timetable.events.artists.ayna",
+        dancerOneBio: "Timetable.events.bios.lei",
+        dancerTwoBio: "Timetable.events.bios.ayna",
       },
     ],
   },
@@ -102,9 +103,10 @@ export const mainStageSunday: TranslatableTimeSlot[] = [
         djOne: "Timetable.events.artists.anacaona",
         djTwo: "Timetable.events.artists.laVecina",
         image: "/la-vecina-anacaona.webp",
-        djOneDescription: "Timetable.events.descriptions.anacaona",
-        djTwoDescription: "Timetable.events.descriptions.laVecina",
+        djOneBio: "Timetable.events.bios.anacaona",
+        djTwoBio: "Timetable.events.bios.laVecina",
         description: "Timetable.events.descriptions.anacaonaLaVecina",
+        showCombinedDescription: true,
       },
     ],
   },
@@ -135,7 +137,7 @@ export const mainStageSunday: TranslatableTimeSlot[] = [
     event: "Timetable.events.mainStage.sunday.bongo",
     actType: "DJ Set",
     type: "main",
-    description: "Timetable.events.descriptions.bongo",
+    bio: "Timetable.events.bios.bongo",
     image: "/dj-bongo.webp",
   },
   {

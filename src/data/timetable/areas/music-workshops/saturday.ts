@@ -8,8 +8,8 @@ export const musicWorkshopsSaturday: TranslatableTimeSlot[] = [
     type: "workshop",
     actType: "music-workshop",
     instructor: "Timetable.events.artists.angelCandeaux",
-    bio: "Timetable.events.descriptions.angelCandeaux",
     description: "Timetable.events.descriptions.polyrhythmIntroduction",
+    bio: "Timetable.events.bios.angelCandeaux",
     image: "/angel-candeaux.webp",
   },
   {

@@ -10,13 +10,13 @@ interface SlideContent {
   bandName?: string;
   dancerOne?: string;
   dancerTwo?: string;
-  dancerOneDescription?: string;
-  dancerTwoDescription?: string;
+  dancerOneBio?: string;
+  dancerTwoBio?: string;
   combinedDancersDescription?: string;
   djOne?: string;
   djTwo?: string;
-  djOneDescription?: string;
-  djTwoDescription?: string;
+  djOneBio?: string;
+  djTwoBio?: string;
   descriptionTwoDjsTogether?: string;
   genreDescription?: string;
 }

@@ -5,19 +5,22 @@ import { useTranslations } from "next-intl";
 interface SlideContent {
   image?: string;
   description?: string;
+  bio?: string;
   djName?: string;
+  dancer?: string; // Single dancer field
   dancerName?: string;
   bandName?: string;
   dancerOne?: string;
   dancerTwo?: string;
-  dancerOneDescription?: string;
-  dancerTwoDescription?: string;
+  dancerOneBio?: string;
+  dancerTwoBio?: string;
   combinedDancersDescription?: string;
   djOne?: string;
   djTwo?: string;
-  djOneDescription?: string;
-  djTwoDescription?: string;
+  djOneBio?: string;
+  djTwoBio?: string;
   descriptionTwoDjsTogether?: string;
+  showCombinedDescription?: boolean; // Flag to show combined description with special styling
   genreDescription?: string;
 }
 
@@ -37,6 +40,7 @@ export default function EventSlider({
   onTouchEnd,
 }: EventSliderProps) {
   const t = useTranslations("Timetable");
+  const tGlobal = useTranslations(); // Access global translations
   const currentSlide = slides[currentSlideIndex];
 
   return (
@@ -54,10 +58,12 @@ export default function EventSlider({
         {/* Band or Dancer Name if available - no DJ names since they're already in the DJs field */}
         {(currentSlide?.dancerName ||
           currentSlide?.bandName ||
+          currentSlide?.dancer ||
           currentSlide?.dancerOne) && (
           <h4 className="text-bes-red mb-3 text-xl font-bold">
             {currentSlide?.dancerName ||
               currentSlide?.bandName ||
+              currentSlide?.dancer ||
               (currentSlide?.dancerOne
                 ? currentSlide?.dancerTwo
                   ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
@@ -73,6 +79,7 @@ export default function EventSlider({
               src={currentSlide.image}
               alt={
                 currentSlide.dancerName ||
+                currentSlide.dancer ||
                 (currentSlide.dancerOne
                   ? currentSlide.dancerTwo
                     ? `${currentSlide.dancerOne} ${t("modal.and")} ${currentSlide.dancerTwo}`
@@ -87,37 +94,51 @@ export default function EventSlider({
         )}
 
         {/* Description Section */}
-        {/* Regular description */}
-        {currentSlide?.description && (
+        {/* Regular description - only show if not using combined description */}
+        {currentSlide?.description &&
+          !currentSlide?.showCombinedDescription && (
+            <div className="mb-4">
+              <h4 className="text-bes-red mb-2 text-xl font-bold">
+                {t("modal.description")}
+              </h4>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide.description}
+              </p>
+            </div>
+          )}
+
+        {/* Bio section for individual DJ/artist */}
+        {currentSlide?.bio && (
           <div className="mb-4">
             <h4 className="text-bes-red mb-2 text-xl font-bold">
-              {t("modal.description")}
+              {currentSlide?.djName
+                ? `${t("modal.biographyOf")} ${currentSlide.djName}`
+                : "Biografía"}
             </h4>
             <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide.description}
+              {currentSlide.bio}
             </p>
           </div>
         )}
-
         {/* Dancer descriptions */}
-        {currentSlide?.dancerOne && currentSlide?.dancerOneDescription && (
+        {currentSlide?.dancerOne && currentSlide?.dancerOneBio && (
           <div className="mb-4">
             <h5 className="text-bes-red mb-2 text-xl font-bold">
               {currentSlide?.dancerOne}
             </h5>
             <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.dancerOneDescription}
+              {currentSlide?.dancerOneBio}
             </p>
           </div>
         )}
 
-        {currentSlide?.dancerTwo && currentSlide?.dancerTwoDescription && (
+        {currentSlide?.dancerTwo && currentSlide?.dancerTwoBio && (
           <div className="mb-4">
             <h5 className="text-bes-red mb-2 text-xl font-bold">
               {currentSlide?.dancerTwo}
             </h5>
             <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.dancerTwoDescription}
+              {currentSlide?.dancerTwoBio}
             </p>
           </div>
         )}
@@ -125,8 +146,8 @@ export default function EventSlider({
         {/* Combined Dancers Description - only show if individual descriptions aren't available */}
         {currentSlide?.dancerOne &&
           currentSlide?.combinedDancersDescription &&
-          !currentSlide?.dancerOneDescription &&
-          (!currentSlide?.dancerTwo || !currentSlide?.dancerTwoDescription) && (
+          !currentSlide?.dancerOneBio &&
+          (!currentSlide?.dancerTwo || !currentSlide?.dancerTwoBio) && (
             <div className="mb-4">
               <h5 className="text-bes-red mb-2 text-xl font-bold">
                 {currentSlide?.dancerTwo
@@ -140,27 +161,42 @@ export default function EventSlider({
           )}
 
         {/* DJ descriptions */}
-        {currentSlide?.djOne && currentSlide?.djOneDescription && (
+        {currentSlide?.djOne && currentSlide?.djOneBio && (
           <div className="mb-4">
             <h5 className="text-bes-red mb-2 text-xl font-bold">
               {currentSlide?.djOne}
             </h5>
             <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.djOneDescription}
+              {currentSlide?.djOneBio}
             </p>
           </div>
         )}
 
-        {currentSlide?.djTwo && currentSlide?.djTwoDescription && (
+        {currentSlide?.djTwo && currentSlide?.djTwoBio && (
           <div className="mb-4">
             <h5 className="text-bes-red mb-2 text-xl font-bold">
               {currentSlide?.djTwo}
             </h5>
             <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.djTwoDescription}
+              {currentSlide?.djTwoBio}
             </p>
           </div>
         )}
+
+        {/* Combined Description with Special Styling */}
+        {currentSlide?.showCombinedDescription &&
+          currentSlide?.description &&
+          currentSlide?.djOne &&
+          currentSlide?.djTwo && (
+            <div className="from-bes-amber/15 to-bes-red/10 border-bes-red mt-6 mb-4 rounded-lg border-l-4 bg-gradient-to-r p-4">
+              <h5 className="text-bes-red mb-3 text-xl font-bold">
+                {`${currentSlide.djOne} & ${currentSlide.djTwo} ${tGlobal("Timetable.modal.together" as never)}`}
+              </h5>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide.description}
+              </p>
+            </div>
+          )}
 
         {/* Combined DJs Description */}
         {currentSlide?.descriptionTwoDjsTogether && (

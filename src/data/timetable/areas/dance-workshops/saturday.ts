@@ -50,7 +50,7 @@ export const danceWorkshopsSaturday: TranslatableTimeSlot[] = [
     actType: "dance-workshop",
     type: "workshop",
     instructor: "Timetable.events.artists.julian",
-    bio: "Timetable.events.bios.julian",
+    bio: "Timetable.events.descriptions.julian",
     description: "Timetable.events.descriptions.salsaCalena",
     image: "/julian.webp",
   },

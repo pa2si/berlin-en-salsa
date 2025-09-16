@@ -118,7 +118,7 @@ export const saturdayTimetableData: Column[] = [
             image: "/yago-helen.webp",
             dancerOne: "Helen",
             dancerTwo: "Yago",
-            dancerOneDescription:
+            dancerOneBio:
               "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de “seguimiento activo” para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofía de Endaya, Sassan AliValiollahi y Luis Duarte.",
             dancerTwoDescription:
               "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
@@ -166,9 +166,9 @@ export const saturdayTimetableData: Column[] = [
             image: "/jessi-julian.webp",
             dancerOne: "Jessica",
             dancerTwo: "Julian",
-            dancerOneDescription:
+            dancerOneBio:
               "Jessica es de Cali, Colombia, y lleva más de 10 años bailando salsa caleña de forma profesional y social. En Berlín lleva la esencia de la salsa más allá del aula: no solo enseña, sino que también expone y comparte la salsa caleña como una expresión cultural viva, tal como se vive en Cali. Ha tenido la oportunidad de participar abriendo los conciertos del Grupo Niche y Gilberto Santa Rosa en Berlín, dar clases de salsa caleña en el Congreso de Salsa de Berlín y formar parte del equipo organizador del evento Berlin en Salsa.",
-            dancerTwoDescription:
+            dancerTwoBio:
               "Julián es un apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín. Ha participado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en la academia Dolce Vita Dance Studio, enfocándose en el trabajo de pies rápido y la técnica de guía y seguimiento. Más que solo pasos: sus clases se centran en la conexión, la intención y la musicalidad, siempre honrando y promoviendo los ritmos y la cultura de América Latina.",
           },
         ],

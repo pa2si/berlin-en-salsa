@@ -7,25 +7,25 @@ import { TranslatableTimeSlot } from "../../types/translatable.types";
 export const mainStageSaturday: TranslatableTimeSlot[] = [
   {
     time: "12:30",
-    event: "Timetable.events.mainStage.saturday.rodoElProfeSet",
+    event: "Timetable.events.mainStage.saturday.rodoElProfe",
     actType: "DJ Set",
     type: "main",
     slides: [
       {
         djName: "Timetable.events.artists.rodoLeFou",
         image: "/rodo-le-fou.webp",
-        description: "Timetable.events.descriptions.rodoLeFou",
+        bio: "Timetable.events.bios.rodoLeFou",
       },
       {
         djName: "Timetable.events.artists.elProfe",
         image: "/el-profe.webp",
-        description: "Timetable.events.descriptions.elProfe",
+        bio: "Timetable.events.bios.elProfe",
       },
     ],
   },
   {
     time: "13:00",
-    event: "Timetable.events.mainStage.saturday.rodoElProfeSet",
+    event: "Timetable.events.mainStage.saturday.rodoElProfe",
     actType: "DJ Set",
     type: "main",
   },
@@ -35,7 +35,7 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
     actType: "DJ Set",
     type: "main",
     image: "/ec-kuba.webp",
-    description: "Timetable.events.descriptions.ecKuba",
+    bio: "Timetable.events.bios.ecKuba",
   },
   {
     time: "14:00",
@@ -46,13 +46,13 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
   { time: "14:30" },
   {
     time: "15:00",
-    event: "Timetable.events.mainStage.saturday.alafiaLive",
+    event: "Timetable.events.mainStage.saturday.alfiaConIre",
     actType: "Live",
     type: "main",
   },
   {
     time: "15:30",
-    event: "Timetable.events.mainStage.saturday.alafiaLive",
+    event: "Timetable.events.mainStage.saturday.alfiaConIre",
     actType: "Live",
     type: "main",
     hasShow: true,
@@ -61,12 +61,12 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
     slides: [
       {
         image: "/alafia-con-ire.webp",
-        djName: "Timetable.events.artists.alafía", // Using djName for band name (reusing the field)
-        description: "Timetable.events.descriptions.alafía",
+        bandName: "Timetable.events.artists.alafiaConIre",
+        description: "Timetable.events.descriptions.alafiaConIre",
       },
       {
-        dancerOne: "Timetable.events.descriptions.leidiana",
-        dancerTwo: "Timetable.events.descriptions.roger",
+        dancerOne: "Timetable.events.artists.leidiana",
+        dancerTwo: "Timetable.events.artists.roger",
         image: "/leidiana-roger.webp",
         description: "Timetable.events.descriptions.leidianaRoger",
       },
@@ -78,7 +78,7 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
     actType: "DJ Set",
     type: "main",
     image: "/dj-feikes.webp",
-    description: "Timetable.events.descriptions.djFeikes",
+    bio: "Timetable.events.bios.djFeikes",
   },
   {
     time: "16:30",
@@ -104,14 +104,15 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
     slides: [
       {
         image: "/tempo-havana.webp",
-        djName: "Timetable.events.artists.tempoHavanna", // Using djName for band name
+        bandName: "Timetable.events.artists.tempoHavanna", // Using bandName for band name
         description: "Timetable.events.descriptions.tempoHavanna",
       },
       {
-        dancerOne: "Timetable.events.descriptions.helen",
-        dancerTwo: "Timetable.events.descriptions.yago",
+        dancerOne: "Timetable.events.artists.helen",
+        dancerTwo: "Timetable.events.artists.yago",
+        dancerOneBio: "Timetable.events.bios.helen",
+        dancerTwoBio: "Timetable.events.bios.yago",
         image: "/yago-helen.webp",
-        description: "Helen & Yago - Son Cubano Dance Show",
       },
     ],
   },
@@ -147,14 +148,15 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
     slides: [
       {
         image: "/la-melodica.webp",
-        djName: "Timetable.events.artists.laMelodica", // Using djName for band name
+        bandName: "Timetable.events.artists.laMelodica", // Using bandName for band name
         description: "Timetable.events.descriptions.laMelodica",
       },
       {
-        dancerOne: "Timetable.events.descriptions.jessica",
-        dancerTwo: "Timetable.events.descriptions.julian",
+        dancerOne: "Timetable.events.artists.jessica",
+        dancerTwo: "Timetable.events.artists.julian",
         image: "/jessi-julian.webp",
-        description: "Jessica & Julian - Salsa Caleña Dance Show",
+        dancerOneBio: "Timetable.events.bios.jessica",
+        dancerTwoBio: "Timetable.events.bios.julian",
       },
     ],
   },
@@ -170,8 +172,8 @@ export const mainStageSaturday: TranslatableTimeSlot[] = [
         description: "Timetable.events.descriptions.sacaSal",
         djOne: "Timetable.events.artists.calamidadesLola",
         djTwo: "Timetable.events.artists.amuletoManuela",
-        djOneDescription: "Timetable.events.descriptions.calamidadesLola",
-        djTwoDescription: "Timetable.events.descriptions.amuletoManuela",
+        djOneBio: "Timetable.events.bios.calamidadesLola",
+        djTwoBio: "Timetable.events.bios.amuletoManuela",
       },
     ],
   },

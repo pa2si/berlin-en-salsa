@@ -17,14 +17,17 @@ export interface TranslatableSlideContent {
   djName?: TranslatableString;
   djOne?: TranslatableString;
   djTwo?: TranslatableString;
-  djOneDescription?: TranslatableString;
-  djTwoDescription?: TranslatableString;
+  djOneBio?: TranslatableString;
+  djTwoBio?: TranslatableString;
   bandName?: TranslatableString;
+  dancer?: TranslatableString; // Single dancer field
   dancerOne?: TranslatableString;
   dancerTwo?: TranslatableString;
-  dancerOneDescription?: TranslatableString;
-  dancerTwoDescription?: TranslatableString;
+  dancerOneBio?: TranslatableString;
+  dancerTwoBio?: TranslatableString;
   description?: TranslatableString;
+  bio?: TranslatableString; // General bio field for single DJ/artist in slide
+  showCombinedDescription?: boolean; // Boolean flags remain static
   image?: string; // Images remain static
 }
 
@@ -58,6 +61,7 @@ export interface TranslatableTimeSlot {
   hasShow?: boolean; // Boolean flags remain static
   danceShow?: TranslatableString;
   dancers?: TranslatableString;
+  dancer?: TranslatableString;
 }
 
 /**
