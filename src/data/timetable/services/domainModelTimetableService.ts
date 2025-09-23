@@ -188,7 +188,10 @@ export class DomainModelTimetableService {
       // Filter acts by day based on their ID pattern
       const dayFilteredColumn = this.filterColumnByDay(column, day);
       if (dayFilteredColumn) {
-        const legacyColumn = convertTimelineColumnToColumn(dayFilteredColumn, t);
+        const legacyColumn = convertTimelineColumnToColumn(
+          dayFilteredColumn,
+          t,
+        );
         // Only add columns that have acts for this day
         if (legacyColumn.slots.length > 0) {
           columns.push(legacyColumn);

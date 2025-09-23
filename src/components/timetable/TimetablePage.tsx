@@ -50,8 +50,14 @@ export default async function TimetablePage({
     );
 
   // Debug: Let's see what data we're actually getting
-  console.log("🔥 Saturday data from domain models:", JSON.stringify(saturdayData, null, 2));
-  console.log("🔥 Sunday data from domain models:", JSON.stringify(sundayData, null, 2));
+  console.log(
+    "🔥 Saturday data from domain models:",
+    JSON.stringify(saturdayData, null, 2),
+  );
+  console.log(
+    "🔥 Sunday data from domain models:",
+    JSON.stringify(sundayData, null, 2),
+  );
 
   return (
     <TimetableClient
