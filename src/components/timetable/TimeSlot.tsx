@@ -174,6 +174,13 @@ export default function TimeSlot({
       dancers: showSlot.dancers,
     };
 
+    // Include original event if available (for new modal system)
+    if (slot.originalEvent) {
+      (
+        eventDetails as SelectedEventDetails & { originalEvent?: unknown }
+      ).originalEvent = slot.originalEvent;
+    }
+
     onEventClick(slot.event, eventDetails);
   };
 
@@ -194,7 +201,7 @@ export default function TimeSlot({
             <motion.div
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type, !!slot.hasShow)}`}
+              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type)}`}
               onClick={handleEventClick}
               style={{
                 height: nextSlotHasSameEvent
@@ -265,12 +272,8 @@ export default function TimeSlot({
                     ),
                 )}
 
-              {/* Dance show bubble for slots with dance shows */}
-              {slot.hasShow && slot.danceShow && !isContinuation && (
-                <div className="bg-bes-purple rounded-mdpx-2 absolute -top-2 -right-2 z-30 flex items-center justify-center py-1 text-[13px] font-bold text-white normal-case shadow-lg">
-                  {slot.danceShow}
-                </div>
-              )}
+              {/* Dance show bubble for slots with dance shows - REMOVED to prevent duplication */}
+              {/* The dance show info is already displayed in the bottom position above */}
             </motion.div>
           )}
 

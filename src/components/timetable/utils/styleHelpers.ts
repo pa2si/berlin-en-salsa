@@ -1,10 +1,7 @@
 /**
  * Style calculation utilities for events
  */
-export const getEventStyle = (type?: string, hasShow?: boolean): string => {
-  // Add a special class for events with dance shows
-  const showClass = hasShow ? "border-2 border-bes-purple" : "";
-
+export const getEventStyle = (type?: string): string => {
   // Always use rounded corners for all events
   const borderRadiusClass = "rounded-full";
 
@@ -12,19 +9,19 @@ export const getEventStyle = (type?: string, hasShow?: boolean): string => {
   let baseStyle = "";
   switch (type) {
     case "dance-show":
-      baseStyle = `bg-bes-purple hover:bg-bes-purple/90 ${showClass}`;
+      baseStyle = `bg-bes-purple hover:bg-bes-purple/90`;
       break;
     case "workshop":
-      baseStyle = `bg-bes-red hover:bg-bes-red/90 ${showClass}`;
+      baseStyle = `bg-bes-red hover:bg-bes-red/90`;
       break;
     case "talk":
-      baseStyle = `bg-bes-red hover:bg-bes-red/90 ${showClass}`;
+      baseStyle = `bg-bes-red hover:bg-bes-red/90`;
       break;
     case "main":
-      baseStyle = `bg-bes-red hover:bg-bes-red/90 ${showClass}`;
+      baseStyle = `bg-bes-red hover:bg-bes-red/90`;
       break;
     default:
-      baseStyle = `bg-transparent ${showClass}`;
+      baseStyle = `bg-transparent`;
       break;
   }
 

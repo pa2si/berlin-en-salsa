@@ -55,71 +55,89 @@ export default function EventSlider({
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {/* Band or Dancer Name if available - no DJ names since they're already in the DJs field */}
-        {(currentSlide?.dancerName ||
-          currentSlide?.bandName ||
-          currentSlide?.dancer ||
-          currentSlide?.dancerOne) && (
-          <h4 className="text-bes-red mb-3 text-xl font-bold">
-            {currentSlide?.dancerName ||
-              currentSlide?.bandName ||
-              currentSlide?.dancer ||
-              (currentSlide?.dancerOne
-                ? currentSlide?.dancerTwo
-                  ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
-                  : currentSlide?.dancerOne
-                : null)}
-          </h4>
-        )}
-
         {/* Image */}
         {currentSlide?.image && (
-          <div className="mb-4 overflow-hidden rounded-lg">
-            <Image
-              src={currentSlide.image}
-              alt={
-                currentSlide.dancerName ||
-                currentSlide.dancer ||
-                (currentSlide.dancerOne
-                  ? currentSlide.dancerTwo
-                    ? `${currentSlide.dancerOne} ${t("modal.and")} ${currentSlide.dancerTwo}`
-                    : currentSlide.dancerOne
-                  : `Slide ${currentSlideIndex + 1}`)
-              }
-              width={600}
-              height={400}
-              className="h-auto w-full object-cover"
-            />
+          <div className="mb-4">
+            {/* Act's name above image - only show when there are multiple slides */}
+            {slides.length > 1 &&
+              (currentSlide?.djName ||
+                currentSlide?.bandName ||
+                currentSlide?.dancerName ||
+                currentSlide?.dancer ||
+                currentSlide?.dancerOne) && (
+                <h3 className="text-bes-red mb-3 text-xl font-bold">
+                  {(() => {
+                    const name =
+                      currentSlide?.djName ||
+                      currentSlide?.bandName ||
+                      currentSlide?.dancerName ||
+                      currentSlide?.dancer ||
+                      (currentSlide?.dancerOne
+                        ? currentSlide?.dancerTwo
+                          ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
+                          : currentSlide?.dancerOne
+                        : "");
+
+                    if (name.startsWith("Timetable.")) {
+                      try {
+                        const key = name.substring(10);
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        return (t as any)(key);
+                      } catch {
+                        return name;
+                      }
+                    }
+                    return name;
+                  })()}
+                </h3>
+              )}
+
+            <div className="overflow-hidden rounded-lg">
+              <Image
+                src={currentSlide.image}
+                alt={
+                  currentSlide.dancerName ||
+                  currentSlide.dancer ||
+                  (currentSlide.dancerOne
+                    ? currentSlide.dancerTwo
+                      ? `${currentSlide.dancerOne} ${t("modal.and")} ${currentSlide.dancerTwo}`
+                      : currentSlide.dancerOne
+                    : `Slide ${currentSlideIndex + 1}`)
+                }
+                width={600}
+                height={400}
+                className="h-auto w-full object-cover"
+              />
+            </div>
           </div>
         )}
 
-        {/* Description Section */}
-        {/* Regular description - only show if not using combined description */}
-        {currentSlide?.description &&
+        {/* Description Section - Combined to avoid duplicates */}
+        {/* Show description or bio, but prioritize description if both exist */}
+        {(currentSlide?.description || currentSlide?.bio) &&
           !currentSlide?.showCombinedDescription && (
             <div className="mb-4">
               <h4 className="text-bes-red mb-2 text-xl font-bold">
                 {t("modal.description")}
               </h4>
               <p className="text-xl text-gray-700 md:leading-relaxed">
-                {currentSlide.description}
+                {(() => {
+                  // Prioritize description over bio to avoid duplicates
+                  const content = currentSlide.description || currentSlide.bio;
+                  if (content?.startsWith("Timetable.")) {
+                    try {
+                      const key = content.substring(10);
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      return (t as any)(key);
+                    } catch {
+                      return content;
+                    }
+                  }
+                  return content;
+                })()}
               </p>
             </div>
           )}
-
-        {/* Bio section for individual DJ/artist */}
-        {currentSlide?.bio && (
-          <div className="mb-4">
-            <h4 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.djName
-                ? `${t("modal.biographyOf")} ${currentSlide.djName}`
-                : "Biografía"}
-            </h4>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide.bio}
-            </p>
-          </div>
-        )}
         {/* Dancer descriptions */}
         {currentSlide?.dancerOne && currentSlide?.dancerOneBio && (
           <div className="mb-4">

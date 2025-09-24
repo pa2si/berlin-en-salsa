@@ -73,7 +73,17 @@ export default function EventModal({
           <div className="flex flex-col">
             {/* Event title */}
             <h3 className="text-bes-red mb-2 text-2xl font-black">
-              {selectedEventDetails.event}
+              {selectedEventDetails.event.startsWith("Timetable.")
+                ? (() => {
+                    try {
+                      const key = selectedEventDetails.event.substring(10);
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      return (t as any)(key);
+                    } catch {
+                      return selectedEventDetails.event;
+                    }
+                  })()
+                : selectedEventDetails.event}
             </h3>
 
             {/* Event Details */}
@@ -98,6 +108,10 @@ export default function EventModal({
                     onPrevSlide={() => prevSlide(maxSlides)}
                     onNextSlide={() => nextSlide(maxSlides)}
                     onGoToSlide={goToSlide}
+                    slides={selectedEventDetails.slides}
+                    eventType={selectedEventDetails.type}
+                    presenter={selectedEventDetails.presenter}
+                    record={selectedEventDetails.record}
                   />
                 )}
               </div>
@@ -165,7 +179,7 @@ export default function EventModal({
               selectedEventDetails.bio && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.biographyOf")} {selectedEventDetails.instructor}
+                    {t("modal.about")} {selectedEventDetails.instructor}
                   </h4>
                   <p className="text-xl text-gray-700 md:leading-relaxed">
                     {selectedEventDetails.bio}
@@ -178,8 +192,7 @@ export default function EventModal({
               selectedEventDetails.bioTwo && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.biographyOf")}{" "}
-                    {selectedEventDetails.instructorTwo}
+                    {t("modal.about")} {selectedEventDetails.instructorTwo}
                   </h4>
                   <p className="text-xl text-gray-700 md:leading-relaxed">
                     {selectedEventDetails.bioTwo}
@@ -205,7 +218,7 @@ export default function EventModal({
               selectedEventDetails.bio && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.biographyOf")} {selectedEventDetails.instructor}
+                    {t("modal.about")} {selectedEventDetails.instructor}
                   </h4>
                   <p className="text-xl text-gray-700 md:leading-relaxed">
                     {selectedEventDetails.bio}
@@ -220,7 +233,7 @@ export default function EventModal({
               selectedEventDetails.bio && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.biographyOf")} {selectedEventDetails.instructor}
+                    {t("modal.about")} {selectedEventDetails.instructor}
                   </h4>
                   <p className="text-xl text-gray-700 md:leading-relaxed">
                     {selectedEventDetails.bio}
@@ -265,7 +278,7 @@ export default function EventModal({
                 {selectedEventDetails.bio && (
                   <div className="mb-6">
                     <h4 className="text-bes-red mb-2 text-xl font-bold">
-                      {t("modal.biographyOf")}{" "}
+                      {t("modal.about")}{" "}
                       {selectedEventDetails.presenter ||
                         selectedEventDetails.guest}
                     </h4>

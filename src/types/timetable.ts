@@ -51,6 +51,8 @@ export interface TimeSlot {
   artist?: string; // For Charlas Salseras - information about the artist being discussed
   record?: string; // For Charlas Salseras - information about the record/album being discussed
   text?: string; // For Charlas Salseras - additional explanatory text about the talk
+  // New field to reference the original TimetableEvent when available
+  originalEvent?: unknown; // Using 'unknown' to avoid circular import issues
 }
 
 export interface Column {
