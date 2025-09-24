@@ -16,6 +16,10 @@ import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
 
 // Import new event-based data
 import { mainStageSaturdayEvents } from "../events/main-stage-saturday-new";
+import {
+  mainStageSaturdaySimpleConfig,
+  createTimelineFromSimpleConfig,
+} from "../../../utils/simpleTimelineConfig";
 
 // Import existing data for areas not yet migrated (none remaining)
 // import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
@@ -36,10 +40,15 @@ export class TimetableService {
     AreaType,
     TranslatableTimeSlot[] | TimeSlot[]
   > {
+    // Generate timeline from simple config
+    const timelineEvents = createTimelineFromSimpleConfig(
+      mainStageSaturdaySimpleConfig,
+      mainStageSaturdayEvents,
+    );
+
     return {
-      "main-stage": this.convertNewEventsToTranslatableTimeSlots(
-        mainStageSaturdayEvents,
-      ), // Using new event format
+      "main-stage":
+        this.convertNewEventsToTranslatableTimeSlots(timelineEvents), // Using simple timeline config
       "dance-workshops": danceWorkshopsSaturday, // Migrated to translatable format
       "music-workshops": musicWorkshopsSaturday, // Migrated to translatable format
       "salsa-talks": salsaTalksSaturday, // Migrated to translatable format
