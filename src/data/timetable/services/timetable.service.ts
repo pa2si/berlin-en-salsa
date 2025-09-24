@@ -17,9 +17,9 @@ import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
 // Import new event-based data
 import { mainStageSaturdayEvents } from "../events/main-stage-saturday-new";
 import {
-  mainStageSaturdaySimpleConfig,
+  mainStageSaturdayTimeline,
   createTimelineFromSimpleConfig,
-} from "../../../utils/simpleTimelineConfig";
+} from "../../../utils/timelineConfig";
 
 // Import existing data for areas not yet migrated (none remaining)
 // import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
@@ -42,7 +42,7 @@ export class TimetableService {
   > {
     // Generate timeline from simple config
     const timelineEvents = createTimelineFromSimpleConfig(
-      mainStageSaturdaySimpleConfig,
+      mainStageSaturdayTimeline,
       mainStageSaturdayEvents,
     );
 

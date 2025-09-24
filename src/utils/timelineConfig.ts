@@ -1,11 +1,12 @@
 /**
- * SIMPLE TIMELINE CONFIGURATION
+ * TIMELINE CONFIGURATION
  *
  * This file defines the timeline by simply referencing events and their time slots.
  * The modal UI automatically adapts based on the event structure.
  */
 
-import { mainStageSaturdayEvents } from "../events/main-stage-saturday-new";
+import { mainStageSaturdayEvents } from "../data/timetable/events/main-stage-saturday-new";
+import { TimetableEvent } from "../types/events";
 
 /**
  * Timeline slot configuration - simple time + event reference
@@ -23,11 +24,11 @@ export interface TimelineSlot {
 export const mainStageSaturdayTimeline: TimelineSlot[] = [
   {
     time: "13:00",
-    duration: 30,
+    duration: 60,
     eventId: "Timetable.events.mainStage.saturday.rodoElProfe",
   },
   {
-    time: "13:30",
+    time: "14:00",
     duration: 60,
     eventId: "Timetable.events.mainStage.saturday.ecKubaSet",
   },
@@ -74,6 +75,34 @@ export const mainStageSaturdayTimeline: TimelineSlot[] = [
 ];
 
 /**
+ * Convert timeline slots to TimetableEvent format for the existing timetable system
+ */
+export function createTimelineFromSimpleConfig(
+  timelineSlots: TimelineSlot[],
+  eventCollection: TimetableEvent[],
+): TimetableEvent[] {
+  const timeline: TimetableEvent[] = [];
+
+  for (const slot of timelineSlots) {
+    const event = eventCollection.find((e) => e.title === slot.eventId);
+
+    if (event) {
+      const timelineEvent: TimetableEvent = {
+        ...event,
+        startTime: slot.time,
+        endTime: calculateEndTime(slot.time, slot.duration),
+      };
+
+      timeline.push(timelineEvent);
+    } else {
+      console.warn(`Event not found: ${slot.eventId}`);
+    }
+  }
+
+  return timeline;
+}
+
+/**
  * Utility function to get event by ID
  */
 export function getEventById(eventId: string) {
@@ -95,7 +124,10 @@ export function calculateEndTime(startTime: string, duration: number): string {
  * Generate 30-minute time slots with events
  */
 export function generateTimelineSlots() {
-  const slots: { time: string; event?: any }[] = [];
+  const slots: {
+    time: string;
+    event?: TimetableEvent & { endTime: string };
+  }[] = [];
 
   // Generate all 30-minute slots from 12:30 to 23:00
   const startTime = 12 * 60 + 30; // 12:30 in minutes
