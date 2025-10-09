@@ -5,8 +5,8 @@
  * This demonstrates how much cleaner and more maintainable the data becomes.
  */
 
-import { EventFactory } from "../../../utils/eventFactory";
-import { TimetableEvent } from "../../../types/events";
+import { EventFactory } from "@/utils/eventFactory";
+import { TimetableEvent } from "@/types/events";
 
 /**
  * Main stage Saturday events using the new event structure
@@ -38,12 +38,10 @@ export const mainStageSaturdayEvents: TimetableEvent[] = [
       EventFactory.createSlide({
         type: "image",
         image: "/rodo-le-fou.webp",
-        caption: "Timetable.events.bios.rodoLeFou",
       }),
       EventFactory.createSlide({
         type: "image",
         image: "/el-profe.webp",
-        caption: "Timetable.events.bios.elProfe",
       }),
     ],
   }),
@@ -232,74 +230,4 @@ export const mainStageSaturdayEvents: TimetableEvent[] = [
     image: "/cayeye.webp",
     genre: "Salsa",
   }),
-
-  // DJ MC0LD Set (22:00 - 23:00)
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.djMc0ld",
-    startTime: "22:00",
-    endTime: "23:00",
-    area: "main-stage",
-    performanceType: "dj-set",
-    day: "saturday",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.djMc0ld",
-        role: "dj",
-        bio: "Timetable.events.bios.djMc0ld",
-        image: "/dj-mc0ld.webp",
-      }),
-    ],
-    image: "/dj-mc0ld.webp",
-  }),
 ];
-
-/**
- * Generate timeline slots for main stage Saturday
- * This function creates the fixed 30-minute timeline slots and places events in them
- */
-export function generateMainStageTimelineSlots() {
-  const timeSlots = [
-    "12:30",
-    "13:00",
-    "13:30",
-    "14:00",
-    "14:30",
-    "15:00",
-    "15:30",
-    "16:00",
-    "16:30",
-    "17:00",
-    "17:30",
-    "18:00",
-    "18:30",
-    "19:00",
-    "19:30",
-    "20:00",
-    "20:30",
-    "21:00",
-    "21:30",
-    "22:00",
-    "22:30",
-    "23:00",
-  ];
-
-  return timeSlots.map((time) => ({
-    time,
-    events: mainStageSaturdayEvents.filter((event) => {
-      // Check if this event starts at or spans through this time slot
-      const eventStartMinutes = timeToMinutes(event.startTime);
-      const eventEndMinutes = timeToMinutes(event.endTime);
-      const slotMinutes = timeToMinutes(time);
-
-      return slotMinutes >= eventStartMinutes && slotMinutes < eventEndMinutes;
-    }),
-  }));
-}
-
-/**
- * Helper function to convert time string to minutes for comparison
- */
-function timeToMinutes(time: string): number {
-  const [hours, minutes] = time.split(":").map(Number);
-  return hours * 60 + minutes;
-}

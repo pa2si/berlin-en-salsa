@@ -176,6 +176,7 @@ export class EventFactory {
     topic?: string;
     image?: string;
     description?: string;
+    slides?: MediaSlide[];
     day?: string;
   }): TalkEvent {
     const endTime = params.endTime || calculateEndTime(params.startTime, 30);
@@ -197,6 +198,7 @@ export class EventFactory {
       topic: params.topic,
       image: params.image,
       description: params.description,
+      slides: params.slides,
     };
   }
 
@@ -215,6 +217,7 @@ export class EventFactory {
     backgroundInfo?: string;
     image?: string;
     description?: string;
+    slides?: MediaSlide[];
     day?: string;
   }): AviatrixTalkEvent {
     const endTime = params.endTime || calculateEndTime(params.startTime, 30);
@@ -238,6 +241,7 @@ export class EventFactory {
       backgroundInfo: params.backgroundInfo,
       image: params.image,
       description: params.description,
+      slides: params.slides,
     };
   }
 

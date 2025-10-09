@@ -6,12 +6,12 @@ export * from "./types/timetable.types";
 // Export services
 export * from "./services/timetable.service";
 
-// Export translatable area data
-export { mainStageSaturday } from "./areas/main-stage/saturday";
-export { mainStageSunday } from "./areas/main-stage/sunday";
-export { danceWorkshopsSaturday } from "./areas/dance-workshops/saturday";
-export { danceWorkshopsSunday } from "./areas/dance-workshops/sunday";
-export { musicWorkshopsSaturday } from "./areas/music-workshops/saturday";
-export { musicWorkshopsSunday } from "./areas/music-workshops/sunday";
-export { salsaTalksSaturday } from "./areas/salsa-talks/saturday";
-export { salsaTalksSunday } from "./areas/salsa-talks/sunday";
+// Export event-based data
+export { mainStageSaturdayEvents } from "./events/main-stage/main-stage-saturday";
+export { mainStageSundayEvents } from "./events/main-stage/main-stage-sunday";
+export { danceWorkshopSaturdayEvents } from "./events/dance-workshops/dance-workshops-saturday";
+export { danceWorkshopSundayEvents } from "./events/dance-workshops/dance-workshops-sunday";
+export { musicWorkshopSaturdayEvents } from "./events/music-workshops/music-workshops-saturday";
+export { musicWorkshopSundayEvents } from "./events/music-workshops/music-workshops-sunday";
+export { salsaTalksSaturdayEvents } from "./events/salsa-talks/salsa-talks-saturday";
+export { salsaTalksSundayEvents } from "./events/salsa-talks/salsa-talks-sunday";

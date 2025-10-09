@@ -97,6 +97,7 @@ export interface TalkEvent extends EventWithActs {
   type: "talk";
   format: "presentation" | "interview" | "panel";
   topic?: string;
+  slides?: MediaSlide[]; // For image galleries
 }
 
 /**
@@ -108,6 +109,7 @@ export interface AviatrixTalkEvent extends EventWithActs {
   recordDiscussed: string; // The record/album being discussed (translatable key)
   moderatorComment?: string; // Comment from the moderator (translatable key)
   backgroundInfo?: string; // Additional context (translatable key)
+  slides?: MediaSlide[]; // For image galleries
 }
 
 /**

@@ -8,6 +8,7 @@ interface SlideContent {
   dancerTwo?: string;
   djOne?: string;
   djTwo?: string;
+  caption?: string; // Translation key for slide name
 }
 
 interface EventNavigationProps {
@@ -36,6 +37,17 @@ export default function EventNavigation({
   const t = useTranslations("Timetable");
 
   const generatePillLabel = (slide: SlideContent, index: number) => {
+    // Check for caption first (new structure)
+    if (slide?.caption) {
+      // If caption starts with "Timetable.", strip it since useTranslations is already scoped to "Timetable"
+      const key = slide.caption.startsWith("Timetable.")
+        ? slide.caption.substring(10) // Remove "Timetable." prefix
+        : slide.caption;
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return t(key as any);
+    }
+
     // For Charlas Salseras events with presenter/record
     if (
       eventType === "talk" &&

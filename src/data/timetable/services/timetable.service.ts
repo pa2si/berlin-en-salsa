@@ -6,18 +6,24 @@ import { translateTimeSlotsServer } from "../utils/timetableTranslation";
 import { TimetableAdapterService } from "../../../services/timetableAdapter";
 
 // Import translatable data - single source of truth
-import { mainStageSunday } from "../areas/main-stage/sunday";
-import { danceWorkshopsSaturday } from "../areas/dance-workshops/saturday";
-import { danceWorkshopsSunday } from "../areas/dance-workshops/sunday";
-import { musicWorkshopsSaturday } from "../areas/music-workshops/saturday";
-import { musicWorkshopsSunday } from "../areas/music-workshops/sunday";
-import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
-import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
-
 // Import new event-based data
-import { mainStageSaturdayEvents } from "../events/main-stage-saturday-new";
+import { mainStageSaturdayEvents } from "../events/main-stage/main-stage-saturday";
+import { mainStageSundayEvents } from "../events/main-stage/main-stage-sunday";
+import { danceWorkshopSaturdayEvents } from "../events/dance-workshops/dance-workshops-saturday";
+import { danceWorkshopSundayEvents } from "../events/dance-workshops/dance-workshops-sunday";
+import { musicWorkshopSaturdayEvents } from "../events/music-workshops/music-workshops-saturday";
+import { musicWorkshopSundayEvents } from "../events/music-workshops/music-workshops-sunday";
+import { salsaTalksSaturdayEvents } from "../events/salsa-talks/salsa-talks-saturday";
+import { salsaTalksSundayEvents } from "../events/salsa-talks/salsa-talks-sunday";
 import {
   mainStageSaturdayTimeline,
+  mainStageSundayTimeline,
+  danceWorkshopsSaturdayTimeline,
+  danceWorkshopsSundayTimeline,
+  musicWorkshopsSaturdayTimeline,
+  musicWorkshopsSundayTimeline,
+  salsaTalksSaturdayTimeline,
+  salsaTalksSundayTimeline,
   createTimelineFromSimpleConfig,
 } from "../../../utils/timelineConfig";
 
@@ -41,17 +47,39 @@ export class TimetableService {
     TranslatableTimeSlot[] | TimeSlot[]
   > {
     // Generate timeline from simple config
-    const timelineEvents = createTimelineFromSimpleConfig(
+    const mainStageTimelineEvents = createTimelineFromSimpleConfig(
       mainStageSaturdayTimeline,
       mainStageSaturdayEvents,
     );
 
+    const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
+      danceWorkshopsSaturdayTimeline,
+      danceWorkshopSaturdayEvents,
+    );
+
+    const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
+      musicWorkshopsSaturdayTimeline,
+      musicWorkshopSaturdayEvents,
+    );
+
+    const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
+      salsaTalksSaturdayTimeline,
+      salsaTalksSaturdayEvents,
+    );
+
     return {
-      "main-stage":
-        this.convertNewEventsToTranslatableTimeSlots(timelineEvents), // Using simple timeline config
-      "dance-workshops": danceWorkshopsSaturday, // Migrated to translatable format
-      "music-workshops": musicWorkshopsSaturday, // Migrated to translatable format
-      "salsa-talks": salsaTalksSaturday, // Migrated to translatable format
+      "main-stage": this.convertNewEventsToTranslatableTimeSlots(
+        mainStageTimelineEvents,
+      ), // Using simple timeline config
+      "dance-workshops": this.convertNewEventsToTranslatableTimeSlots(
+        danceWorkshopsTimelineEvents,
+      ), // Using new event structure
+      "music-workshops": this.convertNewEventsToTranslatableTimeSlots(
+        musicWorkshopsTimelineEvents,
+      ), // Using new event structure
+      "salsa-talks": this.convertNewEventsToTranslatableTimeSlots(
+        salsaTalksTimelineEvents,
+      ), // Using new event structure
     };
   }
 
@@ -63,9 +91,9 @@ export class TimetableService {
   ): TranslatableTimeSlot[] {
     const timeSlots: TranslatableTimeSlot[] = [];
 
-    // Generate 30-minute time slots from 12:30 to 23:00
+    // Generate 30-minute time slots from 12:30 to 22:00
     const startTime = 12 * 60 + 30; // 12:30 in minutes
-    const endTime = 23 * 60; // 23:00 in minutes
+    const endTime = 22 * 60; // 22:00 in minutes
 
     for (let time = startTime; time <= endTime; time += 30) {
       const hours = Math.floor(time / 60);
@@ -83,16 +111,146 @@ export class TimetableService {
         const timeSlot: TranslatableTimeSlot = {
           time: timeString,
           event: activeEvent.title,
-          type: "main",
+          type:
+            activeEvent.type === "dance-workshop" ||
+            activeEvent.type === "music-workshop"
+              ? "workshop"
+              : "main",
           actType:
             activeEvent.type === "main-stage"
               ? activeEvent.performanceType === "live"
                 ? "Live"
                 : "DJ Set"
-              : undefined,
+              : activeEvent.type === "dance-workshop"
+                ? "dance-workshop"
+                : activeEvent.type === "music-workshop"
+                  ? "music-workshop"
+                  : undefined,
         };
 
-        // Add acts information - using the new acts format
+        // Handle dance and music workshops
+        if (
+          activeEvent.type === "dance-workshop" ||
+          activeEvent.type === "music-workshop"
+        ) {
+          const instructors = activeEvent.acts.filter(
+            (act) => act.role === "instructor",
+          );
+
+          if (instructors.length > 0) {
+            timeSlot.instructor = instructors[0].name;
+            timeSlot.bio = instructors[0].bio || instructors[0].description;
+            timeSlot.image = activeEvent.image || instructors[0].image;
+            timeSlot.description = activeEvent.description;
+
+            if (instructors.length > 1) {
+              timeSlot.instructorTwo = instructors[1].name;
+              timeSlot.bioTwo =
+                instructors[1].bio || instructors[1].description;
+            }
+          }
+
+          timeSlots.push(timeSlot);
+          continue; // Skip the rest of the logic
+        }
+
+        // Handle talk events
+        if (activeEvent.type === "talk") {
+          const presenters = activeEvent.acts.filter(
+            (act) => act.role === "presenter",
+          );
+          const moderators = activeEvent.acts.filter(
+            (act) => act.role === "moderator",
+          );
+          const guests = activeEvent.acts.filter((act) => act.role === "guest");
+
+          timeSlot.type = "talk";
+          timeSlot.actType = "talk";
+
+          if (presenters.length > 0) {
+            timeSlot.presenter = presenters[0].name;
+          }
+
+          if (moderators.length > 0) {
+            timeSlot.moderator = moderators[0].name;
+          }
+
+          if (guests.length > 0) {
+            timeSlot.guest = guests[0].name;
+          }
+
+          timeSlot.description = activeEvent.description;
+          timeSlot.image = activeEvent.image;
+
+          // Add slides if they exist
+          if (
+            "slides" in activeEvent &&
+            activeEvent.slides &&
+            Array.isArray(activeEvent.slides)
+          ) {
+            timeSlot.slides = activeEvent.slides.map(
+              (slide: { image?: string; caption?: string }) => ({
+                image: slide.image,
+                caption: slide.caption,
+              }),
+            );
+          }
+
+          timeSlots.push(timeSlot);
+          continue; // Skip the rest of the logic
+        }
+
+        // Handle aviatrix talk events
+        if (activeEvent.type === "aviatrix-talk") {
+          const moderators = activeEvent.acts.filter(
+            (act) => act.role === "moderator",
+          );
+          const guests = activeEvent.acts.filter((act) => act.role === "guest");
+
+          timeSlot.type = "talk";
+          timeSlot.actType = "aviatrix";
+
+          if (moderators.length > 0) {
+            timeSlot.moderator = moderators[0].name;
+          }
+
+          if (guests.length > 0) {
+            timeSlot.guest = guests[0].name;
+            timeSlot.bio = guests[0].bio;
+          }
+
+          // Add aviatrix-specific fields
+          if ("artistDiscussed" in activeEvent) {
+            timeSlot.artist = activeEvent.artistDiscussed;
+          }
+
+          if ("recordDiscussed" in activeEvent) {
+            timeSlot.record = activeEvent.recordDiscussed;
+          }
+
+          if ("moderatorComment" in activeEvent) {
+            timeSlot.comment = activeEvent.moderatorComment;
+          }
+
+          // Add slides if they exist
+          if (
+            "slides" in activeEvent &&
+            activeEvent.slides &&
+            Array.isArray(activeEvent.slides)
+          ) {
+            timeSlot.slides = activeEvent.slides.map(
+              (slide: { image?: string; caption?: string }) => ({
+                image: slide.image,
+                caption: slide.caption,
+              }),
+            );
+          }
+
+          timeSlots.push(timeSlot);
+          continue; // Skip the rest of the logic
+        }
+
+        // Add acts information - using the new acts format (for main stage events)
         let djs: Array<{
           name: string;
           role: string;
@@ -205,11 +363,40 @@ export class TimetableService {
     AreaType,
     TranslatableTimeSlot[] | TimeSlot[]
   > {
+    // Generate timeline from simple config
+    const mainStageTimelineEvents = createTimelineFromSimpleConfig(
+      mainStageSundayTimeline,
+      mainStageSundayEvents,
+    );
+
+    const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
+      danceWorkshopsSundayTimeline,
+      danceWorkshopSundayEvents,
+    );
+
+    const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
+      musicWorkshopsSundayTimeline,
+      musicWorkshopSundayEvents,
+    );
+
+    const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
+      salsaTalksSundayTimeline,
+      salsaTalksSundayEvents,
+    );
+
     return {
-      "main-stage": mainStageSunday, // Migrated to translatable format
-      "dance-workshops": danceWorkshopsSunday, // Migrated to translatable format
-      "music-workshops": musicWorkshopsSunday, // Migrated to translatable format
-      "salsa-talks": salsaTalksSunday, // Migrated to translatable format
+      "main-stage": this.convertNewEventsToTranslatableTimeSlots(
+        mainStageTimelineEvents,
+      ), // Using simple timeline config
+      "dance-workshops": this.convertNewEventsToTranslatableTimeSlots(
+        danceWorkshopsTimelineEvents,
+      ), // Using new event structure
+      "music-workshops": this.convertNewEventsToTranslatableTimeSlots(
+        musicWorkshopsTimelineEvents,
+      ), // Using new event structure
+      "salsa-talks": this.convertNewEventsToTranslatableTimeSlots(
+        salsaTalksTimelineEvents,
+      ), // Using new event structure
     };
   }
 

@@ -11,8 +11,8 @@ import { AreaColumn, TimelineSlot, TimetableEvent } from "../types/events";
 import { DataTransformer } from "../utils/dataTransformer";
 import { AreaType, AREA_DEFINITIONS } from "../data/timetable/types/area.types";
 
-// Import new event data
-import { generateMainStageTimelineSlots } from "../data/timetable/events/main-stage-saturday-new";
+// Import new event data and centralized slot generation
+import { generateMainStageTimelineSlots } from "../utils/timelineConfig";
 
 // Import legacy data (for areas not yet migrated)
 import { TimetableService } from "../data/timetable/services/timetable.service";
