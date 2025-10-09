@@ -3,7 +3,6 @@ import { TimeSlot } from "../types/event.types";
 import { TranslatableTimeSlot } from "../types/translatable.types";
 import { Column } from "../types/timetable.types";
 import { translateTimeSlotsServer } from "../utils/timetableTranslation";
-import { TimetableAdapterService } from "../../../services/timetableAdapter";
 
 // Import translatable data - single source of truth
 // Import new event-based data
@@ -474,30 +473,6 @@ export class TimetableService {
         slots: slots,
       };
     });
-  }
-
-  /**
-   * NEW: Get timetable data using the new event-based architecture
-   * This method uses the adapter service to gradually migrate to the new system
-   */
-  static async getTimetableDataServerNew(
-    day: "saturday" | "sunday",
-  ): Promise<Column[]> {
-    try {
-      // Use the new adapter service which handles both old and new formats
-      const areaColumns = await TimetableAdapterService.getTimetableData(day);
-
-      // Convert back to legacy Column format for existing components
-      return TimetableAdapterService.convertToLegacyFormat(areaColumns);
-    } catch (error) {
-      console.warn(
-        "Failed to load with new adapter, falling back to legacy system:",
-        error,
-      );
-
-      // Fallback to legacy system if something goes wrong
-      return this.getTimetableDataServer(day);
-    }
   }
 
   /**
