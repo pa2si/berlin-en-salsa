@@ -1,12 +1,12 @@
 import { motion, AnimatePresence } from "framer-motion";
 import AreaColumn from "./AreaColumn";
 import { Column } from "../../types/timetable";
-import { SelectedEventDetails } from "./hooks/useEventModal";
+import { AreaType } from "../../data/timetable/types/area.types";
 
 interface TimetableGridProps {
   currentDay: "saturday" | "sunday";
   timetableData: Column[];
-  onEventClick: (eventKey: string, eventDetails: SelectedEventDetails) => void;
+  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
   onSlideReset: () => void;
 }
 

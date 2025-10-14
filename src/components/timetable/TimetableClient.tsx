@@ -4,11 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Column } from "../../types/timetable";
-import { TimelineSlot } from "../../types/events";
+import { TimelineSlot, TimetableEvent } from "../../types/events";
 import { AreaType } from "../../data/timetable/types/area.types";
 import TimetableGrid from "./TimetableGrid";
-import EventModal from "./EventModal/EventModal";
-import { useEventModal } from "./hooks/useEventModal";
+import NewEventModal from "./NewEventModal"; // CHANGED: Use new modal
 import { useURLParams } from "./hooks/useURLParams";
 import { useSlider } from "./hooks/useSlider";
 import { processEventContinuation } from "./utils/eventProcessing";
@@ -48,11 +47,47 @@ export default function TimetableClient({
 
   const { translateColumnArea, getOriginalAreaKey } = useColumnTranslation();
 
-  // Event modal state
-  const { openModal, closeModal, selectedEventDetails } = useEventModal();
+  // NEW: Modal state with TimetableEvent
+  const [selectedEvent, setSelectedEvent] = useState<TimetableEvent | null>(
+    null,
+  );
 
   // Slider functionality for modal
   const { resetSlider } = useSlider();
+
+  // NEW: Function to find event by area and time
+  const findEvent = (
+    area: AreaType,
+    time: string,
+  ): TimetableEvent | undefined => {
+    const eventsMap = currentDay === "saturday" ? saturdayEvents : sundayEvents;
+    const areaSlots = eventsMap[area];
+    if (!areaSlots) return undefined;
+
+    // Find the slot at this time
+    const slot = areaSlots.find((s) => s.time === time);
+    if (!slot || slot.events.length === 0) return undefined;
+
+    // Return the first event (assuming one event per slot for now)
+    return slot.events[0];
+  };
+
+  // NEW: Handle event click - look up the actual event
+  const handleEventClick = (area: AreaType, time: string) => {
+    const event = findEvent(area, time);
+    if (event) {
+      setSelectedEvent(event);
+      resetSlider();
+    } else {
+      console.warn(`Event not found for area: ${area}, time: ${time}`);
+    }
+  };
+
+  // Close modal
+  const closeModal = () => {
+    setSelectedEvent(null);
+    resetSlider();
+  };
 
   // Log new event data for verification (temporary)
   console.log("📊 New event data available:", {
@@ -151,19 +186,13 @@ export default function TimetableClient({
       <TimetableGrid
         currentDay={currentDay}
         timetableData={currentData}
-        onEventClick={openModal}
+        onEventClick={handleEventClick} // CHANGED: Use new handler
         onSlideReset={resetSlider}
       />
 
-      {/* Event Modal - only render if we have selected event details */}
-      {selectedEventDetails && (
-        <EventModal
-          selectedEventDetails={selectedEventDetails}
-          onClose={() => {
-            closeModal();
-            resetSlider();
-          }}
-        />
+      {/* NEW: Event Modal with TimetableEvent */}
+      {selectedEvent && (
+        <NewEventModal event={selectedEvent} onClose={closeModal} />
       )}
     </div>
   );

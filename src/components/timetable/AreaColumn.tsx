@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import TimeSlot from "./TimeSlot";
 import { Column } from "../../types/timetable";
-import { SelectedEventDetails } from "./hooks/useEventModal";
+import { AreaType } from "../../data/timetable/types/area.types";
 
 interface AreaColumnProps {
   column: Column;
   columnIndex: number;
-  onEventClick: (eventKey: string, eventDetails: SelectedEventDetails) => void;
+  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
   onSlideReset: () => void;
 }
 
@@ -35,7 +35,7 @@ export default function AreaColumn({
             slot={slot}
             slotIndex={slotIndex}
             columnSlots={column.slots}
-            originalAreaKey={column.originalAreaKey}
+            originalAreaKey={column.originalAreaKey} // This tells us the area type
             onEventClick={onEventClick}
             onSlideReset={onSlideReset}
           />

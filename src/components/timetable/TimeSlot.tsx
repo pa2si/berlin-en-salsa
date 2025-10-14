@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { TimeSlot as TimeSlotType } from "../../types/timetable";
-import { SelectedEventDetails } from "./hooks/useEventModal";
+import { AreaType } from "../../data/timetable/types/area.types";
 import { getEventStyle } from "./utils/styleHelpers";
 
 interface TimeSlotProps {
   slot: TimeSlotType & { isContinuation?: boolean };
   slotIndex: number;
   columnSlots: (TimeSlotType & { isContinuation?: boolean })[];
-  originalAreaKey?: string;
-  onEventClick: (eventKey: string, eventDetails: SelectedEventDetails) => void;
+  originalAreaKey?: string; // This is the AreaType key
+  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
   onSlideReset: () => void;
 }
 
@@ -34,154 +34,13 @@ export default function TimeSlot({
   const bgColor = slotIndex % 2 === 0 ? "bg-bes-amber" : "bg-bes-red/10";
 
   const handleEventClick = () => {
-    if (!slot.event) return;
+    if (!slot.event || !originalAreaKey) return;
 
     // Reset current slide index when opening a new modal
     onSlideReset();
 
-    // Calculate how many consecutive slots have the same event
-    let count = 1;
-    let currentIdx = slotIndex;
-    while (
-      columnSlots[currentIdx + 1] &&
-      columnSlots[currentIdx + 1].event === slot.event
-    ) {
-      count++;
-      currentIdx++;
-    }
-
-    // For the modal, prioritize the slot with the most complete information
-    const showSlot =
-      columnSlots.slice(slotIndex, slotIndex + count).find((s) => s.hasShow) ||
-      columnSlots
-        .slice(slotIndex, slotIndex + count)
-        .find((s) => s.description || s.bio) ||
-      slot;
-
-    // Try to find image in any of the slots with the same event
-    const slotWithImage =
-      columnSlots
-        .slice(slotIndex, slotIndex + count)
-        .find((s) => s.image || s.imageTwo) || showSlot;
-
-    // Generate slides based on slot data
-    const slides = [];
-
-    // Check if the slot has custom slides first
-    if (showSlot.slides && showSlot.slides.length > 0) {
-      // If we have custom slides, use them exclusively
-      slides.push(...showSlot.slides);
-    } else {
-      // If we have both image and imageTwo, create two slides
-      const hasImage = slotWithImage.image || showSlot.image || slot.image;
-      const hasImageTwo =
-        slotWithImage.imageTwo || showSlot.imageTwo || slot.imageTwo;
-
-      if (hasImage && hasImageTwo) {
-        // First slide with the main image
-        slides.push({
-          image: hasImage,
-        });
-
-        // Second slide with the second image
-        slides.push({
-          image: hasImageTwo,
-        });
-      }
-      // No custom slides and no imageTwo, use the main image/description as a single slide
-      else if (hasImage || showSlot.description) {
-        slides.push({
-          image: hasImage,
-          // For talk, dance-workshop, and music-workshop events, NEVER use description in slides to avoid duplication in modal
-          description:
-            showSlot.type === "talk" ||
-            showSlot.actType === "dance-workshop" ||
-            showSlot.actType === "music-workshop"
-              ? undefined
-              : showSlot.description || slot.description,
-        });
-      }
-    }
-
-    // Check for slides in merged slots too (if this event spans multiple slots)
-    if (slides.length === 0 || !showSlot.slides) {
-      // Look for slides in other slots with the same event
-      columnSlots
-        .slice(slotIndex, slotIndex + count)
-        .filter((s) => s.slides && s.slides.length > 0 && s !== showSlot)
-        .forEach((s) => {
-          if (s.slides) slides.push(...s.slides);
-        });
-    }
-
-    // Add dance show details as a slide if it exists and isn't already included
-    if (showSlot.hasShow && showSlot.danceShow) {
-      // Check if the dance show slide is not already in the slides array
-      const hasDanceShowSlide = slides.some(
-        (slide) =>
-          slide.dancerName === showSlot.dancers ||
-          slide.dancer || // Check for single dancer field
-          slide.dancerOne || // Consider any slide with dancer info
-          (slide.dancerOne && slide.dancerTwo),
-      );
-
-      if (!hasDanceShowSlide && showSlot.dancers) {
-        // Legacy fallback - use default image
-        slides.push({
-          image: "/son-cubano.webp",
-          dancerName: showSlot.dancers, // Keep for backward compatibility
-        });
-      }
-    }
-
-    // Calculate end time based on event span
-    const calculateEndTime = (
-      startTime: string,
-      eventCount: number,
-    ): string => {
-      const [hours, minutes] = startTime.split(":").map(Number);
-      const totalMinutes = hours * 60 + minutes + eventCount * 30;
-      const endHour = Math.floor(totalMinutes / 60);
-      const endMinutes = totalMinutes % 60;
-      return `${endHour.toString().padStart(2, "0")}:${endMinutes.toString().padStart(2, "0")}`;
-    };
-
-    const eventDetails: SelectedEventDetails = {
-      event: slot.event,
-      time: slot.time,
-      endTime: calculateEndTime(slot.time, count),
-      instructor: showSlot.instructor || slot.instructor,
-      instructorTwo: showSlot.instructorTwo || slot.instructorTwo,
-      presenter: showSlot.presenter || slot.presenter,
-      host: showSlot.host || slot.host,
-      moderator: showSlot.moderator || slot.moderator,
-      guest: showSlot.guest || slot.guest,
-      djs: showSlot.djs || slot.djs,
-      actType: showSlot.actType || slot.actType,
-      type: showSlot.type || slot.type,
-      description: showSlot.description || slot.description,
-      bio: showSlot.bio || slot.bio,
-      bioTwo: showSlot.bioTwo || slot.bioTwo,
-      record: showSlot.record || slot.record,
-      artist: showSlot.artist || slot.artist,
-      text: showSlot.text || slot.text,
-      comment: showSlot.comment || slot.comment,
-      image: slotWithImage.image || showSlot.image || slot.image,
-      imageTwo: slotWithImage.imageTwo || showSlot.imageTwo || slot.imageTwo,
-      slides: slides.length > 0 ? slides : undefined,
-      hasShow: !!showSlot.hasShow,
-      danceShow: showSlot.danceShow,
-      dancers: showSlot.dancers,
-    };
-
-    // Include original event if available (for new modal system)
-    if (slot.originalEvent) {
-      (
-        eventDetails as SelectedEventDetails & { originalEvent?: unknown }
-      ).originalEvent = slot.originalEvent;
-    }
-
-    onEventClick(slot.event, eventDetails);
+    // NEW: Simply pass area and time - TimetableClient will look up the event
+    onEventClick(originalAreaKey as AreaType, slot.time);
   };
 
   return (
