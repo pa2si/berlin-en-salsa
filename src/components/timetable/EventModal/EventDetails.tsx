@@ -62,12 +62,6 @@ export default function EventDetails({
           </span>
         )}
 
-      {selectedEventDetails.djs && (
-        <span className="text-lg text-gray-700">
-          {t("modal.djsLabel")} {selectedEventDetails.djs}
-        </span>
-      )}
-
       {/* For talk events, show Moderator and Guest with appropriate labels */}
       {selectedEventDetails.type === "talk" &&
         selectedEventDetails.moderator && (

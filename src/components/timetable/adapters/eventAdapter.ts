@@ -43,10 +43,19 @@ export function useEventAdapter() {
         caption: act.name, // Keep as key for EventNavigation to translate
       }));
 
+      // Determine if it's single or multiple DJs
+      const djCount = event.acts.filter((act) => act.role === "dj").length;
+      const actTypeLabel =
+        event.performanceType === "dj-set"
+          ? djCount > 1
+            ? "DJ Sets"
+            : "DJ Set"
+          : "Live Band";
+
       return {
         ...baseDetails,
         type: "main",
-        actType: event.performanceType === "dj-set" ? "DJ Set" : "Live Band",
+        actType: actTypeLabel,
         djs: event.acts.map((a) => translateIfKey(a.name)).join(" & "),
         slides: slides.length > 0 ? slides : undefined,
         image: slides[0]?.image,
