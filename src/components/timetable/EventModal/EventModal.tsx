@@ -147,126 +147,15 @@ export default function EventModal({
                 </div>
               )}
 
-            {/* Bio section for main stage DJ sets */}
-            {selectedEventDetails.type === "main" &&
-              selectedEventDetails.actType === "DJ Set" &&
-              selectedEventDetails.bio && (
+            {/* Comment section for talks - shown after artist/record info */}
+            {selectedEventDetails.type === "talk" &&
+              selectedEventDetails.comment && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    Biografía
+                    {t("modal.comment")}
                   </h4>
                   <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.bio}
-                  </p>
-                </div>
-              )}
-
-            {/* Description section for dance workshops */}
-            {selectedEventDetails.actType === "dance-workshop" &&
-              selectedEventDetails.description && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.description")}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.description}
-                  </p>
-                </div>
-              )}
-
-            {/* Bio section for dance workshops */}
-            {selectedEventDetails.actType === "dance-workshop" &&
-              selectedEventDetails.bio && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.about")} {selectedEventDetails.instructor}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.bio}
-                  </p>
-                </div>
-              )}
-
-            {/* Second bio section for dance workshops with dual instructors */}
-            {selectedEventDetails.actType === "dance-workshop" &&
-              selectedEventDetails.bioTwo && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.about")} {selectedEventDetails.instructorTwo}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.bioTwo}
-                  </p>
-                </div>
-              )}
-
-            {/* Description section for music workshops */}
-            {selectedEventDetails.actType === "music-workshop" &&
-              selectedEventDetails.description && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.description")}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.description}
-                  </p>
-                </div>
-              )}
-
-            {/* Bio section for music workshops */}
-            {selectedEventDetails.actType === "music-workshop" &&
-              selectedEventDetails.bio && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.about")} {selectedEventDetails.instructor}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.bio}
-                  </p>
-                </div>
-              )}
-
-            {/* Bio section for other workshops (non-dance, non-music) */}
-            {selectedEventDetails.type === "workshop" &&
-              selectedEventDetails.actType !== "dance-workshop" &&
-              selectedEventDetails.actType !== "music-workshop" &&
-              selectedEventDetails.bio && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.about")} {selectedEventDetails.instructor}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.bio}
-                  </p>
-                </div>
-              )}
-
-            {/* Event description for other workshops (non-dance, non-music) */}
-            {selectedEventDetails.description &&
-              selectedEventDetails.type === "workshop" &&
-              selectedEventDetails.actType !== "dance-workshop" &&
-              selectedEventDetails.actType !== "music-workshop" && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.description")}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.description}
-                  </p>
-                </div>
-              )}
-
-            {/* Event description for non-workshop events (only if no slides to avoid duplication) */}
-            {selectedEventDetails.description &&
-              selectedEventDetails.type !== "talk" &&
-              selectedEventDetails.type !== "workshop" &&
-              !hasSlides && (
-                <div className="mb-6">
-                  <h4 className="text-bes-red mb-2 text-xl font-bold">
-                    {t("modal.description")}
-                  </h4>
-                  <p className="text-xl text-gray-700 md:leading-relaxed">
-                    {selectedEventDetails.description}
+                    {selectedEventDetails.comment}
                   </p>
                 </div>
               )}
