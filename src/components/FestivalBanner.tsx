@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { FESTIVAL_CONFIG } from "@/config/festival";
 import {
   CountdownBanner,
-  // LiveBanner, // TODO: Fix LiveBanner in separate branch
+  LiveBanner,
   PostFestivalBanner,
 } from "@/components/banners";
 
@@ -19,8 +19,7 @@ const FestivalBanner = () => {
       now >= FESTIVAL_CONFIG.dates.start &&
       now <= FESTIVAL_CONFIG.dates.end
     ) {
-      // return <LiveBanner />; // TODO: Re-enable once LiveBanner is fixed
-      return <PostFestivalBanner />; // Temporary fallback
+      return <LiveBanner />;
     } else {
       return <PostFestivalBanner />;
     }
