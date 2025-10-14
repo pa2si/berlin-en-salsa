@@ -166,7 +166,7 @@ export function useEventAdapter() {
       return {
         ...baseDetails,
         type: "talk",
-        host: translateIfKey(presenter?.name),
+        presenter: translateIfKey(presenter?.name), // Fixed: was 'host'
         guest: guests.map((g) => translateIfKey(g.name)).join(", "),
         moderator: translateIfKey(moderator?.name),
         description: translateIfKey(event.description),
