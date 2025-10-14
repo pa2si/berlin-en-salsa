@@ -24,9 +24,6 @@ export default function NewEventModal({ event, onClose }: NewEventModalProps) {
 
   // Use the original EventModal with converted data
   return (
-    <EventModal
-      selectedEventDetails={selectedEventDetails}
-      onClose={onClose}
-    />
+    <EventModal selectedEventDetails={selectedEventDetails} onClose={onClose} />
   );
 }

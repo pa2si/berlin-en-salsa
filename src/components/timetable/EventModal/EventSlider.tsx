@@ -110,28 +110,29 @@ export default function EventSlider({
         )}
 
         {/* Description Section */}
-        {currentSlide?.description && !currentSlide?.showCombinedDescription && (
-          <div className="mb-4">
-            <h4 className="text-bes-red mb-2 text-xl font-bold">
-              {t("modal.description")}
-            </h4>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {(() => {
-                const content = currentSlide.description;
-                if (content?.startsWith("Timetable.")) {
-                  try {
-                    const key = content.substring(10);
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    return (t as any)(key);
-                  } catch {
-                    return content;
+        {currentSlide?.description &&
+          !currentSlide?.showCombinedDescription && (
+            <div className="mb-4">
+              <h4 className="text-bes-red mb-2 text-xl font-bold">
+                {t("modal.description")}
+              </h4>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {(() => {
+                  const content = currentSlide.description;
+                  if (content?.startsWith("Timetable.")) {
+                    try {
+                      const key = content.substring(10);
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      return (t as any)(key);
+                    } catch {
+                      return content;
+                    }
                   }
-                }
-                return content;
-              })()}
-            </p>
-          </div>
-        )}
+                  return content;
+                })()}
+              </p>
+            </div>
+          )}
 
         {/* Bio Section - Show separately if different from description */}
         {currentSlide?.bio &&

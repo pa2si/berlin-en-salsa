@@ -26,7 +26,7 @@ export const AREA_DEFINITIONS: Record<AreaType, AreaInfo> = {
   },
   "music-workshops": {
     id: "music-workshops",
-    spanishName: "Talleres de música",
+    spanishName: "Talleres de Música",
     germanName: "Musik-Workshops",
     translationKey: "columns.musicWorkshops",
   },

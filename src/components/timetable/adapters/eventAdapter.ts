@@ -24,7 +24,7 @@ export function useEventAdapter() {
   const { translateIfKey } = useSmartTranslation();
 
   const convertTimetableEventToSelectedDetails = (
-    event: TimetableEvent
+    event: TimetableEvent,
   ): SelectedEventDetails => {
     const baseDetails: SelectedEventDetails = {
       event: translateIfKey(event.title),
@@ -78,7 +78,8 @@ export function useEventAdapter() {
       }));
 
       const firstInstructor = instructors[0];
-      const secondInstructor = instructors.length > 1 ? instructors[1] : undefined;
+      const secondInstructor =
+        instructors.length > 1 ? instructors[1] : undefined;
 
       return {
         ...baseDetails,
@@ -121,7 +122,7 @@ export function useEventAdapter() {
     // Aviatrix Charlas Salseras (Record Collection Talks)
     if (isAviatrixTalkEvent(event)) {
       const presenter = event.acts.find((act) => act.role === "presenter");
-      
+
       const slides = [
         // Slide 1: Presenter info
         {
@@ -154,7 +155,7 @@ export function useEventAdapter() {
       const moderator = event.acts.find((act) => act.role === "moderator");
       const guests = event.acts.filter((act) => act.role === "guest");
       const presenter = event.acts.find((act) => act.role === "presenter");
-      
+
       const slides = event.acts.map((act) => ({
         image: act.image,
         description: translateIfKey(act.description || event.description),
