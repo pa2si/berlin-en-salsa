@@ -32,21 +32,22 @@ export default function EventDetails({
           : selectedEventDetails.time}
       </span>
 
-      {selectedEventDetails.actType ? (
+      {/* Show actType/format - but skip for Aviatrix (will show host instead) */}
+      {selectedEventDetails.actType &&
+      selectedEventDetails.actType !== "Aviatrix" ? (
         <span className="text-lg text-gray-700">
           {selectedEventDetails.actType === "dance-workshop"
             ? t("actTypes.dance-workshop")
             : selectedEventDetails.actType === "music-workshop"
               ? t("actTypes.music-workshop")
-              : selectedEventDetails.actType === "aviatrix"
-                ? `${t("modal.formatLabel")} ${t("actTypes.Aviatrix")}`
-                : selectedEventDetails.actType === "talk"
-                  ? t("actTypes.talk")
-                  : selectedEventDetails.actType}
+              : selectedEventDetails.actType === "talk"
+                ? t("actTypes.talk")
+                : selectedEventDetails.actType}
         </span>
       ) : selectedEventDetails.type === "workshop" ? (
         <span className="text-lg text-gray-700">{t("actTypes.workshop")}</span>
-      ) : selectedEventDetails.type === "talk" ? (
+      ) : selectedEventDetails.type === "talk" &&
+        selectedEventDetails.actType !== "Aviatrix" ? (
         <span className="text-lg text-gray-700">{t("actTypes.talk")}</span>
       ) : null}
 
@@ -63,6 +64,14 @@ export default function EventDetails({
         )}
 
       {/* For talk events, show Moderator and Guest with appropriate labels */}
+      {/* Show host for Aviatrix talks */}
+      {selectedEventDetails.type === "talk" &&
+        selectedEventDetails.actType === "Aviatrix" &&
+        selectedEventDetails.host && (
+          <span className="text-lg text-gray-700">
+            {selectedEventDetails.host}
+          </span>
+        )}
       {selectedEventDetails.type === "talk" &&
         selectedEventDetails.moderator && (
           <span className="text-lg text-gray-700">

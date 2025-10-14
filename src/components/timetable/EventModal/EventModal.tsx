@@ -134,6 +134,12 @@ export default function EventModal({
             {selectedEventDetails.type === "talk" &&
               (selectedEventDetails.artist || selectedEventDetails.record) && (
                 <div className="mb-6">
+                  {/* Featured Record Title for Aviatrix */}
+                  {selectedEventDetails.actType === "Aviatrix" && (
+                    <h3 className="text-bes-red mb-2 text-xl font-bold">
+                      {t("modal.featuredRecordLabel")}
+                    </h3>
+                  )}
                   {selectedEventDetails.artist && (
                     <h4 className="mb-1 text-lg font-bold text-gray-600">
                       {t("modal.artistLabel")} {selectedEventDetails.artist}
@@ -147,8 +153,9 @@ export default function EventModal({
                 </div>
               )}
 
-            {/* Comment section for talks - shown after artist/record info */}
+            {/* Comment section for non-Aviatrix talks - shown after artist/record info */}
             {selectedEventDetails.type === "talk" &&
+              selectedEventDetails.actType !== "Aviatrix" &&
               selectedEventDetails.comment && (
                 <div className="mb-6">
                   <h4 className="text-bes-red mb-2 text-xl font-bold">
@@ -177,6 +184,19 @@ export default function EventModal({
                   </div>
                 )}
 
+                {/* Comment for Aviatrix talks - shown after bio */}
+                {selectedEventDetails.comment &&
+                  selectedEventDetails.actType === "Aviatrix" && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.comment")}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {selectedEventDetails.comment}
+                      </p>
+                    </div>
+                  )}
+
                 {/* Description for talks */}
                 {selectedEventDetails.description && (
                   <div className="mb-6">
@@ -185,18 +205,6 @@ export default function EventModal({
                     </h4>
                     <p className="text-xl text-gray-700 md:leading-relaxed">
                       {selectedEventDetails.description}
-                    </p>
-                  </div>
-                )}
-
-                {/* Comment for talks */}
-                {selectedEventDetails.comment && (
-                  <div className="mb-6">
-                    <h4 className="text-bes-red mb-2 text-xl font-bold">
-                      {t("modal.comment")}
-                    </h4>
-                    <p className="text-xl text-gray-700 md:leading-relaxed">
-                      {selectedEventDetails.comment}
                     </p>
                   </div>
                 )}

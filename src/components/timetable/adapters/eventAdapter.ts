@@ -121,32 +121,39 @@ export function useEventAdapter() {
 
     // Aviatrix Charlas Salseras (Record Collection Talks)
     if (isAviatrixTalkEvent(event)) {
-      const presenter = event.acts.find((act) => act.role === "presenter");
+      const moderator = event.acts.find((act) => act.role === "moderator");
+      const guest = event.acts.find((act) => act.role === "guest");
 
-      const slides = [
-        // Slide 1: Presenter info
-        {
-          image: presenter?.image,
-          bio: translateIfKey(presenter?.bio),
-          djName: translateIfKey(presenter?.name),
-          caption: presenter?.name, // Keep as key for EventNavigation
-        },
-        // Slide 2: Record info
-        {
-          image: event.image, // Use event's main image for record
-          description: translateIfKey(event.moderatorComment),
-          caption: event.recordDiscussed, // Keep as key for EventNavigation
-        },
-      ];
+      // Use custom slides if provided, otherwise create from guest
+      // Slides only change the image, bio stays constant (guest's bio)
+      // For Aviatrix: first slide caption should be record name, second slide should be guest name
+      const slides = event.slides
+        ? event.slides.map((slide, index) => ({
+            image: slide.image,
+            caption: index === 0 ? event.recordDiscussed : slide.caption, // First slide: record name, others: original caption
+            showCombinedDescription: true, // Flag to show bio outside slider
+          }))
+        : [
+            {
+              image: guest?.image,
+              caption: guest?.name,
+              showCombinedDescription: true,
+            },
+          ];
 
       return {
         ...baseDetails,
         type: "talk",
-        presenter: translateIfKey(presenter?.name),
+        actType: "Aviatrix", // Set actType to "Aviatrix" for special formatting
+        host: "Aviatrix Session", // Show "Aviatrix Session" as the host
+        moderator: translateIfKey(moderator?.name), // Show moderator (Rodo Le Fou, etc.)
+        guest: translateIfKey(guest?.name),
         record: translateIfKey(event.recordDiscussed),
         artist: translateIfKey(event.artistDiscussed),
         comment: translateIfKey(event.moderatorComment),
+        bio: translateIfKey(guest?.bio), // Guest bio shown once outside slider
         slides,
+        image: slides[0]?.image,
       };
     }
 
