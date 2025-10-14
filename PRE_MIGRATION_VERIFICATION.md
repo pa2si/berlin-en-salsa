@@ -9,17 +9,21 @@
 ## ✅ Current System Status
 
 ### Compilation
+
 - ✅ **TypeScript**: No errors found
 - ✅ **ESLint**: Passing
 - ✅ **Build**: Ready
 
 ### Bridge Layer Usage
+
 Found 10 active usages in `timetable.service.ts`:
+
 - ✅ Saturday: 4 areas (main-stage, dance-workshops, music-workshops, salsa-talks)
 - ✅ Sunday: 4 areas (main-stage, dance-workshops, music-workshops, salsa-talks)
 - ✅ Method definition: `convertNewEventsToTranslatableTimeSlots()` (~300 lines)
 
 ### NewEventModal Readiness
+
 - ✅ **File exists**: `src/components/timetable/NewEventModal.tsx` (551 lines)
 - ✅ **Type guards**: All event types supported
   - `isMainStageEvent()`
@@ -34,12 +38,14 @@ Found 10 active usages in `timetable.service.ts`:
 - ✅ **Type-specific rendering**: All event types have dedicated detail components
 
 ### Event Type System
+
 - ✅ **Discriminated unions**: Fully implemented in `src/types/events.ts` (242 lines)
 - ✅ **Base interfaces**: BaseEvent, EventWithActs
 - ✅ **Specific types**: MainStageEvent, DanceWorkshopEvent, MusicWorkshopEvent, TalkEvent, AviatrixTalkEvent
 - ✅ **Type guards**: All implemented and exported
 
 ### Data Source
+
 - ✅ **Event files**: All 8 areas have event data files
   - main-stage-saturday.ts
   - main-stage-sunday.ts
@@ -58,22 +64,27 @@ Found 10 active usages in `timetable.service.ts`:
 ### High-Priority Changes (Required)
 
 1. **TimetableService** (`src/data/timetable/services/timetable.service.ts`)
+
    - Status: Needs new methods to return events directly
    - Risk: Low (adding alongside existing)
 
 2. **TimetablePage** (`src/app/[locale]/timetable/page.tsx`)
+
    - Status: Needs to call new service methods
    - Risk: Low (server component)
 
 3. **TimetableClient** (`src/components/timetable/TimetableClient.tsx`)
+
    - Status: Needs to accept events instead of columns
    - Risk: Medium (client component, state management)
 
 4. **TimetableGrid** (`src/components/timetable/TimetableGrid.tsx`)
+
    - Status: Needs to pass events to columns
    - Risk: Medium (rendering logic)
 
 5. **AreaColumn** (`src/components/timetable/AreaColumn.tsx`)
+
    - Status: Needs to render from events
    - Risk: Medium (might not exist as separate component)
 
@@ -84,10 +95,12 @@ Found 10 active usages in `timetable.service.ts`:
 ### Low-Priority Changes (Cleanup)
 
 7. **EventModal directory** (`src/components/timetable/EventModal/`)
+
    - Status: Will be deleted after NewEventModal is integrated
    - Files: EventModal.tsx, EventDetails.tsx, EventNavigation.tsx, EventSlider.tsx
 
 8. **useEventModal hook** (`src/components/timetable/hooks/useEventModal.ts`)
+
    - Status: Can be simplified or replaced
 
 9. **Translation utilities** (`src/data/timetable/utils/timetableTranslation.ts`)
@@ -98,6 +111,7 @@ Found 10 active usages in `timetable.service.ts`:
 ## 📊 Code Metrics
 
 ### Lines to Remove
+
 - `convertNewEventsToTranslatableTimeSlots()`: ~300 lines
 - `TranslatableTimeSlot` types: ~80 lines
 - EventModal directory: ~341 lines (EventModal.tsx)
@@ -105,12 +119,14 @@ Found 10 active usages in `timetable.service.ts`:
 - **Total**: ~821 lines of legacy code
 
 ### Lines to Add
+
 - New service methods: ~50-100 lines
 - Updated component props: ~50 lines
 - Simplified TimeSlot: ~50 lines (net reduction)
 - **Total**: ~150-200 lines
 
 ### Net Reduction
+
 - **Expected**: ~621-671 lines removed
 - **Architecture**: Much simpler, more maintainable
 
@@ -119,21 +135,25 @@ Found 10 active usages in `timetable.service.ts`:
 ## ⚠️ Known Risks
 
 ### 1. Translation System (Medium Risk)
+
 **Issue**: NewEventModal uses different translation approach than old system
 **Mitigation**: Test in all 3 languages (EN, DE, ES) before finalizing
 **Fallback**: Can adjust translation keys if needed
 
 ### 2. Event Continuation Logic (Medium Risk)
+
 **Issue**: Current system handles multi-slot events with `isContinuation` flag
 **Mitigation**: Verify this logic is preserved when rendering from events
 **Fallback**: Can recreate in new format
 
 ### 3. Modal Feature Parity (High Risk)
+
 **Issue**: Old EventModal might have features NewEventModal doesn't
 **Mitigation**: Side-by-side comparison before switching
 **Fallback**: Keep old modal code until verified
 
 ### 4. Slide System (Medium Risk)
+
 **Issue**: Complex slide data structures in old system
 **Mitigation**: Test all slide variations (DJs, dancers, talks)
 **Fallback**: Can add compatibility layer if needed
@@ -145,6 +165,7 @@ Found 10 active usages in `timetable.service.ts`:
 ### Before Starting Migration
 
 Test current system:
+
 1. [ ] Navigate to `/timetable`
 2. [ ] Switch between Saturday and Sunday
 3. [ ] Click on various event types:
@@ -184,16 +205,16 @@ Test current system:
 
 ## 🔄 Migration Readiness Score
 
-| Category | Status | Score |
-|----------|--------|-------|
-| **Compilation** | No errors | ✅ 10/10 |
-| **NewEventModal** | Fully implemented | ✅ 10/10 |
-| **Type System** | Complete with guards | ✅ 10/10 |
-| **Event Data** | All areas migrated | ✅ 10/10 |
-| **Documentation** | Plan created | ✅ 10/10 |
-| **Testing Strategy** | Defined | ✅ 10/10 |
-| **Risk Assessment** | Documented | ✅ 10/10 |
-| **Rollback Plan** | Prepared | ✅ 10/10 |
+| Category             | Status               | Score    |
+| -------------------- | -------------------- | -------- |
+| **Compilation**      | No errors            | ✅ 10/10 |
+| **NewEventModal**    | Fully implemented    | ✅ 10/10 |
+| **Type System**      | Complete with guards | ✅ 10/10 |
+| **Event Data**       | All areas migrated   | ✅ 10/10 |
+| **Documentation**    | Plan created         | ✅ 10/10 |
+| **Testing Strategy** | Defined              | ✅ 10/10 |
+| **Risk Assessment**  | Documented           | ✅ 10/10 |
+| **Rollback Plan**    | Prepared             | ✅ 10/10 |
 
 **Overall Readiness**: ✅ **10/10 - Ready to Proceed**
 
@@ -204,6 +225,7 @@ Test current system:
 **✅ PROCEED WITH BRIDGE REMOVAL**
 
 All prerequisites are met:
+
 - ✅ No compilation errors
 - ✅ NewEventModal is ready
 - ✅ Type system is complete
@@ -212,6 +234,7 @@ All prerequisites are met:
 - ✅ Rollback plan is ready
 
 **Next Steps**:
+
 1. Create feature branch: `feature/remove-bridge-layer`
 2. Take screenshots of current working system
 3. Begin with Step 1 in `BRIDGE_REMOVAL_PLAN.md`
