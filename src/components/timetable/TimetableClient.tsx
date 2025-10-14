@@ -54,6 +54,13 @@ export default function TimetableClient({
   // Slider functionality for modal
   const { resetSlider } = useSlider();
 
+  // Log new event data for verification (temporary)
+  console.log("📊 New event data available:", {
+    saturdayAreas: Object.keys(saturdayEvents),
+    sundayAreas: Object.keys(sundayEvents),
+    saturdaySlotsCount: Object.values(saturdayEvents)[0]?.length,
+  });
+
   // Process the data to handle consecutive slots and area translations
   const processData = (rawData: Column[]): Column[] => {
     return processEventContinuation(
