@@ -22,6 +22,7 @@ interface SlideContent {
   descriptionTwoDjsTogether?: string;
   showCombinedDescription?: boolean; // Flag to show combined description with special styling
   genreDescription?: string;
+  caption?: string; // Translation key for the slide name (artist/instructor name)
 }
 
 interface EventSliderProps {
@@ -108,18 +109,58 @@ export default function EventSlider({
           </div>
         )}
 
-        {/* Description Section - Combined to avoid duplicates */}
-        {/* Show description or bio, but prioritize description if both exist */}
-        {(currentSlide?.description || currentSlide?.bio) &&
+        {/* Description Section */}
+        {currentSlide?.description && !currentSlide?.showCombinedDescription && (
+          <div className="mb-4">
+            <h4 className="text-bes-red mb-2 text-xl font-bold">
+              {t("modal.description")}
+            </h4>
+            <p className="text-xl text-gray-700 md:leading-relaxed">
+              {(() => {
+                const content = currentSlide.description;
+                if (content?.startsWith("Timetable.")) {
+                  try {
+                    const key = content.substring(10);
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    return (t as any)(key);
+                  } catch {
+                    return content;
+                  }
+                }
+                return content;
+              })()}
+            </p>
+          </div>
+        )}
+
+        {/* Bio Section - Show separately if different from description */}
+        {currentSlide?.bio &&
+          currentSlide?.bio !== currentSlide?.description &&
           !currentSlide?.showCombinedDescription && (
             <div className="mb-4">
               <h4 className="text-bes-red mb-2 text-xl font-bold">
-                {t("modal.description")}
+                {t("modal.about")}
+                {currentSlide?.caption && (
+                  <>
+                    {" "}
+                    {(() => {
+                      // Translate the caption (instructor name)
+                      const key = currentSlide.caption.startsWith("Timetable.")
+                        ? currentSlide.caption.substring(10)
+                        : currentSlide.caption;
+                      try {
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        return (t as any)(key);
+                      } catch {
+                        return currentSlide.caption;
+                      }
+                    })()}
+                  </>
+                )}
               </h4>
               <p className="text-xl text-gray-700 md:leading-relaxed">
                 {(() => {
-                  // Prioritize description over bio to avoid duplicates
-                  const content = currentSlide.description || currentSlide.bio;
+                  const content = currentSlide.bio;
                   if (content?.startsWith("Timetable.")) {
                     try {
                       const key = content.substring(10);
