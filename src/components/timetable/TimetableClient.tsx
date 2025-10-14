@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Column } from "../../types/timetable";
+import { TimelineSlot } from "../../types/events";
+import { AreaType } from "../../data/timetable/types/area.types";
 import TimetableGrid from "./TimetableGrid";
 import EventModal from "./EventModal/EventModal";
 import { useEventModal } from "./hooks/useEventModal";
@@ -14,8 +16,10 @@ import { useColumnTranslation } from "./utils/translationHelpers";
 
 interface TimetableClientProps {
   initialDay: "saturday" | "sunday";
-  saturdayData: Column[];
-  sundayData: Column[];
+  saturdayData: Column[]; // OLD FORMAT - will be removed
+  sundayData: Column[]; // OLD FORMAT - will be removed
+  saturdayEvents: Record<AreaType, TimelineSlot[]>; // NEW FORMAT
+  sundayEvents: Record<AreaType, TimelineSlot[]>; // NEW FORMAT
   translations: {
     days: {
       saturday: string;
@@ -32,6 +36,8 @@ export default function TimetableClient({
   initialDay,
   saturdayData,
   sundayData,
+  saturdayEvents, // NEW
+  sundayEvents, // NEW
   translations,
 }: TimetableClientProps) {
   // URL parameter management

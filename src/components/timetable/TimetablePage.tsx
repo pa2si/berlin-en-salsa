@@ -15,16 +15,22 @@ export default async function TimetablePage({
 }: TimetablePageProps) {
   const t = await getTranslations();
 
-  // Fetch both days' data server-side
+  // Fetch both days' data server-side (OLD FORMAT - for now)
   const saturdayData =
     await TimetableService.getTimetableDataServer("saturday");
   const sundayData = await TimetableService.getTimetableDataServer("sunday");
+
+  // NEW: Fetch events in new format (will replace old data)
+  const saturdayEvents = TimetableService.getTimetableEventsServer("saturday");
+  const sundayEvents = TimetableService.getTimetableEventsServer("sunday");
 
   return (
     <TimetableClient
       initialDay={initialDay}
       saturdayData={saturdayData}
       sundayData={sundayData}
+      saturdayEvents={saturdayEvents} // NEW
+      sundayEvents={sundayEvents} // NEW
       translations={{
         days: {
           saturday: t("Sections.SectionFive.saturday" as never),
