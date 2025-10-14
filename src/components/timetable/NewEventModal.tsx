@@ -6,7 +6,7 @@
  */
 
 import { TimetableEvent } from "../../types/events";
-import { convertTimetableEventToSelectedDetails } from "./adapters/eventAdapter";
+import { useEventAdapter } from "./adapters/eventAdapter";
 import EventModal from "./EventModal/EventModal";
 
 interface NewEventModalProps {
@@ -18,7 +18,8 @@ interface NewEventModalProps {
  * Wrapper component that adapts TimetableEvent to work with the original EventModal
  */
 export default function NewEventModal({ event, onClose }: NewEventModalProps) {
-  // Convert TimetableEvent to SelectedEventDetails format
+  // Use the adapter hook to convert and translate the event
+  const { convertTimetableEventToSelectedDetails } = useEventAdapter();
   const selectedEventDetails = convertTimetableEventToSelectedDetails(event);
 
   // Use the original EventModal with converted data

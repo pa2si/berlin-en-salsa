@@ -14,174 +14,182 @@ import {
   isDanceShowEvent,
 } from "../../../types/events";
 import { SelectedEventDetails } from "../hooks/useEventModal";
+import { useSmartTranslation } from "../../../data/timetable/utils/smartTranslation";
 
 /**
  * Converts a TimetableEvent to SelectedEventDetails format for the modal
+ * This is a React Hook that must be called from a component
  */
-export function convertTimetableEventToSelectedDetails(
-  event: TimetableEvent
-): SelectedEventDetails {
-  const baseDetails: SelectedEventDetails = {
-    event: event.title,
-    time: event.startTime,
-    endTime: event.endTime,
+export function useEventAdapter() {
+  const { translateIfKey } = useSmartTranslation();
+
+  const convertTimetableEventToSelectedDetails = (
+    event: TimetableEvent
+  ): SelectedEventDetails => {
+    const baseDetails: SelectedEventDetails = {
+      event: translateIfKey(event.title),
+      time: event.startTime,
+      endTime: event.endTime,
+    };
+
+    // Main Stage Events (DJ sets, live bands)
+    if (isMainStageEvent(event)) {
+      const slides = event.acts.map((act) => ({
+        image: act.image,
+        djName: act.role === "dj" ? translateIfKey(act.name) : undefined,
+        bandName: act.role === "band" ? translateIfKey(act.name) : undefined,
+        bio: translateIfKey(act.bio),
+        description: translateIfKey(act.bio), // Use bio as description for compatibility
+        caption: act.name, // Keep as key for EventNavigation to translate
+      }));
+
+      return {
+        ...baseDetails,
+        type: "main",
+        actType: event.performanceType === "dj-set" ? "DJ Set" : "Live Band",
+        djs: event.acts.map((a) => translateIfKey(a.name)).join(" & "),
+        slides: slides.length > 0 ? slides : undefined,
+        image: slides[0]?.image,
+        bio: slides[0]?.bio,
+        // Dance show properties
+        hasShow: event.hasShow,
+        danceShow: translateIfKey(event.danceShow),
+        dancers: translateIfKey(event.dancers),
+      };
+    }
+
+    // Dance Workshop Events
+    if (isDanceWorkshopEvent(event)) {
+      const instructors = event.acts.filter((act) => act.role === "instructor");
+      const slides = instructors.map((act) => ({
+        image: act.image,
+        description: translateIfKey(event.description),
+        bio: translateIfKey(act.bio),
+        caption: act.name, // Keep as key for EventNavigation
+      }));
+
+      const firstInstructor = instructors[0];
+      const secondInstructor = instructors.length > 1 ? instructors[1] : undefined;
+
+      return {
+        ...baseDetails,
+        type: "workshop",
+        actType: "dance-workshop",
+        instructor: translateIfKey(firstInstructor?.name),
+        instructorTwo: translateIfKey(secondInstructor?.name),
+        description: translateIfKey(event.description),
+        bio: translateIfKey(firstInstructor?.bio),
+        bioTwo: translateIfKey(secondInstructor?.bio),
+        slides: slides.length > 0 ? slides : undefined,
+        image: slides[0]?.image,
+      };
+    }
+
+    // Music Workshop Events
+    if (isMusicWorkshopEvent(event)) {
+      const instructors = event.acts.filter((act) => act.role === "instructor");
+      const slides = instructors.map((act) => ({
+        image: act.image,
+        description: translateIfKey(event.description),
+        bio: translateIfKey(act.bio),
+        caption: act.name, // Keep as key for EventNavigation
+      }));
+
+      const firstInstructor = instructors[0];
+
+      return {
+        ...baseDetails,
+        type: "workshop",
+        actType: "music-workshop",
+        instructor: translateIfKey(firstInstructor?.name),
+        description: translateIfKey(event.description),
+        bio: translateIfKey(firstInstructor?.bio),
+        slides: slides.length > 0 ? slides : undefined,
+        image: slides[0]?.image,
+      };
+    }
+
+    // Aviatrix Charlas Salseras (Record Collection Talks)
+    if (isAviatrixTalkEvent(event)) {
+      const presenter = event.acts.find((act) => act.role === "presenter");
+      
+      const slides = [
+        // Slide 1: Presenter info
+        {
+          image: presenter?.image,
+          bio: translateIfKey(presenter?.bio),
+          djName: translateIfKey(presenter?.name),
+          caption: presenter?.name, // Keep as key for EventNavigation
+        },
+        // Slide 2: Record info
+        {
+          image: event.image, // Use event's main image for record
+          description: translateIfKey(event.moderatorComment),
+          caption: event.recordDiscussed, // Keep as key for EventNavigation
+        },
+      ];
+
+      return {
+        ...baseDetails,
+        type: "talk",
+        presenter: translateIfKey(presenter?.name),
+        record: translateIfKey(event.recordDiscussed),
+        artist: translateIfKey(event.artistDiscussed),
+        comment: translateIfKey(event.moderatorComment),
+        slides,
+      };
+    }
+
+    // Regular Salsa Talks
+    if (isTalkEvent(event)) {
+      const moderator = event.acts.find((act) => act.role === "moderator");
+      const guests = event.acts.filter((act) => act.role === "guest");
+      const presenter = event.acts.find((act) => act.role === "presenter");
+      
+      const slides = event.acts.map((act) => ({
+        image: act.image,
+        description: translateIfKey(act.description || event.description),
+        bio: translateIfKey(act.bio),
+        caption: act.name, // Keep as key for EventNavigation
+      }));
+
+      return {
+        ...baseDetails,
+        type: "talk",
+        host: translateIfKey(presenter?.name),
+        guest: guests.map((g) => translateIfKey(g.name)).join(", "),
+        moderator: translateIfKey(moderator?.name),
+        description: translateIfKey(event.description),
+        slides: slides.length > 0 ? slides : undefined,
+        image: slides[0]?.image,
+      };
+    }
+
+    // Dance Show Events
+    if (isDanceShowEvent(event)) {
+      const dancers = event.acts.filter((act) => act.role === "dancer");
+      const slides = dancers.map((act) => ({
+        image: act.image,
+        dancerName: translateIfKey(act.name),
+        dancerOne: translateIfKey(act.name)?.split(" & ")[0],
+        dancerTwo: translateIfKey(act.name)?.split(" & ")[1],
+        bio: translateIfKey(act.bio),
+        caption: act.name, // Keep as key for EventNavigation
+      }));
+
+      return {
+        ...baseDetails,
+        type: "dance-show",
+        danceShow: translateIfKey(event.showName),
+        dancers: dancers.map((d) => translateIfKey(d.name)).join(" & "),
+        slides: slides.length > 0 ? slides : undefined,
+        image: slides[0]?.image,
+      };
+    }
+
+    // Fallback for unknown event types
+    return baseDetails;
   };
 
-  // Main Stage Events (DJ sets, live bands)
-  if (isMainStageEvent(event)) {
-    const slides = event.acts.map((act) => ({
-      image: act.image,
-      djName: act.role === "dj" ? act.name : undefined,
-      bandName: act.role === "band" ? act.name : undefined,
-      bio: act.bio,
-      description: act.bio, // Use bio as description for compatibility
-      caption: act.name,
-    }));
-
-    return {
-      ...baseDetails,
-      type: "main",
-      actType: event.performanceType === "dj-set" ? "DJ Set" : "Live Band",
-      djs: event.acts.map((a) => a.name).join(" & "),
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
-      bio: slides[0]?.bio,
-      // Dance show properties
-      hasShow: event.hasShow,
-      danceShow: event.danceShow,
-      dancers: event.dancers,
-    };
-  }
-
-  // Dance Workshop Events
-  if (isDanceWorkshopEvent(event)) {
-    const instructors = event.acts.filter((act) => act.role === "instructor");
-    const slides = instructors.map((act) => ({
-      image: act.image,
-      description: event.description,
-      bio: act.bio,
-      caption: act.name,
-    }));
-
-    const firstInstructor = instructors[0];
-    const secondInstructor = instructors.length > 1 ? instructors[1] : undefined;
-
-    return {
-      ...baseDetails,
-      type: "workshop",
-      actType: "dance-workshop",
-      instructor: firstInstructor?.name,
-      instructorTwo: secondInstructor?.name,
-      description: event.description,
-      bio: firstInstructor?.bio,
-      bioTwo: secondInstructor?.bio,
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
-    };
-  }
-
-  // Music Workshop Events
-  if (isMusicWorkshopEvent(event)) {
-    const instructors = event.acts.filter((act) => act.role === "instructor");
-    const slides = instructors.map((act) => ({
-      image: act.image,
-      description: event.description,
-      bio: act.bio,
-      caption: act.name,
-    }));
-
-    const firstInstructor = instructors[0];
-
-    return {
-      ...baseDetails,
-      type: "workshop",
-      actType: "music-workshop",
-      instructor: firstInstructor?.name,
-      description: event.description,
-      bio: firstInstructor?.bio,
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
-    };
-  }
-
-  // Aviatrix Charlas Salseras (Record Collection Talks)
-  if (isAviatrixTalkEvent(event)) {
-    const presenter = event.acts.find((act) => act.role === "presenter");
-    
-    const slides = [
-      // Slide 1: Presenter info
-      {
-        image: presenter?.image,
-        bio: presenter?.bio,
-        djName: presenter?.name,
-        caption: presenter?.name,
-      },
-      // Slide 2: Record info
-      {
-        image: event.image, // Use event's main image for record
-        description: event.moderatorComment,
-        caption: event.recordDiscussed,
-      },
-    ];
-
-    return {
-      ...baseDetails,
-      type: "talk",
-      presenter: presenter?.name,
-      record: event.recordDiscussed,
-      artist: event.artistDiscussed,
-      comment: event.moderatorComment,
-      slides,
-    };
-  }
-
-  // Regular Salsa Talks
-  if (isTalkEvent(event)) {
-    const moderator = event.acts.find((act) => act.role === "moderator");
-    const guests = event.acts.filter((act) => act.role === "guest");
-    const presenter = event.acts.find((act) => act.role === "presenter");
-    
-    const slides = event.acts.map((act) => ({
-      image: act.image,
-      description: act.description || event.description,
-      bio: act.bio,
-      caption: act.name,
-    }));
-
-    return {
-      ...baseDetails,
-      type: "talk",
-      host: presenter?.name,
-      guest: guests.map((g) => g.name).join(", "),
-      moderator: moderator?.name,
-      description: event.description,
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
-    };
-  }
-
-  // Dance Show Events
-  if (isDanceShowEvent(event)) {
-    const dancers = event.acts.filter((act) => act.role === "dancer");
-    const slides = dancers.map((act) => ({
-      image: act.image,
-      dancerName: act.name,
-      dancerOne: act.name?.split(" & ")[0],
-      dancerTwo: act.name?.split(" & ")[1],
-      bio: act.bio,
-      caption: act.name,
-    }));
-
-    return {
-      ...baseDetails,
-      type: "dance-show",
-      danceShow: event.showName,
-      dancers: dancers.map((d) => d.name).join(" & "),
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
-    };
-  }
-
-  // Fallback for unknown event types
-  return baseDetails;
+  return { convertTimetableEventToSelectedDetails };
 }
