@@ -58,18 +58,14 @@ export default function EventSlider({
         {/* Image */}
         {currentSlide?.image && (
           <div className="mb-4">
-            {/* Act's name above image - only show when there are multiple slides */}
+            {/* Act's name above image - only show for dancers when there are multiple slides, not for DJs */}
             {slides.length > 1 &&
-              (currentSlide?.djName ||
-                currentSlide?.bandName ||
-                currentSlide?.dancerName ||
+              (currentSlide?.dancerName ||
                 currentSlide?.dancer ||
                 currentSlide?.dancerOne) && (
                 <h3 className="text-bes-red mb-3 text-xl font-bold">
                   {(() => {
                     const name =
-                      currentSlide?.djName ||
-                      currentSlide?.bandName ||
                       currentSlide?.dancerName ||
                       currentSlide?.dancer ||
                       (currentSlide?.dancerOne
