@@ -3,6 +3,7 @@ import { TimeSlot } from "../types/event.types";
 import { TranslatableTimeSlot } from "../types/translatable.types";
 import { Column } from "../types/timetable.types";
 import { translateTimeSlotsServer } from "../utils/timetableTranslation";
+import { TimelineSlot, TimetableEvent } from "../../../types/events";
 
 // Import translatable data - single source of truth
 // Import new event-based data
@@ -532,5 +533,107 @@ export class TimetableService {
    */
   static isAreaMigrated(area: AreaType, day: "saturday" | "sunday"): boolean {
     return area === "main-stage" && day === "saturday";
+  }
+
+  // ============================================================================
+  // NEW EVENT-BASED METHODS (for bridge removal migration)
+  // ============================================================================
+
+  /**
+   * Get events for a specific area and day (returns TimelineSlot format)
+   * This is the new method that will replace the bridge layer conversion
+   */
+  static getEventsForArea(
+    area: AreaType,
+    day: "saturday" | "sunday",
+  ): TimelineSlot[] {
+    // Map of area -> events and timeline
+    const eventMap = {
+      saturday: {
+        "main-stage": {
+          timeline: mainStageSaturdayTimeline,
+          events: mainStageSaturdayEvents,
+        },
+        "dance-workshops": {
+          timeline: danceWorkshopsSaturdayTimeline,
+          events: danceWorkshopSaturdayEvents,
+        },
+        "music-workshops": {
+          timeline: musicWorkshopsSaturdayTimeline,
+          events: musicWorkshopSaturdayEvents,
+        },
+        "salsa-talks": {
+          timeline: salsaTalksSaturdayTimeline,
+          events: salsaTalksSaturdayEvents,
+        },
+      },
+      sunday: {
+        "main-stage": {
+          timeline: mainStageSundayTimeline,
+          events: mainStageSundayEvents,
+        },
+        "dance-workshops": {
+          timeline: danceWorkshopsSundayTimeline,
+          events: danceWorkshopSundayEvents,
+        },
+        "music-workshops": {
+          timeline: musicWorkshopsSundayTimeline,
+          events: musicWorkshopSundayEvents,
+        },
+        "salsa-talks": {
+          timeline: salsaTalksSundayTimeline,
+          events: salsaTalksSundayEvents,
+        },
+      },
+    };
+
+    const { timeline, events } = eventMap[day][area];
+    // createTimelineFromSimpleConfig returns TimetableEvent[] with startTime/endTime filled in
+    const timelineEvents = createTimelineFromSimpleConfig(timeline, events);
+
+    // Convert to TimelineSlot[] format (time -> events mapping)
+    const slotsMap = new Map<string, TimetableEvent[]>();
+    
+    // Build time slots from events (every 30 minutes from 13:00 to 21:30)
+    const startHour = 13;
+    const endHour = 21;
+    const endMinutes = 30;
+    
+    for (let hour = startHour; hour <= endHour; hour++) {
+      for (let minute = 0; minute < 60; minute += 30) {
+        if (hour === endHour && minute > endMinutes) break;
+        const timeStr = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
+        slotsMap.set(timeStr, []);
+      }
+    }
+
+    // Assign events to their time slots
+    for (const event of timelineEvents) {
+      const startTime = event.startTime;
+      if (slotsMap.has(startTime)) {
+        slotsMap.get(startTime)!.push(event);
+      }
+    }
+
+    // Convert map to TimelineSlot array
+    return Array.from(slotsMap.entries()).map(([time, events]) => ({
+      time,
+      events,
+    }));
+  }
+
+  /**
+   * Get all events for a specific day (returns events by area)
+   * This will be the new main method for fetching timetable data
+   */
+  static getTimetableEventsServer(
+    day: "saturday" | "sunday",
+  ): Record<AreaType, TimelineSlot[]> {
+    return {
+      "main-stage": this.getEventsForArea("main-stage", day),
+      "dance-workshops": this.getEventsForArea("dance-workshops", day),
+      "music-workshops": this.getEventsForArea("music-workshops", day),
+      "salsa-talks": this.getEventsForArea("salsa-talks", day),
+    };
   }
 }
