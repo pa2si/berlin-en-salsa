@@ -156,12 +156,20 @@ export function useEventAdapter() {
       const guests = event.acts.filter((act) => act.role === "guest");
       const presenter = event.acts.find((act) => act.role === "presenter");
 
-      const slides = event.acts.map((act) => ({
-        image: act.image,
-        description: translateIfKey(act.description), // Only act's own description, not event description
-        bio: translateIfKey(act.bio),
-        caption: act.name, // Keep as key for EventNavigation
-      }));
+      // Use custom slides if provided, otherwise generate from acts
+      const slides = event.slides
+        ? event.slides.map((slide) => ({
+            image: slide.image,
+            description: translateIfKey(slide.content),
+            bio: translateIfKey(slide.bio),
+            caption: slide.caption, // Keep as key for EventNavigation
+          }))
+        : event.acts.map((act) => ({
+            image: act.image,
+            description: translateIfKey(act.description), // Only act's own description, not event description
+            bio: translateIfKey(act.bio),
+            caption: act.name, // Keep as key for EventNavigation
+          }));
 
       return {
         ...baseDetails,
