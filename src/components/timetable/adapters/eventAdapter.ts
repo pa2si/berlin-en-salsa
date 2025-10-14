@@ -158,7 +158,7 @@ export function useEventAdapter() {
 
       const slides = event.acts.map((act) => ({
         image: act.image,
-        description: translateIfKey(act.description || event.description),
+        description: translateIfKey(act.description), // Only act's own description, not event description
         bio: translateIfKey(act.bio),
         caption: act.name, // Keep as key for EventNavigation
       }));
