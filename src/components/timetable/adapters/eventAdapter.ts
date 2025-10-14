@@ -38,8 +38,8 @@ export function useEventAdapter() {
         image: act.image,
         djName: act.role === "dj" ? translateIfKey(act.name) : undefined,
         bandName: act.role === "band" ? translateIfKey(act.name) : undefined,
-        bio: translateIfKey(act.bio),
-        description: translateIfKey(act.bio), // Use bio as description for compatibility
+        bio: translateIfKey(act.bio || act.description), // Use bio or description
+        description: translateIfKey(act.description || act.bio), // Use description or bio for compatibility
         caption: act.name, // Keep as key for EventNavigation to translate
       }));
 
