@@ -1,3 +1,8 @@
+to do:
+
+- need to check if i should add all folders into [locale]
+- check SEO after internationalization
+
 Versions:
 
 whats's done:
