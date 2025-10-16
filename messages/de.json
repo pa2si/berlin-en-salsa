@@ -128,19 +128,27 @@
       "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr."
     },
     "timetable": {
-      "title": "Programm | Berlin En Salsa",
-      "description": "Entdecken Sie den vollständigen Zeitplan des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und mehr.",
+      "title": "Programm",
+      "description": "Entdecke das vollständige Programm des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und vieles mehr.",
       "openGraph": {
-        "title": "Programm | Berlin En Salsa",
-        "description": "Entdecken Sie den vollständigen Zeitplan des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und mehr."
+        "title": "Programm",
+        "description": "Entdecke das vollständige Programm des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und vieles mehr."
       }
     },
     "legal": {
-      "title": "Impressum | Berlin En Salsa",
+      "title": "Impressum",
       "description": "Impressum von Berlin En Salsa. Rechtliche Informationen und Kontaktdaten.",
       "openGraph": {
-        "title": "Impressum | Berlin En Salsa",
+        "title": "Impressum",
         "description": "Rechtliche Informationen und Kontaktdaten des Berlin En Salsa Festivals."
+      }
+    },
+    "privacy": {
+      "title": "Datenschutz",
+      "description": "Datenschutzerklärung von Berlin En Salsa. Informationen zum Schutz Ihrer persönlichen Daten.",
+      "openGraph": {
+        "title": "Datenschutz",
+        "description": "Datenschutzerklärung und Informationen zum Schutz Ihrer persönlichen Daten."
       }
     }
   },

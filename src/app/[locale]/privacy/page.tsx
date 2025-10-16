@@ -16,25 +16,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({
     locale: locale as "de" | "es",
-    namespace: "Privacy" as const,
+    namespace: "Metadata.privacy" as const,
   });
 
   const isGerman = locale === "de";
   const canonicalPath = isGerman ? "/datenschutz" : "/es/privacidad";
+  const canonical = `${baseUrl}${canonicalPath}`;
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
-      canonical: `${baseUrl}${canonicalPath}`,
+      canonical,
       languages: {
         de: `${baseUrl}/datenschutz`,
         es: `${baseUrl}/es/privacidad`,
       },
     },
     openGraph: {
-      title: t("title"),
-      url: `${baseUrl}${canonicalPath}`,
+      title: t("openGraph.title"),
+      description: t("openGraph.description"),
+      url: canonical,
+      siteName: "Berlin En Salsa",
+      locale: locale === "de" ? "de_DE" : "es_ES",
+      type: "website",
+      images: [
+        {
+          url: `${baseUrl}/og-image.jpg`,
+          width: 1200,
+          height: 630,
+          alt: t("openGraph.title"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("openGraph.title"),
+      description: t("openGraph.description"),
+      images: [`${baseUrl}/og-image.jpg`],
     },
   };
 }

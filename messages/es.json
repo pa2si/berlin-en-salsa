@@ -128,19 +128,27 @@
       "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más."
     },
     "timetable": {
-      "title": "Programa | Berlin En Salsa",
+      "title": "Programa",
       "description": "Descubre el horario completo del festival Berlin En Salsa. Orquestas en vivo, DJs, talleres, shows y mucho más.",
       "openGraph": {
-        "title": "Programa | Berlin En Salsa",
+        "title": "Programa",
         "description": "Descubre el horario completo del festival Berlin En Salsa. Orquestas en vivo, DJs, talleres, shows y mucho más."
       }
     },
     "legal": {
-      "title": "Aviso Legal | Berlin En Salsa",
+      "title": "Aviso Legal",
       "description": "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
       "openGraph": {
-        "title": "Aviso Legal | Berlin En Salsa",
+        "title": "Aviso Legal",
         "description": "Información legal y datos de contacto del festival Berlin En Salsa."
+      }
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Política de privacidad de Berlin En Salsa. Información sobre la protección de tus datos personales.",
+      "openGraph": {
+        "title": "Política de Privacidad",
+        "description": "Política de privacidad e información sobre la protección de tus datos personales."
       }
     }
   },
