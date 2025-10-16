@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 // Base URL for absolute URLs in metadata
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
@@ -13,27 +14,42 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  const legalPath = locale === "de" ? "impressum" : "legal";
+  const t = await getTranslations({
+    locale: locale as "de" | "es",
+    namespace: "Metadata.legal" as const,
+  });
+
+  const isGerman = locale === "de";
+  const canonicalPath = isGerman ? "/impressum" : "/es/legal";
 
   return {
-    title: locale === "de" ? "Impressum" : "Aviso Legal",
-    description:
-      locale === "de"
-        ? "Impressum von Berlin En Salsa. Rechtliche Informationen und Kontaktdaten."
-        : "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
+    title: t("title"),
+    description: t("description"),
     alternates: {
-      canonical: `${baseUrl}/${locale === "de" ? "" : "es/"}${legalPath}`,
+      canonical: `${baseUrl}${canonicalPath}`,
       languages: {
         de: `${baseUrl}/impressum`,
         es: `${baseUrl}/es/legal`,
       },
     },
     openGraph: {
-      title:
-        locale === "de"
-          ? "Berlin En Salsa | Impressum"
-          : "Berlin En Salsa | Aviso Legal",
-      url: `${baseUrl}/${locale === "de" ? "" : "es/"}${legalPath}`,
+      title: t("openGraph.title"),
+      description: t("openGraph.description"),
+      url: `${baseUrl}${canonicalPath}`,
+      images: [
+        {
+          url: `${baseUrl}/opengraph-image.png`,
+          width: 1200,
+          height: 630,
+          alt: "Berlin En Salsa Festival",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("openGraph.title"),
+      description: t("openGraph.description"),
+      images: [`${baseUrl}/twitter-image.png`],
     },
   };
 }

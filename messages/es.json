@@ -134,6 +134,14 @@
         "title": "Programa | Berlin En Salsa",
         "description": "Descubre el horario completo del festival Berlin En Salsa. Orquestas en vivo, DJs, talleres, shows y mucho más."
       }
+    },
+    "legal": {
+      "title": "Aviso Legal | Berlin En Salsa",
+      "description": "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
+      "openGraph": {
+        "title": "Aviso Legal | Berlin En Salsa",
+        "description": "Información legal y datos de contacto del festival Berlin En Salsa."
+      }
     }
   },
   "Privacy": {

@@ -134,6 +134,14 @@
         "title": "Programm | Berlin En Salsa",
         "description": "Entdecken Sie den vollständigen Zeitplan des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und mehr."
       }
+    },
+    "legal": {
+      "title": "Impressum | Berlin En Salsa",
+      "description": "Impressum von Berlin En Salsa. Rechtliche Informationen und Kontaktdaten.",
+      "openGraph": {
+        "title": "Impressum | Berlin En Salsa",
+        "description": "Rechtliche Informationen und Kontaktdaten des Berlin En Salsa Festivals."
+      }
     }
   },
   "Privacy": {
