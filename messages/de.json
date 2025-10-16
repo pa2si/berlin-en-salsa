@@ -126,6 +126,14 @@
     "openGraph": {
       "title": "Berlin En Salsa",
       "description": "Berlin En Salsa. Ein Salsa Festival für alle. Live-Musik, DJs, Tanz, Workshops und mehr."
+    },
+    "timetable": {
+      "title": "Programm | Berlin En Salsa",
+      "description": "Entdecken Sie den vollständigen Zeitplan des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und mehr.",
+      "openGraph": {
+        "title": "Programm | Berlin En Salsa",
+        "description": "Entdecken Sie den vollständigen Zeitplan des Berlin En Salsa Festivals. Live-Orchester, DJs, Workshops, Shows und mehr."
+      }
     }
   },
   "Privacy": {
