@@ -3,8 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export default function Loading() {
+  const t = useTranslations("Loading");
+
   return (
     <div className="fixed inset-0 z-50 flex min-h-screen flex-col items-center justify-center bg-[var(--background)]">
       <motion.div
@@ -43,7 +46,7 @@ export default function Loading() {
       />
 
       <p className={`text-lg font-medium text-[var(--foreground)] opacity-75`}>
-        Cargando...
+        {t("text")}
       </p>
     </div>
   );
