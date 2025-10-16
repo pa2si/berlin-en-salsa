@@ -329,6 +329,12 @@ export default function Privacy() {
           </h3>
           <p>{t("section3.paragraph21")}</p>
 
+          <h3 className="mt-6 mb-2 text-xl font-bold">
+            {t("section3.subtitle14")}
+          </h3>
+          <p>{t("section3.paragraph22")}</p>
+          <p>{t("section3.paragraph23")}</p>
+
           {/* Section 4: Datenerfassung auf dieser Website */}
           <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold">
             {t("section4.title")}
