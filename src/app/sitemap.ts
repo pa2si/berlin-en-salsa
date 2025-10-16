@@ -1,72 +1,62 @@
 import { MetadataRoute } from "next";
+import { getPathname } from "@/i18n/navigation";
 
 // Base URL for absolute URLs
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
+const host = process.env.NEXT_PUBLIC_BASE_URL || "https://berlinensalsa.de";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
-    // Spanish routes
+    // Home page
     {
-      url: `${baseUrl}/`,
+      url: host,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1.0,
+      alternates: {
+        languages: {
+          de: host + (await getPathname({ locale: "de", href: "/" })),
+          es: host + (await getPathname({ locale: "es", href: "/" })),
+        },
+      },
     },
+    // Timetable page
     {
-      url: `${baseUrl}/timetable`,
+      url: host + (await getPathname({ locale: "de", href: "/timetable" })),
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
+      alternates: {
+        languages: {
+          de: host + (await getPathname({ locale: "de", href: "/timetable" })),
+          es: host + (await getPathname({ locale: "es", href: "/timetable" })),
+        },
+      },
     },
+    // Legal/Impressum page
     {
-      url: `${baseUrl}/impressum`,
+      url: host + (await getPathname({ locale: "de", href: "/legal" })),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
+      alternates: {
+        languages: {
+          de: host + (await getPathname({ locale: "de", href: "/legal" })),
+          es: host + (await getPathname({ locale: "es", href: "/legal" })),
+        },
+      },
     },
+    // Privacy page
     {
-      url: `${baseUrl}/privacy`,
+      url: host + (await getPathname({ locale: "de", href: "/privacy" })),
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.7,
-    },
-
-    // German routes
-    {
-      url: `${baseUrl}/de`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/de/timetable`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/impressum`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/datenschutz`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/es/legal`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/es/privacidad`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
+      alternates: {
+        languages: {
+          de: host + (await getPathname({ locale: "de", href: "/privacy" })),
+          es: host + (await getPathname({ locale: "es", href: "/privacy" })),
+        },
+      },
     },
   ];
 }
