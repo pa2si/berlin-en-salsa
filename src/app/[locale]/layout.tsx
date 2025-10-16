@@ -144,6 +144,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
 
   // Providing all messages to the client side is the easiest way to get started
+  // This includes Error, Loading, and NotFound messages for error handling
   const messages = await getMessages();
 
   return (

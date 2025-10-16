@@ -107,7 +107,18 @@
     }
   },
   "NotFound": {
-    "pageNotFound": "Página no encontrada"
+    "pageNotFound": "Página no encontrada",
+    "title": "404",
+    "backToHome": "Volver al inicio"
+  },
+  "Loading": {
+    "text": "Cargando..."
+  },
+  "Error": {
+    "title": "¡Oops!",
+    "message": "Algo no salió como esperábamos",
+    "retry": "Intentar de nuevo",
+    "backToHome": "Volver al inicio"
   },
   "Metadata": {
     "title": "Berlin En Salsa",

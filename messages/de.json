@@ -107,7 +107,18 @@
     }
   },
   "NotFound": {
-    "pageNotFound": "Seite nicht gefunden"
+    "pageNotFound": "Seite nicht gefunden",
+    "title": "404",
+    "backToHome": "Zurück zur Startseite"
+  },
+  "Loading": {
+    "text": "Wird geladen..."
+  },
+  "Error": {
+    "title": "Oops!",
+    "message": "Etwas ist nicht wie erwartet gelaufen",
+    "retry": "Erneut versuchen",
+    "backToHome": "Zurück zur Startseite"
   },
   "Metadata": {
     "title": "Berlin En Salsa",

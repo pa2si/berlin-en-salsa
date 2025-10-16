@@ -39,7 +39,7 @@ export default function NotFound() {
           404
         </h1>
         <p className="mb-6 text-lg text-[var(--color-bes-black)]">
-          Page not found | Página no encontrada | Seite nicht gefunden
+          Seite nicht gefunden | Página no encontrada
         </p>
       </motion.div>
 
@@ -49,16 +49,16 @@ export default function NotFound() {
             href="/"
             className="hover:bg-opacity-90 flex rounded-md bg-[var(--color-bes-red)] px-6 py-2 text-white transition-colors"
           >
-            Español
+            Deutsch
           </Link>
         </motion.div>
 
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
           <Link
-            href="/de"
+            href="/es"
             className="hover:bg-opacity-90 bg-bes-purple text-bes-amber flex rounded-md px-6 py-2 transition-colors"
           >
-            Deutsch
+            Español
           </Link>
         </motion.div>
       </div>
