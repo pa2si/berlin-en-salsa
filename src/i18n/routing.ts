@@ -4,7 +4,7 @@ export const routing = defineRouting({
   // A list of all locales that are supported
   locales: ["de", "es"],
 
-  // Used when no locale matches - German as default to keep / as German
+  // German as default to keep / as German
   defaultLocale: "de",
 
   // Use 'as-needed' so German (default) has no prefix
