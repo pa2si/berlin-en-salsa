@@ -1,45 +1,13 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
-import { NextRequest, NextResponse } from "next/server";
 
-// Create the default next-intl middleware
-const handleI18nRouting = createMiddleware(routing);
-
-export default function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  // Skip middleware for API routes, static files, etc.
-  if (
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/_vercel") ||
-    pathname.includes(".")
-  ) {
-    return NextResponse.next();
-  }
-
-  // Check if this is the root path and no locale is set yet
-  if (pathname === "/") {
-    const acceptLanguage = request.headers.get("accept-language") || "";
-
-    // Check if the browser prefers German - be more specific
-    const languages = acceptLanguage.toLowerCase();
-    const hasGerman =
-      languages.includes("de-") ||
-      languages.includes("de,") ||
-      languages.startsWith("de");
-
-    // If not German, redirect to Spanish
-    if (!hasGerman) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/es";
-      return NextResponse.redirect(url);
-    }
-  }
-
-  // Use default next-intl middleware for all other cases
-  return handleI18nRouting(request);
-}
+// Create and export the next-intl middleware
+// This will handle locale detection including:
+// 1. Locale prefix in pathname
+// 2. Locale cookie (NEXT_LOCALE)
+// 3. Accept-language header
+// 4. Default locale as fallback
+export default createMiddleware(routing);
 
 export const config = {
   // Match all pathnames except for

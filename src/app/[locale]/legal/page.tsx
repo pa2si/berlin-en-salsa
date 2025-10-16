@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Footer } from "@/components/Footer";
 import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
