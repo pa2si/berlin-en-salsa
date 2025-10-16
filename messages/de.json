@@ -45,7 +45,10 @@
       "title": "Festivalplan",
       "description": "Sieh dir unseren interaktiven Zeitplan an und plane dein Berlin En Salsa Erlebnis. Klicke auf die Bilder, um den vollständigen Zeitplan sowie alle Details zu Künstlern, Workshops und mehr anzuzeigen!",
       "saturday": "Samstag",
-      "sunday": "Sonntag"
+      "sunday": "Sonntag",
+      "saturdayAlt": "Programm für Samstag",
+      "sundayAlt": "Programm für Sonntag",
+      "viewFullProgram": "Vollständiges Programm ansehen"
     },
     "SectionSix": {
       "title": "Kontakt",

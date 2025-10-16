@@ -123,7 +123,7 @@ const SectionFive = () => {
                   >
                     <motion.img
                       src="/timetable-saturday.png"
-                      alt="Programa del Sábado"
+                      alt={t("saturdayAlt")}
                       className="w-full rounded-lg"
                     />
                     <motion.div
@@ -164,7 +164,7 @@ const SectionFive = () => {
                         animate={{ y: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        Ver programa completo
+                        {t("viewFullProgram")}
                       </motion.p>
                     </motion.div>
                   </motion.div>
@@ -188,7 +188,7 @@ const SectionFive = () => {
                   >
                     <motion.img
                       src="/timetable-sunday.png"
-                      alt="Programa del Domingo"
+                      alt={t("sundayAlt")}
                       className="w-full rounded-lg"
                     />
                     <motion.div
@@ -229,7 +229,7 @@ const SectionFive = () => {
                         animate={{ y: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        Ver programa completo
+                        {t("viewFullProgram")}
                       </motion.p>
                     </motion.div>
                   </motion.div>
@@ -262,7 +262,7 @@ const SectionFive = () => {
               >
                 <motion.img
                   src="/timetable-saturday.png"
-                  alt="Programa del Sábado"
+                  alt={t("saturdayAlt")}
                   className="w-full rounded-lg"
                   animate={{
                     scale: hoveredSaturday ? 1.05 : 1,
@@ -307,7 +307,7 @@ const SectionFive = () => {
                     animate={{ y: hoveredSaturday ? 0 : 10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    Ver programa completo
+                    {t("viewFullProgram")}
                   </motion.p>
                 </motion.div>
               </motion.div>
@@ -335,7 +335,7 @@ const SectionFive = () => {
               >
                 <motion.img
                   src="/timetable-sunday.png"
-                  alt="Programa del Domingo"
+                  alt={t("sundayAlt")}
                   className="w-full rounded-lg"
                   animate={{
                     scale: hoveredSunday ? 1.05 : 1,
@@ -380,7 +380,7 @@ const SectionFive = () => {
                     animate={{ y: hoveredSunday ? 0 : 10 }}
                     transition={{ duration: 0.3 }}
                   >
-                    Ver programa completo
+                    {t("viewFullProgram")}
                   </motion.p>
                 </motion.div>
               </motion.div>
