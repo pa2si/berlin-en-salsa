@@ -1,4 +1,9 @@
-whats done in fixed-tt-live-banner-metadata-fix-breadcrumb-layout which is the start of this branch:
+whats done it fixes-after-refactor:
+
+- unified the workshop etc. files (not seperated anymore per day)
+- remove start and endTime in eventData. set the time onyl in timelineConfig.
+
+whats done in fixed-tt-live-banner-metadata-fix-breadcrumb-layout which is the start of fixes-after-refactor:
 
 - full internationalization including metadata implemented
 - the routes now have a folder and share a layout.tsx with breadcrump, header and footer
