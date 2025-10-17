@@ -460,11 +460,12 @@ export class TimetableService {
 
   /**
    * Find an event by time and area - Server Component version
+   * PHASE 5: Updated to accept generic string for day parameter
    */
   static async findEventServer(
     time: string,
     area: AreaType,
-    day: "saturday" | "sunday",
+    day: string, // Changed from "saturday" | "sunday" to string
   ): Promise<TimeSlot | undefined> {
     const areaEvents = await this.getAreaEventsServer(area, day);
     return areaEvents.find((slot) => slot.time === time && slot.event);
@@ -472,8 +473,10 @@ export class TimetableService {
 
   /**
    * Migration helper: Check if an area has been migrated to translatable format
+   * PHASE 5: Updated to accept generic string for day parameter
+   * @deprecated This method is for backward compatibility only
    */
-  static isAreaMigrated(area: AreaType, day: "saturday" | "sunday"): boolean {
+  static isAreaMigrated(area: AreaType, day: string): boolean { // Changed from "saturday" | "sunday" to string
     return area === "main-stage" && day === "saturday";
   }
 

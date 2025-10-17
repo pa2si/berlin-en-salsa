@@ -29,11 +29,12 @@ export interface BaseEventDefinition {
 
 /**
  * Scheduling information added during enrichment
+ * PHASE 5: Changed day from hardcoded union to generic string
  */
 export interface SchedulingInfo {
   startTime: string; // Set by timeline config during enrichment
   endTime: string; // Set by timeline config during enrichment
-  day: "saturday" | "sunday"; // Set during enrichment
+  day: string; // PHASE 5: Changed from "saturday" | "sunday" to string - supports any weekday
 }
 
 /**

@@ -6,14 +6,16 @@ import { getTranslations } from "next-intl/server";
 /**
  * Server-side helper for getting translated timetable data
  * This should be used in Server Components for optimal performance
+ * PHASE 5: Updated to accept generic string for day parameters
  */
 export class ServerTimetableHelper {
   /**
    * Get fully translated and processed timetable data for a specific day
    * This runs on the server and returns ready-to-use data
+   * PHASE 5: Now accepts any weekday string (not just "saturday" | "sunday")
    */
   static async getTimetableData(
-    currentDay: "saturday" | "sunday",
+    currentDay: string, // Changed from "saturday" | "sunday" to string
   ): Promise<Column[]> {
     // Get translated timetable data from the service
     const rawTimetableData =
@@ -87,8 +89,10 @@ export class ServerTimetableHelper {
 
   /**
    * Check if a specific area has been migrated to the new translation system
+   * PHASE 5: Updated to accept generic string for day parameter
+   * @deprecated This method is for backward compatibility only
    */
-  static isAreaMigrated(area: string, day: "saturday" | "sunday"): boolean {
+  static isAreaMigrated(area: string, day: string): boolean { // Changed from "saturday" | "sunday" to string
     // Map area names to AreaType
     const areaTypeMap: Record<string, string> = {
       "main-stage": "main-stage",
@@ -106,9 +110,10 @@ export class ServerTimetableHelper {
 
   /**
    * Get available time slots for a given day
+   * PHASE 5: Updated to accept generic string for day parameter
    */
   static async getAvailableTimeSlots(
-    day: "saturday" | "sunday",
+    day: string, // Changed from "saturday" | "sunday" to string
   ): Promise<string[]> {
     return TimetableService.getAvailableTimeSlotsServer(day);
   }

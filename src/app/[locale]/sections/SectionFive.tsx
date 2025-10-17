@@ -8,7 +8,7 @@ import { useTranslations } from "next-intl";
 const SectionFive = () => {
   const [hoveredSaturday, setHoveredSaturday] = useState(false);
   const [hoveredSunday, setHoveredSunday] = useState(false);
-  const [activeTab, setActiveTab] = useState<"saturday" | "sunday">("saturday");
+  const [activeTab, setActiveTab] = useState<string>("saturday"); // PHASE 5: Changed from "saturday" | "sunday" to string
   const t = useTranslations("Sections.SectionFive");
 
   return (

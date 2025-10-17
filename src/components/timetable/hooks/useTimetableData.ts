@@ -7,8 +7,9 @@ import { TimetableService } from "../../../data/timetable/services/timetable.ser
 /**
  * Hook for fetching and processing timetable data with the translation system
  * This hook works with Server Components and the translatable data format
+ * PHASE 5: Updated to accept generic string for currentDay parameter
  */
-export const useTimetableData = (currentDay: "saturday" | "sunday") => {
+export const useTimetableData = (currentDay: string) => { // Changed from "saturday" | "sunday" to string
   const [timetableData, setTimetableData] = useState<Column[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
