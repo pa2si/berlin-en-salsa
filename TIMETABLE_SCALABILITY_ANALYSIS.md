@@ -1,6 +1,26 @@
 # Timetable Scalability Analysis & Improvement Plan
 
+## 📋 Document Purpose
+
+This document provides a comprehensive plan to refactor the timetable system from a **hardcoded 2-day system** (Saturday/Sunday) to a **config-driven multi-day system** that can support any number of festival days.
+
+**Status:** Ready to implement (7 phases, 21-29 hours estimated)
+
+---
+
 ## Current State Analysis
+
+**Tech Stack:**
+- Next.js 15.3.1 (App Router)
+- TypeScript with strict type checking
+- next-intl for internationalization (German/Spanish)
+- Framer Motion for animations
+- Tailwind CSS for styling
+
+**Current Festival Setup:**
+- 2 days: Saturday July 19, 2025 & Sunday July 20, 2025
+- 4 areas: main-stage, dance-workshops, music-workshops, salsa-talks
+- Event types: DJ sets, live bands, workshops, talks, dance shows
 
 ### 1. **Festival Configuration** (`src/config/festival.ts`)
 
@@ -43,6 +63,8 @@ TimetableClient
   │   ├── Saturday button with /saturday.svg
   │   └── Sunday button with /sunday.svg
   └── Ternary selection based on currentDay
+      ↓
+  EventModal (✅ UPDATED: now accepts TimetableEvent directly)
 ```
 
 ### 3. **TimetablePage Server Component** (`src/components/timetable/TimetablePage.tsx`)
@@ -85,30 +107,100 @@ TimetableClient
 
 Days are represented as string literals `"saturday" | "sunday"` throughout the codebase, making it impossible to scale beyond 2 days.
 
+**Example locations:**
+```typescript
+// TimetableClient.tsx
+type Day = "saturday" | "sunday";
+const [currentDay, setCurrentDay] = useState<Day>("saturday");
+
+// TimetableService.ts
+getSaturdayData() { ... }
+getSundayData() { ... }
+
+// timelineConfig.ts
+mainStageSaturdayTimeline: TimelineSlot[]
+mainStageSundayTimeline: TimelineSlot[]
+```
+
 ### **Issue #2: Static Data Structures**
 
 Data structures are hardcoded for exactly 2 days:
 
 - Props: `saturdayData`, `sundayData`
-- State variables
-- Service methods
+- State variables: `currentDay: "saturday" | "sunday"`
+- Service methods: `getSaturdayData()`, `getSundayData()`
+- Timeline arrays: 8 separate arrays (4 areas × 2 days)
+
+**Example:**
+```typescript
+// TimetableClient props
+interface TimetableClientProps {
+  saturdayData: Column[];
+  sundayData: Column[];
+  saturdayEvents: Record<AreaType, TimelineSlot[]>;
+  sundayEvents: Record<AreaType, TimelineSlot[]>;
+}
+
+// Data selection
+const currentData = currentDay === "saturday" ? saturdayData : sundayData;
+```
 
 ### **Issue #3: Hardcoded UI Components**
 
 Day selection buttons are manually duplicated in JSX, not generated from config.
 
+**Example:**
+```typescript
+// Two separate button components hardcoded
+<button onClick={() => handleDayChange("saturday")}>
+  <Image src="/saturday.svg" alt="Saturday" />
+</button>
+
+<button onClick={() => handleDayChange("sunday")}>
+  <Image src="/sunday.svg" alt="Sunday" />
+</button>
+```
+
+To add a 3rd day (Monday), you'd need to:
+1. Manually add a third button
+2. Change type from `"saturday" | "sunday"` to `"saturday" | "sunday" | "monday"`
+3. Add `mondayData` prop
+4. Add `getMondayData()` method
+5. Create `mainStageMondayTimeline` array
+6. Update conditional logic everywhere
+
+This doesn't scale!
+
 ### **Issue #4: Missing Day Metadata**
 
 No central place stores:
 
-- Day dates
-- Weekday names
-- Day identifiers
-- Button images
+- Day dates (July 19, July 20)
+- Weekday names ("saturday", "sunday")
+- Day identifiers ("day1", "day2")
+- Button image paths
+- Display labels/translations
+
+Each component has to know this information independently.
 
 ### **Issue #5: Timeline Configuration Duplication**
 
 Each area has separate timeline arrays per day (e.g., `mainStageSaturdayTimeline`, `mainStageSundayTimeline`), leading to duplication.
+
+**Current structure:**
+```typescript
+// 8 separate arrays (4 areas × 2 days)
+export const mainStageSaturdayTimeline: TimelineSlot[] = [...];
+export const mainStageSundayTimeline: TimelineSlot[] = [...];
+export const danceWorkshopsSaturdayTimeline: TimelineSlot[] = [...];
+export const danceWorkshopsSundayTimeline: TimelineSlot[] = [...];
+// ... 4 more arrays
+```
+
+This means:
+- Variable names grow exponentially with days
+- No consistent naming pattern
+- Hard to maintain/refactor
 
 ---
 
@@ -118,27 +210,63 @@ Each area has separate timeline arrays per day (e.g., `mainStageSaturdayTimeline
 
 Move from **hardcoded dual-day system** to **config-driven multi-day system** where:
 
-1. `FESTIVAL_CONFIG` defines all days dynamically
-2. All components derive days from config
-3. UI elements are generated, not hardcoded
+1. `FESTIVAL_CONFIG` defines all days dynamically from start/end dates
+2. All components derive days from config (single source of truth)
+3. UI elements are generated programmatically, not hardcoded
+4. Services use generic methods, not day-specific methods
+5. Timeline config uses structured objects, not separate variables
 
 ### **New Data Flow:**
 
 ```
-FESTIVAL_CONFIG
-  ↓ (generates day metadata)
-Day Objects Array [{ id, date, weekday, label, image }, ...]
-  ↓ (used by)
-TimetablePage (fetches data for all days dynamically)
-  ↓ (passes)
-TimetableClient (renders buttons & data dynamically)
+FESTIVAL_CONFIG (festival.ts)
+  ├── dates: { start, end }
+  └── days: FestivalDay[] (auto-generated)
+      ├── { id: "day1", date: July 19, weekday: "saturday", imageSrc: "/saturday.svg" }
+      └── { id: "day2", date: July 20, weekday: "sunday", imageSrc: "/sunday.svg" }
+          ↓
+TIMELINE_CONFIG (timelineConfig.ts)
+  └── [{ area: "main-stage", days: { saturday: [...], sunday: [...] } }]
+          ↓
+TimetableService
+  └── getDataForDay(weekday: string) - generic method for any day
+          ↓
+TimetablePage (Server Component)
+  ├── Fetches data for all days in loop
+  └── Passes array of { day, data, events }
+          ↓
+TimetableClient
+  ├── Generates buttons dynamically from festivalDays array
+  ├── Manages currentDayId state (generic string)
+  └── Selects current day data from array
+          ↓
+EventModal
+  └── Accepts TimetableEvent (works with any day info)
 ```
+
+### **Key Differences:**
+
+| Aspect | Current (Hardcoded) | Proposed (Config-Driven) |
+|--------|---------------------|--------------------------|
+| **Days** | `"saturday" \| "sunday"` | `string` (any weekday) |
+| **State** | `currentDay: "saturday"` | `currentDayId: string` |
+| **Props** | `saturdayData, sundayData` | `daysData: DayData[]` |
+| **Service** | `getSaturdayData()` | `getDataForDay(weekday)` |
+| **Timeline** | 8 separate arrays | Structured config object |
+| **Buttons** | 2 hardcoded buttons | Generated from array |
+| **Adding day** | Modify 10+ files | Change config dates only |
 
 ---
 
 ## Step-by-Step Implementation Plan
 
-### **Phase 1: Festival Configuration Enhancement**
+**Overview:** 7 phases, estimated 21-29 hours total
+
+Each phase is independent and can be tested before moving to the next.
+
+---
+
+### **Phase 1: Festival Configuration Enhancement** (2-3 hours)
 
 #### **Step 1.1: Expand FESTIVAL_CONFIG**
 
@@ -195,13 +323,19 @@ function generateFestivalDays(start: Date, end: Date): FestivalDay[] {
 **Benefits:**
 
 - ✅ Days are calculated from start/end dates
-- ✅ Can handle any number of days
+- ✅ Can handle any number of days (1 to N)
 - ✅ Each day has complete metadata
 - ✅ Central source of truth
 
+**Testing:**
+- Test with 2 days (current)
+- Test with 1 day
+- Test with 3+ days
+- Verify date calculations across months/years
+
 ---
 
-### **Phase 2: Timeline Configuration Refactor**
+### **Phase 2: Timeline Configuration Refactor** (3-4 hours)
 
 #### **Step 2.1: Restructure Timeline Arrays**
 
@@ -256,12 +390,18 @@ export function getTimelineForAreaAndDay(
 **Benefits:**
 
 - ✅ Single source per area
-- ✅ Easy to add new days
-- ✅ No duplication of variable names
+- ✅ Easy to add new days (just add to days object)
+- ✅ No variable name duplication
+- ✅ Helper function provides clean API
+
+**Testing:**
+- Verify all existing events still appear
+- Check timeline integrity for both days
+- Test helper function with valid/invalid inputs
 
 ---
 
-### **Phase 3: Service Layer Refactor**
+### **Phase 3: Service Layer Refactor** (4-5 hours)
 
 #### **Step 3.1: Unify TimetableService Methods**
 
@@ -307,9 +447,21 @@ static getTimetableEventsServer(dayWeekday: string): Record<AreaType, TimelineSl
 }
 ```
 
+**Benefits:**
+- ✅ Generic methods work for any day
+- ✅ Loop through areas dynamically
+- ✅ No day-specific methods needed
+- ✅ Easier to add new areas or days
+
+**Testing:**
+- Test data fetching for both existing days
+- Verify event collections are correct
+- Test with invalid weekday (should handle gracefully)
+- Compare output with old methods (should be identical)
+
 ---
 
-### **Phase 4: Component Refactor**
+### **Phase 4: Component Refactor** (4-5 hours)
 
 #### **Step 4.1: Update TimetablePage (Server Component)**
 
@@ -355,6 +507,8 @@ export default async function TimetablePage({ initialDayId }: TimetablePageProps
   );
 }
 ```
+
+**✅ Note:** EventModal already accepts `TimetableEvent` directly (no additional changes needed)
 
 #### **Step 4.2: Update TimetableClient**
 
@@ -447,9 +601,31 @@ const currentData = currentDayData ? processData(currentDayData.data) : [];
 const currentEvents = currentDayData?.events || {};
 ```
 
+**Modal Rendering:**
+
+```typescript
+{/* EventModal accepts TimetableEvent directly */}
+{selectedEvent && (
+  <EventModal event={selectedEvent} onClose={closeModal} />
+)}
+```
+
+**Benefits:**
+- ✅ Dynamic button generation (works with any number of days)
+- ✅ No hardcoded day logic in components
+- ✅ Easier to style/customize per-day buttons
+- ✅ EventModal supports dynamic days (no modal changes needed)
+
+**Testing:**
+- Test day switching UI
+- Verify all buttons render correctly
+- Test responsive layout with 1, 2, 3+ buttons
+- Test URL parameter updates
+- Verify modal opens with correct event data
+
 ---
 
-### **Phase 5: Type System Updates**
+### **Phase 5: Type System Updates** (1-2 hours)
 
 #### **Step 5.1: Update Type Definitions**
 
@@ -478,9 +654,20 @@ export interface FestivalDay {
 }
 ```
 
+**Benefits:**
+- ✅ Type-safe throughout codebase
+- ✅ TypeScript catches errors at compile time
+- ✅ Better IDE autocomplete
+- ✅ Self-documenting types
+
+**Testing:**
+- Run `npm run build` to verify no type errors
+- Test with TypeScript strict mode
+- Verify all type imports resolve correctly
+
 ---
 
-### **Phase 6: Image Assets**
+### **Phase 6: Image Assets** (1 hour)
 
 #### **Step 6.1: Reorganize Button Images**
 
@@ -503,10 +690,16 @@ export interface FestivalDay {
 - ✅ Organized structure
 - ✅ Easy to add new day images
 - ✅ Clear naming convention
+- ✅ Follows Next.js public folder best practices
+
+**Testing:**
+- Verify all images load correctly
+- Test image paths in development and production
+- Check responsive image sizing
 
 ---
 
-### **Phase 7: URL & Navigation Updates**
+### **Phase 7: URL & Navigation Updates** (2-3 hours)
 
 #### **Step 7.1: Update URL Parameter Handling**
 
@@ -538,11 +731,54 @@ export function useURLParams() {
 }
 ```
 
+**Benefits:**
+- ✅ URL parameters work with any day
+- ✅ Shareable links to specific days
+- ✅ Browser back/forward navigation works
+- ✅ SEO-friendly URLs
+
+**Testing:**
+- Test URL parameter setting/reading
+- Test browser back/forward buttons
+- Test direct navigation with ?day=saturday
+- Test invalid day parameter (should fallback gracefully)
+- Test URL sharing between users
+
 ---
 
 ## Migration Checklist
 
+### Files to Create:
+- [ ] None (all changes are modifications to existing files)
+
 ### Files to Modify:
+
+**Phase 1:**
+- [ ] `src/config/festival.ts` - Add `FestivalDay` interface and `days` getter
+
+**Phase 2:**
+- [ ] `src/utils/timelineConfig.ts` - Restructure to `TIMELINE_CONFIG` with helper function
+
+**Phase 3:**
+- [ ] `src/data/timetable/services/timetable.service.ts` - Replace day-specific methods with generic ones
+
+**Phase 4:**
+- [ ] `src/components/timetable/TimetablePage.tsx` - Dynamic data fetching for all days
+- [ ] `src/components/timetable/TimetableClient.tsx` - Dynamic button rendering
+- [ ] `src/components/timetable/EventModal/*` - No changes needed (already accepts TimetableEvent)
+
+**Phase 5:**
+- [ ] `src/types/events.ts` - Change `day: "saturday" | "sunday"` to `day: string`
+- [ ] `src/types/timetable.ts` - Update related types
+
+**Phase 6:**
+- [ ] `/public/saturday.svg` - Move to `/public/timetable-days/saturday.svg`
+- [ ] `/public/sunday.svg` - Move to `/public/timetable-days/sunday.svg`
+
+**Phase 7:**
+- [ ] `src/components/timetable/hooks/useURLParams.tsx` - Generic day parameter handling
+
+### Testing Requirements:
 
 - [ ] `src/config/festival.ts` - Add day generation
 - [ ] `src/utils/timelineConfig.ts` - Restructure timelines
@@ -556,13 +792,33 @@ export function useURLParams() {
 
 ### Testing Requirements:
 
-- [ ] Test with 2 days (current scenario)
-- [ ] Test with 1 day
-- [ ] Test with 3+ days
-- [ ] Test URL parameters
-- [ ] Test translations
+**Functional Testing:**
+- [ ] Test with 2 days (current scenario - Saturday/Sunday)
+- [ ] Test with 1 day (single-day festival)
+- [ ] Test with 3+ days (multi-day festival)
+- [ ] Test URL parameters (bookmarking, sharing)
+- [ ] Test translations (German/Spanish)
 - [ ] Test event modal navigation
 - [ ] Test responsive layout with many days
+- [ ] Test browser back/forward buttons
+- [ ] Test day switching animation
+
+**Visual Testing:**
+- [ ] Verify button styling with 1, 2, 3+ buttons
+- [ ] Check responsive breakpoints
+- [ ] Verify active day indicator
+- [ ] Check image loading
+
+**Data Integrity:**
+- [ ] Verify all events appear on correct days
+- [ ] Check timeline consistency
+- [ ] Verify event modal data is correct
+- [ ] Test with missing/empty data
+
+**Performance:**
+- [ ] Check page load time with multiple days
+- [ ] Verify no unnecessary re-renders
+- [ ] Test production build size
 
 ---
 
@@ -572,7 +828,20 @@ export function useURLParams() {
 
 - ✅ Support any number of festival days (1 to N)
 - ✅ Automatically calculate days from start/end dates
-- ✅ Add/remove days by changing config only
+- ✅ Add/remove days by changing config only (no code changes)
+- ✅ Works across different weekdays (not just Saturday/Sunday)
+- ✅ Handles multi-week festivals (if needed)
+
+**Example:** To change from 2-day to 3-day festival:
+```typescript
+// Before: Modify 10+ files with hardcoded logic
+// After: Just change the dates
+dates: {
+  start: new Date("July 19, 2025"),
+  end: new Date("July 21, 2025"), // ← Only change needed!
+}
+// System automatically generates 3 days
+```
 
 ### Maintainability:
 
@@ -625,23 +894,90 @@ export function useURLParams() {
 - Phase 1 (Config): 2-3 hours
 - Phase 2 (Timeline): 3-4 hours
 - Phase 3 (Service): 4-5 hours
-- Phase 4 (Components): 5-6 hours
+- Phase 4 (Components): 4-5 hours
 - Phase 5 (Types): 1-2 hours
 - Phase 6 (Images): 1 hour
 - Phase 7 (URL/Nav): 2-3 hours
 - Testing & Debugging: 4-6 hours
 
-**Total: ~22-30 hours** of focused development time
+**Total: ~21-29 hours** of focused development time
+
+---
+
+## Summary: What Changes and What Stays
+
+### What Changes:
+
+**Data Structures:**
+- `"saturday" | "sunday"` → `string` (any weekday)
+- Separate props → Unified arrays
+- Hardcoded methods → Generic methods
+
+**UI Components:**
+- 2 hardcoded buttons → Dynamic button generation
+- Ternary selection → Array lookup
+
+**Configuration:**
+- Static day info → Calculated from dates
+- 8 timeline arrays → 1 structured config
+
+### What Stays the Same:
+
+**✅ Zero UI/UX Changes:**
+- All styling identical (Tailwind classes preserved)
+- All animations identical (Framer Motion settings preserved)
+- All translations identical (keys preserved)
+- Modal appearance identical
+- Button appearance identical (just generated vs hardcoded)
+- Event rendering identical
+
+**✅ Data Integrity:**
+- All events stay in same files
+- Timeline configurations preserve event order
+- Translations remain unchanged
+- Event types unchanged (DJ sets, workshops, talks, shows)
+
+**✅ User Experience:**
+- Same timetable layout
+- Same interaction patterns
+- Same modal behavior
+- Same responsive design
+- Same performance
 
 ---
 
 ## Next Steps
 
-Would you like me to:
+**Ready to begin!**
 
-1. Start with Phase 1 (Festival Configuration)?
-2. Create a feature branch for this refactor?
-3. Implement a proof-of-concept for one component first?
-4. Create utility functions/helpers before main implementation?
+Recommended approach:
 
-Let me know which approach you prefer!
+1. **Start with Phase 1 (Festival Configuration)** ⭐ Recommended first step
+   - Add day generation logic to `festival.ts`
+   - Create `FestivalDay` interface
+   - Dynamic day calculation from start/end dates
+   - Low risk, foundational change
+
+2. **Create a feature branch for this refactor**
+   - Keep scalability work separate
+   - Easy to test and review
+
+3. **Implement a proof-of-concept first**
+   - Test the approach with minimal risk
+   - Validate before full implementation
+
+4. **Create utility functions/helpers**
+   - Build supporting infrastructure
+   - Makes main refactor smoother
+
+**Suggested implementation order:** Phases 1 → 2 → 3 → 4 → 5 → 6 → 7, testing after each phase.
+
+---
+
+## Document Information
+
+**Created:** October 2025  
+**Last Updated:** October 17, 2025  
+**Status:** Ready for implementation  
+**Estimated Effort:** 21-29 hours  
+**Risk Level:** Medium (mitigated through incremental approach)
