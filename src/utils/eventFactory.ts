@@ -3,38 +3,32 @@
  *
  * Factory functions to create specific event types with proper type safety
  * and validation. These ensure events are created correctly and consistently.
+ *
+ * These factories create RAW events (without scheduling information).
+ * Scheduling is added later by the timeline configuration.
  */
 
 import {
+  RawMainStageEvent,
+  RawDanceWorkshopEvent,
+  RawMusicWorkshopEvent,
+  RawTalkEvent,
+  RawAviatrixTalkEvent,
+  RawDanceShowEvent,
   TimetableEvent,
-  MainStageEvent,
-  DanceWorkshopEvent,
-  MusicWorkshopEvent,
-  TalkEvent,
-  AviatrixTalkEvent,
-  DanceShowEvent,
   Act,
   MediaSlide,
 } from "../types/events";
 import { AreaType } from "../data/timetable/types/area.types";
 
 /**
- * Helper function to calculate end time based on start time and duration
- */
-function calculateEndTime(startTime: string, durationMinutes: number): string {
-  const [hours, minutes] = startTime.split(":").map(Number);
-  const totalMinutes = hours * 60 + minutes + durationMinutes;
-  const endHour = Math.floor(totalMinutes / 60);
-  const endMinutes = totalMinutes % 60;
-  return `${endHour.toString().padStart(2, "0")}:${endMinutes.toString().padStart(2, "0")}`;
-}
-
-/**
  * Helper function to generate unique event IDs
+ * Note: Day is no longer part of the ID since events are independent of scheduling
+ * IDs are generated from area + title to ensure uniqueness across the system
  */
-function generateEventId(area: AreaType, day: string, title: string): string {
+function generateEventId(area: AreaType, title: string): string {
   const sanitizedTitle = title.replace(/[^a-zA-Z0-9]/g, "-").toLowerCase();
-  return `${area}-${day}-${sanitizedTitle}`;
+  return `${area}-${sanitizedTitle}`;
 }
 
 /**
@@ -43,11 +37,10 @@ function generateEventId(area: AreaType, day: string, title: string): string {
 export class EventFactory {
   /**
    * Create a main stage event (DJ set or live performance)
+   * Note: startTime and endTime will be set by timeline configuration
    */
   static createMainStageEvent(params: {
     title: string;
-    startTime: string;
-    endTime?: string;
     area: AreaType;
     performanceType: "live" | "dj-set";
     acts: Act[];
@@ -59,21 +52,13 @@ export class EventFactory {
     hasShow?: boolean;
     danceShow?: string;
     dancers?: string;
-    day?: string; // For ID generation
-  }): MainStageEvent {
-    const endTime = params.endTime || calculateEndTime(params.startTime, 30);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawMainStageEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "main-stage",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
       performanceType: params.performanceType,
       acts: params.acts,
@@ -89,35 +74,27 @@ export class EventFactory {
 
   /**
    * Create a dance workshop event
+   * Note: startTime, endTime, and duration will be set by timeline configuration
    */
   static createDanceWorkshop(params: {
     title: string;
-    startTime: string;
-    duration: number; // in minutes
+    duration?: number; // Optional - set by timeline config
     area: AreaType;
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
     description?: string;
-    day?: string;
-  }): DanceWorkshopEvent {
-    const endTime = calculateEndTime(params.startTime, params.duration);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawDanceWorkshopEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "dance-workshop",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
       danceStyle: params.danceStyle,
-      duration: params.duration,
+      ...(params.duration && { duration: params.duration }),
       acts: params.acts,
       level: params.level,
       image: params.image,
@@ -127,34 +104,26 @@ export class EventFactory {
 
   /**
    * Create a music workshop event
+   * Note: startTime, endTime, and duration will be set by timeline configuration
    */
   static createMusicWorkshop(params: {
     title: string;
-    startTime: string;
-    duration: number;
+    duration?: number; // Optional - set by timeline config
     area: AreaType;
     acts: Act[];
     instrument?: string;
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
     description?: string;
-    day?: string;
-  }): MusicWorkshopEvent {
-    const endTime = calculateEndTime(params.startTime, params.duration);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawMusicWorkshopEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "music-workshop",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
-      duration: params.duration,
+      ...(params.duration && { duration: params.duration }),
       acts: params.acts,
       instrument: params.instrument,
       level: params.level,
@@ -165,11 +134,10 @@ export class EventFactory {
 
   /**
    * Create a regular talk event
+   * Note: startTime and endTime will be set by timeline configuration
    */
   static createTalk(params: {
     title: string;
-    startTime: string;
-    endTime?: string;
     area: AreaType;
     format: "presentation" | "interview" | "panel";
     acts: Act[];
@@ -177,21 +145,13 @@ export class EventFactory {
     image?: string;
     description?: string;
     slides?: MediaSlide[];
-    day?: string;
-  }): TalkEvent {
-    const endTime = params.endTime || calculateEndTime(params.startTime, 30);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawTalkEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "talk",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
       format: params.format,
       acts: params.acts,
@@ -204,11 +164,10 @@ export class EventFactory {
 
   /**
    * Create an aviatrix talk event (special format with record discussion)
+   * Note: startTime and endTime will be set by timeline configuration
    */
   static createAviatrixTalk(params: {
     title: string;
-    startTime: string;
-    endTime?: string;
     area: AreaType;
     acts: Act[];
     artistDiscussed: string;
@@ -218,21 +177,13 @@ export class EventFactory {
     image?: string;
     description?: string;
     slides?: MediaSlide[];
-    day?: string;
-  }): AviatrixTalkEvent {
-    const endTime = params.endTime || calculateEndTime(params.startTime, 30);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawAviatrixTalkEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "aviatrix-talk",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
       acts: params.acts,
       artistDiscussed: params.artistDiscussed,
@@ -247,32 +198,23 @@ export class EventFactory {
 
   /**
    * Create a dance show event
+   * Note: startTime and endTime will be set by timeline configuration
    */
   static createDanceShow(params: {
     title: string;
-    startTime: string;
-    endTime?: string;
     area: AreaType;
     showName: string;
     acts: Act[];
     overlapsWithEvent?: string;
     image?: string;
     description?: string;
-    day?: string;
-  }): DanceShowEvent {
-    const endTime = params.endTime || calculateEndTime(params.startTime, 30);
-    const id = generateEventId(
-      params.area,
-      params.day || "unknown",
-      params.title,
-    );
+  }): RawDanceShowEvent {
+    const id = generateEventId(params.area, params.title);
 
     return {
       type: "dance-show",
       id,
       title: params.title,
-      startTime: params.startTime,
-      endTime,
       area: params.area,
       showName: params.showName,
       acts: params.acts,
@@ -321,12 +263,15 @@ export class EventFactory {
 
 /**
  * Utility functions for working with events
+ * Note: These utilities require enriched events (with startTime/endTime set by timeline)
  */
 export class EventUtils {
   /**
    * Check if an event spans multiple time slots
+   * Note: Requires enriched event with startTime/endTime
    */
   static isMultiSlotEvent(event: TimetableEvent): boolean {
+    if (!event.startTime || !event.endTime) return false;
     const [startHour, startMin] = event.startTime.split(":").map(Number);
     const [endHour, endMin] = event.endTime.split(":").map(Number);
     const durationMinutes = endHour * 60 + endMin - (startHour * 60 + startMin);
@@ -335,8 +280,10 @@ export class EventUtils {
 
   /**
    * Get the number of 30-minute slots an event spans
+   * Note: Requires enriched event with startTime/endTime
    */
   static getSlotCount(event: TimetableEvent): number {
+    if (!event.startTime || !event.endTime) return 1;
     const [startHour, startMin] = event.startTime.split(":").map(Number);
     const [endHour, endMin] = event.endTime.split(":").map(Number);
     const durationMinutes = endHour * 60 + endMin - (startHour * 60 + startMin);
@@ -345,8 +292,11 @@ export class EventUtils {
 
   /**
    * Get all time slots that an event occupies
+   * Note: Requires enriched event with startTime/endTime
    */
   static getEventTimeSlots(event: TimetableEvent): string[] {
+    if (!event.startTime || !event.endTime) return [];
+
     const slots: string[] = [];
     const [startHour, startMin] = event.startTime.split(":").map(Number);
     const [endHour, endMin] = event.endTime.split(":").map(Number);

@@ -1,24 +1,216 @@
 /**
- * MAIN STAGE SUNDAY EVENTS - NEW STRUCTURE
+ * MAIN STAGE EVENTS - UNIFIED
  *
- * Using the new event-based structure with proper type safety.
+ * All main stage events in one file. The timeline configuration determines which day they appear on.
  */
 
 import { EventFactory } from "@/utils/eventFactory";
-import { TimetableEvent } from "@/types/events";
+import { RawTimetableEvent } from "@/types/events";
 
 /**
- * Main stage Sunday events using the new event structure
+ * All main stage events for the festival
  */
-export const mainStageSundayEvents: TimetableEvent[] = [
-  // Flori & Wilber DJ Set (12:30 - 13:30)
+export const mainStageEvents: RawTimetableEvent[] = [
+  // ===== SATURDAY EVENTS =====
+
+  // Rodo & El Profe DJ Set
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.sunday.floriWilber",
-    startTime: "12:30",
-    endTime: "13:30",
+    title: "Timetable.events.mainStage.saturday.rodoElProfe",
     area: "main-stage",
     performanceType: "dj-set",
-    day: "sunday",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.rodoLeFou",
+        role: "dj",
+        bio: "Timetable.events.bios.rodoLeFou",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.elProfe",
+        role: "dj",
+        bio: "Timetable.events.bios.elProfe",
+        image: "/el-profe.webp",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/el-profe.webp",
+      }),
+    ],
+  }),
+
+  // EC Kuba DJ Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.ecKubaSet",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.ecKuba",
+        role: "dj",
+        bio: "Timetable.events.bios.ecKuba",
+        image: "/ec-kuba.webp",
+      }),
+    ],
+    image: "/ec-kuba.webp",
+  }),
+
+  // Alafia con Ire Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.alfiaConIre",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.alafiaConIre",
+        role: "band",
+        description: "Timetable.events.descriptions.alafiaConIre",
+        image: "/alafia-con-ire.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.leidiana",
+        role: "dancer",
+        bio: "Timetable.events.bios.leidiana",
+        image: "/leidiana.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.roger",
+        role: "dancer",
+        bio: "Timetable.events.bios.roger",
+        image: "/roger.webp",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/alafia-con-ire.webp",
+        caption: "Timetable.events.descriptions.alafiaConIre",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/leidiana-roger.webp",
+        caption: "Timetable.events.descriptions.leidianaRoger",
+      }),
+    ],
+    image: "/alafia-con-ire.webp",
+    genre: "Afro-Cuban",
+    hasShow: true,
+    danceShow: "Timetable.events.danceShows.afroCuban",
+    dancers: "Timetable.events.dancers.leidianaRoger",
+  }),
+
+  // Andrelux Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.andrelux",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.andrelux",
+        role: "band",
+        bio: "Timetable.events.bios.andrelux",
+        image: "/andrelux.webp",
+      }),
+    ],
+    image: "/andrelux.webp",
+    genre: "Salsa",
+  }),
+
+  // DJ Feikes Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.djFeikes",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.djFeikes",
+        role: "dj",
+        bio: "Timetable.events.bios.djFeikes",
+        image: "/dj-feikes.webp",
+      }),
+    ],
+    image: "/dj-feikes.webp",
+  }),
+
+  // Burundanga Live Performance (Saturday)
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.burundanga",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.burundanga",
+        role: "band",
+        bio: "Timetable.events.bios.burundanga",
+        image: "/burundanga.webp",
+      }),
+    ],
+    image: "/burundanga.webp",
+    genre: "Salsa",
+  }),
+
+  // Tempo Havana Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.tempoHavana",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.tempoHavana",
+        role: "band",
+        bio: "Timetable.events.bios.tempoHavana",
+        image: "/tempo-havana.webp",
+      }),
+    ],
+    image: "/tempo-havana.webp",
+    genre: "Son Cubano",
+  }),
+
+  // DJ Bongo Set (Saturday)
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.djBongo",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.djBongo",
+        role: "dj",
+        bio: "Timetable.events.bios.djBongo",
+        image: "/dj-bongo.webp",
+      }),
+    ],
+    image: "/dj-bongo.webp",
+  }),
+
+  // Cayeye Live Performance (Saturday)
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.cayeye",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.cayeye",
+        role: "band",
+        bio: "Timetable.events.bios.cayeye",
+        image: "/cayeye.webp",
+      }),
+    ],
+    image: "/cayeye.webp",
+    genre: "Salsa",
+  }),
+
+  // ===== SUNDAY EVENTS =====
+
+  // Flori & Wilber DJ Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.sunday.floriWilber",
+    area: "main-stage",
+    performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.floriWilber",
@@ -31,14 +223,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     description: "Timetable.events.descriptions.floriWilber",
   }),
 
-  // La Sonora Berlin Live Performance (14:00 - 15:00)
+  // La Sonora Berlin Live Performance
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.laSonoraBerlin",
-    startTime: "14:00",
-    endTime: "15:00",
     area: "main-stage",
     performanceType: "live",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.laSonoraBerlin",
@@ -71,14 +260,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     dancers: "Timetable.events.dancers.niya",
   }),
 
-  // El Puma DJ Set (15:00 - 16:00)
+  // El Puma DJ Set
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.elPuma",
-    startTime: "15:00",
-    endTime: "16:00",
     area: "main-stage",
     performanceType: "dj-set",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.elPuma",
@@ -90,14 +276,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     image: "/el-puma.webp",
   }),
 
-  // Burundanga Live Performance (16:30 - 17:30)
+  // Burundanga Live Performance (Sunday)
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.burundanga",
-    startTime: "16:30",
-    endTime: "17:30",
     area: "main-stage",
     performanceType: "live",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.burundanga",
@@ -137,14 +320,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     dancers: "Timetable.events.dancers.leiAyna",
   }),
 
-  // Anacaona & La Vecina DJ Set (17:30 - 18:30)
+  // Anacaona & La Vecina DJ Set
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.anacaonaLaVecina",
-    startTime: "17:30",
-    endTime: "18:30",
     area: "main-stage",
     performanceType: "dj-set",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.anacaona",
@@ -170,14 +350,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     description: "Timetable.events.descriptions.anacaonaLaVecina",
   }),
 
-  // Cayeye Live Performance (19:00 - 20:00)
+  // Cayeye Live Performance (Sunday)
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.cayeye",
-    startTime: "19:00",
-    endTime: "20:00",
     area: "main-stage",
     performanceType: "live",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.cayeye",
@@ -191,14 +368,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     genre: "Salsa",
   }),
 
-  // DJ Bongo Set (20:00 - 21:00)
+  // DJ Bongo Set (Sunday)
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.bongo",
-    startTime: "20:00",
-    endTime: "21:00",
     area: "main-stage",
     performanceType: "dj-set",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.bongo",
@@ -210,14 +384,11 @@ export const mainStageSundayEvents: TimetableEvent[] = [
     image: "/dj-bongo.webp",
   }),
 
-  // Berlin en Salsa Host DJs (21:00 - 22:00)
+  // Berlin en Salsa Host DJs
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.sunday.berlinEnSalsaHostDJs",
-    startTime: "21:00",
-    endTime: "22:00",
     area: "main-stage",
     performanceType: "dj-set",
-    day: "sunday",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.dracaena",

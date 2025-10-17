@@ -28,7 +28,7 @@ export function useEventAdapter() {
   ): SelectedEventDetails => {
     const baseDetails: SelectedEventDetails = {
       event: translateIfKey(event.title),
-      time: event.startTime,
+      time: event.startTime || "", // Provide default empty string if undefined
       endTime: event.endTime,
     };
 

@@ -14,15 +14,24 @@ import {
 } from "@/components/ui";
 import { ProgramIcon } from "@/components/icons";
 
-// Import event data
-import { mainStageSaturdayEvents } from "@/data/timetable/events/main-stage/main-stage-saturday";
-import { mainStageSundayEvents } from "@/data/timetable/events/main-stage/main-stage-sunday";
-import { danceWorkshopSaturdayEvents } from "@/data/timetable/events/dance-workshops/dance-workshops-saturday";
-import { danceWorkshopSundayEvents } from "@/data/timetable/events/dance-workshops/dance-workshops-sunday";
-import { musicWorkshopSaturdayEvents } from "@/data/timetable/events/music-workshops/music-workshops-saturday";
-import { musicWorkshopSundayEvents } from "@/data/timetable/events/music-workshops/music-workshops-sunday";
-import { salsaTalksSaturdayEvents } from "@/data/timetable/events/salsa-talks/salsa-talks-saturday";
-import { salsaTalksSundayEvents } from "@/data/timetable/events/salsa-talks/salsa-talks-sunday";
+// Import event data (unified collections)
+import { mainStageEvents } from "@/data/timetable/events/main-stage/main-stage";
+import { danceWorkshopEvents } from "@/data/timetable/events/dance-workshops/dance-workshops";
+import { musicWorkshopEvents } from "@/data/timetable/events/music-workshops/music-workshops";
+import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks/salsa-talks";
+
+// Import timeline configurations to determine which events are on which day
+import {
+  mainStageSaturdayTimeline,
+  mainStageSundayTimeline,
+  danceWorkshopsSaturdayTimeline,
+  danceWorkshopsSundayTimeline,
+  musicWorkshopsSaturdayTimeline,
+  musicWorkshopsSundayTimeline,
+  salsaTalksSaturdayTimeline,
+  salsaTalksSundayTimeline,
+  createTimelineFromSimpleConfig,
+} from "@/utils/timelineConfig";
 
 const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
@@ -41,23 +50,58 @@ const LiveBanner = () => {
       now.getDay() === 0 || now >= new Date("July 20, 2025 00:00:00");
     setIsSunday(isSundayToday);
 
-    // Get all events for the current day
+    // Get enriched events for the current day using timeline config
     const allEvents: TimetableEvent[] = isSundayToday
       ? [
-          ...mainStageSundayEvents,
-          ...danceWorkshopSundayEvents,
-          ...musicWorkshopSundayEvents,
-          ...salsaTalksSundayEvents,
+          ...createTimelineFromSimpleConfig(
+            mainStageSundayTimeline,
+            mainStageEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            danceWorkshopsSundayTimeline,
+            danceWorkshopEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            musicWorkshopsSundayTimeline,
+            musicWorkshopEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            salsaTalksSundayTimeline,
+            salsaTalksEvents,
+            "sunday",
+          ),
         ]
       : [
-          ...mainStageSaturdayEvents,
-          ...danceWorkshopSaturdayEvents,
-          ...musicWorkshopSaturdayEvents,
-          ...salsaTalksSaturdayEvents,
+          ...createTimelineFromSimpleConfig(
+            mainStageSaturdayTimeline,
+            mainStageEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            danceWorkshopsSaturdayTimeline,
+            danceWorkshopEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            musicWorkshopsSaturdayTimeline,
+            musicWorkshopEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            salsaTalksSaturdayTimeline,
+            salsaTalksEvents,
+            "saturday",
+          ),
         ];
 
     // Find events happening now
     const currentEventsNow = allEvents.filter((event) => {
+      // Check if event has timing information (should always be true after enrichment)
+      if (!event.startTime || !event.endTime) return false;
+
       // Parse event start time
       const [startHour, startMinute] = event.startTime.split(":").map(Number);
       const [endHour, endMinute] = event.endTime.split(":").map(Number);
@@ -148,7 +192,7 @@ const LiveBanner = () => {
         damping: 15,
         duration: 0.8,
       }}
-      className="bg-bes-red bg-opacity-95 fixed top-0 right-0 left-0 z-50 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
+      className="bg-bes-red fixed left-0 right-0 top-0 z-50 bg-opacity-95 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
     >
       <div className="relative mx-auto max-w-6xl">
         {/* Close button */}
@@ -161,7 +205,7 @@ const LiveBanner = () => {
           initial={{ scale: 0.8 }}
           animate={{ scale: [0.8, 1.1, 1] }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-6 lg:py-1"
+          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-x-6 lg:space-y-0 lg:py-1"
         >
           <div className="flex items-center">
             {/* Logo */}

@@ -5,16 +5,13 @@ import { Column } from "../types/timetable.types";
 import { translateTimeSlotsServer } from "../utils/timetableTranslation";
 import { TimelineSlot, TimetableEvent } from "../../../types/events";
 
-// Import translatable data - single source of truth
-// Import new event-based data
-import { mainStageSaturdayEvents } from "../events/main-stage/main-stage-saturday";
-import { mainStageSundayEvents } from "../events/main-stage/main-stage-sunday";
-import { danceWorkshopSaturdayEvents } from "../events/dance-workshops/dance-workshops-saturday";
-import { danceWorkshopSundayEvents } from "../events/dance-workshops/dance-workshops-sunday";
-import { musicWorkshopSaturdayEvents } from "../events/music-workshops/music-workshops-saturday";
-import { musicWorkshopSundayEvents } from "../events/music-workshops/music-workshops-sunday";
-import { salsaTalksSaturdayEvents } from "../events/salsa-talks/salsa-talks-saturday";
-import { salsaTalksSundayEvents } from "../events/salsa-talks/salsa-talks-sunday";
+// Import unified event collections (day-agnostic)
+import { mainStageEvents } from "../events/main-stage/main-stage";
+import { danceWorkshopEvents } from "../events/dance-workshops/dance-workshops";
+import { musicWorkshopEvents } from "../events/music-workshops/music-workshops";
+import { salsaTalksEvents } from "../events/salsa-talks/salsa-talks";
+
+// Import timeline configurations (these define which events appear on which day)
 import {
   mainStageSaturdayTimeline,
   mainStageSundayTimeline,
@@ -26,13 +23,6 @@ import {
   salsaTalksSundayTimeline,
   createTimelineFromSimpleConfig,
 } from "../../../utils/timelineConfig";
-
-// Import existing data for areas not yet migrated (none remaining)
-// import { salsaTalksSaturday } from "../areas/salsa-talks/saturday";
-// import { salsaTalksSunday } from "../areas/salsa-talks/sunday";
-
-// Import German locale data for areas not yet migrated (now only for non-main-stage areas)
-// Note: Other German imports will be added as we migrate each area
 
 /**
  * Service for timetable data that supports the translation system
@@ -46,25 +36,29 @@ export class TimetableService {
     AreaType,
     TranslatableTimeSlot[] | TimeSlot[]
   > {
-    // Generate timeline from simple config
+    // Generate timeline from simple config using unified event collections
     const mainStageTimelineEvents = createTimelineFromSimpleConfig(
       mainStageSaturdayTimeline,
-      mainStageSaturdayEvents,
+      mainStageEvents,
+      "saturday",
     );
 
     const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
       danceWorkshopsSaturdayTimeline,
-      danceWorkshopSaturdayEvents,
+      danceWorkshopEvents,
+      "saturday",
     );
 
     const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
       musicWorkshopsSaturdayTimeline,
-      musicWorkshopSaturdayEvents,
+      musicWorkshopEvents,
+      "saturday",
     );
 
     const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
       salsaTalksSaturdayTimeline,
-      salsaTalksSaturdayEvents,
+      salsaTalksEvents,
+      "saturday",
     );
 
     return {
@@ -102,6 +96,7 @@ export class TimetableService {
 
       // Find if any event is active at this time
       const activeEvent = events.find((event) => {
+        if (!event.startTime || !event.endTime) return false;
         const eventStart = this.timeToMinutes(event.startTime);
         const eventEnd = this.timeToMinutes(event.endTime);
         return time >= eventStart && time < eventEnd;
@@ -363,25 +358,29 @@ export class TimetableService {
     AreaType,
     TranslatableTimeSlot[] | TimeSlot[]
   > {
-    // Generate timeline from simple config
+    // Generate timeline from simple config using unified event collections
     const mainStageTimelineEvents = createTimelineFromSimpleConfig(
       mainStageSundayTimeline,
-      mainStageSundayEvents,
+      mainStageEvents,
+      "sunday",
     );
 
     const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
       danceWorkshopsSundayTimeline,
-      danceWorkshopSundayEvents,
+      danceWorkshopEvents,
+      "sunday",
     );
 
     const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
       musicWorkshopsSundayTimeline,
-      musicWorkshopSundayEvents,
+      musicWorkshopEvents,
+      "sunday",
     );
 
     const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
       salsaTalksSundayTimeline,
-      salsaTalksSundayEvents,
+      salsaTalksEvents,
+      "sunday",
     );
 
     return {
@@ -547,58 +546,62 @@ export class TimetableService {
     area: AreaType,
     day: "saturday" | "sunday",
   ): TimelineSlot[] {
-    // Map of area -> events and timeline
+    // Map of area -> events and timeline (using unified event collections)
     const eventMap = {
       saturday: {
         "main-stage": {
           timeline: mainStageSaturdayTimeline,
-          events: mainStageSaturdayEvents,
+          events: mainStageEvents,
         },
         "dance-workshops": {
           timeline: danceWorkshopsSaturdayTimeline,
-          events: danceWorkshopSaturdayEvents,
+          events: danceWorkshopEvents,
         },
         "music-workshops": {
           timeline: musicWorkshopsSaturdayTimeline,
-          events: musicWorkshopSaturdayEvents,
+          events: musicWorkshopEvents,
         },
         "salsa-talks": {
           timeline: salsaTalksSaturdayTimeline,
-          events: salsaTalksSaturdayEvents,
+          events: salsaTalksEvents,
         },
       },
       sunday: {
         "main-stage": {
           timeline: mainStageSundayTimeline,
-          events: mainStageSundayEvents,
+          events: mainStageEvents,
         },
         "dance-workshops": {
           timeline: danceWorkshopsSundayTimeline,
-          events: danceWorkshopSundayEvents,
+          events: danceWorkshopEvents,
         },
         "music-workshops": {
           timeline: musicWorkshopsSundayTimeline,
-          events: musicWorkshopSundayEvents,
+          events: musicWorkshopEvents,
         },
         "salsa-talks": {
           timeline: salsaTalksSundayTimeline,
-          events: salsaTalksSundayEvents,
+          events: salsaTalksEvents,
         },
       },
     };
 
     const { timeline, events } = eventMap[day][area];
     // createTimelineFromSimpleConfig returns TimetableEvent[] with startTime/endTime filled in
-    const timelineEvents = createTimelineFromSimpleConfig(timeline, events);
+    const timelineEvents = createTimelineFromSimpleConfig(
+      timeline,
+      events,
+      day,
+    );
 
     // Convert to TimelineSlot[] format (time -> events mapping)
     const slotsMap = new Map<string, TimetableEvent[]>();
-    
+
     // Build time slots from events (every 30 minutes from 13:00 to 21:30)
     const startHour = 13;
     const endHour = 21;
     const endMinutes = 30;
-    
+
     for (let hour = startHour; hour <= endHour; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
         if (hour === endHour && minute > endMinutes) break;
@@ -610,7 +613,7 @@ export class TimetableService {
     // Assign events to their time slots
     for (const event of timelineEvents) {
       const startTime = event.startTime;
-      if (slotsMap.has(startTime)) {
+      if (startTime && slotsMap.has(startTime)) {
         slotsMap.get(startTime)!.push(event);
       }
     }

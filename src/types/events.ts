@@ -3,6 +3,10 @@
  *
  * This file defines the new architecture with interface inheritance
  * for better type safety and maintainability.
+ *
+ * IMPORTANT: Events come in two states:
+ * 1. Raw Events - defined without scheduling (no startTime, endTime, day)
+ * 2. Enriched Events - after timeline enrichment (with startTime, endTime, day)
  */
 
 import { AreaType } from "../data/timetable/types/area.types";
@@ -12,22 +16,43 @@ import { AreaType } from "../data/timetable/types/area.types";
 // ===========================
 
 /**
- * Base interface for all events - contains common fields
+ * Base interface for RAW events (as defined in event files)
+ * These events don't have scheduling information yet
  */
-export interface BaseEvent {
+export interface BaseEventDefinition {
   id: string; // Unique identifier for the event
   title: string; // Event title (translatable key)
-  startTime: string; // e.g., "13:30"
-  endTime: string; // e.g., "14:00"
   area: AreaType; // Which area this event belongs to
   image?: string; // Primary image
   description?: string; // Event description (translatable key)
 }
 
 /**
+ * Scheduling information added during enrichment
+ */
+export interface SchedulingInfo {
+  startTime: string; // Set by timeline config during enrichment
+  endTime: string; // Set by timeline config during enrichment
+  day: "saturday" | "sunday"; // Set during enrichment
+}
+
+/**
+ * Base interface for ENRICHED events (after timeline processing)
+ * These events have all scheduling information
+ */
+export interface BaseEvent extends BaseEventDefinition, SchedulingInfo {}
+
+/**
  * Base interface for events with Acts (instructors, presenters, etc.)
  */
 export interface EventWithActs extends BaseEvent {
+  acts: Act[]; // Array of Acts involved in the event
+}
+
+/**
+ * Base interface for RAW events with Acts (before enrichment)
+ */
+export interface RawEventWithActs extends BaseEventDefinition {
   acts: Act[]; // Array of Acts involved in the event
 }
 
@@ -53,7 +78,85 @@ export type ActRole =
   | "band";
 
 // ===========================
-// 2. SPECIFIC EVENT TYPES
+// 2. SPECIFIC EVENT TYPES (RAW - Before Enrichment)
+// ===========================
+
+/**
+ * Raw main stage events (without scheduling)
+ */
+export interface RawMainStageEvent extends RawEventWithActs {
+  type: "main-stage";
+  performanceType: "live" | "dj-set";
+  genre?: string; // Music genre
+  slides?: MediaSlide[]; // For image galleries
+  // Dance show properties
+  hasShow?: boolean; // Flag to indicate if this event has a dance show
+  danceShow?: string; // The name/type of the dance show (translation key)
+  dancers?: string; // The dancer combination name (translation key)
+}
+
+/**
+ * Raw dance workshop events (without scheduling)
+ */
+export interface RawDanceWorkshopEvent extends RawEventWithActs {
+  type: "dance-workshop";
+  danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
+  level?: "beginner" | "intermediate" | "advanced";
+}
+
+/**
+ * Raw music workshop events (without scheduling)
+ */
+export interface RawMusicWorkshopEvent extends RawEventWithActs {
+  type: "music-workshop";
+  instrument?: string; // e.g., "Conga", "Piano"
+  level?: "beginner" | "intermediate" | "advanced";
+}
+
+/**
+ * Raw regular talk events (without scheduling)
+ */
+export interface RawTalkEvent extends RawEventWithActs {
+  type: "talk";
+  format: "presentation" | "interview" | "panel";
+  topic?: string;
+  slides?: MediaSlide[]; // For image galleries
+}
+
+/**
+ * Raw Aviatrix format talk events (without scheduling)
+ */
+export interface RawAviatrixTalkEvent extends RawEventWithActs {
+  type: "aviatrix-talk";
+  artistDiscussed: string; // The artist being discussed (translatable key)
+  recordDiscussed: string; // The record/album being discussed (translatable key)
+  moderatorComment?: string; // Comment from the moderator (translatable key)
+  backgroundInfo?: string; // Additional context (translatable key)
+  slides?: MediaSlide[]; // For image galleries
+}
+
+/**
+ * Raw dance show events (without scheduling)
+ */
+export interface RawDanceShowEvent extends RawEventWithActs {
+  type: "dance-show";
+  showName: string; // e.g., "TANZSHOW 1" (translatable key)
+  overlapsWithEvent?: string; // ID of the event this overlaps with
+}
+
+/**
+ * Union type for all RAW events (before enrichment)
+ */
+export type RawTimetableEvent =
+  | RawMainStageEvent
+  | RawDanceWorkshopEvent
+  | RawMusicWorkshopEvent
+  | RawTalkEvent
+  | RawAviatrixTalkEvent
+  | RawDanceShowEvent;
+
+// ===========================
+// 3. SPECIFIC EVENT TYPES (ENRICHED - After Timeline Processing)
 // ===========================
 
 /**
@@ -77,7 +180,7 @@ export interface DanceWorkshopEvent extends EventWithActs {
   type: "dance-workshop";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
-  duration: number; // in minutes
+  duration: number; // Set by timeline config during enrichment
 }
 
 /**
@@ -87,7 +190,7 @@ export interface MusicWorkshopEvent extends EventWithActs {
   type: "music-workshop";
   instrument?: string; // e.g., "Conga", "Piano"
   level?: "beginner" | "intermediate" | "advanced";
-  duration: number;
+  duration: number; // Set by timeline config during enrichment
 }
 
 /**
@@ -122,7 +225,7 @@ export interface DanceShowEvent extends EventWithActs {
 }
 
 // ===========================
-// 3. UNION TYPE FOR ALL EVENTS
+// 4. UNION TYPE FOR ALL ENRICHED EVENTS
 // ===========================
 
 export type TimetableEvent =
@@ -134,7 +237,7 @@ export type TimetableEvent =
   | DanceShowEvent;
 
 // ===========================
-// 4. TIMELINE SLOT STRUCTURE
+// 5. TIMELINE SLOT STRUCTURE
 // ===========================
 
 /**
@@ -155,7 +258,7 @@ export interface AreaColumn {
 }
 
 // ===========================
-// 5. MEDIA AND SLIDES
+// 6. MEDIA AND SLIDES
 // ===========================
 
 export interface MediaSlide {
@@ -182,7 +285,7 @@ export interface MediaSlide {
 }
 
 // ===========================
-// 6. COMPONENT INTERFACES
+// 7. COMPONENT INTERFACES
 // ===========================
 
 /**
@@ -203,7 +306,7 @@ export interface TimeSlotProps {
 }
 
 // ===========================
-// 7. TYPE GUARDS
+// 8. TYPE GUARDS
 // ===========================
 
 export function isMainStageEvent(

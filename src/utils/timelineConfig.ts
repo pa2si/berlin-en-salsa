@@ -3,17 +3,15 @@
  *
  * This file defines the timeline by simply referencing events and their time slots.
  * The modal UI automatically adapts based on the event structure.
+ *
+ * Events are now unified (day-agnostic) and the timeline configuration determines which day they appear on.
  */
 
-import { mainStageSaturdayEvents } from "../data/timetable/events/main-stage/main-stage-saturday";
-import { mainStageSundayEvents } from "../data/timetable/events/main-stage/main-stage-sunday";
-import { danceWorkshopSaturdayEvents } from "../data/timetable/events/dance-workshops/dance-workshops-saturday";
-import { danceWorkshopSundayEvents } from "../data/timetable/events/dance-workshops/dance-workshops-sunday";
-import { musicWorkshopSaturdayEvents } from "../data/timetable/events/music-workshops/music-workshops-saturday";
-import { musicWorkshopSundayEvents } from "../data/timetable/events/music-workshops/music-workshops-sunday";
-import { salsaTalksSaturdayEvents } from "../data/timetable/events/salsa-talks/salsa-talks-saturday";
-import { salsaTalksSundayEvents } from "../data/timetable/events/salsa-talks/salsa-talks-sunday";
-import { TimetableEvent } from "../types/events";
+import { mainStageEvents } from "../data/timetable/events/main-stage/main-stage";
+import { danceWorkshopEvents } from "../data/timetable/events/dance-workshops/dance-workshops";
+import { musicWorkshopEvents } from "../data/timetable/events/music-workshops/music-workshops";
+import { salsaTalksEvents } from "../data/timetable/events/salsa-talks/salsa-talks";
+import { TimetableEvent, RawTimetableEvent } from "../types/events";
 
 /**
  * Timeline slot configuration - simple time + event reference
@@ -255,10 +253,13 @@ export const salsaTalksSundayTimeline: TimelineSlot[] = [
 
 /**
  * Convert timeline slots to TimetableEvent format for the existing timetable system
+ * Enriches RAW events with timing information from the timeline configuration
+ * Returns fully enriched TimetableEvent objects with required startTime, endTime, and day
  */
 export function createTimelineFromSimpleConfig(
   timelineSlots: TimelineSlot[],
-  eventCollection: TimetableEvent[],
+  eventCollection: RawTimetableEvent[],
+  day?: "saturday" | "sunday",
 ): TimetableEvent[] {
   const timeline: TimetableEvent[] = [];
 
@@ -266,11 +267,16 @@ export function createTimelineFromSimpleConfig(
     const event = eventCollection.find((e) => e.title === slot.eventId);
 
     if (event) {
+      // Enrich the raw event with scheduling information
       const timelineEvent: TimetableEvent = {
         ...event,
         startTime: slot.time,
         endTime: calculateEndTime(slot.time, slot.duration),
-      };
+        day: day || "saturday", // Default to saturday if not provided
+        // Set duration for workshop events from timeline
+        ...((event.type === "dance-workshop" ||
+          event.type === "music-workshop") && { duration: slot.duration }),
+      } as TimetableEvent; // Type assertion needed because we're adding required fields
 
       timeline.push(timelineEvent);
     } else {
@@ -285,16 +291,12 @@ export function createTimelineFromSimpleConfig(
  * Utility function to get event by ID from any event collection
  */
 export function getEventById(eventId: string) {
-  // Search in all event collections
+  // Search in all unified event collections
   const allEvents = [
-    ...mainStageSaturdayEvents,
-    ...mainStageSundayEvents,
-    ...danceWorkshopSaturdayEvents,
-    ...danceWorkshopSundayEvents,
-    ...musicWorkshopSaturdayEvents,
-    ...musicWorkshopSundayEvents,
-    ...salsaTalksSaturdayEvents,
-    ...salsaTalksSundayEvents,
+    ...mainStageEvents,
+    ...danceWorkshopEvents,
+    ...musicWorkshopEvents,
+    ...salsaTalksEvents,
   ];
 
   return allEvents.find((event) => event.title === eventId);
@@ -319,12 +321,13 @@ export function calculateEndTime(startTime: string, duration: number): string {
  */
 
 /**
- * Generic function to generate timeline slots from any timeline configuration
+ * Generate time slots with events from timeline configuration
  * This replaces all the individual generate*TimelineSlots functions
  */
 export function generateTimeSlotsFromTimeline(
   timelineConfig: TimelineSlot[],
-  eventCollection: TimetableEvent[],
+  eventCollection: RawTimetableEvent[],
+  day: "saturday" | "sunday" = "saturday",
 ): Array<{
   time: string;
   events: TimetableEvent[];
@@ -357,18 +360,25 @@ export function generateTimeSlotsFromTimeline(
         (e) => e.title === activeTimelineSlot.eventId,
       );
       if (event) {
+        // Enrich raw event with scheduling information
+        const enrichedEvent: TimetableEvent = {
+          ...event,
+          startTime: activeTimelineSlot.time,
+          endTime: calculateEndTime(
+            activeTimelineSlot.time,
+            activeTimelineSlot.duration,
+          ),
+          day,
+          // Add duration for workshop events
+          ...((event.type === "dance-workshop" ||
+            event.type === "music-workshop") && {
+            duration: activeTimelineSlot.duration,
+          }),
+        } as TimetableEvent;
+
         slots.push({
           time: timeString,
-          events: [
-            {
-              ...event,
-              startTime: activeTimelineSlot.time,
-              endTime: calculateEndTime(
-                activeTimelineSlot.time,
-                activeTimelineSlot.duration,
-              ),
-            },
-          ],
+          events: [enrichedEvent],
         });
       } else {
         // Event not found, create empty slot
@@ -386,39 +396,44 @@ export function generateTimeSlotsFromTimeline(
 
 /**
  * Convenience functions for specific areas
- * These now simply call the generic function with the right config
+ * These now simply call the generic function with the right config using unified event collections
  */
 export function generateMainStageTimelineSlots() {
   return generateTimeSlotsFromTimeline(
     mainStageSaturdayTimeline,
-    mainStageSaturdayEvents,
+    mainStageEvents,
+    "saturday",
   );
 }
 
 export function generateDanceWorkshopsSaturdayTimelineSlots() {
   return generateTimeSlotsFromTimeline(
     danceWorkshopsSaturdayTimeline,
-    danceWorkshopSaturdayEvents,
+    danceWorkshopEvents,
+    "saturday",
   );
 }
 
 export function generateDanceWorkshopsSundayTimelineSlots() {
   return generateTimeSlotsFromTimeline(
     danceWorkshopsSundayTimeline,
-    danceWorkshopSundayEvents,
+    danceWorkshopEvents,
+    "sunday",
   );
 }
 
 export function generateMusicWorkshopsSaturdayTimelineSlots() {
   return generateTimeSlotsFromTimeline(
     musicWorkshopsSaturdayTimeline,
-    musicWorkshopSaturdayEvents,
+    musicWorkshopEvents,
+    "saturday",
   );
 }
 
 export function generateMusicWorkshopsSundayTimelineSlots() {
   return generateTimeSlotsFromTimeline(
     musicWorkshopsSundayTimeline,
-    musicWorkshopSundayEvents,
+    musicWorkshopEvents,
+    "sunday",
   );
 }
