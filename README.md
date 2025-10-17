@@ -1,12 +1,8 @@
-to do:
+whats done in fixed-tt-live-banner-metadata-fix-breadcrumb-layout which is the start of this branch:
 
-- in this project i have metadata set but before i implemented next-intl. please check in all my routes and page.tsx and layout.tsx what we need to modify in order to make it work with our new internalization setup. therefore please check he docs for metada from next.js: https://nextjs.org/docs/app/getting-started/metadata-and-og-images and all docs and steps from https://next-intl.dev/docs/getting-started, so not only the getting started. we need to check also the sitemap. also you can check my folder managament as not all files are in src/app/[locale]. please find in the page of next-intl. if my folder structure is common practice or if i should move more folders into the locale folder. after the first implementation of internationalized metadata i want to test it with a build test. please make a plan and present it to me.
-
-- refactor breadcromp and back button as a layout and make it available to all routes
-
-Versions:
-
-whats's done:
+- full internationalization including metadata implemented
+- the routes now have a folder and share a layout.tsx with breadcrump, header and footer
+- whats's done:
 
 v1.4.1
 
