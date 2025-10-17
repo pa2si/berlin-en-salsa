@@ -3,7 +3,7 @@ import { TimeSlot } from "../types/event.types";
 import { TranslatableTimeSlot } from "../types/translatable.types";
 import { Column } from "../types/timetable.types";
 import { translateTimeSlotsServer } from "../utils/timetableTranslation";
-import { TimelineSlot, TimetableEvent } from "../../../types/events";
+import { TimelineSlot, TimetableEvent, RawTimetableEvent } from "../../../types/events";
 
 // Import unified event collections (day-agnostic)
 import { mainStageEvents } from "../events/main-stage";
@@ -11,18 +11,22 @@ import { danceWorkshopEvents } from "../events/dance-workshops";
 import { musicWorkshopEvents } from "../events/music-workshops";
 import { salsaTalksEvents } from "../events/salsa-talks";
 
-// Import timeline configurations (these define which events appear on which day)
+// Import timeline helper functions (NO MORE importing individual timeline arrays!)
 import {
-  mainStageSaturdayTimeline,
-  mainStageSundayTimeline,
-  danceWorkshopsSaturdayTimeline,
-  danceWorkshopsSundayTimeline,
-  musicWorkshopsSaturdayTimeline,
-  musicWorkshopsSundayTimeline,
-  salsaTalksSaturdayTimeline,
-  salsaTalksSundayTimeline,
+  getTimelineForAreaAndDay,
   createTimelineFromSimpleConfig,
 } from "../../../utils/timelineConfig";
+
+/**
+ * Event collection mapping
+ * Maps area types to their unified event collections
+ */
+const EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
+  "main-stage": mainStageEvents,
+  "dance-workshops": danceWorkshopEvents,
+  "music-workshops": musicWorkshopEvents,
+  "salsa-talks": salsaTalksEvents,
+};
 
 /**
  * Service for timetable data that supports the translation system
@@ -30,51 +34,62 @@ import {
  */
 export class TimetableService {
   /**
+   * Get event collection for an area
+   */
+  private static getEventCollectionForArea(area: AreaType): RawTimetableEvent[] {
+    return EVENT_COLLECTIONS[area] || [];
+  }
+
+  /**
+   * Get raw translatable data for any day (GENERIC METHOD)
+   * This replaces getSaturdayTranslatableData() and getSundayTranslatableData()
+   */
+  private static getTranslatableDataForDay(
+    dayWeekday: string,
+  ): Record<AreaType, TranslatableTimeSlot[]> {
+    const result: Record<AreaType, TranslatableTimeSlot[]> = {} as Record<
+      AreaType,
+      TranslatableTimeSlot[]
+    >;
+
+    // Loop through all areas dynamically
+    const areas = Object.keys(AREA_DEFINITIONS) as AreaType[];
+
+    for (const area of areas) {
+      const timeline = getTimelineForAreaAndDay(area, dayWeekday);
+      const events = this.getEventCollectionForArea(area);
+      const enrichedEvents = createTimelineFromSimpleConfig(
+        timeline,
+        events,
+        dayWeekday,
+      );
+
+      result[area] = this.convertNewEventsToTranslatableTimeSlots(enrichedEvents);
+    }
+
+    return result;
+  }
+
+  /**
+   * @deprecated Use getTranslatableDataForDay('saturday') instead
    * Get raw translatable data for Saturday (for areas that have been migrated)
    */
   private static getSaturdayTranslatableData(): Record<
     AreaType,
     TranslatableTimeSlot[] | TimeSlot[]
   > {
-    // Generate timeline from simple config using unified event collections
-    const mainStageTimelineEvents = createTimelineFromSimpleConfig(
-      mainStageSaturdayTimeline,
-      mainStageEvents,
-      "saturday",
-    );
+    return this.getTranslatableDataForDay("saturday");
+  }
 
-    const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
-      danceWorkshopsSaturdayTimeline,
-      danceWorkshopEvents,
-      "saturday",
-    );
-
-    const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
-      musicWorkshopsSaturdayTimeline,
-      musicWorkshopEvents,
-      "saturday",
-    );
-
-    const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
-      salsaTalksSaturdayTimeline,
-      salsaTalksEvents,
-      "saturday",
-    );
-
-    return {
-      "main-stage": this.convertNewEventsToTranslatableTimeSlots(
-        mainStageTimelineEvents,
-      ), // Using simple timeline config
-      "dance-workshops": this.convertNewEventsToTranslatableTimeSlots(
-        danceWorkshopsTimelineEvents,
-      ), // Using new event structure
-      "music-workshops": this.convertNewEventsToTranslatableTimeSlots(
-        musicWorkshopsTimelineEvents,
-      ), // Using new event structure
-      "salsa-talks": this.convertNewEventsToTranslatableTimeSlots(
-        salsaTalksTimelineEvents,
-      ), // Using new event structure
-    };
+  /**
+   * @deprecated Use getTranslatableDataForDay('sunday') instead
+   * Get raw translatable data for Sunday
+   */
+  private static getSundayTranslatableData(): Record<
+    AreaType,
+    TranslatableTimeSlot[] | TimeSlot[]
+  > {
+    return this.getTranslatableDataForDay("sunday");
   }
 
   /**
@@ -352,99 +367,46 @@ export class TimetableService {
   }
 
   /**
-   * Get raw translatable data for Sunday (for areas that have been migrated)
+   * Get translated timetable data for a specific day (GENERIC METHOD)
+   * This replaces getSaturdayDataTranslated() and getSundayDataTranslated()
    */
-  private static getSundayTranslatableData(): Record<
-    AreaType,
-    TranslatableTimeSlot[] | TimeSlot[]
-  > {
-    // Generate timeline from simple config using unified event collections
-    const mainStageTimelineEvents = createTimelineFromSimpleConfig(
-      mainStageSundayTimeline,
-      mainStageEvents,
-      "sunday",
-    );
+  private static async getDataTranslatedForDay(
+    dayWeekday: string,
+  ): Promise<Record<AreaType, TimeSlot[]>> {
+    const rawData = this.getTranslatableDataForDay(dayWeekday);
+    const translatedData: Record<AreaType, TimeSlot[]> = {} as Record<
+      AreaType,
+      TimeSlot[]
+    >;
 
-    const danceWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
-      danceWorkshopsSundayTimeline,
-      danceWorkshopEvents,
-      "sunday",
-    );
+    for (const [areaKey, slots] of Object.entries(rawData)) {
+      const area = areaKey as AreaType;
+      translatedData[area] = await translateTimeSlotsServer(
+        slots as TranslatableTimeSlot[],
+      );
+    }
 
-    const musicWorkshopsTimelineEvents = createTimelineFromSimpleConfig(
-      musicWorkshopsSundayTimeline,
-      musicWorkshopEvents,
-      "sunday",
-    );
-
-    const salsaTalksTimelineEvents = createTimelineFromSimpleConfig(
-      salsaTalksSundayTimeline,
-      salsaTalksEvents,
-      "sunday",
-    );
-
-    return {
-      "main-stage": this.convertNewEventsToTranslatableTimeSlots(
-        mainStageTimelineEvents,
-      ), // Using simple timeline config
-      "dance-workshops": this.convertNewEventsToTranslatableTimeSlots(
-        danceWorkshopsTimelineEvents,
-      ), // Using new event structure
-      "music-workshops": this.convertNewEventsToTranslatableTimeSlots(
-        musicWorkshopsTimelineEvents,
-      ), // Using new event structure
-      "salsa-talks": this.convertNewEventsToTranslatableTimeSlots(
-        salsaTalksTimelineEvents,
-      ), // Using new event structure
-    };
+    return translatedData;
   }
 
   /**
+   * @deprecated Use getDataTranslatedForDay('saturday') instead
    * Get translated timetable data for Saturday - Server Component version
    */
   static async getSaturdayDataTranslated(): Promise<
     Record<AreaType, TimeSlot[]>
   > {
-    const rawData = this.getSaturdayTranslatableData();
-    const translatedData: Record<AreaType, TimeSlot[]> = {} as Record<
-      AreaType,
-      TimeSlot[]
-    >;
-
-    for (const [areaKey, slots] of Object.entries(rawData)) {
-      const area = areaKey as AreaType;
-
-      // All areas have been migrated to translatable format
-      translatedData[area] = await translateTimeSlotsServer(
-        slots as TranslatableTimeSlot[],
-      );
-    }
-
-    return translatedData;
+    return this.getDataTranslatedForDay("saturday");
   }
 
   /**
+   * @deprecated Use getDataTranslatedForDay('sunday') instead
    * Get translated timetable data for Sunday - Server Component version
    */
   static async getSundayDataTranslated(): Promise<
     Record<AreaType, TimeSlot[]>
   > {
-    const rawData = this.getSundayTranslatableData();
-    const translatedData: Record<AreaType, TimeSlot[]> = {} as Record<
-      AreaType,
-      TimeSlot[]
-    >;
-
-    for (const [areaKey, slots] of Object.entries(rawData)) {
-      const area = areaKey as AreaType;
-
-      // All areas have been migrated to translatable format
-      translatedData[area] = await translateTimeSlotsServer(
-        slots as TranslatableTimeSlot[],
-      );
-    }
-
-    return translatedData;
+    return this.getDataTranslatedForDay("sunday");
   }
 
   /**
@@ -452,17 +414,10 @@ export class TimetableService {
    * This replaces the old getTimetableData method for Server Components
    */
   static async getTimetableDataServer(
-    day: "saturday" | "sunday",
+    dayWeekday: string, // Changed from "saturday" | "sunday" to accept any weekday
   ): Promise<Column[]> {
-    let areaData: Record<AreaType, TimeSlot[]>;
-
-    if (day === "saturday") {
-      // Use the new translation system for Saturday
-      areaData = await this.getSaturdayDataTranslated();
-    } else {
-      // Use the new translation system for Sunday
-      areaData = await this.getSundayDataTranslated();
-    }
+    // Use the new generic translation system
+    const areaData = await this.getDataTranslatedForDay(dayWeekday);
 
     return Object.entries(areaData).map(([areaKey, slots]) => {
       const areaType = areaKey as AreaType;
@@ -479,15 +434,9 @@ export class TimetableService {
    * Get available time slots for a given day - Server Component version
    */
   static async getAvailableTimeSlotsServer(
-    day: "saturday" | "sunday",
+    dayWeekday: string, // Changed from "saturday" | "sunday" to accept any weekday
   ): Promise<string[]> {
-    let areaData: Record<AreaType, TimeSlot[]>;
-
-    if (day === "saturday") {
-      areaData = await this.getSaturdayDataTranslated();
-    } else {
-      areaData = await this.getSundayDataTranslated();
-    }
+    const areaData = await this.getDataTranslatedForDay(dayWeekday);
 
     const timeSlots = new Set<string>();
     Object.values(areaData).forEach((slots) => {
@@ -502,15 +451,9 @@ export class TimetableService {
    */
   static async getAreaEventsServer(
     area: AreaType,
-    day: "saturday" | "sunday",
+    dayWeekday: string, // Changed from "saturday" | "sunday" to accept any weekday
   ): Promise<TimeSlot[]> {
-    let areaData: Record<AreaType, TimeSlot[]>;
-
-    if (day === "saturday") {
-      areaData = await this.getSaturdayDataTranslated();
-    } else {
-      areaData = await this.getSundayDataTranslated();
-    }
+    const areaData = await this.getDataTranslatedForDay(dayWeekday);
 
     return areaData[area] || [];
   }
@@ -544,54 +487,17 @@ export class TimetableService {
    */
   static getEventsForArea(
     area: AreaType,
-    day: "saturday" | "sunday",
+    dayWeekday: string, // Changed from "saturday" | "sunday" to accept any weekday
   ): TimelineSlot[] {
-    // Map of area -> events and timeline (using unified event collections)
-    const eventMap = {
-      saturday: {
-        "main-stage": {
-          timeline: mainStageSaturdayTimeline,
-          events: mainStageEvents,
-        },
-        "dance-workshops": {
-          timeline: danceWorkshopsSaturdayTimeline,
-          events: danceWorkshopEvents,
-        },
-        "music-workshops": {
-          timeline: musicWorkshopsSaturdayTimeline,
-          events: musicWorkshopEvents,
-        },
-        "salsa-talks": {
-          timeline: salsaTalksSaturdayTimeline,
-          events: salsaTalksEvents,
-        },
-      },
-      sunday: {
-        "main-stage": {
-          timeline: mainStageSundayTimeline,
-          events: mainStageEvents,
-        },
-        "dance-workshops": {
-          timeline: danceWorkshopsSundayTimeline,
-          events: danceWorkshopEvents,
-        },
-        "music-workshops": {
-          timeline: musicWorkshopsSundayTimeline,
-          events: musicWorkshopEvents,
-        },
-        "salsa-talks": {
-          timeline: salsaTalksSundayTimeline,
-          events: salsaTalksEvents,
-        },
-      },
-    };
+    // Get timeline configuration dynamically (NO MORE HARDCODED MAP!)
+    const timeline = getTimelineForAreaAndDay(area, dayWeekday);
+    const events = this.getEventCollectionForArea(area);
 
-    const { timeline, events } = eventMap[day][area];
     // createTimelineFromSimpleConfig returns TimetableEvent[] with startTime/endTime filled in
     const timelineEvents = createTimelineFromSimpleConfig(
       timeline,
       events,
-      day,
+      dayWeekday,
     );
 
     // Convert to TimelineSlot[] format (time -> events mapping)
@@ -630,13 +536,16 @@ export class TimetableService {
    * This will be the new main method for fetching timetable data
    */
   static getTimetableEventsServer(
-    day: "saturday" | "sunday",
+    dayWeekday: string, // Changed from "saturday" | "sunday" to accept any weekday
   ): Record<AreaType, TimelineSlot[]> {
-    return {
-      "main-stage": this.getEventsForArea("main-stage", day),
-      "dance-workshops": this.getEventsForArea("dance-workshops", day),
-      "music-workshops": this.getEventsForArea("music-workshops", day),
-      "salsa-talks": this.getEventsForArea("salsa-talks", day),
-    };
+    const areas = Object.keys(AREA_DEFINITIONS) as AreaType[];
+
+    return areas.reduce(
+      (acc, area) => {
+        acc[area] = this.getEventsForArea(area, dayWeekday);
+        return acc;
+      },
+      {} as Record<AreaType, TimelineSlot[]>,
+    );
   }
 }
