@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Column } from "../../types/timetable";
 import { TimelineSlot, TimetableEvent } from "../../types/events";
 import { AreaType } from "../../data/timetable/types/area.types";
+import { FestivalDay } from "../../config/festival";
 import TimetableGrid from "./TimetableGrid";
 import EventModal from "./EventModal/EventModal";
 import { useURLParams } from "./hooks/useURLParams";
@@ -14,34 +15,32 @@ import { processEventContinuation } from "./utils/eventProcessing";
 import { useColumnTranslation } from "./utils/translationHelpers";
 
 interface TimetableClientProps {
-  initialDay: "saturday" | "sunday";
-  saturdayData: Column[]; // OLD FORMAT - will be removed
-  sundayData: Column[]; // OLD FORMAT - will be removed
-  saturdayEvents: Record<AreaType, TimelineSlot[]>; // NEW FORMAT
-  sundayEvents: Record<AreaType, TimelineSlot[]>; // NEW FORMAT
+  initialDay: string; // Now accepts any weekday string
+  festivalDays: FestivalDay[]; // Array of all festival days
+  dataByWeekday: Record<string, { 
+    data: Column[]; 
+    events: Record<AreaType, TimelineSlot[]> 
+  }>; // Data for all days keyed by weekday
   translations: {
-    days: {
-      saturday: string;
-      sunday: string;
-    };
+    days: Record<string, string>; // Dynamic day translations
   };
 }
 
 /**
  * Client component that handles interactive timetable features
  * Receives pre-translated data from the server component
+ * 
+ * PHASE 4: Now supports dynamic number of festival days
  */
 export default function TimetableClient({
   initialDay,
-  saturdayData,
-  sundayData,
-  saturdayEvents, // NEW
-  sundayEvents, // NEW
+  festivalDays,
+  dataByWeekday,
   translations,
 }: TimetableClientProps) {
   // URL parameter management
   const { parseDayParam, updateDayInUrl } = useURLParams();
-  const [currentDay, setCurrentDay] = useState<"saturday" | "sunday">(
+  const [currentDay, setCurrentDay] = useState<string>(
     parseDayParam() || initialDay,
   );
 
@@ -55,17 +54,21 @@ export default function TimetableClient({
   // Slider functionality for modal
   const { resetSlider } = useSlider();
 
+  // Get current day's data
+  const currentDayData = dataByWeekday[currentDay];
+  const currentEvents = currentDayData?.events || {};
+  const currentData = currentDayData?.data || [];
+
   // NEW: Function to find event by area and time
   const findEvent = (
     area: AreaType,
     time: string,
   ): TimetableEvent | undefined => {
-    const eventsMap = currentDay === "saturday" ? saturdayEvents : sundayEvents;
-    const areaSlots = eventsMap[area];
+    const areaSlots = currentEvents[area];
     if (!areaSlots) return undefined;
 
     // Find the slot at this time
-    const slot = areaSlots.find((s) => s.time === time);
+    const slot = areaSlots.find((s: TimelineSlot) => s.time === time);
     if (!slot || slot.events.length === 0) return undefined;
 
     // Return the first event (assuming one event per slot for now)
@@ -89,11 +92,13 @@ export default function TimetableClient({
     resetSlider();
   };
 
-  // Log new event data for verification (temporary)
-  console.log("📊 New event data available:", {
-    saturdayAreas: Object.keys(saturdayEvents),
-    sundayAreas: Object.keys(sundayEvents),
-    saturdaySlotsCount: Object.values(saturdayEvents)[0]?.length,
+  // Log event data for verification (temporary)
+  console.log("📊 Festival days:", festivalDays.map(d => d.weekday));
+  console.log("📊 Current day data available:", {
+    currentDay,
+    hasData: !!currentDayData,
+    areas: Object.keys(currentEvents),
+    slotsCount: Object.values(currentEvents)[0]?.length,
   });
 
   // Process the data to handle consecutive slots and area translations
@@ -105,14 +110,11 @@ export default function TimetableClient({
     );
   };
 
-  // Get current data based on selected day
-  const currentData =
-    currentDay === "saturday"
-      ? processData(saturdayData)
-      : processData(sundayData);
+  // Get current processed data
+  const processedCurrentData = processData(currentData);
 
   // Function to handle day change
-  const handleDayChange = (day: "saturday" | "sunday") => {
+  const handleDayChange = (day: string) => {
     setCurrentDay(day);
     updateDayInUrl(day);
   };
@@ -132,61 +134,45 @@ export default function TimetableClient({
           />
         </div>
 
-        {/* Day selection buttons on the right */}
+        {/* PHASE 4: Dynamic day selection buttons */}
         <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-x-4 sm:space-y-0 md:w-2/3">
-          <button
-            className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "saturday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
-            onClick={() => handleDayChange("saturday")}
-          >
-            <Image
-              src="/saturday.svg"
-              alt={translations.days.saturday}
-              width={250}
-              height={100}
-              className="h-auto w-full"
-              priority
-            />
-            {currentDay === "saturday" && (
-              <motion.div
-                layoutId="activeDay"
-                className="bg-bes-red absolute -bottom-1 h-1 w-full rounded-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
+          {festivalDays.map((day) => (
+            <button
+              key={day.id}
+              className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${
+                currentDay === day.weekday 
+                  ? "scale-105 opacity-100" 
+                  : "opacity-70 hover:opacity-90"
+              }`}
+              onClick={() => handleDayChange(day.weekday)}
+            >
+              <Image
+                src={day.imageSrc}
+                alt={translations.days[day.weekday] || day.weekday}
+                width={250}
+                height={100}
+                className="h-auto w-full"
+                priority
               />
-            )}
-          </button>
-
-          <button
-            className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "sunday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
-            onClick={() => handleDayChange("sunday")}
-          >
-            <Image
-              src="/sunday.svg"
-              alt={translations.days.sunday}
-              width={250}
-              height={100}
-              className="h-auto w-full"
-              priority
-            />
-            {currentDay === "sunday" && (
-              <motion.div
-                layoutId="activeDay"
-                className="bg-bes-red absolute -bottom-1 h-1 w-full rounded-full"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-              />
-            )}
-          </button>
+              {currentDay === day.weekday && (
+                <motion.div
+                  layoutId="activeDay"
+                  className="bg-bes-red absolute -bottom-1 h-1 w-full rounded-full"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
+              )}
+            </button>
+          ))}
         </div>
       </div>
 
       {/* Timetable Grid */}
       <TimetableGrid
         currentDay={currentDay}
-        timetableData={currentData}
-        onEventClick={handleEventClick} // CHANGED: Use new handler
+        timetableData={processedCurrentData}
+        onEventClick={handleEventClick}
         onSlideReset={resetSlider}
       />
 

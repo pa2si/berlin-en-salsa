@@ -14,14 +14,19 @@ export const useURLParams = () => {
     return locale === "de" ? "tag" : "dia";
   };
 
-  const getLocalizedDayParam = (day: "saturday" | "sunday"): string => {
-    if (locale === "de") {
-      return day === "saturday" ? "samstag" : "sonntag";
+  const getLocalizedDayParam = (day: string): string => {
+    // Handle legacy saturday/sunday
+    if (day === "saturday" || day === "sunday") {
+      if (locale === "de") {
+        return day === "saturday" ? "samstag" : "sonntag";
+      }
+      return day === "saturday" ? "sabado" : "domingo";
     }
-    return day === "saturday" ? "sabado" : "domingo";
+    // For other days, return as-is (will be enhanced in Phase 7)
+    return day;
   };
 
-  const parseDayParam = (): "saturday" | "sunday" => {
+  const parseDayParam = (): string => {
     const paramName = getDayParamName();
     let dayParam = searchParams.get(paramName);
 
@@ -30,20 +35,23 @@ export const useURLParams = () => {
       dayParam = searchParams.get("day");
     }
 
-    if (!dayParam) return "saturday";
+    if (!dayParam) return "saturday"; // Default to first day
 
+    // Handle legacy localized params
     if (locale === "de") {
-      return dayParam === "sonntag" || dayParam === "sunday"
-        ? "sunday"
-        : "saturday";
+      if (dayParam === "sonntag" || dayParam === "sunday") return "sunday";
+      if (dayParam === "samstag" || dayParam === "saturday") return "saturday";
+    } else {
+      if (dayParam === "domingo" || dayParam === "sunday") return "sunday";
+      if (dayParam === "sabado" || dayParam === "saturday") return "saturday";
     }
-    return dayParam === "domingo" || dayParam === "sunday"
-      ? "sunday"
-      : "saturday";
+    
+    // Return as-is for other days (will be enhanced in Phase 7)
+    return dayParam;
   };
 
   // Function to update the URL with the selected day
-  const updateDayInUrl = (day: "saturday" | "sunday") => {
+  const updateDayInUrl = (day: string) => {
     const params = new URLSearchParams(searchParams);
     const paramName = getDayParamName();
     const dayValue = getLocalizedDayParam(day);

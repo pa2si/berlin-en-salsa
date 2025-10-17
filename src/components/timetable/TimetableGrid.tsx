@@ -4,9 +4,9 @@ import { Column } from "../../types/timetable";
 import { AreaType } from "../../data/timetable/types/area.types";
 
 interface TimetableGridProps {
-  currentDay: "saturday" | "sunday";
+  currentDay: string; // PHASE 4: Now accepts any weekday string
   timetableData: Column[];
-  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
+  onEventClick: (area: AreaType, time: string) => void;
   onSlideReset: () => void;
 }
 
