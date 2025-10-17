@@ -1,3 +1,8 @@
+what to do in fixes-after-refactor-plus-add-event-day-scalability2:
+
+TIMETABLE_ARCHITECTURE_ANALYSIS
+TIMETABLE_SCALABILITY_ANALYSIS
+
 whats done in fixes-after-refactor-plus-add-event-day-scalability
 
 What we removed:

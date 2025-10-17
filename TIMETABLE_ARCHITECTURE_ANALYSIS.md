@@ -5,6 +5,7 @@
 This document provides a comprehensive analysis of how the timetable system works in the Berlin En Salsa Festival application, including data flow, component structure, and key architectural decisions.
 
 **Current Status:** October 17, 2025
+
 - Architecture simplified after adapter removal
 - Ready for scalability refactor (see TIMETABLE_SCALABILITY_ANALYSIS.md)
 
@@ -253,19 +254,23 @@ export default function TimetableClient({
 // Location: /components/timetable/EventModal/EventModal.tsx
 
 interface EventModalProps {
-  event?: TimetableEvent;                    // NEW: Direct TimetableEvent
+  event?: TimetableEvent; // NEW: Direct TimetableEvent
   selectedEventDetails?: SelectedEventDetails; // OLD: For backward compatibility
   onClose: () => void;
 }
 
-export default function EventModal({ event, selectedEventDetails: providedDetails, onClose }) {
+export default function EventModal({
+  event,
+  selectedEventDetails: providedDetails,
+  onClose,
+}) {
   const { translateIfKey } = useSmartTranslation();
-  
+
   // Convert TimetableEvent to SelectedEventDetails internally if needed
   const selectedEventDetails = event
     ? convertTimetableEventToSelectedDetails(event, translateIfKey)
     : providedDetails!;
-  
+
   // Render modal with EventDetails, EventSlider, EventNavigation...
 }
 ```
@@ -293,7 +298,7 @@ export function convertTimetableEventToSelectedDetails(
   }
 
   // ... handles all event types
-  
+
   return selectedEventDetails;
 }
 ```
@@ -729,6 +734,7 @@ const handleEventClick = (area: AreaType, time: string) => {
 **Goal:** Remove dual format support entirely
 
 **Current State:**
+
 - ✅ EventModal accepts TimetableEvent directly
 - ✅ Adapter removed (converted to pure function inside EventModal)
 - ⏳ Grid still uses old Column[] format
@@ -737,17 +743,21 @@ const handleEventClick = (area: AreaType, time: string) => {
 **Steps to Complete:**
 
 1. **Update TimetableGrid** to use TimelineSlot[] format directly
+
    - Remove dependency on Column[] format
    - Render from TimelineSlot[] → direct UI
 
 2. **Remove getTimetableDataServer()** method
+
    - Only keep getTimetableEventsServer()
    - Single data format throughout
 
 3. **Remove convertNewEventsToTranslatableTimeSlots()** method
+
    - No longer needed
 
 4. **Remove old types**
+
    - Column[]
    - TranslatableTimeSlot[]
    - Keep only TimelineSlot[] and TimetableEvent
@@ -763,6 +773,7 @@ const handleEventClick = (area: AreaType, time: string) => {
 See `TIMETABLE_SCALABILITY_ANALYSIS.md` for complete plan (7 phases, 21-29 hours).
 
 **Key changes:**
+
 - Replace `"saturday" | "sunday"` with dynamic day system
 - Generate days from FESTIVAL_CONFIG dates
 - Dynamic button generation
@@ -772,16 +783,19 @@ See `TIMETABLE_SCALABILITY_ANALYSIS.md` for complete plan (7 phases, 21-29 hours
 ### Simplify Data Flow
 
 **Current:**
+
 ```
 Events → Timeline → Service (Bridge) → Component (Both formats) → Modal (Conversion)
 ```
 
 **After Bridge Removal:**
+
 ```
 Events → Timeline → Service → Component (TimelineSlot only) → Modal (Direct)
 ```
 
 **After Scalability Refactor:**
+
 ```
 FESTIVAL_CONFIG (days) → Events → Timeline → Service → Component → Modal
 ```
@@ -802,11 +816,13 @@ The timetable system is well-architected with:
 - ⏳ Bridge layer partially removed (modal done, grid remaining)
 
 **Recent Improvements:**
+
 - ✅ Adapter removed - EventModal now accepts TimetableEvent directly
 - ✅ Cleaner architecture - TimetableClient → EventModal (direct path)
 - ✅ Pure function conversion - easier to test and maintain
 
 **Next Steps:**
+
 1. Complete bridge layer removal (update TimetableGrid)
 2. Implement scalability refactor (multi-day support)
 3. Optimize event lookup (indexing, caching)
@@ -818,18 +834,22 @@ The timetable system is well-architected with:
 ### Key Files
 
 **Event Creation & Types:**
+
 - `eventFactory.ts` - Event creation & ID generation ⭐
 - `events.ts` - Type definitions (TimetableEvent union)
 - `/data/timetable/events/` - Event data files (6 event types)
 
 **Timeline & Configuration:**
+
 - `timelineConfig.ts` - Timeline slot definitions (8 arrays: 4 areas × 2 days)
 - `festival.ts` - Festival configuration (dates, countdown)
 
 **Service Layer:**
+
 - `timetable.service.ts` - Data aggregation & bridge layer
 
 **Components:**
+
 - `TimetablePage.tsx` - Server component (data fetching)
 - `TimetableClient.tsx` - Client component (interactivity)
 - `TimetableGrid.tsx` - Grid layout (still uses old Column[] format)
@@ -842,15 +862,18 @@ The timetable system is well-architected with:
 ### Key Functions
 
 **Event Management:**
+
 - `generateEventId()` - Creates unique event IDs (`{area}-{day}-{sanitized-title}`)
 - `createTimelineFromSimpleConfig()` - Maps timeline to events
 - `EventFactory.create*Event()` - Type-safe event creation
 
 **Data Fetching:**
+
 - `getTimetableEventsServer()` - Fetches TimelineSlot[] format (NEW)
 - `getTimetableDataServer()` - Fetches Column[] format (OLD, for grid)
 
 **Modal & Display:**
+
 - `convertTimetableEventToSelectedDetails()` - Pure function for format conversion ✅
 - `translateIfKey()` - Smart translation system
 - `useSmartTranslation()` - Translation hook
@@ -858,6 +881,7 @@ The timetable system is well-architected with:
 ### Key Types
 
 **Events:**
+
 - `TimetableEvent` - Union of all 6 event types
 - `MainStageEvent` - DJ sets, live bands
 - `DanceWorkshopEvent` - Dance instruction
@@ -867,12 +891,14 @@ The timetable system is well-architected with:
 - `DanceShowEvent` - Performance shows
 
 **Data Structures:**
+
 - `TimelineSlot` - Time slot with events array (NEW format)
 - `Column` - Grid column format (OLD format, still used by TimetableGrid)
 - `Act` - Performer/instructor/presenter/guest
 - `AreaType` - Timetable area enum (`"main-stage" | "dance-workshops" | ...`)
 
 **Modal:**
+
 - `SelectedEventDetails` - Display format for modal (40+ optional fields)
 
 ---
