@@ -1,5 +1,15 @@
 # Timetable Architecture Analysis
 
+## 📋 Document Purpose
+
+This document provides a comprehensive analysis of how the timetable system works in the Berlin En Salsa Festival application, including data flow, component structure, and key architectural decisions.
+
+**Current Status:** October 17, 2025
+- Architecture simplified after adapter removal
+- Ready for scalability refactor (see TIMETABLE_SCALABILITY_ANALYSIS.md)
+
+---
+
 ## Overview
 
 This document provides a comprehensive analysis of how the timetable system works in the Berlin En Salsa Festival application.
@@ -16,7 +26,7 @@ The `generateEventId` function in `/src/utils/eventFactory.ts` is **NOT legacy**
 
 ## Architecture Overview
 
-The timetable system uses a **multi-layered architecture** with a bridge pattern that's currently in transition:
+The timetable system uses a **layered architecture** with clean separation of concerns:
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -34,7 +44,12 @@ The timetable system uses a **multi-layered architecture** with a bridge pattern
 │  ├── TimetablePage.tsx (Server Component)              │
 │  ├── TimetableClient.tsx (Client Component)            │
 │  ├── TimetableGrid.tsx                                 │
-│  ├── NewEventModal.tsx                                 │
+│  ├── EventModal/                                       │
+│  │   ├── EventModal.tsx (accepts TimetableEvent)      │
+│  │   ├── eventConversion.ts (pure function)           │
+│  │   ├── EventDetails.tsx                             │
+│  │   ├── EventSlider.tsx                              │
+│  │   └── EventNavigation.tsx                          │
 │  └── hooks/                                            │
 └────────────────┬────────────────────────────────────────┘
                  │
@@ -79,6 +94,8 @@ The timetable system uses a **multi-layered architecture** with a bridge pattern
 │  - Uses generateEventId() ← ACTIVE & ESSENTIAL         │
 └─────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Data Flow
 
@@ -187,10 +204,10 @@ export default async function TimetablePage({ initialDay }) {
 
   return (
     <TimetableClient
-      saturdayData={saturdayData}        // OLD format
-      sundayData={sundayData}            // OLD format
-      saturdayEvents={saturdayEvents}    // NEW format
-      sundayEvents={sundayEvents}        // NEW format
+      saturdayData={saturdayData}        // OLD format (for grid)
+      sundayData={sundayData}            // OLD format (for grid)
+      saturdayEvents={saturdayEvents}    // NEW format (for modal)
+      sundayEvents={sundayEvents}        // NEW format (for modal)
       translations={...}
     />
   );
@@ -223,42 +240,67 @@ export default function TimetableClient({
     onEventClick={handleEventClick}
   />
 
-  // Modal uses NEW format (TimetableEvent)
-  <NewEventModal event={selectedEvent} />
+  // Modal uses NEW format - accepts TimetableEvent directly
+  {selectedEvent && (
+    <EventModal event={selectedEvent} onClose={closeModal} />
+  )}
 }
 ```
 
-### 5. Event Modal Adaptation
+### 5. Event Modal (Direct Rendering)
 
 ```typescript
-// Location: /components/timetable/adapters/eventAdapter.ts
+// Location: /components/timetable/EventModal/EventModal.tsx
 
-export function useEventAdapter() {
+interface EventModalProps {
+  event?: TimetableEvent;                    // NEW: Direct TimetableEvent
+  selectedEventDetails?: SelectedEventDetails; // OLD: For backward compatibility
+  onClose: () => void;
+}
+
+export default function EventModal({ event, selectedEventDetails: providedDetails, onClose }) {
   const { translateIfKey } = useSmartTranslation();
-
-  const convertTimetableEventToSelectedDetails = (
-    event: TimetableEvent,
-  ): SelectedEventDetails => {
-    // Converts new TimetableEvent to modal format
-    // Handles all event types: MainStageEvent, DanceWorkshopEvent, etc.
-
-    if (isMainStageEvent(event)) {
-      // Extract DJ/band information
-      // Map acts to slides
-      // Handle dance shows
-    }
-
-    if (isDanceWorkshopEvent(event)) {
-      // Extract instructor information
-      // Map to workshop format
-    }
-
-    // ... handles all event types
-  };
-
-  return { convertTimetableEventToSelectedDetails };
+  
+  // Convert TimetableEvent to SelectedEventDetails internally if needed
+  const selectedEventDetails = event
+    ? convertTimetableEventToSelectedDetails(event, translateIfKey)
+    : providedDetails!;
+  
+  // Render modal with EventDetails, EventSlider, EventNavigation...
 }
 ```
+
+```typescript
+// Location: /components/timetable/EventModal/eventConversion.ts
+
+// Pure function (not a React Hook) for converting event formats
+export function convertTimetableEventToSelectedDetails(
+  event: TimetableEvent,
+  translateIfKey: (key?: string) => string,
+): SelectedEventDetails {
+  // Converts new TimetableEvent to modal display format
+  // Handles all event types: MainStageEvent, DanceWorkshopEvent, etc.
+
+  if (isMainStageEvent(event)) {
+    // Extract DJ/band information
+    // Map acts to slides
+    // Handle dance shows
+  }
+
+  if (isDanceWorkshopEvent(event)) {
+    // Extract instructor information
+    // Map to workshop format
+  }
+
+  // ... handles all event types
+  
+  return selectedEventDetails;
+}
+```
+
+**Key Change:** The adapter was removed and converted to a pure function inside the EventModal directory. This simplifies the architecture while maintaining the same UI/UX.
+
+---
 
 ## Type System
 
@@ -682,30 +724,69 @@ const handleEventClick = (area: AreaType, time: string) => {
 
 ## Future Improvements
 
-### Phase Out Bridge Layer
+### Complete Bridge Layer Removal
 
-**Goal:** Remove dual format support
+**Goal:** Remove dual format support entirely
 
-**Steps:**
+**Current State:**
+- ✅ EventModal accepts TimetableEvent directly
+- ✅ Adapter removed (converted to pure function inside EventModal)
+- ⏳ Grid still uses old Column[] format
+- ⏳ Service layer still maintains both formats
 
-1. ✅ Migrate all areas to new event format (DONE)
-2. Update TimetableGrid to use TimelineSlot[] format directly
-3. Remove `getTimetableDataServer()` method
-4. Remove `convertNewEventsToTranslatableTimeSlots()` method
-5. Remove old Column[] and TranslatableTimeSlot[] types
+**Steps to Complete:**
+
+1. **Update TimetableGrid** to use TimelineSlot[] format directly
+   - Remove dependency on Column[] format
+   - Render from TimelineSlot[] → direct UI
+
+2. **Remove getTimetableDataServer()** method
+   - Only keep getTimetableEventsServer()
+   - Single data format throughout
+
+3. **Remove convertNewEventsToTranslatableTimeSlots()** method
+   - No longer needed
+
+4. **Remove old types**
+   - Column[]
+   - TranslatableTimeSlot[]
+   - Keep only TimelineSlot[] and TimetableEvent
+
+5. **Simplify TimetableClient props**
+   - Remove saturdayData/sundayData
+   - Only pass saturdayEvents/sundayEvents
+
+### Implement Scalability Refactor
+
+**Goal:** Support any number of festival days dynamically
+
+See `TIMETABLE_SCALABILITY_ANALYSIS.md` for complete plan (7 phases, 21-29 hours).
+
+**Key changes:**
+- Replace `"saturday" | "sunday"` with dynamic day system
+- Generate days from FESTIVAL_CONFIG dates
+- Dynamic button generation
+- Generic service methods
+- Unified timeline configuration
 
 ### Simplify Data Flow
 
+**Current:**
 ```
-Current:  Events → Timeline → Service (Bridge) → Component (Both formats)
-Future:   Events → Timeline → Service → Component (TimelineSlot only)
+Events → Timeline → Service (Bridge) → Component (Both formats) → Modal (Conversion)
 ```
 
-### Optimize Event Lookup
+**After Bridge Removal:**
+```
+Events → Timeline → Service → Component (TimelineSlot only) → Modal (Direct)
+```
 
-- Consider indexing events by ID
-- Cache event lookups
-- Pre-compute event time ranges
+**After Scalability Refactor:**
+```
+FESTIVAL_CONFIG (days) → Events → Timeline → Service → Component → Modal
+```
+
+---
 
 ## Conclusion
 
@@ -713,36 +794,101 @@ The `generateEventId` function is **essential and actively used** throughout the
 
 The timetable system is well-architected with:
 
-- ✅ Strong type safety
-- ✅ Clear separation of concerns
-- ✅ Flexible event system
-- ✅ Full internationalization support
-- ✅ Smooth migration path from old to new format
+- ✅ Strong type safety (TypeScript discriminated unions)
+- ✅ Clear separation of concerns (layers)
+- ✅ Flexible event system (6 event types)
+- ✅ Full internationalization support (next-intl)
+- ✅ Simplified modal architecture (direct TimetableEvent rendering)
+- ⏳ Bridge layer partially removed (modal done, grid remaining)
 
-The bridge layer is temporary and will be removed once the grid component is updated to use the new TimelineSlot format directly.
+**Recent Improvements:**
+- ✅ Adapter removed - EventModal now accepts TimetableEvent directly
+- ✅ Cleaner architecture - TimetableClient → EventModal (direct path)
+- ✅ Pure function conversion - easier to test and maintain
+
+**Next Steps:**
+1. Complete bridge layer removal (update TimetableGrid)
+2. Implement scalability refactor (multi-day support)
+3. Optimize event lookup (indexing, caching)
+
+---
 
 ## Quick Reference
 
 ### Key Files
 
+**Event Creation & Types:**
 - `eventFactory.ts` - Event creation & ID generation ⭐
-- `timelineConfig.ts` - Timeline slot definitions
-- `timetable.service.ts` - Data aggregation & bridge
-- `events.ts` - Type definitions
-- `eventAdapter.ts` - Format conversion for modal
-- Event data files in `/data/timetable/events/`
+- `events.ts` - Type definitions (TimetableEvent union)
+- `/data/timetable/events/` - Event data files (6 event types)
+
+**Timeline & Configuration:**
+- `timelineConfig.ts` - Timeline slot definitions (8 arrays: 4 areas × 2 days)
+- `festival.ts` - Festival configuration (dates, countdown)
+
+**Service Layer:**
+- `timetable.service.ts` - Data aggregation & bridge layer
+
+**Components:**
+- `TimetablePage.tsx` - Server component (data fetching)
+- `TimetableClient.tsx` - Client component (interactivity)
+- `TimetableGrid.tsx` - Grid layout (still uses old Column[] format)
+- `EventModal/EventModal.tsx` - Modal (accepts TimetableEvent directly) ✅
+- `EventModal/eventConversion.ts` - Pure conversion function ✅
+- `EventModal/EventDetails.tsx` - Event details display
+- `EventModal/EventSlider.tsx` - Image slider
+- `EventModal/EventNavigation.tsx` - Slide navigation
 
 ### Key Functions
 
-- `generateEventId()` - Creates unique event IDs
+**Event Management:**
+- `generateEventId()` - Creates unique event IDs (`{area}-{day}-{sanitized-title}`)
 - `createTimelineFromSimpleConfig()` - Maps timeline to events
-- `getTimetableEventsServer()` - Fetches new format data
-- `useEventAdapter()` - Converts events for modal display
+- `EventFactory.create*Event()` - Type-safe event creation
+
+**Data Fetching:**
+- `getTimetableEventsServer()` - Fetches TimelineSlot[] format (NEW)
+- `getTimetableDataServer()` - Fetches Column[] format (OLD, for grid)
+
+**Modal & Display:**
+- `convertTimetableEventToSelectedDetails()` - Pure function for format conversion ✅
 - `translateIfKey()` - Smart translation system
+- `useSmartTranslation()` - Translation hook
 
 ### Key Types
 
-- `TimetableEvent` - Union of all event types
-- `TimelineSlot` - Time slot with events array
-- `Act` - Performer/instructor/presenter
-- `AreaType` - Timetable area enum
+**Events:**
+- `TimetableEvent` - Union of all 6 event types
+- `MainStageEvent` - DJ sets, live bands
+- `DanceWorkshopEvent` - Dance instruction
+- `MusicWorkshopEvent` - Music instruction
+- `TalkEvent` - Regular presentations
+- `AviatrixTalkEvent` - Record collection talks
+- `DanceShowEvent` - Performance shows
+
+**Data Structures:**
+- `TimelineSlot` - Time slot with events array (NEW format)
+- `Column` - Grid column format (OLD format, still used by TimetableGrid)
+- `Act` - Performer/instructor/presenter/guest
+- `AreaType` - Timetable area enum (`"main-stage" | "dance-workshops" | ...`)
+
+**Modal:**
+- `SelectedEventDetails` - Display format for modal (40+ optional fields)
+
+---
+
+## Related Documentation
+
+- **TIMETABLE_SCALABILITY_ANALYSIS.md** - Plan for multi-day support (7 phases)
+- **ADAPTER_REMOVAL_COMPLETE.md** - Documentation of adapter removal
+- **UNIFIED_EVENTS_REFACTOR_COMPLETE.md** - Event system unification
+- **TYPE_SYSTEM_REFACTOR_COMPLETE.md** - Type system improvements
+
+---
+
+## Document Information
+
+**Created:** October 2025  
+**Last Updated:** October 17, 2025  
+**Status:** Current architecture (post-adapter removal)  
+**Next Updates:** After bridge layer completion & scalability refactor
