@@ -44,6 +44,15 @@
     "SectionFive": {
       "title": "Festivalplan",
       "description": "Sieh dir unseren interaktiven Zeitplan an und plane dein Berlin En Salsa Erlebnis. Klicke auf die Bilder, um den vollständigen Zeitplan sowie alle Details zu Künstlern, Workshops und mehr anzuzeigen!",
+      "days": {
+        "monday": "Montag",
+        "tuesday": "Dienstag",
+        "wednesday": "Mittwoch",
+        "thursday": "Donnerstag",
+        "friday": "Freitag",
+        "saturday": "Samstag",
+        "sunday": "Sonntag"
+      },
       "saturday": "Samstag",
       "sunday": "Sonntag",
       "saturdayAlt": "Programm für Samstag",
@@ -355,10 +364,20 @@
       "loadingMessage": "Festival-Zeitplan wird geladen..."
     },
     "days": {
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
       "saturday": "Samstag",
       "sunday": "Sonntag"
     },
     "navigation": {
+      "monday": "Montag",
+      "tuesday": "Dienstag",
+      "wednesday": "Mittwoch",
+      "thursday": "Donnerstag",
+      "friday": "Freitag",
       "saturday": "Samstag",
       "sunday": "Sonntag"
     },
