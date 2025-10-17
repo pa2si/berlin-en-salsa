@@ -7,7 +7,7 @@ export * from "./types/timetable.types";
 export * from "./services/timetable.service";
 
 // Export unified event collections (day-agnostic)
-export { mainStageEvents } from "./events/main-stage/main-stage";
-export { danceWorkshopEvents } from "./events/dance-workshops/dance-workshops";
-export { musicWorkshopEvents } from "./events/music-workshops/music-workshops";
-export { salsaTalksEvents } from "./events/salsa-talks/salsa-talks";
+export { mainStageEvents } from "./events/main-stage";
+export { danceWorkshopEvents } from "./events/dance-workshops";
+export { musicWorkshopEvents } from "./events/music-workshops";
+export { salsaTalksEvents } from "./events/salsa-talks";

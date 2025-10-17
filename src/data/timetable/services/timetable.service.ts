@@ -6,10 +6,10 @@ import { translateTimeSlotsServer } from "../utils/timetableTranslation";
 import { TimelineSlot, TimetableEvent } from "../../../types/events";
 
 // Import unified event collections (day-agnostic)
-import { mainStageEvents } from "../events/main-stage/main-stage";
-import { danceWorkshopEvents } from "../events/dance-workshops/dance-workshops";
-import { musicWorkshopEvents } from "../events/music-workshops/music-workshops";
-import { salsaTalksEvents } from "../events/salsa-talks/salsa-talks";
+import { mainStageEvents } from "../events/main-stage";
+import { danceWorkshopEvents } from "../events/dance-workshops";
+import { musicWorkshopEvents } from "../events/music-workshops";
+import { salsaTalksEvents } from "../events/salsa-talks";
 
 // Import timeline configurations (these define which events appear on which day)
 import {

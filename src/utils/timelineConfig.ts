@@ -7,10 +7,10 @@
  * Events are now unified (day-agnostic) and the timeline configuration determines which day they appear on.
  */
 
-import { mainStageEvents } from "../data/timetable/events/main-stage/main-stage";
-import { danceWorkshopEvents } from "../data/timetable/events/dance-workshops/dance-workshops";
-import { musicWorkshopEvents } from "../data/timetable/events/music-workshops/music-workshops";
-import { salsaTalksEvents } from "../data/timetable/events/salsa-talks/salsa-talks";
+import { mainStageEvents } from "../data/timetable/events/main-stage";
+import { danceWorkshopEvents } from "../data/timetable/events/dance-workshops";
+import { musicWorkshopEvents } from "../data/timetable/events/music-workshops";
+import { salsaTalksEvents } from "../data/timetable/events/salsa-talks";
 import { TimetableEvent, RawTimetableEvent } from "../types/events";
 
 /**
