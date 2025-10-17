@@ -1,21 +1,32 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { TimetableEvent } from "../../../types/events";
 import { SelectedEventDetails } from "../hooks/useEventModal";
 import { useSlider } from "../hooks/useSlider";
+import { useSmartTranslation } from "../../../data/timetable/utils/smartTranslation";
+import { convertTimetableEventToSelectedDetails } from "./eventConversion";
 import EventDetails from "./EventDetails";
 import EventSlider from "./EventSlider";
 import EventNavigation from "./EventNavigation";
 
 interface EventModalProps {
-  selectedEventDetails: SelectedEventDetails;
+  event?: TimetableEvent; // NEW: Accept TimetableEvent
+  selectedEventDetails?: SelectedEventDetails; // OLD: Keep for backward compatibility
   onClose: () => void;
 }
 
 export default function EventModal({
-  selectedEventDetails,
+  event,
+  selectedEventDetails: providedDetails,
   onClose,
 }: EventModalProps) {
   const t = useTranslations("Timetable");
+  const { translateIfKey } = useSmartTranslation();
+
+  // Convert TimetableEvent to SelectedEventDetails if provided
+  const selectedEventDetails = event
+    ? convertTimetableEventToSelectedDetails(event, translateIfKey)
+    : providedDetails!;
   const {
     currentSlideIndex,
     goToSlide,
@@ -212,7 +223,7 @@ export default function EventModal({
                 {/* Additional text for talks */}
                 {selectedEventDetails.text && (
                   <div className="border-bes-red mb-6 rounded-lg border-l-4 bg-gray-50 p-4">
-                    <p className="text-xl text-gray-700 italic md:leading-relaxed">
+                    <p className="text-xl italic text-gray-700 md:leading-relaxed">
                       &quot;{selectedEventDetails.text}&quot;
                     </p>
                   </div>

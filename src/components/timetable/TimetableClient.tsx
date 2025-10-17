@@ -7,7 +7,7 @@ import { Column } from "../../types/timetable";
 import { TimelineSlot, TimetableEvent } from "../../types/events";
 import { AreaType } from "../../data/timetable/types/area.types";
 import TimetableGrid from "./TimetableGrid";
-import NewEventModal from "./NewEventModal"; // CHANGED: Use new modal
+import EventModal from "./EventModal/EventModal";
 import { useURLParams } from "./hooks/useURLParams";
 import { useSlider } from "./hooks/useSlider";
 import { processEventContinuation } from "./utils/eventProcessing";
@@ -133,7 +133,7 @@ export default function TimetableClient({
         </div>
 
         {/* Day selection buttons on the right */}
-        <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-y-0 sm:space-x-4 md:w-2/3">
+        <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-x-4 sm:space-y-0 md:w-2/3">
           <button
             className={`relative w-full cursor-pointer transition-all duration-300 sm:w-40 md:w-48 lg:w-64 ${currentDay === "saturday" ? "scale-105 opacity-100" : "opacity-70 hover:opacity-90"}`}
             onClick={() => handleDayChange("saturday")}
@@ -192,7 +192,7 @@ export default function TimetableClient({
 
       {/* NEW: Event Modal with TimetableEvent */}
       {selectedEvent && (
-        <NewEventModal event={selectedEvent} onClose={closeModal} />
+        <EventModal event={selectedEvent} onClose={closeModal} />
       )}
     </div>
   );

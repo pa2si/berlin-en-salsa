@@ -1,4 +1,22 @@
-whats done it fixes-after-refactor:
+whats done in fixes-after-refactor-plus-add-event-day-scalability
+
+What we removed:
+
+❌ eventAdapter.ts (221 lines)
+❌ NewEventModal.tsx (30 lines)
+What we added:
+
+✅ EventModal/eventConversion.ts (217 lines)
+✅ Updated EventModal.tsx to accept TimetableEvent directly
+✅ Simplified TimetableClient.tsx imports
+Result:
+
+Cleaner architecture ✅
+Fewer files ✅
+Same functionality ✅
+Same UI/UX ✅
+
+whats done in fixes-after-refactor:
 
 - unified the workshop etc. files (not seperated anymore per day)
 - remove start and endTime in eventData. set the time onyl in timelineConfig.
