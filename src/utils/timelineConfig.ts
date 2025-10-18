@@ -44,7 +44,7 @@ export interface AreaTimelineConfig {
 /**
  * MAIN TIMELINE CONFIGURATION
  * Single source of truth for all timetable schedules
- * 
+ *
  * Array-based structure allows easy addition of new days - just add another object to schedules array
  */
 export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
@@ -57,28 +57,96 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "saturday",
         timeline: [
-          { time: "13:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.rodoElProfe" },
-          { time: "14:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.ecKubaSet" },
-          { time: "15:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.alfiaConIre" },
-          { time: "16:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.andrelux" },
-          { time: "17:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.djFeikes" },
-          { time: "18:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.burundanga" },
-          { time: "19:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.tempoHavana" },
-          { time: "20:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.djBongo" },
-          { time: "21:00", duration: 60, eventId: "Timetable.events.mainStage.saturday.cayeye" },
+          {
+            time: "13:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.rodoElProfe",
+          },
+          {
+            time: "14:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.ecKubaSet",
+          },
+          {
+            time: "15:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.alfiaConIre",
+          },
+          {
+            time: "16:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.andrelux",
+          },
+          {
+            time: "17:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.djFeikes",
+          },
+          {
+            time: "18:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.burundanga",
+          },
+          {
+            time: "19:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.tempoHavana",
+          },
+          {
+            time: "20:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.djBongo",
+          },
+          {
+            time: "21:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.saturday.cayeye",
+          },
         ],
       },
       {
         dayWeekday: "sunday",
         timeline: [
-          { time: "12:30", duration: 60, eventId: "Timetable.events.mainStage.sunday.floriWilber" },
-          { time: "14:00", duration: 60, eventId: "Timetable.events.mainStage.sunday.laSonoraBerlin" },
-          { time: "15:00", duration: 60, eventId: "Timetable.events.mainStage.sunday.elPuma" },
-          { time: "16:30", duration: 60, eventId: "Timetable.events.mainStage.sunday.burundanga" },
-          { time: "17:30", duration: 60, eventId: "Timetable.events.mainStage.sunday.anacaonaLaVecina" },
-          { time: "19:00", duration: 60, eventId: "Timetable.events.mainStage.sunday.cayeye" },
-          { time: "20:00", duration: 60, eventId: "Timetable.events.mainStage.sunday.bongo" },
-          { time: "21:00", duration: 60, eventId: "Timetable.events.mainStage.sunday.berlinEnSalsaHostDJs" },
+          {
+            time: "12:30",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.floriWilber",
+          },
+          {
+            time: "14:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.laSonoraBerlin",
+          },
+          {
+            time: "15:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.elPuma",
+          },
+          {
+            time: "16:30",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.burundanga",
+          },
+          {
+            time: "17:30",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.anacaonaLaVecina",
+          },
+          {
+            time: "19:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.cayeye",
+          },
+          {
+            time: "20:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.bongo",
+          },
+          {
+            time: "21:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.sunday.berlinEnSalsaHostDJs",
+          },
         ],
       },
     ],
@@ -93,16 +161,36 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "saturday",
         timeline: [
-          { time: "13:00", duration: 60, eventId: "Timetable.events.danceWorkshops.saturday.afroCubanDance" },
-          { time: "16:00", duration: 60, eventId: "Timetable.events.danceWorkshops.saturday.sonCubano" },
-          { time: "18:30", duration: 60, eventId: "Timetable.events.danceWorkshops.saturday.salsaCalena" },
+          {
+            time: "13:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.afroCubanDance",
+          },
+          {
+            time: "16:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.sonCubano",
+          },
+          {
+            time: "18:30",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.salsaCalena",
+          },
         ],
       },
       {
         dayWeekday: "sunday",
         timeline: [
-          { time: "12:30", duration: 60, eventId: "Timetable.events.danceWorkshops.sunday.newYorkOn2" },
-          { time: "15:00", duration: 60, eventId: "Timetable.events.danceWorkshops.sunday.casinoCubano" },
+          {
+            time: "12:30",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.sunday.newYorkOn2",
+          },
+          {
+            time: "15:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.sunday.casinoCubano",
+          },
         ],
       },
     ],
@@ -117,15 +205,32 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "saturday",
         timeline: [
-          { time: "13:00", duration: 60, eventId: "Timetable.events.musicWorkshops.saturday.polyrhythmIntroduction" },
-          { time: "14:00", duration: 60, eventId: "Timetable.events.musicWorkshops.saturday.ritmoDeClave" },
+          {
+            time: "13:00",
+            duration: 60,
+            eventId:
+              "Timetable.events.musicWorkshops.saturday.polyrhythmIntroduction",
+          },
+          {
+            time: "14:00",
+            duration: 60,
+            eventId: "Timetable.events.musicWorkshops.saturday.ritmoDeClave",
+          },
         ],
       },
       {
         dayWeekday: "sunday",
         timeline: [
-          { time: "13:00", duration: 60, eventId: "Timetable.events.musicWorkshops.sunday.campanaWorkshop" },
-          { time: "15:30", duration: 60, eventId: "Timetable.events.musicWorkshops.sunday.soneoWorkshop" },
+          {
+            time: "13:00",
+            duration: 60,
+            eventId: "Timetable.events.musicWorkshops.sunday.campanaWorkshop",
+          },
+          {
+            time: "15:30",
+            duration: 60,
+            eventId: "Timetable.events.musicWorkshops.sunday.soneoWorkshop",
+          },
         ],
       },
     ],
@@ -140,21 +245,66 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "saturday",
         timeline: [
-          { time: "14:00", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.sarahBalzatTalk.title" },
-          { time: "14:30", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.jessiVaneTalk.title" },
-          { time: "16:00", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.aviatrixChristian.title" },
-          { time: "16:30", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.aviatrixRaicez.title" },
-          { time: "17:00", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.title" },
-          { time: "18:30", duration: 30, eventId: "Timetable.events.salsaTalks.saturday.salsancoTalk.title" },
+          {
+            time: "14:00",
+            duration: 30,
+            eventId:
+              "Timetable.events.salsaTalks.saturday.sarahBalzatTalk.title",
+          },
+          {
+            time: "14:30",
+            duration: 30,
+            eventId: "Timetable.events.salsaTalks.saturday.jessiVaneTalk.title",
+          },
+          {
+            time: "16:00",
+            duration: 30,
+            eventId:
+              "Timetable.events.salsaTalks.saturday.aviatrixChristian.title",
+          },
+          {
+            time: "16:30",
+            duration: 30,
+            eventId:
+              "Timetable.events.salsaTalks.saturday.aviatrixRaicez.title",
+          },
+          {
+            time: "17:00",
+            duration: 30,
+            eventId: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.title",
+          },
+          {
+            time: "18:30",
+            duration: 30,
+            eventId: "Timetable.events.salsaTalks.saturday.salsancoTalk.title",
+          },
         ],
       },
       {
         dayWeekday: "sunday",
         timeline: [
-          { time: "15:00", duration: 30, eventId: "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.title" },
-          { time: "15:30", duration: 30, eventId: "Timetable.events.salsaTalks.sunday.aviatrixDracaena.title" },
-          { time: "16:00", duration: 30, eventId: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.title" },
-          { time: "17:30", duration: 90, eventId: "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.title" },
+          {
+            time: "15:00",
+            duration: 30,
+            eventId:
+              "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.title",
+          },
+          {
+            time: "15:30",
+            duration: 30,
+            eventId:
+              "Timetable.events.salsaTalks.sunday.aviatrixDracaena.title",
+          },
+          {
+            time: "16:00",
+            duration: 30,
+            eventId: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.title",
+          },
+          {
+            time: "17:30",
+            duration: 90,
+            eventId: "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.title",
+          },
         ],
       },
     ],
@@ -227,8 +377,10 @@ export const mainStageSaturdayTimeline: TimelineSlot[] =
  * Simple timeline configuration for Main Stage Sunday
  * @deprecated Use getTimelineForAreaAndDay("main-stage", "sunday") instead
  */
-export const mainStageSundayTimeline: TimelineSlot[] =
-  getTimelineForAreaAndDay("main-stage", "sunday");
+export const mainStageSundayTimeline: TimelineSlot[] = getTimelineForAreaAndDay(
+  "main-stage",
+  "sunday",
+);
 
 /**
  * Simple timeline configuration for Dance Workshops Saturday

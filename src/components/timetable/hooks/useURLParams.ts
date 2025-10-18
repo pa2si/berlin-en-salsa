@@ -61,12 +61,12 @@ export const useURLParams = () => {
   const getLocalizedDayParam = (day: string): string => {
     const weekday = day.toLowerCase();
     const localeKey = locale === "de" ? "de" : "es";
-    
+
     // Look up localized version
     if (WEEKDAY_LOCALIZATION[weekday]) {
       return WEEKDAY_LOCALIZATION[weekday][localeKey];
     }
-    
+
     // Fallback to original if not found (shouldn't happen)
     console.warn(`Unknown weekday for localization: ${day}`);
     return weekday;
@@ -90,12 +90,12 @@ export const useURLParams = () => {
 
     // Convert to lowercase for case-insensitive matching
     const normalizedParam = dayParam.toLowerCase();
-    
+
     // Look up English weekday from localized parameter
     if (LOCALIZED_TO_ENGLISH[normalizedParam]) {
       return LOCALIZED_TO_ENGLISH[normalizedParam];
     }
-    
+
     // Fallback: return as-is (might be English already)
     console.warn(`Unknown day parameter: ${dayParam}, returning as-is`);
     return normalizedParam;

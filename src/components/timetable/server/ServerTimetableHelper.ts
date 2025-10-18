@@ -92,7 +92,8 @@ export class ServerTimetableHelper {
    * PHASE 5: Updated to accept generic string for day parameter
    * @deprecated This method is for backward compatibility only
    */
-  static isAreaMigrated(area: string, day: string): boolean { // Changed from "saturday" | "sunday" to string
+  static isAreaMigrated(area: string, day: string): boolean {
+    // Changed from "saturday" | "sunday" to string
     // Map area names to AreaType
     const areaTypeMap: Record<string, string> = {
       "main-stage": "main-stage",

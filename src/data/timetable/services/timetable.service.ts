@@ -3,7 +3,11 @@ import { TimeSlot } from "../types/event.types";
 import { TranslatableTimeSlot } from "../types/translatable.types";
 import { Column } from "../types/timetable.types";
 import { translateTimeSlotsServer } from "../utils/timetableTranslation";
-import { TimelineSlot, TimetableEvent, RawTimetableEvent } from "../../../types/events";
+import {
+  TimelineSlot,
+  TimetableEvent,
+  RawTimetableEvent,
+} from "../../../types/events";
 
 // Import unified event collections (day-agnostic)
 import { mainStageEvents } from "../events/main-stage";
@@ -36,7 +40,9 @@ export class TimetableService {
   /**
    * Get event collection for an area
    */
-  private static getEventCollectionForArea(area: AreaType): RawTimetableEvent[] {
+  private static getEventCollectionForArea(
+    area: AreaType,
+  ): RawTimetableEvent[] {
     return EVENT_COLLECTIONS[area] || [];
   }
 
@@ -64,7 +70,8 @@ export class TimetableService {
         dayWeekday,
       );
 
-      result[area] = this.convertNewEventsToTranslatableTimeSlots(enrichedEvents);
+      result[area] =
+        this.convertNewEventsToTranslatableTimeSlots(enrichedEvents);
     }
 
     return result;
@@ -476,7 +483,8 @@ export class TimetableService {
    * PHASE 5: Updated to accept generic string for day parameter
    * @deprecated This method is for backward compatibility only
    */
-  static isAreaMigrated(area: AreaType, day: string): boolean { // Changed from "saturday" | "sunday" to string
+  static isAreaMigrated(area: AreaType, day: string): boolean {
+    // Changed from "saturday" | "sunday" to string
     return area === "main-stage" && day === "saturday";
   }
 

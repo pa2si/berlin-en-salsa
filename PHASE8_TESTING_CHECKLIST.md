@@ -13,16 +13,19 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 ## Test Suite 1: Current 2-Day Setup (July 19-20, 2025)
 
 ### 1.1 Festival Configuration ✅
+
 - **Current Config:** Saturday-Sunday (2 days)
 - **Start Date:** July 19, 2025 12:30:00
 - **End Date:** July 20, 2025 23:59:59
 
 **Expected Results:**
+
 - `FESTIVAL_CONFIG.days` should return 2 FestivalDay objects
 - Day 1: `{ id: "day1", weekday: "saturday", dateShort: "Jul 19", imageSrc: "/timetable-days/day1.svg" }`
 - Day 2: `{ id: "day2", weekday: "sunday", dateShort: "Jul 20", imageSrc: "/timetable-days/day2.svg" }`
 
 **Test Steps:**
+
 1. Navigate to http://localhost:3000/de/timetable
 2. Verify 2 day buttons are displayed
 3. Check button labels show "Samstag" and "Sonntag"
@@ -35,11 +38,13 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 ### 1.2 URL Navigation - German Locale
 
 **Test URLs:**
+
 - ✅ http://localhost:3000/de/timetable
 - ✅ http://localhost:3000/de/timetable?tag=samstag
 - ✅ http://localhost:3000/de/timetable?tag=sonntag
 
 **Expected Results:**
+
 - Default URL should show Saturday (first day)
 - `?tag=samstag` should display Saturday events
 - `?tag=sonntag` should display Sunday events
@@ -53,11 +58,13 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 ### 1.3 URL Navigation - Spanish Locale
 
 **Test URLs:**
+
 - ✅ http://localhost:3000/es/timetable
 - ✅ http://localhost:3000/es/timetable?dia=sabado
 - ✅ http://localhost:3000/es/timetable?dia=domingo
 
 **Expected Results:**
+
 - Default URL should show Saturday (first day)
 - `?dia=sabado` should display Saturday events
 - `?dia=domingo` should display Sunday events
@@ -71,6 +78,7 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 ### 1.4 Day Switching Functionality
 
 **Test Steps:**
+
 1. Navigate to http://localhost:3000/de/timetable
 2. Click on "Samstag" button
 3. Verify URL updates to `?tag=samstag`
@@ -81,6 +89,7 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 8. Verify active button styling updates correctly
 
 **Expected Results:**
+
 - URL updates without page reload
 - Events update dynamically
 - Active button has correct styling
@@ -94,12 +103,14 @@ This phase validates the complete multi-day timetable refactoring across all 7 p
 
 **Test Steps:**
 For each day (Saturday, Sunday), verify all 4 areas:
+
 1. Main Stage
 2. Dance Workshops
 3. Music Workshops
 4. Salsa Talks
 
 **Expected Results:**
+
 - All areas render with correct headers
 - Events display with correct time slots
 - Event modals open correctly
@@ -113,6 +124,7 @@ For each day (Saturday, Sunday), verify all 4 areas:
 ### 1.6 Translations - German
 
 **Test Localization:**
+
 - Navigation: "Zeitplan"
 - Days: "Samstag", "Sonntag"
 - Areas: Check German translations for all 4 areas
@@ -125,6 +137,7 @@ For each day (Saturday, Sunday), verify all 4 areas:
 ### 1.7 Translations - Spanish
 
 **Test Localization:**
+
 - Navigation: "Horario"
 - Days: "Sábado", "Domingo"
 - Areas: Check Spanish translations for all 4 areas
@@ -139,6 +152,7 @@ For each day (Saturday, Sunday), verify all 4 areas:
 ### 2.1 Configuration Change
 
 **Action:** Modify `/src/config/festival.ts`
+
 ```typescript
 // Change from:
 end: new Date("July 20, 2025 23:59:59"),
@@ -156,6 +170,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 2.2 Dynamic Day Generation
 
 **Expected Results:**
+
 - `FESTIVAL_CONFIG.days` should return 3 FestivalDay objects
 - Day 1: Saturday (Jul 19)
 - Day 2: Sunday (Jul 20)
@@ -169,11 +184,13 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 2.3 URL Navigation - 3 Days (German)
 
 **Test URLs:**
+
 - ✅ http://localhost:3000/de/timetable?tag=samstag
 - ✅ http://localhost:3000/de/timetable?tag=sonntag
 - ✅ http://localhost:3000/de/timetable?tag=montag
 
 **Expected Results:**
+
 - All 3 URLs should work
 - Each shows correct day's events
 - Day switching works smoothly
@@ -185,11 +202,13 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 2.4 URL Navigation - 3 Days (Spanish)
 
 **Test URLs:**
+
 - ✅ http://localhost:3000/es/timetable?dia=sabado
 - ✅ http://localhost:3000/es/timetable?dia=domingo
 - ✅ http://localhost:3000/es/timetable?dia=lunes
 
 **Expected Results:**
+
 - All 3 URLs should work
 - Each shows correct day's events
 - Day switching works smoothly
@@ -201,6 +220,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 2.5 UI Rendering - 3 Day Buttons
 
 **Expected Results:**
+
 - 3 day buttons should render
 - Buttons show: "Samstag", "Sonntag", "Montag" (de)
 - Buttons show: "Sábado", "Domingo", "Lunes" (es)
@@ -214,6 +234,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 2.6 Translations - Monday
 
 **Expected Results:**
+
 - German: "Montag" displays correctly
 - Spanish: "Lunes" displays correctly
 - Translation key: `Sections.SectionFive.days.monday` resolves
@@ -227,12 +248,14 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 3.1 Invalid URL Parameters
 
 **Test Cases:**
+
 - `?tag=invalid` (German)
 - `?dia=invalid` (Spanish)
 - `?tag=` (empty value)
 - `?wrongparam=samstag` (wrong parameter name)
 
 **Expected Results:**
+
 - Should fall back to first day (Saturday)
 - No console errors
 - URL should not break the app
@@ -244,11 +267,13 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 3.2 Direct URL Access
 
 **Test Cases:**
+
 1. Direct navigation to `http://localhost:3000/de/timetable?tag=sonntag`
 2. Browser refresh on day-specific URL
 3. Share URL and open in new tab
 
 **Expected Results:**
+
 - Correct day should load on first render
 - No flash of wrong content
 - SSR works correctly
@@ -260,10 +285,12 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 3.3 Browser Navigation
 
 **Test Cases:**
+
 1. Click day button → Browser back button → Forward button
 2. Verify browser history works correctly
 
 **Expected Results:**
+
 - Back/forward navigation works
 - Correct day displays
 - URL state syncs with UI
@@ -279,6 +306,7 @@ end: new Date("July 21, 2025 23:59:59"),
 **Command:** `npm run build`
 
 **Expected Results:**
+
 - ✅ Build succeeds with no errors
 - ✅ TypeScript compilation succeeds
 - ✅ All routes generate correctly
@@ -291,10 +319,12 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 4.2 Bundle Size
 
 **Check:**
+
 - Timetable page First Load JS
 - Middleware size
 
 **Expected Results:**
+
 - No significant size increase from refactoring
 - Code splitting works correctly
 
@@ -305,11 +335,13 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 4.3 Performance Metrics
 
 **Test:**
+
 1. Page load time
 2. Day switching speed
 3. Event modal open time
 
 **Expected Results:**
+
 - Fast day switching (no full reload)
 - Smooth animations
 - No janky UI updates
@@ -323,6 +355,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 5.1 TypeScript Validation
 
 **Verify:**
+
 - No `any` types in timetable code
 - DayType is properly typed as `string`
 - FestivalDay interface is correct
@@ -335,6 +368,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 5.2 Runtime Type Safety
 
 **Test:**
+
 - Pass invalid day strings to functions
 - Verify graceful error handling
 - Check console for type errors
@@ -348,12 +382,14 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 6.1 Other Pages Still Work
 
 **Test URLs:**
+
 - ✅ http://localhost:3000/de
 - ✅ http://localhost:3000/es
 - ✅ http://localhost:3000/de/legal
 - ✅ http://localhost:3000/de/privacy
 
 **Expected Results:**
+
 - All pages load correctly
 - No timetable refactoring broke other pages
 
@@ -364,6 +400,7 @@ end: new Date("July 21, 2025 23:59:59"),
 ### 6.2 Language Switching
 
 **Test:**
+
 1. On timetable page with `?tag=samstag`
 2. Switch to Spanish
 3. Verify URL becomes `?dia=sabado`
@@ -371,6 +408,7 @@ end: new Date("July 21, 2025 23:59:59"),
 5. Verify URL becomes `?tag=samstag`
 
 **Expected Results:**
+
 - Day parameter updates with locale
 - Correct day remains selected
 - No data loss
@@ -381,15 +419,15 @@ end: new Date("July 21, 2025 23:59:59"),
 
 ## Test Results Summary
 
-| Test Suite | Total Tests | Passed | Failed | Pending |
-|------------|-------------|--------|--------|---------|
-| 1. Current 2-Day Setup | 7 | 0 | 0 | 7 |
-| 2. 3-Day Scalability | 6 | 0 | 0 | 6 |
-| 3. Edge Cases | 3 | 0 | 0 | 3 |
-| 4. Performance | 3 | 1 | 0 | 2 |
-| 5. Type Safety | 2 | 1 | 0 | 1 |
-| 6. Regression | 2 | 0 | 0 | 2 |
-| **TOTAL** | **23** | **2** | **0** | **21** |
+| Test Suite             | Total Tests | Passed | Failed | Pending |
+| ---------------------- | ----------- | ------ | ------ | ------- |
+| 1. Current 2-Day Setup | 7           | 0      | 0      | 7       |
+| 2. 3-Day Scalability   | 6           | 0      | 0      | 6       |
+| 3. Edge Cases          | 3           | 0      | 0      | 3       |
+| 4. Performance         | 3           | 1      | 0      | 2       |
+| 5. Type Safety         | 2           | 1      | 0      | 1       |
+| 6. Regression          | 2           | 0      | 0      | 2       |
+| **TOTAL**              | **23**      | **2**  | **0**  | **21**  |
 
 ---
 

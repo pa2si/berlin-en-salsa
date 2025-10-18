@@ -5,6 +5,7 @@ This directory contains SVG images for festival day buttons in the timetable int
 ## Naming Convention
 
 Images are named by day number, **NOT** by weekday name:
+
 - `day1.svg` - First day of festival (currently Saturday, July 19, 2025)
 - `day2.svg` - Second day of festival (currently Sunday, July 20, 2025)
 - `day3.svg` - Third day if festival extends to Monday
@@ -13,6 +14,7 @@ Images are named by day number, **NOT** by weekday name:
 ## Why Day Numbers?
 
 Using day numbers instead of weekday names makes the system scalable:
+
 - ✅ Festival dates can change without renaming files
 - ✅ Adding days only requires adding `dayN.svg` files
 - ✅ No confusion if festival starts on different weekdays
@@ -23,6 +25,7 @@ Using day numbers instead of weekday names makes the system scalable:
 **Festival Dates**: July 19-20, 2025  
 **Days**: 2  
 **Mapping**:
+
 - `day1.svg` → Saturday, July 19
 - `day2.svg` → Sunday, July 20
 
@@ -31,6 +34,7 @@ Using day numbers instead of weekday names makes the system scalable:
 If the festival extends to Monday (July 21):
 
 1. Update `/src/config/festival.ts`:
+
    ```typescript
    dates: {
      start: new Date("July 19, 2025 12:30:00"),
@@ -39,6 +43,7 @@ If the festival extends to Monday (July 21):
    ```
 
 2. Add `day3.svg` to this directory:
+
    - Option A: Create new Monday-specific image
    - Option B: Copy from Saturday/Sunday and modify
    - Option C: Use generic "Day 3" design
@@ -60,6 +65,7 @@ If the festival extends to Monday (July 21):
 ## Legacy Images
 
 The root `/public` directory still contains:
+
 - `saturday.svg` - Original Saturday button (kept for backward compatibility)
 - `sunday.svg` - Original Sunday button (kept for backward compatibility)
 
@@ -68,17 +74,20 @@ These are no longer used by the dynamic system but kept in case of rollback need
 ## Technical Details
 
 Images are referenced in `/src/config/festival.ts`:
+
 ```typescript
-imageSrc: `/timetable-days/day${dayCounter}.svg`
+imageSrc: `/timetable-days/day${dayCounter}.svg`;
 ```
 
 This path is used by:
+
 - `TimetableClient` component for day selection buttons
 - Dynamic rendering via `festivalDays.map()`
 
 ## Future Enhancements
 
 Consider adding:
+
 - `day3.svg`, `day4.svg`, etc. for multi-day festivals
 - Localized versions (e.g., `day1-de.svg`, `day1-es.svg`)
 - Dark mode variants
