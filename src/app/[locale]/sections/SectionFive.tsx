@@ -3,13 +3,15 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { buildTimetableQuery } from "@/components/timetable/utils/urlHelpers";
 
 const SectionFive = () => {
   const [hoveredSaturday, setHoveredSaturday] = useState(false);
   const [hoveredSunday, setHoveredSunday] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("saturday"); // PHASE 5: Changed from "saturday" | "sunday" to string
   const t = useTranslations("Sections.SectionFive");
+  const locale = useLocale();
 
   return (
     <section
@@ -114,7 +116,10 @@ const SectionFive = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Link
-                  href={{ pathname: "/timetable", query: { day: "saturday" } }}
+                  href={{
+                    pathname: "/timetable",
+                    query: buildTimetableQuery("saturday", locale),
+                  }}
                 >
                   <motion.div
                     className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
@@ -179,7 +184,10 @@ const SectionFive = () => {
                 transition={{ duration: 0.3 }}
               >
                 <Link
-                  href={{ pathname: "/timetable", query: { day: "sunday" } }}
+                  href={{
+                    pathname: "/timetable",
+                    query: buildTimetableQuery("sunday", locale),
+                  }}
                 >
                   <motion.div
                     className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
@@ -252,7 +260,12 @@ const SectionFive = () => {
             <h3 className="text-bes-amber mb-4 text-2xl font-bold">
               {t("saturday")}
             </h3>
-            <Link href={{ pathname: "/timetable", query: { day: "saturday" } }}>
+            <Link
+              href={{
+                pathname: "/timetable",
+                query: buildTimetableQuery("saturday", locale),
+              }}
+            >
               <motion.div
                 className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                 whileHover={{ scale: 1.03 }}
@@ -325,7 +338,12 @@ const SectionFive = () => {
             <h3 className="text-bes-amber mb-4 text-2xl font-bold">
               {t("sunday")}
             </h3>
-            <Link href={{ pathname: "/timetable", query: { day: "sunday" } }}>
+            <Link
+              href={{
+                pathname: "/timetable",
+                query: buildTimetableQuery("sunday", locale),
+              }}
+            >
               <motion.div
                 className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
                 whileHover={{ scale: 1.03 }}
