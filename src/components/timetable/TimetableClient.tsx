@@ -40,9 +40,13 @@ export default function TimetableClient({
 }: TimetableClientProps) {
   // URL parameter management
   const { parseDayParam, updateDayInUrl } = useURLParams();
-  const [currentDay, setCurrentDay] = useState<string>(
-    parseDayParam() || initialDay,
-  );
+  
+  // Validate the parsed day against available festival days
+  const parsedDay = parseDayParam();
+  const isValidDay = festivalDays.some(day => day.weekday === parsedDay);
+  const validDay = isValidDay ? parsedDay : initialDay;
+  
+  const [currentDay, setCurrentDay] = useState<string>(validDay);
 
   const { translateColumnArea, getOriginalAreaKey } = useColumnTranslation();
 
@@ -54,8 +58,20 @@ export default function TimetableClient({
   // Slider functionality for modal
   const { resetSlider } = useSlider();
 
-  // Get current day's data
-  const currentDayData = dataByWeekday[currentDay];
+  // Get current day's data - with fallback to first available day
+  let currentDayData = dataByWeekday[currentDay];
+  
+  // If current day has no data, fall back to first available day
+  if (!currentDayData && festivalDays.length > 0) {
+    const firstDay = festivalDays[0].weekday;
+    currentDayData = dataByWeekday[firstDay];
+    // Update state to first valid day
+    if (currentDay !== firstDay) {
+      setCurrentDay(firstDay);
+      updateDayInUrl(firstDay);
+    }
+  }
+  
   const currentEvents = currentDayData?.events || {};
   const currentData = currentDayData?.data || [];
 

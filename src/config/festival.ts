@@ -68,7 +68,7 @@ export type FestivalDayId = `day${number}`;
 export const FESTIVAL_CONFIG = {
   dates: {
     start: new Date("July 19, 2025 12:30:00"),
-    end: new Date("July 20, 2025 23:59:59"),
+    end: new Date("July 20 2025 23:59:59"),
   },
 
   /**
@@ -98,5 +98,4 @@ export const FESTIVAL_CONFIG = {
  * Helper to get all valid weekdays as a union type
  * Usage: "saturday" | "sunday" | "monday" etc.
  */
-export type FestivalWeekday =
-  (typeof FESTIVAL_CONFIG.days)[number]["weekday"];
+export type FestivalWeekday = (typeof FESTIVAL_CONFIG.days)[number]["weekday"];
