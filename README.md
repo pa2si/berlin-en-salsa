@@ -1,4 +1,6 @@
-what to do in fixes-after-refactor-plus-add-event-day-scalability2:
+whats done in fixes-after-refactor-plus-add-event-day-scalability2:
+
+- i can add now more days to the festival and automatically timetables gets created
 
 TIMETABLE_ARCHITECTURE_ANALYSIS
 TIMETABLE_SCALABILITY_ANALYSIS
