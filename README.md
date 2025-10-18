@@ -1,5 +1,7 @@
 what to do in fixed-day-scalability-fix-show-also-in-section5
 
+- show automatically the program link buttons in SectionFive depending on how many days are set.
+
 whats done in fixes-after-refactor-and-event-day-scalability
 
 - params now are also internationalized when clicking in the program links in SectionFive
