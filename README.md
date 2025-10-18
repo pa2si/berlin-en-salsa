@@ -1,3 +1,8 @@
+whats done in fixes-after-refactor-and-event-day-scalability
+
+- params now are also internationalized when clicking in the program links in SectionFive
+-
+
 whats done in fixes-after-refactor-plus-add-event-day-scalability2:
 
 - i can add now more days to the festival and automatically timetables gets created
