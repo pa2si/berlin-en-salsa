@@ -2,12 +2,16 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import { formatFestivalDates } from "@/utils/formatFestivalDates";
 
 const SectionOne = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   const t = useTranslations("Sections.SectionOne");
+  const locale = useLocale();
+
+  const festivalDate = formatFestivalDates(locale);
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
@@ -33,7 +37,7 @@ const SectionOne = () => {
             }}
             className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] font-bold sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
           >
-            {t("date")} <br /> {t("venue")}
+            {festivalDate} <br /> {t("venue")}
           </motion.p>
         </div>
       </div>
