@@ -101,13 +101,9 @@ export async function translateIfKeyServer(
       if (isTranslationKey(trimmedPart)) {
         try {
           const t = await getTranslations();
-          console.log(
-            `🔍 SERVER: Translating compound key part: ${trimmedPart}`,
-          );
           const result = params
             ? t(trimmedPart as never, params as never)
             : t(trimmedPart as never);
-          console.log(`✅ SERVER: Translation result: ${result}`);
           translatedParts.push(result);
         } catch (error) {
           console.warn(
@@ -128,12 +124,10 @@ export async function translateIfKeyServer(
     try {
       // Get translations without a namespace to access the full translation tree
       const t = await getTranslations();
-      console.log(`🔍 SERVER: Translating key: ${value}`);
       // Use type assertion for dynamic translation keys until we add the timetable translations
       const result = params
         ? t(value as never, params as never)
         : t(value as never);
-      console.log(`✅ SERVER: Translation result: ${result}`);
       return result;
     } catch (error) {
       console.warn(`❌ SERVER: Translation key not found: ${value}`, error);

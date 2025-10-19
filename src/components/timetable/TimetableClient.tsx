@@ -111,18 +111,6 @@ export default function TimetableClient({
     resetSlider();
   };
 
-  // Log event data for verification (temporary)
-  console.log(
-    "📊 Festival days:",
-    festivalDays.map((d) => d.weekday),
-  );
-  console.log("📊 Current day data available:", {
-    currentDay,
-    hasData: !!currentDayData,
-    areas: Object.keys(currentEvents),
-    slotsCount: Object.values(currentEvents)[0]?.length,
-  });
-
   // Process the data to handle consecutive slots and area translations
   const processData = (rawData: Column[]): Column[] => {
     return processEventContinuation(
