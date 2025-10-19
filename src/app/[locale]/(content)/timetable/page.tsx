@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import TimetablePage from "@/components/timetable/TimetablePage";
-import TimetableComingSoon from "@/components/TimetableComingSoon";
+import TimetableComingSoon from "@/components/timetable/TimetableComingSoon";
 import { getTranslations } from "next-intl/server";
 import { FESTIVAL_CONFIG } from "@/config/festival";
 import type { Metadata } from "next";
