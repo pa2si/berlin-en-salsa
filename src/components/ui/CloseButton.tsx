@@ -2,14 +2,16 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface CloseButtonProps {
   onClose: () => void;
   ariaLabel?: string;
 }
 
-const CloseButton = ({ onClose, ariaLabel = "Cerrar" }: CloseButtonProps) => {
+const CloseButton = ({ onClose, ariaLabel }: CloseButtonProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const t = useTranslations("Components.CloseButton");
 
   return (
     <motion.button
@@ -22,9 +24,9 @@ const CloseButton = ({ onClose, ariaLabel = "Cerrar" }: CloseButtonProps) => {
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClose}
       className="bg-bes-amber hover:bg-opacity-95 group text-bes-red absolute -right-1 -bottom-1 flex items-center space-x-1 rounded-full px-2 py-1.5 font-bold transition-all sm:right-0 sm:bottom-0 sm:px-3 sm:py-2"
-      aria-label={ariaLabel}
+      aria-label={ariaLabel || t("ariaLabel")}
     >
-      <span className="hidden sm:inline">Close</span>
+      <span className="hidden sm:inline">{t("close")}</span>
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-4 w-4 sm:h-5 sm:w-5"

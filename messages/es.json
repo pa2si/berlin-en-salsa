@@ -1,0 +1,665 @@
+{
+  "Sections": {
+    "SectionOne": {
+      "title": "Berlin En Salsa | Festival de Salsa en Berlín",
+      "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
+      "h1": "Berlin En Salsa - Festival de Salsa en Berlín para todos",
+      "date": "19 y 20 de julio",
+      "venue": "Neulich Biergarten",
+      "festival": {
+        "line1": "¡Un festival",
+        "line2": "de salsa",
+        "line3": "para todxs:",
+        "line4": "público",
+        "line5": "gratuito y",
+        "line6": "al aire libre!"
+      }
+    },
+    "SectionTwo": {
+      "title": "¿Qué es Berlin en Salsa?",
+      "description1": "Un fin de semana organizado por y para la comunidad salsera de Berlín. ¡Gózatelo!",
+      "description2": "Un espacio donde puedes vivir la diversidad de la cultura de la salsa: orquestas en vivo, DJs, baile, talleres, charlas, mercado de vinilos y más.",
+      "description3": "Un evento que apuesta por la solidaridad y la cultura en tiempos de recortes y avance de las derechas.",
+      "description4": "Ven a compartir, apoyar y celebrar con nosotrxs la cultura salsera de Berlín."
+    },
+    "SectionThree": {
+      "title": "¡Berlin en Salsa se viene con todo!",
+      "features": {
+        "days": "¡2 días de pura salsa!",
+        "orchestras": "6 orquestas en vivo",
+        "shows": "5 shows de baile",
+        "djs": "20 DJs",
+        "talks": "Charlas",
+        "workshops": "Talleres de música",
+        "vinyl": "Mercado de vinilos",
+        "food": "¡Delicias latinas y más!"
+      }
+    },
+    "SectionFour": {
+      "title": "¿Cómo se financia Berlin en Salsa?",
+      "description1": "Berlin en Salsa no cuenta con financiación pública ni patrocinio comercial.",
+      "description2": "Somos un festival hecho por y para la comunidad salsera, y nos financiamos únicamente a través de la venta de camisetas y sus donaciones.",
+      "supportTitle": "Apóyanos pidiendo tu camiseta"
+    },
+    "SectionFive": {
+      "title": "Programa del Festival",
+      "description": "Consulta nuestro horario interactivo y planifica tu experiencia en Berlin En Salsa. Haz clic en las imágenes para ver el horario completo y todos los detalles sobre los artistas, talleres y mucho más.",
+      "comingSoon": {
+        "title": "Programa Próximamente",
+        "message": "Estamos trabajando en el programa del festival. ¡Vuelve pronto para ver todos los detalles!",
+        "button": "Volver al Inicio"
+      },
+      "days": {
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "sunday": "Domingo"
+      },
+      "saturday": "Sábado",
+      "sunday": "Domingo",
+      "saturdayAlt": "Programa del Sábado",
+      "sundayAlt": "Programa del Domingo",
+      "viewFullProgram": "Ver programa completo"
+    },
+    "SectionSix": {
+      "title": "Contacto",
+      "newsletter": {
+        "title": "Suscríbete a nuestro boletín",
+        "description": "Mantente al día sobre Berlin En Salsa",
+        "firstNamePlaceholder": "Nombre",
+        "lastNamePlaceholder": "Apellido",
+        "emailPlaceholder": "Correo electrónico",
+        "privacyText": "Acepto la",
+        "privacyLink": "Política de Privacidad",
+        "submitButton": "SUSCRIBIR",
+        "submittingButton": "Enviando...",
+        "success": "¡Suscripción exitosa!",
+        "error": "Debes aceptar la política de privacidad para suscribirte.",
+        "privacyError": "Por favor, acepta la política de privacidad para continuar",
+        "validationPrivacy": "Por favor, acepta la política de privacidad para continuar",
+        "firstNameValidation": "Por favor, introduce un nombre válido (sólo letras, espacios y guiones)",
+        "lastNameValidation": "Por favor, introduce un apellido válido (sólo letras, espacios y guiones)",
+        "emailValidation": "Por favor, introduce una dirección de correo electrónico válida"
+      }
+    }
+  },
+  "Components": {
+    "CloseButton": {
+      "close": "Cerrar",
+      "ariaLabel": "Cerrar"
+    }
+  },
+  "Navigation": {
+    "timetable": "Horarios",
+    "impressum": "Aviso legal",
+    "datenschutz": "Privacidad",
+    "legal": "Aviso Legal",
+    "privacy": "Política de Privacidad",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "links": "Enlaces",
+    "copyright": "Todos los derechos reservados."
+  },
+  "Banners": {
+    "countdown": {
+      "title": "¡Cuenta regresiva hasta Berlin En Salsa!",
+      "closeLabel": "Cerrar anuncio",
+      "viewProgram": "Ver programa"
+    },
+    "live": {
+      "title": "¡Ya estamos gozando Berlin En Salsa!",
+      "closeLabel": "Cerrar anuncio",
+      "previousEvent": "Evento anterior",
+      "nextEvent": "Siguiente evento",
+      "viewProgram": "Ver programa"
+    },
+    "postFestival": {
+      "title": "¡Gracias por ser parte de Berlin En Salsa!",
+      "description": "¡Nos vemos en la próxima edición! Quédate pendiente de nuestras próximas actividades.",
+      "closeLabel": "Cerrar anuncio",
+      "viewGallery": "Ver galería"
+    }
+  },
+  "NotFound": {
+    "pageNotFound": "Página no encontrada",
+    "title": "404",
+    "backToHome": "Volver al inicio"
+  },
+  "Loading": {
+    "text": "Cargando..."
+  },
+  "Error": {
+    "title": "¡Oops!",
+    "message": "Algo no salió como esperábamos",
+    "retry": "Intentar de nuevo",
+    "backToHome": "Volver al inicio"
+  },
+  "Metadata": {
+    "title": "Berlin En Salsa",
+    "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
+    "openGraph": {
+      "title": "Berlin En Salsa",
+      "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más."
+    },
+    "timetable": {
+      "title": "Programa",
+      "description": "Descubre el horario completo del festival Berlin En Salsa. Orquestas en vivo, DJs, talleres, shows y mucho más.",
+      "openGraph": {
+        "title": "Programa",
+        "description": "Descubre el horario completo del festival Berlin En Salsa. Orquestas en vivo, DJs, talleres, shows y mucho más."
+      }
+    },
+    "legal": {
+      "title": "Aviso Legal",
+      "description": "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
+      "openGraph": {
+        "title": "Aviso Legal",
+        "description": "Información legal y datos de contacto del festival Berlin En Salsa."
+      }
+    },
+    "privacy": {
+      "title": "Política de Privacidad",
+      "description": "Política de privacidad de Berlin En Salsa. Información sobre la protección de tus datos personales.",
+      "openGraph": {
+        "title": "Política de Privacidad",
+        "description": "Política de privacidad e información sobre la protección de tus datos personales."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Privacidad",
+    "description": "Política de Privacidad de Berlin En Salsa. Información sobre cómo usamos y protegemos tus datos personales.",
+    "backButton": "Volver a Inicio",
+    "breadcrumb": "Política de Privacidad",
+    "mainTitle": "Política de Privacidad",
+    "lastUpdated": "Última actualización:",
+    "section1": {
+      "title": "1. Privacidad de un vistazo",
+      "subtitle1": "Información general",
+      "paragraph1": "Las siguientes notas proporcionan una visión general sencilla de lo que sucede con sus datos personales cuando visita este sitio web. Los datos personales son todos aquellos mediante los cuales usted puede ser identificado personalmente. Encontrará información detallada sobre la protección de datos en nuestra política de privacidad que figura a continuación de este texto.",
+      "subtitle2": "Recopilación de datos en este sitio web",
+      "subtitle2_1": "¿Quién es responsable de la recopilación de datos en este sitio web?",
+      "paragraph2_1": "El tratamiento de datos en este sitio web lo realiza el operador del sitio web. Puede encontrar sus datos de contacto en la sección 'Información sobre la entidad responsable' de esta política de privacidad.",
+      "subtitle2_2": "¿Cómo recopilamos sus datos?",
+      "paragraph2_2": "Por un lado, sus datos se recopilan cuando usted nos los proporciona. Esto puede ser, por ejemplo, datos que introduce en un formulario de contacto.",
+      "paragraph2_3": "Otros datos son recopilados automáticamente o con su consentimiento por nuestros sistemas informáticos cuando visita el sitio web. Se trata principalmente de datos técnicos (por ejemplo, navegador de Internet, sistema operativo o hora de acceso a la página). Estos datos se recopilan automáticamente en cuanto accede a este sitio web.",
+      "subtitle2_3": "¿Para qué utilizamos sus datos?",
+      "paragraph2_4": "Parte de los datos se recogen para garantizar que el sitio web se proporcione sin errores. Otros datos pueden utilizarse para analizar su comportamiento como usuario. Si a través del sitio web se pueden celebrar o iniciar contratos, los datos transmitidos también se tratarán para ofertas contractuales, pedidos u otras solicitudes de servicio.",
+      "subtitle2_4": "¿Qué derechos tiene con respecto a sus datos?",
+      "paragraph2_5": "Tiene derecho, en cualquier momento y de forma gratuita, a recibir información sobre el origen, el destinatario y la finalidad de sus datos personales almacenados. También tiene derecho a solicitar la rectificación o supresión de estos datos. Si ha dado su consentimiento para el tratamiento de datos, puede revocarlo en cualquier momento con efecto futuro. También tiene derecho, en determinadas circunstancias, a solicitar la limitación del tratamiento de sus datos personales. Además, tiene derecho a presentar una reclamación ante la autoridad de control competente.",
+      "paragraph2_6": "Si tiene alguna pregunta sobre este tema o sobre la protección de datos, puede ponerse en contacto con nosotros en cualquier momento."
+    },
+    "section2": {
+      "title": "2. Alojamiento",
+      "subtitle1": "Alojamiento a través de Vercel",
+      "paragraph1": "Nuestro sitio web está alojado en Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, EE.UU.",
+      "paragraph2": "Cuando visita nuestro sitio web, sus datos personales se recogen en los servidores de Vercel. Esto puede incluir direcciones IP, solicitudes de contacto, metadatos y datos de comunicación, datos contractuales, datos de contacto, nombres, accesos al sitio web y otros datos generados a través de un sitio web.",
+      "paragraph3": "El alojamiento se realiza con el fin de cumplir un contrato con nuestros clientes potenciales y existentes (Art. 6 Apdo. 1 lit. b RGPD) y en interés de proporcionar nuestros servicios en línea de forma segura, rápida y eficiente a través de un proveedor profesional (Art. 6 Apdo. 1 lit. f RGPD).",
+      "subtitle2": "Transferencia de datos a EE.UU.",
+      "paragraph4": "Vercel es un proveedor de servicios con sede en EE.UU. Por lo tanto, no se puede excluir la transferencia de datos a EE.UU. Debemos señalar que, en opinión del Tribunal de Justicia Europeo, actualmente no existe un nivel adecuado de protección para la transferencia de datos a EE.UU. Esto puede suponer riesgos para usted en cuanto a la legalidad y seguridad del tratamiento de datos.",
+      "paragraph5": "Como base para el tratamiento de datos por parte de destinatarios ubicados en terceros países, hemos firmado un contrato de procesamiento de datos (Data Processing Addendum, DPA) con Vercel. Este contrato contiene las cláusulas contractuales estándar (Standard Contractual Clauses - SCCs) aprobadas por la Comisión Europea. Mediante estas cláusulas, Vercel se compromete a cumplir con el nivel europeo de protección de datos al procesar sus datos, incluso si estos se almacenan y procesan en EE.UU.",
+      "paragraph6": "El contrato (DPA) que contiene las cláusulas contractuales estándar firmado con nosotros puede encontrarse en: https://vercel.com/legal/dpa",
+      "paragraph7": "Puede obtener más información sobre los datos que se procesan al utilizar Vercel en la política de privacidad de Vercel: https://vercel.com/legal/privacy-policy"
+    },
+    "section3": {
+      "title": "3. Información general y obligatoria",
+      "subtitle1": "Protección de datos",
+      "paragraph1": "Los operadores de este sitio web toman muy en serio la protección de sus datos personales. Tratamos sus datos personales de forma confidencial y de acuerdo con las regulaciones legales de protección de datos y esta política de privacidad.",
+      "paragraph2": "Cuando utiliza este sitio web, se recopilan diversos datos personales. Los datos personales son datos que permiten identificarle personalmente. Esta política de privacidad explica qué datos recopilamos y para qué los utilizamos. También explica cómo y con qué propósito se hace.",
+      "paragraph3": "Señalamos que la transmisión de datos en Internet (por ejemplo, la comunicación por correo electrónico) puede tener fallos de seguridad. No es posible una protección completa de los datos contra el acceso de terceros.",
+      "subtitle2": "Información sobre la entidad responsable",
+      "paragraph4": "La entidad responsable del tratamiento de datos en este sitio web es:",
+      "paragraph5": "Paul Welch Guerra\nDrorystr. 2\n12055 Berlin",
+      "paragraph6": "Teléfono: +49 176 47024026\nCorreo electrónico: info@berlinensalsa.de",
+      "paragraph7": "La entidad responsable es la persona física o jurídica que, sola o junto con otras, determina los fines y medios del tratamiento de datos personales (como nombres, direcciones de correo electrónico, etc.).",
+      "subtitle3": "Periodo de almacenamiento",
+      "paragraph8": "A menos que se indique un periodo específico de almacenamiento en esta política de privacidad, sus datos personales permanecerán con nosotros hasta que se cumpla la finalidad para la que se procesan. Si presenta una solicitud legítima de eliminación o revoca su consentimiento para el procesamiento de datos, sus datos serán eliminados, a menos que tengamos otros motivos legalmente permisibles para almacenar sus datos personales (por ejemplo, períodos de retención fiscales o comerciales); en este último caso, la eliminación se llevará a cabo después de que estos motivos dejen de existir.",
+      "subtitle4": "Información general sobre las bases jurídicas del procesamiento de datos en este sitio web",
+      "paragraph9": "Si usted ha consentido al procesamiento de datos, procesamos sus datos personales sobre la base del Art. 6 Párr. 1 lit. a RGPD o Art. 9 Párr. 2 lit. a RGPD, si se procesan categorías especiales de datos según el Art. 9 Párr. 1 RGPD. En caso de consentimiento expreso para la transferencia de datos personales a terceros países, el procesamiento de datos también se basa en el Art. 49 Párr. 1 lit. a RGPD. Si ha dado su consentimiento para el almacenamiento de cookies o el acceso a información en su dispositivo (por ejemplo, a través de la huella digital del dispositivo), el procesamiento de datos se realizará adicionalmente sobre la base del § 25 Párr. 1 TDDDG. El consentimiento puede ser revocado en cualquier momento. Si sus datos son necesarios para el cumplimiento de un contrato o para la ejecución de medidas precontractuales, procesamos sus datos en base al Art. 6 Párr. 1 lit. b RGPD. Además, procesamos sus datos si son necesarios para el cumplimiento de una obligación legal en base al Art. 6 Párr. 1 lit. c RGPD. El procesamiento de datos también puede realizarse en base a nuestro interés legítimo según el Art. 6 Párr. 1 lit. f RGPD. Se le informará sobre las bases jurídicas específicas aplicables en cada caso en los siguientes párrafos de esta política de privacidad.",
+      "subtitle5": "Destinatarios de datos personales",
+      "paragraph10": "En el curso de nuestras actividades comerciales, trabajamos con varias entidades externas. Esto a veces también requiere la transferencia de datos personales a estas entidades externas. Solo transferimos datos personales a entidades externas si es necesario en el marco del cumplimiento de un contrato, si estamos legalmente obligados a hacerlo (por ejemplo, transferencia de datos a las autoridades fiscales), si tenemos un interés legítimo en la transferencia según el Art. 6 Párr. 1 lit. f RGPD, o si otra base legal permite la transferencia de datos. Al utilizar procesadores, solo transferimos datos personales de nuestros clientes sobre la base de un contrato válido de procesamiento de datos. En el caso de procesamiento conjunto, se celebra un contrato de procesamiento conjunto.",
+      "subtitle6": "Revocación de su consentimiento para el procesamiento de datos",
+      "paragraph11": "Muchas operaciones de procesamiento de datos solo son posibles con su consentimiento expreso. Puede revocar un consentimiento ya otorgado en cualquier momento. La legalidad del procesamiento de datos realizado hasta la revocación no se ve afectada por esta.",
+      "subtitle7": "Derecho de oposición a la recopilación de datos en casos especiales y a la publicidad directa (Art. 21 RGPD)",
+      "paragraph12": "SI EL PROCESAMIENTO DE DATOS SE REALIZA SOBRE LA BASE DEL ART. 6 PÁRR. 1 LIT. E O F RGPD, USTED TIENE DERECHO A OPONERSE EN CUALQUIER MOMENTO, POR MOTIVOS DERIVADOS DE SU SITUACIÓN PARTICULAR, AL PROCESAMIENTO DE SUS DATOS PERSONALES; ESTO TAMBIÉN SE APLICA A LA ELABORACIÓN DE PERFILES BASADA EN ESTAS DISPOSICIONES. LAS RESPECTIVAS BASES JURÍDICAS EN LAS QUE SE BASA UN PROCESAMIENTO SE PUEDEN ENCONTRAR EN ESTA POLÍTICA DE PRIVACIDAD. SI USTED SE OPONE, NO PROCESAREMOS MÁS SUS DATOS PERSONALES AFECTADOS A MENOS QUE PODAMOS DEMOSTRAR MOTIVOS LEGÍTIMOS CONVINCENTES PARA EL PROCESAMIENTO QUE PREVALEZCAN SOBRE SUS INTERESES, DERECHOS Y LIBERTADES, O EL PROCESAMIENTO SIRVA PARA LA AFIRMACIÓN, EJERCICIO O DEFENSA DE RECLAMACIONES LEGALES (OPOSICIÓN SEGÚN EL ART. 21 PÁRR. 1 RGPD).",
+      "paragraph13": "SI SUS DATOS PERSONALES SON PROCESADOS CON FINES DE PUBLICIDAD DIRECTA, TIENE DERECHO A OPONERSE EN CUALQUIER MOMENTO AL PROCESAMIENTO DE SUS DATOS PERSONALES CON FINES DE DICHA PUBLICIDAD; ESTO TAMBIÉN SE APLICA A LA ELABORACIÓN DE PERFILES EN LA MEDIDA EN QUE ESTÉ RELACIONADA CON DICHA PUBLICIDAD DIRECTA. SI USTED SE OPONE, SUS DATOS PERSONALES NO SERÁN UTILIZADOS POSTERIORMENTE PARA PUBLICIDAD DIRECTA (OPOSICIÓN SEGÚN ART. 21 PÁRR. 2 RGPD).",
+      "subtitle8": "Derecho de reclamación ante la autoridad supervisora competente",
+      "paragraph14": "En caso de infracciones del RGPD, los afectados tienen derecho a presentar una reclamación ante una autoridad de control, en particular en el Estado miembro de su residencia habitual, su lugar de trabajo o el lugar de la presunta infracción. Este derecho de reclamación existe sin perjuicio de otros recursos administrativos o judiciales.",
+      "subtitle9": "Derecho a la portabilidad de datos",
+      "paragraph15": "Tiene derecho a que los datos que procesamos automáticamente en base a su consentimiento o en cumplimiento de un contrato le sean entregados a usted o a un tercero en un formato común y legible por máquina. Si solicita la transferencia directa de los datos a otro responsable, esto solo se hará en la medida en que sea técnicamente posible.",
+      "subtitle10": "Información, rectificación y supresión",
+      "paragraph16": "Dentro del marco de las disposiciones legales aplicables, tiene en todo momento el derecho a recibir información gratuita sobre sus datos personales almacenados, su origen y destinatario y la finalidad del procesamiento de datos y, si procede, el derecho a la rectificación o supresión de estos datos. Para ello, así como para otras cuestiones relativas a los datos personales, puede ponerse en contacto con nosotros en cualquier momento.",
+      "subtitle11": "Derecho a la limitación del procesamiento",
+      "paragraph17": "Tiene derecho a solicitar la limitación del procesamiento de sus datos personales. Para ello, puede ponerse en contacto con nosotros en cualquier momento. El derecho a la limitación del procesamiento existe en los siguientes casos:",
+      "listItems1": [
+        "Si usted cuestiona la exactitud de sus datos personales almacenados por nosotros, generalmente necesitamos tiempo para verificarlos. Durante el período de verificación, tiene derecho a solicitar la limitación del procesamiento de sus datos personales.",
+        "Si el procesamiento de sus datos personales se realizó/realiza ilegalmente, puede solicitar la limitación del procesamiento de datos en lugar de la eliminación.",
+        "Si ya no necesitamos sus datos personales, pero usted los necesita para ejercer, defender o hacer valer reclamaciones legales, tiene derecho a solicitar la limitación del procesamiento de sus datos personales en lugar de la eliminación.",
+        "Si ha presentado una objeción según el Art. 21 Párr. 1 RGPD, debe hacerse una ponderación entre sus intereses y los nuestros. Mientras no se haya determinado de quién son los intereses prevalentes, tiene derecho a exigir la limitación del procesamiento de sus datos personales."
+      ],
+      "paragraph18": "Si ha restringido el procesamiento de sus datos personales, estos datos -aparte de su almacenamiento- solo podrán procesarse con su consentimiento o para el establecimiento, ejercicio o defensa de reclamaciones legales o para la protección de los derechos de otra persona física o jurídica o por razones de interés público importante de la Unión Europea o de un Estado miembro.",
+      "subtitle12": "Cifrado SSL o TLS",
+      "paragraph19": "Por razones de seguridad y para proteger la transmisión de contenidos confidenciales, como pedidos o consultas que nos envía como operador del sitio, este sitio utiliza cifrado SSL o TLS. Puede reconocer una conexión cifrada porque la línea de dirección del navegador cambia de 'http://' a 'https://' y por el símbolo de candado en la línea de su navegador.",
+      "paragraph20": "Si el cifrado SSL o TLS está activado, los datos que nos transmite no pueden ser leídos por terceros.",
+      "subtitle13": "Oposición a los correos electrónicos publicitarios",
+      "paragraph21": "Por la presente nos oponemos al uso de los datos de contacto publicados en el marco de la obligación de pie de imprenta para el envío de material publicitario e informativo no solicitado expresamente. Los operadores de este sitio se reservan expresamente el derecho a emprender acciones legales en caso de envío no solicitado de información publicitaria, por ejemplo, mediante correos electrónicos spam.",
+      "subtitle14": "Uso de cookies técnicamente necesarias",
+      "paragraph22": "Este sitio web utiliza una cookie técnicamente necesaria para guardar su preferencia de idioma. Cuando selecciona activamente el idioma del sitio web (alemán o español), se establece una cookie llamada 'NEXT_LOCALE' que guarda su elección. Esto le permite usar el sitio web en su idioma preferido sin tener que elegir nuevamente en cada visita.",
+      "paragraph23": "Base legal: Art. 6 párrafo 1 lit. f RGPD (interés legítimo en proporcionar un sitio web fácil de usar). La cookie no contiene datos personales, solo la información 'de' o 'es'. No se requiere consentimiento para esta cookie técnicamente necesaria."
+    },
+    "section4": {
+      "title": "4. Recopilación de datos en este sitio web",
+      "subtitle1": "Formulario de contacto",
+      "paragraph1": "Si nos envía consultas a través del formulario de contacto, sus datos del formulario de solicitud, incluidos los datos de contacto que proporcionó allí, se almacenarán con nosotros para procesar la consulta y en caso de preguntas adicionales. No compartimos estos datos sin su consentimiento.",
+      "paragraph2": "El procesamiento de estos datos se basa en el Art. 6 Párr. 1 lit. b RGPD, si su solicitud está relacionada con el cumplimiento de un contrato o es necesaria para la ejecución de medidas precontractuales. En todos los demás casos, el procesamiento se basa en nuestro interés legítimo en el procesamiento efectivo de las solicitudes dirigidas a nosotros (Art. 6 Párr. 1 lit. f RGPD) o en su consentimiento (Art. 6 Párr. 1 lit. a RGPD) si se ha solicitado; el consentimiento puede ser revocado en cualquier momento.",
+      "paragraph3": "Los datos que introduce en el formulario de contacto permanecerán con nosotros hasta que nos solicite su eliminación, revoque su consentimiento al almacenamiento o la finalidad del almacenamiento de datos deje de aplicarse (por ejemplo, después de completar el procesamiento de su solicitud). Las disposiciones legales obligatorias -en particular los períodos de retención- no se ven afectadas.",
+      "subtitle2": "Consulta por correo electrónico, teléfono o fax",
+      "paragraph4": "Si se pone en contacto con nosotros por correo electrónico, teléfono o fax, su solicitud, incluidos todos los datos personales resultantes (nombre, solicitud) se almacenarán y procesarán por nosotros con el fin de procesar su solicitud. No compartimos estos datos sin su consentimiento.",
+      "paragraph5": "El procesamiento de estos datos se basa en el Art. 6 Párr. 1 lit. b RGPD, si su solicitud está relacionada con el cumplimiento de un contrato o es necesaria para la ejecución de medidas precontractuales. En todos los demás casos, el procesamiento se basa en nuestro interés legítimo en el procesamiento efectivo de las solicitudes dirigidas a nosotros (Art. 6 Párr. 1 lit. f RGPD) o en su consentimiento (Art. 6 Párr. 1 lit. a RGPD) si se ha solicitado; el consentimiento puede ser revocado en cualquier momento.",
+      "paragraph6": "Los datos que nos envía a través de solicitudes de contacto permanecerán con nosotros hasta que nos solicite su eliminación, revoque su consentimiento al almacenamiento o la finalidad del almacenamiento de datos deje de aplicarse (por ejemplo, después de completar el procesamiento de su solicitud). Las disposiciones legales obligatorias -en particular los períodos legales de retención- no se ven afectadas."
+    },
+    "section5": {
+      "title": "5. Envío de boletines a través de Mailchimp",
+      "subtitle1": "Descripción y propósito del procesamiento de datos",
+      "paragraph1": "Para el envío de nuestro boletín utilizamos el servicio 'Mailchimp', una plataforma de envío de boletines del proveedor estadounidense The Rocket Science Group, LLC, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, EE.UU.",
+      "paragraph2": "Cuando se suscribe a nuestro boletín, los datos que proporciona en el formulario de registro (normalmente su dirección de correo electrónico y opcionalmente su nombre) se transfieren a los servidores de Mailchimp en EE.UU. y se almacenan allí.",
+      "paragraph3": "Además del envío, Mailchimp nos permite analizar el éxito de nuestras campañas de boletín. Así podemos ver si un mensaje de boletín ha sido abierto y qué enlaces se han clicado. Esta información nos ayuda a reconocer qué contenidos son especialmente interesantes para nuestros lectores y a mejorar continuamente nuestro servicio. Mailchimp también utiliza estos datos para mejorar su propio servicio. Mailchimp no utiliza sus datos para contactarle directamente o para transferirlos a terceros.",
+      "subtitle2": "Base legal",
+      "paragraph4": "El envío del boletín y la medición del éxito asociada se realizan sobre la base de su consentimiento expreso de conformidad con el Art. 6 Párr. 1 lit. a RGPD. La suscripción a nuestro boletín se lleva a cabo en un proceso llamado de doble opt-in. Esto significa que después de registrarse, recibirá un correo electrónico en el que se le pedirá que confirme su registro. Esta confirmación es necesaria para que nadie pueda registrarse con direcciones de correo electrónico ajenas.",
+      "subtitle3": "Contrato de procesamiento de pedidos",
+      "paragraph5": "Hemos firmado un llamado 'Anexo de procesamiento de datos' (DPA) con Mailchimp. Este es un contrato en el que Mailchimp se compromete a proteger los datos de nuestros usuarios, a procesarlos de acuerdo con sus políticas de privacidad en nuestro nombre y, en particular, a no transferirlos a terceros. Este contrato asegura que Mailchimp cumpla con los estándares europeos de protección de datos.",
+      "subtitle4": "Transferencia de datos a EE.UU.",
+      "paragraph6": "El procesamiento de datos por parte de Mailchimp se realiza en EE.UU., un país tercero sin un nivel adecuado de protección de datos reconocido por la Comisión de la UE. Para garantizar la protección de sus datos personales, la transferencia de datos se basa en las cláusulas contractuales estándar (Standard Contractual Clauses - SCCs) aprobadas por la Comisión de la UE, que forman parte del DPA firmado con Mailchimp. Con esto, Mailchimp se compromete a cumplir con el nivel europeo de protección de datos al procesar sus datos.",
+      "subtitle5": "Periodo de almacenamiento",
+      "paragraph7": "Los datos que nos proporciona con el fin de recibir el boletín se almacenarán por nuestra parte hasta que se dé de baja del boletín y, tras la cancelación de la suscripción, se eliminarán tanto de nuestros servidores como de los servidores de Mailchimp. Los datos almacenados con nosotros para otros fines no se ven afectados.",
+      "subtitle6": "Derecho de revocación",
+      "paragraph8": "Puede revocar su consentimiento para recibir el boletín y el procesamiento de datos asociado en cualquier momento con efecto futuro. Puede declarar la revocación haciendo clic en el enlace 'Cancelar suscripción' proporcionado en cada boletín, por correo electrónico a info@berlinensalsa.de o mediante un mensaje a los datos de contacto indicados en el aviso legal. La revocación del consentimiento no afecta a la legalidad del procesamiento realizado sobre la base del consentimiento hasta la revocación."
+    },
+    "section6": {
+      "title": "6. Tipografías (Fuentes)",
+      "paragraph1": "Este sitio web utiliza las siguientes fuentes de código abierto para mejorar la presentación visual del contenido. Estas fuentes se cargan desde el servidor y se rigen por la licencia que se detalla a continuación.",
+      "subtitle1": "Fuente utilizada:",
+      "fontList": [
+        "Instrument Serif: Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)"
+      ],
+      "paragraph2": "Esta fuente está licenciada bajo la SIL Open Font License, Versión 1.1. A continuación se incluye el texto completo y original de la licencia.",
+      "subtitle2": "SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007",
+      "licenseSection1": {
+        "title": "PREAMBLE",
+        "paragraph1": "The goals of the Open Font License (OFL) are to stimulate worldwide development of collaborative font projects, to support the font creation efforts of academic and linguistic communities, and to provide a free and open framework in which fonts may be shared and improved in partnership with others.",
+        "paragraph2": "The OFL allows the licensed fonts to be used, studied, modified and redistributed freely as long as they are not sold by themselves. The fonts, including any derivative works, can be bundled, embedded, redistributed and/or sold with any software provided that any reserved names are not used by derivative works. The fonts and derivatives, however, cannot be released under any other type of license. The requirement for fonts to remain under this license does not apply to any document created using the fonts or their derivatives."
+      },
+      "licenseSection2": {
+        "title": "DEFINITIONS",
+        "definitions": [
+          "'Font Software' refers to the set of files released by the Copyright Holder(s) under this license and clearly marked as such. This may include source files, build scripts and documentation.",
+          "'Reserved Font Name' refers to any names specified as such after the copyright statement(s).",
+          "'Original Version' refers to the collection of Font Software components as distributed by the Copyright Holder(s).",
+          "'Modified Version' refers to any derivative made by adding to, deleting, or substituting -- in part or in whole -- any of the components of the Original Version, by changing formats or by porting the Font Software to a new environment.",
+          "'Author' refers to any designer, engineer, programmer, technical writer or other person who contributed to the Font Software."
+        ]
+      },
+      "licenseSection3": {
+        "title": "PERMISSION & CONDITIONS",
+        "introText": "Permission is hereby granted, free of charge, to any person obtaining a copy of the Font Software, to use, study, copy, merge, embed, modify, redistribute, and sell modified and unmodified copies of the Font Software, subject to the following conditions:",
+        "conditions": [
+          "Neither the Font Software nor any of its individual components, in Original or Modified Versions, may be sold by itself.",
+          "Original or Modified Versions of the Font Software may be bundled, redistributed and/or sold with any software, provided that each copy contains the above copyright notice and this license. These can be included either as stand-alone text files, human-readable headers or in the appropriate machine-readable metadata fields within text or binary files as long as those fields can be easily viewed by the user.",
+          "No Modified Version of the Font Software may use the Reserved Font Name(s) unless explicit written permission is granted by the corresponding Copyright Holder. This restriction only applies to the primary font name as presented to the users.",
+          "The name(s) of the Copyright Holder(s) or the Author(s) of the Font Software shall not be used to promote, endorse or advertise any Modified Version, except to acknowledge the contribution(s) of the Copyright Holder(s) and the Author(s) or with their explicit written permission.",
+          "The Font Software, modified or unmodified, in part or in whole, must be distributed entirely under this license, and must not be distributed under any other license. The requirement for fonts to remain under this license does not apply to any document created using the fonts or their derivatives."
+        ]
+      },
+      "licenseSection4": {
+        "title": "TERMINATION",
+        "text": "This license becomes null and void if any of the above conditions are not met."
+      },
+      "licenseSection5": {
+        "title": "DISCLAIMER",
+        "text": "THE FONT SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE."
+      },
+      "additionalInfo": {
+        "source": "Fuente:",
+        "mailchimpInfo": "Puede encontrar más información sobre la protección de datos en Mailchimp en su política de privacidad:"
+      }
+    }
+  },
+  "Legal": {
+    "title": "Aviso Legal",
+    "description": "Información legal de Berlin En Salsa. Información legal y datos de contacto.",
+    "backButton": "Volver a Inicio",
+    "breadcrumb": "Aviso Legal",
+    "mainTitle": "Aviso Legal",
+    "contactSection": {
+      "title": "Contacto",
+      "name": "Paul Welch Guerra",
+      "address": "Drorystr. 2\n12055 Berlin",
+      "phone": "Teléfono:",
+      "email": "Correo electrónico:",
+      "source": "Fuente:",
+      "sourceText": "eRecht24"
+    }
+  },
+  "Subscription": {
+    "validation": {
+      "allFieldsRequired": "Todos los campos son obligatorios.",
+      "invalidEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+      "minNameLength": "El nombre y apellido deben tener al menos 2 caracteres.",
+      "maxNameLength": "El nombre y apellido no deben exceder los 50 caracteres.",
+      "nameRequiresLetter": "El nombre y apellido deben contener al menos una letra."
+    },
+    "success": "¡Casi listo! Hemos enviado un correo de confirmación a {email}. Por favor, revisa tu bandeja de entrada y haz clic en el enlace para completar tu suscripción.",
+    "errors": {
+      "memberExists": {
+        "pending": "Ya hemos enviado un correo de invitación a {email}. Por favor, revisa tu bandeja de entrada (y la carpeta de spam) para encontrar el enlace de confirmación. Si necesitas que te enviemos la invitación nuevamente, contáctanos.",
+        "subscribed": "{email} ya está suscrito a nuestro boletín. ¡Gracias por tu interés!",
+        "unsubscribed": "{email} ya se ha dado de baja de nuestro boletín. Si deseas volver a suscribirte, por favor contáctanos.",
+        "fallback": "Esta dirección de correo ({email}) ya existe en nuestro sistema. Si tienes alguna pregunta, por favor contáctanos."
+      },
+      "generic": "¡Vaya! Hubo un problema al procesar tu solicitud. Por favor, inténtalo de nuevo más tarde."
+    }
+  },
+  "Timetable": {
+    "page": {
+      "backButton": "Volver a Inicio",
+      "breadcrumb": "Programa",
+      "loadingMessage": "Cargando horario del festival..."
+    },
+    "navigation": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "days": {
+      "monday": "Lunes",
+      "tuesday": "Martes",
+      "wednesday": "Miércoles",
+      "thursday": "Jueves",
+      "friday": "Viernes",
+      "saturday": "Sábado",
+      "sunday": "Domingo"
+    },
+    "columns": {
+      "mainStage": "Tarima Principal",
+      "danceWorkshops": "Talleres de Baile",
+      "salsaTalks": "Charlas Salseras",
+      "musicWorkshops": "Talleres de Música"
+    },
+    "actTypes": {
+      "live": "Live",
+      "djSet": "DJ Set",
+      "workshop": "Taller",
+      "dance-workshop": "Taller de Baile",
+      "music-workshop": "Taller de Música",
+      "talk": "Charla",
+      "Aviatrix": "Aviatrix"
+    },
+    "modal": {
+      "closeButton": "Cerrar",
+      "timeLabel": "Horario:",
+      "formatLabel": "Formato:",
+      "featuredRecordLabel": "Disco presentado",
+      "instructorLabel": "Presentado por:",
+      "workshopLeaderLabel": "Dirigido por:",
+      "workshopLeadersLabel": "Dirigido por:",
+      "presenterLabel": "Presenta:",
+      "hostLabel": "Modera:",
+      "moderatorLabel": "Presentado por:",
+      "guestLabel": "Invitado:",
+      "hostedByLabel": "Presentado por:",
+      "djsLabel": "DJs:",
+      "artistLabel": "Artista:",
+      "recordLabel": "Disco:",
+      "danceShowLabel": "Show de Baile:",
+      "slidePrevious": "Anterior",
+      "slideNext": "Siguiente",
+      "slideOf": "de",
+      "and": "y",
+      "together": "juntos",
+      "about": "Sobre",
+      "comment": "Comentario",
+      "description": "Descripción"
+    },
+    "events": {
+      "mainStage": {
+        "saturday": {
+          "rodoElProfe": "Rodo Le Fou & El Profe",
+          "ecKubaSet": "EC Kuba DJ",
+          "alfiaConIre": "Alafía con Iré",
+          "djFeikes": "DJ Feikes",
+          "tempoHavanna": "Tempo Havanna",
+          "necios": "Necios",
+          "laMelodica": "La Melodica",
+          "sacaSal": "Saca Sal"
+        },
+        "sunday": {
+          "floriWilber": "FLori & Wilber",
+          "laSonoraBerlin": "La Sonora Berlin",
+          "elPuma": "El Puma",
+          "burundanga": "Burundanga",
+          "anacaonaLaVecina": "Anacaona & La Vecina",
+          "cayeye": "Cayeye",
+          "bongo": "Bongo",
+          "berlinEnSalsaHostDJs": "Berlin En Salsa Host DJs"
+        }
+      },
+      "danceWorkshops": {
+        "saturday": {
+          "afroCubanDance": "Afro-Cuban Dance",
+          "sonCubano": "Son Cubano",
+          "salsaCalena": "Salsa Caleña"
+        },
+        "sunday": {
+          "newYorkOn2": "New York On 2",
+          "casinoCubano": "Casino Cubano"
+        }
+      },
+      "musicWorkshops": {
+        "saturday": {
+          "polyrhythmIntroduction": "Introduction to Polyrhythm",
+          "ritmoDeClave": "Ritmo de Clave"
+        },
+        "sunday": {
+          "campanaWorkshop": "Campana Workshop",
+          "soneoWorkshop": "Soneo Workshop"
+        }
+      },
+      "artists": {
+        "rodoLeFou": "Rodo Le Fou",
+        "elProfe": "El Profe",
+        "ecKuba": "EC Kuba",
+        "alafiaConIre": "Alafía con Iré",
+        "djFeikes": "DJ Feikes",
+        "tempoHavanna": "Tempo Havanna",
+        "necios": "Necios",
+        "laMelodica": "La Melodica",
+        "calamidadesLola": "Calamidades Lola",
+        "amuletoManuela": "Amuleto Manuela",
+        "helen": "Helen",
+        "yago": "Yago",
+        "jessica": "Jessica",
+        "julian": "Julian",
+        "flori": "FLori",
+        "wilber": "Wilber",
+        "laSonoraBerlin": "La Sonora Berlin",
+        "elPuma": "El Puma",
+        "burundanga": "Burundanga",
+        "lei": "Lei",
+        "ayna": "Ayna",
+        "anacaona": "Anacaona",
+        "laVecina": "La Vecina",
+        "cayeye": "Cayeye",
+        "bongo": "Bongo",
+        "dracaena": "Dracaena",
+        "elVago": "El Vago",
+        "elMelomanoAleman": "El Melómano Alemán",
+        "andrelux": "Andrelux",
+        "niya": "Niya",
+        "leidiana": "Leidiana",
+        "roger": "Roger",
+        "angelCandeaux": "Angel Candeaux",
+        "guillermoDiaz": "Guillermo Diaz",
+        "chuchoPalma": "Chucho Palma",
+        "harryMunoz": "Harry Muñoz",
+        "sarahBalzat": "Sarah Balzat",
+        "jessiVane": "Jessi y Vane",
+        "jessi": "Jessi",
+        "vane": "Vane",
+        "djChristian": "DJ Christian",
+        "raicezKoncretaz": "Raicez Koncretaz",
+        "franciscoAguabella": "Francisco Aguabella",
+        "djMc0ld": "DJ Mc0ld",
+        "paulWelchGuerra": "Paul Welch Guerra",
+        "suenaChelo": "Suena Chelo",
+        "theHustler": "The Hustler",
+        "cieloDeTambores": "Cielo de Tambores",
+        "grupoNiche": "Grupo Niche",
+        "enilceFeikes": "Enilce Feikes Álvarez",
+        "joeArroyo": "Joe Arroyo",
+        "eddiePalmieri": "Eddie Palmieri",
+        "frankieDante": "Frankie Dante"
+      },
+      "descriptions": {
+        "alafiaConIre": "En el año 2004, jóvenes músicos en La Habana fundaron la banda Alafia con Iré movidos por su gran pasión por la música y el deseo de interpretar por sí mismos la diversa música de su país natal. Con Rasiel Almanza Cairo, esta idea llegó en 2022 a Berlín, donde el proyecto fue revivido con una formación mayormente nueva. Alafia con Iré interpreta, entre otros estilos, música afrocubana —especialmente rumba—, además de composiciones propias. El nombre de la banda proviene de la religión afrocubana Regla de Ocha. Alafia significa en yoruba bienestar y paz interior, mientras que Iré representa un refuerzo adicional de ese deseo positivo.",
+        "tempoHavanna": "Tempo Havanna hace resonar el alma musical de Cuba, plasmada en apasionantes composiciones propias, modernas y con un estilo urbano-cubano. Ritmos latinoamericanos, desde la salsa y el son hasta el bolero y el cha cha chá, traen consigo el encanto de La Habana en el equipaje y sacian el anhelo de ligereza caribeña, pasión y alegría de vivir.",
+        "necios": "Emergiendo de las profundidades de noches llenas de ritmos de cumbia y 'baldosas de salsa', un profundo amor por la música transformó a tres amigos en NECIOS. Originalmente de Colombia y Ecuador, este colectivo de SELECTORES SONOROS, con sede en Berlín, ha dado vida a un viaje impulsado por vinilos y agujas. Su colección es una fusión fascinante de sonidos que abarca la amplitud y longitud de América Latina, explorando sus raíces más profundas y nuevos horizontes electrónicos. 'Necio' o 'Necia' es alguien testarudo, que va hasta las últimas consecuencias por lo que realmente cree. ¡Aunque eso signifique no seguir las reglas!",
+        "laMelodica": "¡La Melodica – Salsa Dura sin compromisos! Diez músicos de primer nivel, un ritmo arrollador y pura energía: La Melodica representa la Salsa Dura en su forma más potente. Bajo la dirección del pianista Jonatan Morgenstern, la banda lleva a escena un sonido explosivo, con metales contundentes, percusiones virtuosas y una voz que arrastra al público al baile.",
+        "sacaSal": "Saca Sal es un ritual en forma de espacio sonoro que ocurre en la pista de baile cuando un colectivo de personas se reúne para danzar y dejarse llevar por los ecos y ritmos seleccionados por sus dos anfitrionas.",
+        "afroCubanDance": "El estilo afrocubano es raíz, cuerpo, conexión con la tierra. Nace de las tradiciones africanas traídas a Cuba, y su esencia vive en cada paso de rumba, cada movimiento del torso, cada gesto espiritual. Es la base rítmica y corporal sobre la que se construyen muchos estilos de salsa. Bailar afrocubano es honrar los orígenes.",
+        "sonCubano": "El son cubano es el corazón elegante de la salsa. Nació en los campos del oriente cubano, donde el tambor y la guitarra se encontraron para contar historias y compartir emociones. Con su paso básico suave y cadencioso, el Son dio estructura y sabor al baile que hoy conocemos como salsa. Sin son, no hay salsa.",
+        "salsaCalena": "Salsa, sabor y control - Desde la capital mundial de la salsa, Cali, Colombia. Este estilo se distingue por su velocidad y precisión en los pasos. Es un estilo dinámico, enfocado en el footwork, giros rápidos y continuos característicos del Cali Style. Cada paso celebra la identidad cultural de Cali. ¡Auténtica, poderosa y llena de vida!",
+        "newYorkOn2": "Precisión, elegancia y musicalidad. La salsa estilo New York (On2) nació en la Gran Manzana, influenciada por el jazz, el mambo y la migración latina. Se baila 'en línea', con énfasis en los tiempos 2 y 6. Es un estilo técnico y expresivo, ideal para contar historias con el cuerpo.",
+        "casinoCubano": "Mas que baile, es pura gozadera! El casino cubano es un estilo de baile social originado en Cuba, caracterizado por su alegría, sabor caribeño y movimientos circulares. Se baila en pareja y en rueda, destacando la improvisación, la conexión y la energía del son, la salsa y otros ritmos afrocubanos. ¡Pura fiesta y sabor cubano en movimiento!",
+        "niya": "¡Hola a todos! Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
+        "angelCandeaux": "Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto \"desapalencao\", Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo.",
+        "chuchoPalma": "Percusionista venezolano radicado en Berlin, actual bongocero de la orquesta La Melodíca.",
+        "polyrhythmIntroduction": "¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva. ¿Qué Vivirás en el Taller? - Exploración de tu ritmo interno: Aprende a mantener tu propio patrón mientras escuchas y dialogas con el grupo. - Conexión auténtica: Ejercicios de percusión grupal que fortalecen los lazos y la comunicación no verbal. - Equilibrio entre estructura y libertad: Descubre cómo seguir el pulso colectivo y, a la vez, atreverte a romper el patrón para expresar tu individualidad. - Momentos de comunión y expresión personal: Alterna entre el unísono grupal y la oportunidad de alzar tu propia voz rítmica. - Desarrollo de habilidades cognitivas y emocionales: Mejora la concentración, la coordinación y la apertura sensorial. ¿Por Qué Participar? - No necesitas experiencia previa, solo ganas de explorar y dejarte llevar por el ritmo. - Descubrirás herramientas para fortalecer la comunicación, la empatía y el trabajo en equipo. - Vivirás una experiencia transformadora que une cuerpo, mente y comunidad a través de la música. Angel Candeaux te invita a sumergirte en la polirritmia: un viaje donde cada latido cuenta y la suma de las diferencias crea armonía.",
+        "ritmoDeClave": "La salsa como muchos otros géneros, se compone tanto de su instrumentación e interpretación, como también de la escucha y el baile. Para interpretarla, es primordial la comprensión de la clave, ya que toda su instrumentación gira en torno a ésta. Siendo la clave el adn de la salsa y de muchos otros géneros con fuerte origen africano, es un recurso casi imprescindible pero ante todo muy útil para comprenderla en cualquier nivel y forma de interacción con el género. En este taller, nos sumergiremos brevemente en el secreto mejor guardado de la salsa: la clave. El objetivo del taller es ofrecer un entendimiento básico pero esencial, para poder tocar, bailar y escuchar esta música que tanto amamos desde un lugar mucho más familiar y cercano. El taller es tanto para principiantes como para aquellxs que no tienen formación musical. Se recomienda traer cualquier instrumento de percusión, desde tambores, claves y campanas, hasta tazas, sartenes y cucharas de palo.",
+        "campanaWorkshop": "Muestra de los fundamentos basicos de la campana de mano en los diferentes ritmos latinos donde ella se ejecuta. Muestra de como ejecutar un solo de campana utilizando los patrones de solos de la conga, el timbal y el bongo",
+        "soneoWorkshop": "En una orquesta, una delantera; en una delantera, unos cantantes… ¡y entre ellos, los soneros! Estaremos hablando de esta especial categoría de intérprete dentro del género salsero. ¿Y quién sabe? De pronto, y de repente… ¡nos ponemos a sonear! Nos vemos el 20 de julio.",
+        "floriWilber": "DJ Flori y DJ Wilber son dos hermanos peruanos que hacen vibrar la escena salsera de Berlín. Crecieron con los sonidos clásicos de La Fania y La Sonora Matancera, y hoy hacen bailar al público con Mambo, Cha-Cha-Cha y Salsa al estilo 70' de New York. En Berlín, su hogar musical, unen a salseros de todo el mundo bajo un mismo ritmo. Han puesto a bailar a miles en fiestas legendarias como Tu Candela, Mi Salsa y Zuckerbrot. ¡Donde pinchan Flori y Wilber, la pista se enciende con sabor de guaguanco!",
+        "laSonoraBerlin": "Sonora Berlín es una orquesta de salsa de once integrantes con sede en Berlín, formada por músicos de distintos países unidos por una misma pasión: la música salsa. Su repertorio combina clásicos conocidos del género con composiciones propias: poderosas, bailables y llenas de alegría interpretativa. La banda existe desde 2023 y se caracteriza por su enérgica presencia escénica y su precisión musical. Sus presentaciones crean una atmósfera vibrante que entusiasma tanto a bailarines como a amantes de la música. Sonora Berlín ya ha actuado en escenarios y eventos de renombre, entre ellos: – el 75º aniversario del Parlamento Alemán en el marco del Festival por la Democracia – la Volksbühne Berlin (Grüner Salon) – el Hotel nHow – el centro comercial Bikini Berlin – y numerosas noches de club y eventos al aire libre Con su música, Sonora Berlín lleva el poder rítmico y la alegría de la salsa a cualquier escenario: ya sea en festivales, eventos culturales o celebraciones privadas. Más impresiones: https://www.youtube.com/watch?v=o4Evwcrc1vA https://www.instagram.com/sonora_berlin/",
+        "burundanga": "Ocho burundangueras de Colombia, India y Alemania sacan a cualquiera del asiento con su ardiente mezcla de salsa, merengue y rumba. Combinando elementos de jazz y flamenco, presentan versiones reinterpretadas de arreglos tradicionales de salsa. Fundada en 1992 como una banda de salsa integrada exclusivamente por mujeres, el grupo ha evolucionado hasta convertirse en una banda emocionante, multicultural y abierta, que mira hacia atrás con orgullo por los muchos conciertos y experiencias compartidas en diversas formaciones. Frente a esta poderosa formación de músicos experimentados, canta, baila, cuenta historias, bromea y ríe Sonia Solarte — poeta y cantante de Cali, la capital salsera de Colombia. Con Doris Alzarte, oriunda de Medellín, estas dos mujeres llenas de energía traen la alegría de vivir de América Latina a Berlín.",
+        "anacaonaLaVecina": "Para esta ocasión especial, ambas unirán fuerzas en una selección que explora las raíces africanas del universo de la salsa, presentes en ritmos como el afrocubano, oriza, plenas, bombas y mozambique. Así, rinden homenaje a estos sonidos de resistencia, portadores de saberes y memorias culturales.",
+        "cayeye": "Cayeye, un plato originario del Caribe a base de plátano verde y mucha salsa, da nombre a una banda de Salsa Brava de 10 integrantes con sede en Berlín. Así como sus diversos ingredientes convierten al Cayeye en un plato dulce y muy popular en el norte de Colombia, la banda interpreta sonidos cálidos y bailables que evocan la tradición musical latinoamericana de los años 70. Al igual que en la receta del plato, en la banda también se mezclan distintos sabores: lxs integrantes de la orquesta fusionan influencias de Europa y América Latina para crear una experiencia musical vibrante sobre el escenario. La banda se formó a principios de 2022 y ofrece un repertorio amplio de salsa latinoamericana, tocando e improvisando con energía y pasión. ¡El Cayeye se disfruta mejor recién salido de la sartén! En vivo, en el club, donde clásicos, composiciones propias y arreglos originales se funden en un verdadero espectáculo de ritmos. Ven a nuestra fiesta, baila con nosotros toda la noche y siente el verdadero calor de América Latina – ¡Salsa pura, directa al corazón y a las caderas! ",
+        "berlinEnSalsaHostDJs": "Los Berlin En Salsa Host DJs son los organizadores del festival y traen su pasión por la música de salsa.",
+        "elVago": "El Vago es un DJ, coleccionista y gestor cultural radicado en Berlín. Desde hace varios años, es el co-host de La Regla Party, una de las fiestas más emblemáticas y queridas dentro de la escena latina de la ciudad. Actualmente coordina el Festival Berlín en Salsa.",
+        "elMelomanoAleman": "Apasionado coleccionista de vinilos con un oído fino para los ritmos latinoamericanos, ha cultivado desde 2006 una profunda conexión con la cultura musical colombiana. La salsa, en especial, ha capturado su atención hasta convertirse en el eje central de su colección. El sonido clásico de los años 50 a los 70 hace hervir su sangre, décadas donde considera que reside la esencia pura y vibrante de esa magistral mezcla de géneros.",
+        "andrelux": "@_andreluxx_ es un DJ y coleccionista que lleva más de 20 años creando espacios en los cuales se promueve y se celebra la cultura latinoamericana en Alemania. Desde luego ya perdió la cuenta de cuantas fiestas ha montado pero sigue convencido de que la rumba es el escenario ideal para acercar a la gente y tender puentes entre culturas.Actualmente hace parte del equipo de @berlinensalsa y es quien dio vida y forma a su identidad visual",
+        "dracaena": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Sus sets son enérgicos y envolventes, con un enfoque en potentes solos de percusión y piano, pensados tanto para bailar como para escuchar con atención. Su propuesta gira en torno a la salsa y los sonidos de la diáspora, especialmente ritmos afrocaribeños, afrolatinos y latinoamericanos. Es parte activa de la comunidad de coleccionistas en Berlín y del equipo organizador del Berlin en Salsa Festival. Dracaena también ha participado en charlas y paneles —entre ellos con DLD— compartiendo su experiencia como selectora y coleccionista en el cruce entre música, cultura e identidad.",
+        "leidiana": "Leidiana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana. Con su estilo único y la alegría de vivir que trae de su tierra natal, llena de luz cualquier lugar al que va. Para ella, bailar no es solo una profesión, sino una verdadera pasión",
+        "leidianaRoger": "Roger y Leidiana son un dúo de bailarines cubanos reconocidos por fusionar la tradición con la modernidad en cada presentación. Su estilo único combina la fuerza del movimiento urbano, la elegancia de la danza tradicional cubana y la profundidad expresiva del afro-contemporáneo.",
+        "julian": "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina."
+      },
+      "bios": {
+        "rodoLeFou": "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
+        "elProfe": "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como \"LA NOCHE\" and \"It's a SALSA BRAVA Thing\", eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
+        "ecKuba": "Nacido en la cuidad donde se creó la rumba Ciudad de Matanzas Cuba. Reside en Berlín ya hace varios años y dando a conocer lo mejor de la música cubana en diferentes eventos y festivales como festival Berlín fiesta Elegante, Bérgamo en Salsa Italia , Berlín Salsa congresos ,entre otros y sociales como Soda Club Berlin .Amante de la música De su tierra y siempre interesado por otra culturas musicalmente. Berlín en Salsa preparó un set de Timba, Salsa y Son Cubano.",
+        "djFeikes": "DJ Feikes lleva más de 35 años recorriendo el Caribe con los oídos siempre atentos. Y tras cada viaje, le acompaña el mismo dilema: ¿cómo meter todos esos discos en el avión y traerlos sanos y salvos hasta Berlín? Cada primer miércoles de mes, DJ Feikes y su compañero DJ Christian presentan su \"Salsa Café\" en el Club «wilder als erwartet», frente al Nordbahnhof. Estos dos apasionados de la música ofrecen a su público una exquisita selección de su extensa colección de discos: desde los clásicos cubanos de los años 50 —con mambo, danzón y charanga—, pasando por la enérgica \"salsa callejera\" del Nueva York de los 60, la poderosa \"salsa brava\" orquestada de los 70, la salsa más melódica de los 80, hasta llegar a los sonidos románticos de los 90. Además, también suenan otros ritmos afrocaribeños como la cumbia colombiana, el merengue dominicano o incluso la salsa africana con raíces cubanas. Lo esencial: ¡que la música te conquiste y se sienta el swing!",
+        "lei": "De niño siempre se interesó por las manifestaciones artísticas y a los 15 años ingresó en la escuela de Instructores de Arte de su ciudad natal, en la especialidad de teatro. Al graduarse se profesionalizó como bailarín de espectáculos y variedades y se mantuvo activo desde entonces hasta que se trasladó a Alemania en el 2021, donde se ejerce como profesor de ritmos cubanos y latinos en la ciudad de Berlín, y haciendo presentaciones en eventos, festivales, además de preparar y asesorar parejas para bodas y otros intereses.",
+        "calamidadesLola": "Calamidades Lola es una cazadora de discos y DJ/selector nacida y criada en Barranquilla, una ciudad en la costa caribeña de Colombia con una poderosa cultura fiestera, donde la música es un camino seguro hacia la alegría y la liberación. Radicada en Berlín, gran parte de su colección y selección musical está guiada por su experiencia migratoria.",
+        "amuletoManuela": "Amuleto Manuela es una artista sonora y DJ colombiana radicada en Berlín. En su trabajo basado en procesos (paisajes sonoros, esculturas sonoras, prácticas colectivas de escucha y programas de radio), la escucha es el principio y surge como una respuesta contextual a la búsqueda de espacios de encuentro. Aborda temas de diáspora e identidad con el deseo de desaprender y recordar otras formas de habitar nuestra experiencia colectiva de vida.",
+        "jessica": "Jessica es de Cali, Colombia, y lleva más de 10 años bailando salsa caleña de forma profesional y social. En Berlín lleva la esencia de la salsa más allá del aula: no solo enseña, sino que también expone y comparte la salsa caleña como una expresión cultural viva, tal como se vive en Cali. Ha tenido la oportunidad de participar abriendo los conciertos del Grupo Niche y Gilberto Santa Rosa en Berlín, dar clases de salsa caleña en el Congreso de Salsa de Berlín y formar parte del equipo organizador del evento Berlin en Salsa.",
+        "julian": "Julián es un apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín. Ha participado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en la academia Dolce Vita Dance Studio, enfocándose en el trabajo de pies rápido y la técnica de guía y seguimiento. Más que solo pasos: sus clases se centran en la conexión, la intención y la musicalidad, siempre honrando y promoviendo los ritmos y la cultura de América Latina.",
+        "ayna": "Ayna Nació en Perú, donde desde muy temprana edad se conectó con la danza a través de las danzas folclóricas peruanas, especialmente los ritmos afroperuanos, que marcaron profundamente su identidad artística. Con su llegada a Berlín, descubrió una nueva pasión en los ritmos cubanos. Desde entonces, se ha dedicado principalmente al casino y al son cubano, encontrando en ellos una forma vibrante de expresión y conexión cultural.",
+        "anacaona": "La prodigiosa bruja de Caracas, Anacaona, ha hecho vibrar la escena latina de Berlín con sus potentes mezclas de salsa, merengue y boogaloo, tanto en las fiestas más importantes como en su programa “Camino a Casa” en 1btn radio. Su estilo aporta arte y sigilo a la ciudad, consolidándose como una selectress y artista visual de 0% compromiso, con una profunda pasión por el alma afrocaribeña y la salsa old school.",
+        "laVecina": "La Vecina, melómana y musicóloga colombiana, es curiosa por explorar la historia de las migraciones musicales entre Abya Yala y África. Sus sets se centran en lo afrocaribeño, la cumbia, la salsa y otros ritmos que invitan a “echar paso” y evocan la riqueza de la diáspora africana en la música latina.",
+        "bongo": "Desde Cali, DJ Bongo revive el espíritu de la vieja escuela: salsa brava, calle y sudor. Un sonido sin adornos, directo al alma del bailador. ¡Salsa con corazón!",
+        "leidiana": "Leidiana viene de Cuba y ahora vive en Berlín — ¿y qué es lo que más le apasiona? ¡Bailar! Desde que era pequeña, la música y el movimiento forman parte de su vida cotidiana.",
+        "helen": "Helen ha estado enseñando en Berlín durante más de cinco años, especializándose en Rueda de Casino. Su pasión por la cultura y la danza cubanas enriquece enormemente sus excepcionales habilidades como profesora y bailarina. La rumba también ocupa un lugar especial en su corazón, ya que le permite expresarse libremente de una manera elegante y femenina que celebra la feminidad. Helen es una firme defensora de empoderar a sus estudiantes para que valoren y disfruten el baile como una experiencia compartida entre parejas, donde tanto líderes como seguidores contribuyen por igual. Sigue desarrollando principios específicos de \"seguimiento activo\" para promover la idea de que los seguidores merecen el mismo reconocimiento dentro de la comunidad de baile en Berlín. Su estilo ha sido influenciado principalmente por Sofía de Endaya, Sassan AliValiollahi y Luis Duarte.",
+        "yago": "Yago es conocido por su estilo espontáneo e improvisado en la pista de baile. Para él, es muy importante ser un líder preciso y considerado, con el fin de ofrecer a su pareja una buena experiencia de baile. Gracias a su formación en ciencias del deporte, Yago brinda explicaciones claras y enfocadas, identificando rápidamente limitaciones físicas para ofrecer correcciones efectivas. Enseña con mucha pasión y cree que el baile es la purificación suprema del alma. Según él, cuando una persona está completamente inmersa en la música y el baile, alcanza el estado más alto de presencia. Yago ha desarrollado sus habilidades bajo la tutela de reconocidos instructores internacionales como Cristian Mauricio, Luis Duarte y Leiván García, director del Conjunto Folklórico Nacional.",
+        "niya": "¡Soy Niya, nacida en Sofía, Bulgaria, donde comenzó mi camino en la danza con ballet, danza moderna y hip hop. Más adelante descubrí mi gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa, tuve la oportunidad de representar a Bulgaria en festivales internacionales y adquirir valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 doy clases en Berlín. En mis clases me enfoco en la coordinación, la conciencia corporal y una técnica clara y precisa. Lo que más me motiva es compartir mi entusiasmo por el mambo y ayudarles a descubrir su propio amor por la música. ¡Estoy muy emocionada de verlos en el festival y bailar juntos!",
+        "elPuma": "El Puma Dj nacido en Venezuela y criado en Colombia lleva la salsa en la sangre por su familia, su tío melómano y locutor y su hermano melómano y coleccionista de vinilos heredó la salsa con tanta pasión que se ha ganado el respeto de grandes djs y me molomanos de Europa.",
+        "chuchoPalma": "Percusionista venezolano radicado en Berlin, actual bongocero de la orquesta La Melodíca.",
+        "harryMunoz": "Harry Muñoz es un músico experimentado y profesor de percusión y canto latinoamericano.",
+        "angelCandeaux": "Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto 'desapalencao', Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo. ¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva."
+      },
+      "salsaTalks": {
+        "saturday": {
+          "sarahBalzatTalk": {
+            "title": "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo.",
+            "description": "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria."
+          },
+          "jessiVaneTalk": {
+            "title": "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
+            "description": "¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los \"estilos\" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos."
+          },
+          "aviatrixChristian": {
+            "title": "Aviatrix & DJ Christian",
+            "artist": "Eddie Palmieri",
+            "record": "Echando Pa'lante (Straight Ahead)",
+            "bio": "DJ Christian es cofundador de @salsacafeberlin, donde junto a @hijodesiboney hace que la pista de baile vibre cada primer miércoles del mes. Su amor por los ritmos latinoamericanos surge de su estrecha conexión con la comunidad Latinx en Berlín. Allí se involucra activamente en iniciativas y espacios de la diáspora latinoamericana, inspirado por su historia familiar intercultural. Aunque aprecia todos los géneros musicales, se siente especialmente atraído por la música con raíces africanas, cuyas huellas se pueden encontrar en casi todos los géneros.",
+            "comment": "Elegí el álbum \"Echando Pa'lante (Straight Ahead)\" porque es una obra significativa en la historia de la salsa y muestra el estilo innovador de Eddie Palmieri y el talento de su banda. Lanzado en 1964, el álbum es celebrado por sus ritmos poderosos, arreglos complejos y el sonido distintivo de la llamada \"Trombanga\" - una formación que introdujo trombones en la música tradicional latinoamericana."
+          },
+          "aviatrixRaicez": {
+            "title": "Aviatrix & Raicez Koncretaz",
+            "artist": "Francisco Aguabella",
+            "record": "Hitting Hard",
+            "bio": "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen como objetivo no dejar morir el formato análogo y mantenerlo vivo.",
+            "comment": "Se escogió este disco por la gran variedad de ritmos que pueden converger en una producción musical y que la salsa, así como muchos géneros, tiene muchas influencias de otros géneros musicales."
+          },
+          "aviatrixMc0ld": {
+            "title": "Aviatrix & DJ Mc0ld",
+            "artist": "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
+            "record": "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
+            "bio": "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mí. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
+            "comment": "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla."
+          },
+          "salsancoTalk": {
+            "title": "Salsancó y los inicios de la salsa en Berlín",
+            "guests": "Eduardo Villegas & Rolo Rodríguez",
+            "description": "Eduardo Villegas y Rolo Rodríguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida."
+          }
+        },
+        "sunday": {
+          "aviatrixSuenaChelo": {
+            "title": "Aviatrix & Suena Chelo",
+            "artist": "Willie Colon & Hector Lavoe",
+            "record": "The Hustler",
+            "bio": "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs."
+          },
+          "aviatrixDracaena": {
+            "title": "Aviatrix & Dracaena",
+            "artist": "Grupo Niche",
+            "record": "Cielo de Tambores",
+            "bio": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile.",
+            "comment": "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina."
+          },
+          "aviatrixEnilce": {
+            "title": "Aviatrix & Enilce Feikes Álvarez",
+            "artist": "Joe Arroyo",
+            "record": "Me Le Fugué A La Candela",
+            "bio": "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
+            "comment": "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozosa y admiradora profunda de Joe Arroyo."
+          },
+          "noLeLlamenSalsa": {
+            "title": "No Le llamen salsa a mi son",
+            "presenters": "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
+            "description": "El título de la canción \"No le llamen Salsa a mi Son... dile música Cubana\" del cantante cubano Monguito \"El Único\" lo deja claro: la 'Salsa' no fue en un principio más que una etiqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimiento colectivo de muchas comunidades latinas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creativos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el salsómano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
+          }
+        }
+      },
+      "danceShows": {
+        "afroCuban": "Afro-Cuban Dance Show",
+        "sonCubano": "Son Cubano Dance Show",
+        "salsaCaleña": "Salsa Caleña Dance Show",
+        "nyOn2": "NY On 2 Dance Show",
+        "casinoCubano": "Casino Cubano Dance Show"
+      },
+      "dancers": {
+        "leidianaRoger": "Leidiana & Roger, Laura & Kimberly",
+        "helenYago": "Helen & Yago",
+        "jessicaJulian": "Jessica & Julian",
+        "niya": "Niya",
+        "leiAyna": "Lei & Ayna"
+      }
+    }
+  }
+}

@@ -2,20 +2,22 @@
 
 import { useState, FormEvent } from "react";
 import { addSubscriber } from "@/app/actions";
+import { useTranslations, useLocale } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export const SubscribeSection = () => {
   const [isPending, setIsPending] = useState<boolean>(false);
   const [subscribeSuccess, setSubscribeSuccess] = useState<string>("");
   const [subscribeError, setSubscribeError] = useState<string>("");
   const [privacyChecked, setPrivacyChecked] = useState<boolean>(false);
+  const t = useTranslations("Sections.SectionSix.newsletter");
+  const locale = useLocale();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!privacyChecked) {
-      setSubscribeError(
-        "Debes aceptar la política de privacidad para suscribirte.",
-      );
+      setSubscribeError(t("error"));
       return;
     }
 
@@ -25,7 +27,7 @@ export const SubscribeSection = () => {
     const formData = new FormData(e.currentTarget);
     formData.append("privacyAccepted", "true");
 
-    const res = await addSubscriber(formData);
+    const res = await addSubscriber(formData, locale);
     if (res.successMessage) {
       setSubscribeSuccess(res.successMessage);
     } else if (res.errorMessage) {
@@ -39,7 +41,7 @@ export const SubscribeSection = () => {
       <div className="mx-auto max-w-[700px]">
         {" "}
         <div className="text-bes-red mb-3 text-center text-xl font-bold sm:mb-2 sm:text-xl md:mb-3 md:text-2xl lg:mb-6 lg:text-3xl">
-          Suscríbete a nuestro boletín
+          {t("title")}
         </div>
         <form
           className="flex flex-col items-center justify-center gap-y-4 sm:gap-y-2 md:gap-y-3 lg:gap-y-4"
@@ -51,23 +53,23 @@ export const SubscribeSection = () => {
               type="text"
               name="firstName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
-              placeholder="Nombre"
+              placeholder={t("firstNamePlaceholder")}
               required
               minLength={2}
               maxLength={50}
               pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Por favor, introduce un nombre válido (sólo letras, espacios y guiones)"
+              title={t("firstNameValidation")}
             />
             <input
               type="text"
               name="lastName"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
-              placeholder="Apellido"
+              placeholder={t("lastNamePlaceholder")}
               required
               minLength={2}
               maxLength={50}
               pattern="[A-Za-záéíóúÁÉÍÓÚüÜñÑ\s-]+"
-              title="Por favor, introduce un apellido válido (sólo letras, espacios y guiones)"
+              title={t("lastNameValidation")}
             />
           </div>
           <div className="flex w-full flex-wrap items-center justify-center gap-x-4 gap-y-4 sm:flex-row">
@@ -76,11 +78,11 @@ export const SubscribeSection = () => {
               type="email"
               name="email"
               className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
-              placeholder="Correo electrónico"
+              placeholder={t("emailPlaceholder")}
               required
               maxLength={320}
               pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*"
-              title="Por favor, introduce una dirección de correo electrónico válida"
+              title={t("emailValidation")}
               autoComplete="email"
               spellCheck="false"
             />
@@ -100,13 +102,13 @@ export const SubscribeSection = () => {
                 htmlFor="privacy-checkbox"
                 className="text-bes-purple text-sm font-semibold sm:text-xs md:text-xs lg:text-sm"
               >
-                Acepto la{" "}
-                <a
+                {t("privacyText")}{" "}
+                <Link
                   href="/privacy"
                   className="text-bes-red hover:text-bes-red/80 underline"
                 >
-                  Política de Privacidad
-                </a>{" "}
+                  {t("privacyLink")}
+                </Link>{" "}
               </label>
             </div>
 
@@ -117,14 +119,12 @@ export const SubscribeSection = () => {
                 onClick={(e) => {
                   if (!privacyChecked) {
                     e.preventDefault();
-                    setSubscribeError(
-                      "Por favor, acepta la política de privacidad para continuar.",
-                    );
+                    setSubscribeError(t("validationPrivacy"));
                   }
                 }}
                 aria-describedby="privacy-error"
               >
-                {isPending ? "Enviando..." : "SUSCRIBIR"}
+                {isPending ? t("submittingButton") : t("submitButton")}
               </button>
               <div className="h-6 sm:h-5 md:h-5 lg:h-6">
                 {!privacyChecked && (
@@ -134,7 +134,7 @@ export const SubscribeSection = () => {
                     role="alert"
                     aria-live="polite"
                   >
-                    Por favor, acepta la política de privacidad para continuar
+                    {t("validationPrivacy")}
                   </p>
                 )}
               </div>

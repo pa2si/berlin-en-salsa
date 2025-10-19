@@ -1,19 +1,26 @@
+import { routing } from "@/i18n/routing";
+
+// Extract route types from the routing configuration
+type RouteKeys = keyof typeof routing.pathnames;
+
 // Define link types for better type safety
 export type FooterLink = {
-  href: string;
-  label: string;
+  href: RouteKeys; // Use dynamic route types from routing.ts
+  labelKey: string; // Translation key instead of hardcoded label
   icon?: string;
   isExternal?: boolean;
 };
 
-// Define footer links
+// Define footer links with translation keys - matching original structure
 export const footerLinks: FooterLink[] = [
-  { href: "/privacidad", label: "Política de Privacidad" },
-  { href: "/legal", label: "Aviso Legal" },
-  //   {
-  //     href: "https://www.paypal.com/pools/c/9gEVZFeS3A",
-  //     label: "Donar",
-  //     icon: "/paypal.png",
-  //     isExternal: true,
-  //   },
+  {
+    href: "/privacy", // Use internal route name that matches routing.ts
+    labelKey: "privacy",
+    isExternal: false,
+  },
+  {
+    href: "/legal",
+    labelKey: "legal",
+    isExternal: false,
+  },
 ];

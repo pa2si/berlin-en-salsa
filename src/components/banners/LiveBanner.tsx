@@ -3,9 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
-import { saturdayTimetableData } from "@/data/saturdayTimetable";
-import { sundayTimetableData } from "@/data/sundayTimetable";
-import { TimeSlot } from "@/types/timetable";
+import { useTranslations } from "next-intl";
+import { TimetableEvent } from "@/types/events";
+import { useSmartTranslation } from "@/data/timetable/utils/smartTranslation";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 import {
   AnimatedButton,
   AnimatedLogo,
@@ -14,9 +15,30 @@ import {
 } from "@/components/ui";
 import { ProgramIcon } from "@/components/icons";
 
+// Import event data (unified collections)
+import { mainStageEvents } from "@/data/timetable/events/main-stage";
+import { danceWorkshopEvents } from "@/data/timetable/events/dance-workshops";
+import { musicWorkshopEvents } from "@/data/timetable/events/music-workshops";
+import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks";
+
+// Import timeline configurations to determine which events are on which day
+import {
+  mainStageSaturdayTimeline,
+  mainStageSundayTimeline,
+  danceWorkshopsSaturdayTimeline,
+  danceWorkshopsSundayTimeline,
+  musicWorkshopsSaturdayTimeline,
+  musicWorkshopsSundayTimeline,
+  salsaTalksSaturdayTimeline,
+  salsaTalksSundayTimeline,
+  createTimelineFromSimpleConfig,
+} from "@/utils/timelineConfig";
+
 const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
-  const [currentEvents, setCurrentEvents] = useState<TimeSlot[]>([]);
+  const t = useTranslations("Banners.live");
+  const { translateIfKey } = useSmartTranslation();
+  const [currentEvents, setCurrentEvents] = useState<TimetableEvent[]>([]);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const [isSunday, setIsSunday] = useState(false);
 
@@ -29,37 +51,74 @@ const LiveBanner = () => {
       now.getDay() === 0 || now >= new Date("July 20, 2025 00:00:00");
     setIsSunday(isSundayToday);
 
-    const timetableData = isSundayToday
-      ? sundayTimetableData
-      : saturdayTimetableData;
+    // Get enriched events for the current day using timeline config
+    const allEvents: TimetableEvent[] = isSundayToday
+      ? [
+          ...createTimelineFromSimpleConfig(
+            mainStageSundayTimeline,
+            mainStageEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            danceWorkshopsSundayTimeline,
+            danceWorkshopEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            musicWorkshopsSundayTimeline,
+            musicWorkshopEvents,
+            "sunday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            salsaTalksSundayTimeline,
+            salsaTalksEvents,
+            "sunday",
+          ),
+        ]
+      : [
+          ...createTimelineFromSimpleConfig(
+            mainStageSaturdayTimeline,
+            mainStageEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            danceWorkshopsSaturdayTimeline,
+            danceWorkshopEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            musicWorkshopsSaturdayTimeline,
+            musicWorkshopEvents,
+            "saturday",
+          ),
+          ...createTimelineFromSimpleConfig(
+            salsaTalksSaturdayTimeline,
+            salsaTalksEvents,
+            "saturday",
+          ),
+        ];
 
     // Find events happening now
-    const currentSlots: TimeSlot[] = [];
+    const currentEventsNow = allEvents.filter((event) => {
+      // Check if event has timing information (should always be true after enrichment)
+      if (!event.startTime || !event.endTime) return false;
 
-    timetableData.forEach((column) => {
-      const matchingSlots = column.slots.filter((slot) => {
-        if (!slot.event) return false; // Skip slots without events
+      // Parse event start time
+      const [startHour, startMinute] = event.startTime.split(":").map(Number);
+      const [endHour, endMinute] = event.endTime.split(":").map(Number);
 
-        // Parse slot time to get hours and minutes
-        const slotHour = parseInt(slot.time.split(":")[0]);
-        const slotMinute = parseInt(slot.time.split(":")[1]);
+      // Create Date objects for comparison
+      const eventStart = new Date(now);
+      eventStart.setHours(startHour, startMinute, 0, 0);
 
-        // Create Date objects for slot time and slot time + 30 minutes for comparison
-        const slotDate = new Date(now);
-        slotDate.setHours(slotHour, slotMinute, 0, 0);
+      const eventEnd = new Date(now);
+      eventEnd.setHours(endHour, endMinute, 0, 0);
 
-        // Event end time (slot time + 30 minutes)
-        const slotEndDate = new Date(slotDate);
-        slotEndDate.setMinutes(slotEndDate.getMinutes() + 30);
-
-        // Check if current time is between slot time and slot time + 30 minutes
-        return now >= slotDate && now <= slotEndDate;
-      });
-
-      currentSlots.push(...matchingSlots.filter((slot) => slot.event));
+      // Check if current time is between event start and end
+      return now >= eventStart && now <= eventEnd;
     });
 
-    return currentSlots;
+    return currentEventsNow;
   }, []);
 
   useEffect(() => {
@@ -93,19 +152,35 @@ const LiveBanner = () => {
   }, [isBannerVisible, getCurrentEvents]);
 
   // Handle event navigation
-  const nextEvent = () => {
+  const handleNextEvent = () => {
     setCurrentEventIndex((prev) =>
       prev === currentEvents.length - 1 ? 0 : prev + 1,
     );
   };
 
-  const prevEvent = () => {
+  const handlePrevEvent = () => {
     setCurrentEventIndex((prev) =>
       prev === 0 ? currentEvents.length - 1 : prev - 1,
     );
   };
 
   if (!isBannerVisible) return null;
+
+  // Helper function to get event type label
+  const getEventTypeLabel = (event: TimetableEvent) => {
+    // Check for performanceType (MainStageEvent)
+    if ("performanceType" in event) {
+      if (event.performanceType === "dj-set") return "DJ Set";
+      if (event.performanceType === "live") return "Live Band";
+    }
+    // Check for type (all events have type)
+    if (event.type === "dance-workshop") return "Taller de Baile";
+    if (event.type === "music-workshop") return "Taller de Música";
+    if (event.type === "talk") return "Charla";
+    if (event.type === "aviatrix-talk") return "Aviatrix";
+    if (event.type === "dance-show") return "Show";
+    return "";
+  };
 
   return (
     <motion.div
@@ -118,20 +193,20 @@ const LiveBanner = () => {
         damping: 15,
         duration: 0.8,
       }}
-      className="bg-bes-red bg-opacity-95 fixed top-0 right-0 left-0 z-50 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
+      className="bg-bes-red fixed left-0 right-0 top-0 z-50 bg-opacity-95 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
     >
       <div className="relative mx-auto max-w-6xl">
         {/* Close button */}
         <CloseButton
           onClose={() => setIsBannerVisible(false)}
-          ariaLabel="Cerrar anuncio"
+          ariaLabel={t("closeLabel")}
         />
 
         <motion.div
           initial={{ scale: 0.8 }}
           animate={{ scale: [0.8, 1.1, 1] }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-6 lg:py-1"
+          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-x-6 lg:space-y-0 lg:py-1"
         >
           <div className="flex items-center">
             {/* Logo */}
@@ -140,46 +215,32 @@ const LiveBanner = () => {
               alt="Berlin En Salsa Logo"
             />
             <div>
-              <BannerText title="¡Ya estamos gozando Berlin En Salsa!" />
+              <BannerText title={t("title")} />
               {currentEvents.length > 0 ? (
                 <div className="mt-2 text-white">
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-start lg:space-x-2">
                     <span className="text-bes-amber font-semibold">
                       {isSunday ? "Domingo" : "Sábado"} -{" "}
-                      {currentEvents[currentEventIndex].time}
+                      {currentEvents[currentEventIndex].startTime}
                     </span>
                     <div className="flex flex-wrap items-center justify-center space-x-2">
                       <span className="font-bold">
-                        {currentEvents[currentEventIndex].event}
+                        {translateIfKey(currentEvents[currentEventIndex].title)}
                       </span>
-                      {currentEvents[currentEventIndex].actType && (
+                      {getEventTypeLabel(currentEvents[currentEventIndex]) && (
                         <span className="bg-bes-amber text-bes-red rounded-full px-2 py-0.5 text-xs">
-                          {currentEvents[currentEventIndex].actType}
+                          {getEventTypeLabel(currentEvents[currentEventIndex])}
                         </span>
                       )}
-                      {!currentEvents[currentEventIndex].actType &&
-                        currentEvents[currentEventIndex].type && (
-                          <span className="bg-bes-amber text-bes-red rounded-full px-2 py-0.5 text-xs">
-                            {currentEvents[currentEventIndex].type ===
-                            "workshop"
-                              ? "Taller"
-                              : currentEvents[currentEventIndex].type === "talk"
-                                ? "Charla"
-                                : currentEvents[currentEventIndex].type ===
-                                    "main"
-                                  ? "Principal"
-                                  : currentEvents[currentEventIndex].type}
-                          </span>
-                        )}
                     </div>
                   </div>
 
                   {currentEvents.length > 1 && (
                     <div className="mt-2 flex items-center justify-center gap-3">
                       <button
-                        onClick={prevEvent}
+                        onClick={handlePrevEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Evento anterior"
+                        aria-label={t("previousEvent")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -200,9 +261,9 @@ const LiveBanner = () => {
                         {currentEventIndex + 1} / {currentEvents.length}
                       </span>
                       <button
-                        onClick={nextEvent}
+                        onClick={handleNextEvent}
                         className="text-bes-amber transition-colors hover:text-white"
-                        aria-label="Siguiente evento"
+                        aria-label={t("nextEvent")}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -229,20 +290,22 @@ const LiveBanner = () => {
               )}
             </div>
           </div>
-          {/* Program button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="mt-3 flex items-center justify-center lg:mt-0"
-          >
-            <AnimatedButton
-              href="/timetable"
-              icon={<ProgramIcon />}
-              text="Ver programa"
-              isPrimary={true}
-            />
-          </motion.div>
+          {/* Program button - only show if timetable is available */}
+          {FESTIVAL_CONFIG.timetable.isAvailable && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.8 }}
+              className="mt-3 flex items-center justify-center lg:mt-0"
+            >
+              <AnimatedButton
+                href="/timetable"
+                icon={<ProgramIcon />}
+                text={t("viewProgram")}
+                isPrimary={true}
+              />
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </motion.div>
