@@ -11,11 +11,11 @@ const BannerText = ({ title, description }: BannerTextProps) => {
       <h3 className="text-bes-amber text-xl font-bold lg:text-2xl">{title}</h3>
       {description &&
         (typeof description === "string" ? (
-          <p className="mt-1 text-sm text-white lg:text-[1.2rem]">
+          <p className="mt-1 text-lg text-white lg:text-[1.2rem]">
             {description}
           </p>
         ) : (
-          <div className="mt-1 text-sm text-white lg:text-base">
+          <div className="mt-1 text-lg text-white lg:text-base">
             {description}
           </div>
         ))}

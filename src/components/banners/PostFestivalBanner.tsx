@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
 import { useTranslations } from "next-intl";
 import { AnimatedLogo, BannerText, CloseButton } from "@/components/ui";
-// import { GalleryIcon } from "@/components/icons";
 
 const PostFestivalBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
@@ -21,8 +20,6 @@ const PostFestivalBanner = () => {
   }, [setIsBannerVisible]);
 
   if (!isBannerVisible) return null;
-
-  // Using the GalleryIcon component from icons
 
   return (
     <motion.div
@@ -60,21 +57,6 @@ const PostFestivalBanner = () => {
             {/* Text content */}
             <BannerText title={t("title")} description={t("description")} />
           </div>
-
-          {/* Gallery button */}
-          {/* <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="mt-3 flex items-center justify-center lg:mt-0"
-          >
-            <AnimatedButton
-              href="/gallery"
-              icon={<GalleryIcon />}
-              text="Ver galería"
-              isPrimary={true}
-            />
-          </motion.div> */}
         </motion.div>
       </div>
     </motion.div>

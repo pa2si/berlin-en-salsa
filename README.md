@@ -1,3 +1,7 @@
+v2.0.1
+
+- desctiption text in post Banner for mobile view a bit bigger
+
 v2.0.0
 
 - complete refactor with internationalization using next-intl including metadata
