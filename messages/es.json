@@ -44,6 +44,11 @@
     "SectionFive": {
       "title": "Programa del Festival",
       "description": "Consulta nuestro horario interactivo y planifica tu experiencia en Berlin En Salsa. Haz clic en las imágenes para ver el horario completo y todos los detalles sobre los artistas, talleres y mucho más.",
+      "comingSoon": {
+        "title": "Programa Próximamente",
+        "message": "Estamos trabajando en el programa del festival. ¡Vuelve pronto para ver todos los detalles!",
+        "button": "Volver al Inicio"
+      },
       "days": {
         "monday": "Lunes",
         "tuesday": "Martes",

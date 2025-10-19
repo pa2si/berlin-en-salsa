@@ -72,6 +72,14 @@ export const FESTIVAL_CONFIG = {
   },
 
   /**
+   * Timetable availability configuration
+   * Set to true when the timetable is finalized and ready to be displayed
+   */
+  timetable: {
+    isAvailable: false, // Change to true when timetable is ready
+  },
+
+  /**
    * Dynamically generate festival days from start/end dates
    * This is a getter so it's computed on access
    */

@@ -1,7 +1,9 @@
 import React, { Suspense } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import TimetablePage from "@/components/timetable/TimetablePage";
+import TimetableComingSoon from "@/components/TimetableComingSoon";
 import { getTranslations } from "next-intl/server";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 import type { Metadata } from "next";
 
 // Base URL for absolute URLs in metadata
@@ -55,6 +57,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TimetablePageRoute() {
   const t = await getTranslations("Timetable.page");
+  const tComingSoon = await getTranslations("Sections.SectionFive.comingSoon");
+
+  // Show coming soon modal if timetable is not available
+  if (!FESTIVAL_CONFIG.timetable.isAvailable) {
+    return (
+      <TimetableComingSoon
+        title={tComingSoon("title")}
+        message={tComingSoon("message")}
+        buttonText={tComingSoon("button")}
+      />
+    );
+  }
 
   return (
     <>

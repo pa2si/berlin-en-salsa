@@ -19,6 +19,12 @@ const SectionFive = () => {
   const t = useTranslations("Sections.SectionFive");
   const locale = useLocale();
 
+  // Don't render the section if timetable is not available yet
+  // This check must come AFTER all hooks to comply with React rules of hooks
+  if (!FESTIVAL_CONFIG.timetable.isAvailable) {
+    return null;
+  }
+
   // Helper to set hover state for a specific day
   const setHovered = (dayId: string, isHovered: boolean) => {
     setHoveredDays((prev) => ({ ...prev, [dayId]: isHovered }));
@@ -108,7 +114,7 @@ const SectionFive = () => {
               {activeTab === day.weekday && (
                 <motion.div
                   layoutId="activeIndicatorMobile"
-                  className="absolute -bottom-1 left-0 right-0 mx-auto h-1 w-4 rounded-full bg-white"
+                  className="absolute right-0 -bottom-1 left-0 mx-auto h-1 w-4 rounded-full bg-white"
                 />
               )}
             </motion.div>
@@ -147,7 +153,7 @@ const SectionFive = () => {
                         className="w-full rounded-lg"
                       />
                       <motion.div
-                        className="bg-bes-red absolute inset-0 flex flex-col items-center justify-center bg-opacity-70"
+                        className="bg-bes-red bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
@@ -234,7 +240,7 @@ const SectionFive = () => {
                     transition={{ duration: 0.3 }}
                   />
                   <motion.div
-                    className="bg-bes-red absolute inset-0 flex flex-col items-center justify-center bg-opacity-70"
+                    className="bg-bes-red bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hoveredDays[day.id] ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
