@@ -1,3 +1,7 @@
+v2.0.2
+
+- desctiption text in post Banner for mobile view a bit smaller again
+
 v2.0.1
 
 - desctiption text in post Banner for mobile view a bit bigger
