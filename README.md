@@ -1,3 +1,16 @@
+v2.0.0
+
+- complete refactor with internationalization using next-intl including metadata
+- config file festival.ts with FESTIVAL_CONFIG.
+  - set festival dates control and timetable Boolean:
+    - in SectionOne which dates are displayed for the Festival
+    - If SectionFive is displayed
+    - if a Modal overlay is set over the timetable route
+  - The Banner chooses automatically which banner model to show:
+    - past
+    - current shows
+    - countdown
+
 whats done in after-refactor-conditional-render-timeline
 
 - implemented a bolloean flag in festival.ts which decided if SectionFive gets shown or if the timetabe route shows a modal or not
