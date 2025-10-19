@@ -1,4 +1,4 @@
-what to do in fixed-day-scalability-fix-show-also-in-section5
+whats done in fixed-day-scalability-fix-show-also-in-section5
 
 - show automatically the program link buttons in SectionFive depending on how many days are set.
 
