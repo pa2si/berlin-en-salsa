@@ -1,3 +1,7 @@
+whats done in after-refactor-conditional-render-timeline
+
+- implemented a bolloean flag in festival.ts which decided if SectionFive gets shown or if the timetabe route shows a modal or not
+
 whats done in after-more-refactor-more-fixes
 
 - date in Section One gets displayed according to the FESTIVAL_CONFIG
