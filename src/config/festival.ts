@@ -80,6 +80,14 @@ export const FESTIVAL_CONFIG = {
   },
 
   /**
+   * Features section (SectionThree) availability
+   * Set to true when you want to display festival features/program overview
+   */
+  sectionThree: {
+    isAvailable: false, // Change to false to hide the features section
+  },
+
+  /**
    * Dynamically generate festival days from start/end dates
    * This is a getter so it's computed on access
    */

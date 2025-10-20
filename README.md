@@ -1,3 +1,7 @@
+v2.0.3
+
+SectionThree visibility now also gets controlled in festival.ts
+
 v2.0.2
 
 - desctiption text in post Banner for mobile view a bit smaller again

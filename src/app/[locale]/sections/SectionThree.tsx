@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 
 const SectionThree = () => {
   // Define image sets for different screen sizes
@@ -56,6 +57,12 @@ const SectionThree = () => {
       return () => clearInterval(interval);
     }
   }, [images.length, hasMultipleImages, isMidSize]);
+
+  // Don't render the section if features are not available yet
+  // This check must come AFTER all hooks to comply with React rules of hooks
+  if (!FESTIVAL_CONFIG.sectionThree.isAvailable) {
+    return null;
+  }
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
