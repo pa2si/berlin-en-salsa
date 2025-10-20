@@ -6,6 +6,7 @@ import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import { Footer } from "@/components/Footer";
 import FestivalBanner from "@/components/FestivalBanner";
+import GallerySlider from "@/components/GallerySlider";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <FestivalBanner />
       <SectionOne />
       <SectionTwo />
+      <GallerySlider />
       <SectionThree />
       <SectionFour />
       <SectionFive />
