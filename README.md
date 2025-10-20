@@ -1,3 +1,7 @@
+v2.0.4
+
+- Announcement in Section One instead of dates and location when Festival Date is set to past in config File.
+
 v2.0.3
 
 SectionThree visibility now also gets controlled in festival.ts

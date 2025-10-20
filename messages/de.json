@@ -6,6 +6,10 @@
       "h1": "Berlin En Salsa - Ein Salsa-Festival in Berlin für alle",
       "date": "19. und 20. Juli",
       "venue": "Neulich Biergarten",
+      "cookingFestival": {
+        "line1": "Am köcheln...",
+        "line2": "der zweiten Auflage!"
+      },
       "festival": {
         "line1": "Ein Salsa-",
         "line2": "Festival",

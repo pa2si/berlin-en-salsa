@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { formatFestivalDates } from "@/utils/formatFestivalDates";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 
 const SectionOne = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,9 @@ const SectionOne = () => {
   const locale = useLocale();
 
   const festivalDate = formatFestivalDates(locale);
+
+  // Check if festival date has passed
+  const isFestivalPast = new Date() > FESTIVAL_CONFIG.dates.end;
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
@@ -37,7 +41,15 @@ const SectionOne = () => {
             }}
             className="text-bes-red w-full max-w-[450px] text-center text-[clamp(1.7rem,5vh,3.8rem)] leading-[1em] font-bold sm:mb-2 md:mb-4 md:w-[95%] xl:w-[115%] xl:max-w-[500px] xl:text-[clamp(1.7rem,5.5vh,4rem)]"
           >
-            {festivalDate} <br /> {t("venue")}
+            {isFestivalPast ? (
+              <>
+                {t("cookingFestival.line1")} <br /> {t("cookingFestival.line2")}
+              </>
+            ) : (
+              <>
+                {festivalDate} <br /> {t("venue")}
+              </>
+            )}
           </motion.p>
         </div>
       </div>

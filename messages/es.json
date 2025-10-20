@@ -6,6 +6,10 @@
       "h1": "Berlin En Salsa - Festival de Salsa en Berlín para todos",
       "date": "19 y 20 de julio",
       "venue": "Neulich Biergarten",
+      "cookingFestival": {
+        "line1": "Cocinando...",
+        "line2": "la segunda edición!"
+      },
       "festival": {
         "line1": "¡Un festival",
         "line2": "de salsa",
