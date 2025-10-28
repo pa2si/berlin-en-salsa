@@ -1,3 +1,7 @@
+v2.0.4 gallery-slider v 0.3
+
+- small hover adaptions
+
 v2.0.4 gallery-slider v 0.2
 
 - Caption overlay feature added to gallery images

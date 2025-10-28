@@ -181,8 +181,9 @@ const SectionTwo = () => {
           }}
           whileTap={{ scale: 0.9 }}
           transition={{
-            duration: 0.2,
-            ease: "easeIn",
+            type: "spring",
+            stiffness: 250,
+            damping: 10,
           }}
         >
           <ChevronLeft className="h-6 w-6" />
@@ -202,8 +203,9 @@ const SectionTwo = () => {
           }}
           whileTap={{ scale: 0.9 }}
           transition={{
-            duration: 0.3,
-            ease: "easeIn",
+            type: "spring",
+            stiffness: 300,
+            damping: 20,
           }}
         >
           <ChevronRight className="h-6 w-6" />
