@@ -1,3 +1,12 @@
+v2.0.4 gallery-slider v 0.2
+
+- Caption overlay feature added to gallery images
+  - Desktop: Hover over image to see caption with smooth fade-in transition
+  - Mobile: Info button to toggle caption overlay, closeable with X button
+  - Bilingual support: Captions available in Spanish and German
+  - Example captions provided for all 5 gallery images
+  - Elegant gradient overlay with BES amber text on dark background
+
 v2.0.4 gallery-slider v 0.1
 
 - slider integrated in SectionTwo

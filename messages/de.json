@@ -68,6 +68,16 @@
       "sundayAlt": "Programm für Sonntag",
       "viewFullProgram": "Vollständiges Programm ansehen"
     },
+    "Gallery": {
+      "captions": {
+        "image1": "Live-Orchester auf der Hauptbühne des Festivals",
+        "image2": "Salsa tanzen unter freiem Himmel in der Berliner Sonne",
+        "image3": "Publikum genießt Live-Auftritte",
+        "image4": "Musik-Workshop mit professionellen Perkussionisten",
+        "image5": "Vinyl-Markt mit Sammlern und Salsa-Liebhabern"
+      },
+      "closeCaption": "Schließen"
+    },
     "SectionSix": {
       "title": "Kontakt",
       "newsletter": {

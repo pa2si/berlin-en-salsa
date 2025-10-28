@@ -5,6 +5,7 @@
 export interface GalleryImage {
   src: string;
   alt: string;
+  captionKey: string; // Translation key for caption
 }
 
 /**
@@ -20,6 +21,7 @@ export const loadGalleryImages = (count: number = 10): GalleryImage[] => {
     images.push({
       src: `/gallery/gallery-${i}.webp`,
       alt: `Gallery image ${i}`,
+      captionKey: `Gallery.captions.image${i}`,
     });
   }
 

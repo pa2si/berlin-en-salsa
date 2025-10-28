@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, PanInfo } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { loadGalleryImages, GALLERY_CONFIG } from "@/config/gallery";
@@ -11,8 +11,11 @@ const SectionTwo = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isHoveringImage, setIsHoveringImage] = useState(false);
+  const [showCaption, setShowCaption] = useState(false);
   const slideContainerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("Sections.SectionTwo");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const tGallery: any = useTranslations("Sections.Gallery");
   const locale = useLocale();
 
   // Navigation functions
@@ -59,6 +62,11 @@ const SectionTwo = () => {
     }
   };
 
+  // Show caption automatically on mobile when slide changes
+  useEffect(() => {
+    setShowCaption(true);
+  }, [currentImage]);
+
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
       <div
@@ -84,10 +92,12 @@ const SectionTwo = () => {
             mass: 0.5,
           }}
         >
-          {galleryImages.map((image) => (
+          {galleryImages.map((image, index) => (
             <div
               key={image.src}
               className="relative h-full w-full flex-shrink-0"
+              onMouseEnter={() => setShowCaption(true)}
+              onMouseLeave={() => setShowCaption(false)}
             >
               <img
                 src={image.src}
@@ -95,6 +105,63 @@ const SectionTwo = () => {
                 className="h-full w-full object-cover"
                 draggable={false}
               />
+
+              {/* Caption Overlay */}
+              {index === currentImage && (
+                <>
+                  {/* Desktop - Hover to show */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: showCaption || isHoveringImage ? 1 : 0,
+                      y: showCaption || isHoveringImage ? 0 : 20,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-x-0 bottom-0 hidden bg-gradient-to-t from-black/80 via-black/60 to-transparent px-6 pt-12 pb-6 sm:block"
+                  >
+                    <p className="text-bes-amber text-base leading-relaxed font-medium md:text-lg">
+                      {tGallery(`captions.image${index + 1}`)}
+                    </p>
+                  </motion.div>
+
+                  {/* Mobile - At the top, always shown unless closed */}
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{
+                      opacity: showCaption ? 1 : 0,
+                      y: showCaption ? 0 : -20,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent px-4 pt-4 pb-12 sm:hidden"
+                    style={{ pointerEvents: showCaption ? "auto" : "none" }}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="text-bes-amber flex-1 text-sm leading-relaxed font-medium">
+                        {tGallery(`captions.image${index + 1}`)}
+                      </p>
+                      <button
+                        onClick={() => setShowCaption(false)}
+                        className="bg-bes-red/90 text-bes-amber hover:bg-bes-red flex-shrink-0 rounded-full p-1 transition-colors"
+                        aria-label={tGallery("closeCaption")}
+                      >
+                        <svg
+                          className="h-3.5 w-3.5"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M6 18L18 6M6 6l12 12"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </motion.div>
+                </>
+              )}
             </div>
           ))}
         </motion.div>
@@ -113,7 +180,10 @@ const SectionTwo = () => {
             scale: isHoveringImage ? 1 : 0.85,
           }}
           whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.1 }}
+          transition={{
+            duration: 0.2,
+            ease: "easeIn",
+          }}
         >
           <ChevronLeft className="h-6 w-6" />
         </motion.button>
@@ -131,7 +201,10 @@ const SectionTwo = () => {
             scale: isHoveringImage ? 1 : 0.85,
           }}
           whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.1 }}
+          transition={{
+            duration: 0.3,
+            ease: "easeIn",
+          }}
         >
           <ChevronRight className="h-6 w-6" />
         </motion.button>
