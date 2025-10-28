@@ -1,76 +1,207 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, PanInfo } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import { loadGalleryImages, GALLERY_CONFIG } from "@/config/gallery";
+import { ChevronLeft, ChevronRight } from "@/components/GalleryIcons";
 
 const SectionTwo = () => {
-  const images = ["/section-2-image-1.webp"];
+  const galleryImages = loadGalleryImages(GALLERY_CONFIG.imageCount);
   const [currentImage, setCurrentImage] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isHoveringImage, setIsHoveringImage] = useState(false);
   const slideContainerRef = useRef<HTMLDivElement>(null);
-  const hasMultipleImages = images.length > 1;
   const t = useTranslations("Sections.SectionTwo");
   const locale = useLocale();
 
-  // Handle image tap/click to advance to next image (only for multiple images)
-  const handleImageClick = () => {
-    if (hasMultipleImages) {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }
+  // Navigation functions
+  const nextSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentImage((prev) => (prev + 1) % galleryImages.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
-  // Auto-rotate images every 5 seconds (only for multiple images)
-  useEffect(() => {
-    if (hasMultipleImages) {
-      const interval = setInterval(() => {
-        setCurrentImage((prev) => (prev + 1) % images.length);
-      }, 5000);
+  const prevSlide = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setCurrentImage((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1,
+    );
+    setTimeout(() => setIsAnimating(false), 500);
+  };
 
-      return () => clearInterval(interval);
+  const goToSlide = (index: number) => {
+    if (isAnimating || index === currentImage) return;
+    setIsAnimating(true);
+    setCurrentImage(index);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  // Handle drag end for swipe navigation
+  const handleDragEnd = (
+    event: MouseEvent | TouchEvent | PointerEvent,
+    info: PanInfo,
+  ) => {
+    const swipeThreshold = 50;
+    const swipeVelocityThreshold = 500;
+
+    if (
+      Math.abs(info.offset.x) > swipeThreshold ||
+      Math.abs(info.velocity.x) > swipeVelocityThreshold
+    ) {
+      if (info.offset.x > 0) {
+        prevSlide();
+      } else {
+        nextSlide();
+      }
     }
-  }, [images.length, hasMultipleImages]);
+  };
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
       <div
-        className={`relative flex h-[50vh] sm:h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}
+        className="group relative flex h-[50vh] items-center justify-center overflow-hidden sm:h-svh sm:w-1/2"
         ref={slideContainerRef}
-        onClick={hasMultipleImages ? handleImageClick : undefined}
+        onMouseEnter={() => setIsHoveringImage(true)}
+        onMouseLeave={() => setIsHoveringImage(false)}
       >
-        {images.map((img, index) => (
-          <div
-            key={img}
-            className={`absolute inset-0 bg-cover bg-center ${
-              hasMultipleImages ? "transition-opacity duration-1000" : ""
-            } ${
-              !hasMultipleImages || index === currentImage
-                ? "opacity-100"
-                : "opacity-0"
-            }`}
-            style={{
-              backgroundImage: `url("${img}")`,
-              backgroundPosition: "50% 50%",
-            }}
-          />
-        ))}
-
-        {/* Navigation dots - only show for multiple images */}
-        {hasMultipleImages && (
-          <div className="absolute bottom-4 z-10 flex space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === currentImage
-                    ? "bg-bes-amber"
-                    : "bg-opacity-50 bg-white"
-                }`}
-                onClick={() => setCurrentImage(index)}
-                aria-label={`Go to slide ${index + 1}`}
+        {/* Slider with drag support */}
+        <motion.div
+          className="flex h-full cursor-grab active:cursor-grabbing"
+          drag="x"
+          dragElastic={0.2}
+          dragMomentum={false}
+          onDragEnd={handleDragEnd}
+          animate={{
+            x: `${-currentImage * 100}%`,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 500,
+            damping: 50,
+            mass: 0.5,
+          }}
+        >
+          {galleryImages.map((image) => (
+            <div
+              key={image.src}
+              className="relative h-full w-full flex-shrink-0"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full object-cover"
+                draggable={false}
               />
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Navigation Arrows - Desktop (on the sides) */}
+        <motion.button
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          disabled={isAnimating}
+          className="bg-bes-red text-bes-amber absolute top-1/2 left-2 z-30 hidden -translate-y-1/2 rounded-full p-2 shadow-lg disabled:opacity-30 sm:left-4 sm:flex sm:p-2.5"
+          aria-label="Previous image"
+          animate={{
+            opacity: isHoveringImage ? 1 : 0.5,
+            scale: isHoveringImage ? 1 : 0.85,
+          }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.1 }}
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </motion.button>
+
+        <motion.button
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          disabled={isAnimating}
+          className="bg-bes-red text-bes-amber absolute top-1/2 right-2 z-30 hidden -translate-y-1/2 rounded-full p-2 shadow-lg disabled:opacity-30 sm:right-4 sm:flex sm:p-2.5"
+          aria-label="Next image"
+          animate={{
+            opacity: isHoveringImage ? 1 : 0.5,
+            scale: isHoveringImage ? 1 : 0.85,
+          }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17, delay: 0.1 }}
+        >
+          <ChevronRight className="h-6 w-6" />
+        </motion.button>
+
+        {/* Navigation Controls - Mobile & Desktop */}
+        <div className="absolute bottom-4 z-10 flex items-center gap-3 sm:gap-2">
+          {/* Left Arrow - Mobile only */}
+          <motion.button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevSlide();
+            }}
+            disabled={isAnimating}
+            className="bg-bes-red text-bes-amber flex rounded-full p-1.5 opacity-60 shadow-lg disabled:opacity-30 sm:hidden"
+            aria-label="Previous image"
+            whileTap={{ scale: 0.85 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <ChevronLeft className="h-4 w-4" />
+          </motion.button>
+
+          {/* Navigation Dots */}
+          <div className="flex items-center gap-2">
+            {galleryImages.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => goToSlide(index)}
+                disabled={isAnimating}
+                className="group relative"
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label={`Go to image ${index + 1}`}
+              >
+                <div
+                  className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                    index === currentImage
+                      ? "bg-bes-red shadow-bes-red/50 scale-125 shadow-lg"
+                      : "bg-bes-red/30 group-hover:bg-bes-red/60"
+                  }`}
+                />
+                {index === currentImage && (
+                  <motion.div
+                    layoutId="activeIndicator"
+                    className="border-bes-amber absolute inset-0 rounded-full border-2"
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30,
+                    }}
+                  />
+                )}
+              </motion.button>
             ))}
           </div>
-        )}
+
+          {/* Right Arrow - Mobile only */}
+          <motion.button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextSlide();
+            }}
+            disabled={isAnimating}
+            className="bg-bes-red text-bes-amber flex rounded-full p-2 opacity-60 shadow-lg disabled:opacity-30 sm:hidden"
+            aria-label="Next image"
+            whileTap={{ scale: 0.85 }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
+          >
+            <ChevronRight className="h-5 w-5" />
+          </motion.button>
+        </div>
       </div>
       <div className="bg-bes-amber flex h-auto overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
         <motion.div

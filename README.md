@@ -1,3 +1,8 @@
+v2.0.4 gallery-slider v 0.1
+
+- slider integrated in SectionTwo
+- images come from public folder / gallery and must be named: gallery-1.webp, etc.
+
 v2.0.4
 
 - Announcement in Section One instead of dates and location when Festival Date is set to past in config File.

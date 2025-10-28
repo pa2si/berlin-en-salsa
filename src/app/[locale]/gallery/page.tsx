@@ -1,13 +1,8 @@
-import GallerySlider from "@/components/GallerySlider";
+import { redirect } from "next/navigation";
 
 /**
- * Example page demonstrating the Gallery Slider
- * You can integrate this into any page or section
+ * Gallery page - redirects to home page where the gallery is integrated in SectionTwo
  */
 export default function GalleryPage() {
-  return (
-    <main className="min-h-screen">
-      <GallerySlider />
-    </main>
-  );
+  redirect("/");
 }

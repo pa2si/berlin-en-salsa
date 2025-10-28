@@ -18,7 +18,7 @@ export const loadGalleryImages = (count: number = 10): GalleryImage[] => {
 
   for (let i = 1; i <= count; i++) {
     images.push({
-      src: `/gallery/gallery-${i}.jpg`,
+      src: `/gallery/gallery-${i}.webp`,
       alt: `Gallery image ${i}`,
     });
   }
