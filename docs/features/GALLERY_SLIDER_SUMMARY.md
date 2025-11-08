@@ -2,34 +2,32 @@
 
 ## ✅ What Has Been Created
 
-### Core Components
+### Core Components / Placement
 
-1. **`GallerySlider.tsx`** - Main gallery component with innovative tilted card stack design
+1. **`SectionTwo.tsx`** (in `src/app/[locale]/sections`) - Integrated gallery UI (recommended)
 2. **`GalleryIcons.tsx`** - Lightweight SVG icon components
-3. **`useGallerySlider.ts`** - Custom hook for gallery logic (separated from UI)
-4. **`gallery.ts`** - Configuration and image loader utility
+3. **`gallery.ts`** - Configuration and image loader utility
 
 ### File Structure
 
 ```
 src/
+├── app/[locale]/sections/
+│   └── SectionTwo.tsx              # Integrated gallery UI
 ├── components/
-│   ├── GallerySlider.tsx          ✅ Main UI component
-│   └── GalleryIcons.tsx            ✅ Icon components
-├── hooks/
-│   └── useGallerySlider.ts         ✅ Logic hook
-├── config/
-│   └── gallery.ts                  ✅ Configuration
-└── app/[locale]/gallery/
-    └── page.tsx                    ✅ Example page
+│   └── GalleryIcons.tsx            # Icon components
+└── config/
+   └── gallery.ts                  # Configuration
 
 public/
-└── gallery/                        ✅ Created (empty, ready for images)
-    └── README.md                   ✅ Image guidelines
+└── gallery/                        # Image assets and guidelines
+   └── README.md
+```
 
 docs/features/
-├── GALLERY_SLIDER_IMPLEMENTATION.md  ✅ Full documentation
-└── GALLERY_INTEGRATION_EXAMPLES.md   ✅ Integration examples
+├── GALLERY_SLIDER_IMPLEMENTATION.md ✅ Full documentation
+└── GALLERY_INTEGRATION_EXAMPLES.md ✅ Integration examples
+
 ```
 
 ## 🎯 Design Features
@@ -75,12 +73,14 @@ docs/features/
 Place compressed WebP images in `/public/gallery/`:
 
 ```
+
 /public/gallery/
 ├── gallery-1.webp
 ├── gallery-2.webp
 ├── gallery-3.webp
 └── ...
-```
+
+````
 
 ### Step 2: Configure
 
@@ -88,15 +88,17 @@ Edit `/src/config/gallery.ts`:
 
 ```typescript
 imageCount: 5, // Set to your actual number of images
-```
+````
 
-### Step 3: Import Component
+### Step 3: Use the integrated section or build a custom UI
 
 ```tsx
-import GallerySlider from "@/components/GallerySlider";
+// Recommended: render the integrated section that contains the gallery
+import SectionTwo from "./sections/SectionTwo";
 
-// Then use it:
-<GallerySlider />;
+export default function Page() {
+  return <SectionTwo />;
+}
 ```
 
 ## 📋 Quick Start Checklist
@@ -106,7 +108,7 @@ import GallerySlider from "@/components/GallerySlider";
 - [ ] Name as `gallery-1.webp`, `gallery-2.webp`, etc.
 - [ ] Place in `/public/gallery/` folder
 - [ ] Update `imageCount` in `/src/config/gallery.ts`
-- [ ] Import and use `<GallerySlider />` in your page
+- [ ] Render the integrated gallery via `SectionTwo` or add a custom wrapper
 - [ ] Test on desktop and mobile
 - [ ] Adjust auto-play interval if desired
 
@@ -147,7 +149,7 @@ autoPlay: true,          // Enable/disable
 ### Animation Speed
 
 ```typescript
-// In GallerySlider.tsx
+// In SectionTwo.tsx (integrated gallery)
 duration: 0.6,           // Seconds for transitions
 ```
 

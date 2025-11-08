@@ -1,133 +1,63 @@
-# Gallery Slider - Integration Examples
+# Gallery Slider — Integration Notes
 
-Choose the integration method that best fits your needs.
+The gallery UI was consolidated into the homepage section `SectionTwo` (`src/app/[locale]/sections/SectionTwo.tsx`). If you previously used the standalone `GallerySlider` component or the `/gallery` page, prefer the integrated section or create a small wrapper to reuse the gallery UI.
 
-## Example 1: Standalone Gallery Page
+Below are concise integration patterns that match the current codebase.
 
-**File:** `src/app/[locale]/gallery/page.tsx`
+## Example 1: Use the integrated Section (recommended)
 
-```tsx
-import GallerySlider from "@/components/GallerySlider";
-
-export default function GalleryPage() {
-  return (
-    <main>
-      <GallerySlider />
-    </main>
-  );
-}
-```
-
-## Example 2: As a Section in Main Page
-
-**File:** `src/app/[locale]/page.tsx`
+The gallery is part of `SectionTwo`. To show the gallery inside another page or section, import and render `SectionTwo` (or add it to your layout):
 
 ```tsx
-import GallerySlider from "@/components/GallerySlider";
-import SectionOne from "./sections/SectionOne";
 import SectionTwo from "./sections/SectionTwo";
-// ... other sections
 
-export default function HomePage() {
+export default function Page() {
   return (
     <main>
-      <SectionOne />
+      {/* SectionTwo includes the gallery UI */}
       <SectionTwo />
-      {/* Insert gallery between sections */}
-      <GallerySlider />
-      {/* ... other sections */}
     </main>
   );
 }
 ```
 
-## Example 3: Create a New Section Component
+## Example 2: Create a small standalone wrapper
 
-**File:** `src/app/[locale]/sections/SectionGallery.tsx`
+If you want a dedicated route or section file, create a thin wrapper that re-uses `SectionTwo`'s gallery UI:
 
 ```tsx
 "use client";
 
-import GallerySlider from "@/components/GallerySlider";
+import SectionTwo from "@/app/[locale]/sections/SectionTwo";
 
-const SectionGallery = () => {
-  return <GallerySlider />;
-};
-
-export default SectionGallery;
-
-export default SectionGallery;
+export default function SectionGallery() {
+  return <SectionTwo />; // reuse the same gallery UI
+}
 ```
 
-Then import in your main page:
+## Example 3: Build a custom gallery UI (advanced)
+
+If you need a custom UI, use the gallery loader from `src/config/gallery.ts` to get the image list and implement your own controls (drag, arrows, dots) using Framer Motion.
 
 ```tsx
-import SectionGallery from "./sections/SectionGallery";
-```
+"use client";
 
-## Example 4: Embedded in Another Component
+import { loadGalleryImages } from "@/config/gallery";
 
-Add gallery to any existing component.
+export default function CustomGallery() {
+  const images = loadGalleryImages(6); // load N images from /public/gallery
 
-```tsx
-import GallerySlider from "@/components/GallerySlider";
-
-export default function SomeComponent() {
   return (
     <div>
-      <h1>Some Content</h1>
-      <p>Text here...</p>
-
-      {/* Gallery slider */}
-      <GallerySlider />
-
-      <p>More content...</p>
+      {images.map((img) => (
+        <img key={img.src} src={img.src} alt={img.alt} />
+      ))}
     </div>
   );
 }
 ```
 
-## Example 5: Conditional Rendering
+### Notes
 
-Show gallery only when certain conditions are met.
-
-```tsx
-import GallerySlider from "@/components/GallerySlider";
-
-export default function ConditionalGallery() {
-  const showGallery = true; // Your condition here
-
-  return <div>{showGallery && <GallerySlider />}</div>;
-}
-```
-
-## Customization Example
-
-If you need to pass custom configuration:
-
-1. Update `src/config/gallery.ts` with your settings
-2. Or create a custom wrapper component:
-
-```tsx
-"use client";
-
-import { motion, AnimatePresence } from "framer-motion";
-import { useGallerySlider } from "@/hooks/useGallerySlider";
-import { loadGalleryImages } from "@/config/gallery";
-// ... import other dependencies
-
-export default function CustomGallery() {
-  // Load custom number of images
-  const images = loadGalleryImages(8); // Only 8 images
-
-  // Use hook with custom config
-  const galleryState = useGallerySlider({
-    images,
-    autoPlayInterval: 3000, // 3 seconds instead of 5
-    autoPlay: true,
-  });
-
-  // Then use galleryState in your custom UI
-  return <div>{/* Your custom gallery UI */}</div>;
-}
-```
+- The legacy standalone `GallerySlider` component and the `/gallery` example page were removed in favor of the integrated implementation in `SectionTwo`.
+- If you used any pre-built examples that imported `GallerySlider`, replace them by either using `SectionTwo` or implementing a custom UI with `loadGalleryImages`.

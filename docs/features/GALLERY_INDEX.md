@@ -25,9 +25,12 @@ imageCount: 5,  // Match your actual number of images
 ### 3. Use
 
 ```tsx
-import GallerySlider from "@/components/GallerySlider";
+// Recommended: the gallery is integrated into SectionTwo
+import SectionTwo from "./sections/SectionTwo";
 
-<GallerySlider />;
+export default function Page() {
+  return <SectionTwo />; // includes the gallery
+}
 ```
 
 That's it! 🎉
@@ -72,32 +75,23 @@ That's it! 🎉
 
 ## 📦 What's Included
 
-### Components
+### Components & Placement
 
 ```
-src/components/
-├── GallerySlider.tsx       # Main UI component
-└── GalleryIcons.tsx         # Icon components
+src/app/[locale]/sections/SectionTwo.tsx  # Integrated gallery UI (recommended)
+src/components/GalleryIcons.tsx           # Icon components used by the gallery
 ```
 
-### Logic & Config
+### Config
 
 ```
-src/
-├── hooks/
-│   └── useGallerySlider.ts  # Gallery state management
-└── config/
-    └── gallery.ts            # Configuration & utilities
+src/config/gallery.ts  # Configuration & utilities (image loader, captions)
 ```
 
 ### Example & Assets
 
 ```
-src/app/[locale]/gallery/
-└── page.tsx                  # Example usage page
-
-public/gallery/
-└── README.md                 # Image guidelines
+public/gallery/         # Put your gallery images here (gallery-1.webp, ...)
 ```
 
 ### Documentation
@@ -154,12 +148,12 @@ export const GALLERY_CONFIG = {
 ### Advanced Customization
 
 ```tsx
-// Custom hook usage
-const gallery = useGallerySlider({
-  images: customImages,
-  autoPlayInterval: 3000, // 3 seconds
-  autoPlay: false, // Manual only
-});
+// Custom gallery loader example
+import { loadGalleryImages } from "@/config/gallery";
+
+const images = loadGalleryImages(8);
+
+// Implement your own UI with Framer Motion and the loaded images
 ```
 
 ---
@@ -223,8 +217,8 @@ See [Implementation Guide](./GALLERY_SLIDER_IMPLEMENTATION.md) for more help.
 
 ### Understanding the Code
 
-1. **Hook Pattern**: `useGallerySlider.ts` - Learn custom hooks
-2. **Framer Motion**: `GallerySlider.tsx` - Animation patterns
+1. **Integrated UI**: `SectionTwo.tsx` - Integrated gallery UI and animation examples
+2. **Framer Motion**: see `SectionTwo.tsx` for motion patterns and transitions
 3. **TypeScript**: Full type safety throughout
 4. **Responsive Design**: Mobile-first approach
 
@@ -261,10 +255,9 @@ Part of the Berlin en Salsa project.
 
 To modify or extend:
 
-1. **Logic changes**: Edit `src/hooks/useGallerySlider.ts`
-2. **UI changes**: Edit `src/components/GallerySlider.tsx`
-3. **Config changes**: Edit `src/config/gallery.ts`
-4. **Style changes**: Update Tailwind classes in component
+1. **UI changes / integration**: Edit `src/app/[locale]/sections/SectionTwo.tsx`
+2. **Config changes**: Edit `src/config/gallery.ts`
+3. **Style changes**: Update Tailwind classes in `SectionTwo` or `GalleryIcons`
 
 ---
 

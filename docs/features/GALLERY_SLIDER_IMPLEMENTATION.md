@@ -27,20 +27,19 @@
 
 ```
 src/
+├── app/
+│   └── [locale]/sections/SectionTwo.tsx  # Integrated gallery UI (recommended)
 ├── components/
-│   ├── GallerySlider.tsx          # Main gallery component (UI)
-│   └── GalleryIcons.tsx            # Icon components
-├── hooks/
-│   └── useGallerySlider.ts         # Gallery logic hook
+│   └── GalleryIcons.tsx                   # Icon components used by the gallery
 └── config/
-    └── gallery.ts                  # Configuration & image loader
+  └── gallery.ts                         # Configuration & image loader
 
 public/
 └── gallery/
-    ├── README.md                   # Image guidelines
-    ├── gallery-1.webp             # Your images here
-    ├── gallery-2.webp
-    └── ...
+  ├── README.md                          # Image guidelines
+  ├── gallery-1.webp                      # Your images here
+  ├── gallery-2.webp
+  └── ...
 ```
 
 ## 🚀 Usage
@@ -67,15 +66,36 @@ export const GALLERY_CONFIG = {
 } as const;
 ```
 
-### 3. Import and Use Component
+### 3. Use the integrated gallery or build custom UI
+
+The project now provides an integrated gallery inside `SectionTwo`. Use `SectionTwo` directly to render the gallery in your page. If you need a custom gallery UI, use `loadGalleryImages` from `src/config/gallery.ts` to load images and implement your own controls with Framer Motion.
+
+Example — render integrated section:
 
 ```tsx
-import GallerySlider from "@/components/GallerySlider";
+import SectionTwo from "./sections/SectionTwo";
 
 export default function Page() {
   return (
+    <main>
+      <SectionTwo />
+    </main>
+  );
+}
+```
+
+Example — custom gallery loader:
+
+```tsx
+import { loadGalleryImages } from "@/config/gallery";
+
+export default function CustomGallery() {
+  const images = loadGalleryImages(6);
+  return (
     <div>
-      <GallerySlider />
+      {images.map((i) => (
+        <img key={i.src} src={i.src} alt={i.alt} />
+      ))}
     </div>
   );
 }
@@ -116,19 +136,19 @@ export default function Page() {
 
 ### Adjust Animation Speed
 
-In `/src/hooks/useGallerySlider.ts`:
+Animation timing and the short "isAnimating" timeout are now handled inside `SectionTwo` (the integrated gallery UI).
 
-```typescript
-setTimeout(() => setIsAnimating(false), 600); // Change duration (ms)
+To change the gating timeout that prevents double navigation, edit the timeout in `src/app/[locale]/sections/SectionTwo.tsx` (look for the `setTimeout` call that clears `isAnimating`). Example:
+
+```ts
+// in SectionTwo.tsx (logic section)
+setTimeout(() => setIsAnimating(false), 600); // ms — adjust to taste
 ```
 
-In `/src/components/GallerySlider.tsx`:
+To tweak the Framer Motion transition for the slide animation, adjust the `transition` prop on the motion container in `SectionTwo`:
 
-```typescript
-transition={{
-  duration: 0.6, // Change animation duration (seconds)
-  ease: [0.43, 0.13, 0.23, 0.96],
-}}
+```ts
+transition={{ type: 'spring', stiffness: 300, damping: 20 }}
 ```
 
 ### Change Auto-Play Interval
@@ -218,8 +238,8 @@ for img in *.jpg; do cwebp -q 80 "$img" -o "${img%.jpg}.webp"; done
 
 1. Add your images to `/public/gallery/`
 2. Update `imageCount` in config
-3. Import `<GallerySlider />` where needed
+3. Render the integrated `SectionTwo` (or create a thin wrapper) where you want the gallery to appear
 4. Customize colors/timing if desired
 5. Test on mobile and desktop
 
-Enjoy your innovative gallery slider! 🎉
+Enjoy the updated gallery integration! 🎉

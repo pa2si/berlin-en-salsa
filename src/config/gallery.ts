@@ -35,5 +35,5 @@ export const GALLERY_CONFIG = {
   autoPlayInterval: 5000, // 5 seconds
   autoPlay: true,
   maxImages: 10,
-  imageCount: 5, // Change this to match actual number of images in /public/gallery
+  imageCount: 6, // Change this to match actual number of images in /public/gallery
 } as const;

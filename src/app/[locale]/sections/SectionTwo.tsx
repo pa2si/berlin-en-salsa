@@ -136,7 +136,7 @@ const SectionTwo = () => {
                     style={{ pointerEvents: showCaption ? "auto" : "none" }}
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <p className="text-bes-amber flex-1 text-sm leading-relaxed font-medium">
+                      <p className="text-bes-amber flex-1 leading-relaxed font-medium">
                         {tGallery(`captions.image${index + 1}`)}
                       </p>
                       <button
