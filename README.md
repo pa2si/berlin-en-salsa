@@ -1,3 +1,7 @@
+v2.1.1
+
+- Orquestas in gallery caputure is now with minor o
+
 v2.1.0
 
 - SectionTwo now has a Gallery
