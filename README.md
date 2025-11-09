@@ -1,3 +1,7 @@
+v2.1.2
+
+Set new dates for Festival -> countdown Banner
+
 v2.1.1
 
 - Orquestas in gallery caputure is now with minor o

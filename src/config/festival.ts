@@ -67,8 +67,8 @@ export type FestivalDayId = `day${number}`;
 // Festival date configuration
 export const FESTIVAL_CONFIG = {
   dates: {
-    start: new Date("July 19, 2025 12:30:00"),
-    end: new Date("July 20 2025 23:59:59"),
+    start: new Date("July 03, 2026 12:30:00"),
+    end: new Date("July 05 2026 23:59:59"),
   },
 
   /**
