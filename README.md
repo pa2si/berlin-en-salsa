@@ -1,3 +1,7 @@
+v2.1.0
+
+- SectionTwo now has a Gallery
+
 v2.0.5
 
 - cookingFestival modified
