@@ -1,3 +1,7 @@
+v2.1.3
+
+display countdown only when its loadad and otherwise show loading message
+
 v2.1.2
 
 Set new dates for Festival -> countdown Banner

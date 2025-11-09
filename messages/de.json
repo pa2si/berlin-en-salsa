@@ -122,7 +122,8 @@
     "countdown": {
       "title": "Countdown bis Berlin En Salsa!",
       "closeLabel": "Anzeige schließen",
-      "viewProgram": "Programm ansehen"
+      "viewProgram": "Programm ansehen",
+      "calculating": "am Rechnen"
     },
     "live": {
       "title": "Berlin En Salsa läuft jetzt!",

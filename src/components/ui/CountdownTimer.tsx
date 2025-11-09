@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface CountdownTimerProps {
   targetDate: Date;
@@ -12,18 +13,23 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [isReady, setIsReady] = useState(false);
+  const t = useTranslations("Banners.countdown");
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    let interval: NodeJS.Timeout | null = null;
+
+    const update = () => {
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
 
       if (distance < 0) {
-        clearInterval(interval);
+        if (interval) clearInterval(interval);
         setDays(0);
         setHours(0);
         setMinutes(0);
         setSeconds(0);
+        setIsReady(true);
         return;
       }
 
@@ -33,10 +39,25 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
       );
       setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
       setSeconds(Math.floor((distance % (1000 * 60)) / 1000));
-    }, 1000);
+      setIsReady(true);
+    };
 
-    return () => clearInterval(interval);
+    // Run once immediately to populate values, then every second
+    update();
+    interval = setInterval(update, 1000);
+
+    return () => {
+      if (interval) clearInterval(interval);
+    };
   }, [targetDate]);
+
+  if (!isReady) {
+    return (
+      <div className="mt-2 flex items-center justify-center text-sm text-white lg:justify-start lg:text-base">
+        {t ? t("calculating") : "calculando"}
+      </div>
+    );
+  }
 
   return (
     <div className="mt-2 flex flex-wrap items-center justify-center gap-2 text-sm text-white lg:justify-start lg:text-base">
