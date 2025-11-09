@@ -68,6 +68,17 @@
       "sundayAlt": "Programm für Sonntag",
       "viewFullProgram": "Vollständiges Programm ansehen"
     },
+    "Gallery": {
+      "captions": {
+        "image1": "Unsere letzte Descarga vor dem Berlin En Salsa Festival 2025",
+        "image2": "Salsa leben unter freiem Himmel in der Berliner Sonne",
+        "image3": "Das Publikum genießt die Live-Auftritte",
+        "image4": "Tanzkurse mit den besten Lehrer*innen",
+        "image5": "Die besten Live-Orchester der Salsaszene in Berlin",
+        "image6": "Ein historischer Moment für die Berliner Salsa Szene"
+      },
+      "closeCaption": "Schließen"
+    },
     "SectionSix": {
       "title": "Kontakt",
       "newsletter": {

@@ -68,6 +68,17 @@
       "sundayAlt": "Programa del Domingo",
       "viewFullProgram": "Ver programa completo"
     },
+    "Gallery": {
+      "captions": {
+        "image1": "Nuestra Descarga Final antes del Berlin En Salsa Festival 2025",
+        "image2": "Vivir salsa al aire libre bajo el sol de Berlín",
+        "image3": "Público disfrutando de las presentaciones en vivo",
+        "image4": "Clases de baile con lxs mejores profes",
+        "image5": "Las mejores Orquestas en vivo del panorama salsero en Berlin",
+        "image6": "Un momento histórico para la escena salsera de Berlín."
+      },
+      "closeCaption": "Cerrar"
+    },
     "SectionSix": {
       "title": "Contacto",
       "newsletter": {
