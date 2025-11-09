@@ -5,7 +5,7 @@
       "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
       "h1": "Berlin En Salsa - Festival de Salsa en Berlín para todos",
       "date": "19 y 20 de julio",
-      "venue": "",
+      "venue": "Neulich Biergarten",
       "cookingFestival": {
         "line1": "Cocinando...",
         "line2": "¡la segunda edición!"
@@ -122,8 +122,7 @@
     "countdown": {
       "title": "¡Cuenta regresiva hasta Berlin En Salsa!",
       "closeLabel": "Cerrar anuncio",
-      "viewProgram": "Ver programa",
-      "calculating": "calculando"
+      "viewProgram": "Ver programa"
     },
     "live": {
       "title": "¡Ya estamos gozando Berlin En Salsa!",

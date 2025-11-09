@@ -1,3 +1,10 @@
+v2.1.4
+
+- added venueIsKnown boolean to festival.ts config file
+- the venue name is now rendered depending on the boolean
+- the map in SectinoSix is now also depending on the boolean
+- venue map is now a component
+
 v2.1.3
 
 display countdown only when its loadad and otherwise show loading message

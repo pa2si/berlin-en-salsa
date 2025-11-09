@@ -14,7 +14,8 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [isReady, setIsReady] = useState(false);
-  const t = useTranslations("Banners.countdown");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const tAny: any = useTranslations("Banners.countdown");
 
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
@@ -54,7 +55,7 @@ const CountdownTimer = ({ targetDate }: CountdownTimerProps) => {
   if (!isReady) {
     return (
       <div className="mt-2 flex items-center justify-center text-sm text-white lg:justify-start lg:text-base">
-        {t ? t("calculating") : "calculando"}
+        {tAny ? tAny("calculating") : "calculando"}
       </div>
     );
   }

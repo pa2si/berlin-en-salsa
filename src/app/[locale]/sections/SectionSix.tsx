@@ -1,9 +1,10 @@
 "use client";
 
 import { SubscribeSection } from "@/components/SubscribeSesction";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import LocationMap from "@/components/Map/LocationMap";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 
 const SectionSix = () => {
   const t = useTranslations("Sections.SectionSix");
@@ -124,59 +125,50 @@ const SectionSix = () => {
           </motion.a>
         </motion.div>
 
-        {/* Two-Column Content */}
-        <motion.div
-          className="flex flex-col lg:w-full lg:flex-row lg:items-center lg:gap-6 xl:gap-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-        >
-          {/* Left Column - Form */}
+        {/* Two-Column Content or centered single column when venue unknown */}
+        {FESTIVAL_CONFIG.venueIsKnown ? (
           <motion.div
-            className="flex w-full flex-col items-center justify-center lg:w-1/2"
+            className="flex flex-col lg:w-full lg:flex-row lg:items-center lg:gap-6 xl:gap-10"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <SubscribeSection />
-          </motion.div>
+            {/* Left Column - Form */}
+            <motion.div
+              className="flex w-full flex-col items-center justify-center lg:w-1/2"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            >
+              <SubscribeSection />
+            </motion.div>
 
-          {/* Right Column - Map */}
+            {/* Right Column - Map */}
+            <motion.div
+              className="mt-8 flex w-full flex-col items-center lg:mt-0 lg:w-1/2 lg:justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            >
+              <LocationMap alt={t("title")} />
+            </motion.div>
+          </motion.div>
+        ) : (
           <motion.div
-            className="mt-8 flex w-full flex-col items-center lg:mt-0 lg:w-1/2 lg:justify-center"
+            className="flex w-full items-center justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           >
-            <div className="w-full max-w-xl lg:max-w-none">
-              <motion.a
-                href="https://maps.app.goo.gl/KGTZ4cBkoJC1NAKq8"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block overflow-hidden rounded-lg shadow-lg transition-transform"
-                whileHover={{
-                  scale: 1.02,
-                  boxShadow: "0px 10px 20px rgba(0,0,0,0.2)",
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              >
-                <Image
-                  src="/googlemaps.webp"
-                  alt="Mapa de la ubicación de Berlin En Salsa"
-                  width={600}
-                  height={350}
-                  className="h-auto max-h-[350px] w-full object-cover"
-                />
-              </motion.a>
-              <p className="mt-2 text-center text-xs text-gray-600">
-                Kartendaten © 2025, GeoBasis-DE/BKG (© 2009), Google
-              </p>
+            <div className="w-full max-w-xl">
+              <SubscribeSection />
             </div>
           </motion.div>
-        </motion.div>
+        )}
       </div>
     </div>
   );
