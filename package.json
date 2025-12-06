@@ -12,12 +12,14 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "@vercel/og": "^0.6.8",
+    "audit": "^0.0.6",
     "formidable": "^3.5.2",
     "framer-motion": "^12.19.2",
-    "next": "15.3.1",
+    "next": "^15.3.6",
     "next-intl": "^4.3.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "npm": "^11.6.4",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
