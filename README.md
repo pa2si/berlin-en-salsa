@@ -1,3 +1,7 @@
+v2.2.3
+
+- Modal for Emails now has a X close
+
 v2.2.2
 
 - in mobile version the contact logos and text slightly bigger
