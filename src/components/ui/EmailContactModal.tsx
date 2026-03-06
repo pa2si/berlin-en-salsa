@@ -89,7 +89,7 @@ export default function EmailContactModal({
                         href={`mailto:${emailAddress}`}
                         className="flex-1 cursor-pointer"
                       >
-                        <p className="text-bes-purple mb-1 text-sm font-medium sm:text-base md:text-lg">
+                        <p className="text-bes-purple mb-1 text-base font-medium md:text-lg">
                           {t(`emails.${key}.description`)}
                         </p>
                         <p className="text-bes-red text-base font-bold break-all sm:text-lg md:text-xl">

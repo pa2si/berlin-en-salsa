@@ -1,3 +1,7 @@
+v2.2.1
+
+- text in email modal a tiny bit bigger
+
 v2.2.0
 
 - Email button opens now a modal with different Emails
