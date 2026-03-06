@@ -1,3 +1,7 @@
+v2.2.2
+
+- in mobile version the contact logos and text slightly bigger
+
 v2.2.1
 
 - text in email modal a tiny bit bigger
