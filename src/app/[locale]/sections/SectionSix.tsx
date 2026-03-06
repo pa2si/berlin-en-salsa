@@ -5,10 +5,13 @@ import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import LocationMap from "@/components/Map/LocationMap";
 import { FESTIVAL_CONFIG } from "@/config/festival";
+import { useState } from "react";
+import EmailContactModal from "@/components/ui/EmailContactModal";
 
 const SectionSix = () => {
   const t = useTranslations("Sections.SectionSix");
   const locale = useLocale();
+  const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   return (
     <div className="bg-bes-amber flex flex-col overflow-y-auto py-10 sm:py-12 md:py-16 lg:h-full">
@@ -58,9 +61,9 @@ const SectionSix = () => {
             </span>
           </motion.a>
 
-          <motion.a
-            href="mailto:info@berlinensalsa.com"
-            className="text-bes-red hover:text-bes-red/80 flex items-center transition-colors"
+          <motion.button
+            onClick={() => setIsEmailModalOpen(true)}
+            className="text-bes-red hover:text-bes-red/80 flex cursor-pointer items-center transition-colors"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
@@ -76,7 +79,7 @@ const SectionSix = () => {
             <span className="text-sm font-bold sm:text-[clamp(1rem,3vh,1.4rem)]">
               E-mail
             </span>
-          </motion.a>
+          </motion.button>
 
           <motion.a
             href="https://open.spotify.com/user/31cin24rvdxaothpsseizytsorxq?si=c0624aeb6b6e4906"
@@ -170,6 +173,11 @@ const SectionSix = () => {
           </motion.div>
         )}
       </div>
+
+      <EmailContactModal
+        isOpen={isEmailModalOpen}
+        onClose={() => setIsEmailModalOpen(false)}
+      />
     </div>
   );
 };

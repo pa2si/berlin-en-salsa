@@ -356,6 +356,32 @@
       "email": "E-Mail:",
       "source": "Quelle:",
       "sourceText": "eRecht24"
+    },
+    "emailModal": {
+      "title": "Kontaktieren Sie uns",
+      "close": "Schließen",
+      "emails": {
+        "info": {
+          "email": "info@berlinensalsa.de",
+          "description": "ℹ️ Für allgemeine Anfragen"
+        },
+        "booking": {
+          "email": "booking@berlinensalsa.de",
+          "description": "🎤 Für Buchungsanfragen"
+        },
+        "gastro": {
+          "email": "gastro@berlinensalsa.de",
+          "description": "🍔 Für Gastro-Themen & Foodtrucks"
+        },
+        "press": {
+          "email": "press@berlinensalsa.de",
+          "description": "📰 Für Presseanfragen"
+        },
+        "voluntarios": {
+          "email": "voluntarios@berlinensalsa.de",
+          "description": "🤝 Für alle Helfer & Volunteer-Themen"
+        }
+      }
     }
   },
   "Subscription": {

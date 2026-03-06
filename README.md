@@ -1,3 +1,7 @@
+v2.2.0
+
+- Email button opens now a modal with different Emails
+
 v2.1.4
 
 - added venueIsKnown boolean to festival.ts config file
