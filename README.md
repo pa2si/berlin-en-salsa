@@ -1,6 +1,10 @@
+v2.2.5
+
+- german description text for voluntarios email modified: Helfer\*innen
+
 v2.2.4
 
-- spanish desciption text for volunteers email modified
+- spanish description text for volunteers email modified
 
 v2.2.3
 
