@@ -122,7 +122,7 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
               />
               <div className="absolute inset-0 -z-10 bg-black/30" />
 
-              <div className="max-h-[75vh] space-y-3 overflow-y-auto p-5 sm:space-y-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-bes-red/50 hover:[&::-webkit-scrollbar-thumb]:bg-bes-red [&::-webkit-scrollbar-thumb]:transition-colors">
+              <div className="[&::-webkit-scrollbar-thumb]:bg-bes-red/50 hover:[&::-webkit-scrollbar-thumb]:bg-bes-red max-h-[75vh] space-y-3 overflow-y-auto p-5 sm:space-y-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:transition-colors [&::-webkit-scrollbar-track]:bg-transparent">
                 {links.map((link, index) => (
                   <a
                     key={index}
