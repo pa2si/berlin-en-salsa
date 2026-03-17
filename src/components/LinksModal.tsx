@@ -61,7 +61,6 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
     },
   ];
 
-  const title = language === "es" ? "Enlaces" : "Links";
   const closeText = language === "es" ? "Cerrar" : "Schließen";
 
   return (

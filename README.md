@@ -1,3 +1,7 @@
+v2.2.8
+
+- corrected LinksModal error
+
 v2.2.7
 
 - corrected eslint errors for tailwind classes
