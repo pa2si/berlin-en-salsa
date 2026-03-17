@@ -1,3 +1,7 @@
+v2.2.6
+
+- LinksModal from Footer and EmailLinksModal adapted
+
 v2.2.5
 
 - german description text for voluntarios email modified: Helfer\*innen

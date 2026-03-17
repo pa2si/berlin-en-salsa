@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface LinkItem {
   url: string;
@@ -15,28 +16,6 @@ interface LinksModalProps {
 }
 
 export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
-  const modalRef = useRef<HTMLDivElement>(null);
-
-  // Close when clicking outside the modal
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        modalRef.current &&
-        !modalRef.current.contains(event.target as Node)
-      ) {
-        onClose();
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isOpen, onClose]);
-
   // Close on escape key press
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
@@ -53,19 +32,6 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen, onClose]);
-
-  // Prevent scrolling when modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
 
   const links: LinkItem[] = [
     {
@@ -98,73 +64,92 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
   const title = language === "es" ? "Enlaces" : "Links";
   const closeText = language === "es" ? "Cerrar" : "Schließen";
 
-  if (!isOpen) return null;
-
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div
-        ref={modalRef}
-        className="bg-bes-amber max-h-[90vh] w-full max-w-lg rounded-lg shadow-xl"
-      >
-        <div className="border-b border-gray-200 px-6 py-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-bes-red text-xl font-bold">{title}</h3>
-            <button
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+          onClick={onClose}
+        >
+          <div className="relative">
+            {/* Close button - mobile only, outside modal */}
+            <motion.button
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={onClose}
-              className="text-bes-red hover:text-bes-red/80 rounded-full p-1 transition-colors"
+              className="hover:text-bes-red absolute -top-10 -right-2 z-20 text-white transition-colors focus:outline-none sm:-top-10 sm:-right-10"
+              aria-label={closeText}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
+                className="h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
+                strokeWidth={2}
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth={2}
                   d="M6 18L18 6M6 6l12 12"
                 />
               </svg>
-            </button>
+            </motion.button>
+
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.95, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative flex w-full max-w-2xl flex-col overflow-hidden rounded-xl shadow-2xl"
+              role="dialog"
+              aria-modal="true"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Background image with overlay */}
+              <div
+                className="absolute inset-0 -z-10"
+                style={{
+                  backgroundImage: "url(/bes-section-6-bg.webp)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
+              <div className="absolute inset-0 -z-10 bg-black/30" />
+
+              <div className="max-h-[75vh] space-y-3 overflow-y-auto p-5 sm:space-y-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-bes-red/50 hover:[&::-webkit-scrollbar-thumb]:bg-bes-red [&::-webkit-scrollbar-thumb]:transition-colors">
+                {links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border-bes-red/20 hover:border-bes-red flex cursor-pointer items-center gap-4 rounded-lg border-2 bg-white/80 p-4 transition-all hover:scale-[1.02] hover:bg-white hover:shadow-lg sm:p-5"
+                    title={link.title}
+                  >
+                    <div className="shrink-0">
+                      <img
+                        src={link.image}
+                        alt={link.title}
+                        className="h-16 w-auto max-w-[120px] object-contain sm:h-20 sm:max-w-40"
+                      />
+                    </div>
+                    <span className="text-bes-red flex-1 text-base font-bold sm:text-lg md:text-xl">
+                      {link.title}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </div>
-        <div className="max-h-[60vh] overflow-y-auto px-6 py-4">
-          <ul className="space-y-4">
-            {links.map((link, index) => (
-              <li key={index} className="rounded-lg border border-gray-200 p-3">
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center space-y-2 transition-transform hover:scale-105 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4"
-                  title={link.title}
-                >
-                  <div className="w-full max-w-[220px] flex-shrink-0">
-                    <img
-                      src={link.image}
-                      alt={link.title}
-                      className="mx-auto h-auto w-full max-w-full object-contain"
-                    />
-                  </div>
-                  <span className="text-bes-red text-center font-medium sm:text-left">
-                    {link.title}
-                  </span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="border-t border-gray-200 px-6 py-4">
-          <button
-            onClick={onClose}
-            className="bg-bes-red hover:bg-bes-red/90 ml-auto flex rounded-lg px-4 py-2 text-white hover:cursor-pointer"
-          >
-            {closeText}
-          </button>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };

@@ -102,7 +102,7 @@ export default function EmailContactModal({
               <div className="absolute inset-0 -z-10 bg-black/30" />
 
               {useCompactButtons ? (
-                <div className="max-h-[75vh] space-y-2 overflow-y-auto p-5 sm:space-y-3 sm:p-6 md:p-8">
+                <div className="max-h-[75vh] space-y-2 overflow-y-auto p-5 sm:space-y-3 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-bes-red/50 hover:[&::-webkit-scrollbar-thumb]:bg-bes-red [&::-webkit-scrollbar-thumb]:transition-colors">
                   {emails.map((key) => {
                     const emailAddress = t(`emails.${key}.email`);
                     const isCopied = copiedEmail === emailAddress;
@@ -126,7 +126,7 @@ export default function EmailContactModal({
                         <div className="flex gap-2">
                           <button
                             onClick={() => copyToClipboard(emailAddress)}
-                            className="text-bes-purple hover:text-bes-red flex-shrink-0 cursor-pointer transition-all"
+                            className="text-bes-purple hover:text-bes-red shrink-0 cursor-pointer transition-all"
                             title="Copy email"
                           >
                             {isCopied ? (
@@ -156,7 +156,7 @@ export default function EmailContactModal({
                           </button>
                           <a
                             href={`mailto:${emailAddress}`}
-                            className="text-bes-red flex-shrink-0 transition-transform hover:scale-110"
+                            className="text-bes-red shrink-0 transition-transform hover:scale-110"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -174,7 +174,7 @@ export default function EmailContactModal({
                   })}
                 </div>
               ) : (
-                <div className="max-h-[75vh] space-y-3 overflow-y-auto p-5 sm:space-y-4 sm:p-6 md:p-8">
+                <div className="max-h-[75vh] space-y-3 overflow-y-auto p-5 sm:space-y-4 sm:p-6 md:p-8 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-bes-red/50 hover:[&::-webkit-scrollbar-thumb]:bg-bes-red [&::-webkit-scrollbar-thumb]:transition-colors">
                   {emails.map((key) => {
                     const emailAddress = t(`emails.${key}.email`);
                     const isCopied = copiedEmail === emailAddress;
@@ -197,7 +197,7 @@ export default function EmailContactModal({
                             </a>
                             <button
                               onClick={() => copyToClipboard(emailAddress)}
-                              className="text-bes-purple hover:text-bes-red flex-shrink-0 cursor-pointer transition-all"
+                              className="text-bes-purple hover:text-bes-red shrink-0 cursor-pointer transition-all"
                               title="Copy email"
                             >
                               {isCopied ? (
