@@ -10,7 +10,7 @@ export default function NotFoundPage() {
   const t = useTranslations("NotFound");
 
   return (
-    <div className="fixed inset-0 z-50 flex min-h-screen flex-col items-center justify-center bg-[var(--color-bes-amber)]">
+    <div className="fixed inset-0 z-50 flex min-h-screen flex-col items-center justify-center bg-(--color-bes-amber)">
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{
@@ -38,10 +38,10 @@ export default function NotFoundPage() {
         transition={{ delay: 0.2, duration: 0.5 }}
         className="mb-6 text-center"
       >
-        <h1 className="mb-2 text-3xl font-bold text-[var(--color-bes-black)]">
+        <h1 className="mb-2 text-3xl font-bold text-(--color-bes-black)">
           {t("title")}
         </h1>
-        <p className="mb-6 text-lg text-[var(--color-bes-black)]">
+        <p className="mb-6 text-lg text-(--color-bes-black)">
           {t("pageNotFound")}
         </p>
       </motion.div>
@@ -49,7 +49,7 @@ export default function NotFoundPage() {
       <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
         <Link
           href="/"
-          className="hover:bg-opacity-90 flex rounded-md bg-[var(--color-bes-red)] px-6 py-2 text-xl text-white transition-colors"
+          className="hover:bg-opacity-90 flex rounded-md bg-(--color-bes-red) px-6 py-2 text-xl text-white transition-colors"
         >
           {t("backToHome")}
         </Link>

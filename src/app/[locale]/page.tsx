@@ -17,10 +17,10 @@ export default function Home() {
       <SectionFour />
       <SectionFive />
       <div className="lg:flex lg:h-svh lg:flex-col">
-        <div className="lg:flex-grow">
+        <div className="lg:grow">
           <SectionSix />
         </div>
-        <div className="bg-bes-amber lg:flex-shrink-0">
+        <div className="bg-bes-amber lg:shrink-0">
           <Footer />
         </div>
       </div>

@@ -91,7 +91,7 @@ const SectionFive = () => {
           className={`mb-6 flex justify-center space-x-4 overflow-x-auto ${showMobileViewUntil}`}
         >
           {festivalDays.map((day) => (
-            <motion.div key={day.id} className="relative flex-shrink-0">
+            <motion.div key={day.id} className="relative shrink-0">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

@@ -45,7 +45,7 @@ const SectionFour = () => {
               : "/como-se-financia-berlin-en-salsa.svg"
           }
           alt={t("title")}
-          className="mx-auto w-[80vw] max-w-[33rem] min-w-[13rem]"
+          className="mx-auto w-[80vw] max-w-132 min-w-52"
         />
 
         <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.9rem,3vh,2.1rem)] leading-snug">
@@ -63,7 +63,7 @@ const SectionFour = () => {
               : "/apoyanos-double-line.svg"
           }
           alt={t("supportTitle")}
-          className="mx-auto w-[50vw] max-w-[25rem] min-w-[14rem]"
+          className="mx-auto w-[50vw] max-w-100 min-w-56"
         />
 
         <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
@@ -71,7 +71,7 @@ const SectionFour = () => {
             ref={mobileWhiteTshirtRef}
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
-            className="w-[40vw] max-w-[15rem] min-w-[6rem]"
+            className="w-[40vw] max-w-60 min-w-24"
             initial={{ opacity: 0, x: -100 }}
             animate={
               isInViewMobileWhite
@@ -84,7 +84,7 @@ const SectionFour = () => {
             ref={mobileBlackTshirtRef}
             src="/bes-camiseta-black.webp"
             alt="Berlin en Salsa black t-shirt"
-            className="w-[40vw] max-w-[15rem] min-w-[6rem]"
+            className="w-[40vw] max-w-60 min-w-24"
             initial={{ opacity: 0, x: 100 }}
             animate={
               isInViewMobileBlack
@@ -107,7 +107,7 @@ const SectionFour = () => {
                 : "/como-se-financia-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mx-auto w-[95%] max-w-[13rem]"
+            className="mx-auto w-[95%] max-w-52"
           />
 
           <div className="mt-4 space-y-4 px-2">
@@ -130,7 +130,7 @@ const SectionFour = () => {
                 : "/apoyanos-single-line.svg"
             }
             alt={t("supportTitle")}
-            className="mb-4 w-[100%] max-w-[20rem]"
+            className="mb-4 w-full max-w-48"
           />
 
           <div className="flex flex-row items-center justify-center gap-4">
@@ -138,7 +138,7 @@ const SectionFour = () => {
               ref={smWhiteTshirtRef}
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa white t-shirt"
-              className="w-[45%] max-w-[12rem]"
+              className="w-[45%] max-w-48"
               initial={{ opacity: 0, x: -100 }}
               animate={
                 isInViewSmWhite ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
@@ -149,7 +149,7 @@ const SectionFour = () => {
               ref={smBlackTshirtRef}
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa black t-shirt"
-              className="w-[45%] max-w-[12rem]"
+              className="w-[45%] max-w-48"
               initial={{ opacity: 0, x: 100 }}
               animate={
                 isInViewSmBlack ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
@@ -244,7 +244,7 @@ const SectionFour = () => {
                   : "/como-se-financia-berlin-en-salsa.svg"
               }
               alt={t("title")}
-              className="mx-auto max-w-[32rem] min-w-[27rem]"
+              className="mx-auto max-w-lg min-w-108"
             />
           </div>
 
@@ -261,7 +261,7 @@ const SectionFour = () => {
                 : "/apoyanos-single-line.svg"
             }
             alt={t("supportTitle")}
-            className="mx-auto max-w-[35rem] min-w-[10rem]"
+            className="mx-auto max-w-140 min-w-40"
           />
         </div>
         <div className="flex items-center justify-center">

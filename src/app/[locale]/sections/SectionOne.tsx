@@ -28,7 +28,7 @@ const SectionOne = () => {
           <img
             src="/bes-logo-color.webp"
             alt="Berlin en Salsa Logo"
-            className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-w-[100%] lg:min-w-[60%]"
+            className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-w-full lg:min-w-[60%]"
           />
           <motion.p
             initial={{ opacity: 0, x: -100 }}

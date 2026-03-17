@@ -1,3 +1,7 @@
+v2.2.7
+
+- corrected eslint errors for tailwind classes
+
 v2.2.6
 
 - LinksModal from Footer and EmailLinksModal adapted

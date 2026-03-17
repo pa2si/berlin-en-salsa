@@ -61,7 +61,7 @@ export default function Legal() {
       <Breadcrumb currentPage={t("breadcrumb")} />
 
       {/* Main content - vertically and horizontally centered */}
-      <div className="flex flex-grow items-center justify-center">
+      <div className="flex grow items-center justify-center">
         <div className="container mx-auto px-4 py-8">
           <div className="prose text-bes-purple mx-auto max-w-none text-center">
             <h1 className="text-bes-red mb-8 text-3xl font-bold sm:text-4xl md:text-5xl">
