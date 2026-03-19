@@ -1,3 +1,7 @@
+v2.2.11
+
+- added year to the date in Section 1
+
 v2.2.10
 
 - adjusted sizes for Section 4 under sm.
