@@ -36,7 +36,7 @@ const SectionFour = () => {
   return (
     <>
       {/* Mobile layout (only visible below sm) */}
-      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-x-hidden overflow-y-auto pb-8 sm:hidden">
+      <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-x-hidden overflow-y-auto pb-3 sm:hidden">
         <h2 className="sr-only">{t("title")}</h2>
         <img
           src={
@@ -45,14 +45,14 @@ const SectionFour = () => {
               : "/como-se-financia-berlin-en-salsa.svg"
           }
           alt={t("title")}
-          className="mx-auto w-[70vw] max-w-120 min-w-48 pb-5"
+          className="mx-auto w-[70vw] max-w-120 min-w-48 pb-2"
         />
 
-        <p className="text-bes-amber -mt-4 px-2 pb-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
+        <p className="text-bes-amber -mt-4 px-2 pb-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
           {t("description1")}
         </p>
 
-        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
           {t("description2")}
         </p>
 
@@ -62,7 +62,7 @@ const SectionFour = () => {
           className="mx-auto mb-3 w-[8vw] max-w-56 min-w-[100px]"
         />
 
-        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
           {t("description3")}
         </p>
 

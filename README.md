@@ -1,3 +1,7 @@
+v2.2.10
+
+- adjusted sizes for Section 4 under sm.
+
 v2.2.9
 
 - Added musicboard_logo_rgb.jpg to SectionFour between description2 and description3
