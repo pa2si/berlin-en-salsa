@@ -45,15 +45,25 @@ const SectionFour = () => {
               : "/como-se-financia-berlin-en-salsa.svg"
           }
           alt={t("title")}
-          className="mx-auto w-[80vw] max-w-132 min-w-52"
+          className="mx-auto w-[70vw] max-w-120 min-w-48 pb-5"
         />
 
-        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.9rem,3vh,2.1rem)] leading-snug">
+        <p className="text-bes-amber -mt-4 px-2 pb-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
           {t("description1")}
         </p>
 
-        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.9rem,3vh,2.1rem)] leading-snug">
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
           {t("description2")}
+        </p>
+
+        <img
+          src="/musicboard_logo_rgb.webp"
+          alt="Musicboard logo"
+          className="mx-auto mb-3 w-[8vw] max-w-56 min-w-[100px]"
+        />
+
+        <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.8rem,3vh,2.1rem)] leading-snug">
+          {t("description3")}
         </p>
 
         <img
@@ -66,12 +76,12 @@ const SectionFour = () => {
           className="mx-auto w-[50vw] max-w-100 min-w-56"
         />
 
-        <div className="-mt-2 flex w-full items-center justify-around gap-4 px-4">
+        <div className="flex w-full items-center justify-around gap-4 px-4">
           <motion.img
             ref={mobileWhiteTshirtRef}
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
-            className="w-[40vw] max-w-60 min-w-24"
+            className="w-[30vw] max-w-60 min-w-20"
             initial={{ opacity: 0, x: -100 }}
             animate={
               isInViewMobileWhite
@@ -84,7 +94,7 @@ const SectionFour = () => {
             ref={mobileBlackTshirtRef}
             src="/bes-camiseta-black.webp"
             alt="Berlin en Salsa black t-shirt"
-            className="w-[40vw] max-w-60 min-w-24"
+            className="w-[30vw] max-w-60 min-w-20"
             initial={{ opacity: 0, x: 100 }}
             animate={
               isInViewMobileBlack
@@ -117,6 +127,16 @@ const SectionFour = () => {
 
             <p className="text-bes-amber text-center text-[clamp(0.9rem,2.9vw,1.9rem)]">
               {t("description2")}
+            </p>
+
+            <img
+              src="/musicboard_logo_rgb.webp"
+              alt="Musicboard logo"
+              className="mx-auto w-[25%] max-w-40 min-w-[100px]"
+            />
+
+            <p className="text-bes-amber text-center text-[clamp(0.9rem,2.9vw,1.9rem)]">
+              {t("description3")}
             </p>
           </div>
         </div>
@@ -163,7 +183,7 @@ const SectionFour = () => {
       {/* Medium to large layout (md to lg) - 2-row layout */}
       <div className="bg-bes-purple hidden h-svh w-full flex-col overflow-x-hidden overflow-y-auto md:flex lg:flex xl:hidden">
         {/* Top row - Financing information */}
-        <div className="flex flex-1 flex-col items-center justify-center p-4 lg:p-8">
+        <div className="flex flex-1 flex-col items-center justify-center pt-4 lg:p-8">
           <div className="flex h-full flex-col items-center justify-center">
             <img
               src={
@@ -183,12 +203,20 @@ const SectionFour = () => {
               <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
                 {t("description2")}
               </p>
+              <img
+                src="/musicboard_logo_rgb.webp"
+                alt="Musicboard logo"
+                className="mx-auto max-h-[10vh] w-[clamp(8rem,16vh,14rem)] min-w-[100px] object-contain lg:max-h-[8vh]"
+              />
+              <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
+                {t("description3")}
+              </p>
             </div>
           </div>
         </div>
 
         {/* Bottom row - T-shirts */}
-        <div className="flex flex-1 flex-col justify-center p-4 lg:items-center lg:p-8">
+        <div className="flex flex-1 flex-col justify-center p-4 lg:items-center lg:p-3">
           <img
             src={
               locale === "de"
@@ -196,14 +224,14 @@ const SectionFour = () => {
                 : "/apoyanos-single-line.svg"
             }
             alt={t("supportTitle")}
-            className="mx-auto mb-10 max-h-[18vh] w-[clamp(18rem,43vh,40rem)] object-contain lg:mb-8"
+            className="mx-auto mb-6 max-h-[18vh] w-[clamp(18rem,43vh,40rem)] object-contain lg:mb-8"
           />
 
           <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.img
               src="/bes-camiseta-white.webp"
               alt="Berlin en Salsa white t-shirt"
-              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
+              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain lg:max-h-[18vh]"
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -212,7 +240,7 @@ const SectionFour = () => {
             <motion.img
               src="/bes-camiseta-black.webp"
               alt="Berlin en Salsa black t-shirt"
-              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain"
+              className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain lg:max-h-[18vh]"
               initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.5 }}
@@ -223,19 +251,19 @@ const SectionFour = () => {
       </div>
 
       {/* Desktop layout (only visible at xl and above) */}
-      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto px-8 xl:grid">
+      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto pt-4 xl:grid">
         <div className="flex items-center justify-center">
           <motion.img
             src="/bes-camiseta-white.webp"
             alt="Berlin en Salsa white t-shirt"
-            className="w-full px-4"
+            className="max-w-10/12 px-4"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
           />
         </div>
-        <div className="flex flex-col items-center justify-center px-4 sm:space-y-4 md:space-y-2 lg:space-y-6 2xl:gap-8">
+        <div className="flex flex-col items-center justify-center sm:space-y-4 md:space-y-2 lg:space-y-4 2xl:gap-4">
           <div>
             <img
               src={
@@ -248,12 +276,21 @@ const SectionFour = () => {
             />
           </div>
 
-          <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-3xl">
+          <p className="text-bes-amber text-center font-semibold lg:text-xl xl:text-[1.7rem]">
             {t("description1")}
           </p>
-          <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-3xl">
+          <p className="text-bes-amber text-center font-semibold lg:text-xl xl:text-[1.7rem]">
             {t("description2")}
           </p>
+          <img
+            src="/musicboard_logo_rgb.webp"
+            alt="Musicboard logo"
+            className="mx-auto max-h-25 w-auto min-w-[100px] object-contain 2xl:max-h-32"
+          />
+          <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-[1.7rem]">
+            {t("description3")}
+          </p>
+
           <img
             src={
               locale === "de"
@@ -268,7 +305,7 @@ const SectionFour = () => {
           <motion.img
             src="/bes-camiseta-black.webp"
             alt="Berlin en Salsa black t-shirt"
-            className="w-full px-4"
+            className="max-w-10/12 px-4"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}

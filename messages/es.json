@@ -41,8 +41,9 @@
     },
     "SectionFour": {
       "title": "¿Cómo se financia Berlin en Salsa?",
-      "description1": "Berlin en Salsa no cuenta con financiación pública ni patrocinio comercial.",
-      "description2": "Somos un festival hecho por y para la comunidad salsera, y nos financiamos únicamente a través de la venta de camisetas y sus donaciones.",
+      "description1": "Somos un festival hecho por y para la comunidad salsera.",
+      "description2": "Nuestra segunda edición cuenta con el apoyo de Musicboard Berlin. Gracias a ello, por primera vez podemos pagar honorarios a lxs artistxs.",
+      "description3": "Sin embargo, la financiación cubre solo una parte de los costes del festival. Por eso seguimos dependiendo de su apoyo, colaboración y donaciones para que el festival siga siendo gratuito.",
       "supportTitle": "Apóyanos pidiendo tu camiseta"
     },
     "SectionFive": {

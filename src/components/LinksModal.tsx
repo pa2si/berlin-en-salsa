@@ -40,6 +40,11 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       image: "/el-son-obrero.webp",
     },
     {
+      url: "https://www.musicboard-berlin.de/",
+      title: "Musicboard Berlin",
+      image: "/musicboard_logo_rgb.jpg",
+    },
+    {
       url: "https://www.salsa-berlin.de/",
       title: "salsa-berlin.de",
       image: "/salsa-berlin-468X98.gif",
@@ -136,7 +141,7 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
                       <img
                         src={link.image}
                         alt={link.title}
-                        className="h-16 w-auto max-w-[120px] object-contain sm:h-20 sm:max-w-40"
+                        className="h-16 w-auto max-w-[120px] min-w-[100px] object-contain sm:h-20 sm:max-w-40"
                       />
                     </div>
                     <span className="text-bes-red flex-1 text-base font-bold sm:text-lg md:text-xl">
