@@ -1,3 +1,9 @@
+v2.2.9
+
+- Added musicboard_logo_rgb.jpg to SectionFour between description2 and description3
+- Set minimum width of 100px for musicboard logo in all responsive layouts
+- Updated LinksModal image minimum width to 100px
+
 v2.2.8
 
 - corrected LinksModal error
