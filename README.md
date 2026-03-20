@@ -1,3 +1,7 @@
+v2.2.12
+
+- New Links in LinkModal
+
 v2.2.11
 
 - added year to the date in Section 1

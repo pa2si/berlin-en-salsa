@@ -35,14 +35,24 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
 
   const links: LinkItem[] = [
     {
+      url: "https://www.youtube.com/watch?v=R_V6CkvtrDY",
+      title: "Berlin en Salsa: Nuestra Cosa Latina",
+      image: "/bes-nuestra-cosa-latina.webp",
+    },
+    {
+      url: "https://www.instagram.com/p/DVbJ1EZCbiE/",
+      title: "Berlin En Salsa - DW Instagram Post",
+      image: "/screenshot.jpeg",
+    },
+    {
       url: "https://youtu.be/rtWWDUUSJ9I?si=jFC1veBjJPtdDhST",
       title: 'Berlin En Salsa Documentary "by El Son Obrero"',
       image: "/el-son-obrero.webp",
     },
     {
       url: "https://www.musicboard-berlin.de/",
-      title: "Musicboard Berlin",
-      image: "/musicboard_logo_rgb.jpg",
+      title: "Musicboard Berlin GmbH",
+      image: "/musicboard_logo_rgb.webp",
     },
     {
       url: "https://www.salsa-berlin.de/",
