@@ -4,9 +4,10 @@ import { useState, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { useBannerContext } from "@/context/BannerContext";
 import { useTranslations } from "next-intl";
-import { TimetableEvent } from "@/types/events";
+import { TimetableEvent, RawTimetableEvent } from "@/types/events";
 import { useSmartTranslation } from "@/data/timetable/utils/smartTranslation";
 import { FESTIVAL_CONFIG } from "@/config/festival";
+import { AreaType } from "@/data/timetable/types/area.types";
 import {
   AnimatedButton,
   AnimatedLogo,
@@ -23,80 +24,62 @@ import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks";
 
 // Import timeline configurations to determine which events are on which day
 import {
-  mainStageSaturdayTimeline,
-  mainStageSundayTimeline,
-  danceWorkshopsSaturdayTimeline,
-  danceWorkshopsSundayTimeline,
-  musicWorkshopsSaturdayTimeline,
-  musicWorkshopsSundayTimeline,
-  salsaTalksSaturdayTimeline,
-  salsaTalksSundayTimeline,
   createTimelineFromSimpleConfig,
+  getTimelineForAreaAndDay,
 } from "@/utils/timelineConfig";
+
+const BANNER_EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
+  "main-stage": mainStageEvents,
+  "dance-workshops": danceWorkshopEvents,
+  "music-workshops": musicWorkshopEvents,
+  "salsa-talks": salsaTalksEvents,
+};
+
+const isSameCalendarDay = (left: Date, right: Date) => {
+  return (
+    left.getFullYear() === right.getFullYear() &&
+    left.getMonth() === right.getMonth() &&
+    left.getDate() === right.getDate()
+  );
+};
 
 const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
   const t = useTranslations("Banners.live");
+  const timetableSectionT = useTranslations("Sections.SectionFive");
   const { translateIfKey } = useSmartTranslation();
   const [currentEvents, setCurrentEvents] = useState<TimetableEvent[]>([]);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
-  const [isSunday, setIsSunday] = useState(false);
+  const [currentDayWeekday, setCurrentDayWeekday] = useState<string | null>(
+    null,
+  );
 
   // Function to get current events based on time
   const getCurrentEvents = useCallback(() => {
     const now = new Date();
 
-    // Check if today is Sunday (festival day 2)
-    const isSundayToday =
-      now.getDay() === 0 || now >= new Date("July 20, 2025 00:00:00");
-    setIsSunday(isSundayToday);
+    const currentFestivalDay = FESTIVAL_CONFIG.days.find((festivalDay) =>
+      isSameCalendarDay(festivalDay.date, now),
+    );
+    const dayWeekday = currentFestivalDay?.weekday ?? null;
 
-    // Get enriched events for the current day using timeline config
-    const allEvents: TimetableEvent[] = isSundayToday
-      ? [
-          ...createTimelineFromSimpleConfig(
-            mainStageSundayTimeline,
-            mainStageEvents,
-            "sunday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            danceWorkshopsSundayTimeline,
-            danceWorkshopEvents,
-            "sunday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            musicWorkshopsSundayTimeline,
-            musicWorkshopEvents,
-            "sunday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            salsaTalksSundayTimeline,
-            salsaTalksEvents,
-            "sunday",
-          ),
-        ]
-      : [
-          ...createTimelineFromSimpleConfig(
-            mainStageSaturdayTimeline,
-            mainStageEvents,
-            "saturday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            danceWorkshopsSaturdayTimeline,
-            danceWorkshopEvents,
-            "saturday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            musicWorkshopsSaturdayTimeline,
-            musicWorkshopEvents,
-            "saturday",
-          ),
-          ...createTimelineFromSimpleConfig(
-            salsaTalksSaturdayTimeline,
-            salsaTalksEvents,
-            "saturday",
-          ),
-        ];
+    setCurrentDayWeekday(dayWeekday);
+
+    if (!dayWeekday) {
+      return [];
+    }
+
+    const allEvents: TimetableEvent[] = (
+      Object.entries(BANNER_EVENT_COLLECTIONS) as Array<
+        [AreaType, RawTimetableEvent[]]
+      >
+    ).flatMap(([area, eventCollection]) =>
+      createTimelineFromSimpleConfig(
+        getTimelineForAreaAndDay(area, dayWeekday),
+        eventCollection,
+        dayWeekday,
+      ),
+    );
 
     // Find events happening now
     const currentEventsNow = allEvents.filter((event) => {
@@ -166,6 +149,9 @@ const LiveBanner = () => {
 
   if (!isBannerVisible) return null;
 
+  const displayedDayWeekday =
+    currentEvents[currentEventIndex]?.day ?? currentDayWeekday;
+
   // Helper function to get event type label
   const getEventTypeLabel = (event: TimetableEvent) => {
     // Check for performanceType (MainStageEvent)
@@ -220,7 +206,12 @@ const LiveBanner = () => {
                 <div className="mt-2 text-white">
                   <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-start lg:space-x-2">
                     <span className="text-bes-amber font-semibold">
-                      {isSunday ? "Domingo" : "Sábado"} -{" "}
+                      {displayedDayWeekday
+                        ? timetableSectionT(
+                            `days.${displayedDayWeekday}` as never,
+                          )
+                        : ""}{" "}
+                      {displayedDayWeekday ? "- " : ""}
                       {currentEvents[currentEventIndex].startTime}
                     </span>
                     <div className="flex flex-wrap items-center justify-center space-x-2">

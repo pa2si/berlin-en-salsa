@@ -8,8 +8,6 @@ import {
   getTimelineForAreaAndDay,
   getSchedulesForArea,
   getAreasForDay,
-  mainStageSaturdayTimeline,
-  mainStageSundayTimeline,
 } from "./timelineConfig";
 
 console.log("\n🗓️  TIMELINE CONFIGURATION VERIFICATION\n");
@@ -54,24 +52,8 @@ console.log(
   `   ✓ Invalid day returns: ${invalidDay.length === 0 ? "empty array (correct)" : "ERROR"}`,
 );
 
-// Test 3: Backward compatibility
-console.log("\n3️⃣  Testing backward compatibility exports...");
-console.log(
-  `   ✓ mainStageSaturdayTimeline: ${mainStageSaturdayTimeline.length} events`,
-);
-console.log(
-  `   ✓ mainStageSundayTimeline: ${mainStageSundayTimeline.length} events`,
-);
-
-const compatMatches =
-  mainStageSaturdayTimeline.length === saturdayMainStage.length &&
-  mainStageSundayTimeline.length === sundayMainStage.length;
-console.log(
-  `   ✓ Old exports match new helper: ${compatMatches ? "YES" : "NO (ERROR!)"}`,
-);
-
-// Test 4: getSchedulesForArea()
-console.log("\n4️⃣  Testing getSchedulesForArea()...");
+// Test 3: getSchedulesForArea()
+console.log("\n3️⃣  Testing getSchedulesForArea()...");
 const mainStageSchedules = getSchedulesForArea("main-stage");
 console.log(`   ✓ Main Stage schedules: ${mainStageSchedules.length} days`);
 mainStageSchedules.forEach((schedule) => {
@@ -80,8 +62,8 @@ mainStageSchedules.forEach((schedule) => {
   );
 });
 
-// Test 5: getAreasForDay()
-console.log("\n5️⃣  Testing getAreasForDay()...");
+// Test 4: getAreasForDay()
+console.log("\n4️⃣  Testing getAreasForDay()...");
 const saturdayAreas = getAreasForDay("saturday");
 const sundayAreas = getAreasForDay("sunday");
 const mondayAreas = getAreasForDay("monday");
@@ -94,8 +76,8 @@ console.log(
   `   ✓ Areas with events on Monday: ${mondayAreas.length} (should be 0)`,
 );
 
-// Test 6: Data integrity
-console.log("\n6️⃣  Validating data integrity...");
+// Test 5: Data integrity
+console.log("\n5️⃣  Validating data integrity...");
 let totalEvents = 0;
 let allAreasValid = true;
 let allSchedulesValid = true;
@@ -138,8 +120,8 @@ console.log(
 );
 console.log(`   ✓ Total events across all areas/days: ${totalEvents}`);
 
-// Test 7: Event IDs format
-console.log("\n7️⃣  Checking event ID format...");
+// Test 6: Event IDs format
+console.log("\n6️⃣  Checking event ID format...");
 let allEventIdsValid = true;
 const sampleEventIds: string[] = [];
 
@@ -162,8 +144,8 @@ console.log(
 console.log(`   ✓ Sample event IDs:`);
 sampleEventIds.forEach((id) => console.log(`     - ${id}`));
 
-// Test 8: Case sensitivity
-console.log("\n8️⃣  Testing case-insensitive lookups...");
+// Test 7: Case sensitivity
+console.log("\n7️⃣  Testing case-insensitive lookups...");
 const satLower = getTimelineForAreaAndDay("main-stage", "saturday");
 const satUpper = getTimelineForAreaAndDay("main-stage", "Saturday");
 const satMixed = getTimelineForAreaAndDay("main-stage", "SaTuRdAy");
@@ -181,7 +163,6 @@ console.log("\n✅ Phase 2 Verification Complete!");
 console.log("\nResults:");
 console.log(`  - Areas configured: ${TIMELINE_CONFIG.length}`);
 console.log(`  - Total events: ${totalEvents}`);
-console.log(`  - Backward compatibility: ✓`);
 console.log(`  - Helper functions working: ✓`);
 console.log(`  - Case-insensitive lookups: ✓`);
 console.log("\n🎉 Phase 2: Timeline Configuration Refactor - COMPLETE!\n");

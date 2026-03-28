@@ -47,8 +47,7 @@ export class TimetableService {
   }
 
   /**
-   * Get raw translatable data for any day (GENERIC METHOD)
-   * This replaces getSaturdayTranslatableData() and getSundayTranslatableData()
+    * Get raw translatable data for any day
    */
   private static getTranslatableDataForDay(
     dayWeekday: string,
@@ -75,28 +74,6 @@ export class TimetableService {
     }
 
     return result;
-  }
-
-  /**
-   * @deprecated Use getTranslatableDataForDay('saturday') instead
-   * Get raw translatable data for Saturday (for areas that have been migrated)
-   */
-  private static getSaturdayTranslatableData(): Record<
-    AreaType,
-    TranslatableTimeSlot[] | TimeSlot[]
-  > {
-    return this.getTranslatableDataForDay("saturday");
-  }
-
-  /**
-   * @deprecated Use getTranslatableDataForDay('sunday') instead
-   * Get raw translatable data for Sunday
-   */
-  private static getSundayTranslatableData(): Record<
-    AreaType,
-    TranslatableTimeSlot[] | TimeSlot[]
-  > {
-    return this.getTranslatableDataForDay("sunday");
   }
 
   /**
@@ -374,8 +351,7 @@ export class TimetableService {
   }
 
   /**
-   * Get translated timetable data for a specific day (GENERIC METHOD)
-   * This replaces getSaturdayDataTranslated() and getSundayDataTranslated()
+    * Get translated timetable data for a specific day
    */
   private static async getDataTranslatedForDay(
     dayWeekday: string,
@@ -394,26 +370,6 @@ export class TimetableService {
     }
 
     return translatedData;
-  }
-
-  /**
-   * @deprecated Use getDataTranslatedForDay('saturday') instead
-   * Get translated timetable data for Saturday - Server Component version
-   */
-  static async getSaturdayDataTranslated(): Promise<
-    Record<AreaType, TimeSlot[]>
-  > {
-    return this.getDataTranslatedForDay("saturday");
-  }
-
-  /**
-   * @deprecated Use getDataTranslatedForDay('sunday') instead
-   * Get translated timetable data for Sunday - Server Component version
-   */
-  static async getSundayDataTranslated(): Promise<
-    Record<AreaType, TimeSlot[]>
-  > {
-    return this.getDataTranslatedForDay("sunday");
   }
 
   /**
@@ -476,16 +432,6 @@ export class TimetableService {
   ): Promise<TimeSlot | undefined> {
     const areaEvents = await this.getAreaEventsServer(area, day);
     return areaEvents.find((slot) => slot.time === time && slot.event);
-  }
-
-  /**
-   * Migration helper: Check if an area has been migrated to translatable format
-   * PHASE 5: Updated to accept generic string for day parameter
-   * @deprecated This method is for backward compatibility only
-   */
-  static isAreaMigrated(area: AreaType, day: string): boolean {
-    // Changed from "saturday" | "sunday" to string
-    return area === "main-stage" && day === "saturday";
   }
 
   // ============================================================================

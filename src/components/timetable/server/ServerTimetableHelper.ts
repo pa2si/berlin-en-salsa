@@ -88,28 +88,6 @@ export class ServerTimetableHelper {
   }
 
   /**
-   * Check if a specific area has been migrated to the new translation system
-   * PHASE 5: Updated to accept generic string for day parameter
-   * @deprecated This method is for backward compatibility only
-   */
-  static isAreaMigrated(area: string, day: string): boolean {
-    // Changed from "saturday" | "sunday" to string
-    // Map area names to AreaType
-    const areaTypeMap: Record<string, string> = {
-      "main-stage": "main-stage",
-      "dance-workshops": "dance-workshops",
-      "music-workshops": "music-workshops",
-      "salsa-talks": "salsa-talks",
-    };
-
-    const areaType = areaTypeMap[area];
-    if (areaType) {
-      return TimetableService.isAreaMigrated(areaType as never, day);
-    }
-    return false;
-  }
-
-  /**
    * Get available time slots for a given day
    * PHASE 5: Updated to accept generic string for day parameter
    */
