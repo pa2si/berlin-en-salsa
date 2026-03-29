@@ -9,12 +9,12 @@
  * Phase 2 Refactor: Array-based configuration for true scalability
  */
 
-import { AreaType } from "../data/timetable/types/area.types";
-import { mainStageEvents } from "../data/timetable/events/main-stage";
-import { danceWorkshopEvents } from "../data/timetable/events/dance-workshops";
-import { musicWorkshopEvents } from "../data/timetable/events/music-workshops";
-import { salsaTalksEvents } from "../data/timetable/events/salsa-talks";
-import { TimetableEvent, RawTimetableEvent } from "../types/events";
+import { AreaType } from "../types/area.types";
+import { mainStageEvents } from "../events/main-stage";
+import { danceWorkshopEvents } from "../events/dance-workshops";
+import { musicWorkshopEvents } from "../events/music-workshops";
+import { salsaTalksEvents } from "../events/salsa-talks";
+import { TimetableEvent, RawTimetableEvent } from "../../../types/events";
 
 /**
  * Timeline slot configuration - simple time + event reference

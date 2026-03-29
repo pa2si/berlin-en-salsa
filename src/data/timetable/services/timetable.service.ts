@@ -19,7 +19,7 @@ import { salsaTalksEvents } from "../events/salsa-talks";
 import {
   getTimelineForAreaAndDay,
   createTimelineFromSimpleConfig,
-} from "../../../utils/timelineConfig";
+} from "../utils/timelineConfig";
 
 /**
  * Event collection mapping
@@ -47,7 +47,7 @@ export class TimetableService {
   }
 
   /**
-    * Get raw translatable data for any day
+   * Get raw translatable data for any day
    */
   private static getTranslatableDataForDay(
     dayWeekday: string,
@@ -351,7 +351,7 @@ export class TimetableService {
   }
 
   /**
-    * Get translated timetable data for a specific day
+   * Get translated timetable data for a specific day
    */
   private static async getDataTranslatedForDay(
     dayWeekday: string,

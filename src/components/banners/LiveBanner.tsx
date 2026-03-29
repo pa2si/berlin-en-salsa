@@ -26,7 +26,7 @@ import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks";
 import {
   createTimelineFromSimpleConfig,
   getTimelineForAreaAndDay,
-} from "@/utils/timelineConfig";
+} from "@/data/timetable/utils/timelineConfig";
 
 const BANNER_EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "main-stage": mainStageEvents,

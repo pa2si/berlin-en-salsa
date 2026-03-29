@@ -1,3 +1,7 @@
+v2.2.15
+
+- moved timelineConfig.ts to new path
+
 v2.2.14
 
 - festival date now uses berlin time and uses it also in LiveBanner

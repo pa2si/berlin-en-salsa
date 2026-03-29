@@ -8,7 +8,7 @@ import {
   getTimelineForAreaAndDay,
   getSchedulesForArea,
   getAreasForDay,
-} from "./timelineConfig";
+} from "../data/timetable/utils/timelineConfig";
 
 console.log("\n🗓️  TIMELINE CONFIGURATION VERIFICATION\n");
 console.log("=".repeat(60));
