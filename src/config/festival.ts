@@ -97,7 +97,7 @@ export const FESTIVAL_CONFIG = {
    * Set to true when the timetable is finalized and ready to be displayed
    */
   timetable: {
-    isAvailable: true, // Change to true when timetable is ready
+    isAvailable: false, // Change to true when timetable is ready
   },
 
   /**
