@@ -35,12 +35,32 @@ const BANNER_EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "salsa-talks": salsaTalksEvents,
 };
 
-const isSameCalendarDay = (left: Date, right: Date) => {
-  return (
-    left.getFullYear() === right.getFullYear() &&
-    left.getMonth() === right.getMonth() &&
-    left.getDate() === right.getDate()
+const BERLIN_DATE_FORMATTER = new Intl.DateTimeFormat("en-CA", {
+  timeZone: FESTIVAL_CONFIG.timeZone,
+});
+
+const BERLIN_TIME_PARTS_FORMATTER = new Intl.DateTimeFormat("en-GB", {
+  timeZone: FESTIVAL_CONFIG.timeZone,
+  hour: "2-digit",
+  minute: "2-digit",
+  hour12: false,
+});
+
+const parseTimeToMinutes = (time: string): number => {
+  const [hour, minute] = time.split(":").map(Number);
+  return hour * 60 + minute;
+};
+
+const getBerlinDateISO = (date: Date): string =>
+  BERLIN_DATE_FORMATTER.format(date);
+
+const getBerlinMinutes = (date: Date): number => {
+  const parts = BERLIN_TIME_PARTS_FORMATTER.formatToParts(date);
+  const hour = Number(parts.find((part) => part.type === "hour")?.value ?? "0");
+  const minute = Number(
+    parts.find((part) => part.type === "minute")?.value ?? "0",
   );
+  return hour * 60 + minute;
 };
 
 const LiveBanner = () => {
@@ -57,9 +77,11 @@ const LiveBanner = () => {
   // Function to get current events based on time
   const getCurrentEvents = useCallback(() => {
     const now = new Date();
+    const berlinDateISO = getBerlinDateISO(now);
+    const berlinMinutes = getBerlinMinutes(now);
 
-    const currentFestivalDay = FESTIVAL_CONFIG.days.find((festivalDay) =>
-      isSameCalendarDay(festivalDay.date, now),
+    const currentFestivalDay = FESTIVAL_CONFIG.days.find(
+      (festivalDay) => festivalDay.dateISO === berlinDateISO,
     );
     const dayWeekday = currentFestivalDay?.weekday ?? null;
 
@@ -86,19 +108,13 @@ const LiveBanner = () => {
       // Check if event has timing information (should always be true after enrichment)
       if (!event.startTime || !event.endTime) return false;
 
-      // Parse event start time
-      const [startHour, startMinute] = event.startTime.split(":").map(Number);
-      const [endHour, endMinute] = event.endTime.split(":").map(Number);
+      const eventStartMinutes = parseTimeToMinutes(event.startTime);
+      const eventEndMinutes = parseTimeToMinutes(event.endTime);
 
-      // Create Date objects for comparison
-      const eventStart = new Date(now);
-      eventStart.setHours(startHour, startMinute, 0, 0);
-
-      const eventEnd = new Date(now);
-      eventEnd.setHours(endHour, endMinute, 0, 0);
-
-      // Check if current time is between event start and end
-      return now >= eventStart && now <= eventEnd;
+      // Compare against Berlin local time, regardless of user timezone.
+      return (
+        berlinMinutes >= eventStartMinutes && berlinMinutes <= eventEndMinutes
+      );
     });
 
     return currentEventsNow;

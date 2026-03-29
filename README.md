@@ -1,3 +1,7 @@
+v2.2.14
+
+- festival date now uses berlin time and uses it also in LiveBanner
+
 v2.2.13
 
 - tw class corrections

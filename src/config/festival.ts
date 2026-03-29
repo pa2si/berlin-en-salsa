@@ -12,6 +12,8 @@ export interface FestivalDay {
   dateISO: string; // ISO date string for technical use
 }
 
+export const FESTIVAL_TIME_ZONE = "Europe/Berlin";
+
 /**
  * Generate festival days from date range
  * Each day gets complete metadata for UI rendering and data lookup
@@ -28,16 +30,25 @@ function generateFestivalDays(start: Date, end: Date): FestivalDay[] {
 
   while (current <= endDate) {
     const weekdayName = current
-      .toLocaleDateString("en-US", { weekday: "long" })
+      .toLocaleDateString("en-US", {
+        weekday: "long",
+        timeZone: FESTIVAL_TIME_ZONE,
+      })
       .toLowerCase();
 
     const weekdayFull = current.toLocaleDateString("en-US", {
       weekday: "long",
+      timeZone: FESTIVAL_TIME_ZONE,
     });
 
     const dateShort = current.toLocaleDateString("en-US", {
       month: "short",
       day: "numeric",
+      timeZone: FESTIVAL_TIME_ZONE,
+    });
+
+    const dateISO = current.toLocaleDateString("en-CA", {
+      timeZone: FESTIVAL_TIME_ZONE,
     });
 
     days.push({
@@ -48,7 +59,7 @@ function generateFestivalDays(start: Date, end: Date): FestivalDay[] {
       label: `Sections.SectionFive.days.${weekdayName}`,
       imageSrc: `/timetable-days/day${dayCounter}.svg`,
       dateShort: dateShort,
-      dateISO: current.toISOString().split("T")[0],
+      dateISO: dateISO,
     });
 
     current.setDate(current.getDate() + 1);
@@ -66,9 +77,12 @@ export type FestivalDayId = `day${number}`;
 
 // Festival date configuration
 export const FESTIVAL_CONFIG = {
+  timeZone: FESTIVAL_TIME_ZONE,
+
   dates: {
-    start: new Date("July 03, 2026 12:30:00"),
-    end: new Date("July 05 2026 23:59:59"),
+    // Explicit Berlin timezone offsets (+02:00) for summer dates
+    start: new Date("2026-07-03T12:30:00+02:00"),
+    end: new Date("2026-07-05T22:00:00+02:00"),
   },
 
   /**
