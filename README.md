@@ -1,3 +1,7 @@
+v2.2.16
+
+- mainStage schedule for es and de updated including friday
+
 v2.2.15
 
 - moved timelineConfig.ts to new path

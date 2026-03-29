@@ -472,25 +472,28 @@
     },
     "events": {
       "mainStage": {
-        "saturday": {
-          "rodoElProfe": "Rodo Le Fou & El Profe",
-          "ecKubaSet": "EC Kuba DJ",
+        "friday": {
+          "mangle": "Mangle",
+          "somos": "Somos Somos",
+          "sonobrero": "Son Obrero",
+          "malandrea": "Malandrea",
           "alfiaConIre": "Alafía con Iré",
-          "djFeikes": "DJ Feikes",
-          "tempoHavanna": "Tempo Havanna",
-          "necios": "Necios",
-          "laMelodica": "La Melodica",
-          "sacaSal": "Saca Sal"
+          "cayeye": "Cayeye"
+        },
+        "saturday": {
+          "laCataMontesa": "La Cata Montesa",
+          "lionza": "Lionza",
+          "dayle": "Dayle",
+          "burundanga": "Burundanga",
+          "laMelodica": "La Melodica"
         },
         "sunday": {
-          "floriWilber": "FLori & Wilber",
-          "laSonoraBerlin": "La Sonora Berlin",
-          "elPuma": "El Puma",
-          "burundanga": "Burundanga",
-          "anacaonaLaVecina": "Anacaona & La Vecina",
-          "cayeye": "Cayeye",
-          "bongo": "Bongo",
-          "berlinEnSalsaHostDJs": "Berlin En Salsa Host DJs"
+          "ednaMartinez": "Edna Martínez",
+          "suenaCheloEcuajey": "Suena Chelo b2b Ecuajey",
+          "elJavier": "El Javier",
+          "besHosts": "Berlin En Salsa Hosts DJs",
+          "lasHienas": "Las Hienas",
+          "gerardoRosales": "Gerardo Rosales Y Sus Trombones"
         }
       },
       "danceWorkshops": {
