@@ -179,7 +179,7 @@ const LiveBanner = () => {
         damping: 15,
         duration: 0.8,
       }}
-      className="bg-bes-red fixed left-0 right-0 top-0 z-50 bg-opacity-95 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
+      className="bg-bes-red bg-opacity-95 fixed top-0 right-0 left-0 z-50 px-4 py-3 pb-4 text-center shadow-lg backdrop-blur-sm"
     >
       <div className="relative mx-auto max-w-6xl">
         {/* Close button */}
@@ -192,7 +192,7 @@ const LiveBanner = () => {
           initial={{ scale: 0.8 }}
           animate={{ scale: [0.8, 1.1, 1] }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-x-6 lg:space-y-0 lg:py-1"
+          className="flex flex-col items-center justify-between space-y-2 lg:flex-row lg:items-center lg:justify-center lg:space-y-0 lg:space-x-6 lg:py-1"
         >
           <div className="flex items-center">
             {/* Logo */}
@@ -275,9 +275,7 @@ const LiveBanner = () => {
                   )}
                 </div>
               ) : (
-                <div className="mt-2 text-white">
-                  No hay eventos actuales. Disfruta de un momento de descanso.
-                </div>
+                <div className="mt-2 text-white">{t("noCurrentEvents")}</div>
               )}
             </div>
           </div>

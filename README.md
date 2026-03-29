@@ -1,3 +1,10 @@
+v2.2.13
+
+- tw class corrections
+- Live Banner announcement now translated
+
+merge: Remove deprecated timeline compatibility exports and refactor LiveBanner
+
 v2.2.12
 
 - New Links in LinkModal

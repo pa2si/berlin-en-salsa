@@ -96,7 +96,7 @@ export const SubscribeSection = () => {
                 name="privacy-checkbox"
                 checked={privacyChecked}
                 onChange={(e) => setPrivacyChecked(e.target.checked)}
-                className="mt-1 h-5 w-5 flex-shrink-0 sm:h-4 sm:w-4 md:h-4 md:w-4 lg:h-5 lg:w-5"
+                className="mt-1 h-5 w-5 shrink-0 sm:h-4 sm:w-4 md:h-4 md:w-4 lg:h-5 lg:w-5"
               />
               <label
                 htmlFor="privacy-checkbox"

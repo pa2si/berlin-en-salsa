@@ -130,7 +130,8 @@
       "closeLabel": "Cerrar anuncio",
       "previousEvent": "Evento anterior",
       "nextEvent": "Siguiente evento",
-      "viewProgram": "Ver programa"
+      "viewProgram": "Ver programa",
+      "noCurrentEvents": "No hay eventos actuales. Disfruta de un momento de descanso."
     },
     "postFestival": {
       "title": "¡Gracias por ser parte de Berlin En Salsa!",

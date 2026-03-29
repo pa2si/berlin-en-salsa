@@ -130,7 +130,8 @@
       "closeLabel": "Anzeige schließen",
       "previousEvent": "Vorheriges Ereignis",
       "nextEvent": "Nächstes Ereignis",
-      "viewProgram": "Programm ansehen"
+      "viewProgram": "Programm ansehen",
+      "noCurrentEvents": "Keine aktuellen Ereignisse. Gönn dir den Moment der Pause!"
     },
     "postFestival": {
       "title": "Danke, dass du Teil von Berlin En Salsa bist!",
