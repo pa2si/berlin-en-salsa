@@ -98,7 +98,7 @@ console.log(
 // Test 7: Image path format
 console.log("\n7️⃣  Checking image path format...");
 const validImageFormat = days.every(
-  (day, index) => day.imageSrc === `/timetable-days/day${index + 1}.svg`,
+  (day) => day.imageSrc === `/timetable-days/${day.weekday}-de.svg`,
 );
 console.log(
   `   ✓ Image paths follow format: ${validImageFormat ? "YES" : "NO (ERROR!)"}`,

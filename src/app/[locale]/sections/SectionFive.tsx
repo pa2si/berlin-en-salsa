@@ -7,9 +7,22 @@ import { useTranslations, useLocale } from "next-intl";
 import { buildTimetableQuery } from "@/components/timetable/utils/urlHelpers";
 import { FESTIVAL_CONFIG } from "@/config/festival";
 
+const SUPPORTED_SCREENSHOT_LOCALES = ["de", "es"] as const;
+type SupportedScreenshotLocale = (typeof SUPPORTED_SCREENSHOT_LOCALES)[number];
+
+const getScreenshotLocale = (locale: string): SupportedScreenshotLocale => {
+  return SUPPORTED_SCREENSHOT_LOCALES.includes(
+    locale as SupportedScreenshotLocale,
+  )
+    ? (locale as SupportedScreenshotLocale)
+    : "de";
+};
+
 const SectionFive = () => {
+  const locale = useLocale();
+
   // Get festival days dynamically
-  const festivalDays = FESTIVAL_CONFIG.days;
+  const festivalDays = FESTIVAL_CONFIG.getDays(locale);
 
   // Dynamic hover states for each day
   const [hoveredDays, setHoveredDays] = useState<Record<string, boolean>>({});
@@ -17,7 +30,7 @@ const SectionFive = () => {
     festivalDays[0]?.weekday || "saturday",
   );
   const t = useTranslations("Sections.SectionFive");
-  const locale = useLocale();
+  const screenshotLocale = getScreenshotLocale(locale);
 
   // Don't render the section if timetable is not available yet
   // This check must come AFTER all hooks to comply with React rules of hooks
@@ -148,7 +161,7 @@ const SectionFive = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <motion.img
-                        src={`/timetable-links/${day.id}.png`}
+                        src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.png`}
                         alt={getDayTranslation(day.weekday)}
                         className="w-full rounded-lg"
                       />
@@ -231,7 +244,7 @@ const SectionFive = () => {
                   onMouseLeave={() => setHovered(day.id, false)}
                 >
                   <motion.img
-                    src={`/timetable-links/${day.id}.png`}
+                    src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.png`}
                     alt={getDayTranslation(day.weekday)}
                     className="w-full rounded-lg"
                     animate={{

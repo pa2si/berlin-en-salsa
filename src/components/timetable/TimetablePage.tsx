@@ -1,4 +1,4 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { TimetableService } from "../../data/timetable/services/timetable.service";
 import { FESTIVAL_CONFIG } from "../../config/festival";
 import TimetableClient from "./TimetableClient";
@@ -19,8 +19,9 @@ interface TimetablePageProps {
 export default async function TimetablePage({
   initialDay,
 }: TimetablePageProps) {
+  const locale = await getLocale();
   const t = await getTranslations();
-  const festivalDays = FESTIVAL_CONFIG.days;
+  const festivalDays = FESTIVAL_CONFIG.getDays(locale);
 
   // Default to first day if initialDay not provided or invalid
   const validInitialDay =

@@ -4,31 +4,27 @@ This directory contains preview images for the festival program links displayed 
 
 ## Naming Convention
 
-Images are named by day number, **NOT** by weekday name:
+Images are named by weekday + locale + screenshot suffix:
 
-- `day1.png` - First day of festival (currently Saturday, July 19, 2025)
-- `day2.png` - Second day of festival (currently Sunday, July 20, 2025)
-- `day3.png` - Third day if festival extends to Monday
-- etc.
+- `friday-de-screenshot.png`, `friday-es-screenshot.png`
+- `saturday-de-screenshot.png`, `saturday-es-screenshot.png`
+- `sunday-de-screenshot.png`, `sunday-es-screenshot.png`
 
-## Why Day Numbers?
+Format:
 
-Using day numbers instead of weekday names makes the system scalable and consistent with the overall festival architecture:
-
-- ✅ Festival dates can change without renaming files
-- ✅ Adding days only requires adding `dayN.png` files
-- ✅ No confusion if festival starts on different weekdays
-- ✅ Consistent with `FestivalDay.id` structure (`day1`, `day2`, etc.)
-- ✅ Matches the pattern used in `/timetable-days/` for day selection buttons
+- `<weekday>-<locale>-screenshot.png`
+- Weekday is lowercase English (`friday`, `saturday`, `sunday`)
+- Locale is currently `de` or `es`
 
 ## Current Configuration
 
-**Festival Dates**: July 19-20, 2025  
-**Days**: 2  
+**Festival Dates**: July 3-5, 2026  
+**Days**: 3  
 **Mapping**:
 
-- `day1.png` → Saturday, July 19
-- `day2.png` → Sunday, July 20
+- `friday-<locale>-screenshot.png` → Friday
+- `saturday-<locale>-screenshot.png` → Saturday
+- `sunday-<locale>-screenshot.png` → Sunday
 
 ## Image Specifications
 
@@ -59,30 +55,14 @@ Using day numbers instead of weekday names makes the system scalable and consist
 
 This hybrid approach ensures optimal viewing for the current 2-day festival while preventing cramped layouts if the festival expands to 3+ days.
 
-## Adding a Third Day
+## Adding or Changing Days
 
-If the festival extends to Monday (July 21):
+When festival dates change, ensure each generated weekday has both locale screenshots.
 
-1. Update `/src/config/festival.ts`:
+Example: if Monday is added, create:
 
-   ```typescript
-   dates: {
-     start: new Date("July 19, 2025 12:30:00"),
-     end: new Date("July 21, 2025 23:59:59"), // Changed from July 20 to July 21
-   }
-   ```
-
-2. Add `day3.png` to this directory:
-
-   - Create a preview image of Monday's timetable
-   - Maintain the same dimensions and style as day1.png and day2.png
-   - Save as `day3.png`
-
-3. The system will automatically:
-   - Display the third day in Section 5
-   - Adjust the grid layout to accommodate 3 days
-   - Generate the correct link to `/timetable?day=monday`
-   - Use the translated day name from the i18n files
+- `monday-de-screenshot.png`
+- `monday-es-screenshot.png`
 
 ## How It Works
 
@@ -94,12 +74,10 @@ The `SectionFive.tsx` component:
 4. Uses the day number for the image path: `/timetable-links/day${n}.png`
 5. Uses the weekday name for routing: `/timetable?day=${weekday}`
 6. Adapts the grid layout based on the number of days
+7. Selects preview image by weekday and active locale
 
 ## Migration Notes
 
-Previously hardcoded images:
-
-- `timetable-saturday.png` → Moved to `day1.png`
-- `timetable-sunday.png` → Moved to `day2.png`
+Previously day-numbered images were replaced by weekday + locale screenshot files.
 
 The old images in the root `/public/` directory can be removed after migration is verified.

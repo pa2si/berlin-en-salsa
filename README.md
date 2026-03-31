@@ -1,3 +1,8 @@
+v2.3.0
+
+- weekdays in timetable are now selected regarding locale
+- in Sectin5 the Screenshots are now also depending on locale
+
 v2.2.16
 
 - mainStage schedule for es and de updated including friday

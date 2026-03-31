@@ -4,55 +4,42 @@ This directory contains SVG images for festival day buttons in the timetable int
 
 ## Naming Convention
 
-Images are named by day number, **NOT** by weekday name:
+Images are named by weekday plus locale suffix:
 
-- `day1.svg` - First day of festival (currently Saturday, July 19, 2025)
-- `day2.svg` - Second day of festival (currently Sunday, July 20, 2025)
-- `day3.svg` - Third day if festival extends to Monday
-- etc.
+- `friday-de.svg`, `friday-es.svg`
+- `saturday-de.svg`, `saturday-es.svg`
+- `sunday-de.svg`, `sunday-es.svg`
 
-## Why Day Numbers?
+Format:
 
-Using day numbers instead of weekday names makes the system scalable:
-
-- ✅ Festival dates can change without renaming files
-- ✅ Adding days only requires adding `dayN.svg` files
-- ✅ No confusion if festival starts on different weekdays
-- ✅ Consistent with `FestivalDay.id` structure (`day1`, `day2`, etc.)
+- `<weekday>-<locale>.svg`
+- Weekday is lowercase English (`friday`, `saturday`, `sunday`)
+- Locale is currently `de` or `es`
 
 ## Current Configuration
 
-**Festival Dates**: July 19-20, 2025  
-**Days**: 2  
+**Festival Dates**: July 3-5, 2026  
+**Days**: 3  
 **Mapping**:
 
-- `day1.svg` → Saturday, July 19
-- `day2.svg` → Sunday, July 20
+- `friday-<locale>.svg` → Friday
+- `saturday-<locale>.svg` → Saturday
+- `sunday-<locale>.svg` → Sunday
 
-## Adding a Third Day
+## Adding or Changing Days
 
-If the festival extends to Monday (July 21):
+When festival dates change, ensure files exist for every generated weekday and locale.
 
-1. Update `/src/config/festival.ts`:
+Example: if Monday is added, create:
 
-   ```typescript
-   dates: {
-     start: new Date("July 19, 2025 12:30:00"),
-     end: new Date("July 21, 2025 23:59:59"), // Changed from July 20 to July 21
-   }
-   ```
+- `monday-de.svg`
+- `monday-es.svg`
 
-2. Add `day3.svg` to this directory:
+The system will automatically:
 
-   - Option A: Create new Monday-specific image
-   - Option B: Copy from Saturday/Sunday and modify
-   - Option C: Use generic "Day 3" design
-
-3. The system will automatically:
-   - Generate a third FestivalDay with `id: "day3"`, `weekday: "monday"`
-   - Load `day3.svg` for the Monday button
-   - Fetch Monday's timetable data
-   - No code changes needed! 🎉
+- Generate a FestivalDay with `weekday: "monday"`
+- Load `/timetable-days/monday-<locale>.svg`
+- Fetch Monday timetable data
 
 ## Image Requirements
 
@@ -88,7 +75,7 @@ This path is used by:
 
 Consider adding:
 
-- `day3.svg`, `day4.svg`, etc. for multi-day festivals
-- Localized versions (e.g., `day1-de.svg`, `day1-es.svg`)
+- More weekday assets if the festival expands
+- Additional locales beyond `de` and `es`
 - Dark mode variants
 - Animated versions for active state

@@ -14,14 +14,33 @@ export interface FestivalDay {
 
 export const FESTIVAL_TIME_ZONE = "Europe/Berlin";
 
+const SUPPORTED_IMAGE_LOCALES = ["de", "es"] as const;
+type SupportedImageLocale = (typeof SUPPORTED_IMAGE_LOCALES)[number];
+
+const DEFAULT_IMAGE_LOCALE: SupportedImageLocale = "de";
+
+function getImageLocale(locale?: string): SupportedImageLocale {
+  if (!locale) return DEFAULT_IMAGE_LOCALE;
+
+  return SUPPORTED_IMAGE_LOCALES.includes(locale as SupportedImageLocale)
+    ? (locale as SupportedImageLocale)
+    : DEFAULT_IMAGE_LOCALE;
+}
+
 /**
  * Generate festival days from date range
  * Each day gets complete metadata for UI rendering and data lookup
  */
-function generateFestivalDays(start: Date, end: Date): FestivalDay[] {
+function generateFestivalDays(
+  start: Date,
+  end: Date,
+  locale?: string,
+): FestivalDay[] {
   const days: FestivalDay[] = [];
   const current = new Date(start);
   current.setHours(0, 0, 0, 0); // Start at midnight for accurate day counting
+
+  const imageLocale = getImageLocale(locale);
 
   const endDate = new Date(end);
   endDate.setHours(0, 0, 0, 0);
@@ -57,7 +76,7 @@ function generateFestivalDays(start: Date, end: Date): FestivalDay[] {
       weekday: weekdayName,
       weekdayFull: weekdayFull,
       label: `Sections.SectionFive.days.${weekdayName}`,
-      imageSrc: `/timetable-days/day${dayCounter}.svg`,
+      imageSrc: `/timetable-days/${weekdayName}-${imageLocale}.svg`,
       dateShort: dateShort,
       dateISO: dateISO,
     });
@@ -110,24 +129,33 @@ export const FESTIVAL_CONFIG = {
 
   /**
    * Dynamically generate festival days from start/end dates
-   * This is a getter so it's computed on access
+   * Defaults to German assets if no locale is provided.
+   */
+  getDays(locale?: string): FestivalDay[] {
+    return generateFestivalDays(this.dates.start, this.dates.end, locale);
+  },
+
+  /**
+   * Backward-compatible default days getter (German assets)
    */
   get days(): FestivalDay[] {
-    return generateFestivalDays(this.dates.start, this.dates.end);
+    return this.getDays();
   },
 
   /**
    * Get a specific day by its ID
    */
-  getDayById(dayId: string): FestivalDay | undefined {
-    return this.days.find((day) => day.id === dayId);
+  getDayById(dayId: string, locale?: string): FestivalDay | undefined {
+    return this.getDays(locale).find((day) => day.id === dayId);
   },
 
   /**
    * Get a specific day by its weekday name
    */
-  getDayByWeekday(weekday: string): FestivalDay | undefined {
-    return this.days.find((day) => day.weekday === weekday.toLowerCase());
+  getDayByWeekday(weekday: string, locale?: string): FestivalDay | undefined {
+    return this.getDays(locale).find(
+      (day) => day.weekday === weekday.toLowerCase(),
+    );
   },
 };
 
