@@ -11,6 +11,7 @@ const SectionFour = () => {
   const smBlackTshirtRef = useRef(null);
   const t = useTranslations("Sections.SectionFour");
   const locale = useLocale();
+  const supportEmailHref = "mailto:info@berlinensalsa.de";
 
   // Lower threshold and add margin to detect earlier
   const isInViewMobileWhite = useInView(mobileWhiteTshirtRef, {
@@ -66,15 +67,21 @@ const SectionFour = () => {
           {t("description3")}
         </p>
 
-        <img
-          src={
-            locale === "de"
-              ? "/unterstuetze-uns-dabei.svg"
-              : "/apoyanos-double-line.svg"
-          }
-          alt={t("supportTitle")}
-          className="mx-auto w-[50vw] max-w-100 min-w-56"
-        />
+        <a
+          href={supportEmailHref}
+          aria-label={t("supportTitle")}
+          className="block"
+        >
+          <img
+            src={
+              locale === "de"
+                ? "/unterstuetze-uns-dabei.svg"
+                : "/apoyanos-double-line.svg"
+            }
+            alt={t("supportTitle")}
+            className="mx-auto w-[50vw] max-w-100 min-w-56 cursor-pointer"
+          />
+        </a>
 
         <div className="flex w-full items-center justify-around gap-4 px-4">
           <motion.img
@@ -143,15 +150,21 @@ const SectionFour = () => {
 
         {/* Right column - T-shirts */}
         <div className="flex flex-col items-center justify-center p-4">
-          <img
-            src={
-              locale === "de"
-                ? "/unterstuetze-uns-dabei.svg"
-                : "/apoyanos-single-line.svg"
-            }
-            alt={t("supportTitle")}
-            className="mb-4 w-full max-w-48"
-          />
+          <a
+            href={supportEmailHref}
+            aria-label={t("supportTitle")}
+            className="block"
+          >
+            <img
+              src={
+                locale === "de"
+                  ? "/unterstuetze-uns-dabei.svg"
+                  : "/apoyanos-single-line.svg"
+              }
+              alt={t("supportTitle")}
+              className="mb-4 w-full max-w-48 cursor-pointer"
+            />
+          </a>
 
           <div className="flex flex-row items-center justify-center gap-4">
             <motion.img
@@ -217,15 +230,21 @@ const SectionFour = () => {
 
         {/* Bottom row - T-shirts */}
         <div className="flex flex-1 flex-col justify-center p-4 lg:items-center lg:p-3">
-          <img
-            src={
-              locale === "de"
-                ? "/unterstuetze-uns-dabei.svg"
-                : "/apoyanos-single-line.svg"
-            }
-            alt={t("supportTitle")}
-            className="mx-auto mb-6 max-h-[18vh] w-[clamp(18rem,43vh,40rem)] object-contain lg:mb-8"
-          />
+          <a
+            href={supportEmailHref}
+            aria-label={t("supportTitle")}
+            className="block"
+          >
+            <img
+              src={
+                locale === "de"
+                  ? "/unterstuetze-uns-dabei.svg"
+                  : "/apoyanos-single-line.svg"
+              }
+              alt={t("supportTitle")}
+              className="mx-auto mb-6 max-h-[18vh] w-[clamp(18rem,43vh,40rem)] cursor-pointer object-contain lg:mb-8"
+            />
+          </a>
 
           <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.img
@@ -251,7 +270,7 @@ const SectionFour = () => {
       </div>
 
       {/* Desktop layout (only visible at xl and above) */}
-      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto pt-4 xl:grid">
+      <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto pt-4 xl:grid xl:pt-2 2xl:pt-4">
         <div className="flex items-center justify-center">
           <motion.img
             src="/bes-camiseta-white.webp"
@@ -291,15 +310,21 @@ const SectionFour = () => {
             {t("description3")}
           </p>
 
-          <img
-            src={
-              locale === "de"
-                ? "/unterstuetze-uns-dabei.svg"
-                : "/apoyanos-single-line.svg"
-            }
-            alt={t("supportTitle")}
-            className="mx-auto max-w-140 min-w-40"
-          />
+          <a
+            href={supportEmailHref}
+            aria-label={t("supportTitle")}
+            className="block"
+          >
+            <img
+              src={
+                locale === "de"
+                  ? "/unterstuetze-uns-dabei.svg"
+                  : "/apoyanos-single-line.svg"
+              }
+              alt={t("supportTitle")}
+              className="mx-auto max-w-140 min-w-120 cursor-pointer"
+            />
+          </a>
         </div>
         <div className="flex items-center justify-center">
           <motion.img

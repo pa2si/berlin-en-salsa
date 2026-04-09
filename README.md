@@ -1,3 +1,7 @@
+v2.3.1
+
+- clickable "Apoyanos pidiendo tu camiseta" with link to email
+
 v2.3.0
 
 - weekdays in timetable are now selected regarding locale
