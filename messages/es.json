@@ -477,7 +477,8 @@
           "somos": "Somos Somos",
           "sonobrero": "Son Obrero",
           "malandrea": "Malandrea",
-          "alfiaConIre": "Alafía con Iré",
+          "alafiaConIre": "Alafia con Iré",
+          "sonObrero": "Son Obrero",
           "cayeye": "Cayeye"
         },
         "saturday": {
@@ -519,6 +520,19 @@
       },
       "artists": {
         "rodoLeFou": "Rodo Le Fou",
+        "mangle": "Mangle",
+        "somosSomos": "Somos Somos",
+        "sonObrero": "Son Obrero",
+        "malandrea": "Malandrea",
+        "laCataMontesa": "La Cata Montesa",
+        "lionza": "Lionza",
+        "dayle": "Dayle",
+        "ednaMartinez": "Edna Martínez",
+        "ecuajey": "Ecuajey",
+        "elJavier": "El Javier",
+        "besHosts": "Berlin En Salsa Hosts DJs",
+        "lasHienas": "Las Hienas",
+        "gerardoRosales": "Gerardo Rosales Y Sus Trombones",
         "elProfe": "El Profe",
         "ecKuba": "EC Kuba",
         "alafiaConIre": "Alafía con Iré",
@@ -605,6 +619,7 @@
         "julian": "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina."
       },
       "bios": {
+        "mangle": "mangle es una banda de salsa con sede en Berlín, formada por músicos de diferentes países que comparten una pasión por la música latina. Su repertorio combina clásicos del género con composiciones propias, interpretadas con energía y alegría. La banda se caracteriza por su presencia escénica vibrante y su precisión musical, creando una atmósfera que entusiasma tanto a bailarines como a amantes de la música.",
         "rodoLeFou": "DJ y coleccionista de discos amante de la música tropical. Es cofundador del colectivo La Noche y de las Aviatrix Listening Sessions, así como miembro del grupo de salsa Cayeye y del grupo de punk Severo Esfínter.",
         "elProfe": "El Profe es el alias de Raúl Payares, un selector afrocolombiano radicado en Berlín. Apasionado por los vinilos, Raúl lleva más de cuatro años haciendo vibrar las pistas con sets cargados de Salsa Brava, Cumbia tradicional, Ritmos del Caribe, Vallenato clásico y joyas africanas de los 60, 70 y 80. Originario de Cartagena, Colombia, y criado entre tambores, acordeones y Picos. El Profe combina su herencia afro con una curaduría musical profunda, bailable y siempre honesta. Es el creador de fiestas como \"LA NOCHE\" and \"It's a SALSA BRAVA Thing\", eventos que han sacudido la escena alternativa en Berlín, ofreciendo espacios donde la música de raíz afro-latina se celebra en su forma más pura: en vinilo y con corazón. Cada set es una experiencia que va más allá del baile: es un viaje sonoro que conecta culturas, cuerpos y memorias.",
         "ecKuba": "Nacido en la cuidad donde se creó la rumba Ciudad de Matanzas Cuba. Reside en Berlín ya hace varios años y dando a conocer lo mejor de la música cubana en diferentes eventos y festivales como festival Berlín fiesta Elegante, Bérgamo en Salsa Italia , Berlín Salsa congresos ,entre otros y sociales como Soda Club Berlin .Amante de la música De su tierra y siempre interesado por otra culturas musicalmente. Berlín en Salsa preparó un set de Timba, Salsa y Son Cubano.",

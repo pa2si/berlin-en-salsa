@@ -1,3 +1,7 @@
+v2.4.0
+
+- first registrations for friday timetable
+
 v2.3.1
 
 - clickable "Apoyanos pidiendo tu camiseta" with link to email

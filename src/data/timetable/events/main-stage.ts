@@ -11,6 +11,145 @@ import { RawTimetableEvent } from "@/types/events";
  * All main stage events for the festival
  */
 export const mainStageEvents: RawTimetableEvent[] = [
+  // ===== FRIDAY EVENTS =====
+
+  // Mangle DJ Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.friday.mangle",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.mangle",
+        role: "dj",
+        bio: "Timetable.events.bios.mangle",
+        image: "/ec-kuba.webp",
+      }),
+    ],
+    image: "/ec-kuba.webp",
+  }),
+
+  // SOMOS SOMOS
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.friday.somos",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.rodoLeFou",
+        role: "dj",
+        bio: "Timetable.events.bios.rodoLeFou",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.elProfe",
+        role: "dj",
+        bio: "Timetable.events.bios.elProfe",
+        image: "/el-profe.webp",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/el-profe.webp",
+      }),
+    ],
+  }),
+
+  // Alafia con Ire Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.friday.alafiaConIre",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.alafiaConIre",
+        role: "band",
+        description: "Timetable.events.descriptions.alafiaConIre",
+        image: "/alafia-con-ire.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.leidiana",
+        role: "dancer",
+        bio: "Timetable.events.bios.leidiana",
+        image: "/leidiana.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.roger",
+        role: "dancer",
+        bio: "Timetable.events.bios.roger",
+        image: "/roger.webp",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/alafia-con-ire.webp",
+        caption: "Timetable.events.descriptions.alafiaConIre",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/leidiana-roger.webp",
+        caption: "Timetable.events.descriptions.leidianaRoger",
+      }),
+    ],
+    image: "/alafia-con-ire.webp",
+    genre: "Afro-Cuban",
+    hasShow: true,
+    danceShow: "Timetable.events.danceShows.afroCuban",
+    dancers: "Timetable.events.dancers.leidianaRoger",
+  }),
+
+  // Son Obrero Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.friday.sonObrero",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.rodoLeFou",
+        role: "dj",
+        bio: "Timetable.events.bios.rodoLeFou",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.elProfe",
+        role: "dj",
+        bio: "Timetable.events.bios.elProfe",
+        image: "/el-profe.webp",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/rodo-le-fou.webp",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/el-profe.webp",
+      }),
+    ],
+  }),
+
+  // Cayeye  Live Performance
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.friday.cayeye",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.cayeye",
+        role: "band",
+        description: "Timetable.events.descriptions.cayeye",
+        image: "/cayeye.webp",
+      }),
+    ],
+  }),
+
   // ===== SATURDAY EVENTS =====
 
   // Rodo & El Profe DJ Set
@@ -58,50 +197,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
       }),
     ],
     image: "/ec-kuba.webp",
-  }),
-
-  // Alafia con Ire Live Performance
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.alfiaConIre",
-    area: "main-stage",
-    performanceType: "live",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.alafiaConIre",
-        role: "band",
-        description: "Timetable.events.descriptions.alafiaConIre",
-        image: "/alafia-con-ire.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.leidiana",
-        role: "dancer",
-        bio: "Timetable.events.bios.leidiana",
-        image: "/leidiana.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.roger",
-        role: "dancer",
-        bio: "Timetable.events.bios.roger",
-        image: "/roger.webp",
-      }),
-    ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/alafia-con-ire.webp",
-        caption: "Timetable.events.descriptions.alafiaConIre",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/leidiana-roger.webp",
-        caption: "Timetable.events.descriptions.leidianaRoger",
-      }),
-    ],
-    image: "/alafia-con-ire.webp",
-    genre: "Afro-Cuban",
-    hasShow: true,
-    danceShow: "Timetable.events.danceShows.afroCuban",
-    dancers: "Timetable.events.dancers.leidianaRoger",
   }),
 
   // Andrelux Live Performance

@@ -477,7 +477,8 @@
           "somos": "Somos Somos",
           "sonobrero": "Son Obrero",
           "malandrea": "Malandrea",
-          "alfiaConIre": "Alafía con Iré",
+          "alafiaConIre": "Alafia con Iré",
+          "sonObrero": "Son Obrero",
           "cayeye": "Cayeye"
         },
         "saturday": {
@@ -519,6 +520,19 @@
       },
       "artists": {
         "rodoLeFou": "Rodo Le Fou",
+        "mangle": "Mangle",
+        "somosSomos": "Somos Somos",
+        "sonObrero": "Son Obrero",
+        "malandrea": "Malandrea",
+        "laCataMontesa": "La Cata Montesa",
+        "lionza": "Lionza",
+        "dayle": "Dayle",
+        "ednaMartinez": "Edna Martínez",
+        "ecuajey": "Ecuajey",
+        "elJavier": "El Javier",
+        "besHosts": "Berlin En Salsa Hosts DJs",
+        "lasHienas": "Las Hienas",
+        "gerardoRosales": "Gerardo Rosales Y Sus Trombones",
         "elProfe": "El Profe",
         "ecKuba": "EC Kuba",
         "alafiaConIre": "Alafía con Iré",
@@ -573,10 +587,10 @@
         "frankieDante": "Frankie Dante"
       },
       "descriptions": {
+        "alafiaConIre": "Im Jahr 2004 gründeten jugendliche Musiker in Havanna die Band Alafia con Iré aufgrund ihrer großen Leidenschaft für Musik und dem Wunsch, selbst die vielfältige Musik ihres Heimatlandes zu spielen. Mit Rasiel Almanza Cairo gelangte diese Idee 2022 nach Berlin, wo das Projekt in überwiegend neuer Besetzung wieder ins Leben gerufen wurde. Alafia con Iré spielt unter anderem afrokubanische Musik, insbesondere auch Rumba, und zudem eigene Kompositionen. Der Name der Band stammt aus der afrokubanischen Religion 'Regla de Ocha'. Alafia bedeutet auf Yoruba so viel wie Wohlbefinden und innerer Frieden und Iré stellt eine zusätzliche Verstärkung dar.",
         "rodoLeFou": "DJ, Plattensammler und Liebhaber der tropischen Musik. Er ist Mitbegründer des Kollektivs La Noche und der Aviatrix Listening Sessions sowie Mitglied der Salsa-Band Cayeye und der Punkband Severo Esfínter.",
         "elProfe": "El Profe ist das Alias von Raúl Payares, einem afrokolumbianischen Selector mit Wohnsitz in Berlin. Raúl ist leidenschaftlicher Vinylsammler und bringt seit über vier Jahren die Tanzflächen zum Beben – mit kraftvollen Sets voller Salsa Brava, traditioneller Cumbia, karibischer Rhythmen, klassischem Vallenato und afrikanischen Perlen aus den 60er-, 70er- und 80er-Jahren. Geboren in Cartagena, Kolumbien, und aufgewachsen zwischen Trommeln, Akkordeons und Picos, verbindet El Profe seine afro-kolumbianische Herkunft mit einer tiefgehenden, tanzbaren und ehrlichen Musikauswahl. Er ist der Gründer von Partys wie LA NOCHE und It's a SALSA BRAVA Thing – Veranstaltungen, die die alternative Szene Berlins geprägt haben und Räume schaffen, in denen afro-lateinamerikanische Musik in ihrer ursprünglichsten Form gefeiert wird: auf Vinyl und mit Herz. Jedes seiner Sets ist mehr als nur Musik zum Tanzen – es ist eine klangliche Reise, die Kulturen, Körper und Erinnerungen miteinander verbindet.",
         "ecKuba": "Geboren in der Stadt, in der die Rumba entstand – Matanzas, Kuba – lebt er seit mehreren Jahren in Berlin und bringt dort das Beste der kubanischen Musik auf die Bühne. Er ist auf zahlreichen Events und Festivals vertreten, darunter das Festival Berlín Fiesta Elegante, Bérgamo en Salsa (Italien), der Berlin Salsa Congress und viele weitere – auch in bekannten sozialen Locations wie dem Soda Club Berlin. Als leidenschaftlicher Liebhaber der Musik seiner Heimat zeigt er zugleich großes Interesse an anderen Kulturen und deren musikalischen Ausdrucksformen. Für Berlín en Salsa hat er ein Set mit Timba, Salsa und Son Cubano vorbereitet.",
-        "alafiaConIre": "Im Jahr 2004 gründeten jugendliche Musiker in Havanna die Band Alafia con Iré aufgrund ihrer großen Leidenschaft für Musik und dem Wunsch, selbst die vielfältige Musik ihres Heimatlandes zu spielen. Mit Rasiel Almanza Cairo gelangte diese Idee 2022 nach Berlin, wo das Projekt in überwiegend neuer Besetzung wieder ins Leben gerufen wurde. Alafia con Iré spielt unter anderem afrokubanische Musik, insbesondere auch Rumba, und zudem eigene Kompositionen. Der Name der Band stammt aus der afrokubanischen Religion 'Regla de Ocha'. Alafia bedeutet auf Yoruba so viel wie Wohlbefinden und innerer Frieden und Iré stellt eine zusätzliche Verstärkung dar.",
         "djFeikes": "DJ Feikes bereist seit über 35 Jahren die Karibik, immer mit offenen Ohren. Nach jeder Reise steht er vor demselben Dilemma: Wie bekommt man all diese Platten ins Flugzeug und sicher nach Berlin? Jeden ersten Mittwoch im Monat präsentieren DJ Feikes und sein Partner DJ Christian ihr 'Salsa Café' im Club 'wilder als erwartet' gegenüber dem Nordbahnhof. Diese beiden Musikbegeisterten bieten ihrem Publikum eine exquisite Auswahl aus ihrer umfangreichen Plattensammlung: von kubanischen Klassikern der 50er Jahre – mit Mambo, Danzón und Charanga – über die energiegeladene 'Salsa Callejera' aus dem New York der 60er Jahre, die kraftvolle orquestrierte 'Salsa Brava' der 70er Jahre, die melodischere Salsa der 80er Jahre bis hin zu den romantischen Klängen der 90er Jahre. Außerdem erklingen auch andere afrokaribische Rhythmen wie kolumbianische Cumbia, dominikanischer Merengue oder sogar afrikanische Salsa mit kubanischen Wurzeln. Das Wichtigste: Die Musik soll dich erobern und den Swing spüren lassen!",
         "tempoHavanna": "Tempo Havanna lässt die musikalische Seele Kubas erklingen, eingefangen in leidenschaftlichen Eigenkompositionen, modern und mit einem urban-kubanischen Stil. Lateinamerikanische Rhythmen, von Salsa und Son bis hin zu Bolero und Cha-Cha-Chá, bringen den Charme Havannas im Gepäck mit und stillen die Sehnsucht nach karibischer Leichtigkeit, Leidenschaft und Lebensfreude.",
         "necios": "Aus den Tiefen von Nächten voller Cumbia-Rhythmen und 'Salsa-Fliesen' entstanden, verwandelte eine tiefe Liebe zur Musik drei Freunde in NECIOS. Ursprünglich aus Kolumbien und Ecuador stammend, hat dieses in Berlin ansässige Kollektiv von SOUND SELECTORS eine von Vinyl und Nadeln angetriebene Reise zum Leben erweckt. Ihre Sammlung ist eine faszinierende Fusion von Klängen, die die Breite und Länge Lateinamerikas umspannt und ihre tiefsten Wurzeln sowie neue elektronische Horizonte erkundet. 'Necio' oder 'Necia' ist jemand, der stur ist, der bis zum Äußersten für das geht, woran er wirklich glaubt. Auch wenn das bedeutet, nicht den Regeln zu folgen!",
@@ -616,6 +630,7 @@
         "leidianaRoger": "Roger und Leidiana sind ein Duo kubanischer Tänzer, die dafür anerkannt sind, Tradition mit Moderne bei jeder Aufführung zu verschmelzen Sein einzigartiger Stil vereint die Stärke der urbanen Bewegung, die Eleganz des traditionellen kubanischen Tanzes und die ausdrucksstarke Tiefe des Afro-Contemporanen"
       },
       "bios": {
+        "mangle": "Mangle ist eine Band, die traditionelle kolumbianische und kubanische Rhythmen spielt.",
         "calamidadesLola": "Calamidades Lola ist eine Plattensammlerin und DJ/Selector, geboren und aufgewachsen in Barranquilla, einer Stadt an der karibischen Küste Kolumbiens mit einer kraftvollen Festkultur, wo Musik ein sicherer Weg zu Freude und Befreiung ist. Mit Wohnsitz in Berlin wird ein großer Teil ihrer Sammlung und musikalischen Auswahl von ihrer Migrationserfahrung geleitet.",
         "amuletoManuela": "Amuleto Manuela ist eine kolumbianische Klangkünstlerin und DJ mit Wohnsitz in Berlin. In ihrer prozessbasierten Arbeit (Soundscapes, Klangskulpturen, kollektive Hörpraktiken und Radioprogramme) ist das Hören das Prinzip und entsteht als kontextuelle Antwort auf die Suche nach Begegnungsräumen. Sie behandelt Themen der Diaspora und Identität mit dem Wunsch, andere Formen des Bewohnens unserer kollektiven Lebenserfahrung zu verlernen und zu erinnern.",
         "leidiana": "Leidiana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",

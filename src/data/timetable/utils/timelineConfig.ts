@@ -55,6 +55,36 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
     area: "main-stage",
     schedules: [
       {
+        dayWeekday: "friday",
+        timeline: [
+          {
+            time: "16:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.friday.mangle",
+          },
+          {
+            time: "17:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.friday.somos",
+          },
+          {
+            time: "18:30",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.friday.alafiaConIre",
+          },
+          {
+            time: "19:30",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.friday.sonObrero",
+          },
+          {
+            time: "21:00",
+            duration: 60,
+            eventId: "Timetable.events.mainStage.friday.cayeye",
+          },
+        ],
+      },
+      {
         dayWeekday: "saturday",
         timeline: [
           {
@@ -66,11 +96,6 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "14:00",
             duration: 60,
             eventId: "Timetable.events.mainStage.saturday.ecKubaSet",
-          },
-          {
-            time: "15:00",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.saturday.alfiaConIre",
           },
           {
             time: "16:00",
