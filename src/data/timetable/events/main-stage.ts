@@ -29,22 +29,22 @@ export const mainStageEvents: RawTimetableEvent[] = [
     image: "/ec-kuba.webp",
   }),
 
-  // SOMOS SOMOS
+  // SOMOS SOMOS DJ Set
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.friday.somos",
     area: "main-stage",
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.ela",
         role: "dj",
-        bio: "Timetable.events.bios.rodoLeFou",
+        bio: "Timetable.events.bios.ela",
         image: "/rodo-le-fou.webp",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.elProfe",
+        name: "Timetable.events.artists.wadWill",
         role: "dj",
-        bio: "Timetable.events.bios.elProfe",
+        bio: "Timetable.events.bios.wadWill",
         image: "/el-profe.webp",
       }),
     ],
@@ -104,22 +104,22 @@ export const mainStageEvents: RawTimetableEvent[] = [
     dancers: "Timetable.events.dancers.leidianaRoger",
   }),
 
-  // Son Obrero Live Performance
+  // Son Obrero DJ Set
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.friday.sonObrero",
     area: "main-stage",
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.sonObrero1",
         role: "dj",
-        bio: "Timetable.events.bios.rodoLeFou",
+        bio: "Timetable.events.bios.sonObrero1",
         image: "/rodo-le-fou.webp",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.elProfe",
+        name: "Timetable.events.artists.sonObrero2",
         role: "dj",
-        bio: "Timetable.events.bios.elProfe",
+        bio: "Timetable.events.bios.sonObrero2",
         image: "/el-profe.webp",
       }),
     ],
@@ -152,87 +152,56 @@ export const mainStageEvents: RawTimetableEvent[] = [
 
   // ===== SATURDAY EVENTS =====
 
-  // Rodo & El Profe DJ Set
+  // Malandrea DJ Set
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.rodoElProfe",
+    title: "Timetable.events.mainStage.saturday.malandrea",
     area: "main-stage",
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.malandrea",
         role: "dj",
-        bio: "Timetable.events.bios.rodoLeFou",
-        image: "/rodo-le-fou.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.elProfe",
-        role: "dj",
-        bio: "Timetable.events.bios.elProfe",
-        image: "/el-profe.webp",
-      }),
-    ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/rodo-le-fou.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/el-profe.webp",
-      }),
-    ],
-  }),
-
-  // EC Kuba DJ Set
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.ecKubaSet",
-    area: "main-stage",
-    performanceType: "dj-set",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.ecKuba",
-        role: "dj",
-        bio: "Timetable.events.bios.ecKuba",
-        image: "/ec-kuba.webp",
-      }),
-    ],
-    image: "/ec-kuba.webp",
-  }),
-
-  // Andrelux Live Performance
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.andrelux",
-    area: "main-stage",
-    performanceType: "live",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.andrelux",
-        role: "band",
-        bio: "Timetable.events.bios.andrelux",
-        image: "/andrelux.webp",
-      }),
-    ],
-    image: "/andrelux.webp",
-    genre: "Salsa",
-  }),
-
-  // DJ Feikes Set
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.djFeikes",
-    area: "main-stage",
-    performanceType: "dj-set",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.djFeikes",
-        role: "dj",
-        bio: "Timetable.events.bios.djFeikes",
+        bio: "Timetable.events.bios.malandrea",
         image: "/dj-feikes.webp",
       }),
     ],
     image: "/dj-feikes.webp",
   }),
 
-  // Burundanga Live Performance (Saturday)
+  // Dayle DJ Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.dayle",
+    area: "main-stage",
+    performanceType: "dj-set",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.dayle",
+        role: "dj",
+        bio: "Timetable.events.bios.dayle",
+        image: "/dj-feikes.webp",
+      }),
+    ],
+    image: "/dj-feikes.webp",
+  }),
+
+  // La Cata Montesa DJ Set
+  EventFactory.createMainStageEvent({
+    title: "Timetable.events.mainStage.saturday.laCataMontesa",
+    area: "main-stage",
+    performanceType: "live",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.artists.laCataMontesa",
+        role: "band",
+        bio: "Timetable.events.bios.laCataMontesa",
+        image: "/burundanga.webp",
+      }),
+    ],
+    image: "/burundanga.webp",
+    genre: "Salsa",
+  }),
+
+  // Burundanga Live Performance
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.saturday.burundanga",
     area: "main-stage",
@@ -241,24 +210,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
       EventFactory.createAct({
         name: "Timetable.events.artists.burundanga",
         role: "band",
-        bio: "Timetable.events.bios.burundanga",
-        image: "/burundanga.webp",
-      }),
-    ],
-    image: "/burundanga.webp",
-    genre: "Salsa",
-  }),
-
-  // Tempo Havana Live Performance
-  EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.tempoHavana",
-    area: "main-stage",
-    performanceType: "live",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.tempoHavana",
-        role: "band",
-        bio: "Timetable.events.bios.tempoHavana",
+        description: "Timetable.events.descriptions.burundanga",
         image: "/tempo-havana.webp",
       }),
     ],
@@ -266,32 +218,32 @@ export const mainStageEvents: RawTimetableEvent[] = [
     genre: "Son Cubano",
   }),
 
-  // DJ Bongo Set (Saturday)
+  // Lionza DJ Set
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.djBongo",
+    title: "Timetable.events.mainStage.saturday.lionza",
     area: "main-stage",
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.djBongo",
+        name: "Timetable.events.artists.lionza",
         role: "dj",
-        bio: "Timetable.events.bios.djBongo",
+        bio: "Timetable.events.bios.lionza",
         image: "/dj-bongo.webp",
       }),
     ],
     image: "/dj-bongo.webp",
   }),
 
-  // Cayeye Live Performance (Saturday)
+  // La Melodica Live Performance
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.mainStage.saturday.cayeye",
+    title: "Timetable.events.mainStage.saturday.laMelodica",
     area: "main-stage",
     performanceType: "live",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.cayeye",
+        name: "Timetable.events.artists.laMelodica",
         role: "band",
-        bio: "Timetable.events.bios.cayeye",
+        description: "Timetable.events.descriptions.laMelodica",
         image: "/cayeye.webp",
       }),
     ],

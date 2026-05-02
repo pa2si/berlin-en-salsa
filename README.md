@@ -1,3 +1,7 @@
+v2.4.1
+
+- set up timeslots for main-stage, friday and saturday
+
 v2.4.0
 
 - first registrations for friday timetable

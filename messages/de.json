@@ -482,10 +482,11 @@
           "cayeye": "Cayeye"
         },
         "saturday": {
-          "laCataMontesa": "La Cata Montesa",
-          "lionza": "Lionza",
+          "malandrea": "Malandrea",
           "dayle": "Dayle",
+          "laCataMontesa": "La Cata Montesa",
           "burundanga": "Burundanga",
+          "lionza": "Lionza",
           "laMelodica": "La Melodica"
         },
         "sunday": {
@@ -523,6 +524,8 @@
         "mangle": "Mangle",
         "somosSomos": "Somos Somos",
         "sonObrero": "Son Obrero",
+        "sonObrero1": "Son Obrero1",
+        "sonObrero2": "Son Obrero2",
         "malandrea": "Malandrea",
         "laCataMontesa": "La Cata Montesa",
         "lionza": "Lionza",
@@ -631,6 +634,11 @@
       },
       "bios": {
         "mangle": "Mangle ist eine Band, die traditionelle kolumbianische und kubanische Rhythmen spielt.",
+        "ela ": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "wadWill": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "malandrea": "loren ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "sonObrero1": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "sonObrero2": "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "calamidadesLola": "Calamidades Lola ist eine Plattensammlerin und DJ/Selector, geboren und aufgewachsen in Barranquilla, einer Stadt an der karibischen Küste Kolumbiens mit einer kraftvollen Festkultur, wo Musik ein sicherer Weg zu Freude und Befreiung ist. Mit Wohnsitz in Berlin wird ein großer Teil ihrer Sammlung und musikalischen Auswahl von ihrer Migrationserfahrung geleitet.",
         "amuletoManuela": "Amuleto Manuela ist eine kolumbianische Klangkünstlerin und DJ mit Wohnsitz in Berlin. In ihrer prozessbasierten Arbeit (Soundscapes, Klangskulpturen, kollektive Hörpraktiken und Radioprogramme) ist das Hören das Prinzip und entsteht als kontextuelle Antwort auf die Suche nach Begegnungsräumen. Sie behandelt Themen der Diaspora und Identität mit dem Wunsch, andere Formen des Bewohnens unserer kollektiven Lebenserfahrung zu verlernen und zu erinnern.",
         "leidiana": "Leidiana kommt aus Kuba und lebt jetzt in Berlin – und was sie am meisten liebt? Tanzen! Schon seit sie klein ist, gehört Musik und Bewegung zu ihrem Alltag. Mit ihrem ganz eigenen Stil und der Lebensfreude aus ihrer Heimat bringt sie jeden Raum zum Strahlen. Für sie ist Tanzen nicht nur ein Beruf, sondern pure Leidenschaft.",

@@ -460,13 +460,16 @@ export class TimetableService {
     // Convert to TimelineSlot[] format (time -> events mapping)
     const slotsMap = new Map<string, TimetableEvent[]>();
 
-    // Build time slots from events (every 30 minutes from 13:00 to 21:30)
-    const startHour = 13;
-    const endHour = 21;
-    const endMinutes = 30;
+    // Build time slots from events (every 30 minutes from 12:30 to 22:00)
+    // This must match the displayed timetable window so modal lookup works for all slots.
+    const startHour = 12;
+    const startMinutes = 30;
+    const endHour = 22;
+    const endMinutes = 0;
 
     for (let hour = startHour; hour <= endHour; hour++) {
       for (let minute = 0; minute < 60; minute += 30) {
+        if (hour === startHour && minute < startMinutes) continue;
         if (hour === endHour && minute > endMinutes) break;
         const timeStr = `${hour.toString().padStart(2, "0")}:${minute.toString().padStart(2, "0")}`;
         slotsMap.set(timeStr, []);
