@@ -26,7 +26,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/ec-kuba.webp",
       }),
     ],
-    image: "/ec-kuba.webp",
   }),
 
   // SOMOS SOMOS DJ Set
@@ -97,7 +96,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         caption: "Timetable.events.descriptions.leidianaRoger",
       }),
     ],
-    image: "/alafia-con-ire.webp",
     genre: "Afro-Cuban",
     hasShow: true,
     danceShow: "Timetable.events.danceShows.afroCuban",
@@ -165,7 +163,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/dj-feikes.webp",
       }),
     ],
-    image: "/dj-feikes.webp",
   }),
 
   // Dayle DJ Set
@@ -181,14 +178,13 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/dj-feikes.webp",
       }),
     ],
-    image: "/dj-feikes.webp",
   }),
 
   // La Cata Montesa DJ Set
   EventFactory.createMainStageEvent({
     title: "Timetable.events.mainStage.saturday.laCataMontesa",
     area: "main-stage",
-    performanceType: "live",
+    performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.laCataMontesa",
@@ -197,8 +193,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/burundanga.webp",
       }),
     ],
-    image: "/burundanga.webp",
-    genre: "Salsa",
   }),
 
   // Burundanga Live Performance
@@ -214,7 +208,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/tempo-havana.webp",
       }),
     ],
-    image: "/tempo-havana.webp",
     genre: "Son Cubano",
   }),
 
@@ -231,7 +224,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/dj-bongo.webp",
       }),
     ],
-    image: "/dj-bongo.webp",
   }),
 
   // La Melodica Live Performance
@@ -247,7 +239,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/cayeye.webp",
       }),
     ],
-    image: "/cayeye.webp",
     genre: "Salsa",
   }),
 

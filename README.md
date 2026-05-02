@@ -1,3 +1,7 @@
+v2.4.2
+
+- more edits for main-stage
+
 v2.4.1
 
 - set up timeslots for main-stage, friday and saturday
