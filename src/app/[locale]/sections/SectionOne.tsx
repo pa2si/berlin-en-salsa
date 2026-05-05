@@ -48,7 +48,9 @@ const SectionOne = () => {
             ) : (
               <>
                 {festivalDate} <br />
-                {FESTIVAL_CONFIG.venueIsKnown && t("venue")}
+                {FESTIVAL_CONFIG.venueIsKnown && (
+                  <span className="mt-2 block">{t("venue")}</span>
+                )}
               </>
             )}
           </motion.p>
