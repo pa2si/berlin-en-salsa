@@ -1,6 +1,10 @@
+v2.4.5
+
+- added a 0 at the date for german version
+
 v2.4.4
 
-- added padding in SectionOne and a 0 at the date for german version
+- added padding in SectionOne
 
 v2.4.3
 

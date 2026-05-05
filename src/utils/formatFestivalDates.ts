@@ -21,8 +21,12 @@ export function formatFestivalDates(locale: string): string {
 
   const startDayRaw = startDate.getDate();
   const endDayRaw = endDate.getDate();
-  const startDay = locale === "de" ? String(startDayRaw).padStart(2, "0") : String(startDayRaw);
-  const endDay = locale === "de" ? String(endDayRaw).padStart(2, "0") : String(endDayRaw);
+  const startDay =
+    locale === "de"
+      ? String(startDayRaw).padStart(2, "0")
+      : String(startDayRaw);
+  const endDay =
+    locale === "de" ? String(endDayRaw).padStart(2, "0") : String(endDayRaw);
   const month = startDate.toLocaleDateString(locale, { month: "long" });
   const year = startDate.getFullYear();
 
