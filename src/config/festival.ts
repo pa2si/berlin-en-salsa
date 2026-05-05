@@ -109,14 +109,14 @@ export const FESTIVAL_CONFIG = {
    * When true the UI will display the venue name/translation (t("venue")).
    * Set to false when the location is not finalized and should be hidden.
    */
-  venueIsKnown: false,
+  venueIsKnown: true,
 
   /**
    * Timetable availability configuration
    * Set to true when the timetable is finalized and ready to be displayed
    */
   timetable: {
-    isAvailable: true, // Change to true when timetable is ready
+    isAvailable: false, // Change to true when timetable is ready
   },
 
   /**

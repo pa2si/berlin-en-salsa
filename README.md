@@ -1,3 +1,7 @@
+v2.4.3
+
+- venue reveiled
+
 v2.4.2
 
 - more edits for main-stage
