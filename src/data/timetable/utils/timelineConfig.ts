@@ -60,27 +60,27 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "16:00",
             duration: 60,
-            eventId: "Timetable.events.mainStage.friday.mangle",
+            eventId: "Timetable.events.artists.mangle", //text done (german text with translated with Chat GPT), image missing
           },
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.mainStage.friday.somos",
+            eventId: "Timetable.events.artists.somos", //MISSING
           },
           {
             time: "18:30",
             duration: 60,
-            eventId: "Timetable.events.mainStage.friday.alafiaConIre",
+            eventId: "Timetable.events.artists.alafiaConIre", // MISSING
           },
           {
             time: "19:30",
             duration: 60,
-            eventId: "Timetable.events.mainStage.friday.sonObrero",
+            eventId: "Timetable.events.artists.sonObrero", //MISSING
           },
           {
             time: "21:00",
             duration: 60,
-            eventId: "Timetable.events.mainStage.friday.cayeye",
+            eventId: "Timetable.events.artists.cayeye", //text done, image missing
           },
         ],
       },
@@ -90,32 +90,32 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 90,
-            eventId: "Timetable.events.mainStage.saturday.malandrea",
+            eventId: "Timetable.events.artists.malandrea", //text done, image missing
           },
           {
             time: "14:00",
             duration: 90,
-            eventId: "Timetable.events.mainStage.saturday.dayle",
+            eventId: "Timetable.events.artists.dayle", //text done, image missing
           },
           {
             time: "15:30",
             duration: 90,
-            eventId: "Timetable.events.mainStage.saturday.laCataMontesa",
+            eventId: "Timetable.events.artists.laCataMontesa", //text done (translation with Chat GPT), image missing
           },
           {
             time: "17:30",
             duration: 60,
-            eventId: "Timetable.events.mainStage.saturday.burundanga",
+            eventId: "Timetable.events.artists.burundanga", //MISSING
           },
           {
             time: "18:30",
             duration: 90,
-            eventId: "Timetable.events.mainStage.saturday.lionza",
+            eventId: "Timetable.events.artists.lionza", //text done, image missing
           },
           {
             time: "20:30",
             duration: 60,
-            eventId: "Timetable.events.mainStage.saturday.laMelodica",
+            eventId: "Timetable.events.artists.laMelodica", //MISSING
           },
         ],
       },
@@ -124,38 +124,33 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
         timeline: [
           {
             time: "12:30",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.floriWilber",
+            duration: 90,
+            eventId: "Timetable.events.artists.elJavierB", //text done, image missing
           },
           {
             time: "14:00",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.laSonoraBerlin",
+            duration: 90,
+            eventId: "Timetable.events.artists.suenaCheloB2BEcuajey", //text done, image missing
           },
           {
-            time: "15:00",
+            time: "16:00",
             duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.elPuma",
+            eventId: "Timetable.events.artists.lasHienas", //text done (spanish text translated by chat GPT), image missing
           },
           {
-            time: "16:30",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.burundanga",
-          },
-          {
-            time: "17:30",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.anacaonaLaVecina",
+            time: "17:00",
+            duration: 90,
+            eventId: "Timetable.events.artists.ednaMartinez", //MISSING
           },
           {
             time: "19:00",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.cayeye",
+            duration: 90,
+            eventId: "Timetable.events.artists.gerardoRosalesSalsaLegendaria", //text done, image missing
           },
           {
-            time: "21:00",
-            duration: 60,
-            eventId: "Timetable.events.mainStage.sunday.berlinEnSalsaHostDJs",
+            time: "20:30",
+            duration: 90,
+            eventId: "Timetable.events.artists.besHosts",
           },
         ],
       },

@@ -1,3 +1,8 @@
+v2.5.0
+
+- now the es and de.json files are not organizing the acts by area and date anymore as this shall come from the timelineConfig.ts
+- entered all texts for mainStage i have so far.
+
 v2.4.5
 
 - added a 0 at the date for german version
