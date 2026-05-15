@@ -1,3 +1,7 @@
+v2.5.1
+
+- updated artists texts
+
 v2.5.0
 
 - now the es and de.json files are not organizing the acts by area and date anymore as this shall come from the timelineConfig.ts
