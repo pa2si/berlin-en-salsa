@@ -65,7 +65,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.artists.somos", //MISSING
+            eventId: "Timetable.events.artists.somos", //text done. Fotos upload for infividual missing
           },
           {
             time: "18:30",

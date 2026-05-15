@@ -1,3 +1,7 @@
+v2.5.2
+
+- Ela Text update
+
 v2.5.1
 
 - updated artists texts
