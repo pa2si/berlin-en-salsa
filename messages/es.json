@@ -123,7 +123,8 @@
     "countdown": {
       "title": "¡Cuenta regresiva hasta Berlin En Salsa!",
       "closeLabel": "Cerrar anuncio",
-      "viewProgram": "Ver programa"
+      "viewProgram": "Ver programa",
+      "programTbaSoon": "Programa pronto disponible"
     },
     "live": {
       "title": "¡Ya estamos gozando Berlin En Salsa!",

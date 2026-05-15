@@ -1,3 +1,7 @@
+v2.6.0
+
+- Countdownbanner now announces "program tba soon" when timetable disabled
+
 v2.5.2
 
 - Ela Text update
