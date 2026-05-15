@@ -1,3 +1,7 @@
+v2.6.1
+
+- text for Somo updated
+
 v2.6.0
 
 - Countdownbanner now announces "program tba soon" when timetable disabled
