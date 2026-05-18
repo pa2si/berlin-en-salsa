@@ -12,7 +12,7 @@ export const useColumnTranslation = () => {
       case "Tarima Principal":
         return t("columns.mainStage");
       case "Talleres de Baile":
-        return t("columns.danceWorkshops");
+        return t("columns.danceArea");
       case "Charlas Salseras":
         return t("columns.salsaTalks");
       case "Talleres de Música":
@@ -21,7 +21,7 @@ export const useColumnTranslation = () => {
       case "Hauptbühne":
         return t("columns.mainStage");
       case "Tanz-Workshops":
-        return t("columns.danceWorkshops");
+        return t("columns.danceArea");
       case "Salsa-Talks":
         return t("columns.salsaTalks");
       case "Musik-Workshops":
@@ -39,7 +39,9 @@ export const useColumnTranslation = () => {
         return "main-stage";
       case "Talleres de Baile":
       case "Tanz-Workshops":
-        return "dance-workshops";
+      case "Zona de Baile":
+      case "Tanz Area":
+        return "dance-area";
       case "Charlas Salseras":
       case "Salsa-Talks":
         return "salsa-talks";

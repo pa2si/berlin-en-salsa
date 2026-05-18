@@ -17,7 +17,7 @@ console.log("=".repeat(60));
 console.log("\n1️⃣  Testing TIMELINE_CONFIG structure...");
 console.log(`   ✓ Total areas configured: ${TIMELINE_CONFIG.length}`);
 console.log(
-  `   ✓ Expected: 4 areas (main-stage, dance-workshops, music-workshops, salsa-talks)`,
+  `   ✓ Expected: 4 areas (main-stage, dance-area, music-workshops, salsa-talks)`,
 );
 
 TIMELINE_CONFIG.forEach((areaConfig) => {
@@ -35,7 +35,7 @@ console.log("\n2️⃣  Testing getTimelineForAreaAndDay()...");
 const saturdayMainStage = getTimelineForAreaAndDay("main-stage", "saturday");
 const sundayMainStage = getTimelineForAreaAndDay("main-stage", "sunday");
 const saturdayDanceWorkshops = getTimelineForAreaAndDay(
-  "dance-workshops",
+  "dance-area",
   "saturday",
 );
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -86,7 +86,7 @@ TIMELINE_CONFIG.forEach((areaConfig) => {
   // Check area is valid
   const validAreas = [
     "main-stage",
-    "dance-workshops",
+    "dance-area",
     "music-workshops",
     "salsa-talks",
   ];

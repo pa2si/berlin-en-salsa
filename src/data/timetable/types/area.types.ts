@@ -1,6 +1,6 @@
 export type AreaType =
   | "main-stage"
-  | "dance-workshops"
+  | "dance-area"
   | "music-workshops"
   | "salsa-talks";
 
@@ -18,11 +18,11 @@ export const AREA_DEFINITIONS: Record<AreaType, AreaInfo> = {
     germanName: "Hauptbühne",
     translationKey: "columns.mainStage",
   },
-  "dance-workshops": {
-    id: "dance-workshops",
-    spanishName: "Talleres de Baile",
-    germanName: "Tanz-Workshops",
-    translationKey: "columns.danceWorkshops",
+  "dance-area": {
+    id: "dance-area",
+    spanishName: "Zona de Baile",
+    germanName: "Tanz Area",
+    translationKey: "columns.danceArea",
   },
   "music-workshops": {
     id: "music-workshops",

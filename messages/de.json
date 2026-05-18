@@ -432,7 +432,7 @@
     },
     "columns": {
       "mainStage": "Hauptbühne",
-      "danceWorkshops": "Tanz-Workshops",
+      "danceArea": "Tanz Area",
       "salsaTalks": "Salsa-Talks",
       "musicWorkshops": "Musik-Workshops"
     },
@@ -473,15 +473,23 @@
     },
     "events": {
       "danceWorkshops": {
-        "saturday": {
-          "afroCubanDance": "Afro-Cuban Dance",
-          "sonCubano": "Son Cubano",
-          "salsaCalena": "Salsa Caleña"
-        },
-        "sunday": {
-          "newYorkOn2": "New York On 2",
-          "casinoCubano": "Casino Cubano"
-        }
+        "salsaCalena": "Salsa Caleña",
+        "ruedaDeCasino": "Rueda de Casino",
+        "nYStyle": "Nueva York Style",
+        "sonCubano": "Son Cubano",
+        "chaChaCha": "Cha Cha Chá",
+        "afroCuban": "Afrocubano"
+      },
+      "danceShows": {
+        "salsaCalena": "Salsa Caleña",
+        "ruedaDeCasino": "Rueda de Casino",
+        "nYStyle": "Nueva York Style",
+        "sonCubano": "Son Cubano",
+        "chaChaCha": "Cha Cha Chá",
+        "afroCuban": "Afrocubano"
+      },
+      "dancers": {
+        "lynetRivero": "Lynet Rivero"
       },
       "musicWorkshops": {
         "saturday": {
@@ -494,6 +502,7 @@
         }
       },
       "artists": {
+        "nora": "Nora",
         "ela": "Elac!on Sensac!on",
         "pseudogamin": "Pseudogamín",
         "gerardoRosales": "Gerardo Rosales",
@@ -566,6 +575,8 @@
         "frankieDante": "Frankie Dante"
       },
       "descriptions": {
+        "chaChaCha": "Der Cha Cha Chá entstand Anfang der 1950er Jahre in Kuba durch den Komponisten und Geiger Enrique Jorrín, der ihn aus dem Danzón-Mambo weiterentwickelte. Sein Name ahmt das charakteristische Geräusch nach, das die Füße beim typischen Dreischritt auf dem Boden erzeugen. Schon bald wurde er zum weltweiten Phänomen und eroberte die Tanzflächen Lateinamerikas, der USA und Europas mit seinem verspielten, eleganten und ausdrucksstarken Rhythmus. Im Gegensatz zu anderen kubanischen Stilen wird der Cha Cha Chá auf die Eins der Musik getanzt, was ihm eine direkte und zugängliche Qualität verleiht — ohne dabei seine tiefe Musikalität zu verlieren. Es ist ein Tanz des Dialogs zwischen zwei Personen: schelmisch, präzise und voller Sabor. Keine Vorkenntnisse erforderlich.",
+        "afroCuban": "TDer Afro-Kubanische Tanz hat seine Wurzeln in den religiösen und kulturellen Traditionen, die afrikanische Völker während der Kolonialzeit in die Karibik mitbrachten. Im Laufe der Jahrhunderte verschmolzen diese Ausdrucksformen mit spanischen und karibeischen Einflüssen und schufen so eine einzigartige Bewegungssprache: lebendig, perkussiv und zutiefst spirituell. Rhythmen wie Rumba und Yambú sowie Gesänge yorubanischen und bantusischen Ursprungs bilden die Grundlage, aus der dieser Tanz atmet und sich weiterentwickelt. In diesem Workshop, der für alle Niveaus offen ist, erkunden wir die Grundlagen der afro-kubanischen Bewegung, die Hüftarbeit, das Körpergewicht, die Verbindung zum Boden und die enge Beziehung zwischen Bewegung und Perkussion. Afro-Kubanischer Tanz ist mehr",
         "ela": "Im Herzen des ecuatorianischen Amazonasdschungels geboren, trägt sie in ihrer Essenz die ahnenhaften Herzschläge ihrer Heimat im Inneren. Sie liebt das gemeinschaftliche Zapateo und das barfüßige Tanzen auf der Erde, und sie verschmilzt den Fluss der Rhythmen mit dem Flüstern des Dschungels. Ihre Musik ist Bewegung, ihre Bewegung ist pure irdische Verbundenheit. Für sie ist Musik nicht nur Klang: sie ist Schweiß, Erinnerung und Feier. Mach dich bereit, mit der Erde unter den Füßen und den Tropen in den Hüften zu tanzen!",
         "sonObrero": "Das Kollektiv Son Obrero entstand aus der Leidenschaft zweier Caleños, die zwischen Arbeitervierteln, Vinylplatten und Salsa aufgewachsen sind. Unsere Familien, Nachbarn und Tänzer erlebten die Zeit, in der Salsa nach Cali kam und die Stadt diese Kultur aufnahm, bis sie zur Welthauptstadt der Salsa wurde. Unser Sound bringt die Musik zurück, die in den Barrios, auf den Straßen, in traditionellen Bars, Diskotheken und Viejotecas von Cali lebt. Salsa Brava, Salsa Dura und Klassiker voller Geschmack, Erinnerung und Barrio-Kultur. Mit jedem Set wollen wir die authentische Energie der Straße vermitteln, die Musik, die in den Ecken der Stadt und auf den Tanzflächen wirklich gelebt, getanzt und gefühlt wird.",
         "somos": "SomoS entstand 2023 als Raum für Liebhaber*innen der Musik und des Tanzes der lateinamerikanischen Diaspora und als Antwort auf die Notwendigkeit, gemeinschaftliche und sichere Räume für die Rumbera-Szene Berlins zu schaffen. SomoS ist im Laufe dieser Jahre mit Geduld und Feingefühl gewachsen, genießt in seinen Rumbas mit den lokalen Lieblings-DJs und fördert ein Spektrum verschiedener musikalischer Ausdrucksformen Lateinamerikas. Eure, Elac!on Sensac!on und Pseudogamín <3",
@@ -612,6 +623,7 @@
         "leidianaRoger": "Roger und Leidiana sind ein Duo kubanischer Tänzer, die dafür anerkannt sind, Tradition mit Moderne bei jeder Aufführung zu verschmelzen Sein einzigartiger Stil vereint die Stärke der urbanen Bewegung, die Eleganz des traditionellen kubanischen Tanzes und die ausdrucksstarke Tiefe des Afro-Contemporanen"
       },
       "bios": {
+        "lynetRivero": "Lynet Rivero Rubio ist kubanische Choreografin, Tänzerin, Forscherin und Pädagogin. Sie schloss ihr Tanzstudium an der Universität der Künste Kubas (ISA) ab, wo sie von 2006 bis 2018 als Dozentin tätig war. Mit einer umfangreichen Erfahrung in zeitgenössischem Tanz, Afro-Kubanischem Tanz, Physischem Theater und körperlichem Ausdruck hat sie szenische, pädagogische und forschungsorientierte Projekte in Kuba, Deutschland, Italien, Indien, Nicaragua und weiteren internationalen Kontexten entwickelt. Ihre Kurse verbinden Bewegung, Musikalität, körperliche Verbindung und afro-kubanische Kulturwurzeln. Als Bühnenregisseurin und Choreografin hat sie in Theater, Musicals und Tanztheater gearbeitet und dabei mit renommierten Kompanien und Regisseuren in Kuba und Europa zusammengearbeitet. Bei Berlin en Salsa wird sie ihre Erfahrung durch Kurse und Workshops rund um Afro-Kubanischen Tanz und bewusstes Bewegen teilen, aus einer künstlerischen, energetischen und kulturellen Perspektive.",
         "ednaMartinez": "Edna Martinez ist eine visionäre DJ, Kuratorin und Produzentin aus der kolumbianischen Karibik mit Wohnsitz in Berlin, die Champeta und die Picó Kultur auf internationale Bühnen bringt. In ihren expansiven Soundreisen verbindet sie diasporische Rhythmen globaler Clubkulturen, Klänge aus der SWANA Region, UK Funky und weitere Einflüsse der Sound System Kultur. Die Picós, handgefertigte, kraftvolle und farbenfrohe Soundsysteme, stehen für eine lebendige Tradition, die auf Freude, Kreativität und kollektivem Gedächtnis basiert. Beim Berlin en Salsa Festival 2026 präsentiert sie ein besonderes Salsa Picotera Set. Im Juni 2025 veröffentlichte sie ihr Album PICÓ! Sound System Culture From the Colombian Caribbean bei Strut Records und hat eine monatliche Residency bei NTS Radio.",
         "dracaena": "Dracaena ist DJ und Plattensammlerin, geboren in Cali, Kolumbien, und lebt heute in Berlin. Ihre Sets sind energiegeladen und fesselnd, mit einem besonderen Fokus auf kraftvolle Percussion- und Piano-Soli – gedacht sowohl zum Tanzen als auch zum aufmerksamen Zuhören. Ihr musikalisches Konzept dreht sich rund um Salsa und die Klänge der Diaspora, insbesondere afrokaribische, afrolateinamerikanische und lateinamerikanische Rhythmen. Sie ist ein aktives Mitglied der Berliner Sammler:innen-Community und Teil des Organisationsteams des Berlin en Salsa Festival. Dracaena hat außerdem an Talks und Panels teilgenommen – unter anderem mit DLD – und dort ihre Perspektive als DJ und Sammlerin im Spannungsfeld von Musik, Kultur und Identität geteilt.",
         "elVago": "El Vago ist DJ, Plattensammler und Kulturschaffender mit Wohnsitz in Berlin. Seit mehreren Jahren ist er Co-Host der La Regla Party – einer der bekanntesten und beliebtesten Veranstaltungen der lateinamerikanischen Szene der Stadt. Aktuell ist er zudem Koordinator des Festivals Berlín en Salsa.",
@@ -704,20 +716,6 @@
             "description": "El tulo de la canción \\\"No le llamen Salsa a mi Son... dile música Cubana\\\" del cantante cubano Monguito \\\"El Único\\\" lo deja claro: la 'Salsa' no fue en un principio más que una etqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimento colectvo de muchas comunidades latnas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creatvos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el Salsomano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
           }
         }
-      },
-      "danceShows": {
-        "afroCuban": "Afro-Cuban Dance Show",
-        "sonCubano": "Son Cubano Dance Show",
-        "salsaCaleña": "Salsa Caleña Dance Show",
-        "nyOn2": "NY On 2 Dance Show",
-        "casinoCubano": "Casino Cubano Dance Show"
-      },
-      "dancers": {
-        "leidianaRoger": "Leidiana & Roger, Laura & Kimberly",
-        "helenYago": "Helen & Yago",
-        "jessicaJulian": "Jessica & Julian",
-        "niya": "Niya",
-        "leiAyna": "Lei & Ayna"
       }
     }
   }

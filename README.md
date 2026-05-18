@@ -1,3 +1,9 @@
+v2.7.0
+
+- the dance-workshops area is now dance-area. alls correspoing code is modified.
+  - for createDanceAreea we implemented a attribute: danceAreaType: workshop | show
+- texts for bandas and Djs continued to edit. still some missing
+
 v2.6.2
 
 - main Stage texts for acts inserted (bandas & DJs)

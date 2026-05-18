@@ -73,13 +73,14 @@ export class EventFactory {
   }
 
   /**
-   * Create a dance workshop event
+   * Create a dance area event (workshop or show)
    * Note: startTime, endTime, and duration will be set by timeline configuration
    */
-  static createDanceWorkshop(params: {
+  static createDanceAreaEvent(params: {
     title: string;
     duration?: number; // Optional - set by timeline config
     area: AreaType;
+    danceAreaType: "workshop" | "show";
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";
@@ -93,6 +94,7 @@ export class EventFactory {
       id,
       title: params.title,
       area: params.area,
+      danceAreaType: params.danceAreaType,
       danceStyle: params.danceStyle,
       ...(params.duration && { duration: params.duration }),
       acts: params.acts,

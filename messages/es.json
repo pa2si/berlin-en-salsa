@@ -432,7 +432,7 @@
     },
     "columns": {
       "mainStage": "Tarima Principal",
-      "danceWorkshops": "Talleres de Baile",
+      "danceArea": "Zona de Baile",
       "salsaTalks": "Charlas Salseras",
       "musicWorkshops": "Talleres de Música"
     },
@@ -473,15 +473,27 @@
     },
     "events": {
       "danceWorkshops": {
-        "saturday": {
-          "afroCubanDance": "Afro-Cuban Dance",
-          "sonCubano": "Son Cubano",
-          "salsaCalena": "Salsa Caleña"
-        },
-        "sunday": {
-          "newYorkOn2": "New York On 2",
-          "casinoCubano": "Casino Cubano"
-        }
+        "salsaCalena": "Salsa Caleña",
+        "ruedaDeCasino": "Rueda de Casino",
+        "nYStyle": "Nueva York Style",
+        "sonCubano": "Son Cubano",
+        "chaChaCha": "Cha Cha Chá",
+        "afroCuban": "Afrocubano"
+      },
+      "danceShows": {
+        "salsaCalena": "Salsa Caleña",
+        "ruedaDeCasino": "Rueda de Casino",
+        "nYStyle": "Nueva York Style",
+        "sonCubano": "Son Cubano",
+        "chaChaCha": "Cha Cha Chá",
+        "afroCuban": "Afrocubano"
+      },
+      "dancers": {
+        "lynetRivero": "Lynet Rivero",
+        "helenYago": "Helen & Yago",
+        "jessicaJulian": "Jessica & Julian",
+        "niya": "Niya",
+        "leiAyna": "Lei & Ayna"
       },
       "musicWorkshops": {
         "saturday": {
@@ -494,6 +506,7 @@
         }
       },
       "artists": {
+        "nora": "Nora",
         "gerardoRosales": "Gerardo Rosales",
         "gerardoRosalesSalsaLegendaria": "Gerardo Rosales Y Su Salsa Legendaria",
         "suenaCheloB2BEcuajey": "Suena Chelo b2b Ecuajey",
@@ -567,6 +580,8 @@
         "frankieDante": "Frankie Dante"
       },
       "descriptions": {
+        "chaChaCha": "El cha cha chá nació en Cuba a principios de los años 50 de la mano del compositor y violinista Enrique Jorrín, quien lo desarrolló a partir del danzón-mambo. Su nombre imita el sonido característico que producen los pies al rozar el suelo en ese paso triple tan distintivo. Rápidamente se convirtió en un fenómeno mundial, conquistando las pistas de baile de América Latina, Estados Unidos y Europa con su ritmo juguetón, elegante y lleno de carácter. A diferencia de otros estilos cubanos, el cha cha chá se baila sobre el tiempo uno de la música, lo que le da una sensación directa y accesible sin perder su profunda musicalidad. Es un baile de diálogo entre los dos bailadores pícaros, precisos y con mucho sabor. En este workshop abierto a todos los niveles exploraremos sus raíces históricas, su estructura rítmica y sus pasos fundamentales, para que puedas llevarlo directamente a la pista de baile social. No se requiere experiencia previa.",
+        "Afrocubano": "El baile afrocubano tiene sus raíces en las tradiciones religiosas y culturales que los pueblos africanos trajeron consigo al Caribe durante la época colonial. A lo largo de los siglos, estas expresiones se fusionaron con influencias españolas y caribeñas, dando origen a un lenguaje de movimiento único: vivo, percusivo y profundamente espiritual. Ritmos como la rumba, el yambú o los cantos de origen yoruba y bantú son la base sobre la que este baile respira y se transforma. En este workshop abierto a todos los niveles, exploraremos los fundamentos del movimiento afrocubano, el trabajo de caderas, el peso del cuerpo, la conexión con el suelo y la relación íntima entre el movimiento y la percusión. Más que una técnica, el baile afrocubano es una forma de habitar el cuerpo con plena conciencia, ritmo y alegría. No se requiere experiencia previa. Solo ganas de moverte y de conectar.",
         "sonObrero": "El Colectivo Son Obrero nace de dos caleños criados entre barrios populares, vinilos y la salsa que sonaba en las casas de nuestras familias. Crecimos bajo la influencia de padres, vecinos y bailadores que vivieron la llegada de la salsa a Cali, cuando la ciudad comenzó a acoger esa cultura salsera hasta convertirse en la capital mundial de la salsa. Nuestro sonido revive la música que vive en los barrios, en la calle, en los bares tradicionales, las discotecas y las viejotecas de Cali. Salsa brava, salsa dura y clásicos cargados de sabor, memoria y barrio. En cada set buscamos transmitir esa energía auténtica de la calle: la música que suena, se baila y se siente en las esquinas y en las pistas populares de la ciudad.",
         "somos": "SomoS nace en 2023 como espacio para lxs amantes de la música y el baile de la diaspora latinoamericana y como respuesta a la necesidad de crear espacios comunitarios y seguros para la escena rumbera de Berlin. SomoS ha crecido con paciencia y delicadeza a lo largo de estos años, gozando en sus rumbas con lxs   DJs locales favoritxs y promoviendo un abanico de diferentes expresiones musicales de latinoamerica. Suyos, Elac!on Sensac!on y Pseudogamín <3",
         "gerardoRosalesSalsaLegendaria": "Salsa Legendaria es el programa musical de Gerardo Rosales en donde toca diversas épocas de la historia de la salsa que abarca los años 60, 70 y 80 así que hay una diversidad de ritmos y remembranzas de la salsa, podrán escuchar y ver temas que van desde la salsa dura hasta la salsa romantica de Puerto Rico, Colombia, Venezuela, New York, Panamá y Cuba.",
@@ -594,6 +609,7 @@
         "julian": "Apasionado bailarín e instructor de salsa caleña con más de seis años de experiencia y más de tres años enseñando en Berlín, Julian ha actuado en numerosos festivales y eventos en toda Alemania. Originario de Colombia, enseña en el estudio Dolce Vita Dance Studio, donde se enfoca en la rapidez del juego de pies y en la técnica de guía y seguimiento. Pero sus clases son mucho más que pasos: se centran en la conexión, la intención y la musicalidad, honrando y promoviendo los ritmos y la cultura de América Latina."
       },
       "bios": {
+        "lynetRivero": "Lynet Rivero Rubio es coreógrafa, bailarina, investigadora y pedagoga cubana, graduada en Danza por la Universidad de las Artes de Cuba (ISA), donde ejerció como profesora entre 2006 y 2018. Con una amplia trayectoria en danza contemporánea, afrocubana, teatro físico y expresión corporal, ha desarrollado proyectos escénicos, pedagógicos y de investigación en Cuba, Alemania, Italia, India, Nicaragua y otros contextos internacionales. Sus clases integran movimiento, musicalidad, conexión corporal y raíces culturales afrocubanas. Como creadora escénica ha trabajado en teatro, musicales y danza-teatro, colaborando con compañías y directores de reconocido prestigio en Cuba y Europa. En Berlin en Salsa compartirá su experiencia a través de clases y workshops enfocados en danza afrocubana y movimiento consciente, desde una mirada artística, energética y cultural.",
         "ednaMartinez": "Edna Martinez es una visionaria DJ, curadora y productora del Caribe colombiano con base en Berlín que lleva la champeta y la cultura picotera a escenarios internacionales, mezclando ritmos diaspóricos del club global, sonidos de la región SWANA, UK funky y otras influencias de la cultura sound system en viajes sonoros expansivos. Los Picós, sistemas de sonido artesanales, potentes y coloridos, representan una tradición viva basada en la alegría, la creatividad y la memoria colectiva. Para el Berlin en Salsa Festival 2026, presentará un especial de salsa picotera. En junio de 2025 lanzó su album, PICÓ Sound System Culture From the Colombian Caribbean, en Strut Records, y mantiene una residencia mensual en NTS Radio.",
         "elVago": "El Vago es un DJ, coleccionista y gestor cultural radicado en Berlín. Desde hace varios años, es el co-host de La Regla Party, una de las fiestas más emblemáticas y queridas dentro de la escena latina de la ciudad. Actualmente coordina el Festival Berlín en Salsa.",
         "elMelomanoAleman": "Apasionado coleccionista de vinilos con un oído fino para los ritmos latinoamericanos, ha cultivado desde 2006 una profunda conexión con la cultura musical colombiana. La salsa, en especial, ha capturado su atención hasta convertirse en el eje central de su colección. El sonido clásico de los años 50 a los 70 hace hervir su sangre, décadas donde considera que reside la esencia pura y vibrante de esa magistral mezcla de géneros.",
@@ -694,20 +710,6 @@
             "description": "El título de la canción \"No le llamen Salsa a mi Son... dile música Cubana\" del cantante cubano Monguito \"El Único\" lo deja claro: la 'Salsa' no fue en un principio más que una etiqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimiento colectivo de muchas comunidades latinas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creativos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el salsómano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
           }
         }
-      },
-      "danceShows": {
-        "afroCuban": "Afro-Cuban Dance Show",
-        "sonCubano": "Son Cubano Dance Show",
-        "salsaCaleña": "Salsa Caleña Dance Show",
-        "nyOn2": "NY On 2 Dance Show",
-        "casinoCubano": "Casino Cubano Dance Show"
-      },
-      "dancers": {
-        "leidianaRoger": "Leidiana & Roger, Laura & Kimberly",
-        "helenYago": "Helen & Yago",
-        "jessicaJulian": "Jessica & Julian",
-        "niya": "Niya",
-        "leiAyna": "Lei & Ayna"
       }
     }
   }

@@ -8,6 +8,6 @@ export * from "./services/timetable.service";
 
 // Export unified event collections (day-agnostic)
 export { mainStageEvents } from "./events/main-stage";
-export { danceWorkshopEvents } from "./events/dance-workshops";
+export { danceWorkshopEvents } from "./events/dance-area";
 export { musicWorkshopEvents } from "./events/music-workshops";
 export { salsaTalksEvents } from "./events/salsa-talks";

@@ -11,7 +11,7 @@
 
 import { AreaType } from "../types/area.types";
 import { mainStageEvents } from "../events/main-stage";
-import { danceWorkshopEvents } from "../events/dance-workshops";
+import { danceWorkshopEvents } from "../events/dance-area";
 import { musicWorkshopEvents } from "../events/music-workshops";
 import { salsaTalksEvents } from "../events/salsa-talks";
 import { TimetableEvent, RawTimetableEvent } from "../../../types/events";
@@ -158,28 +158,18 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
   },
 
   // ========================================
-  // DANCE WORKSHOPS
+  // DANCE AREA
   // ========================================
   {
-    area: "dance-workshops",
+    area: "dance-area",
     schedules: [
       {
         dayWeekday: "friday",
         timeline: [
           {
-            time: "13:00",
-            duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.afroCubanDance",
-          },
-          {
-            time: "16:00",
-            duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.sonCubano",
-          },
-          {
-            time: "18:30",
-            duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.salsaCalena",
+            time: "19:30",
+            duration: 30,
+            eventId: "Timetable.events.danceWorkshops.danceShows",
           },
         ],
       },
@@ -187,19 +177,29 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
         dayWeekday: "saturday",
         timeline: [
           {
-            time: "13:00",
+            time: "13:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.afroCubanDance",
+            eventId: "Timetable.events.danceWorkshops.baileConsenso",
           },
           {
-            time: "16:00",
+            time: "15:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.sonCubano",
+            eventId: "Timetable.events.danceWorkshops.salsaCalena",
+          },
+          {
+            time: "16:30",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.ruedaDeCasino",
           },
           {
             time: "18:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.saturday.salsaCalena",
+            eventId: "Timetable.events.danceWorkshops.nYStyle",
+          },
+          {
+            time: "19:30",
+            duration: 30,
+            eventId: "Timetable.events.danceWorkshops.danceShows",
           },
         ],
       },
@@ -209,12 +209,27 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.sunday.newYorkOn2",
+            eventId: "Timetable.events.danceWorkshops.baileConsenso",
+          },
+          {
+            time: "14:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.sonCubano",
           },
           {
             time: "15:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.sunday.casinoCubano",
+            eventId: "Timetable.events.danceWorkshops.chaChaCha", //teacher name, description done, IMAGE and BIO MISSING
+          },
+          {
+            time: "17:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.afroCuban", // teacher name, bio and description done, IMAGE MISSING
+          },
+          {
+            time: "18:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.danceShows",
           },
         ],
       },

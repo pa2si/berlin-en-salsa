@@ -18,7 +18,7 @@ import { ProgramIcon } from "@/components/icons";
 
 // Import event data (unified collections)
 import { mainStageEvents } from "@/data/timetable/events/main-stage";
-import { danceWorkshopEvents } from "@/data/timetable/events/dance-workshops";
+import { danceWorkshopEvents } from "@/data/timetable/events/dance-area";
 import { musicWorkshopEvents } from "@/data/timetable/events/music-workshops";
 import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks";
 
@@ -30,7 +30,7 @@ import {
 
 const BANNER_EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "main-stage": mainStageEvents,
-  "dance-workshops": danceWorkshopEvents,
+  "dance-area": danceWorkshopEvents,
   "music-workshops": musicWorkshopEvents,
   "salsa-talks": salsaTalksEvents,
 };

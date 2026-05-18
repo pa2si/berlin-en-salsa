@@ -11,7 +11,7 @@ import {
 
 // Import unified event collections (day-agnostic)
 import { mainStageEvents } from "../events/main-stage";
-import { danceWorkshopEvents } from "../events/dance-workshops";
+import { danceWorkshopEvents } from "../events/dance-area";
 import { musicWorkshopEvents } from "../events/music-workshops";
 import { salsaTalksEvents } from "../events/salsa-talks";
 
@@ -27,7 +27,7 @@ import {
  */
 const EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "main-stage": mainStageEvents,
-  "dance-workshops": danceWorkshopEvents,
+  "dance-area": danceWorkshopEvents,
   "music-workshops": musicWorkshopEvents,
   "salsa-talks": salsaTalksEvents,
 };
