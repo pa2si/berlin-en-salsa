@@ -1,3 +1,7 @@
+v2.6.2
+
+- main Stage texts for acts inserted (bandas & DJs)
+
 v2.6.1
 
 - text for Somo updated

@@ -70,7 +70,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:30",
             duration: 60,
-            eventId: "Timetable.events.artists.alafiaConIre", // MISSING
+            eventId: "Timetable.events.artists.alafiaConIre", // text done, edited image missing
           },
           {
             time: "19:30",
@@ -105,7 +105,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:30",
             duration: 60,
-            eventId: "Timetable.events.artists.burundanga", //MISSING
+            eventId: "Timetable.events.artists.burundanga", //text done, edited image missing
           },
           {
             time: "18:30",
@@ -115,7 +115,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "20:30",
             duration: 60,
-            eventId: "Timetable.events.artists.laMelodica", //MISSING
+            eventId: "Timetable.events.artists.laMelodica", //text done, edited image missing
           },
         ],
       },
@@ -140,7 +140,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:00",
             duration: 90,
-            eventId: "Timetable.events.artists.ednaMartinez", //MISSING
+            eventId: "Timetable.events.artists.ednaMartinez", //text done, edited image missing
           },
           {
             time: "19:00",
@@ -150,7 +150,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "20:30",
             duration: 90,
-            eventId: "Timetable.events.artists.besHosts",
+            eventId: "Timetable.events.artists.besHosts", //MISSING TEXT AND IMAGE
           },
         ],
       },
@@ -163,6 +163,26 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
   {
     area: "dance-workshops",
     schedules: [
+      {
+        dayWeekday: "friday",
+        timeline: [
+          {
+            time: "13:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.afroCubanDance",
+          },
+          {
+            time: "16:00",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.sonCubano",
+          },
+          {
+            time: "18:30",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.saturday.salsaCalena",
+          },
+        ],
+      },
       {
         dayWeekday: "saturday",
         timeline: [
