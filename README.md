@@ -1,3 +1,7 @@
+v2.7.1
+
+- created Cha Cha Cha workshop
+
 v2.7.0
 
 - the dance-workshops area is now dance-area. alls correspoing code is modified.
