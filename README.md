@@ -1,3 +1,7 @@
+v2.7.2
+
+- images for mangle and son obrero added
+
 v2.7.1
 
 - created Cha Cha Cha workshop

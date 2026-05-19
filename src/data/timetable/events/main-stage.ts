@@ -23,7 +23,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.mangle",
         role: "dj",
         bio: "Timetable.events.bios.mangle",
-        image: "/ec-kuba.webp",
+        image: "/mangle.webp",
       }),
     ],
   }),
@@ -109,26 +109,10 @@ export const mainStageEvents: RawTimetableEvent[] = [
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.sonObrero1",
+        name: "Timetable.events.artists.sonObrero",
         role: "dj",
-        bio: "Timetable.events.bios.sonObrero1",
-        image: "/rodo-le-fou.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.sonObrero2",
-        role: "dj",
-        bio: "Timetable.events.bios.sonObrero2",
-        image: "/el-profe.webp",
-      }),
-    ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/rodo-le-fou.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/el-profe.webp",
+        description: "Timetable.events.descriptions.sonObrero",
+        image: "/son-obrero.webp",
       }),
     ],
   }),
