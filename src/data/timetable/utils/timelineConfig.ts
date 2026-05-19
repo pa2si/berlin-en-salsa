@@ -11,7 +11,7 @@
 
 import { AreaType } from "../types/area.types";
 import { mainStageEvents } from "../events/main-stage";
-import { danceWorkshopEvents } from "../events/dance-area";
+import { danceAreaEvents } from "../events/dance-area";
 import { musicWorkshopEvents } from "../events/music-workshops";
 import { salsaTalksEvents } from "../events/salsa-talks";
 import { TimetableEvent, RawTimetableEvent } from "../../../types/events";
@@ -422,7 +422,7 @@ export function createTimelineFromSimpleConfig(
         endTime: calculateEndTime(slot.time, slot.duration),
         day: day || "saturday", // Default to saturday if not provided
         // Set duration for workshop events from timeline
-        ...((event.type === "dance-workshop" ||
+        ...((event.type === "dance-area" ||
           event.type === "music-workshop") && { duration: slot.duration }),
       } as TimetableEvent; // Type assertion needed because we're adding required fields
 
@@ -441,7 +441,7 @@ export function createTimelineFromSimpleConfig(
 export function getEventById(eventId: string) {
   const allEvents = [
     ...mainStageEvents,
-    ...danceWorkshopEvents,
+    ...danceAreaEvents,
     ...musicWorkshopEvents,
     ...salsaTalksEvents,
   ];

@@ -11,7 +11,7 @@ import {
 
 // Import unified event collections (day-agnostic)
 import { mainStageEvents } from "../events/main-stage";
-import { danceWorkshopEvents } from "../events/dance-area";
+import { danceAreaEvents } from "../events/dance-area";
 import { musicWorkshopEvents } from "../events/music-workshops";
 import { salsaTalksEvents } from "../events/salsa-talks";
 
@@ -27,7 +27,7 @@ import {
  */
 const EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "main-stage": mainStageEvents,
-  "dance-area": danceWorkshopEvents,
+  "dance-area": danceAreaEvents,
   "music-workshops": musicWorkshopEvents,
   "salsa-talks": salsaTalksEvents,
 };
@@ -106,7 +106,7 @@ export class TimetableService {
           time: timeString,
           event: activeEvent.title,
           type:
-            activeEvent.type === "dance-workshop" ||
+            activeEvent.type === "dance-area" ||
             activeEvent.type === "music-workshop"
               ? "workshop"
               : "main",
@@ -115,8 +115,8 @@ export class TimetableService {
               ? activeEvent.performanceType === "live"
                 ? "Live"
                 : "DJ Set"
-              : activeEvent.type === "dance-workshop"
-                ? "dance-workshop"
+              : activeEvent.type === "dance-area"
+                ? "dance-area"
                 : activeEvent.type === "music-workshop"
                   ? "music-workshop"
                   : undefined,
@@ -124,7 +124,7 @@ export class TimetableService {
 
         // Handle dance and music workshops
         if (
-          activeEvent.type === "dance-workshop" ||
+          activeEvent.type === "dance-area" ||
           activeEvent.type === "music-workshop"
         ) {
           const instructors = activeEvent.acts.filter(

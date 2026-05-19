@@ -97,11 +97,11 @@ export interface RawMainStageEvent extends RawEventWithActs {
 }
 
 /**
- * Raw dance workshop events (without scheduling)
+ * Raw dance area events (without scheduling)
  */
-export interface RawDanceWorkshopEvent extends RawEventWithActs {
-  type: "dance-workshop";
-  danceAreaType: "workshop" | "show";
+export interface RawDanceAreaEvent extends RawEventWithActs {
+  type: "dance-area";
+  danceAreaType: "workshop" | "show" | "charla-bailar";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
 }
@@ -151,7 +151,7 @@ export interface RawDanceShowEvent extends RawEventWithActs {
  */
 export type RawTimetableEvent =
   | RawMainStageEvent
-  | RawDanceWorkshopEvent
+  | RawDanceAreaEvent
   | RawMusicWorkshopEvent
   | RawTalkEvent
   | RawAviatrixTalkEvent
@@ -176,11 +176,11 @@ export interface MainStageEvent extends EventWithActs {
 }
 
 /**
- * Dance workshop events
+ * Dance area events
  */
-export interface DanceWorkshopEvent extends EventWithActs {
-  type: "dance-workshop";
-  danceAreaType: "workshop" | "show";
+export interface DanceAreaEvent extends EventWithActs {
+  type: "dance-area";
+  danceAreaType: "workshop" | "show" | "charla-bailar";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   duration: number; // Set by timeline config during enrichment
@@ -233,7 +233,7 @@ export interface DanceShowEvent extends EventWithActs {
 
 export type TimetableEvent =
   | MainStageEvent
-  | DanceWorkshopEvent
+  | DanceAreaEvent
   | MusicWorkshopEvent
   | TalkEvent
   | AviatrixTalkEvent
@@ -318,10 +318,10 @@ export function isMainStageEvent(
   return event.type === "main-stage";
 }
 
-export function isDanceWorkshopEvent(
+export function isDanceAreaEvent(
   event: TimetableEvent,
-): event is DanceWorkshopEvent {
-  return event.type === "dance-workshop";
+): event is DanceAreaEvent {
+  return event.type === "dance-area";
 }
 
 export function isMusicWorkshopEvent(

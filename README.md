@@ -1,3 +1,9 @@
+v2.7.3
+
+- introduced third danceAreaActType called charlar-bailar -> correct name still must be defined.
+- eventConversion now also uses dance-area instead of "workshop"
+- LiveBanner now alos uses translation and differenciates between the danceAreaActType
+
 v2.7.2
 
 - images for mangle and son obrero added

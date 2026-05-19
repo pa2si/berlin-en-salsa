@@ -10,7 +10,7 @@
 
 import {
   RawMainStageEvent,
-  RawDanceWorkshopEvent,
+  RawDanceAreaEvent,
   RawMusicWorkshopEvent,
   RawTalkEvent,
   RawAviatrixTalkEvent,
@@ -80,17 +80,17 @@ export class EventFactory {
     title: string;
     duration?: number; // Optional - set by timeline config
     area: AreaType;
-    danceAreaType: "workshop" | "show";
+    danceAreaType: "workshop" | "show" | "charla-bailar";
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
     description?: string;
-  }): RawDanceWorkshopEvent {
+  }): RawDanceAreaEvent {
     const id = generateEventId(params.area, params.title);
 
     return {
-      type: "dance-workshop",
+      type: "dance-area",
       id,
       title: params.title,
       area: params.area,

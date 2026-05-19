@@ -29,7 +29,7 @@ export interface SelectedEventDetails {
   comment?: string;
   image?: string;
   imageTwo?: string;
-  type?: "main" | "dance-show" | "workshop" | "talk";
+  type?: "main" | "dance-show" | "dance-area" | "workshop" | "talk";
   slides?: {
     image?: string;
     description?: string;

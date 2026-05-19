@@ -18,7 +18,7 @@ import { ProgramIcon } from "@/components/icons";
 
 // Import event data (unified collections)
 import { mainStageEvents } from "@/data/timetable/events/main-stage";
-import { danceWorkshopEvents } from "@/data/timetable/events/dance-area";
+import { danceAreaEvents } from "@/data/timetable/events/dance-area";
 import { musicWorkshopEvents } from "@/data/timetable/events/music-workshops";
 import { salsaTalksEvents } from "@/data/timetable/events/salsa-talks";
 
@@ -30,7 +30,7 @@ import {
 
 const BANNER_EVENT_COLLECTIONS: Record<AreaType, RawTimetableEvent[]> = {
   "main-stage": mainStageEvents,
-  "dance-area": danceWorkshopEvents,
+  "dance-area": danceAreaEvents,
   "music-workshops": musicWorkshopEvents,
   "salsa-talks": salsaTalksEvents,
 };
@@ -67,6 +67,7 @@ const LiveBanner = () => {
   const { isBannerVisible, setIsBannerVisible } = useBannerContext();
   const t = useTranslations("Banners.live");
   const timetableSectionT = useTranslations("Sections.SectionFive");
+  const timetableT = useTranslations("Timetable");
   const { translateIfKey } = useSmartTranslation();
   const [currentEvents, setCurrentEvents] = useState<TimetableEvent[]>([]);
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
@@ -175,10 +176,20 @@ const LiveBanner = () => {
       if (event.performanceType === "dj-set") return "DJ Set";
       if (event.performanceType === "live") return "Live Band";
     }
+    // Check for dance-area with danceAreaType subtype
+    if (event.type === "dance-area" && "danceAreaType" in event) {
+      if (event.danceAreaType === "workshop")
+        return timetableT("actTypes.dance-area-workshop");
+      if (event.danceAreaType === "show")
+        return timetableT("actTypes.dance-area-show");
+      if (event.danceAreaType === "charla-bailar")
+        return timetableT("actTypes.dance-area-charla-bailar");
+      return timetableT("actTypes.dance-area-workshop"); // fallback
+    }
     // Check for type (all events have type)
-    if (event.type === "dance-workshop") return "Taller de Baile";
-    if (event.type === "music-workshop") return "Taller de Música";
-    if (event.type === "talk") return "Charla";
+    if (event.type === "music-workshop")
+      return timetableT("actTypes.music-workshop");
+    if (event.type === "talk") return timetableT("actTypes.talk");
     if (event.type === "aviatrix-talk") return "Aviatrix";
     if (event.type === "dance-show") return "Show";
     return "";

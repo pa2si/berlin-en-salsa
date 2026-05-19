@@ -10,7 +10,7 @@
 import {
   TimetableEvent,
   isMainStageEvent,
-  isDanceWorkshopEvent,
+  isDanceAreaEvent,
   isMusicWorkshopEvent,
   isTalkEvent,
   isAviatrixTalkEvent,
@@ -71,7 +71,7 @@ export function convertTimetableEventToSelectedDetails(
   }
 
   // Dance Workshop Events
-  if (isDanceWorkshopEvent(event)) {
+  if (isDanceAreaEvent(event)) {
     const instructors = event.acts.filter((act) => act.role === "instructor");
     const slides = instructors.map((act) => ({
       image: act.image,
@@ -83,11 +83,17 @@ export function convertTimetableEventToSelectedDetails(
     const firstInstructor = instructors[0];
     const secondInstructor =
       instructors.length > 1 ? instructors[1] : undefined;
+    const danceAreaActType =
+      event.danceAreaType === "show"
+        ? "dance-area-show"
+        : event.danceAreaType === "charla-bailar"
+          ? "dance-area-charla-bailar"
+          : "dance-area-workshop";
 
     return {
       ...baseDetails,
-      type: "workshop",
-      actType: "dance-workshop",
+      type: "dance-area",
+      actType: danceAreaActType,
       instructor: translateIfKey(firstInstructor?.name),
       instructorTwo: translateIfKey(secondInstructor?.name),
       description: translateIfKey(event.description),

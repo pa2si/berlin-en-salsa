@@ -440,7 +440,10 @@
       "live": "Live",
       "djSet": "DJ Set",
       "workshop": "Workshop",
-      "dance-workshop": "Tanz Workshop",
+      "dance-area": "Tanz Workshop",
+      "dance-area-workshop": "Tanz Workshop",
+      "dance-area-show": "Tanz Show",
+      "dance-area-charla-bailar": "Tanz Talk",
       "music-workshop": "Musik Workshop",
       "talk": "Talk",
       "Aviatrix": "Aviatrix"

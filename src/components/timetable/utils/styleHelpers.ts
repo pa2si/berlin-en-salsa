@@ -11,6 +11,7 @@ export const getEventStyle = (type?: string): string => {
     case "dance-show":
       baseStyle = `bg-bes-purple hover:bg-bes-purple/90`;
       break;
+    case "dance-area":
     case "workshop":
       baseStyle = `bg-bes-red hover:bg-bes-red/90`;
       break;

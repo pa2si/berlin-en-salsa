@@ -36,15 +36,20 @@ export default function EventDetails({
       {selectedEventDetails.actType &&
       selectedEventDetails.actType !== "Aviatrix" ? (
         <span className="text-lg text-gray-700">
-          {selectedEventDetails.actType === "dance-workshop"
-            ? t("actTypes.dance-workshop")
-            : selectedEventDetails.actType === "music-workshop"
-              ? t("actTypes.music-workshop")
-              : selectedEventDetails.actType === "talk"
-                ? t("actTypes.talk")
-                : selectedEventDetails.actType}
+          {selectedEventDetails.actType === "dance-area-workshop"
+            ? t("actTypes.dance-area-workshop")
+            : selectedEventDetails.actType === "dance-area-show"
+              ? t("actTypes.dance-area-show")
+              : selectedEventDetails.actType === "dance-area-charla-bailar"
+                ? t("actTypes.dance-area-charla-bailar")
+                : selectedEventDetails.actType === "music-workshop"
+                  ? t("actTypes.music-workshop")
+                  : selectedEventDetails.actType === "talk"
+                    ? t("actTypes.talk")
+                    : selectedEventDetails.actType}
         </span>
-      ) : selectedEventDetails.type === "workshop" ? (
+      ) : selectedEventDetails.type === "workshop" ||
+        selectedEventDetails.type === "dance-area" ? (
         <span className="text-lg text-gray-700">{t("actTypes.workshop")}</span>
       ) : selectedEventDetails.type === "talk" &&
         selectedEventDetails.actType !== "Aviatrix" ? (
@@ -54,7 +59,8 @@ export default function EventDetails({
       {selectedEventDetails.instructor &&
         selectedEventDetails.type !== "talk" && (
           <span className="text-lg text-gray-700">
-            {selectedEventDetails.type === "workshop"
+            {selectedEventDetails.type === "workshop" ||
+            selectedEventDetails.type === "dance-area"
               ? t("modal.workshopLeaderLabel")
               : t("modal.instructorLabel")}{" "}
             {selectedEventDetails.instructor}

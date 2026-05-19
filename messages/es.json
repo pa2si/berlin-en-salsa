@@ -440,7 +440,10 @@
       "live": "Live",
       "djSet": "DJ Set",
       "workshop": "Taller",
-      "dance-workshop": "Taller de Baile",
+      "dance-area": "Taller de Baile",
+      "dance-area-workshop": "clase de baile",
+      "dance-area-show": "Presentación de baile",
+      "dance-area-charla-bailar": "discusion de baile",
       "music-workshop": "Taller de Música",
       "talk": "Charla",
       "Aviatrix": "Aviatrix"

@@ -5,17 +5,17 @@
  */
 
 import { EventFactory } from "@/utils/eventFactory";
-import { RawDanceWorkshopEvent } from "@/types/events";
+import { RawDanceAreaEvent } from "@/types/events";
 
 /**
  * All dance area events for the festival
  */
-export const danceWorkshopEvents: RawDanceWorkshopEvent[] = [
+export const danceAreaEvents: RawDanceAreaEvent[] = [
   // Son Cubano Workshop
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.sonCubano",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "charla-bailar",
     danceStyle: "Son Cubano",
     acts: [
       EventFactory.createAct({
