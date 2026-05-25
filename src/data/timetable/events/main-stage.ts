@@ -160,7 +160,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
       EventFactory.createAct({
         name: "Timetable.events.colectivos.laAzoteaDelaIndia",
         role: "dj",
-        description: "Timetable.events.descriptions.laAzoteaDelaIndia",
+        descriptionColectivo: "Timetable.events.descriptions.laAzoteaDelaIndia",
       }),
     ],
   }),

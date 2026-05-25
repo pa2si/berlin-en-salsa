@@ -65,6 +65,7 @@ export interface Act {
   role: ActRole; // Their role in this specific event
   bio?: string; // Translatable key for bios
   description?: string; // Translatable key for descriptions
+  descriptionColectivo?: string; // Translatable key for colectivo/collective descriptions
   image?: string;
 }
 

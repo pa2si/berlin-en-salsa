@@ -234,6 +234,7 @@ export class EventFactory {
     role: Act["role"];
     bio?: string;
     description?: string;
+    descriptionColectivo?: string;
     image?: string;
   }): Act {
     return {
@@ -241,6 +242,7 @@ export class EventFactory {
       role: params.role,
       bio: params.bio,
       description: params.description,
+      descriptionColectivo: params.descriptionColectivo,
       image: params.image,
     };
   }

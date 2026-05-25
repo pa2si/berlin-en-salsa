@@ -41,9 +41,15 @@ export function convertTimetableEventToSelectedDetails(
       image: act.image,
       djName: act.role === "dj" ? translateIfKey(act.name) : undefined,
       bandName: act.role === "band" ? translateIfKey(act.name) : undefined,
-      bio: translateIfKey(act.bio || act.description), // Use bio or description
-      description: translateIfKey(act.description || act.bio), // Use description or bio for compatibility
+      bio: act.bio ? translateIfKey(act.bio) : undefined,
+      description: act.description
+        ? translateIfKey(act.description)
+        : undefined,
+      descriptionFromAct: Boolean(act.description),
       caption: act.name, // Keep as key for EventNavigation to translate
+      descriptionColectivo: act.descriptionColectivo
+        ? translateIfKey(act.descriptionColectivo)
+        : undefined,
     }));
 
     // Determine if it's single or multiple DJs
@@ -184,6 +190,7 @@ export function convertTimetableEventToSelectedDetails(
           image: act.image,
           description: translateIfKey(act.description), // Only act's own description, not event description
           bio: translateIfKey(act.bio),
+          descriptionFromAct: Boolean(act.description),
           caption: act.name, // Keep as key for EventNavigation
         }));
 

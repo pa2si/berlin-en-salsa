@@ -23,6 +23,8 @@ interface SlideContent {
   showCombinedDescription?: boolean; // Flag to show combined description with special styling
   genreDescription?: string;
   caption?: string; // Translation key for the slide name (artist/instructor name)
+  descriptionColectivo?: string; // Description for a colectivo/collective
+  descriptionFromAct?: boolean; // True when description comes from createAct
 }
 
 interface EventSliderProps {
@@ -114,7 +116,31 @@ export default function EventSlider({
           !currentSlide?.showCombinedDescription && (
             <div className="mb-4">
               <h4 className="text-bes-red mb-2 text-xl font-bold">
-                {t("modal.description")}
+                {currentSlide?.descriptionFromAct ? (
+                  <>
+                    {t("modal.about")}
+                    {currentSlide?.caption && (
+                      <>
+                        {" "}
+                        {(() => {
+                          const key = currentSlide.caption.startsWith(
+                            "Timetable.",
+                          )
+                            ? currentSlide.caption.substring(10)
+                            : currentSlide.caption;
+                          try {
+                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            return (t as any)(key);
+                          } catch {
+                            return currentSlide.caption;
+                          }
+                        })()}
+                      </>
+                    )}
+                  </>
+                ) : (
+                  t("modal.description")
+                )}
               </h4>
               <p className="text-xl text-gray-700 md:leading-relaxed">
                 {(() => {
@@ -133,6 +159,46 @@ export default function EventSlider({
               </p>
             </div>
           )}
+
+        {/* Colectivo Description Section */}
+        {currentSlide?.descriptionColectivo && (
+          <div className="mb-4">
+            <h4 className="text-bes-red mb-2 text-xl font-bold">
+              {t("modal.about")}
+              {currentSlide?.caption && (
+                <>
+                  {" "}
+                  {(() => {
+                    const key = currentSlide.caption.startsWith("Timetable.")
+                      ? currentSlide.caption.substring(10)
+                      : currentSlide.caption;
+                    try {
+                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                      return (t as any)(key);
+                    } catch {
+                      return currentSlide.caption;
+                    }
+                  })()}
+                </>
+              )}
+            </h4>
+            <p className="text-xl text-gray-700 md:leading-relaxed">
+              {(() => {
+                const content = currentSlide.descriptionColectivo;
+                if (content?.startsWith("Timetable.")) {
+                  try {
+                    const key = content.substring(10);
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    return (t as any)(key);
+                  } catch {
+                    return content;
+                  }
+                }
+                return content;
+              })()}
+            </p>
+          </div>
+        )}
 
         {/* Bio Section - Show separately if different from description */}
         {currentSlide?.bio &&
@@ -244,7 +310,7 @@ export default function EventSlider({
           currentSlide?.description &&
           currentSlide?.djOne &&
           currentSlide?.djTwo && (
-            <div className="from-bes-amber/15 to-bes-red/10 border-bes-red mt-6 mb-4 rounded-lg border-l-4 bg-gradient-to-r p-4">
+            <div className="from-bes-amber/15 to-bes-red/10 border-bes-red mt-6 mb-4 rounded-lg border-l-4 bg-linear-to-r p-4">
               <h5 className="text-bes-red mb-3 text-xl font-bold">
                 {`${currentSlide.djOne} & ${currentSlide.djTwo} ${tGlobal("Timetable.modal.together" as never)}`}
               </h5>

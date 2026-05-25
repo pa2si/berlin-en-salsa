@@ -40,6 +40,9 @@ export interface SelectedEventDetails {
     djTwoBio?: string;
     descriptionTwoDjsTogether?: string;
     genreDescription?: string;
+    caption?: string;
+    descriptionColectivo?: string;
+    descriptionFromAct?: boolean;
   }[];
   actType?: string;
   hasShow?: boolean;

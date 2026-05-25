@@ -1,3 +1,8 @@
+v2.7.5
+
+- now description and bio attributes display in the EventModal : "sobre / über " and then the "name" attribute"
+- new attribute descriptionColectivo in createAct
+
 v2.7.4
 
 - more texts and fotos converted for DJs
