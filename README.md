@@ -1,3 +1,7 @@
+v2.7.4
+
+- more texts and fotos converted for DJs
+
 v2.7.3
 
 - introduced third danceAreaActType called charlar-bailar -> correct name still must be defined.

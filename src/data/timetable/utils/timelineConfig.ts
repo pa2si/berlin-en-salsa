@@ -60,12 +60,12 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "16:00",
             duration: 60,
-            eventId: "Timetable.events.artists.mangle", //text done (german text with translated with Chat GPT), edited image missing
+            eventId: "Timetable.events.artists.mangle", //DONE
           },
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.artists.somos", //text done. Fotos upload for infividual missing
+            eventId: "Timetable.events.artists.somos", //Foto needs to be redone, text done
           },
           {
             time: "18:30",
@@ -75,7 +75,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "19:30",
             duration: 60,
-            eventId: "Timetable.events.artists.sonObrero", //text done, edited image missing
+            eventId: "Timetable.events.artists.sonObrero", //DONE
           },
           {
             time: "21:00",
@@ -90,17 +90,17 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 90,
-            eventId: "Timetable.events.artists.malandrea", //text done, edited image missing
+            eventId: "Timetable.events.artists.malandrea", //DONE
           },
           {
             time: "14:00",
             duration: 90,
-            eventId: "Timetable.events.artists.dayle", //text done, edited image missing
+            eventId: "Timetable.events.artists.dayle", //DONE
           },
           {
             time: "15:30",
             duration: 90,
-            eventId: "Timetable.events.artists.laCataMontesa", //text done (translation with Chat GPT), image missing
+            eventId: "Timetable.events.artists.laCataMontesa", //Image done, text needs to be condirmed
           },
           {
             time: "17:30",
@@ -110,7 +110,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:30",
             duration: 90,
-            eventId: "Timetable.events.artists.lionza", //text done, edited image missing
+            eventId: "Timetable.events.artists.lionza", //DONE
           },
           {
             time: "20:30",
@@ -125,12 +125,12 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 90,
-            eventId: "Timetable.events.artists.elJavierB", //text done, image missing
+            eventId: "Timetable.events.artists.elJavierB", // DONE
           },
           {
             time: "14:00",
             duration: 90,
-            eventId: "Timetable.events.artists.suenaCheloB2BEcuajey", //text done, image missing
+            eventId: "Timetable.events.artists.suenaCheloB2BEcuajey", //missing individual edited images
           },
           {
             time: "16:00",
@@ -140,7 +140,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:00",
             duration: 90,
-            eventId: "Timetable.events.artists.ednaMartinez", //text done, edited image missing
+            eventId: "Timetable.events.artists.ednaMartinez", //DONE
           },
           {
             time: "19:00",
@@ -150,7 +150,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "20:30",
             duration: 90,
-            eventId: "Timetable.events.artists.besHosts", //MISSING TEXT AND IMAGE
+            eventId: "Timetable.events.artists.besHosts", //text done, image missing
           },
         ],
       },
