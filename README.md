@@ -1,3 +1,7 @@
+v2.7.6
+
+- Timetable false
+
 v2.7.5
 
 - now description and bio attributes display in the EventModal : "sobre / über " and then the "name" attribute"
