@@ -43,8 +43,8 @@ export const mainStageEvents: RawTimetableEvent[] = [
       EventFactory.createAct({
         name: "Timetable.events.artists.elacionSensacion",
         role: "dj",
-        bio: "Timetable.events.bios.elacion",
-        image: "/elacionSensacion.webp",
+        bio: "Timetable.events.bios.elacionSensacion",
+        image: "/elacion-sensacion.webp",
       }),
       EventFactory.createAct({
         name: "Timetable.events.artists.pseudogamin",
@@ -303,12 +303,12 @@ export const mainStageEvents: RawTimetableEvent[] = [
 
   // Gerardo Rosales Salsa Legendaria Live Performance (Sunday)
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.artists.gerardoRosalesSalsaLegendaria",
+    title: "Timetable.events.artists.gerardoRosalesYSuSalsaLegendaria",
     area: "main-stage",
     performanceType: "live",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.gerardoRosalesSalsaLegendaria",
+        name: "Timetable.events.artists.gerardoRosalesYSuSalsaLegendaria",
         role: "band",
         description:
           "Timetable.events.descriptions.gerardoRosalesSalsaLegendaria",
@@ -318,16 +318,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.gerardoRosales",
         role: "dancer",
         bio: "Timetable.events.bios.gerardoRosales",
-        image: "/lei-ayna.webp",
-      }),
-    ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/burundanga.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
         image: "/lei-ayna.webp",
       }),
     ],

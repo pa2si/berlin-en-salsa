@@ -1,3 +1,8 @@
+v2.7.7
+
+- Timetable: DJs input finish
+- starting with Aviatrix
+
 v2.7.6
 
 - Timetable false

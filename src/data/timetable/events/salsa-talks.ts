@@ -60,36 +60,32 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
 
   // Aviatrix - DJ Christian
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.saturday.aviatrixChristian.title",
+    title: "Timetable.events.aviatrix.diablasFinas.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.renatrix",
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.djChristian",
+        name: "Timetable.events.aviatrix.diablasFinas.presenter",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.saturday.aviatrixChristian.bio",
+        bio: "Timetable.events.aviatrix.diablasFinas.bio",
         image: "/christian.webp",
       }),
     ],
-    artistDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixChristian.artist",
-    recordDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixChristian.record",
-    moderatorComment:
-      "Timetable.events.salsaTalks.saturday.aviatrixChristian.comment",
+    artistDiscussed: "Timetable.events.aviatrix.diablasFinas.artist",
+    recordDiscussed: "Timetable.events.aviatrix.diablasFinas.record",
+    moderatorComment: "Timetable.events.aviatrix.diablasFinas.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/eddie-palmieri.jpeg",
-        caption: "Timetable.events.artists.eddiePalmieri",
+        image: "/lo-dice-todo.webp",
       }),
       EventFactory.createSlide({
         type: "image",
         image: "/christian.webp",
-        caption: "Timetable.events.artists.djChristian",
+        caption: "Timetable.events.aviatrix.diablasFinas.presenter",
       }),
     ],
   }),

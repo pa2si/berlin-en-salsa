@@ -512,6 +512,7 @@
         "laAzoteaDelaIndia": "La Azotea de la India"
       },
       "artists": {
+        "renatrix": "Renatrix",
         "nora": "Nora",
         "gerardoRosales": "Gerardo Rosales",
         "gerardoRosalesYSuSalsaLegendaria": "Gerardo Rosales Y Su Salsa Legendaria",
@@ -519,7 +520,7 @@
         "elJavierB": "El Javier_B",
         "rodoLeFou": "Rodo Le Fou",
         "mangle": "Mangle",
-
+        "somos": "SomoS",
         "elacionSensacion": "Elac!on Sensac!on",
         "pseudogamin": "Pseudogamín",
         "sonObrero": "Son Obrero",
@@ -533,27 +534,16 @@
         "besHosts": "Berlin En Salsa Hosts DJs",
         "lasHienas": "Las Hienas",
         "elProfe": "El Profe",
-        "ecKuba": "EC Kuba",
         "alafiaConIre": "Alafía con Iré",
-        "djFeikes": "DJ Feikes",
-        "tempoHavanna": "Tempo Havanna",
-        "necios": "Necios",
         "laMelodica": "La Melodica",
-        "calamidadesLola": "Calamidades Lola",
-        "amuletoManuela": "Amuleto Manuela",
         "helen": "Helen",
         "yago": "Yago",
         "jessica": "Jessica",
         "julian": "Julian",
-        "flori": "FLori",
-        "wilber": "Wilber",
-        "laSonoraBerlin": "La Sonora Berlin",
-        "elPuma": "El Puma",
         "burundanga": "Burundanga",
         "lei": "Lei",
         "ayna": "Ayna",
         "anacaona": "Anacaona",
-        "laVecina": "La Vecina",
         "cayeye": "Cayeye",
         "bongo": "Bongo",
         "dracaena": "Dracaena",
@@ -561,29 +551,11 @@
         "elMelomanoAleman": "El Melómano Alemán",
         "andrelux": "Andrelux",
         "niya": "Niya",
-        "leidiana": "Leidiana",
         "roger": "Roger",
         "angelCandeaux": "Angel Candeaux",
         "guillermoDiaz": "Guillermo Diaz",
         "chuchoPalma": "Chucho Palma",
-        "harryMunoz": "Harry Muñoz",
-        "sarahBalzat": "Sarah Balzat",
-        "jessiVane": "Jessi y Vane",
-        "jessi": "Jessi",
-        "vane": "Vane",
-        "djChristian": "DJ Christian",
-        "raicezKoncretaz": "Raicez Koncretaz",
-        "franciscoAguabella": "Francisco Aguabella",
-        "djMc0ld": "DJ Mc0ld",
-        "paulWelchGuerra": "Paul Welch Guerra",
-        "suenaChelo": "Suena Chelo",
-        "theHustler": "The Hustler",
-        "cieloDeTambores": "Cielo de Tambores",
-        "grupoNiche": "Grupo Niche",
-        "enilceFeikes": "Enilce Feikes Álvarez",
-        "joeArroyo": "Joe Arroyo",
-        "eddiePalmieri": "Eddie Palmieri",
-        "frankieDante": "Frankie Dante"
+        "suenaChelo": "Suena Chelo"
       },
       "descriptions": {
         "laAzoteaDelaIndia": "La Azotea de la India es un espacio intercultural en el corazón de La Habana. Una azotea donde se disfrutan experiencias musicales, artísticas y culinarias; donde se baila libremente al ritmo de DJ sets de vinilo supersónico y conciertos en vivo; donde se aprende sobre la cultura cubana y también se puede simplemente relajarse, dejarse llevar por la atmósfera del listening bar y contemplar la vista panorámica de la ciudad. Trabajamos además para ofrecer a los más pequeños un espacio lúdico y educativo: organizamos proyecciones de películas y dibujos animados, clases sobre el respeto y el cuidado del medio ambiente, así como talleres sobre igualdad de género. La Azotea de la India es un lugar de encuentro, una oportunidad para compartir momentos inolvidables, descubrir la auténtica cultura cubana y abrir espacio a expresiones culturales de cualquier rincón del mundo. Aquí se baila de to'.",
@@ -629,7 +601,7 @@
         "elJavierB": "Tras años de exploración sonora junto a su banda Lola’s Dice (NYCT, Music with Soul, Bongo Joe) y motivado por una profunda pasión por el coleccionismo de vinilos, El Javier_B emprendió un viaje musical que lo ha llevado a descubrir y reinterpretar ritmos de distintas latitudes. Originario de Maracaibo, Venezuela, su identidad artística está profundamente influenciada por los vibrantes sonidos tropicales del Caribe y las resonancias hipnóticas de África. Su propuesta combina una curaduría minuciosa con un enfoque libre y experimental, dando forma a sesiones donde convergen energía, groove y diversidad cultural. Actualmente es DJ residente en Operator y Worm Radio, donde conduce su programa quincenal Crema, un espacio dedicado a explorar las conexiones entre géneros, épocas y geografías de la inmensidad Afrocaribeña. Con una presencia magnética y una sensibilidad única para el ritmo, El Javier_B se consolida como una fuerza creativa que invita al movimiento, la exploración y la comunión a través de la música.",
         "dayle": "Daylé es una selectora de vinilos latinoamericanos y cubanos, con una colección que también abarca sonoridades y generos de todo el mundo. Lleva a la consola sets explosivos, llenos de energía y pensados para hacer bailar, sudar y desatarse, creando momentos de unión entre el público, el cual se convierte en protagonista. Ha tocado en numerosos clubes en Italia y ha participado en dos ediciones del Festival del Vinilo en La Habana y en Luchando Music. Es cofundadora del proyecto La Azotea de la India, un espacio intercultural para DJs de vinilos y artistas visuales, y además un lugar para educar a los niños del barrio y brindarles momentos de diversión.",
         "lionza": "LIONZA está posicionada como una figura pionera, con una amplia y cuidada colección de vinilos de los años 70, que conserva y abre espacios para la Salsa. Desde una mirada femenina ha ido creando desde hace más de una década eventos en Berlín especializados en el sonido Bravo de este género musical. Impulsa artistas latinxs FLINTA como productora de la @faniabravaparty y es gestora cultural en @kitiplaspro, plataforma que difunde la música folklórica latinoamericana en Europa.",
-        "laCataMontesa": "Originaria de la comuna 15 de la Cali calentura, esta felina va descongelando hace mas de una década las heladas alemanas a su andar. Catalina Valencia aka La Cata Montesa es mucho más que una figura detrás de las tornas. Ella es Cantante, gestora cultural, productora con mas de 20 años de trayectoria y pieza clave del colectivo Frente Salsero de la ciudad de Colonia, pero ante todo, una adicta confesa a los sonidos de la raíz. Para esta melolagnica, la música trasciende la pista de baile: es un espacio habitable que a la vez es compañía incondicional. Con esa filosofía toma los controles, ejerciendo de hechicera rítmica que a punta de guateque, boogaloo, pachanga y charanga te quita achante y te cura la garrotera, el descuaje y hasta el desguance. Sus sets no son solo una fiesta; son una trinchera contra el Heimweg. Advertencia: el movimiento involuntario de caderas provocado por sus mezclas no lo cubre la “Krankenversicherung“ ",
+        "laCataMontesa": "Originaria de la comuna 15 de la Cali calentura, esta felina va descongelando hace más de una década las heladas alemanas a su andar. Catalina Valencia aka La Cata Montesa es mucho más que una figura detrás de las tornas. Ella es cantante, gestora cultural, productora con más de 20 años de trayectoria y pieza clave del colectivo Frente Salsero de la ciudad de Colonia, pero ante todo, una adicta confesa a los sonidos de la raíz. Para esta melancólica, la música trasciende la pista de baile: es un espacio habitable que a la vez es compañía incondicional. Con esa filosofía toma los controles, ejerciendo de hechicera rítmica, que a punta de guateque, boogaloo, pachanga y charanga te quita achante y te cura la garrotera, el descuaje y hasta el desguance. Sus sets no son solo una fiesta; son una trinchera contra el Heimweh. Advertencia: el movimiento involuntario de caderas provocado por sus mezclas no lo cubre la “Krankenversicherung“",
         "mangle": "Mangle. Una especie que nace del encuentro entre el río que baja de la montaña y el mar, echando raíces en Berlín. Un ser colmado de nostalgia, que crea sets inspirados en sus recuerdos y amores en Abya Yala, con el deseo de descolonizar la pista de baile. «Primera de mayo», de Mangle, es un set de salsa que recuerda los rincones alborotados de las calles bogotanas, donde tantas veces recibimos el amanecer bailando y soñando con vivir tiempos menos violentos.",
         "elacionSensacion": "Nacida en el corazón de la selva amazónica ecuatoriana, lleva en su esencia los latidos ancestrales de su tierra natal. Amante del zapateo colectivo y los pies descalzos sobre la tierra, fusiona los ritmos del sur global con susurros del monte. Su música es movimiento, su movimiento es pura conexión terrenal. Para ella, la música no es solo sonido: es sudor, memoria y celebración. ¡Prepárate para bailar con la tierra bajo los pies y el trópico en las caderas!",
         "pseudogamin": "Nacido, crecido y madurado en diferentes lugares, entre España, Alemania y Colombia, este selector no podría elegir otra fórmula: El crossover. Crossover del sur global, crossover bailable, crossover pa’ enraizar o pa’ olvidar de donde vienes.",
@@ -653,69 +625,70 @@
         "harryMunoz": "Harry Muñoz es un músico experimentado y profesor de percusión y canto latinoamericano.",
         "angelCandeaux": "Angel Candeaux es un cubano de La Habana que lleva el ritmo en la sangre y la curiosidad en la cabeza. Psicólogo de formación y percusionista de corazón, ha recorrido espacios en Cuba, Europa y Estados Unidos mezclando tradición afrocubana con nuevas formas de conectar a las personas. Desde 2006 vive en Berlín, donde no solo toca tambores: crea espacios para que la gente se encuentre, se escuche y descubra su propio ritmo. Fundador del proyecto 'desapalencao', Angel es de esos que creen que la música puede cambiarte el día (y la vida) y que todos tenemos un pulso único que aportar al grupo. ¿Te has preguntado cómo varios ritmos pueden coexistir y crear una experiencia colectiva poderosa? Este taller, guiado por Angel Candeaux, es una invitación a descubrir la magia de la polirritmia afrocubana y su impacto en la conexión humana. La polirritmia es el arte de superponer varios ritmos independientes, logrando una riqueza sonora y una experiencia grupal única. En la tradición afrocubana, cada tambor mantiene su propio patrón, pero juntos crean un diálogo musical que invita a la escucha, la concentración y la creatividad colectiva."
       },
-      "salsaTalks": {
-        "saturday": {
-          "sarahBalzatTalk": {
-            "title": "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo.",
-            "description": "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria."
-          },
-          "jessiVaneTalk": {
-            "title": "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
-            "description": "¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los \"estilos\" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos."
-          },
-          "aviatrixChristian": {
-            "title": "Aviatrix & DJ Christian",
-            "artist": "Eddie Palmieri",
-            "record": "Echando Pa'lante (Straight Ahead)",
-            "bio": "DJ Christian es cofundador de @salsacafeberlin, donde junto a @hijodesiboney hace que la pista de baile vibre cada primer miércoles del mes. Su amor por los ritmos latinoamericanos surge de su estrecha conexión con la comunidad Latinx en Berlín. Allí se involucra activamente en iniciativas y espacios de la diáspora latinoamericana, inspirado por su historia familiar intercultural. Aunque aprecia todos los géneros musicales, se siente especialmente atraído por la música con raíces africanas, cuyas huellas se pueden encontrar en casi todos los géneros.",
-            "comment": "Elegí el álbum \"Echando Pa'lante (Straight Ahead)\" porque es una obra significativa en la historia de la salsa y muestra el estilo innovador de Eddie Palmieri y el talento de su banda. Lanzado en 1964, el álbum es celebrado por sus ritmos poderosos, arreglos complejos y el sonido distintivo de la llamada \"Trombanga\" - una formación que introdujo trombones en la música tradicional latinoamericana."
-          },
-          "aviatrixRaicez": {
-            "title": "Aviatrix & Raicez Koncretaz",
-            "artist": "Francisco Aguabella",
-            "record": "Hitting Hard",
-            "bio": "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen como objetivo no dejar morir el formato análogo y mantenerlo vivo.",
-            "comment": "Se escogió este disco por la gran variedad de ritmos que pueden converger en una producción musical y que la salsa, así como muchos géneros, tiene muchas influencias de otros géneros musicales."
-          },
-          "aviatrixMc0ld": {
-            "title": "Aviatrix & DJ Mc0ld",
-            "artist": "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
-            "record": "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
-            "bio": "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mí. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
-            "comment": "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla."
-          },
-          "salsancoTalk": {
-            "title": "Salsancó y los inicios de la salsa en Berlín",
-            "guests": "Eduardo Villegas & Rolo Rodríguez",
-            "description": "Eduardo Villegas y Rolo Rodríguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida."
-          }
+      "aviatrix": {
+        "diablasFinas": {
+          "title": "Aviatrix & Diablas Finas",
+          "artist": "GRUPO EXPERIMENTAL NUEVAYORQUINO",
+          "record": "LO DICE TODO",
+          "presenter": "Diablas Finas",
+          "bio": "Diablas Finas es una costeñita del Pacífico mexicano con base en Berlín. Selectora y apasionada del mundo sonoro, va jugando al vaivén de ritmos donde la tradición se funde con la psicodelia y la travesura. Rastrea músicas que florecen en la diáspora, músicas viajantes que cargan memoria, identidad y corazón.",
+          "comment": "Elegí “Lo dice todo” (1976) de Grupo Folklórico y Experimental Nuevayorquino porque nació como un acto de resistencia colectiva. A mediados de los 70, cuando la salsa se volvía fórmula y producto, Grupo Folklórico recuperó el espíritu comunitario de sus raíces, invocando el alma yoruba del tambor, volvió al batá, a la profundidad afrocaribeña, y la fusionó con el jazz y el sonido del Bronx. Este fue el primer disco de salsa que compré, en el puestito de @basuritasrecords en la Ciudad de México, como recomendación suya. Quedé enamorada al oírlo por primera vez."
         },
-        "sunday": {
-          "aviatrixSuenaChelo": {
-            "title": "Aviatrix & Suena Chelo",
-            "artist": "Willie Colon & Hector Lavoe",
-            "record": "The Hustler",
-            "bio": "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs."
-          },
-          "aviatrixDracaena": {
-            "title": "Aviatrix & Dracaena",
-            "artist": "Grupo Niche",
-            "record": "Cielo de Tambores",
-            "bio": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile.",
-            "comment": "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina."
-          },
-          "aviatrixEnilce": {
-            "title": "Aviatrix & Enilce Feikes Álvarez",
-            "artist": "Joe Arroyo",
-            "record": "Me Le Fugué A La Candela",
-            "bio": "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
-            "comment": "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozosa y admiradora profunda de Joe Arroyo."
-          },
-          "noLeLlamenSalsa": {
-            "title": "No Le llamen salsa a mi son",
-            "presenters": "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
-            "description": "El título de la canción \"No le llamen Salsa a mi Son... dile música Cubana\" del cantante cubano Monguito \"El Único\" lo deja claro: la 'Salsa' no fue en un principio más que una etiqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimiento colectivo de muchas comunidades latinas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creativos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el salsómano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
-          }
+        "aviatrixRaicez": {
+          "title": "Aviatrix & Raicez Koncretaz",
+          "artist": "Francisco Aguabella",
+          "record": "Hitting Hard",
+          "bio": "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen como objetivo no dejar morir el formato análogo y mantenerlo vivo.",
+          "comment": "Se escogió este disco por la gran variedad de ritmos que pueden converger en una producción musical y que la salsa, así como muchos géneros, tiene muchas influencias de otros géneros musicales."
+        },
+        "aviatrixMc0ld": {
+          "title": "Aviatrix & DJ Mc0ld",
+          "artist": "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
+          "record": "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
+          "bio": "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mí. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
+          "comment": "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla."
+        },
+        "aviatrixSuenaChelo": {
+          "title": "Aviatrix & Suena Chelo",
+          "artist": "Willie Colon & Hector Lavoe",
+          "record": "The Hustler",
+          "bio": "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs."
+        },
+        "aviatrixDracaena": {
+          "title": "Aviatrix & Dracaena",
+          "artist": "Grupo Niche",
+          "record": "Cielo de Tambores",
+          "bio": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile.",
+          "comment": "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina."
+        },
+        "aviatrixEnilce": {
+          "title": "Aviatrix & Enilce Feikes Álvarez",
+          "artist": "Joe Arroyo",
+          "record": "Me Le Fugué A La Candela",
+          "bio": "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
+          "comment": "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozosa y admiradora profunda de Joe Arroyo."
+        }
+      },
+      "salsaTalks": {
+        "sarahBalzatTalk": {
+          "title": "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo.",
+          "description": "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria."
+        },
+        "jessiVaneTalk": {
+          "title": "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
+          "description": "¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los \"estilos\" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos."
+        },
+
+        "salsancoTalk": {
+          "title": "Salsancó y los inicios de la salsa en Berlín",
+          "guests": "Eduardo Villegas & Rolo Rodríguez",
+          "description": "Eduardo Villegas y Rolo Rodríguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida."
+        },
+
+        "noLeLlamenSalsa": {
+          "title": "No Le llamen salsa a mi son",
+          "presenters": "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
+          "description": "El título de la canción \"No le llamen Salsa a mi Son... dile música Cubana\" del cantante cubano Monguito \"El Único\" lo deja claro: la 'Salsa' no fue en un principio más que una etiqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimiento colectivo de muchas comunidades latinas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creativos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el salsómano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
         }
       }
     }

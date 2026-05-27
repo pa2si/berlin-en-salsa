@@ -65,7 +65,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.artists.somos", //Foto needs to be redone, text done
+            eventId: "Timetable.events.artists.somos", //DONE
           },
           {
             time: "18:30",
@@ -100,7 +100,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "15:30",
             duration: 90,
-            eventId: "Timetable.events.artists.laCataMontesa", //Image done, text needs to be condirmed
+            eventId: "Timetable.events.artists.laCataMontesa", //DONE
           },
           {
             time: "17:30",
@@ -130,7 +130,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 90,
-            eventId: "Timetable.events.artists.suenaCheloB2BEcuajey", //missing individual edited images
+            eventId: "Timetable.events.artists.suenaCheloB2BEcuajey", //DONE
           },
           {
             time: "16:00",
@@ -288,13 +288,12 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 30,
-            eventId:
-              "Timetable.events.salsaTalks.saturday.sarahBalzatTalk.title",
+            eventId: "Timetable.events.aviatrix.diablasFinas.title",
           },
           {
             time: "14:30",
             duration: 30,
-            eventId: "Timetable.events.salsaTalks.saturday.jessiVaneTalk.title",
+            eventId: "Timetable.events.aviatrix.diablasFinas",
           },
           {
             time: "16:00",
