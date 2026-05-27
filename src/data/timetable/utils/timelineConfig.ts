@@ -288,7 +288,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 30,
-            eventId: "Timetable.events.aviatrix.diablasFinas.title",
+            eventId: "Timetable.events.aviatrix.diablasFinas.title", //text done, MISSING IMAGE OF ARTITS
           },
           {
             time: "14:30",

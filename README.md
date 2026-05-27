@@ -1,3 +1,8 @@
+v2.7.8
+
+- Data for Aviatrix Diablas Finas almost finished.
+- hostedByLabel translation modified
+
 v2.7.7
 
 - Timetable: DJs input finish

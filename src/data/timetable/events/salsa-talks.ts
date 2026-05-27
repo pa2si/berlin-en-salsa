@@ -68,7 +68,7 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.aviatrix.diablasFinas.presenter",
+        name: "Timetable.events.aviatrix.diablasFinas.guest",
         role: "guest",
         bio: "Timetable.events.aviatrix.diablasFinas.bio",
         image: "/christian.webp",
@@ -85,7 +85,7 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
       EventFactory.createSlide({
         type: "image",
         image: "/christian.webp",
-        caption: "Timetable.events.aviatrix.diablasFinas.presenter",
+        caption: "Timetable.events.aviatrix.diablasFinas.guest",
       }),
     ],
   }),
