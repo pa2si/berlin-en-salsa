@@ -1,8 +1,12 @@
 "use client";
 
+import { motion, useInView } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import { useRef } from "react";
 
 const SectionOne = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   const t = useTranslations("Sections.SectionOne");
   const locale = useLocale();
   const dateImageSrc = locale.startsWith("de")
@@ -11,7 +15,10 @@ const SectionOne = () => {
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
-      <div className="flex h-svh items-center justify-center bg-black sm:w-1/2">
+      <div
+        ref={sectionRef}
+        className="flex h-svh items-center justify-center bg-black sm:w-1/2"
+      >
         <div className="flex flex-col items-center">
           <h1 className="sr-only">{t("h1")}</h1>
           <img
@@ -19,13 +26,21 @@ const SectionOne = () => {
             alt="Berlin en Salsa Logo"
             className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-h-[72vh] lg:max-w-[110%] lg:min-w-[60%]"
           />
-          <img
+          <motion.img
             src={dateImageSrc}
             alt={
               locale.startsWith("de")
                 ? "Festival Datum Deutsch"
                 : "Festival fecha en Espanol"
             }
+            initial={{ opacity: 0, x: -100 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 12,
+            }}
             className="-mt-2 w-full max-w-[330px] object-contain sm:mb-2 md:mb-4 md:w-[92%] xl:w-full xl:max-w-[390px]"
           />
         </div>
