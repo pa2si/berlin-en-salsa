@@ -42,7 +42,7 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
     {
       url: "https://www.instagram.com/p/DVbJ1EZCbiE/",
       title: "Berlin En Salsa - DW Instagram Post",
-      image: "/screenshot.jpeg",
+      image: "/majo-doku.webp",
     },
     {
       url: "https://youtu.be/rtWWDUUSJ9I?si=jFC1veBjJPtdDhST",

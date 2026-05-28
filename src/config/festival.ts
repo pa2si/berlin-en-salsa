@@ -116,7 +116,7 @@ export const FESTIVAL_CONFIG = {
    * Set to true when the timetable is finalized and ready to be displayed
    */
   timetable: {
-    isAvailable: false, // Change to true when timetable is ready
+    isAvailable: true, // Change to true when timetable is ready
   },
 
   /**
@@ -124,7 +124,7 @@ export const FESTIVAL_CONFIG = {
    * Set to true when you want to display festival features/program overview
    */
   sectionThree: {
-    isAvailable: false, // Change to false to hide the features section
+    isAvailable: true, // Change to false to hide the features section
   },
 
   /**

@@ -30,20 +30,20 @@ const SectionTwo = () => {
                 : "/que-es-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mb-4 h-auto max-h-[4vh] min-h-20 w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[15vh]"
+            className="mb-4 h-auto max-h-[4vh] min-h-20 w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[18vh]"
           />
 
-          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[90%] flex-col justify-between gap-y-5 px-4 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 xl:gap-y-3">
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
+          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[90%] flex-col justify-between gap-y-5 px-4 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 xl:justify-center xl:gap-y-6">
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
               {t("description1")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
               {t("description2")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
               {t("description3")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1rem,3.5vh,3rem)]">
+            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
               {t("description4")}
             </p>
           </div>
