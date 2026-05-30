@@ -27,14 +27,14 @@
     "SectionThree": {
       "title": "¡Berlin en Salsa se viene con todo!",
       "features": {
-        "days": "¡2 días de pura salsa!",
-        "orchestras": "6 orquestas en vivo",
-        "shows": "5 shows de baile",
-        "djs": "20 DJs",
-        "talks": "Charlas",
-        "workshops": "Talleres de música",
-        "vinyl": "Mercado de vinilos",
-        "food": "¡Delicias latinas y más!"
+        "days": "🔥 3 días de pura salsa",
+        "orchestras": "🎺 6 orquestas en vivo",
+        "shows": "✨ Shows de baile",
+        "djs": "🎧 16 DJs",
+        "talks": "🎤 Charlas",
+        "workshops": "🥁 Talleres de música",
+        "vinyl": "🎶 Mercado de vinilos",
+        "food": "🌽 Delicias latinas y más"
       }
     },
     "SectionFour": {
@@ -74,7 +74,9 @@
         "image3": "Público disfrutando de las presentaciones en vivo",
         "image4": "Clases de baile con lxs mejores profes",
         "image5": "Las mejores orquestas en vivo del panorama salsero en Berlin",
-        "image6": "Un momento histórico para la escena salsera de Berlín."
+        "image6": "Clases gratuitas para todxs",
+        "image7": "Talleres gratuitos para todxs",
+        "image8": "Un momento histórico para la escena salsera de Berlín."
       },
       "closeCaption": "Cerrar"
     },

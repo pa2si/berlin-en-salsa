@@ -27,13 +27,13 @@
     "SectionThree": {
       "title": "Berlin en Salsa kommt mit voller Power!",
       "features": {
-        "days": "2 Tage voller Salsa!",
-        "orchestras": "6 Live-Orchester",
-        "shows": "5 Tanzshows",
-        "djs": "20 DJs",
-        "talks": "Vorträge",
-        "workshops": "Musikworkshops",
-        "vinyl": "Vinyl-Markt",
+        "days": "🔥 3 Tage voller Salsa!",
+        "orchestras": "🎺 6 Live-Orchester",
+        "shows": "✨ Tanzshows",
+        "djs": "🎧 16 DJs",
+        "talks": "🎤 Vorträge",
+        "workshops": "🥁 Musikworkshops",
+        "vinyl": "🎶 Vinyl-Markt",
         "food": "LATAM Spezialitäten und mehr!"
       }
     },
@@ -74,7 +74,9 @@
         "image3": "Das Publikum genießt die Live-Auftritte",
         "image4": "Tanzkurse mit den besten Lehrer*innen",
         "image5": "Die besten Live-Orchester der Salsaszene in Berlin",
-        "image6": "Ein historischer Moment für die Berliner Salsa Szene"
+        "image6": "Kostenloser Unterricht für alle",
+        "image7": "Kostenlose Workshops für alle",
+        "image8": "Ein historischer Moment für die Berliner Salsa Szene"
       },
       "closeCaption": "Schließen"
     },

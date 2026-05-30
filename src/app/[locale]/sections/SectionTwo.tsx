@@ -1,6 +1,6 @@
 "use client";
 
-// React hooks not required in this file; gallery logic moved to IntegratedGallery
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import IntegratedGallery from "@/components/Gallery/IntegratedGallery";
@@ -8,6 +8,23 @@ import IntegratedGallery from "@/components/Gallery/IntegratedGallery";
 const SectionTwo = () => {
   const t = useTranslations("Sections.SectionTwo");
   const locale = useLocale();
+  const [isShortMdLandscape, setIsShortMdLandscape] = useState(false);
+
+  const mdParagraphGapClass = isShortMdLandscape ? "md:gap-y-3" : "md:gap-y-7";
+
+  useEffect(() => {
+    const checkShortMdLandscape = () => {
+      const shortMdLandscape = window.matchMedia(
+        "(min-width: 768px) and (max-width: 1023px) and (max-height: 520px)",
+      ).matches;
+      setIsShortMdLandscape(shortMdLandscape);
+    };
+
+    checkShortMdLandscape();
+    window.addEventListener("resize", checkShortMdLandscape);
+
+    return () => window.removeEventListener("resize", checkShortMdLandscape);
+  }, []);
 
   // Section content (gallery is provided by IntegratedGallery)
 
@@ -30,20 +47,22 @@ const SectionTwo = () => {
                 : "/que-es-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mb-4 h-auto max-h-[4vh] min-h-20 w-auto px-8 sm:mb-0 sm:max-h-[18vh] xl:max-h-[18vh]"
+            className="mb-6 h-auto max-h-[5vh] min-h-24 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
           />
 
-          <div className="text-bes-red mx-auto flex h-auto w-full max-w-[90%] flex-col justify-between gap-y-5 px-4 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 xl:justify-center xl:gap-y-6">
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
+          <div
+            className={`text-bes-red mx-auto flex h-auto w-full max-w-[96%] flex-col justify-between gap-y-5 px-2 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 ${mdParagraphGapClass} xl:justify-center xl:gap-y-6`}
+          >
+            <p className="text-[clamp(1rem,2.55vh,1.95rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description1")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
+            <p className="text-[clamp(1rem,2.55vh,1.95rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description2")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
+            <p className="text-[clamp(1rem,2.55vh,1.95rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description3")}
             </p>
-            <p className="text-[clamp(1rem,2.8vh,2.2rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.25rem,4.2vh,3.6rem)]">
+            <p className="text-[clamp(1rem,2.55vh,1.95rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description4")}
             </p>
           </div>

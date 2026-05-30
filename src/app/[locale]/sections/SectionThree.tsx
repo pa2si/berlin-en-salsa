@@ -12,9 +12,20 @@ const SectionThree = () => {
 
   const [currentImage, setCurrentImage] = useState(0);
   const [isMidSize, setIsMidSize] = useState(false);
+  const [isTabletMd, setIsTabletMd] = useState(false);
   const slideContainerRef = useRef<HTMLDivElement>(null);
   const t = useTranslations("Sections.SectionThree");
   const locale = useLocale();
+
+  const mdLayoutGapClass = isTabletMd
+    ? "md:gap-[clamp(1.8rem,2.8vh,2.8rem)]"
+    : "md:gap-[clamp(1.4rem,2.4vh,2.4rem)]";
+  const mdImageClass = isTabletMd
+    ? "md:-mb-1 md:max-w-[clamp(13.5rem,28vh,19rem)]"
+    : "md:-mb-2 md:max-w-[clamp(12rem,25vh,17rem)]";
+  const mdTextClass = isTabletMd
+    ? "md:gap-[clamp(0.35rem,0.7vh,0.7rem)] md:text-[clamp(1.3rem,2.8vh,2rem)] md:leading-[1.14]"
+    : "md:gap-[clamp(0.2rem,0.5vh,0.5rem)] md:text-[clamp(1.15rem,2.4vh,1.75rem)] md:leading-[1.12]";
 
   // Get the appropriate image set based on screen size
   const images = isMidSize ? midSizeImages : defaultImages;
@@ -34,7 +45,11 @@ const SectionThree = () => {
       const isSmToLg = window.matchMedia(
         "(min-width: 640px) and (max-width: 1279px)",
       ).matches;
+      const isTabletLikeMd = window.matchMedia(
+        "(min-width: 768px) and (max-width: 1023px) and (min-height: 900px)",
+      ).matches;
       setIsMidSize(isSmToLg);
+      setIsTabletMd(isTabletLikeMd);
     };
 
     // Check on initial load
@@ -68,7 +83,7 @@ const SectionThree = () => {
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:min-h-svh">
       <div className="bg-bes-red flex h-auto items-center justify-center py-12 sm:h-svh sm:w-1/2 sm:justify-start sm:py-0">
         <motion.div
-          className="text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 md:gap-8 lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12"
+          className={`text-bes-amber flex flex-col gap-10 sm:ml-8 sm:gap-6 ${mdLayoutGapClass} lg:ml-10 lg:gap-10 xl:ml-20 xl:gap-12`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -82,9 +97,11 @@ const SectionThree = () => {
                 : "/berlin-en-salsa-se-viene-con-todo.svg"
             }
             alt={t("title")}
-            className="mx-auto -ml-1 h-auto w-[90%] max-w-[24rem] sm:max-w-[16rem] md:-mb-6 md:max-w-[20rem] lg:h-[clamp(6rem,12vh,10rem)] lg:max-w-120 xl:h-[clamp(8rem,15vh,12rem)] 2xl:h-[clamp(9rem,18vh,14rem)]"
+            className={`mx-auto -ml-1 h-auto w-[90%] max-w-[24rem] sm:max-w-[16rem] ${mdImageClass} lg:h-[clamp(6rem,12vh,10rem)] lg:max-w-120 xl:h-[clamp(8rem,15vh,12rem)] 2xl:h-[clamp(9rem,18vh,14rem)]`}
           />
-          <div className="flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] font-semibold sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] md:gap-1 md:text-[clamp(1.2rem,2.5vw,1.8rem)] lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3">
+          <div
+            className={`flex flex-col gap-1 text-[clamp(1.5rem,4vw,2.5rem)] font-semibold sm:gap-0 sm:text-[clamp(1rem,2vw,1.3rem)] ${mdTextClass} lg:gap-2 lg:text-[clamp(1.2rem,3vh,2.8rem)] xl:gap-2 xl:text-[clamp(1.4rem,3.8vh,3.1rem)] 2xl:gap-3`}
+          >
             <p>{t("features.days")}</p>
             <p>{t("features.orchestras")}</p>
             <p>{t("features.shows")}</p>

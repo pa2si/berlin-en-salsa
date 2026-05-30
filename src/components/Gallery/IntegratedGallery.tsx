@@ -92,7 +92,7 @@ const IntegratedGallery = () => {
         {galleryImages.map((image, index) => (
           <div
             key={image.src}
-            className="relative h-full w-full flex-shrink-0"
+            className="relative h-full w-full shrink-0"
             onMouseEnter={() => setShowCaption(true)}
             onMouseLeave={() => setShowCaption(false)}
           >
@@ -114,7 +114,7 @@ const IntegratedGallery = () => {
                     y: showCaption || isHoveringImage ? 0 : 20,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-x-0 bottom-0 hidden bg-gradient-to-t from-black/80 via-black/60 to-transparent px-6 pt-12 pb-6 sm:block"
+                  className="absolute inset-x-0 bottom-0 hidden bg-linear-to-t from-black/80 via-black/60 to-transparent px-6 pt-12 pb-6 sm:block"
                 >
                   <p className="text-bes-amber text-base leading-relaxed font-medium md:text-lg">
                     {tGallery(`captions.image${index + 1}`)}
@@ -129,7 +129,7 @@ const IntegratedGallery = () => {
                     y: showCaption ? 0 : -20,
                   }}
                   transition={{ duration: 0.3 }}
-                  className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/80 via-black/60 to-transparent px-4 pt-4 pb-12 sm:hidden"
+                  className="absolute inset-x-0 top-0 bg-linear-to-b from-black/80 via-black/60 to-transparent px-4 pt-4 pb-12 sm:hidden"
                   style={{ pointerEvents: showCaption ? "auto" : "none" }}
                 >
                   <div className="flex items-start justify-between gap-3">
@@ -138,7 +138,7 @@ const IntegratedGallery = () => {
                     </p>
                     <button
                       onClick={() => setShowCaption(false)}
-                      className="bg-bes-red/90 text-bes-amber hover:bg-bes-red flex-shrink-0 rounded-full p-1 transition-colors"
+                      className="bg-bes-red/90 text-bes-amber hover:bg-bes-red shrink-0 rounded-full p-1 transition-colors"
                       aria-label={tGallery("closeCaption")}
                     >
                       <svg
