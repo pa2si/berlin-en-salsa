@@ -54,26 +54,26 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: "Musicboard Berlin GmbH",
       image: "/musicboard_logo_rgb.webp",
     },
-    {
-      url: "https://www.salsa-berlin.de/",
-      title: "salsa-berlin.de",
-      image: "/salsa-berlin-468X98.gif",
-    },
-    {
-      url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",
-      title: "THF Berlin En Salsa Event",
-      image: "/logo-thf.svg",
-    },
-    {
-      url: "https://www.the-berliner.com/berlin/what-to-do-this-weekend-best-events/",
-      title: "The Berliner: What to do this weekend in Berlin",
-      image: "/the-berliner.png",
-    },
-    {
-      url: "https://rausgegangen.de/en/events/berlin-en-salsa-festival-day-day-01-0/",
-      title: "Rausgegangen: Berlin En Salsa Festival",
-      image: "/rausgegangen.svg",
-    },
+    // {
+    //   url: "https://www.salsa-berlin.de/",
+    //   title: "salsa-berlin.de",
+    //   image: "/salsa-berlin-468X98.gif",
+    // },
+    // {
+    //   url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",
+    //   title: "THF Berlin En Salsa Event",
+    //   image: "/logo-thf.svg",
+    // },
+    // {
+    //   url: "https://www.the-berliner.com/berlin/what-to-do-this-weekend-best-events/",
+    //   title: "The Berliner: What to do this weekend in Berlin",
+    //   image: "/the-berliner.png",
+    // },
+    // {
+    //   url: "https://rausgegangen.de/en/events/berlin-en-salsa-festival-day-day-01-0/",
+    //   title: "Rausgegangen: Berlin En Salsa Festival",
+    //   image: "/rausgegangen.svg",
+    // },
   ];
 
   const closeText = language === "es" ? "Cerrar" : "Schließen";
@@ -147,11 +147,11 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
                     className="border-bes-red/20 hover:border-bes-red flex cursor-pointer items-center gap-4 rounded-lg border-2 bg-white/80 p-4 transition-all hover:scale-[1.02] hover:bg-white hover:shadow-lg sm:p-5"
                     title={link.title}
                   >
-                    <div className="shrink-0">
+                    <div className="h-16 w-28 shrink-0 sm:h-20 sm:w-32">
                       <img
                         src={link.image}
                         alt={link.title}
-                        className="h-16 w-auto max-w-[120px] min-w-[100px] object-contain sm:h-20 sm:max-w-40"
+                        className="h-full w-full object-contain"
                       />
                     </div>
                     <span className="text-bes-red flex-1 text-base font-bold sm:text-lg md:text-xl">
