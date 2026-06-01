@@ -12,6 +12,16 @@ const SectionFour = () => {
   const t = useTranslations("Sections.SectionFour");
   const locale = useLocale();
   const supportEmailHref = "mailto:info@berlinensalsa.de";
+  const description2WithFundingLink = t.rich("description2", {
+    fundingLink: (chunks) => (
+      <a
+        href="#footer-funding"
+        className="hover:text-bes-amber/80 underline decoration-2 underline-offset-4 transition-colors"
+      >
+        {chunks}
+      </a>
+    ),
+  });
 
   // Lower threshold and add margin to detect earlier
   const isInViewMobileWhite = useInView(mobileWhiteTshirtRef, {
@@ -54,15 +64,8 @@ const SectionFour = () => {
         </p>
 
         <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
-          {t("description2")}
+          {description2WithFundingLink}
         </p>
-
-        <img
-          src="/musicboard_logo_rgb.webp"
-          alt="Musicboard logo"
-          className="mx-auto mb-3 w-[8vw] max-w-56 min-w-[100px]"
-        />
-
         <p className="text-bes-amber -mt-4 px-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
           {t("description3")}
         </p>
@@ -133,15 +136,8 @@ const SectionFour = () => {
             </p>
 
             <p className="text-bes-amber text-center text-[clamp(0.9rem,2.9vw,1.9rem)]">
-              {t("description2")}
+              {description2WithFundingLink}
             </p>
-
-            <img
-              src="/musicboard_logo_rgb.webp"
-              alt="Musicboard logo"
-              className="mx-auto w-[25%] max-w-40 min-w-[100px]"
-            />
-
             <p className="text-bes-amber text-center text-[clamp(0.9rem,2.9vw,1.9rem)]">
               {t("description3")}
             </p>
@@ -214,13 +210,8 @@ const SectionFour = () => {
               </p>
 
               <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
-                {t("description2")}
+                {description2WithFundingLink}
               </p>
-              <img
-                src="/musicboard_logo_rgb.webp"
-                alt="Musicboard logo"
-                className="mx-auto max-h-[10vh] w-[clamp(8rem,16vh,14rem)] min-w-[100px] object-contain lg:max-h-[8vh]"
-              />
               <p className="text-bes-amber text-center text-[clamp(1.2rem,3vh,2.2rem)] lg:text-[clamp(1.5rem,3.5vh,2.5rem)]">
                 {t("description3")}
               </p>
@@ -299,13 +290,8 @@ const SectionFour = () => {
             {t("description1")}
           </p>
           <p className="text-bes-amber text-center font-semibold lg:text-xl xl:text-[1.7rem]">
-            {t("description2")}
+            {description2WithFundingLink}
           </p>
-          <img
-            src="/musicboard_logo_rgb.webp"
-            alt="Musicboard logo"
-            className="mx-auto max-h-25 w-auto min-w-[100px] object-contain 2xl:max-h-32"
-          />
           <p className="text-bes-amber text-center font-semibold lg:text-2xl xl:text-[1.7rem]">
             {t("description3")}
           </p>

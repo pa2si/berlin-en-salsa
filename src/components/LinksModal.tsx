@@ -49,11 +49,11 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: 'Berlin En Salsa Documentary "by El Son Obrero"',
       image: "/el-son-obrero.webp",
     },
-    {
-      url: "https://www.musicboard-berlin.de/",
-      title: "Musicboard Berlin GmbH",
-      image: "/musicboard_logo_rgb.webp",
-    },
+    // {
+    //   url: "https://www.musicboard-berlin.de/",
+    //   title: "Musicboard Berlin GmbH",
+    //   image: "/musicboard_logo_rgb.webp",
+    // },
     // {
     //   url: "https://www.salsa-berlin.de/",
     //   title: "salsa-berlin.de",

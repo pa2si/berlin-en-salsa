@@ -16,7 +16,10 @@ export const Footer = () => {
   return (
     <footer className="text-bes-red py-8 text-center lg:py-6">
       <div className="container mx-auto px-4">
-        <section className="border-bes-red/20 mb-7 border-b pb-6">
+        <section
+          id="footer-funding"
+          className="border-bes-red/20 mb-7 border-b pb-6"
+        >
           <h3 className="mb-4 text-left text-sm font-semibold tracking-wide sm:text-base">
             {fundingTitle}
           </h3>
