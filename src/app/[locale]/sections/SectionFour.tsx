@@ -75,7 +75,7 @@ const SectionFour = () => {
         <div className="flex w-full items-center justify-around gap-4 px-4">
           <motion.img
             ref={mobileWhiteTshirtRef}
-            src="/bes-camiseta-white.webp"
+            src="/bes-camiseta-black-2026.webp"
             alt="Berlin en Salsa white t-shirt"
             className="w-[30vw] max-w-60 min-w-20"
             initial={{ opacity: 0, x: -100 }}
@@ -88,7 +88,7 @@ const SectionFour = () => {
           />
           <motion.img
             ref={mobileBlackTshirtRef}
-            src="/bes-camiseta-black.webp"
+            src="/gorra-rosa.webp"
             alt="Berlin en Salsa black t-shirt"
             className="w-[30vw] max-w-60 min-w-20"
             initial={{ opacity: 0, x: 100 }}
@@ -137,7 +137,7 @@ const SectionFour = () => {
           <div className="flex flex-row items-center justify-center gap-4">
             <motion.img
               ref={smWhiteTshirtRef}
-              src="/bes-camiseta-white.webp"
+              src="/bes-camiseta-black-2026.webp"
               alt="Berlin en Salsa white t-shirt"
               className="w-[45%] max-w-48"
               initial={{ opacity: 0, x: -100 }}
@@ -148,7 +148,7 @@ const SectionFour = () => {
             />
             <motion.img
               ref={smBlackTshirtRef}
-              src="/bes-camiseta-black.webp"
+              src="/gorra-rosa.webp"
               alt="Berlin en Salsa black t-shirt"
               className="w-[45%] max-w-48"
               initial={{ opacity: 0, x: 100 }}
@@ -197,7 +197,7 @@ const SectionFour = () => {
 
           <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.img
-              src="/bes-camiseta-white.webp"
+              src="/bes-camiseta-black-2026.webp"
               alt="Berlin en Salsa white t-shirt"
               className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain lg:max-h-[18vh]"
               initial={{ opacity: 0, x: -100 }}
@@ -206,7 +206,7 @@ const SectionFour = () => {
               transition={{ duration: 0.7, type: "spring", stiffness: 90 }}
             />
             <motion.img
-              src="/bes-camiseta-black.webp"
+              src="/gorra-rosa.webp"
               alt="Berlin en Salsa black t-shirt"
               className="max-h-[28vh] w-[clamp(10rem,22vh,18rem)] object-contain lg:max-h-[18vh]"
               initial={{ opacity: 0, x: 100 }}
@@ -222,9 +222,9 @@ const SectionFour = () => {
       <div className="bg-bes-purple hidden h-svh grid-cols-3 overflow-x-hidden overflow-y-auto pt-4 xl:grid xl:pt-2 2xl:pt-4">
         <div className="flex items-center justify-center">
           <motion.img
-            src="/bes-camiseta-white.webp"
+            src="/bes-camiseta-black-2026.webp"
             alt="Berlin en Salsa white t-shirt"
-            className="max-w-10/12 px-4"
+            className="max-w-11/12 px-4"
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
@@ -258,9 +258,9 @@ const SectionFour = () => {
         </div>
         <div className="flex items-center justify-center">
           <motion.img
-            src="/bes-camiseta-black.webp"
+            src="/gorra-rosa.webp"
             alt="Berlin en Salsa black t-shirt"
-            className="max-w-10/12 px-4"
+            className="max-w-11/12 px-4"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
