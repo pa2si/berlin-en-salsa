@@ -50,13 +50,9 @@ const SectionFour = () => {
       <div className="bg-bes-purple flex h-svh flex-col items-center justify-around overflow-x-hidden overflow-y-auto pb-3 sm:hidden">
         <h2 className="sr-only">{t("title")}</h2>
         <img
-          src={
-            locale === "de"
-              ? "/wie-finanziert-sich-berlin-en-salsa.svg"
-              : "/como-se-financia-berlin-en-salsa.svg"
-          }
+          src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
           alt={t("title")}
-          className="mx-auto w-[70vw] max-w-120 min-w-48 pb-2"
+          className="mx-auto w-[65vw] max-w-100 min-w-48 pb-2"
         />
 
         <p className="text-bes-amber -mt-4 px-2 pb-2 text-center text-[clamp(0.5rem,2.8vh,1.8rem)] leading-snug">
@@ -74,17 +70,7 @@ const SectionFour = () => {
           href={supportEmailHref}
           aria-label={t("supportTitle")}
           className="block"
-        >
-          <img
-            src={
-              locale === "de"
-                ? "/unterstuetze-uns-dabei.svg"
-                : "/apoyanos-double-line.svg"
-            }
-            alt={t("supportTitle")}
-            className="mx-auto w-[50vw] max-w-100 min-w-56 cursor-pointer"
-          />
-        </a>
+        ></a>
 
         <div className="flex w-full items-center justify-around gap-4 px-4">
           <motion.img
@@ -121,11 +107,7 @@ const SectionFour = () => {
         {/* Left column - Financing information */}
         <div className="flex flex-col items-center justify-center p-4">
           <img
-            src={
-              locale === "de"
-                ? "/wie-finanziert-sich-berlin-en-salsa.svg"
-                : "/como-se-financia-berlin-en-salsa.svg"
-            }
+            src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
             alt={t("title")}
             className="mx-auto w-[95%] max-w-52"
           />
@@ -150,17 +132,7 @@ const SectionFour = () => {
             href={supportEmailHref}
             aria-label={t("supportTitle")}
             className="block"
-          >
-            <img
-              src={
-                locale === "de"
-                  ? "/unterstuetze-uns-dabei.svg"
-                  : "/apoyanos-single-line.svg"
-              }
-              alt={t("supportTitle")}
-              className="mb-4 w-full max-w-48 cursor-pointer"
-            />
-          </a>
+          ></a>
 
           <div className="flex flex-row items-center justify-center gap-4">
             <motion.img
@@ -195,13 +167,9 @@ const SectionFour = () => {
         <div className="flex flex-1 flex-col items-center justify-center pt-4 lg:p-8">
           <div className="flex h-full flex-col items-center justify-center">
             <img
-              src={
-                locale === "de"
-                  ? "/wie-finanziert-sich-berlin-en-salsa.svg"
-                  : "/como-se-financia-berlin-en-salsa.svg"
-              }
+              src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
               alt={t("title")}
-              className="mx-auto mb-4 max-h-[28vh] w-[clamp(18rem,40vh,32rem)] object-contain lg:mb-4"
+              className="mx-auto mb-4 max-h-[28vh] w-[clamp(18rem,40vh,18rem)] object-contain lg:mb-4"
             />
 
             <div className="max-w-3xl space-y-3 px-4 lg:space-y-4">
@@ -225,17 +193,7 @@ const SectionFour = () => {
             href={supportEmailHref}
             aria-label={t("supportTitle")}
             className="block"
-          >
-            <img
-              src={
-                locale === "de"
-                  ? "/unterstuetze-uns-dabei.svg"
-                  : "/apoyanos-single-line.svg"
-              }
-              alt={t("supportTitle")}
-              className="mx-auto mb-6 max-h-[18vh] w-[clamp(18rem,43vh,40rem)] cursor-pointer object-contain lg:mb-8"
-            />
-          </a>
+          ></a>
 
           <div className="flex flex-row items-center justify-center gap-10 lg:gap-20">
             <motion.img
@@ -276,13 +234,9 @@ const SectionFour = () => {
         <div className="flex flex-col items-center justify-center sm:space-y-4 md:space-y-2 lg:space-y-4 2xl:gap-4">
           <div>
             <img
-              src={
-                locale === "de"
-                  ? "/wie-finanziert-sich-berlin-en-salsa.svg"
-                  : "/como-se-financia-berlin-en-salsa.svg"
-              }
+              src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
               alt={t("title")}
-              className="mx-auto max-w-lg min-w-108"
+              className="mx-auto max-w-lg min-w-90"
             />
           </div>
 
@@ -300,17 +254,7 @@ const SectionFour = () => {
             href={supportEmailHref}
             aria-label={t("supportTitle")}
             className="block"
-          >
-            <img
-              src={
-                locale === "de"
-                  ? "/unterstuetze-uns-dabei.svg"
-                  : "/apoyanos-single-line.svg"
-              }
-              alt={t("supportTitle")}
-              className="mx-auto max-w-140 min-w-120 cursor-pointer"
-            />
-          </a>
+          ></a>
         </div>
         <div className="flex items-center justify-center">
           <motion.img
