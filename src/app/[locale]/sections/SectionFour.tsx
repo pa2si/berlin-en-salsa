@@ -13,8 +13,9 @@ const SectionFour = () => {
   // Adjusted spacing classes for lg:landscape to accommodate the thumbnails on shorter screens
   const mobileSectionSpacingClass =
     "gap-[clamp(0.75rem,2.4vh,1.5rem)] py-[clamp(0.9rem,2.8vh,2rem)] lg:landscape:gap-3 lg:landscape:py-0";
+  // Added lg:gap-3 for better vertical spacing on iPad Pro portrait
   const mobileDescriptionSpacingClass =
-    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)] lg:landscape:gap-1.5";
+    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)] lg:gap-3 lg:landscape:gap-1.5";
 
   // Generate the 10 gallery images
   const galleryImages = Array.from(
@@ -87,24 +88,24 @@ const SectionFour = () => {
             className="w-[60vw] max-w-sm lg:landscape:mb-4 lg:landscape:max-w-[300px]"
           />
 
-          {/* 2. Descriptions */}
+          {/* 2. Descriptions - Added lg:text-[1.85rem] for the vertical iPad Pro */}
           <div
             className={`flex flex-col items-center px-2 md:px-8 ${mobileDescriptionSpacingClass}`}
           >
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
               {t("description1")}
             </p>
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
               {description2WithFundingLink}
             </p>
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
               {t("description3")}
             </p>
           </div>
 
           {/* 3. Button / Sabor a Mi Logo */}
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2 lg:landscape:pt-1">
-            <p className="text-bes-amber text-center text-[clamp(1.1rem,3.8vw,1.55rem)] font-semibold lg:landscape:text-[1.1rem]">
+            <p className="text-bes-amber text-center text-[clamp(1.1rem,3.8vw,1.55rem)] font-semibold lg:text-[2rem] lg:landscape:text-[1.1rem]">
               {t("getItHere")}
             </p>
             <a
@@ -117,7 +118,7 @@ const SectionFour = () => {
               <img
                 src="/sabor-a-mi.webp"
                 alt="Sabor a Mi Berlin"
-                className="h-12 w-auto object-contain sm:h-20 lg:landscape:h-18"
+                className="h-12 w-auto object-contain sm:h-20 lg:h-24 lg:landscape:h-18"
               />
             </a>
           </div>
@@ -301,5 +302,7 @@ const SectionFour = () => {
     </>
   );
 };
+
+// to do: mobile view: portrait setting.
 
 export default SectionFour;
