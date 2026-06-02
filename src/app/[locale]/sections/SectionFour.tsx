@@ -7,17 +7,18 @@ import { useTranslations, useLocale } from "next-intl";
 const SectionFour = () => {
   const t = useTranslations("Sections.SectionFour");
   const locale = useLocale();
-  const supportEmailHref = "mailto:info@berlinensalsa.de";
-  const saborHref = "https://saboramiberlin.com/";
+  const saborHref = "https://maps.app.goo.gl/xCwN7mBtPpiu2pYZ7";
 
-  // Adjusted spacing classes for lg:landscape to accommodate the thumbnails on shorter screens
   const mobileSectionSpacingClass =
-    "gap-[clamp(0.75rem,2.4vh,1.5rem)] py-[clamp(0.9rem,2.8vh,2rem)] lg:landscape:gap-3 lg:landscape:py-0";
-  // Added lg:gap-3 for better vertical spacing on iPad Pro portrait
-  const mobileDescriptionSpacingClass =
-    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)] lg:gap-3 lg:landscape:gap-1.5";
+    "gap-[clamp(0.5rem,2vh,1.5rem)] py-[clamp(0.5rem,2vh,2rem)] landscape:gap-1 landscape:py-2 lg:landscape:gap-3 lg:landscape:py-0";
 
-  // Generate the 10 gallery images
+  const mobileDescriptionSpacingClass =
+    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)] landscape:gap-1 lg:gap-3 lg:landscape:gap-1.5";
+
+  // 1. FONT BUMPED FOR UNDER SM, WITH MD ADJUSTMENT
+  const descriptionTextClass =
+    "text-bes-amber text-center leading-snug font-semibold text-[clamp(1.25rem,6vw,2.2rem)] md:text-[1.75rem] landscape:text-[clamp(0.9rem,4.5vh,1.2rem)] lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight";
+
   const galleryImages = Array.from(
     { length: 10 },
     (_, i) => `/gallery-merch/gallery-merch-${i + 1}.webp`,
@@ -39,7 +40,6 @@ const SectionFour = () => {
     ),
   });
 
-  // Reusable Thumbnail Gallery
   const renderThumbnails = () => (
     <div className="mt-auto w-full bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
       <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 sm:gap-4">
@@ -72,40 +72,32 @@ const SectionFour = () => {
 
   return (
     <>
-      {/* Mobile to Large Layout (Visible below xl) */}
       <div
         className={`bg-bes-purple flex min-h-svh flex-col items-center justify-between overflow-x-hidden overflow-y-auto pt-4 xl:hidden`}
       >
-        {/* Inner Content Wrapper */}
         <div
           className={`flex w-full flex-1 flex-col items-center justify-center px-4 ${mobileSectionSpacingClass}`}
         >
-          {/* 1. Title Image */}
           <h2 className="sr-only">{t("title")}</h2>
+          {/* TITLE IMAGE WITH MD ADJUSTMENTS */}
           <img
             src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
             alt={t("title")}
-            className="w-[60vw] max-w-sm lg:landscape:mb-4 lg:landscape:max-w-[300px]"
+            className="w-[55vw] max-w-sm md:w-[45vw] md:max-w-[300px] landscape:h-[clamp(50px,16vh,90px)] landscape:w-auto lg:landscape:mb-4 lg:landscape:h-auto lg:landscape:w-[300px]"
           />
 
-          {/* 2. Descriptions - Added lg:text-[1.85rem] for the vertical iPad Pro */}
           <div
             className={`flex flex-col items-center px-2 md:px-8 ${mobileDescriptionSpacingClass}`}
           >
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
-              {t("description1")}
-            </p>
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+            <p className={descriptionTextClass}>{t("description1")}</p>
+            <p className={descriptionTextClass}>
               {description2WithFundingLink}
             </p>
-            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
-              {t("description3")}
-            </p>
+            <p className={descriptionTextClass}>{t("description3")}</p>
           </div>
 
-          {/* 3. Button / Sabor a Mi Logo */}
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2 lg:landscape:pt-1">
-            <p className="text-bes-amber text-center text-[clamp(1.1rem,3.8vw,1.55rem)] font-semibold lg:text-[2rem] lg:landscape:text-[1.1rem]">
+            <p className="text-bes-amber text-center text-[clamp(1.1rem,4vw,1.7rem)] font-semibold lg:text-[2rem] landscape:text-[clamp(0.9rem,4.5vh,1.3rem)] lg:landscape:text-[1.1rem]">
               {t("getItHere")}
             </p>
             <a
@@ -118,22 +110,16 @@ const SectionFour = () => {
               <img
                 src="/sabor-a-mi.webp"
                 alt="Sabor a Mi Berlin"
-                className="h-12 w-auto object-contain sm:h-20 lg:h-24 lg:landscape:h-18"
+                className="h-12 w-auto object-contain sm:h-20 lg:h-24 landscape:h-[7vh] landscape:min-h-[30px] sm:landscape:h-[10vh] lg:landscape:h-18"
               />
             </a>
           </div>
 
-          <a
-            href={supportEmailHref}
-            aria-label={t("supportTitle")}
-            className="block"
-          ></a>
-
-          {/* 4. T-Shirts Images with Navigation Arrows */}
-          <div className="flex w-full max-w-3xl flex-row items-center justify-around gap-2 pt-2 sm:gap-6 lg:landscape:pt-2">
+          {/* 2. CENTERED ROW & ARROWS */}
+          <div className="flex w-full max-w-3xl flex-row items-center justify-center gap-2 pt-2 sm:gap-6 lg:landscape:pt-2">
             <button
               onClick={handlePrev}
-              className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
+              className="text-bes-amber shrink-0 p-1 transition-colors hover:text-white active:scale-95"
               aria-label="Previous images"
             >
               <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
@@ -141,8 +127,8 @@ const SectionFour = () => {
               </svg>
             </button>
 
-            {/* Wrapper for Left Mobile Image */}
-            <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] lg:landscape:h-[22vh]">
+            {/* MERCH IMAGE CONTAINER LEFT WITH MD ADJUSTMENTS */}
+            <div className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] md:h-[260px] md:max-w-[190px] landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`mobile-left-${currentIndex}`}
@@ -157,8 +143,8 @@ const SectionFour = () => {
               </AnimatePresence>
             </div>
 
-            {/* Wrapper for Right Mobile Image */}
-            <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] lg:landscape:h-[22vh]">
+            {/* MERCH IMAGE CONTAINER RIGHT WITH MD ADJUSTMENTS */}
+            <div className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] md:h-[260px] md:max-w-[190px] landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]">
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`mobile-right-${currentIndex}`}
@@ -175,7 +161,7 @@ const SectionFour = () => {
 
             <button
               onClick={handleNext}
-              className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
+              className="text-bes-amber shrink-0 p-1 transition-colors hover:text-white active:scale-95"
               aria-label="Next images"
             >
               <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
@@ -185,15 +171,12 @@ const SectionFour = () => {
           </div>
         </div>
 
-        {/* Thumbnails visible on ANY lg screen (1024px+), covering both iPad Pro (portrait) and iPad (landscape) */}
         <div className="hidden w-full lg:block">{renderThumbnails()}</div>
       </div>
 
       {/* Desktop layout (xl and above) */}
       <div className="bg-bes-purple hidden h-svh flex-col overflow-x-hidden overflow-y-hidden xl:flex">
-        {/* Top Section - Grid Content */}
         <div className="grid flex-1 grid-cols-3 pt-4 xl:pt-2 2xl:pt-4">
-          {/* Left Image Column */}
           <div className="flex items-center justify-end pr-4">
             <button
               onClick={handlePrev}
@@ -220,7 +203,6 @@ const SectionFour = () => {
             </div>
           </div>
 
-          {/* Center Content Column */}
           <div className="flex flex-col items-center justify-center gap-[clamp(1rem,3vh,2.5rem)] px-2 2xl:gap-6">
             <div>
               <img
@@ -260,15 +242,8 @@ const SectionFour = () => {
                 />
               </a>
             </div>
-
-            <a
-              href={supportEmailHref}
-              aria-label={t("supportTitle")}
-              className="block"
-            ></a>
           </div>
 
-          {/* Right Image Column */}
           <div className="flex items-center justify-start pl-4">
             <div className="flex h-[clamp(40vh,55vh,65vh)] w-[80%] shrink-0 items-center justify-center px-4">
               <AnimatePresence mode="popLayout" initial={false}>
@@ -296,13 +271,10 @@ const SectionFour = () => {
           </div>
         </div>
 
-        {/* Desktop Thumbnail Gallery */}
         {renderThumbnails()}
       </div>
     </>
   );
 };
-
-// to do: mobile view: portrait setting.
 
 export default SectionFour;
