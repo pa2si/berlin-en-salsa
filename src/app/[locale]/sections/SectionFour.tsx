@@ -19,6 +19,9 @@ const SectionFour = () => {
   const descriptionTextClass =
     "text-bes-amber text-center leading-snug font-semibold text-[clamp(1.25rem,6vw,2.2rem)] md:text-[1.75rem] landscape:text-[clamp(0.9rem,4.5vh,1.2rem)] lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight";
 
+  const getItHereButtonClass =
+    "inline-flex items-center justify-center rounded-full border-2 border-bes-amber bg-bes-amber/10 px-6 py-2 text-center font-semibold text-bes-amber shadow-[0_0_0_0_rgba(0,0,0,0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-bes-amber hover:text-bes-purple hover:shadow-[0_10px_24px_-12px_rgba(255,184,77,0.85)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bes-amber focus-visible:ring-offset-2 focus-visible:ring-offset-bes-purple active:translate-y-0";
+
   const galleryImages = Array.from(
     { length: 10 },
     (_, i) => `/gallery-merch/gallery-merch-${i + 1}.webp`,
@@ -97,21 +100,13 @@ const SectionFour = () => {
           </div>
 
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2 lg:landscape:pt-1">
-            <p className="text-bes-amber text-center text-[clamp(1.1rem,4vw,1.7rem)] font-semibold lg:text-[2rem] landscape:text-[clamp(0.9rem,4.5vh,1.3rem)] lg:landscape:text-[1.1rem]">
-              {t("getItHere")}
-            </p>
             <a
               href={saborHref}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={t("getItHere")}
-              className="inline-block transition-transform hover:scale-105"
+              className={`${getItHereButtonClass} text-[clamp(1rem,3.6vw,1.45rem)] lg:text-[1.35rem] landscape:px-4 landscape:py-1.5 landscape:text-[clamp(0.82rem,3.8vh,1rem)] lg:landscape:text-[1rem]`}
             >
-              <img
-                src="/sabor-a-mi.webp"
-                alt="Sabor a Mi Berlin"
-                className="h-12 w-auto object-contain sm:h-20 lg:h-24 landscape:h-[7vh] landscape:min-h-[30px] sm:landscape:h-[10vh] lg:landscape:h-18"
-              />
+              {t("getItHere")}
             </a>
           </div>
 
@@ -225,21 +220,13 @@ const SectionFour = () => {
             </p>
 
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2">
-              <p className="text-bes-amber text-center font-semibold xl:text-[clamp(1.1rem,2.5vh,1.5rem)]">
-                {t("getItHere")}
-              </p>
               <a
                 href={saborHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t("getItHere")}
-                className="inline-block transition-transform hover:scale-105"
+                className={`${getItHereButtonClass} xl:text-[clamp(1rem,2.25vh,1.3rem)]`}
               >
-                <img
-                  src="/sabor-a-mi.webp"
-                  alt="Sabor a Mi Berlin"
-                  className="w-auto object-contain xl:h-[clamp(4.5rem,9vh,6.5rem)]"
-                />
+                {t("getItHere")}
               </a>
             </div>
           </div>
