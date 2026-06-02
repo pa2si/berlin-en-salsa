@@ -12,6 +12,9 @@ const SectionOne = () => {
   const dateImageSrc = locale.startsWith("de")
     ? "/date-de.svg"
     : "/date-es.svg";
+  const claimImageSrc = locale.startsWith("de")
+    ? "/claim-de.svg"
+    : "/claim-es.svg";
 
   return (
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
@@ -56,7 +59,7 @@ const SectionOne = () => {
       >
         <div className="flex h-[80%] w-[60%] items-center justify-center">
           <img
-            src="/claim.svg"
+            src={claimImageSrc}
             alt="Festival claim"
             className="h-full w-full object-contain"
           />
