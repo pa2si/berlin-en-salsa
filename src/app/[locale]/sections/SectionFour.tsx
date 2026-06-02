@@ -8,11 +8,13 @@ const SectionFour = () => {
   const t = useTranslations("Sections.SectionFour");
   const locale = useLocale();
   const supportEmailHref = "mailto:info@berlinensalsa.de";
-  const saborHref = "https://maps.app.goo.gl/tP8TFpz1v6LqdWJd8";
+  const saborHref = "https://saboramiberlin.com/";
+
+  // Adjusted spacing classes for lg:landscape to accommodate the thumbnails on shorter screens
   const mobileSectionSpacingClass =
-    "gap-[clamp(0.75rem,2.4vh,1.5rem)] py-[clamp(0.9rem,2.8vh,2rem)]";
+    "gap-[clamp(0.75rem,2.4vh,1.5rem)] py-[clamp(0.9rem,2.8vh,2rem)] lg:landscape:gap-3 lg:landscape:py-0";
   const mobileDescriptionSpacingClass =
-    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)]";
+    "gap-[clamp(0.4rem,1.2vh,1rem)] md:gap-[clamp(0.6rem,1.5vh,1.1rem)] lg:landscape:gap-1.5";
 
   // Generate the 10 gallery images
   const galleryImages = Array.from(
@@ -36,115 +38,154 @@ const SectionFour = () => {
     ),
   });
 
+  // Reusable Thumbnail Gallery
+  const renderThumbnails = () => (
+    <div className="mt-auto w-full bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
+      <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 sm:gap-4">
+        {galleryImages.map((src, i) => {
+          const pairIndex = Math.floor(i / 2) * 2;
+          const isSelected = pairIndex === currentIndex;
+
+          return (
+            <button
+              key={src}
+              onClick={() => setCurrentIndex(pairIndex)}
+              className={`relative shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
+                isSelected
+                  ? "ring-bes-amber scale-105 opacity-100 shadow-lg ring-4"
+                  : "hover:ring-bes-amber/50 opacity-40 hover:scale-105 hover:opacity-100 hover:ring-2"
+              }`}
+              aria-label={`View image pair ${pairIndex / 2 + 1}`}
+            >
+              <img
+                src={src}
+                alt={`Gallery thumbnail ${i + 1}`}
+                className="h-14 w-14 object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)] lg:landscape:h-16 lg:landscape:w-16"
+              />
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+
   return (
     <>
       {/* Mobile to Large Layout (Visible below xl) */}
       <div
-        className={`bg-bes-purple flex min-h-svh flex-col items-center justify-center overflow-x-hidden overflow-y-auto p-4 xl:hidden ${mobileSectionSpacingClass}`}
+        className={`bg-bes-purple flex min-h-svh flex-col items-center justify-between overflow-x-hidden overflow-y-auto pt-4 xl:hidden`}
       >
-        {/* 1. Title Image */}
-        <h2 className="sr-only">{t("title")}</h2>
-        <img
-          src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
-          alt={t("title")}
-          className="w-[60vw] max-w-sm"
-        />
-
-        {/* 2. Descriptions */}
+        {/* Inner Content Wrapper */}
         <div
-          className={`flex flex-col items-center px-2 md:px-8 ${mobileDescriptionSpacingClass}`}
+          className={`flex w-full flex-1 flex-col items-center justify-center px-4 ${mobileSectionSpacingClass}`}
         >
-          <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold">
-            {t("description1")}
-          </p>
-          <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold">
-            {description2WithFundingLink}
-          </p>
-          <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold">
-            {t("description3")}
-          </p>
-        </div>
+          {/* 1. Title Image */}
+          <h2 className="sr-only">{t("title")}</h2>
+          <img
+            src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
+            alt={t("title")}
+            className="w-[60vw] max-w-sm lg:landscape:mb-4 lg:landscape:max-w-[300px]"
+          />
 
-        {/* 3. Button / Sabor a Mi Logo (Inline) */}
-        <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2">
-          <p className="text-bes-amber text-center text-[clamp(1.1rem,3.8vw,1.55rem)] font-semibold">
-            {t("getItHere")}
-          </p>
+          {/* 2. Descriptions */}
+          <div
+            className={`flex flex-col items-center px-2 md:px-8 ${mobileDescriptionSpacingClass}`}
+          >
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+              {t("description1")}
+            </p>
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+              {description2WithFundingLink}
+            </p>
+            <p className="text-bes-amber text-center text-[clamp(1.2rem,4.8vw,2rem)] leading-snug font-semibold lg:landscape:text-[1.35rem] lg:landscape:leading-tight">
+              {t("description3")}
+            </p>
+          </div>
+
+          {/* 3. Button / Sabor a Mi Logo */}
+          <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2 lg:landscape:pt-1">
+            <p className="text-bes-amber text-center text-[clamp(1.1rem,3.8vw,1.55rem)] font-semibold lg:landscape:text-[1.1rem]">
+              {t("getItHere")}
+            </p>
+            <a
+              href={saborHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t("getItHere")}
+              className="inline-block transition-transform hover:scale-105"
+            >
+              <img
+                src="/sabor-a-mi.webp"
+                alt="Sabor a Mi Berlin"
+                className="h-12 w-auto object-contain sm:h-20 lg:landscape:h-18"
+              />
+            </a>
+          </div>
+
           <a
-            href={saborHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t("getItHere")}
-            className="inline-block transition-transform hover:scale-105"
-          >
-            <img
-              src="/sabor-a-mi.webp"
-              alt="Sabor a Mi Berlin"
-              className="h-12 w-auto object-contain sm:h-20"
-            />
-          </a>
+            href={supportEmailHref}
+            aria-label={t("supportTitle")}
+            className="block"
+          ></a>
+
+          {/* 4. T-Shirts Images with Navigation Arrows */}
+          <div className="flex w-full max-w-3xl flex-row items-center justify-around gap-2 pt-2 sm:gap-6 lg:landscape:pt-2">
+            <button
+              onClick={handlePrev}
+              className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
+              aria-label="Previous images"
+            >
+              <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
+              </svg>
+            </button>
+
+            {/* Wrapper for Left Mobile Image */}
+            <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] lg:landscape:h-[22vh]">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.img
+                  key={`mobile-left-${currentIndex}`}
+                  src={galleryImages[currentIndex]}
+                  alt={`Merch item ${currentIndex + 1}`}
+                  className="max-h-full max-w-full object-contain"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
+            </div>
+
+            {/* Wrapper for Right Mobile Image */}
+            <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px] lg:landscape:h-[22vh]">
+              <AnimatePresence mode="popLayout" initial={false}>
+                <motion.img
+                  key={`mobile-right-${currentIndex}`}
+                  src={galleryImages[currentIndex + 1]}
+                  alt={`Merch item ${currentIndex + 2}`}
+                  className="max-h-full max-w-full object-contain"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
+              aria-label="Next images"
+            >
+              <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
+                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <a
-          href={supportEmailHref}
-          aria-label={t("supportTitle")}
-          className="block"
-        ></a>
-
-        {/* 4. T-Shirts Images with Navigation Arrows */}
-        <div className="flex w-full max-w-3xl flex-row items-center justify-around gap-2 pt-2 sm:gap-6">
-          <button
-            onClick={handlePrev}
-            className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
-            aria-label="Previous images"
-          >
-            <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-              <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
-            </svg>
-          </button>
-
-          {/* Wrapper for Left Mobile Image */}
-          <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px]">
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.img
-                key={`mobile-left-${currentIndex}`}
-                src={galleryImages[currentIndex]}
-                alt={`Merch item ${currentIndex + 1}`}
-                className="max-h-full max-w-full object-contain"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              />
-            </AnimatePresence>
-          </div>
-
-          {/* Wrapper for Right Mobile Image */}
-          <div className="flex h-[clamp(140px,22vh,250px)] w-[35vw] max-w-[220px] shrink-0 items-center justify-center sm:h-[300px]">
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.img
-                key={`mobile-right-${currentIndex}`}
-                src={galleryImages[currentIndex + 1]}
-                alt={`Merch item ${currentIndex + 2}`}
-                className="max-h-full max-w-full object-contain"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              />
-            </AnimatePresence>
-          </div>
-
-          <button
-            onClick={handleNext}
-            className="text-bes-amber p-1 transition-colors hover:text-white active:scale-95"
-            aria-label="Next images"
-          >
-            <svg className="h-8 w-8 fill-current" viewBox="0 0 24 24">
-              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
-            </svg>
-          </button>
-        </div>
+        {/* Thumbnails visible on ANY lg screen (1024px+), covering both iPad Pro (portrait) and iPad (landscape) */}
+        <div className="hidden w-full lg:block">{renderThumbnails()}</div>
       </div>
 
       {/* Desktop layout (xl and above) */}
@@ -254,34 +295,8 @@ const SectionFour = () => {
           </div>
         </div>
 
-        {/* Bottom Section - Full Width Thumbnail Gallery (Visible only on xl+) */}
-        <div className="mt-auto w-full bg-black/15 px-8 py-[clamp(1rem,2.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
-          <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-4 overflow-x-auto pb-2">
-            {galleryImages.map((src, i) => {
-              const pairIndex = Math.floor(i / 2) * 2;
-              const isSelected = pairIndex === currentIndex;
-
-              return (
-                <button
-                  key={src}
-                  onClick={() => setCurrentIndex(pairIndex)}
-                  className={`relative shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
-                    isSelected
-                      ? "ring-bes-amber scale-105 opacity-100 shadow-lg ring-4"
-                      : "hover:ring-bes-amber/50 opacity-40 hover:scale-105 hover:opacity-100 hover:ring-2"
-                  }`}
-                  aria-label={`View image pair ${pairIndex / 2 + 1}`}
-                >
-                  <img
-                    src={src}
-                    alt={`Gallery thumbnail ${i + 1}`}
-                    className="object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)]"
-                  />
-                </button>
-              );
-            })}
-          </div>
-        </div>
+        {/* Desktop Thumbnail Gallery */}
+        {renderThumbnails()}
       </div>
     </>
   );
