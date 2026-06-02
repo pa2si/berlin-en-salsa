@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { FESTIVAL_CONFIG } from "@/config/festival";
@@ -13,9 +13,12 @@ const SectionThree = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isMidSize, setIsMidSize] = useState(false);
   const [isTabletMd, setIsTabletMd] = useState(false);
-  const slideContainerRef = useRef<HTMLDivElement>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const t = useTranslations("Sections.SectionThree");
   const locale = useLocale();
+  const promoVideoUrl =
+    "https://res.cloudinary.com/dgvreu6b6/video/upload/q_auto/f_auto/v1780437231/260504_BeS_Trailer_2026_final_f0rpfj.mp4";
+  const promoButtonText = t("promoButtonText");
 
   const mdLayoutGapClass = isTabletMd
     ? "md:gap-[clamp(1.8rem,2.8vh,2.8rem)]"
@@ -30,13 +33,6 @@ const SectionThree = () => {
   // Get the appropriate image set based on screen size
   const images = isMidSize ? midSizeImages : defaultImages;
   const hasMultipleImages = images.length > 1;
-
-  // Handle image tap/click to advance to next image (only for multiple images)
-  const handleImageClick = () => {
-    if (hasMultipleImages) {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }
-  };
 
   // Check screen size to determine which image set to use
   useEffect(() => {
@@ -72,6 +68,24 @@ const SectionThree = () => {
       return () => clearInterval(interval);
     }
   }, [images.length, hasMultipleImages, isMidSize]);
+
+  useEffect(() => {
+    if (!isVideoOpen) return;
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsVideoOpen(false);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleEscape);
+    };
+  }, [isVideoOpen]);
 
   // Don't render the section if features are not available yet
   // This check must come AFTER all hooks to comply with React rules of hooks
@@ -113,11 +127,7 @@ const SectionThree = () => {
           </div>
         </motion.div>
       </div>
-      <div
-        className={`relative flex h-[50vh] sm:h-svh ${hasMultipleImages ? "cursor-pointer" : ""} items-center justify-center sm:w-1/2`}
-        ref={slideContainerRef}
-        onClick={hasMultipleImages ? handleImageClick : undefined}
-      >
+      <div className="relative flex h-[50vh] items-center justify-center sm:h-svh sm:w-1/2">
         {images.map((img, index) => (
           <div
             key={img}
@@ -135,24 +145,52 @@ const SectionThree = () => {
           />
         ))}
 
-        {/* Navigation dots - only show for multiple images */}
-        {hasMultipleImages && (
-          <div className="absolute bottom-4 z-10 flex space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === currentImage
-                    ? "bg-bes-red"
-                    : "bg-opacity-50 bg-white"
-                }`}
-                onClick={() => setCurrentImage(index)}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
+        <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+
+        <button
+          type="button"
+          onClick={() => setIsVideoOpen(true)}
+          className="border-bes-amber bg-bes-amber/20 text-bes-amber hover:bg-bes-amber hover:text-bes-red focus-visible:ring-bes-amber relative z-10 mx-6 w-[min(90%,34rem)] cursor-pointer rounded-2xl border-2 px-6 py-5 text-center text-[clamp(1.25rem,3.6vw,2rem)] font-semibold shadow-[0_20px_50px_-30px_rgba(0,0,0,0.85)] backdrop-blur-[1.5px] transition-all duration-300 hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-black focus-visible:outline-none"
+          aria-label={promoButtonText}
+        >
+          {promoButtonText}
+        </button>
       </div>
+
+      {isVideoOpen && (
+        <div
+          className="fixed inset-0 z-110 flex items-center justify-center bg-black/85 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Promo video"
+          onClick={() => setIsVideoOpen(false)}
+        >
+          <div
+            className="relative aspect-9/16 w-[92vw] max-w-[420px] sm:h-[85vh] sm:max-h-[750px] sm:w-auto"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute -top-11 -right-2 cursor-pointer rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+              aria-label="Close video"
+            >
+              Close
+            </button>
+            <div className="h-full w-full overflow-hidden rounded-xl bg-black shadow-2xl">
+              <video
+                src={promoVideoUrl}
+                controls
+                autoPlay
+                playsInline
+                className="h-full w-full object-contain"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

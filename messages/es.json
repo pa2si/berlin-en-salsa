@@ -26,6 +26,7 @@
     },
     "SectionThree": {
       "title": "¡Berlin en Salsa se viene con todo!",
+      "promoButtonText": "Haz click aquí para ver nuestro trailer",
       "features": {
         "days": "🔥 3 días de pura salsa",
         "orchestras": "🎺 6 orquestas en vivo",
