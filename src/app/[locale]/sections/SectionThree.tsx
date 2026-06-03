@@ -165,13 +165,17 @@ const SectionThree = () => {
           onClick={() => setIsVideoOpen(false)}
         >
           <div
-            className="relative aspect-9/16 w-[92vw] max-w-[420px] sm:h-[85vh] sm:max-h-[750px] sm:w-auto"
+            // FIX: Constrain height using dvh so it never pushes out of the visible viewport.
+            // calc(100dvh - 7rem) ensures there's always enough room above the video for the close button.
+            className="relative aspect-9/16 h-[calc(100dvh-7rem)] w-auto max-w-[92vw] sm:h-[85vh] sm:max-h-[750px] sm:max-w-[420px]"
             onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
               onClick={() => setIsVideoOpen(false)}
-              className="text-bes-red hover:text-bes-red/80 absolute -top-11 -right-2 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+              // FIX: Changed from -right-2 to right-0 to prevent right-edge clipping on narrow screens
+              // Added p-2 to increase the touch target size for mobile users
+              className="text-bes-red hover:text-bes-red/80 absolute -top-12 right-0 cursor-pointer p-2 transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               aria-label="Close video"
             >
               <svg
