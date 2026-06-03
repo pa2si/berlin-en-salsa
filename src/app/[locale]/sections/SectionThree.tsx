@@ -16,8 +16,7 @@ const SectionThree = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const t = useTranslations("Sections.SectionThree");
   const locale = useLocale();
-  const promoVideoUrl =
-    "https://res.cloudinary.com/dgvreu6b6/video/upload/q_auto/f_auto/v1780437231/260504_BeS_Trailer_2026_final_f0rpfj.mp4";
+  const promoVideoUrl = "/bes-trailer.mp4";
   const promoButtonText = t("promoButtonText");
 
   const mdLayoutGapClass = isTabletMd
@@ -172,10 +171,23 @@ const SectionThree = () => {
             <button
               type="button"
               onClick={() => setIsVideoOpen(false)}
-              className="absolute -top-11 -right-2 cursor-pointer rounded-full bg-white/10 px-3 py-1.5 text-sm font-semibold text-white transition-colors hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+              className="text-bes-red hover:text-bes-red/80 absolute -top-11 -right-2 cursor-pointer transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
               aria-label="Close video"
             >
-              Close
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
             <div className="h-full w-full overflow-hidden rounded-xl bg-black shadow-2xl">
               <video
