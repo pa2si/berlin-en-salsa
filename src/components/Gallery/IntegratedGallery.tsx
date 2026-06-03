@@ -16,7 +16,6 @@ const IntegratedGallery = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const tGallery: any = useTranslations("Sections.Gallery");
 
-  // Navigation functions
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -40,7 +39,6 @@ const IntegratedGallery = () => {
     setTimeout(() => setIsAnimating(false), 500);
   };
 
-  // Handle drag end for swipe navigation
   const handleDragEnd = (
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo,
@@ -60,21 +58,20 @@ const IntegratedGallery = () => {
     }
   };
 
-  // Show caption automatically on mobile when slide changes
   useEffect(() => {
     setShowCaption(true);
   }, [currentImage]);
 
   return (
     <div
+      // Kept mobile h-[50vh] and desktop sm:h-svh. Removed bg-cover/bg-center classes.
       className="group relative flex h-[50vh] items-center justify-center overflow-hidden sm:h-svh sm:w-1/2"
       ref={slideContainerRef}
       onMouseEnter={() => setIsHoveringImage(true)}
       onMouseLeave={() => setIsHoveringImage(false)}
     >
-      {/* Slider with drag support */}
       <motion.div
-        className="flex h-full cursor-grab active:cursor-grabbing"
+        className="flex h-full w-full cursor-grab active:cursor-grabbing"
         drag="x"
         dragElastic={0.2}
         dragMomentum={false}
@@ -92,21 +89,20 @@ const IntegratedGallery = () => {
         {galleryImages.map((image, index) => (
           <div
             key={image.src}
-            className="relative h-full w-full shrink-0"
+            className="relative flex h-full w-full shrink-0 items-center justify-center"
             onMouseEnter={() => setShowCaption(true)}
             onMouseLeave={() => setShowCaption(false)}
           >
             <img
               src={image.src}
               alt={image.alt}
+              // Reverted back to object-cover so the image fills the entire container seamlessly
               className="h-full w-full object-cover"
               draggable={false}
             />
 
-            {/* Caption Overlay */}
             {index === currentImage && (
               <>
-                {/* Desktop - Hover to show */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{
@@ -121,7 +117,6 @@ const IntegratedGallery = () => {
                   </p>
                 </motion.div>
 
-                {/* Mobile - At the top, always shown unless closed */}
                 <motion.div
                   initial={{ opacity: 0, y: -20 }}
                   animate={{
@@ -163,7 +158,6 @@ const IntegratedGallery = () => {
         ))}
       </motion.div>
 
-      {/* Navigation Arrows - Desktop (on the sides) */}
       <motion.button
         onClick={(e) => {
           e.stopPropagation();
@@ -208,9 +202,7 @@ const IntegratedGallery = () => {
         <ChevronRight className="h-6 w-6" />
       </motion.button>
 
-      {/* Navigation Controls - Mobile & Desktop */}
       <div className="absolute bottom-4 z-10 flex items-center gap-3 sm:gap-2">
-        {/* Left Arrow - Mobile only */}
         <motion.button
           onClick={(e) => {
             e.stopPropagation();
@@ -225,7 +217,6 @@ const IntegratedGallery = () => {
           <ChevronLeft className="h-4 w-4" />
         </motion.button>
 
-        {/* Navigation Dots */}
         <div className="flex items-center gap-2">
           {galleryImages.map((_, index) => (
             <motion.button
@@ -259,7 +250,6 @@ const IntegratedGallery = () => {
           ))}
         </div>
 
-        {/* Right Arrow - Mobile only */}
         <motion.button
           onClick={(e) => {
             e.stopPropagation();
