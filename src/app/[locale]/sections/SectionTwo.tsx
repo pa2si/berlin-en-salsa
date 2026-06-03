@@ -32,7 +32,7 @@ const SectionTwo = () => {
       <IntegratedGallery />
 
       {/* Mobile height explicitly set to h-svh (100svh), while maintaining sm:w-1/2 for desktop */}
-      <div className="bg-bes-amber flex h-svh overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
+      <div className="bg-bes-amber flex overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
         <motion.div
           className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4"
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const SectionTwo = () => {
                 : "/que-es-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mb-6 h-auto max-h-[5vh] min-h-30 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
+            className="mb-9 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
           />
 
           <div
