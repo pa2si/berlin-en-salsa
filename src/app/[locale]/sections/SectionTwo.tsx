@@ -48,22 +48,22 @@ const SectionTwo = () => {
                 : "/que-es-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mb-9 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
+            className="mb-10 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
           />
 
           <div
             className={`text-bes-red mx-auto flex h-auto w-full max-w-[96%] flex-col justify-between gap-y-5 px-2 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 ${mdParagraphGapClass} xl:justify-center xl:gap-y-6`}
           >
-            <p className="text-[clamp(1.25rem,3.2vh,2.25rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
+            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description1")}
             </p>
-            <p className="text-[clamp(1.25rem,3.2vh,2.25rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
+            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description2")}
             </p>
-            <p className="text-[clamp(1.25rem,3.2vh,2.25rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
+            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description3")}
             </p>
-            <p className="text-[clamp(1.25rem,3.2vh,2.25rem)] leading-[1.15] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
+            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
               {t("description4")}
             </p>
           </div>

@@ -17,7 +17,7 @@ const SectionFour = () => {
 
   // 1. FONT BUMPED FOR UNDER SM, WITH MD ADJUSTMENT
   const descriptionTextClass =
-    "text-bes-amber text-center leading-snug font-semibold text-[clamp(1.25rem,6vw,2.2rem)] md:text-[1.75rem] landscape:text-[clamp(0.9rem,4.5vh,1.2rem)] lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight";
+    "text-bes-amber text-center leading-snug font-semibold text-[clamp(1.1rem,5.5vw,2rem)] md:text-[1.75rem] landscape:text-[clamp(0.9rem,4.5vh,1.2rem)] lg:text-[2.5rem] lg:leading-normal lg:landscape:text-[1.35rem] lg:landscape:leading-tight";
 
   const getItHereButtonClass =
     "inline-flex items-center justify-center rounded-full border-2 border-bes-amber bg-bes-amber/10 px-6 py-2 text-center font-semibold text-bes-amber shadow-[0_0_0_0_rgba(0,0,0,0)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-bes-amber hover:text-bes-purple hover:shadow-[0_10px_24px_-12px_rgba(255,184,77,0.85)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bes-amber focus-visible:ring-offset-2 focus-visible:ring-offset-bes-purple active:translate-y-0";
