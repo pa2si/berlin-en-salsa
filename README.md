@@ -1,3 +1,15 @@
+v3.0.0
+
+- BeS Festival Vol. DESIGN
+- first commit after merch
+- new imgages and Logo for branding of Berlin en Salsa Festival Vol.2
+- trailer added
+- new Merch Sectionwith gallery
+- financed by section in Footer
+- old links removed in Links (Footer)
+- new responsiveness overall
+- trailer video
+
 v2.7.8
 
 - Data for Aviatrix Diablas Finas almost finished.
