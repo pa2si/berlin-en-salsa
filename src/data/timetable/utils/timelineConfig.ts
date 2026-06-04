@@ -166,13 +166,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
     schedules: [
       {
         dayWeekday: "friday",
-        timeline: [
-          {
-            time: "19:30",
-            duration: 30,
-            eventId: "Timetable.events.danceWorkshops.danceShows",
-          },
-        ],
+        timeline: [],
       },
       {
         dayWeekday: "saturday",
@@ -183,24 +177,25 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             eventId: "Timetable.events.danceWorkshops.baileConsenso",
           },
           {
-            time: "15:00",
+            time: "14:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.salsaCalena",
+            eventId: "Timetable.events.danceWorkshops.nYStyle", //DONE
+          },
+
+          {
+            time: "15:30",
+            duration: 60,
+            eventId: "Timetable.events.danceWorkshops.sonCubano", //DONE
           },
           {
             time: "16:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.ruedaDeCasino",
+            eventId: "Timetable.events.danceWorkshops.caliStyle", //DONE
           },
           {
             time: "18:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.nYStyle",
-          },
-          {
-            time: "19:30",
-            duration: 30,
-            eventId: "Timetable.events.danceWorkshops.danceShows",
+            eventId: "Timetable.events.danceWorkshops.presentaciones",
           },
         ],
       },
@@ -215,22 +210,22 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.sonCubano",
+            eventId: "Timetable.events.danceWorkshops.ruedaDeCasino", //DONE
           },
           {
             time: "15:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.chaChaCha", //teacher name, description done, IMAGE and BIO MISSING
+            eventId: "Timetable.events.danceWorkshops.chaChaCha", //DONE
           },
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.afroCuban", // teacher name, bio and description done, IMAGE MISSING
+            eventId: "Timetable.events.danceWorkshops.afroCuban", //DONE
           },
           {
             time: "18:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.danceShows",
+            eventId: "Timetable.events.danceWorkshops.presentaciones",
           },
         ],
       },

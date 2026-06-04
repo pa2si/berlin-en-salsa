@@ -1,3 +1,7 @@
+v3.0.4
+
+- Dance Workshops almost done, but missing presentaciones and talk baile consenso
+
 v3.0.3
 
 - Edna Martinez correction

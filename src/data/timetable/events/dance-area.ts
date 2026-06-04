@@ -11,22 +11,76 @@ import { RawDanceAreaEvent } from "@/types/events";
  * All dance area events for the festival
  */
 export const danceAreaEvents: RawDanceAreaEvent[] = [
+  // NY Style Workshop
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.danceWorkshops.nYStyle",
+    area: "dance-area",
+    danceAreaType: "workshop",
+    danceStyle: "New York Style",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.danceWorkshopTeachers.nYStyle",
+        role: "instructor",
+        bio: "Timetable.events.danceWorkshopBioTeachers.nYStyle",
+        image: "/ny-style.webp",
+      }),
+    ],
+    description: "Timetable.events.danceWorkshopDescriptions.nYStyle",
+    image: "/ny-style.webp",
+  }),
+
   // Son Cubano Workshop
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.sonCubano",
     area: "dance-area",
-    danceAreaType: "charla-bailar",
+    danceAreaType: "workshop",
     danceStyle: "Son Cubano",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.dancers.lynetRivero",
+        name: "Timetable.events.danceWorkshopTeachers.sonCubano",
         role: "instructor",
-        bio: "Timetable.events.bios.lynetRivero",
-        image: "/yago-helen.webp",
+        bio: "Timetable.events.danceWorkshopBioTeachers.sonCubano",
+        image: "/helen-yago.webp",
       }),
     ],
-    description: "Timetable.events.descriptions.sonCubano",
-    image: "/yago-helen.webp",
+    description: "Timetable.events.danceWorkshopDescriptions.sonCubano",
+    image: "/helen-yago.webp",
+  }),
+
+  // Cali Style Workshop
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.danceWorkshops.caliStyle",
+    area: "dance-area",
+    danceAreaType: "workshop",
+    danceStyle: " Salsa Caleña, Cali Style",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.danceWorkshopTeachers.caliStyle",
+        role: "instructor",
+        bio: "Timetable.events.danceWorkshopBioTeachers.caliStyle",
+        image: "/cali-style.webp",
+      }),
+    ],
+    description: "Timetable.events.danceWorkshopDescriptions.caliStyle",
+    image: "/cali-style.webp",
+  }),
+
+  // Rueda de Casino Workshop
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.danceWorkshops.ruedaDeCasino",
+    area: "dance-area",
+    danceAreaType: "workshop",
+    danceStyle: "Rueda de Casino",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.danceWorkshopTeachers.ruedaDeCasino",
+        role: "instructor",
+        bio: "Timetable.events.danceWorkshopBioTeachers.ruedaDeCasino",
+        image: "/rueda-de-casino.webp",
+      }),
+    ],
+    description: "Timetable.events.danceWorkshopDescriptions.ruedaDeCasino",
+    image: "/rueda-de-casino.webp",
   }),
 
   // Cha Cha Cha Workshop
@@ -37,67 +91,31 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     danceStyle: "Cha Cha Cha",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.nora",
+        name: "Timetable.events.danceWorkshopTeachers.chaChaCha",
         role: "instructor",
-        // bio: "Timetable.events.descriptions.nora",
-        image: "/niya.webp",
+        bio: "Timetable.events.danceWorkshopBioTeachers.chaChaCha",
+        image: "/cha-cha-cha.webp",
       }),
     ],
     description: "Timetable.events.descriptions.chaChaCha",
-    image: "/niya.webp",
+    image: "/cha-cha-cha.webp",
   }),
 
   // Afro-Cuban Dance Workshop
   EventFactory.createDanceAreaEvent({
-    title: "Timetable.events.danceWorkshops.saturday.afroCubanDance",
+    title: "Timetable.events.danceWorkshops.afroCuban",
     area: "dance-area",
     danceAreaType: "workshop",
     danceStyle: "Afro-Cuban",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.leidiana",
+        name: "Timetable.events.danceWorkshopTeachers.afroCuban",
         role: "instructor",
-        bio: "Timetable.events.bios.leidiana",
-        image: "/leidiana.webp",
+        bio: "Timetable.events.danceWorkshopBioTeachers.afroCuban",
+        image: "/afro-cuban.webp",
       }),
     ],
-    description: "Timetable.events.descriptions.afroCubanDance",
-    image: "/leidiana.webp",
-  }),
-
-  // Salsa Caleña Workshop
-  EventFactory.createDanceAreaEvent({
-    title: "Timetable.events.danceWorkshops.saturday.salsaCalena",
-    area: "dance-area",
-    danceAreaType: "workshop",
-    danceStyle: "Salsa Caleña",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.julian",
-        role: "instructor",
-        bio: "Timetable.events.descriptions.julian",
-        image: "/julian.webp",
-      }),
-    ],
-    description: "Timetable.events.descriptions.salsaCalena",
-    image: "/julian.webp",
-  }),
-
-  // Casino Cubano Workshop
-  EventFactory.createDanceAreaEvent({
-    title: "Timetable.events.danceWorkshops.sunday.casinoCubano",
-    area: "dance-area",
-    danceAreaType: "workshop",
-    danceStyle: "Casino Cubano",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.lei",
-        role: "instructor",
-        bio: "Timetable.events.descriptions.lei",
-        image: "/lei.webp",
-      }),
-    ],
-    description: "Timetable.events.descriptions.casinoCubano",
-    image: "/lei.webp",
+    description: "Timetable.events.danceWorkshopDescriptions.afroCuban",
+    image: "/afro-cuban.webp",
   }),
 ];
