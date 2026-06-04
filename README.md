@@ -1,3 +1,7 @@
+v3.0.2
+
+- Main Stage Program finished
+
 v3.0.1
 
 - Alafia con Iré done in timetable

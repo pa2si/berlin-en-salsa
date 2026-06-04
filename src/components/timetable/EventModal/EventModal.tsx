@@ -186,8 +186,11 @@ export default function EventModal({
                   <div className="mb-6">
                     <h4 className="text-bes-red mb-2 text-xl font-bold">
                       {t("modal.about")}{" "}
-                      {selectedEventDetails.presenter ||
-                        selectedEventDetails.guest}
+                      {(
+                        selectedEventDetails.presenter ||
+                        selectedEventDetails.guest ||
+                        ""
+                      ).toUpperCase()}
                     </h4>
                     <p className="text-xl text-gray-700 md:leading-relaxed">
                       {selectedEventDetails.bio}
@@ -223,7 +226,7 @@ export default function EventModal({
                 {/* Additional text for talks */}
                 {selectedEventDetails.text && (
                   <div className="border-bes-red mb-6 rounded-lg border-l-4 bg-gray-50 p-4">
-                    <p className="text-xl italic text-gray-700 md:leading-relaxed">
+                    <p className="text-xl text-gray-700 italic md:leading-relaxed">
                       &quot;{selectedEventDetails.text}&quot;
                     </p>
                   </div>

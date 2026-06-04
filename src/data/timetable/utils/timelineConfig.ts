@@ -80,7 +80,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "21:00",
             duration: 60,
-            eventId: "Timetable.events.artists.cayeye", //text done, edited image missing
+            eventId: "Timetable.events.artists.cayeye", //DONE
           },
         ],
       },
@@ -105,7 +105,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:30",
             duration: 60,
-            eventId: "Timetable.events.artists.burundanga", //text done, edited image missing
+            eventId: "Timetable.events.artists.burundanga", //DONE
           },
           {
             time: "18:30",
@@ -115,7 +115,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "20:30",
             duration: 60,
-            eventId: "Timetable.events.artists.laMelodica", //text done, edited image missing
+            eventId: "Timetable.events.artists.laMelodica", //DONE
           },
         ],
       },
@@ -135,7 +135,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "16:00",
             duration: 60,
-            eventId: "Timetable.events.artists.lasHienas", //text done (spanish text translated by chat GPT), image missing
+            eventId: "Timetable.events.artists.lasHienas", //DONE
           },
           {
             time: "17:00",
@@ -145,12 +145,13 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "19:00",
             duration: 90,
-            eventId: "Timetable.events.artists.gerardoRosalesSalsaLegendaria", //text done (german translation by Chat GPT), image missing
+            eventId:
+              "Timetable.events.artists.gerardoRosalesYSuSalsaLegendaria", //DONE
           },
           {
             time: "20:30",
             duration: 90,
-            eventId: "Timetable.events.artists.besHosts", //text done, image missing
+            eventId: "Timetable.events.artists.besHostDJs", //DONE
           },
         ],
       },

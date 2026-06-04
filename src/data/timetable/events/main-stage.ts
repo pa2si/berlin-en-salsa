@@ -184,10 +184,10 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.burundanga",
         role: "band",
         description: "Timetable.events.descriptions.burundanga",
-        image: "/tempo-havana.webp",
+        image: "/burundanga.webp",
       }),
     ],
-    genre: "Son Cubano",
+    genre: "Salsa",
   }),
 
   // Lionza DJ Set
@@ -215,7 +215,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.laMelodica",
         role: "band",
         description: "Timetable.events.descriptions.laMelodica",
-        image: "/cayeye.webp",
+        image: "/la-melodica.webp",
       }),
     ],
     genre: "Salsa",
@@ -274,7 +274,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.lasHienas",
         role: "band",
         description: "Timetable.events.descriptions.lasHienas",
-        image: "/cayeye.webp",
+        image: "/las-hienas.webp",
       }),
     ],
     genre: "Salsa",
@@ -306,28 +306,28 @@ export const mainStageEvents: RawTimetableEvent[] = [
         role: "band",
         description:
           "Timetable.events.descriptions.gerardoRosalesSalsaLegendaria",
-        image: "/burundanga.webp",
+        image: "/gerardo-rosales.webp",
       }),
       EventFactory.createAct({
         name: "Timetable.events.artists.gerardoRosales",
-        role: "dancer",
+        role: "band",
         bio: "Timetable.events.bios.gerardoRosales",
-        image: "/lei-ayna.webp",
+        image: "/gerardo-rosales.webp",
       }),
     ],
   }),
 
   // Berlin en Salsa Host DJs
   EventFactory.createMainStageEvent({
-    title: "Timetable.events.artists.besHosts",
+    title: "Timetable.events.artists.besHostDJs",
     area: "main-stage",
     performanceType: "dj-set",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.dracaena",
+        name: "Timetable.events.artists.besHostDJs",
         role: "dj",
-        bio: "Timetable.events.bios.dracaena",
-        image: "/la-vecina-anacaona.webp",
+        description: "Timetable.events.descriptions.besHostDJs",
+        image: "/bes-host-djs.webp",
       }),
       EventFactory.createAct({
         name: "Timetable.events.artists.andrelux",
