@@ -1,3 +1,7 @@
+v3.0.5
+
+- creaton of workshopLeaderLabelDanceAreaWorkshop in EventModal to distinguish between "clase dirigidA por" and "taller dirigidO" por
+
 v3.0.4
 
 - Dance Workshops almost done, but missing presentaciones and talk baile consenso
