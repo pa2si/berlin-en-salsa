@@ -34,7 +34,7 @@ export default function TimeSlot({
   const bgColor = slotIndex % 2 === 0 ? "bg-bes-amber" : "bg-bes-red/10";
 
   const handleEventClick = () => {
-    if (!slot.event || !originalAreaKey) return;
+    if (!slot.event || !originalAreaKey || slot.isTba) return;
 
     // Reset current slide index when opening a new modal
     onSlideReset();
@@ -58,10 +58,10 @@ export default function TimeSlot({
           {/* Only show the event block for the first occurrence or if it's not a continuation */}
           {!isContinuation && (
             <motion.div
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className={`mx-auto w-[85%] cursor-pointer px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${getEventStyle(slot.type)}`}
-              onClick={handleEventClick}
+              whileHover={slot.isTba ? undefined : { scale: 1.02, y: -2 }}
+              whileTap={slot.isTba ? undefined : { scale: 0.98 }}
+              className={`mx-auto w-[85%] px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${slot.isTba ? "cursor-default" : "cursor-pointer"} ${getEventStyle(slot.type)}`}
+              onClick={slot.isTba ? undefined : handleEventClick}
               style={{
                 height: nextSlotHasSameEvent
                   ? // For multi-slot events, calculate the height based on number of slots

@@ -22,6 +22,7 @@ export interface SlideContent {
 
 export interface TimeSlot {
   time: string;
+  isTba?: boolean;
   event?: string;
   instructor?: string;
   instructorTwo?: string; // Second instructor for workshops with multiple teachers

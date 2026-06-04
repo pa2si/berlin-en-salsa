@@ -19,11 +19,20 @@ import { TimetableEvent, RawTimetableEvent } from "../../../types/events";
 /**
  * Timeline slot configuration - simple time + event reference
  */
-export interface TimelineSlot {
+export interface EventTimelineSlot {
   time: string; // Start time (e.g., "15:00")
   duration: number; // Duration in minutes
   eventId: string; // Reference to event by ID or title
+  tba?: false;
 }
+
+export interface TbaTimelineSlot {
+  time: string; // Start time (e.g., "15:00")
+  duration: number; // Duration in minutes
+  tba: true; // Creates a non-clickable TBA slot in the timetable
+}
+
+export type TimelineSlot = EventTimelineSlot | TbaTimelineSlot;
 
 /**
  * Schedule for a specific area on a specific day
@@ -174,7 +183,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "13:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.baileConsenso",
+            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
           },
           {
             time: "14:30",
@@ -194,8 +203,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           },
           {
             time: "18:30",
-            duration: 60,
-            eventId: "Timetable.events.danceWorkshops.presentaciones",
+            duration: 30,
+            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
           },
         ],
       },
@@ -205,7 +214,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.baileConsenso",
+            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
           },
           {
             time: "14:00",
@@ -225,7 +234,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.presentaciones",
+            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
           },
         ],
       },
@@ -403,10 +412,29 @@ export function createTimelineFromSimpleConfig(
   timelineSlots: TimelineSlot[],
   eventCollection: RawTimetableEvent[],
   day?: string, // Changed from "saturday" | "sunday" to accept any weekday
+  area?: AreaType,
 ): TimetableEvent[] {
   const timeline: TimetableEvent[] = [];
 
   for (const slot of timelineSlots) {
+    if ("tba" in slot && slot.tba) {
+      const tbaEvent: TimetableEvent = {
+        type: "main-stage",
+        id: `tba-${area || "unknown"}-${slot.time}`,
+        title: "TBA",
+        area: area || "main-stage",
+        performanceType: "dj-set",
+        acts: [],
+        isTba: true,
+        startTime: slot.time,
+        endTime: calculateEndTime(slot.time, slot.duration),
+        day: day || "saturday",
+      };
+
+      timeline.push(tbaEvent);
+      continue;
+    }
+
     const event = eventCollection.find((e) => e.title === slot.eventId);
 
     if (event) {

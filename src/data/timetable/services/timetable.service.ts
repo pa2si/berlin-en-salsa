@@ -67,6 +67,7 @@ export class TimetableService {
         timeline,
         events,
         dayWeekday,
+        area,
       );
 
       result[area] =
@@ -104,6 +105,7 @@ export class TimetableService {
       if (activeEvent) {
         const timeSlot: TranslatableTimeSlot = {
           time: timeString,
+          isTba: activeEvent.isTba,
           event: activeEvent.title,
           type:
             activeEvent.type === "dance-area" ||
@@ -121,6 +123,11 @@ export class TimetableService {
                   ? "music-workshop"
                   : undefined,
         };
+
+        if (activeEvent.isTba) {
+          timeSlots.push(timeSlot);
+          continue;
+        }
 
         // Handle dance and music workshops
         if (
@@ -455,6 +462,7 @@ export class TimetableService {
       timeline,
       events,
       dayWeekday,
+      area,
     );
 
     // Convert to TimelineSlot[] format (time -> events mapping)

@@ -36,6 +36,7 @@ export interface TranslatableSlideContent {
  */
 export interface TranslatableTimeSlot {
   time: string; // Time is always static
+  isTba?: boolean;
   event?: TranslatableString;
   actType?: TranslatableString;
   type?: "main" | "dance-show" | "workshop" | "talk";

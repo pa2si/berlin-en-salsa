@@ -23,6 +23,7 @@ export interface BaseEventDefinition {
   id: string; // Unique identifier for the event
   title: string; // Event title (translatable key)
   area: AreaType; // Which area this event belongs to
+  isTba?: boolean; // Placeholder slot marker for non-clickable TBA entries
   image?: string; // Primary image
   description?: string; // Event description (translatable key)
 }

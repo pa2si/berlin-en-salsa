@@ -1,3 +1,7 @@
+v3.0.6
+
+- tba introduced for timeline in timelineConfig
+
 v3.0.5
 
 - creaton of workshopLeaderLabelDanceAreaWorkshop in EventModal to distinguish between "clase dirigidA por" and "taller dirigidO" por
