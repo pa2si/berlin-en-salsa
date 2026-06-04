@@ -70,7 +70,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:30",
             duration: 60,
-            eventId: "Timetable.events.artists.alafiaConIre", // text done, edited image missing
+            eventId: "Timetable.events.artists.alafiaConIre", // DONE
           },
           {
             time: "19:30",

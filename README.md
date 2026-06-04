@@ -1,3 +1,8 @@
+v3.0.1
+
+- Alafia con Iré done in timetable
+- now danceshows for a live act have the addional word "show"
+
 v3.0.0
 
 - BeS Festival Vol. DESIGN

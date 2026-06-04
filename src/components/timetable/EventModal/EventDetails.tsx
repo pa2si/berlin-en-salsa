@@ -115,7 +115,7 @@ export default function EventDetails({
       {selectedEventDetails.hasShow && selectedEventDetails.danceShow && (
         <span className="text-bes-purple mt-1 flex items-center text-base font-bold">
           <span className="bg-bes-purple mr-2 inline-block h-3 w-3 rounded-full"></span>
-          {selectedEventDetails.danceShow}
+          {`${selectedEventDetails.danceShow} show`}
           {selectedEventDetails.dancers
             ? `: ${selectedEventDetails.dancers}`
             : ""}

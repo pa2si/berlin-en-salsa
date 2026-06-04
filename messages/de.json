@@ -494,7 +494,12 @@
         "afroCuban": "Afrocubano"
       },
       "dancers": {
-        "lynetRivero": "Lynet Rivero"
+        "lynetRivero": "Lynet Rivero",
+        "helenYago": "Helen & Yago",
+        "jessicaJulian": "Jessica & Julian",
+        "niya": "Niya",
+        "leiAyna": "Lei & Ayna",
+        "alafiaConIre": "Laura, Kimberly, Christian"
       },
       "musicWorkshops": {
         "saturday": {
@@ -510,6 +515,9 @@
         "laAzoteaDelaIndia": "La Azotea de la India"
       },
       "artists": {
+        "lauraTorrenovaLopez": "Laura Torrenova López",
+        "kimberlyAliciaWirth": "Kimberly Alicia Wirth",
+        "christianManuelQuintana": "Christian Manuel Quintana",
         "renatrix": "Renatrix",
         "nora": "Nora",
         "gerardoRosales": "Gerardo Rosales",

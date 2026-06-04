@@ -60,6 +60,10 @@ export const mainStageEvents: RawTimetableEvent[] = [
     title: "Timetable.events.artists.alafiaConIre",
     area: "main-stage",
     performanceType: "live",
+    genre: "Afro-Cuban",
+    hasShow: true,
+    danceShow: "Timetable.events.danceShows.afroCuban",
+    dancers: "Timetable.events.dancers.alafiaConIre",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.artists.alafiaConIre",
@@ -68,34 +72,24 @@ export const mainStageEvents: RawTimetableEvent[] = [
         image: "/alafia-con-ire.webp",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.leidiana",
+        name: "Timetable.events.artists.lauraTorrenovaLopez",
         role: "dancer",
-        bio: "Timetable.events.bios.leidiana",
-        image: "/leidiana.webp",
+        // bio: "Timetable.events.bios.lauraTorrenovaLopez",
+        image: "/laura.webp",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.roger",
+        name: "Timetable.events.artists.kimberlyAliciaWirth",
         role: "dancer",
-        bio: "Timetable.events.bios.roger",
-        image: "/roger.webp",
+        // bio: "Timetable.events.bios.kimberlyAliciaWirth",
+        image: "/kimberly.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.christianManuelQuintana",
+        role: "dancer",
+        // bio: "Timetable.events.bios.christianManuelQuintana",
+        image: "/christian-alafia.webp",
       }),
     ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/alafia-con-ire.webp",
-        caption: "Timetable.events.descriptions.alafiaConIre",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/leidiana-roger.webp",
-        caption: "Timetable.events.descriptions.leidianaRoger",
-      }),
-    ],
-    genre: "Afro-Cuban",
-    hasShow: true,
-    danceShow: "Timetable.events.danceShows.afroCuban",
-    dancers: "Timetable.events.dancers.leidianaRoger",
   }),
 
   // Son Obrero DJ Set

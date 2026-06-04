@@ -126,7 +126,7 @@ export default function TimeSlot({
                           top: "calc(50% + 16px)", // Position in the second half of the combined slot
                         }}
                       >
-                        {nextSlotWithShow.danceShow}
+                        {`${nextSlotWithShow.danceShow} show`}
                       </div>
                     ),
                 )}
