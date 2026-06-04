@@ -110,18 +110,11 @@ const SectionSix = () => {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="mr-1 h-6 w-6 sm:h-[clamp(1.5rem,4vh,2.2rem)] sm:w-[clamp(1.5rem,4vh,2.2rem)]"
-            >
-              <path
-                fillRule="evenodd"
-                d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3a3 3 0 00-3 3v6.75a3 3 0 003 3h10.5a3 3 0 003-3v-6.75a3 3 0 00-3-3v-3c0-2.9-2.35-5.25-5.25-5.25zm3.75 8.25v-3a3.75 3.75 0 10-7.5 0v3h7.5z"
-                clipRule="evenodd"
-              />
-            </svg>
+            <img
+              src="/linktree.svg"
+              alt="Linktree"
+              className="mr-1 h-6 w-6 object-contain sm:h-[clamp(1.5rem,4vh,2.2rem)] sm:w-[clamp(1.5rem,4vh,2.2rem)]"
+            />
             <span className="text-base font-bold sm:text-[clamp(1rem,3vh,1.4rem)]">
               Linktree
             </span>

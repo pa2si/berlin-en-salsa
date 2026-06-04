@@ -4,8 +4,6 @@
       "title": "Berlin En Salsa | Festival de Salsa en Berlín",
       "description": "Berlin En Salsa. Un festival de Salsa para todxs. Música en vivo, DJs, baile, talleres y mucho más.",
       "h1": "Berlin En Salsa - Festival de Salsa en Berlín para todos",
-      "date": "19 y 20 de julio",
-      "venue": "Neulich Biergarten",
       "cookingFestival": {
         "line1": "Cocinando...",
         "line2": "¡la segunda edición!"
@@ -28,23 +26,25 @@
     },
     "SectionThree": {
       "title": "¡Berlin en Salsa se viene con todo!",
+      "promoButtonText": "Haz click aquí para ver nuestro trailer",
       "features": {
-        "days": "¡2 días de pura salsa!",
-        "orchestras": "6 orquestas en vivo",
-        "shows": "5 shows de baile",
-        "djs": "20 DJs",
-        "talks": "Charlas",
-        "workshops": "Talleres de música",
-        "vinyl": "Mercado de vinilos",
-        "food": "¡Delicias latinas y más!"
+        "days": "🔥 3 días de pura salsa",
+        "orchestras": "🎺 6 orquestas en vivo",
+        "shows": "✨ Shows de baile",
+        "djs": "🎧 16 DJs",
+        "talks": "🎤 Charlas",
+        "workshops": "🥁 Talleres de música",
+        "vinyl": "🎶 Mercado de vinilos",
+        "food": "🌽 Delicias latinas y más"
       }
     },
     "SectionFour": {
-      "title": "¿Cómo se financia Berlin en Salsa?",
+      "title": "Nuestro Merch! Apoya Berlin en Salsa",
       "description1": "Somos un festival hecho por y para la comunidad salsera.",
-      "description2": "Nuestra segunda edición cuenta con el apoyo de Musicboard Berlin. Gracias a ello, por primera vez podemos pagar honorarios a lxs artistxs.",
+      "description2": "Nuestra segunda edición cuenta con <fundingLink>un apoyo económico</fundingLink> que nos permite, por primera vez, pagar honorarios a lxs artistas.",
       "description3": "Sin embargo, la financiación cubre solo una parte de los costes del festival. Por eso seguimos dependiendo de su apoyo, colaboración y donaciones para que el festival siga siendo gratuito.",
-      "supportTitle": "Apóyanos pidiendo tu camiseta"
+      "getItHere": "Consigue tu favorito aquí",
+      "supportTitle": "Apóyanos pidiendo nuetro merch"
     },
     "SectionFive": {
       "title": "Programa del Festival",
@@ -76,7 +76,9 @@
         "image3": "Público disfrutando de las presentaciones en vivo",
         "image4": "Clases de baile con lxs mejores profes",
         "image5": "Las mejores orquestas en vivo del panorama salsero en Berlin",
-        "image6": "Un momento histórico para la escena salsera de Berlín."
+        "image6": "Clases gratuitas para todxs. ©Esteban Valenzuela",
+        "image7": "Talleres gratuitos para todxs",
+        "image8": "Un momento histórico para la escena salsera de Berlín. ©Cyn Shots."
       },
       "closeCaption": "Cerrar"
     },
@@ -217,8 +219,8 @@
       "paragraph2": "Cuando visita nuestro sitio web, sus datos personales se recogen en los servidores de Vercel. Esto puede incluir direcciones IP, solicitudes de contacto, metadatos y datos de comunicación, datos contractuales, datos de contacto, nombres, accesos al sitio web y otros datos generados a través de un sitio web.",
       "paragraph3": "El alojamiento se realiza con el fin de cumplir un contrato con nuestros clientes potenciales y existentes (Art. 6 Apdo. 1 lit. b RGPD) y en interés de proporcionar nuestros servicios en línea de forma segura, rápida y eficiente a través de un proveedor profesional (Art. 6 Apdo. 1 lit. f RGPD).",
       "subtitle2": "Transferencia de datos a EE.UU.",
-      "paragraph4": "Vercel es un proveedor de servicios con sede en EE.UU. Por lo tanto, no se puede excluir la transferencia de datos a EE.UU. Debemos señalar que, en opinión del Tribunal de Justicia Europeo, actualmente no existe un nivel adecuado de protección para la transferencia de datos a EE.UU. Esto puede suponer riesgos para usted en cuanto a la legalidad y seguridad del tratamiento de datos.",
-      "paragraph5": "Como base para el tratamiento de datos por parte de destinatarios ubicados en terceros países, hemos firmado un contrato de procesamiento de datos (Data Processing Addendum, DPA) con Vercel. Este contrato contiene las cláusulas contractuales estándar (Standard Contractual Clauses - SCCs) aprobadas por la Comisión Europea. Mediante estas cláusulas, Vercel se compromete a cumplir con el nivel europeo de protección de datos al procesar sus datos, incluso si estos se almacenan y procesan en EE.UU.",
+      "paragraph4": "Vercel es un proveedor de servicios con sede en EE.UU. Por lo tanto, no se puede excluir la transferencia de datos a EE.UU. Debemos señalar que, conforme a la jurisprudencia del Tribunal de Justicia de la Unión Europea, en las transferencias de datos a EE.UU. actualmente no puede garantizarse un nivel de protección de datos comparable al de la Unión Europea. Esto puede suponer riesgos para usted en cuanto a la legalidad y seguridad del tratamiento de datos.",
+      "paragraph5": "Como base para el tratamiento de datos por parte de destinatarios ubicados en terceros países, hemos firmado un contrato de procesamiento de datos (Data Processing Addendum, DPA) con Vercel. Este contrato contiene las cláusulas contractuales estándar (Standard Contractual Clauses - SCCs) aprobadas por la Comisión Europea. Mediante estas cláusulas, Vercel se compromete a cumplir con el nivel europeo de protección de datos al procesar sus datos, incluso si estos se almacenan y procesan en EE.UU. La transferencia de datos se realiza sobre la base de las cláusulas contractuales estándar aprobadas por la Comisión Europea; actualmente no pueden garantizarse garantías adicionales en el sentido de los artículos 44 y siguientes del RGPD.",
       "paragraph6": "El contrato (DPA) que contiene las cláusulas contractuales estándar firmado con nosotros puede encontrarse en: https://vercel.com/legal/dpa",
       "paragraph7": "Puede obtener más información sobre los datos que se procesan al utilizar Vercel en la política de privacidad de Vercel: https://vercel.com/legal/privacy-policy"
     },

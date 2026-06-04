@@ -109,6 +109,8 @@ export const FESTIVAL_CONFIG = {
    * When true the UI will display the venue name/translation (t("venue")).
    * Set to false when the location is not finalized and should be hidden.
    */
+
+  // right now not doing anything , as we use now an image. last working version: v2.7.8
   venueIsKnown: true,
 
   /**
@@ -124,7 +126,7 @@ export const FESTIVAL_CONFIG = {
    * Set to true when you want to display festival features/program overview
    */
   sectionThree: {
-    isAvailable: false, // Change to false to hide the features section
+    isAvailable: true, // Change to false to hide the features section
   },
 
   /**
