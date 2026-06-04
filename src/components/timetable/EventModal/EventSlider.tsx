@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 interface SlideContent {
   image?: string;
@@ -45,6 +46,13 @@ export default function EventSlider({
   const t = useTranslations("Timetable");
   const tGlobal = useTranslations(); // Access global translations
   const currentSlide = slides[currentSlideIndex];
+  const [isSlideImageLoading, setIsSlideImageLoading] = useState(
+    Boolean(currentSlide?.image),
+  );
+
+  useEffect(() => {
+    setIsSlideImageLoading(Boolean(currentSlide?.image));
+  }, [currentSlideIndex, currentSlide?.image]);
 
   return (
     <AnimatePresence mode="wait">
@@ -91,7 +99,10 @@ export default function EventSlider({
                 </h3>
               )}
 
-            <div className="overflow-hidden rounded-lg">
+            <div className="relative overflow-hidden rounded-lg bg-gray-100">
+              {isSlideImageLoading && (
+                <div className="absolute inset-0 animate-pulse bg-gray-200" />
+              )}
               <Image
                 src={currentSlide.image}
                 alt={
@@ -105,7 +116,11 @@ export default function EventSlider({
                 }
                 width={600}
                 height={400}
-                className="h-auto w-full object-cover"
+                className={`h-auto w-full object-cover transition-opacity duration-300 ${
+                  isSlideImageLoading ? "opacity-0" : "opacity-100"
+                }`}
+                onLoad={() => setIsSlideImageLoading(false)}
+                onError={() => setIsSlideImageLoading(false)}
               />
             </div>
           </div>

@@ -1,4 +1,9 @@
-v3.0.2
+v3.0.3
+
+- Edna Martinez correction
+- Skeleton for image loading in EventModal
+- BeS Host Djs corrected
+  v3.0.2
 
 - Main Stage Program finished
 

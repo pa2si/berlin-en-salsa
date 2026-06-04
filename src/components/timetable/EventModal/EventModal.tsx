@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import { TimetableEvent } from "../../../types/events";
 import { SelectedEventDetails } from "../hooks/useEventModal";
 import { useSlider } from "../hooks/useSlider";
@@ -40,6 +41,15 @@ export default function EventModal({
   const hasSlides =
     selectedEventDetails.slides && selectedEventDetails.slides.length > 0;
   const maxSlides = hasSlides ? selectedEventDetails.slides!.length : 0;
+  const [isSingleImageLoading, setIsSingleImageLoading] = useState(false);
+
+  useEffect(() => {
+    if (!hasSlides && selectedEventDetails.image) {
+      setIsSingleImageLoading(true);
+      return;
+    }
+    setIsSingleImageLoading(false);
+  }, [hasSlides, selectedEventDetails.image]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (hasSlides && maxSlides > 1) {
@@ -130,11 +140,18 @@ export default function EventModal({
               /* Single image/description if no slides */
               selectedEventDetails.image && (
                 <div className="mb-6">
-                  <div className="mb-4 overflow-hidden rounded-lg">
+                  <div className="relative mb-4 min-h-[220px] overflow-hidden rounded-lg bg-gray-100">
+                    {isSingleImageLoading && (
+                      <div className="absolute inset-0 animate-pulse bg-gray-200" />
+                    )}
                     <img
                       src={selectedEventDetails.image}
                       alt={selectedEventDetails.event}
-                      className="h-auto w-full object-cover"
+                      className={`h-auto w-full object-cover transition-opacity duration-300 ${
+                        isSingleImageLoading ? "opacity-0" : "opacity-100"
+                      }`}
+                      onLoad={() => setIsSingleImageLoading(false)}
+                      onError={() => setIsSingleImageLoading(false)}
                     />
                   </div>
                 </div>

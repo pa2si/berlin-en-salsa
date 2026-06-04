@@ -290,7 +290,7 @@ export const mainStageEvents: RawTimetableEvent[] = [
         name: "Timetable.events.artists.ednaMartinez",
         role: "dj",
         bio: "Timetable.events.bios.ednaMartinez",
-        image: "/edna-martinez.webp",
+        image: "/edna.martinez.webp",
       }),
     ],
   }),
@@ -328,42 +328,6 @@ export const mainStageEvents: RawTimetableEvent[] = [
         role: "dj",
         description: "Timetable.events.descriptions.besHostDJs",
         image: "/bes-host-djs.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.andrelux",
-        role: "dj",
-        bio: "Timetable.events.bios.andrelux",
-        image: "/la-vecina-anacaona.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.elVago",
-        role: "dj",
-        bio: "Timetable.events.bios.elVago",
-        image: "/la-vecina-anacaona.webp",
-      }),
-      EventFactory.createAct({
-        name: "Timetable.events.artists.elMelomanoAleman",
-        role: "dj",
-        bio: "Timetable.events.bios.elMelomanoAleman",
-        image: "/la-vecina-anacaona.webp",
-      }),
-    ],
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/la-vecina-anacaona.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/la-vecina-anacaona.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/la-vecina-anacaona.webp",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/la-vecina-anacaona.webp",
       }),
     ],
   }),
