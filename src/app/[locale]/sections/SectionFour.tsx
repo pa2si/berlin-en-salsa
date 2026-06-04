@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -59,10 +59,20 @@ const SectionFour = () => {
       (prev) => (prev - 1 + galleryImages.length) % galleryImages.length,
     );
 
+  const handleFundingLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    const fundingSection = document.getElementById("footer-funding");
+
+    if (fundingSection) {
+      fundingSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   const description2WithFundingLink = t.rich("description2", {
     fundingLink: (chunks) => (
       <a
         href="#footer-funding"
+        onClick={handleFundingLinkClick}
         className="hover:text-bes-amber/80 underline decoration-2 underline-offset-4 transition-colors"
       >
         {chunks}
