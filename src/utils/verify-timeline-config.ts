@@ -107,7 +107,20 @@ TIMELINE_CONFIG.forEach((areaConfig) => {
 
     // Check each timeline slot
     schedule.timeline.forEach((slot) => {
-      if (!slot.time || !slot.duration || !slot.eventId) {
+      const hasEventId = "eventId" in slot;
+      const isTbaSlot = "tba" in slot && slot.tba;
+
+      if (!slot.time || !slot.duration) {
+        allSchedulesValid = false;
+      }
+
+      // A slot must be either a normal event slot or a TBA slot.
+      if (!hasEventId && !isTbaSlot) {
+        allSchedulesValid = false;
+      }
+
+      // Guard against ambiguous configuration.
+      if (hasEventId && isTbaSlot) {
         allSchedulesValid = false;
       }
     });
@@ -128,6 +141,10 @@ const sampleEventIds: string[] = [];
 TIMELINE_CONFIG.forEach((areaConfig) => {
   areaConfig.schedules.forEach((schedule) => {
     schedule.timeline.forEach((slot) => {
+      if ("tba" in slot && slot.tba) {
+        return;
+      }
+
       if (!slot.eventId.startsWith("Timetable.events.")) {
         allEventIdsValid = false;
       }
