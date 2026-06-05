@@ -45,7 +45,7 @@ export default function TimeSlot({
 
   return (
     <div className={`flex h-[35px] items-start ${bgColor}`}>
-      <div className="my-auto w-14 shrink-0 pl-2 text-xs font-bold text-gray-700">
+      <div className="my-auto w-14 shrink-0 pl-2 text-[1rem] font-bold text-gray-700 sm:text-[0.9rem]">
         {slot.time}
       </div>
 

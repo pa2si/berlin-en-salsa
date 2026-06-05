@@ -146,7 +146,7 @@ export default function TimetableClient({
         </div>
 
         {/* PHASE 4: Dynamic day selection buttons */}
-        <div className="flex w-full flex-col items-center space-y-2 sm:flex-row sm:justify-end sm:space-y-0 sm:space-x-4 md:w-2/3">
+        <div className="flex w-full flex-col items-center -space-y-8 sm:flex-row sm:justify-end sm:space-y-0 sm:space-x-4 md:w-2/3">
           {festivalDays.map((day) => (
             <button
               key={day.id}
@@ -168,7 +168,7 @@ export default function TimetableClient({
               {currentDay === day.weekday && (
                 <motion.div
                   layoutId="activeDay"
-                  className="bg-bes-red absolute -bottom-1 h-1 w-full rounded-full"
+                  className="bg-bes-red absolute bottom-3 h-1 w-full rounded-full sm:-bottom-1"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
