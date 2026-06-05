@@ -97,7 +97,7 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         image: "/cha-cha-cha.webp",
       }),
     ],
-    description: "Timetable.events.descriptions.chaChaCha",
+    description: "Timetable.events.danceWorkshopDescriptions.chaChaCha",
     image: "/cha-cha-cha.webp",
   }),
 
