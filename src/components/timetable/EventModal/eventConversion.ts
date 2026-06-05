@@ -92,8 +92,8 @@ export function convertTimetableEventToSelectedDetails(
     const danceAreaActType =
       event.danceAreaType === "show"
         ? "dance-area-show"
-        : event.danceAreaType === "charla-bailar"
-          ? "dance-area-charla-bailar"
+        : event.danceAreaType === "class"
+          ? "dance-area-class"
           : "dance-area-workshop";
 
     return {

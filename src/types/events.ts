@@ -103,7 +103,7 @@ export interface RawMainStageEvent extends RawEventWithActs {
  */
 export interface RawDanceAreaEvent extends RawEventWithActs {
   type: "dance-area";
-  danceAreaType: "workshop" | "show" | "charla-bailar";
+  danceAreaType: "class" | "show" | "workshop";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
 }
@@ -182,7 +182,7 @@ export interface MainStageEvent extends EventWithActs {
  */
 export interface DanceAreaEvent extends EventWithActs {
   type: "dance-area";
-  danceAreaType: "workshop" | "show" | "charla-bailar";
+  danceAreaType: "class" | "show" | "workshop";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   duration: number; // Set by timeline config during enrichment

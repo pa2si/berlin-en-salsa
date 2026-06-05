@@ -178,13 +178,13 @@ const LiveBanner = () => {
     }
     // Check for dance-area with danceAreaType subtype
     if (event.type === "dance-area" && "danceAreaType" in event) {
-      if (event.danceAreaType === "workshop")
-        return timetableT("actTypes.dance-area-workshop");
+      if (event.danceAreaType === "class")
+        return timetableT("actTypes.dance-area-class");
       if (event.danceAreaType === "show")
         return timetableT("actTypes.dance-area-show");
-      if (event.danceAreaType === "charla-bailar")
-        return timetableT("actTypes.dance-area-charla-bailar");
-      return timetableT("actTypes.dance-area-workshop"); // fallback
+      if (event.danceAreaType === "workshop")
+        return timetableT("actTypes.dance-area-workshop");
+      return timetableT("actTypes.dance-area-class"); // fallback
     }
     // Check for type (all events have type)
     if (event.type === "music-workshop")
