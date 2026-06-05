@@ -1,3 +1,8 @@
+v3.1.0
+
+- after merch
+- renaming salsa-area workshop and class
+
 v3.0.8
 
 - all slots set including TBA for the slots where not all infos are available
