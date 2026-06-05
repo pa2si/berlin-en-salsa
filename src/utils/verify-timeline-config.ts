@@ -118,11 +118,6 @@ TIMELINE_CONFIG.forEach((areaConfig) => {
       if (!hasEventId && !isTbaSlot) {
         allSchedulesValid = false;
       }
-
-      // Guard against ambiguous configuration.
-      if (hasEventId && isTbaSlot) {
-        allSchedulesValid = false;
-      }
     });
   });
 });
@@ -141,11 +136,15 @@ const sampleEventIds: string[] = [];
 TIMELINE_CONFIG.forEach((areaConfig) => {
   areaConfig.schedules.forEach((schedule) => {
     schedule.timeline.forEach((slot) => {
-      if ("tba" in slot && slot.tba) {
+      if (!("eventId" in slot) || !slot.eventId) {
         return;
       }
 
-      if (!slot.eventId.startsWith("Timetable.events.")) {
+      const normalizedEventId = slot.eventId.startsWith("#sym:")
+        ? slot.eventId.slice(5)
+        : slot.eventId;
+
+      if (!normalizedEventId.startsWith("Timetable.events.")) {
         allEventIdsValid = false;
       }
       if (sampleEventIds.length < 3) {

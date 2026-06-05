@@ -30,6 +30,7 @@ export interface TbaTimelineSlot {
   time: string; // Start time (e.g., "15:00")
   duration: number; // Duration in minutes
   tba: true; // Creates a non-clickable TBA slot in the timetable
+  eventId?: string; // Optional symbolic event reference (#sym:...) for custom display labels
 }
 
 export type TimelineSlot = EventTimelineSlot | TbaTimelineSlot;
@@ -183,7 +184,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "13:30",
             duration: 60,
-            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
+            tba: true,
+            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
           },
           {
             time: "14:30",
@@ -204,7 +206,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:30",
             duration: 30,
-            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
+            tba: true, //
+            eventId: "Timetable.events.danceShows.title", // PLACEHOLDER
           },
         ],
       },
@@ -214,7 +217,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 60,
-            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
+            tba: true,
+            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
           },
           {
             time: "14:00",
@@ -233,8 +237,9 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           },
           {
             time: "18:00",
-            duration: 60,
-            tba: true, // Placeholder for TBA slot - will show as non-clickable "TBA" in the timetable
+            duration: 30,
+            tba: true,
+            eventId: "Timetable.events.danceShows.title", // PLACEHOLDER
           },
         ],
       },
@@ -248,33 +253,30 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
     area: "music-workshops",
     schedules: [
       {
-        dayWeekday: "saturday",
+        dayWeekday: "friday",
         timeline: [
           {
-            time: "13:00",
-            duration: 60,
-            eventId:
-              "Timetable.events.musicWorkshops.saturday.polyrhythmIntroduction",
-          },
-          {
-            time: "14:00",
-            duration: 60,
-            eventId: "Timetable.events.musicWorkshops.saturday.ritmoDeClave",
+            time: "17:30",
+            duration: 45,
+            tba: true,
+            eventId: "Timetable.events.musicWorkshops.ritmoDeClave.title", // PLACEHOLDER
           },
         ],
       },
       {
-        dayWeekday: "sunday",
+        dayWeekday: "saturday",
         timeline: [
           {
-            time: "13:00",
+            time: "12:30",
             duration: 60,
-            eventId: "Timetable.events.musicWorkshops.sunday.campanaWorkshop",
+            tba: true,
+            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER
           },
           {
-            time: "15:30",
+            time: "13:30",
             duration: 60,
-            eventId: "Timetable.events.musicWorkshops.sunday.soneoWorkshop",
+            tba: true,
+            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER
           },
         ],
       },
@@ -293,34 +295,26 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 30,
-            eventId: "Timetable.events.aviatrix.diablasFinas.title", //text done, MISSING IMAGE OF ARTITS
+            tba: true,
+            eventId: "Timetable.events.aviatrix.diablasFinas.title", //text done, MISSING IMAGE OF ARTITS PLACEHOLDER
           },
           {
-            time: "14:30",
+            time: "15:00",
             duration: 30,
-            eventId: "Timetable.events.aviatrix.diablasFinas",
+            tba: true,
+            eventId: "Timetable.events.aviatrix.bongo.title", // PLACEHOLDER
           },
           {
             time: "16:00",
             duration: 30,
-            eventId:
-              "Timetable.events.salsaTalks.saturday.aviatrixChristian.title",
+            tba: true,
+            eventId: "Timetable.events.aviatrix.dayle.title",
           },
           {
             time: "16:30",
-            duration: 30,
-            eventId:
-              "Timetable.events.salsaTalks.saturday.aviatrixRaicez.title",
-          },
-          {
-            time: "17:00",
-            duration: 30,
-            eventId: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.title",
-          },
-          {
-            time: "18:30",
-            duration: 30,
-            eventId: "Timetable.events.salsaTalks.saturday.salsancoTalk.title",
+            duration: 60,
+            tba: true,
+            eventId: "Timetable.events.salsaTalks.isaKaltTalk.title", // PLACEHOLDER
           },
         ],
       },
@@ -328,26 +322,28 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
         dayWeekday: "sunday",
         timeline: [
           {
+            time: "13:00",
+            duration: 30,
+            tba: true,
+            eventId: "Timetable.events.aviatrix.leoMolina.title",
+          },
+          {
+            time: "13:30",
+            duration: 30,
+            tba: true,
+            eventId: "Timetable.events.aviatrix.anacaona.title",
+          },
+          {
+            time: "14:00",
+            duration: 30,
+            tba: true,
+            eventId: "Timetable.events.aviatrix.dianaGil.title",
+          },
+          {
             time: "15:00",
-            duration: 30,
-            eventId:
-              "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.title",
-          },
-          {
-            time: "15:30",
-            duration: 30,
-            eventId:
-              "Timetable.events.salsaTalks.sunday.aviatrixDracaena.title",
-          },
-          {
-            time: "16:00",
-            duration: 30,
-            eventId: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.title",
-          },
-          {
-            time: "17:30",
-            duration: 90,
-            eventId: "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.title",
+            duration: 60,
+            tba: true,
+            eventId: "Timetable.events.salsaTalks.libroSalsaTalk.title", // PLACEHOLDER
           },
         ],
       },
@@ -415,13 +411,22 @@ export function createTimelineFromSimpleConfig(
   area?: AreaType,
 ): TimetableEvent[] {
   const timeline: TimetableEvent[] = [];
+  const symbolEventPrefix = "#sym:";
+  const tbaTranslationKey = "Timetable.modal.tbaAnnouncement";
 
   for (const slot of timelineSlots) {
     if ("tba" in slot && slot.tba) {
+      const titleFromSymbol =
+        "eventId" in slot &&
+        typeof slot.eventId === "string" &&
+        slot.eventId.trim().length > 0
+          ? slot.eventId
+          : tbaTranslationKey;
+
       const tbaEvent: TimetableEvent = {
         type: "main-stage",
         id: `tba-${area || "unknown"}-${slot.time}`,
-        title: "TBA",
+        title: titleFromSymbol,
         area: area || "main-stage",
         performanceType: "dj-set",
         acts: [],
@@ -435,18 +440,37 @@ export function createTimelineFromSimpleConfig(
       continue;
     }
 
-    const event = eventCollection.find((e) => e.title === slot.eventId);
+    const isSymbolEvent = slot.eventId.startsWith(symbolEventPrefix);
+    const resolvedEventId = isSymbolEvent
+      ? slot.eventId.slice(symbolEventPrefix.length).trim()
+      : slot.eventId;
+    const event = eventCollection.find((e) => e.title === resolvedEventId);
 
     if (event) {
+      const resolvedEvent: RawTimetableEvent = isSymbolEvent
+        ? event.type === "aviatrix-talk"
+          ? {
+              ...event,
+              title: slot.eventId,
+              artistDiscussed: tbaTranslationKey,
+            }
+          : {
+              ...event,
+              title: slot.eventId,
+            }
+        : event;
+
       // Enrich the raw event with scheduling information
       const timelineEvent: TimetableEvent = {
-        ...event,
+        ...resolvedEvent,
         startTime: slot.time,
         endTime: calculateEndTime(slot.time, slot.duration),
         day: day || "saturday", // Default to saturday if not provided
         // Set duration for workshop events from timeline
-        ...((event.type === "dance-area" ||
-          event.type === "music-workshop") && { duration: slot.duration }),
+        ...((resolvedEvent.type === "dance-area" ||
+          resolvedEvent.type === "music-workshop") && {
+          duration: slot.duration,
+        }),
       } as TimetableEvent; // Type assertion needed because we're adding required fields
 
       timeline.push(timelineEvent);

@@ -125,6 +125,11 @@ export class TimetableService {
         };
 
         if (activeEvent.isTba) {
+          // For custom TBA titles, show the localized TBA announcement as a subtitle.
+          if (activeEvent.title !== "Timetable.modal.tbaAnnouncement") {
+            timeSlot.instructor = "Timetable.modal.tbaAnnouncement";
+          }
+
           timeSlots.push(timeSlot);
           continue;
         }

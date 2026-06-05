@@ -466,6 +466,7 @@
       "djsLabel": "DJs:",
       "artistLabel": "Artista:",
       "recordLabel": "Disco:",
+      "tbaAnnouncement": "se anunciará",
       "danceShowLabel": "Show de Baile:",
       "slidePrevious": "Anterior",
       "slideNext": "Siguiente",
@@ -515,7 +516,8 @@
         "nYStyle": "Nueva York Style",
         "sonCubano": "Son Cubano",
         "chaChaCha": "Cha Cha Chá",
-        "afroCuban": "Afrocubano"
+        "afroCuban": "Afrocubano",
+        "title": "Shows de baile"
       },
       "dancers": {
         "lynetRivero": "Lynet Rivero",
@@ -525,14 +527,24 @@
         "leiAyna": "Lei & Ayna",
         "alafiaConIre": "Laura, Kimberly, Christian"
       },
+      "charlaBailar": {
+        "title": "Baile consenso y cuerpo"
+      },
       "musicWorkshops": {
-        "saturday": {
-          "polyrhythmIntroduction": "Introduction to Polyrhythm",
-          "ritmoDeClave": "Ritmo de Clave"
+        "ritmoDeClave": {
+          "title": "Ritmo de Clave",
+          "name": "Guillermo Diaz",
+          "description": ""
         },
-        "sunday": {
-          "campanaWorkshop": "Campana Workshop",
-          "soneoWorkshop": "Soneo Workshop"
+        "campanaWorkshop": {
+          "title": "Taller de Campana",
+          "name": "",
+          "description": ""
+        },
+        "guiroWorkshop": {
+          "title": "Taller de Güiro",
+          "name": "",
+          "description": ""
         }
       },
       "colectivos": {
@@ -655,19 +667,40 @@
           "bio": "Diablas Finas es una costeñita del Pacífico mexicano con base en Berlín. Selectora y apasionada del mundo sonoro, va jugando al vaivén de ritmos donde la tradición se funde con la psicodelia y la travesura. Rastrea músicas que florecen en la diáspora, músicas viajantes que cargan memoria, identidad y corazón.",
           "comment": "Elegí “Lo dice todo” (1976) de Grupo Folklórico y Experimental Nuevayorquino porque nació como un acto de resistencia colectiva. A mediados de los 70, cuando la salsa se volvía fórmula y producto, Grupo Folklórico recuperó el espíritu comunitario de sus raíces, invocando el alma yoruba del tambor, volvió al batá, a la profundidad afrocaribeña, y la fusionó con el jazz y el sonido del Bronx. Este fue el primer disco de salsa que compré, en el puestito de @basuritasrecords en la Ciudad de México, como recomendación suya. Quedé enamorada al oírlo por primera vez."
         },
-        "aviatrixRaicez": {
-          "title": "Aviatrix & Raicez Koncretaz",
-          "artist": "Francisco Aguabella",
-          "record": "Hitting Hard",
-          "bio": "Es un colectivo de Crate Diggers y tornamesistas de Colombia que tienen como objetivo no dejar morir el formato análogo y mantenerlo vivo.",
-          "comment": "Se escogió este disco por la gran variedad de ritmos que pueden converger en una producción musical y que la salsa, así como muchos géneros, tiene muchas influencias de otros géneros musicales."
+        "bongo": {
+          "title": "Aviatrix & Bongo",
+          "artist": "",
+          "record": "",
+          "bio": "",
+          "comment": ""
         },
-        "aviatrixMc0ld": {
-          "title": "Aviatrix & DJ Mc0ld",
-          "artist": "Frankie Dante & Orquesta Flamboyán con Larry Harlow",
-          "record": "Frankie Dante & Orquesta Flamboyan Con Larry Harlow",
-          "bio": "Soy DJ Mc0ld, parte de Son Obrero. Nací en el norte de Cali, criado entre los vinilos de mi padre y el punk rock de la calle. Después de un tiempo viviendo en Alemania, empecé a reconectar con mi barrio y mis raíces. Ahí entendí algo que no sabía: Lo profundo que estaba la salsa en mí. Desde entonces he estado explorando las movidas bailables de la Latinoamérica underground. Mi set en vinilo es Salsa ortodoxa. También toco en digital pero eso es otro viaje.",
-          "comment": "Escogí el disco Frankie Dante & Orquesta Flamboyán con Larry Harlow porque representa una fusión única: la magia musical de Harlow con la crudeza y rebeldía de Frankie Dante, un salsero que no se doblegó. Sus convicciones políticas le cerraron puertas, pero su coraje y talento abrieron otras. Ese espíritu rebelde y honesto resuena con lo que soy y lo que busco compartir en cada mezcla."
+        "dayle": {
+          "title": "Aviatrix & Daylé",
+          "artist": "",
+          "record": "",
+          "bio": "",
+          "comment": ""
+        },
+        "leoMolina": {
+          "title": "Aviatrix & Leo Malina",
+          "artist": "",
+          "record": "",
+          "bio": "",
+          "comment": ""
+        },
+        "anacaona": {
+          "title": "Aviatrix & Anacaona",
+          "artist": "",
+          "record": "",
+          "bio": "",
+          "comment": ""
+        },
+        "dianaGil": {
+          "title": "Aviatrix & Diana Gil",
+          "artist": "",
+          "record": "",
+          "bio": "",
+          "comment": ""
         },
         "aviatrixSuenaChelo": {
           "title": "Aviatrix & Suena Chelo",
@@ -691,25 +724,13 @@
         }
       },
       "salsaTalks": {
-        "sarahBalzatTalk": {
-          "title": "Fusionando historias: El estilo personal como diálogo entre la tradición y el yo.",
-          "description": "El estilo personal en la danza no se inventa de la nada, nace en el cruce entre la historia propia y la colectiva. A través del lente de la salsa, reflexionaremos sobre cómo la tradición no es algo estático que se conserva, sino un diálogo vivo entre quienes nos precedieron y las historias que llevamos dentro. Lo que surge de este encuentro no es imitación, sino autenticidad: un estilo propio, enraizado en la conciencia, moldeado por la práctica y lleno de memoria."
+        "isaKaltTalk": {
+          "title": "Entrevista a Henry Wolf, “El Barrio",
+          "description": ""
         },
-        "jessiVaneTalk": {
-          "title": "¿Estilo musical o estilo de baile? ¡Ambos y ninguno! Una reflexión sobre las categorías rígidas en la salsa",
-          "description": "¿Bailas salsa en línea o cubana? ¿Prefieres la timba, la salsa dura o el bugalú? En el mundo salsero, los \"estilos\" parecen decirlo todo: cómo bailamos, qué música escuchamos, incluso con quién nos sentimos parte. Pero… ¿y si estas categorías más que guiar, nos limitan? En esta charla abrimos el debate: ¿cuánto de nuestro baile responde a la música, cuánto a la técnica y cuánto a la identidad? ¿Es posible moverse entre estilos sin perder autenticidad? Una invitación a cuestionar esas ideas fijas sobre los estilos de baile ligados a estilos de música concretos."
-        },
-
-        "salsancoTalk": {
-          "title": "Salsancó y los inicios de la salsa en Berlín",
-          "guests": "Eduardo Villegas & Rolo Rodríguez",
-          "description": "Eduardo Villegas y Rolo Rodríguez cuentan cómo en 1977 nació la primera orquesta de salsa en Berlín. Inspirados por Santana y Palmieri, formaron un proyecto propio junto a músicos de las big bands del RIAS y el SFB. Relatan cómo fueron los ensayos, las primeras presentaciones y el sonido que marcó los clubes berlineses. Una conversación sobre trabajo pionero y escena musical vivida."
-        },
-
-        "noLeLlamenSalsa": {
-          "title": "No Le llamen salsa a mi son",
-          "presenters": "DJ Feikes, Christoph Twickel, Pedro Abreu & friends",
-          "description": "El título de la canción \"No le llamen Salsa a mi Son... dile música Cubana\" del cantante cubano Monguito \"El Único\" lo deja claro: la 'Salsa' no fue en un principio más que una etiqueta comercial ingeniosa — usada para una música profundamente enraizada en la tradición del Son Cubano. Solo en el Nueva York de los años 60, al mezclarse con otros ritmos e influencias, se transformó en lo que hoy conocemos como Salsa: un sonido urbano, una forma de expresión del sentimiento colectivo de muchas comunidades latinas. Sin embargo, desde sus comienzos, la Salsa estuvo en riesgo de perder su vitalidad, atrapada en los esquemas musicales establecidos — en gran parte por el exitoso pero cada vez más predecible sello Fania. Lo que la mantuvo viva fueron los impulsos renovadores: compositores y arreglistas creativos provenientes de Cuba, que constantemente aportaban nueva energía al género. Junto al periodista hamburgués Christoph Twickel y al reconocido músico cubano y director de orquesta afincado en Berlín, Pedro Abreu, el salsómano y moderador Jörg Feikes examina más de cerca la compleja —y a veces tensa— relación entre la Salsa y la música cubana."
+        "libroSalsaTalk": {
+          "title": "Las Claves de la Salsa en Colombia",
+          "description": ""
         }
       }
     }

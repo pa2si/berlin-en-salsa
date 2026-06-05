@@ -1,3 +1,7 @@
+v3.0.8
+
+- all slots set including TBA for the slots where not all infos are available
+
 v3.0.7
 
 - salsa-berlin.de in Links again

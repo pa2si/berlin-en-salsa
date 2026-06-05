@@ -12,6 +12,7 @@ import {
 export function useSmartTranslation() {
   // Get translations without a namespace to access the full translation tree
   const t = useTranslations();
+  const symbolTranslationPrefix = "#sym:";
 
   /**
    * Translates a value if it's a translation key, otherwise returns as-is
@@ -22,6 +23,27 @@ export function useSmartTranslation() {
     params?: TranslationParams,
   ): string => {
     if (!value) return "";
+
+    if (value.startsWith(symbolTranslationPrefix)) {
+      const symbolValue = value.slice(symbolTranslationPrefix.length).trim();
+      if (!symbolValue) return "";
+
+      if (isTranslationKey(symbolValue)) {
+        try {
+          return params
+            ? t(symbolValue as never, params as never)
+            : t(symbolValue as never);
+        } catch (error) {
+          console.warn(
+            `❌ Client: Symbol translation key not found: ${symbolValue}`,
+            error,
+          );
+          return symbolValue;
+        }
+      }
+
+      return symbolValue;
+    }
 
     // Check if this is a compound key with " & " or ", "
     if (
@@ -85,6 +107,30 @@ export async function translateIfKeyServer(
   params?: TranslationParams,
 ): Promise<string> {
   if (!value) return "";
+
+  const symbolTranslationPrefix = "#sym:";
+
+  if (value.startsWith(symbolTranslationPrefix)) {
+    const symbolValue = value.slice(symbolTranslationPrefix.length).trim();
+    if (!symbolValue) return "";
+
+    if (isTranslationKey(symbolValue)) {
+      try {
+        const t = await getTranslations();
+        return params
+          ? t(symbolValue as never, params as never)
+          : t(symbolValue as never);
+      } catch (error) {
+        console.warn(
+          `❌ SERVER: Symbol translation key not found: ${symbolValue}`,
+          error,
+        );
+        return symbolValue;
+      }
+    }
+
+    return symbolValue;
+  }
 
   // Check if this is a compound key with " & " or ", "
   if (
