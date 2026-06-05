@@ -161,7 +161,7 @@ const SectionFive = () => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <motion.img
-                        src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.png`}
+                        src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.webp`}
                         alt={getDayTranslation(day.weekday)}
                         className="w-full rounded-lg"
                       />
@@ -244,7 +244,7 @@ const SectionFive = () => {
                   onMouseLeave={() => setHovered(day.id, false)}
                 >
                   <motion.img
-                    src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.png`}
+                    src={`/timetable-links/${day.weekday}-${screenshotLocale}-screenshot.webp`}
                     alt={getDayTranslation(day.weekday)}
                     className="w-full rounded-lg"
                     animate={{

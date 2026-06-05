@@ -34,7 +34,7 @@ export const Footer = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             />
             <motion.img
-              src="/brot-fuer-die-welt-logo-2.webp"
+              src="/brot-fuer-die-welt-logo.webp"
               alt="Brot fuer die Welt"
               className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%]"
               initial={{ opacity: 0, y: 20 }}

@@ -1,3 +1,8 @@
+v3.2.1
+
+- new screenshots for timetable preview
+- unused images deleted
+
 v3.2.0
 
 - when loading the program route now loads the actual day and if none of the days is the actual day, loads friday
