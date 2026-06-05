@@ -46,8 +46,9 @@ export default function TimetableClient({
 
   // Validate the parsed day against available festival days
   const parsedDay = parseDayParam();
-  const isValidDay = festivalDays.some((day) => day.weekday === parsedDay);
-  const validDay = isValidDay ? parsedDay : initialDay;
+  const isValidDay =
+    !!parsedDay && festivalDays.some((day) => day.weekday === parsedDay);
+  const validDay = isValidDay && parsedDay ? parsedDay : initialDay;
 
   const [currentDay, setCurrentDay] = useState<string>(validDay);
 

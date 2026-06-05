@@ -23,11 +23,32 @@ export default async function TimetablePage({
   const t = await getTranslations();
   const festivalDays = FESTIVAL_CONFIG.getDays(locale);
 
-  // Default to first day if initialDay not provided or invalid
+  const currentBerlinWeekday = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    timeZone: FESTIVAL_CONFIG.timeZone,
+  })
+    .format(new Date())
+    .toLowerCase();
+
+  const hasCurrentBerlinWeekday = festivalDays.some(
+    (d) => d.weekday === currentBerlinWeekday,
+  );
+
+  const fridayFallback =
+    festivalDays.find((d) => d.weekday === "friday")?.weekday ||
+    festivalDays[0]?.weekday ||
+    "friday";
+
+  // Priority:
+  // 1) explicit initialDay (if valid)
+  // 2) actual weekday in Berlin (if part of festival)
+  // 3) friday fallback
   const validInitialDay =
     initialDay && festivalDays.some((d) => d.weekday === initialDay)
       ? initialDay
-      : festivalDays[0]?.weekday || "saturday";
+      : hasCurrentBerlinWeekday
+        ? currentBerlinWeekday
+        : fridayFallback;
 
   // PHASE 4: Fetch data for ALL festival days dynamically
   const daysData = await Promise.all(

@@ -19,7 +19,7 @@ export const useURLParams = () => {
    * PHASE 7: Parse URL parameter to English weekday
    * Handles localized German/Spanish parameters and English fallback
    */
-  const parseDayParam = (): string => {
+  const parseDayParam = (): string | undefined => {
     const paramName = getDayParamName(locale);
     let dayParam = searchParams.get(paramName);
 
@@ -28,8 +28,8 @@ export const useURLParams = () => {
       dayParam = searchParams.get("day");
     }
 
-    // Default to first day if no parameter
-    if (!dayParam) return "saturday";
+    // No URL parameter means the caller should use its own default logic.
+    if (!dayParam) return undefined;
 
     // Convert to lowercase for case-insensitive matching
     const normalizedParam = dayParam.toLowerCase();

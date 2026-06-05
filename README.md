@@ -1,3 +1,7 @@
+v3.2.0
+
+- when loading the program route now loads the actual day and if none of the days is the actual day, loads friday
+
 v3.1.0
 
 - after merch
