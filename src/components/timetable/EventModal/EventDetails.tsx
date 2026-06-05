@@ -36,12 +36,12 @@ export default function EventDetails({
       {selectedEventDetails.actType &&
       selectedEventDetails.actType !== "Aviatrix" ? (
         <span className="text-lg text-gray-700">
-          {selectedEventDetails.actType === "dance-area-workshop"
-            ? t("actTypes.dance-area-workshop")
+          {selectedEventDetails.actType === "dance-area-class"
+            ? t("actTypes.dance-area-class")
             : selectedEventDetails.actType === "dance-area-show"
               ? t("actTypes.dance-area-show")
-              : selectedEventDetails.actType === "dance-area-charla-bailar"
-                ? t("actTypes.dance-area-charla-bailar")
+              : selectedEventDetails.actType === "dance-area-workshop"
+                ? t("actTypes.dance-area-workshop")
                 : selectedEventDetails.actType === "music-workshop"
                   ? t("actTypes.music-workshop")
                   : selectedEventDetails.actType === "talk"
@@ -59,8 +59,8 @@ export default function EventDetails({
       {selectedEventDetails.instructor &&
         selectedEventDetails.type !== "talk" && (
           <span className="text-lg text-gray-700">
-            {selectedEventDetails.actType === "dance-area-workshop"
-              ? t("modal.workshopLeaderLabelDanceAreaWorkshop")
+            {selectedEventDetails.actType === "dance-area-class"
+              ? t("modal.classLeaderLabelDanceArea")
               : selectedEventDetails.type === "workshop" ||
                   selectedEventDetails.type === "dance-area"
                 ? t("modal.workshopLeaderLabel")

@@ -73,14 +73,14 @@ export class EventFactory {
   }
 
   /**
-   * Create a dance area event (workshop or show)
+   * Create a dance area event (class, workshop, or show)
    * Note: startTime, endTime, and duration will be set by timeline configuration
    */
   static createDanceAreaEvent(params: {
     title: string;
     duration?: number; // Optional - set by timeline config
     area: AreaType;
-    danceAreaType: "workshop" | "show" | "charla-bailar";
+    danceAreaType: "class" | "show" | "workshop";
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";

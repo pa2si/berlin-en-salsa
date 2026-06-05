@@ -11,11 +11,11 @@ import { RawDanceAreaEvent } from "@/types/events";
  * All dance area events for the festival
  */
 export const danceAreaEvents: RawDanceAreaEvent[] = [
-  // NY Style Workshop
+  // NY Style Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.nYStyle",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: "New York Style",
     acts: [
       EventFactory.createAct({
@@ -29,11 +29,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     image: "/ny-style.webp",
   }),
 
-  // Son Cubano Workshop
+  // Son Cubano Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.sonCubano",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: "Son Cubano",
     acts: [
       EventFactory.createAct({
@@ -47,11 +47,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     image: "/helen-yago.webp",
   }),
 
-  // Cali Style Workshop
+  // Cali Style Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.caliStyle",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: " Salsa Caleña, Cali Style",
     acts: [
       EventFactory.createAct({
@@ -65,11 +65,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     image: "/cali-style.webp",
   }),
 
-  // Rueda de Casino Workshop
+  // Rueda de Casino Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.ruedaDeCasino",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: "Rueda de Casino",
     acts: [
       EventFactory.createAct({
@@ -83,11 +83,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     image: "/rueda-de-casino.webp",
   }),
 
-  // Cha Cha Cha Workshop
+  // Cha Cha Cha Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.chaChaCha",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: "Cha Cha Cha",
     acts: [
       EventFactory.createAct({
@@ -101,11 +101,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     image: "/cha-cha-cha.webp",
   }),
 
-  // Afro-Cuban Dance Workshop
+  // Afro-Cuban Dance Class
   EventFactory.createDanceAreaEvent({
     title: "Timetable.events.danceWorkshops.afroCuban",
     area: "dance-area",
-    danceAreaType: "workshop",
+    danceAreaType: "class",
     danceStyle: "Afro-Cuban",
     acts: [
       EventFactory.createAct({
