@@ -1,7 +1,7 @@
 v3.1.0
 
 - after merch
-- renaming salsa-area workshop and class
+- for salsa-area we renamed type #workshop" to class and "charla-baile" to "workshop"
 
 v3.0.8
 
