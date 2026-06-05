@@ -49,15 +49,15 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: 'Berlin En Salsa Documentary "by El Son Obrero"',
       image: "/el-son-obrero.webp",
     },
+    {
+      url: "https://www.salsa-berlin.de/",
+      title: "www.salsa-berlin.de",
+      image: "/salsa-berlin-468X98.gif",
+    },
     // {
     //   url: "https://www.musicboard-berlin.de/",
     //   title: "Musicboard Berlin GmbH",
     //   image: "/musicboard_logo_rgb.webp",
-    // },
-    // {
-    //   url: "https://www.salsa-berlin.de/",
-    //   title: "salsa-berlin.de",
-    //   image: "/salsa-berlin-468X98.gif",
     // },
     // {
     //   url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",

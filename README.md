@@ -1,3 +1,7 @@
+v3.0.7
+
+- salsa-berlin.de in Links again
+
 v3.0.6
 
 - tba introduced for timeline in timelineConfig
