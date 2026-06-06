@@ -166,7 +166,7 @@ const SectionFive = () => {
                         className="w-full rounded-lg"
                       />
                       <motion.div
-                        className="bg-bes-red bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
+                        className="bg-bes-amber bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
                         initial={{ opacity: 0 }}
                         whileHover={{ opacity: 1 }}
                         transition={{ duration: 0.3 }}
@@ -178,7 +178,7 @@ const SectionFive = () => {
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="text-bes-amber mb-3 h-16 w-16"
+                            className="text-bes-red mb-3 h-16 w-16"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -198,7 +198,7 @@ const SectionFive = () => {
                           </svg>
                         </motion.div>
                         <motion.p
-                          className="text-bes-amber text-lg font-bold"
+                          className="text-bes-red text-lg font-bold"
                           initial={{ y: 10 }}
                           animate={{ y: 0 }}
                           transition={{ duration: 0.3 }}
@@ -253,7 +253,7 @@ const SectionFive = () => {
                     transition={{ duration: 0.3 }}
                   />
                   <motion.div
-                    className="bg-bes-red bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
+                    className="bg-bes-amber bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hoveredDays[day.id] ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -265,7 +265,7 @@ const SectionFive = () => {
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="text-bes-amber mb-3 h-16 w-16"
+                        className="text-bes-red mb-3 h-16 w-16"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -285,7 +285,7 @@ const SectionFive = () => {
                       </svg>
                     </motion.div>
                     <motion.p
-                      className="text-bes-amber text-lg font-bold"
+                      className="text-bes-red text-lg font-bold"
                       initial={{ y: 10 }}
                       animate={{ y: hoveredDays[day.id] ? 0 : 10 }}
                       transition={{ duration: 0.3 }}

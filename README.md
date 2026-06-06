@@ -1,3 +1,8 @@
+v3.4.0
+
+- new bg for Timetable Section (SectionFive)
+- new hover colors for hovering over the timetable screenshots
+
 v3.3.1
 
 - Modal for home route with flyer
