@@ -1,3 +1,7 @@
+v3.4.1
+
+- new Text for Timetable explanation
+
 v3.4.0
 
 - new bg for Timetable Section (SectionFive)
