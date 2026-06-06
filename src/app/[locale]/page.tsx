@@ -6,10 +6,12 @@ import SectionThree from "./sections/SectionThree";
 import SectionTwo from "./sections/SectionTwo";
 import { Footer } from "@/components/Footer";
 import FestivalBanner from "@/components/FestivalBanner";
+import HomeImageModal from "@/components/HomeImageModal";
 
 export default function Home() {
   return (
     <main>
+      <HomeImageModal />
       <FestivalBanner />
       <SectionOne />
       <SectionTwo />

@@ -130,6 +130,14 @@ export const FESTIVAL_CONFIG = {
   },
 
   /**
+   * Home overlay modal availability
+   * Set to true to show the startup image modal on the home route.
+   */
+  homeOverlayModal: {
+    isEnabled: true,
+  },
+
+  /**
    * Dynamically generate festival days from start/end dates
    * Defaults to German assets if no locale is provided.
    */
