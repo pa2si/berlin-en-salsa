@@ -1,3 +1,12 @@
+v3.3.0
+
+- merge done:
+- TIMETABLE ACTIVE
+- TBA can display the title now
+- uppercase for title in slots in timetable removed.
+- uppercase in EventModal for name after "about" removed
+- some names corrected
+
 v3.2.1
 
 - new screenshots for timetable preview
