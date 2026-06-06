@@ -203,11 +203,9 @@ export default function EventModal({
                   <div className="mb-6">
                     <h4 className="text-bes-red mb-2 text-xl font-bold">
                       {t("modal.about")}{" "}
-                      {(
-                        selectedEventDetails.presenter ||
+                      {selectedEventDetails.presenter ||
                         selectedEventDetails.guest ||
-                        ""
-                      ).toUpperCase()}
+                        ""}
                     </h4>
                     <p className="text-xl text-gray-700 md:leading-relaxed">
                       {selectedEventDetails.bio}

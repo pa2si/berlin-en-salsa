@@ -145,9 +145,9 @@ export default function EventSlider({
                             : currentSlide.caption;
                           try {
                             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            return ((t as any)(key) as string).toUpperCase();
+                            return (t as any)(key) as string;
                           } catch {
-                            return currentSlide.caption.toUpperCase();
+                            return currentSlide.caption;
                           }
                         })()}
                       </>
@@ -189,9 +189,9 @@ export default function EventSlider({
                       : currentSlide.caption;
                     try {
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      return ((t as any)(key) as string).toUpperCase();
+                      return (t as any)(key) as string;
                     } catch {
-                      return currentSlide.caption.toUpperCase();
+                      return currentSlide.caption;
                     }
                   })()}
                 </>
@@ -232,9 +232,9 @@ export default function EventSlider({
                         : currentSlide.caption;
                       try {
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        return ((t as any)(key) as string).toUpperCase();
+                        return (t as any)(key) as string;
                       } catch {
-                        return currentSlide.caption.toUpperCase();
+                        return currentSlide.caption;
                       }
                     })()}
                   </>
