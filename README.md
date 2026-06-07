@@ -1,3 +1,7 @@
+v3.4.2
+
+- SectionOne alt Text for logo changed
+
 v3.4.1
 
 - new Text for Timetable explanation

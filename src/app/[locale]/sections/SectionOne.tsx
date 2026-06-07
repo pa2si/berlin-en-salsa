@@ -26,7 +26,7 @@ const SectionOne = () => {
           <h1 className="sr-only">{t("h1")}</h1>
           <img
             src="/bes-logo-color_2026.webp"
-            alt="Berlin en Salsa Logo"
+            alt="Berlin en Salsa Festival Vol. 2 @ Neulich Biergarten am THF"
             className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-h-[72vh] lg:max-w-[110%] lg:min-w-[60%]"
           />
           <motion.img
