@@ -1,3 +1,7 @@
+v3.4.3
+
+- now with animated red cross for HomeImageModal
+
 v3.4.2
 
 - SectionOne alt Text for logo changed

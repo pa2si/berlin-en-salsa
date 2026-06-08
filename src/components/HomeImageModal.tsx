@@ -38,12 +38,12 @@ export default function HomeImageModal() {
         <button
           type="button"
           onClick={() => setIsOpen(false)}
-          className="text-bes-red hover:text-bes-red/80 absolute -top-12 right-0 cursor-pointer p-2 transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
+          className="text-bes-red hover:text-bes-red/80 absolute -top-12 right-0 animate-pulse cursor-pointer p-2 transition-colors focus-visible:ring-2 focus-visible:ring-white focus-visible:outline-none"
           aria-label="Close modal"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8"
+            className="h-10 w-10"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
