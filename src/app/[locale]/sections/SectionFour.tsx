@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, type MouseEvent } from "react";
+import { useState, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -9,6 +9,29 @@ const galleryImages = Array.from(
   { length: 10 },
   (_, i) => `/gallery-merch/gallery-merch-${i + 1}.webp`,
 );
+
+const TRANSPARENT_PLACEHOLDER =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+
+const wrapIndex = (index: number, total: number) =>
+  ((index % total) + total) % total;
+
+const shouldLoadMainImage = (
+  index: number,
+  activePairStart: number,
+  total: number,
+) => {
+  const imagesToLoad = new Set([
+    wrapIndex(activePairStart, total),
+    wrapIndex(activePairStart + 1, total),
+    wrapIndex(activePairStart - 2, total),
+    wrapIndex(activePairStart - 1, total),
+    wrapIndex(activePairStart + 2, total),
+    wrapIndex(activePairStart + 3, total),
+  ]);
+
+  return imagesToLoad.has(wrapIndex(index, total));
+};
 
 const SectionFour = () => {
   const t = useTranslations("Sections.SectionFour");
@@ -32,14 +55,6 @@ const SectionFour = () => {
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
-
-  // 1. PRELOAD IMAGES
-  useEffect(() => {
-    galleryImages.forEach((src) => {
-      const img = new window.Image();
-      img.src = src;
-    });
-  }, []);
 
   const handleNext = () => setCurrentIndex((prev) => (prev + 2) % 10);
   const handlePrev = () => setCurrentIndex((prev) => (prev - 2 + 10) % 10);
@@ -102,6 +117,9 @@ const SectionFour = () => {
                 src={src}
                 alt={`Gallery thumbnail ${i + 1}`}
                 className="h-14 w-14 object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)] lg:landscape:h-16 lg:landscape:w-16"
+                loading="lazy"
+                fetchPriority="low"
+                decoding="async"
               />
             </button>
           );
@@ -163,9 +181,20 @@ const SectionFour = () => {
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`mobile-left-${currentIndex}`}
-                  src={galleryImages[currentIndex]}
+                  src={
+                    shouldLoadMainImage(
+                      currentIndex,
+                      currentIndex,
+                      galleryImages.length,
+                    )
+                      ? galleryImages[currentIndex]
+                      : TRANSPARENT_PLACEHOLDER
+                  }
                   alt={`Merch item ${currentIndex + 1}`}
                   className="max-h-full max-w-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -182,9 +211,20 @@ const SectionFour = () => {
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`mobile-right-${currentIndex}`}
-                  src={galleryImages[currentIndex + 1]}
+                  src={
+                    shouldLoadMainImage(
+                      currentIndex + 1,
+                      currentIndex,
+                      galleryImages.length,
+                    )
+                      ? galleryImages[currentIndex + 1]
+                      : TRANSPARENT_PLACEHOLDER
+                  }
                   alt={`Merch item ${currentIndex + 2}`}
                   className="max-h-full max-w-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -224,9 +264,20 @@ const SectionFour = () => {
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`desktop-left-${currentIndex}`}
-                  src={galleryImages[currentIndex]}
+                  src={
+                    shouldLoadMainImage(
+                      currentIndex,
+                      currentIndex,
+                      galleryImages.length,
+                    )
+                      ? galleryImages[currentIndex]
+                      : TRANSPARENT_PLACEHOLDER
+                  }
                   alt={`Merch item ${currentIndex + 1}`}
                   className="max-h-full max-w-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
@@ -266,9 +317,20 @@ const SectionFour = () => {
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`desktop-right-${currentIndex}`}
-                  src={galleryImages[currentIndex + 1]}
+                  src={
+                    shouldLoadMainImage(
+                      currentIndex + 1,
+                      currentIndex,
+                      galleryImages.length,
+                    )
+                      ? galleryImages[currentIndex + 1]
+                      : TRANSPARENT_PLACEHOLDER
+                  }
                   alt={`Merch item ${currentIndex + 2}`}
                   className="max-h-full max-w-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="sync"
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: 50 }}

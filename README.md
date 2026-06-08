@@ -1,3 +1,7 @@
+v3.5.0
+
+- lazy loading for gallery images and merch gallery images
+
 v3.4.3
 
 - now with animated red cross for HomeImageModal

@@ -16,6 +16,16 @@ const IntegratedGallery = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const tGallery: any = useTranslations("Sections.Gallery");
 
+  const isNeighborSlide = (
+    index: number,
+    activeIndex: number,
+    total: number,
+  ) => {
+    const prevIndex = activeIndex === 0 ? total - 1 : activeIndex - 1;
+    const nextIndex = activeIndex === total - 1 ? 0 : activeIndex + 1;
+    return index === prevIndex || index === nextIndex;
+  };
+
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
@@ -93,13 +103,29 @@ const IntegratedGallery = () => {
             onMouseEnter={() => setShowCaption(true)}
             onMouseLeave={() => setShowCaption(false)}
           >
-            <img
-              src={image.src}
-              alt={image.alt}
-              // Reverted back to object-cover so the image fills the entire container seamlessly
-              className="h-full w-full object-cover"
-              draggable={false}
-            />
+            {(() => {
+              const isActiveSlide = index === currentImage;
+              const shouldLoadSlideImage =
+                isActiveSlide ||
+                isNeighborSlide(index, currentImage, galleryImages.length);
+
+              return (
+                <img
+                  src={
+                    shouldLoadSlideImage
+                      ? image.src
+                      : "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+                  }
+                  alt={image.alt}
+                  // Reverted back to object-cover so the image fills the entire container seamlessly
+                  className="h-full w-full object-cover"
+                  loading={isActiveSlide ? "eager" : "lazy"}
+                  fetchPriority={isActiveSlide ? "high" : "auto"}
+                  decoding={isActiveSlide ? "sync" : "async"}
+                  draggable={false}
+                />
+              );
+            })()}
 
             {index === currentImage && (
               <>
