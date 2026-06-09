@@ -1,3 +1,8 @@
+v3.5.1
+
+- lazy loading now only until md. from lg on no lazy loading.
+- from lg on the images in the small gallery now gets animated
+
 v3.5.0
 
 - lazy loading for gallery images and merch gallery images

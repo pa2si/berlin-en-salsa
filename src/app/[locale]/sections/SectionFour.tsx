@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type MouseEvent } from "react";
+import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
@@ -56,10 +56,29 @@ const SectionFour = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
 
+  // Screen size state for logic ONLY (avoids hydration mismatch on mobile view)
+  const [isLgScreen, setIsLgScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsLgScreen(window.innerWidth >= 1024);
+    handleResize(); // Set initial value
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // 1. PRELOAD IMAGES (Only on lg screens and above)
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth >= 1024) {
+      galleryImages.forEach((src) => {
+        const img = new window.Image();
+        img.src = src;
+      });
+    }
+  }, []);
+
   const handleNext = () => setCurrentIndex((prev) => (prev + 2) % 10);
   const handlePrev = () => setCurrentIndex((prev) => (prev - 2 + 10) % 10);
 
-  // Fixed the TypeScript implicit 'any' error by adding `: number`
   const openModal = (index: number) => {
     setModalIndex(index);
     setIsModalOpen(true);
@@ -95,15 +114,29 @@ const SectionFour = () => {
     ),
   });
 
-  const renderThumbnails = () => (
-    <div className="mt-auto w-full bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
-      <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 sm:gap-4">
+  const renderThumbnails = (isDesktop: boolean = false) => (
+    <div className="mt-auto w-full overflow-hidden bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
+      {/* Scrollbar Fix: hide standard scrollbars but keep it scrollable */}
+      <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
         {galleryImages.map((src, i) => {
           const pairIndex = Math.floor(i / 2) * 2;
           const isSelected = pairIndex === currentIndex;
 
+          const animationProps = isDesktop
+            ? {
+                initial: { opacity: 0, y: 40 },
+                whileInView: { opacity: 1, y: 0 },
+                viewport: { once: true, margin: "200px" },
+                transition: {
+                  duration: 0.6,
+                  delay: i * 0.08,
+                  ease: "easeOut" as const,
+                },
+              }
+            : {};
+
           return (
-            <button
+            <motion.button
               key={src}
               onClick={() => setCurrentIndex(pairIndex)}
               className={`relative shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
@@ -112,16 +145,21 @@ const SectionFour = () => {
                   : "hover:ring-bes-amber/50 opacity-40 hover:scale-105 hover:opacity-100 hover:ring-2"
               }`}
               aria-label={`View image pair ${pairIndex / 2 + 1}`}
+              {...animationProps}
             >
               <img
                 src={src}
                 alt={`Gallery thumbnail ${i + 1}`}
                 className="h-14 w-14 object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)] lg:landscape:h-16 lg:landscape:w-16"
-                loading="lazy"
-                fetchPriority="low"
-                decoding="async"
+                {...(isDesktop || isLgScreen
+                  ? {}
+                  : {
+                      loading: "lazy",
+                      fetchPriority: "low",
+                      decoding: "async",
+                    })}
               />
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -130,6 +168,7 @@ const SectionFour = () => {
 
   return (
     <>
+      {/* MOBILE CONTAINER (Visible < xl) */}
       <div className="bg-bes-purple flex min-h-svh flex-col items-center justify-between overflow-x-hidden overflow-y-auto pt-4 xl:hidden">
         <div
           className={`flex w-full flex-1 flex-col items-center justify-center px-4 ${mobileSectionSpacingClass}`}
@@ -182,6 +221,7 @@ const SectionFour = () => {
                 <motion.img
                   key={`mobile-left-${currentIndex}`}
                   src={
+                    isLgScreen ||
                     shouldLoadMainImage(
                       currentIndex,
                       currentIndex,
@@ -212,6 +252,7 @@ const SectionFour = () => {
                 <motion.img
                   key={`mobile-right-${currentIndex}`}
                   src={
+                    isLgScreen ||
                     shouldLoadMainImage(
                       currentIndex + 1,
                       currentIndex,
@@ -245,11 +286,12 @@ const SectionFour = () => {
           </div>
         </div>
 
-        <div className="hidden w-full lg:block">{renderThumbnails()}</div>
+        {/* Thumbnail bar shown on lg to xl screens within the mobile container */}
+        <div className="hidden w-full lg:block">{renderThumbnails(true)}</div>
       </div>
 
+      {/* DESKTOP CONTAINER (Visible >= xl) */}
       <div className="bg-bes-purple hidden h-svh flex-col overflow-x-hidden overflow-y-hidden xl:flex">
-        {/* Desktop content (Unchanged) */}
         <div className="grid flex-1 grid-cols-3 pt-4 xl:pt-2 2xl:pt-4">
           <div className="flex items-center justify-end pr-4">
             <button
@@ -260,32 +302,30 @@ const SectionFour = () => {
                 <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z" />
               </svg>
             </button>
-            <div className="flex h-[clamp(40vh,55vh,65vh)] w-[80%] shrink-0 items-center justify-center px-4">
+            {/* Scroll Fade-In Wrapper (Left) */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "200px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex h-[clamp(40vh,55vh,65vh)] w-[80%] shrink-0 items-center justify-center px-4"
+            >
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`desktop-left-${currentIndex}`}
-                  src={
-                    shouldLoadMainImage(
-                      currentIndex,
-                      currentIndex,
-                      galleryImages.length,
-                    )
-                      ? galleryImages[currentIndex]
-                      : TRANSPARENT_PLACEHOLDER
-                  }
+                  src={galleryImages[currentIndex]}
                   alt={`Merch item ${currentIndex + 1}`}
-                  className="max-h-full max-w-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
+                  className="max-h-full max-w-full cursor-pointer object-contain transition-transform hover:scale-105"
+                  onClick={() => openModal(currentIndex)}
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.6, type: "spring", stiffness: 90 }}
                 />
               </AnimatePresence>
-            </div>
+            </motion.div>
           </div>
+
           <div className="flex flex-col items-center justify-center gap-[clamp(1rem,3vh,2.5rem)] px-2 2xl:gap-6">
             <img
               src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
@@ -312,32 +352,30 @@ const SectionFour = () => {
               </a>
             </div>
           </div>
+
           <div className="flex items-center justify-start pl-4">
-            <div className="flex h-[clamp(40vh,55vh,65vh)] w-[80%] shrink-0 items-center justify-center px-4">
+            {/* Scroll Fade-In Wrapper (Right) */}
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "200px" }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
+              className="flex h-[clamp(40vh,55vh,65vh)] w-[80%] shrink-0 items-center justify-center px-4"
+            >
               <AnimatePresence mode="popLayout" initial={false}>
                 <motion.img
                   key={`desktop-right-${currentIndex}`}
-                  src={
-                    shouldLoadMainImage(
-                      currentIndex + 1,
-                      currentIndex,
-                      galleryImages.length,
-                    )
-                      ? galleryImages[currentIndex + 1]
-                      : TRANSPARENT_PLACEHOLDER
-                  }
+                  src={galleryImages[currentIndex + 1]}
                   alt={`Merch item ${currentIndex + 2}`}
-                  className="max-h-full max-w-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
-                  initial={{ opacity: 0, x: 50 }}
+                  className="max-h-full max-w-full cursor-pointer object-contain transition-transform hover:scale-105"
+                  onClick={() => openModal(currentIndex + 1)}
+                  initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
+                  exit={{ opacity: 0, x: -50 }}
                   transition={{ duration: 0.6, type: "spring", stiffness: 90 }}
                 />
               </AnimatePresence>
-            </div>
+            </motion.div>
             <button
               onClick={handleNext}
               className="text-bes-amber p-2 transition-colors hover:text-white"
@@ -348,24 +386,21 @@ const SectionFour = () => {
             </button>
           </div>
         </div>
-        {renderThumbnails()}
+        {renderThumbnails(true)}
       </div>
 
       {/* FULL SCREEN SLIDABLE MODAL */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
-            // Fixed ESLint Warning: changed z-[100] to z-100
             className="fixed inset-0 z-100 flex flex-col items-center justify-center bg-black/80 px-4 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={closeModal} // 2. Clicking background closes modal
+            onClick={closeModal}
           >
-            {/* Close Button ('X' in red) */}
             <button
               onClick={closeModal}
-              // Fixed ESLint Warning: changed z-[110] to z-110
               className="absolute top-4 right-4 z-110 rounded-full bg-black/20 p-2 text-red-500 transition-colors hover:bg-black/40 hover:text-red-400 active:scale-95"
               aria-label="Close"
             >
@@ -385,14 +420,11 @@ const SectionFour = () => {
               </svg>
             </button>
 
-            {/* Slidable Gallery Container */}
             <div
               className="relative flex h-[85dvh] w-full max-w-2xl items-center justify-center overflow-hidden"
-              onClick={(e) => e.stopPropagation()} // 2. Clicking the image area won't close it
+              onClick={(e) => e.stopPropagation()}
             >
-              {/* 3. UX Hint: Left Arrow */}
               <button
-                // Fixed ESLint Warning: changed z-[105] to z-105
                 className="absolute left-0 z-105 p-2 text-white/40 transition-colors hover:text-white sm:left-4"
                 onClick={handleModalPrev}
                 aria-label="Previous image"
@@ -415,7 +447,6 @@ const SectionFour = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -200 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  // Swipe logic
                   drag="x"
                   dragConstraints={{ left: 0, right: 0 }}
                   dragElastic={0.7}
@@ -430,9 +461,7 @@ const SectionFour = () => {
                 />
               </AnimatePresence>
 
-              {/* 3. UX Hint: Right Arrow */}
               <button
-                // Fixed ESLint Warning: changed z-[105] to z-105
                 className="absolute right-0 z-105 p-2 text-white/40 transition-colors hover:text-white sm:right-4"
                 onClick={handleModalNext}
                 aria-label="Next image"
@@ -446,7 +475,6 @@ const SectionFour = () => {
               </button>
             </div>
 
-            {/* Navigation Dots & Text Hint */}
             <div className="absolute bottom-6 flex flex-col items-center gap-3">
               <div className="flex gap-2">
                 {galleryImages.map((_, index) => (
