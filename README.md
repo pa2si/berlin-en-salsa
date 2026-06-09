@@ -1,3 +1,7 @@
+v3.5.7
+
+- diferent animation in HomeImageModal
+
 v3.5.6
 
 - animation in HomeImageModal a bit shorter

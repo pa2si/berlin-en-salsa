@@ -41,7 +41,7 @@ export default function HomeImageModal() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.8, bounce: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative h-[calc(100dvh-7rem)] w-full max-w-[92vw] sm:h-[85vh] sm:max-h-[900px] sm:max-w-[620px]"
             onClick={(event) => event.stopPropagation()}
           >
