@@ -1,3 +1,7 @@
+v3.5.4
+
+- animation in HomeImageModal larger
+
 v3.5.3
 
 - less heavy animation for the gallerybar from lg on (not cascaded anymore)
