@@ -1,3 +1,7 @@
+v3.5.2
+
+- animated HomeImageModal
+
 v3.5.1
 
 - lazy loading now only until md. from lg on no lazy loading.
