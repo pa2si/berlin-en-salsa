@@ -1,3 +1,7 @@
+v3.5.6
+
+- animation in HomeImageModal a bit shorter
+
 v3.5.5
 
 - somos and mangle interchanged in timetable
