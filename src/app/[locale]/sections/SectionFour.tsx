@@ -114,57 +114,61 @@ const SectionFour = () => {
     ),
   });
 
-  const renderThumbnails = (isDesktop: boolean = false) => (
-    <div className="mt-auto w-full overflow-hidden bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm">
-      {/* Scrollbar Fix: hide standard scrollbars but keep it scrollable */}
-      <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
-        {galleryImages.map((src, i) => {
-          const pairIndex = Math.floor(i / 2) * 2;
-          const isSelected = pairIndex === currentIndex;
+  const renderThumbnails = (isDesktop: boolean = false) => {
+    // 1. Define a single animation for the entire wrapper
+    const containerAnimation = isDesktop
+      ? {
+          initial: { opacity: 0, y: 30 },
+          whileInView: { opacity: 1, y: 0 },
+          viewport: { once: true, margin: "200px" },
+          // Add 'as const' right here:
+          transition: { duration: 0.7, ease: "easeOut" as const },
+        }
+      : {};
 
-          const animationProps = isDesktop
-            ? {
-                initial: { opacity: 0, y: 40 },
-                whileInView: { opacity: 1, y: 0 },
-                viewport: { once: true, margin: "200px" },
-                transition: {
-                  duration: 0.6,
-                  delay: i * 0.08,
-                  ease: "easeOut" as const,
-                },
-              }
-            : {};
+    return (
+      // 2. Change the outer div to a motion.div and apply the animation here
+      <motion.div
+        className="mt-auto w-full overflow-hidden bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm"
+        {...containerAnimation}
+      >
+        <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
+          {galleryImages.map((src, i) => {
+            const pairIndex = Math.floor(i / 2) * 2;
+            const isSelected = pairIndex === currentIndex;
 
-          return (
-            <motion.button
-              key={src}
-              onClick={() => setCurrentIndex(pairIndex)}
-              className={`relative shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
-                isSelected
-                  ? "ring-bes-amber scale-105 opacity-100 shadow-lg ring-4"
-                  : "hover:ring-bes-amber/50 opacity-40 hover:scale-105 hover:opacity-100 hover:ring-2"
-              }`}
-              aria-label={`View image pair ${pairIndex / 2 + 1}`}
-              {...animationProps}
-            >
-              <img
-                src={src}
-                alt={`Gallery thumbnail ${i + 1}`}
-                className="h-14 w-14 object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)] lg:landscape:h-16 lg:landscape:w-16"
-                {...(isDesktop || isLgScreen
-                  ? {}
-                  : {
-                      loading: "lazy",
-                      fetchPriority: "low",
-                      decoding: "async",
-                    })}
-              />
-            </motion.button>
-          );
-        })}
-      </div>
-    </div>
-  );
+            return (
+              // 3. Revert this back to a standard <button> (or a static motion.button)
+              // to strip away the heavy per-item staggered overhead.
+              <button
+                key={src}
+                onClick={() => setCurrentIndex(pairIndex)}
+                className={`relative shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
+                  isSelected
+                    ? "ring-bes-amber scale-105 opacity-100 shadow-lg ring-4"
+                    : "hover:ring-bes-amber/50 opacity-40 hover:scale-105 hover:opacity-100 hover:ring-2"
+                }`}
+                aria-label={`View image pair ${pairIndex / 2 + 1}`}
+              >
+                <img
+                  src={src}
+                  alt={`Gallery thumbnail ${i + 1}`}
+                  className="h-14 w-14 object-cover xl:h-[clamp(4.5rem,10vh,7rem)] xl:w-[clamp(4.5rem,10vh,7rem)] lg:landscape:h-16 lg:landscape:w-16"
+                  {...(isDesktop || isLgScreen
+                    ? {}
+                    : {
+                        loading: "lazy",
+                        fetchPriority: "low",
+                        decoding: "async",
+                      })}
+                />
+              </button>
+            );
+          })}
+        </div>
+      </motion.div>
+    );
+  };
 
   return (
     <>
