@@ -1,3 +1,7 @@
+v3.5.9
+
+- further adaption for iphone x max landscape
+
 v3.5.8
 
 - modified layouts for landscape view in SectionTwo

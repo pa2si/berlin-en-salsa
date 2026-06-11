@@ -10,12 +10,14 @@ const SectionTwo = () => {
   const locale = useLocale();
   const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
 
+  // 1. Shrunk md:gap-y-4 down to md:gap-y-3 to save vertical space on large phones
   const dynamicGapClasses = isLandscapeMobile
-    ? "gap-y-2 sm:gap-y-2 md:gap-y-4"
+    ? "gap-y-2 sm:gap-y-2 md:gap-y-3"
     : "gap-y-5 sm:gap-y-7 md:gap-y-6 lg:gap-y-8";
 
+  // 2. Brought md:h-[90%] down to md:h-[85%] to guarantee a safe margin at the bottom of the screen
   const layoutClasses = isLandscapeMobile
-    ? "justify-center h-full sm:h-[85%] md:h-[90%]"
+    ? "justify-center h-full sm:h-[85%] md:h-[85%]"
     : "justify-between h-auto sm:h-[65%] md:h-[85%] md:justify-center xl:h-[65%] xl:justify-center";
 
   useEffect(() => {
@@ -32,14 +34,14 @@ const SectionTwo = () => {
     return () => window.removeEventListener("resize", checkLandscapeMobile);
   }, []);
 
-  // THE FIX: Removed sm:mb-0 from the standard layout (the second half of the ternary operator).
-  // Added sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 to guarantee spacing on iPads and desktops.
+  // 3. Shrunk the md: logo max-height from 22vh to 18vh, and its bottom margin from mb-6 to mb-4
   const imageClasses = isLandscapeMobile
-    ? "mb-3 sm:mb-3 md:mb-6 h-auto max-h-[16vh] min-h-14 md:max-h-[22vh] md:min-h-20 w-auto px-4 sm:px-8"
+    ? "mb-3 sm:mb-3 md:mb-4 h-auto max-h-[16vh] min-h-14 md:max-h-[18vh] md:min-h-16 w-auto px-4 sm:px-8"
     : "mb-10 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 sm:max-h-[18vh] sm:px-8 md:min-h-20 md:max-h-[12vh] lg:max-h-[15vh] xl:max-h-[18vh]";
 
+  // 4. Dialed back the md: text clamp specifically to prevent it from overflowing the container
   const textClasses = isLandscapeMobile
-    ? "text-[clamp(0.8rem,3.5vh,1rem)] sm:text-[clamp(0.9rem,4vh,1.15rem)] md:text-[clamp(1rem,4.5vh,1.3rem)] leading-[1.2]"
+    ? "text-[clamp(0.8rem,3.5vh,1rem)] sm:text-[clamp(0.9rem,4vh,1.15rem)] md:text-[clamp(0.95rem,4vh,1.2rem)] leading-[1.2]"
     : "text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1.4rem,2.5vh,2.2rem)] lg:text-[clamp(1.6rem,3vh,2.6rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]";
 
   return (
