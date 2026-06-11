@@ -1,3 +1,7 @@
+v3.5.12
+
+- further adaption for iphone x max landscape
+
 v3.5.11
 
 - further adaption for iphone x max landscape
