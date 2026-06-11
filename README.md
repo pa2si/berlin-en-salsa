@@ -1,3 +1,7 @@
+v3.5.8
+
+- modified layouts for landscape view in SectionTwo
+
 v3.5.7
 
 - diferent animation in HomeImageModal

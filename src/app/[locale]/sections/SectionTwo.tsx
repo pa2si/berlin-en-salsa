@@ -8,30 +8,44 @@ import IntegratedGallery from "@/components/Gallery/IntegratedGallery";
 const SectionTwo = () => {
   const t = useTranslations("Sections.SectionTwo");
   const locale = useLocale();
-  const [isShortMdLandscape, setIsShortMdLandscape] = useState(false);
+  const [isLandscapeMobile, setIsLandscapeMobile] = useState(false);
 
-  const mdParagraphGapClass = isShortMdLandscape ? "md:gap-y-3" : "md:gap-y-7";
+  const dynamicGapClasses = isLandscapeMobile
+    ? "gap-y-2 sm:gap-y-2 md:gap-y-4"
+    : "gap-y-5 sm:gap-y-7 md:gap-y-6 lg:gap-y-8";
+
+  const layoutClasses = isLandscapeMobile
+    ? "justify-center h-full sm:h-[85%] md:h-[90%]"
+    : "justify-between h-auto sm:h-[65%] md:h-[85%] md:justify-center xl:h-[65%] xl:justify-center";
 
   useEffect(() => {
-    const checkShortMdLandscape = () => {
-      const shortMdLandscape = window.matchMedia(
-        "(min-width: 768px) and (max-width: 1023px) and (max-height: 520px)",
+    const checkLandscapeMobile = () => {
+      const landscapeMobile = window.matchMedia(
+        "(min-width: 640px) and (max-width: 1023px) and (max-height: 600px)",
       ).matches;
-      setIsShortMdLandscape(shortMdLandscape);
+      setIsLandscapeMobile(landscapeMobile);
     };
 
-    checkShortMdLandscape();
-    window.addEventListener("resize", checkShortMdLandscape);
+    checkLandscapeMobile();
+    window.addEventListener("resize", checkLandscapeMobile);
 
-    return () => window.removeEventListener("resize", checkShortMdLandscape);
+    return () => window.removeEventListener("resize", checkLandscapeMobile);
   }, []);
 
+  // THE FIX: Removed sm:mb-0 from the standard layout (the second half of the ternary operator).
+  // Added sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 to guarantee spacing on iPads and desktops.
+  const imageClasses = isLandscapeMobile
+    ? "mb-3 sm:mb-3 md:mb-6 h-auto max-h-[16vh] min-h-14 md:max-h-[22vh] md:min-h-20 w-auto px-4 sm:px-8"
+    : "mb-10 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 sm:max-h-[18vh] sm:px-8 md:min-h-20 md:max-h-[12vh] lg:max-h-[15vh] xl:max-h-[18vh]";
+
+  const textClasses = isLandscapeMobile
+    ? "text-[clamp(0.8rem,3.5vh,1rem)] sm:text-[clamp(0.9rem,4vh,1.15rem)] md:text-[clamp(1rem,4.5vh,1.3rem)] leading-[1.2]"
+    : "text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1.4rem,2.5vh,2.2rem)] lg:text-[clamp(1.6rem,3vh,2.6rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]";
+
   return (
-    // Parent remains h-auto so the mobile layout can stack 50vh + 100svh
     <div className="flex h-auto w-full flex-col overflow-hidden sm:flex-row xl:h-svh">
       <IntegratedGallery />
 
-      {/* Mobile height explicitly set to h-svh (100svh), while maintaining sm:w-1/2 for desktop */}
       <div className="bg-bes-amber flex overflow-hidden sm:h-svh sm:w-1/2 sm:items-center sm:justify-center">
         <motion.div
           className="flex h-full w-full flex-col items-center justify-evenly py-8 sm:h-[95%] sm:py-4"
@@ -48,24 +62,16 @@ const SectionTwo = () => {
                 : "/que-es-berlin-en-salsa.svg"
             }
             alt={t("title")}
-            className="mb-10 h-auto max-h-[5vh] min-h-28 w-auto px-4 sm:mb-0 sm:max-h-[18vh] sm:px-8 xl:max-h-[18vh]"
+            className={imageClasses}
           />
 
           <div
-            className={`text-bes-red mx-auto flex h-auto w-full max-w-[96%] flex-col justify-between gap-y-5 px-2 text-center font-semibold sm:h-[65%] sm:max-w-[95%] sm:gap-y-7 sm:px-6 ${mdParagraphGapClass} xl:justify-center xl:gap-y-6`}
+            className={`text-bes-red mx-auto flex w-full max-w-[96%] flex-col px-2 text-center font-semibold sm:max-w-[95%] sm:px-6 ${layoutClasses} ${dynamicGapClasses}`}
           >
-            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
-              {t("description1")}
-            </p>
-            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
-              {t("description2")}
-            </p>
-            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
-              {t("description3")}
-            </p>
-            <p className="text-[clamp(1.25rem,2.7vh,2.25rem)] leading-[1.35] md:text-[clamp(1rem,3vh,2.5rem)] xl:text-[clamp(1.2rem,4vh,3.4rem)]">
-              {t("description4")}
-            </p>
+            <p className={textClasses}>{t("description1")}</p>
+            <p className={textClasses}>{t("description2")}</p>
+            <p className={textClasses}>{t("description3")}</p>
+            <p className={textClasses}>{t("description4")}</p>
           </div>
         </motion.div>
       </div>
