@@ -1,3 +1,7 @@
+v3.5.10
+
+- updated timetable link for friday
+
 v3.5.9
 
 - further adaption for iphone x max landscape
