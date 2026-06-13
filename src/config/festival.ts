@@ -134,7 +134,7 @@ export const FESTIVAL_CONFIG = {
    * Set to true to show the startup image modal on the home route.
    */
   homeOverlayModal: {
-    isEnabled: true,
+    isEnabled: false,
   },
 
   /**
