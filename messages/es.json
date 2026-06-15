@@ -475,10 +475,45 @@
       "together": "juntos",
       "about": "Sobre",
       "comment": "Comentario",
-      "description": "Descripción"
+      "description": "Descripción",
+      "classSubscription": {
+        "subscribeButton": "Suscribirse",
+        "cancelButton": "Cancelar",
+        "formTitle": "Inscribirse en esta clase",
+        "namePlaceholder": "Nombre",
+        "emailPlaceholder": "Correo electrónico",
+        "privacyText": "Acepto la",
+        "privacyLink": "Política de privacidad",
+        "submitButton": "INSCRIBIRME",
+        "seeSubscriberListButton": "lista de suscriptores",
+        "submittingButton": "Enviando...",
+        "loadSubscribersButton": "Ver suscriptores",
+        "loadingSubscribersButton": "Cargando suscriptores...",
+        "closeSubscriberListButton": "Cerrar",
+        "subscriberListTitle": "Lista de suscriptores de esta clase",
+        "tokenLabel": "Token",
+        "tokenPlaceholder": "Introduce el token",
+        "subscriberListHint": "Solo visible con token válido.",
+        "emptySubscriberList": "Todavía no hay inscripciones para esta clase.",
+        "totalSubscribersLabel": "Total",
+        "createdAtLabel": "Creado:",
+        "updatedAtLabel": "Actualizado:",
+        "infoLine": "Para cancelar, escríbenos a: info@berlinensalsa.de",
+        "success": "Gracias. Tu inscripción para esta clase fue guardada ({email}).",
+        "validation": {
+          "allFieldsRequired": "Todos los campos son obligatorios.",
+          "invalidEmail": "Por favor, introduce un correo electrónico válido.",
+          "invalidName": "Por favor, introduce un nombre válido.",
+          "privacyRequired": "Por favor, acepta la política de privacidad para continuar."
+        },
+        "errors": {
+          "generic": "Lo sentimos. Ocurrió un problema al guardar tu inscripción a la clase. Por favor, inténtalo de nuevo más tarde.",
+          "invalidToken": "Token inválido para esta clase."
+        }
+      }
     },
     "events": {
-      "danceWorkshops": {
+      "danceClasses": {
         "nYStyle": "Nueva York Style",
         "sonCubano": "Son Cubano",
         "caliStyle": "Salsa Caleña",
@@ -486,7 +521,7 @@
         "chaChaCha": "Cha Cha Cha",
         "afroCuban": "Afrocubano"
       },
-      "danceWorkshopTeachers": {
+      "danceClassTeachers": {
         "nYStyle": "Niya",
         "sonCubano": "Punto Cubano Berlín - Yago y Helen",
         "caliStyle": "Julián Meja",
@@ -494,7 +529,7 @@
         "chaChaCha": "Nora",
         "afroCuban": "Lynet Rivero"
       },
-      "danceWorkshopDescriptions": {
+      "danceClassDescriptions": {
         "nYStyle": "El estilo Nueva York, también conocido como \"On2\" o mambo, es uno de los estilos de salsa más elegantes y musicales del mundo. Nacido en las calles y clubes de Nueva York a partir de la fusión del son cubano con el jazz afroamericano, este estilo se caracteriza por su conexión profunda con el clave y los tiempos fuertes de la música, su elegancia en el movimiento y su expresividad en pareja. En este workshop exploraremos los fundamentos del NY style: el timing on2, la postura, el trabajo de pies y la conexión entre líder y seguidor. Una clase abierta a todos los niveles, donde la técnica y el sabor van siempre de la mano.",
         "sonCubano": "En este workshop exploraremos los básicos del Son Cubano desde una perspectiva musical y corporal. Trabajaremos cómo entender el ritmo, el lenguaje corporal y la conexión en pareja para bailar de una forma más tranquila, natural y conectada. Una introducción ideal para sentir la esencia del Son: elegancia, musicalidad y comunicación.",
         "caliStyle": "Nos enfocaremos en los pasos más auténticos e icónicos del estilo caleño, pasos libres que puedes usar directamente en el baile social en pareja. Aprenderás a interpretar la música a través de sus acentos fuertes, y la musicalidad, entendiendo el ritmo que define este estilo y dejando que el cuerpo lo exprese de forma natural. Una clase dinámica, divertida y abierta a todos los niveles donde la musicalidad y el sabor caleño van de la mano.",
@@ -502,7 +537,7 @@
         "chaChaCha": "El cha cha chá nació en Cuba a principios de los años 50 de la mano del compositor y violinista Enrique Jorrín, quien lo desarrolló a partir del danzón-mambo. Su nombre imita el sonido característico que producen los pies al rozar el suelo en ese paso triple tan distintivo. Rápidamente se convirtió en un fenómeno mundial, conquistando las pistas de baile de América Latina, Estados Unidos y Europa con su ritmo juguetón, elegante y lleno de carácter. A diferencia de otros estilos cubanos, el cha cha chá se baila sobre el tiempo uno de la música, lo que le da una sensación directa y accesible sin perder su profunda musicalidad. Es un baile de diálogo entre los dos bailadores pícaros, precisos y con mucho sabor. En este workshop abierto a todos los niveles exploraremos sus raíces históricas, su estructura rítmica y sus pasos fundamentales, para que puedas llevarlo directamente a la pista de baile social. No se requiere experiencia previa",
         "afroCuban": "El baile afrocubano tiene sus raíces en las tradiciones religiosas y culturales que los pueblos africanos trajeron consigo al Caribe durante la época colonial. A lo largo de los siglos, estas expresiones se fusionaron con influencias españolas y caribeñas, dando origen a un lenguaje de movimiento único: vivo, percusivo y profundamente espiritual. Ritmos como la rumba, el yambú o los cantos de origen yoruba y bantú son la base sobre la que este baile respira y se transforma. En este workshop abierto a todos los niveles, exploraremos los fundamentos del movimiento afrocubano, el trabajo de caderas, el peso del cuerpo, la conexión con el suelo y la relación íntima entre el movimiento y la percusión. Más que una técnica, el baile afrocubano es una forma de habitar el cuerpo con plena conciencia, ritmo y alegría. No se requiere experiencia previa. Solo ganas de moverte y de conectar."
       },
-      "danceWorkshopBioTeachers": {
+      "danceClassBioTeachers": {
         "nYStyle": "Niya nació en Sofía, Bulgaria, donde comenzó su camino en la danza con ballet, danza moderna y hip hop. Con el tiempo descubrió su gran pasión: la salsa, y en especial el mambo. Como miembro de un equipo de salsa representó a Bulgaria en festivales internacionales, acumulando una valiosa experiencia en salsa, bachata y cha cha cha. Desde 2023 imparte clases en Berlín, con un enfoque en la coordinación, la conciencia corporal y la claridad técnica. Lo que más la motiva es compartir su entusiasmo por el mambo y ayudar a cada persona a descubrir su propio amor por la música.",
         "sonCubano": "Punto Cubano Berlin nació de un profundo amor por la música y el baile cubanos, y del deseo de compartirlos con esmero, calidad y respeto. Yago y Helen creen que una buena enseñanza marca la diferencia. Nuestras clases van más allá de las figuras y los pasos. Nos centramos en cómo escuchas la música, cómo te comunicas con tu pareja y cómo te comportas en la pista de baile. Tanto si lideras como si sigues, nos adaptamos a tu nivel. Creamos un espacio cálido, inclusivo y serio en cuanto al arte, sin ser rígidos. Porque el baile debe ser alegre.",
         "caliStyle": "Nacido y criado en Colombia, Julian es sociólogo cultural y promotor de la salsa caleña en Berlín. Ha contribuido a transmitir y expandir esta cultura a través de clases, shows, eventos y charlas culturales. Su manera de enseñar es lo que lo hace diferente: no se enfoca en secuencias, enseña a comunicarse a través del baile. Su enfoque está en el acento, las señales, la intención y la sensación detrás de cada movimiento, para que el baile sea una conexión real entre dos personas y no solo una coreografía. También se enfoca en transmitir las mecánicas de la fusión de estilos, en especial salsa caleña y salsa en línea. Cada clase es una experiencia que va más allá de los pasos, es técnica, musicalidad e historia, transmitida desde las raíces del estilo.",

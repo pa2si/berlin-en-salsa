@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
-import { TimetableEvent } from "../../../types/events";
+import { useLocale, useTranslations } from "next-intl";
+import { FormEvent, useEffect, useMemo, useState } from "react";
+import { isDanceAreaEvent, TimetableEvent } from "../../../types/events";
 import { SelectedEventDetails } from "../hooks/useEventModal";
 import { useSlider } from "../hooks/useSlider";
 import { useSmartTranslation } from "../../../data/timetable/utils/smartTranslation";
@@ -9,6 +9,11 @@ import { convertTimetableEventToSelectedDetails } from "./eventConversion";
 import EventDetails from "./EventDetails";
 import EventSlider from "./EventSlider";
 import EventNavigation from "./EventNavigation";
+import {
+  addDanceClassSubscriber,
+  getDanceClassSubscribers,
+} from "@/app/actions";
+import { Link } from "@/i18n/navigation";
 
 interface EventModalProps {
   event?: TimetableEvent; // NEW: Accept TimetableEvent
@@ -22,12 +27,52 @@ export default function EventModal({
   onClose,
 }: EventModalProps) {
   const t = useTranslations("Timetable");
+  const locale = useLocale();
   const { translateIfKey } = useSmartTranslation();
+  const [isClassFormOpen, setIsClassFormOpen] = useState(false);
+  const [isClassFormPending, setIsClassFormPending] = useState(false);
+  const [classPrivacyChecked, setClassPrivacyChecked] = useState(false);
+  const [classSubscribeSuccess, setClassSubscribeSuccess] = useState("");
+  const [classSubscribeError, setClassSubscribeError] = useState("");
+  const [isSubscriberListModalOpen, setIsSubscriberListModalOpen] =
+    useState(false);
+  const [subscriberToken, setSubscriberToken] = useState("");
+  const [isSubscriberListPending, setIsSubscriberListPending] = useState(false);
+  const [subscriberListError, setSubscriberListError] = useState("");
+  const [hasLoadedSubscriberList, setHasLoadedSubscriberList] = useState(false);
+  const [subscriberList, setSubscriberList] = useState<
+    Array<{
+      name: string;
+      email: string;
+      createdAt: string;
+      updatedAt: string;
+    }>
+  >([]);
 
   // Convert TimetableEvent to SelectedEventDetails if provided
   const selectedEventDetails = event
     ? convertTimetableEventToSelectedDetails(event, translateIfKey)
     : providedDetails!;
+
+  const eventTitle = useMemo(() => {
+    if (!selectedEventDetails.event.startsWith("Timetable.")) {
+      return selectedEventDetails.event;
+    }
+
+    try {
+      const key = selectedEventDetails.event.substring(10);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      return (t as any)(key) as string;
+    } catch {
+      return selectedEventDetails.event;
+    }
+  }, [selectedEventDetails.event, t]);
+
+  const danceAreaEvent = event && isDanceAreaEvent(event) ? event : undefined;
+  const danceClassEvent =
+    danceAreaEvent?.danceAreaType === "class" ? danceAreaEvent : undefined;
+
+  const canShowClassSubscription = Boolean(danceClassEvent?.enableSubscription);
   const {
     currentSlideIndex,
     goToSlide,
@@ -67,6 +112,104 @@ export default function EventModal({
     }
   };
 
+  const handleClassSubscriptionSubmit = async (
+    e: FormEvent<HTMLFormElement>,
+  ) => {
+    e.preventDefault();
+
+    if (!danceClassEvent || !canShowClassSubscription) {
+      return;
+    }
+
+    if (!classPrivacyChecked) {
+      setClassSubscribeError(
+        t("modal.classSubscription.validation.privacyRequired"),
+      );
+      return;
+    }
+
+    const formElement = e.currentTarget;
+
+    setIsClassFormPending(true);
+    setClassSubscribeSuccess("");
+    setClassSubscribeError("");
+
+    try {
+      const formData = new FormData(formElement);
+      formData.append("classId", danceClassEvent.id);
+      formData.append("classTitle", eventTitle);
+      formData.append("privacyAccepted", "true");
+
+      const response = await addDanceClassSubscriber(formData, locale);
+
+      if (response.successMessage) {
+        setClassSubscribeSuccess(response.successMessage);
+        setClassSubscribeError("");
+        formElement.reset();
+        setClassPrivacyChecked(false);
+      } else if (response.errorMessage) {
+        setClassSubscribeSuccess("");
+        setClassSubscribeError(response.errorMessage);
+      }
+    } finally {
+      setIsClassFormPending(false);
+    }
+  };
+
+  const openSubscriberListModal = () => {
+    setIsSubscriberListModalOpen(true);
+    setSubscriberToken("");
+    setSubscriberListError("");
+    setSubscriberList([]);
+    setHasLoadedSubscriberList(false);
+  };
+
+  const handleLoadSubscriberList = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!danceClassEvent) {
+      return;
+    }
+
+    if (!subscriberToken.trim()) {
+      setSubscriberListError(
+        t("modal.classSubscription.validation.allFieldsRequired"),
+      );
+      return;
+    }
+
+    setIsSubscriberListPending(true);
+    setSubscriberListError("");
+
+    const formData = new FormData();
+    formData.append("classId", danceClassEvent.id);
+    formData.append("token", subscriberToken.trim());
+
+    const response = await getDanceClassSubscribers(formData, locale);
+
+    if (response.errorMessage) {
+      setSubscriberListError(response.errorMessage);
+      setSubscriberList([]);
+      setHasLoadedSubscriberList(false);
+    } else {
+      setSubscriberList(response.subscribers || []);
+      setSubscriberListError("");
+      setHasLoadedSubscriberList(true);
+    }
+
+    setIsSubscriberListPending(false);
+  };
+
+  const formatDateTime = (value: string): string => {
+    const date = new Date(value);
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    const hour = String(date.getHours()).padStart(2, "0");
+    const minute = String(date.getMinutes()).padStart(2, "0");
+    return `${day}.${month}.${year} ${hour}:${minute}`;
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -94,17 +237,7 @@ export default function EventModal({
           <div className="flex flex-col">
             {/* Event title */}
             <h3 className="text-bes-red mb-2 text-2xl font-black">
-              {selectedEventDetails.event.startsWith("Timetable.")
-                ? (() => {
-                    try {
-                      const key = selectedEventDetails.event.substring(10);
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      return (t as any)(key);
-                    } catch {
-                      return selectedEventDetails.event;
-                    }
-                  })()
-                : selectedEventDetails.event}
+              {eventTitle}
             </h3>
 
             {/* Event Details */}
@@ -249,6 +382,131 @@ export default function EventModal({
               </>
             )}
 
+            {canShowClassSubscription && (
+              <div className="mb-6 border-t border-gray-200 pt-4">
+                <button
+                  type="button"
+                  className="bg-bes-red hover:bg-bes-red/90 w-full cursor-pointer rounded-lg px-4 py-2 font-bold text-white transition-colors"
+                  onClick={() => setIsClassFormOpen((prev) => !prev)}
+                  aria-expanded={isClassFormOpen}
+                  aria-controls="dance-class-subscription-form"
+                >
+                  {isClassFormOpen
+                    ? t("modal.classSubscription.cancelButton" as never)
+                    : t("modal.classSubscription.subscribeButton")}
+                </button>
+
+                {isClassFormOpen && (
+                  <div id="dance-class-subscription-form" className="mt-4">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <h4 className="text-bes-red text-lg font-bold">
+                        {t("modal.classSubscription.formTitle")}
+                      </h4>
+                      <button
+                        type="button"
+                        className="text-bes-purple/60 hover:text-bes-purple text-sm font-semibold underline transition-colors focus:outline-none"
+                        onClick={openSubscriberListModal}
+                      >
+                        {t("modal.classSubscription.seeSubscriberListButton")}
+                      </button>
+                    </div>
+
+                    <p className="mb-3 text-sm text-gray-700">
+                      {t("modal.classSubscription.infoLine")}
+                    </p>
+
+                    <form
+                      onSubmit={handleClassSubscriptionSubmit}
+                      className="flex flex-col gap-3"
+                    >
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        minLength={2}
+                        maxLength={100}
+                        className="border-bes-purple text-bes-purple placeholder-bes-purple/70 h-11 w-full rounded-lg border-2 bg-white px-3"
+                        placeholder={t(
+                          "modal.classSubscription.namePlaceholder",
+                        )}
+                      />
+
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        maxLength={320}
+                        autoComplete="email"
+                        spellCheck="false"
+                        className="border-bes-purple text-bes-purple placeholder-bes-purple/70 h-11 w-full rounded-lg border-2 bg-white px-3"
+                        placeholder={t(
+                          "modal.classSubscription.emailPlaceholder",
+                        )}
+                      />
+
+                      <div className="flex items-start gap-2">
+                        <input
+                          type="checkbox"
+                          id="class-privacy-checkbox"
+                          name="class-privacy-checkbox"
+                          checked={classPrivacyChecked}
+                          onChange={(eventTarget) =>
+                            setClassPrivacyChecked(eventTarget.target.checked)
+                          }
+                          className="mt-1 h-4 w-4 shrink-0"
+                        />
+                        <label
+                          htmlFor="class-privacy-checkbox"
+                          className="text-bes-purple text-sm font-semibold"
+                        >
+                          {t("modal.classSubscription.privacyText")}{" "}
+                          <Link
+                            href="/privacy"
+                            className="text-bes-red hover:text-bes-red/80 underline"
+                          >
+                            {t("modal.classSubscription.privacyLink")}
+                          </Link>
+                        </label>
+                      </div>
+
+                      {!classPrivacyChecked && (
+                        <p
+                          className="text-bes-red text-sm"
+                          role="alert"
+                          aria-live="polite"
+                        >
+                          {t(
+                            "modal.classSubscription.validation.privacyRequired",
+                          )}
+                        </p>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={isClassFormPending || !classPrivacyChecked}
+                        className="bg-bes-red hover:bg-bes-red/90 h-11 w-full cursor-pointer rounded-lg text-sm font-bold text-white disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        {isClassFormPending
+                          ? t("modal.classSubscription.submittingButton")
+                          : t("modal.classSubscription.submitButton")}
+                      </button>
+                    </form>
+
+                    {classSubscribeSuccess && (
+                      <p className="bg-bes-purple/10 text-bes-purple mt-3 rounded-lg px-3 py-2 font-bold">
+                        {classSubscribeSuccess}
+                      </p>
+                    )}
+                    {classSubscribeError && (
+                      <p className="bg-bes-red/10 text-bes-red mt-3 rounded-lg px-3 py-2 font-bold">
+                        {classSubscribeError}
+                      </p>
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Close button */}
             <div className="flex justify-end">
               <button
@@ -260,6 +518,110 @@ export default function EventModal({
             </div>
           </div>
         </motion.div>
+
+        {isSubscriberListModalOpen && (
+          <div
+            className="fixed inset-0 z-60 flex items-center justify-center bg-black/40 p-4"
+            onClick={() => setIsSubscriberListModalOpen(false)}
+          >
+            <div
+              className="w-full max-w-md rounded-xl bg-white p-5 shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h4 className="text-bes-red mb-3 text-xl font-bold">
+                {t("modal.classSubscription.subscriberListTitle")}
+              </h4>
+
+              <p className="text-bes-purple/80 mb-3">{eventTitle}</p>
+
+              {!hasLoadedSubscriberList ? (
+                <form onSubmit={handleLoadSubscriberList} className="space-y-3">
+                  <label
+                    className="text-bes-purple font-semibold"
+                    htmlFor="subscriber-token-input"
+                  >
+                    {t("modal.classSubscription.tokenLabel")}
+                  </label>
+                  <input
+                    id="subscriber-token-input"
+                    type="password"
+                    value={subscriberToken}
+                    onChange={(e) => setSubscriberToken(e.target.value)}
+                    placeholder={t("modal.classSubscription.tokenPlaceholder")}
+                    className="border-bes-purple text-bes-purple placeholder-bes-purple/60 h-11 w-full rounded-lg border-2 bg-white px-3"
+                  />
+
+                  {subscriberListError && (
+                    <p className="text-bes-red" role="alert" aria-live="polite">
+                      {subscriberListError}
+                    </p>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={isSubscriberListPending}
+                    className="bg-bes-red hover:bg-bes-red/90 h-11 w-full cursor-pointer rounded-lg font-bold text-white disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    {isSubscriberListPending
+                      ? t("modal.classSubscription.loadingSubscribersButton")
+                      : t("modal.classSubscription.loadSubscribersButton")}
+                  </button>
+                </form>
+              ) : (
+                <div>
+                  {subscriberList.length > 0 ? (
+                    <div className="mb-3 max-h-64 space-y-2 overflow-y-auto pr-1">
+                      {subscriberList.map((subscriber, index) => (
+                        <div
+                          key={`${subscriber.email}-${index}`}
+                          className="rounded-lg border border-gray-200 bg-gray-50 px-3 py-2"
+                        >
+                          <div className="mb-1 flex items-start justify-between gap-3">
+                            <p className="text-bes-purple font-bold">
+                              {subscriber.name}
+                            </p>
+                            <p className="text-sm whitespace-nowrap text-gray-600">
+                              {t("modal.classSubscription.createdAtLabel")}{" "}
+                              {formatDateTime(subscriber.createdAt)}
+                            </p>
+                          </div>
+                          <p className="text-gray-700">{subscriber.email}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-bes-purple/80 mb-3 text-sm">
+                      {t("modal.classSubscription.emptySubscriberList")}
+                    </p>
+                  )}
+
+                  {subscriberList.length > 0 && (
+                    <p className="text-bes-purple mb-3 text-right text-sm font-semibold">
+                      {t("modal.classSubscription.totalSubscribersLabel")}:{" "}
+                      {subscriberList.length}
+                    </p>
+                  )}
+
+                  <button
+                    type="button"
+                    className="bg-bes-red hover:bg-bes-red/90 h-11 w-full cursor-pointer rounded-lg font-bold text-white"
+                    onClick={() => setIsSubscriberListModalOpen(false)}
+                  >
+                    {t("modal.classSubscription.closeSubscriberListButton")}
+                  </button>
+                </div>
+              )}
+
+              {!hasLoadedSubscriberList &&
+                !isSubscriberListPending &&
+                !subscriberListError && (
+                  <p className="text-bes-purple/70 mt-3 text-sm">
+                    {t("modal.classSubscription.subscriberListHint")}
+                  </p>
+                )}
+            </div>
+          </div>
+        )}
       </motion.div>
     </AnimatePresence>
   );

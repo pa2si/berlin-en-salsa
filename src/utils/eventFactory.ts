@@ -84,6 +84,7 @@ export class EventFactory {
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";
+    enableSubscription?: boolean;
     image?: string;
     description?: string;
   }): RawDanceAreaEvent {
@@ -99,6 +100,7 @@ export class EventFactory {
       ...(params.duration && { duration: params.duration }),
       acts: params.acts,
       level: params.level,
+      enableSubscription: params.enableSubscription,
       image: params.image,
       description: params.description,
     };

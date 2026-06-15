@@ -106,6 +106,7 @@ export interface RawDanceAreaEvent extends RawEventWithActs {
   danceAreaType: "class" | "show" | "workshop";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
+  enableSubscription?: boolean; // Show class subscription form in the event modal
 }
 
 /**
@@ -185,6 +186,7 @@ export interface DanceAreaEvent extends EventWithActs {
   danceAreaType: "class" | "show" | "workshop";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
+  enableSubscription?: boolean; // Show class subscription form in the event modal
   duration: number; // Set by timeline config during enrichment
 }
 

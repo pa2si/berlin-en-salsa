@@ -190,18 +190,18 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.nYStyle", //DONE
+            eventId: "Timetable.events.danceClasses.nYStyle", //DONE
           },
 
           {
             time: "15:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.sonCubano", //DONE
+            eventId: "Timetable.events.danceClasses.sonCubano", //DONE
           },
           {
             time: "16:30",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.caliStyle", //DONE
+            eventId: "Timetable.events.danceClasses.caliStyle", //DONE
           },
           {
             time: "18:30",
@@ -223,17 +223,17 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.ruedaDeCasino", //DONE
+            eventId: "Timetable.events.danceClasses.ruedaDeCasino", //DONE
           },
           {
             time: "15:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.chaChaCha", //DONE
+            eventId: "Timetable.events.danceClasses.chaChaCha", //DONE
           },
           {
             time: "17:00",
             duration: 60,
-            eventId: "Timetable.events.danceWorkshops.afroCuban", //DONE
+            eventId: "Timetable.events.danceClasses.afroCuban", //DONE
           },
           {
             time: "18:00",

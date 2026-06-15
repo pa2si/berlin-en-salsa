@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "v3.5.14",
+  "version": "v3.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@neondatabase/serverless": "^1.1.0",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "@vercel/og": "^0.6.8",
     "audit": "^0.0.6",

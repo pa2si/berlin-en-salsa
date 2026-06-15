@@ -1,3 +1,11 @@
+v3.6.0
+
+- implemented a subscribe form for dance classes in the EventModal
+  - db with integrated neon db from vercel
+    - installed neondatabase/serverless (serverless sql)
+  - implemented display list of subscribers in same form with.
+    - only with token
+
 v3.5.14
 
 - no HomeOverlayModal

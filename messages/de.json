@@ -475,10 +475,45 @@
       "together": "zusammen",
       "about": "Über",
       "comment": "Kommentar",
-      "description": "Beschreibung"
+      "description": "Beschreibung",
+      "classSubscription": {
+        "subscribeButton": "Anmelden",
+        "cancelButton": "Abbrechen",
+        "formTitle": "Für diese Klasse anmelden",
+        "namePlaceholder": "Name",
+        "emailPlaceholder": "E-Mail-Adresse",
+        "privacyText": "Ich akzeptiere die",
+        "privacyLink": "Datenschutzrichtlinie",
+        "submitButton": "ANMELDEN",
+        "seeSubscriberListButton": "Teilnehmerliste ansehen",
+        "submittingButton": "Wird gesendet...",
+        "loadSubscribersButton": "Teilnehmer anzeigen",
+        "loadingSubscribersButton": "Lade Teilnehmer...",
+        "closeSubscriberListButton": "Schließen",
+        "subscriberListTitle": "Teilnehmerliste dieser Klasse",
+        "tokenLabel": "Token",
+        "tokenPlaceholder": "Token eingeben",
+        "subscriberListHint": "Nur mit gültigem Token sichtbar.",
+        "emptySubscriberList": "Für diese Klasse gibt es noch keine Anmeldungen.",
+        "totalSubscribersLabel": "Gesamtzahl",
+        "createdAtLabel": "Erstellt:",
+        "updatedAtLabel": "Aktualisiert:",
+        "infoLine": "Zum Abmelden schreibe an: info@berlinensalsa.de",
+        "success": "Vielen Dank! Deine Anmeldung für diese Klasse wurde gespeichert ({email}).",
+        "validation": {
+          "allFieldsRequired": "Bitte fülle alle Felder aus.",
+          "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+          "invalidName": "Bitte gib einen gültigen Namen ein.",
+          "privacyRequired": "Bitte akzeptiere die Datenschutzrichtlinie, um fortzufahren."
+        },
+        "errors": {
+          "generic": "Entschuldigung! Bei der Verarbeitung deiner Kursanmeldung ist ein Problem aufgetreten. Bitte versuche es später erneut.",
+          "invalidToken": "Ungültiger Token für diese Klasse."
+        }
+      }
     },
     "events": {
-      "danceWorkshops": {
+      "danceClasses": {
         "nYStyle": "New York Style",
         "sonCubano": "Son Cubano",
         "caliStyle": "Salsa Caleña, Cali Style",
@@ -486,7 +521,7 @@
         "chaChaCha": "Cha Cha Cha",
         "afroCuban": "Afrocubano"
       },
-      "danceWorkshopTeachers": {
+      "danceClassTeachers": {
         "nYStyle": "Niya",
         "sonCubano": "Punto Cubano Berlín - Yago y Helen",
         "caliStyle": "Julián Meja",
@@ -494,7 +529,7 @@
         "chaChaCha": "Nora",
         "afroCuban": "Lynet Rivero"
       },
-      "danceWorkshopDescriptions": {
+      "danceClassDescriptions": {
         "nYStyle": "Der New Yorker Stil, auch bekannt als \"On2\" oder Mambo, ist einer der elegantesten und musikalischsten Salsa-Stile der Welt. Er entstand in den Straßen und Clubs New Yorks aus der Verschmelzung des kubanischen Son mit dem afroamerikanischen Jazz und zeichnet sich durch seine tiefe Verbindung zum Clave und den betonten Taktzeiten der Musik, seine Eleganz in der Bewegung und seine Ausdrucksstärke im Tanz zu zweit aus. In diesem Workshop erkunden wir die Grundlagen des NY-Stils: das On2-Timing, die Körperhaltung, die Fußarbeit und die Verbindung zwischen Lead und Follow. Eine Stunde offen für alle Niveaus, in der Technik und Sabor stets Hand in Hand gehen.",
         "sonCubano": "In diesem Workshop erkunden wir die Grundlagen des Son Cubano über Musik, Körpersprache und Verbindung im Paartanz. Wir zeigen, wie man den Rhythmus versteht, durch Bewegung kommuniziert und ruhig, natürlich und verbunden tanzt. Eine schöne Einführung in die Essenz des Son: Eleganz, Musikalität und Kommunikation.",
         "caliStyle": "Wir konzentrieren uns auf die authentischsten und ikonischsten Schritte des Caleño-Stils — freie Schritte, die du direkt im sozialen Paartanz einsetzen kannst. Du lernst, die Musik durch ihre starken Akzente und ihre Musikalität zu interpretieren, den Rhythmus zu verstehen, der diesen Stil ausmacht, und ihn auf natürliche Weise mit dem Körper auszudrücken. Eine dynamische, lebendige Stunde, offen für alle Niveaus, in der Musikalität und Caleño-Sabor Hand in Hand gehen.",
@@ -502,7 +537,7 @@
         "chaChaCha": "Der Cha Cha Chá entstand Anfang der 1950er Jahre in Kuba durch den Komponisten und Geiger Enrique Jorrín, der ihn aus dem Danzón-Mambo weiterentwickelte. Sein Name ahmt das charakteristische Geräusch nach, das die Füße beim typischen Dreischritt auf dem Boden erzeugen. Schon bald wurde er zum weltweiten Phänomen und eroberte die Tanzflächen Lateinamerikas, der USA und Europas mit seinem verspielten, eleganten und ausdrucksstarken Rhythmus. Im Gegensatz zu anderen kubanischen Stilen wird der Cha Cha Chá auf die Eins der Musik getanzt, was ihm eine direkte und zugängliche Qualität verleiht — ohne dabei seine tiefe Musikalität zu verlieren. Es ist ein Tanz des Dialogs zwischen zwei Personen: schelmisch, präzise und voller Sabor. In diesem Workshop für alle Niveaus erkunden wir seine historischen Wurzeln, seine rhythmische Struktur und seine grundlegenden Schritte damit du ihn direkt auf die Tanzfläche mitnehmen kannst. Keine Vorkenntnisse erforderlich",
         "afroCuban": "Der Afro-Kubanische Tanz hat seine Wurzeln in den religiösen und kulturellen Traditionen, die afrikanische Völker während der Kolonialzeit in die Karibik mitbrachten. Im Laufe der Jahrhunderte verschmolzen diese Ausdrucksformen mit spanischen und karibeischen Einflüssen und schufen so eine einzigartige Bewegungssprache: lebendig, perkussiv und zutiefst spirituell. Rhythmen wie Rumba und Yambú sowie Gesänge yorubanischen und bantusischen Ursprungs bilden die Grundlage, aus der dieser Tanz atmet und sich weiterentwickelt. In diesem Workshop, der für alle Niveaus offen ist, erkunden wir die Grundlagen der afro-kubanischen Bewegung, die Hüftarbeit, das Körpergewicht, die Verbindung zum Boden und die enge Beziehung zwischen Bewegung und Perkussion. Afro-Kubanischer Tanz ist mehr als eine Technik: Es ist eine Art, den Körper mit voller Bewusstheit, Rhythmus und Freude zu bewohnen. Keine Vorkenntnisse erforderlich. Nur die Lust, sich zu bewegen und in Verbindung zu kommen."
       },
-      "danceWorkshopBioTeachers": {
+      "danceClassBioTeachers": {
         "nYStyle": "Niya wurde in Sofia, Bulgarien geboren, wo ihre tänzerische Reise mit Ballett, Modern Dance und Hip Hop begann. Mit der Zeit entdeckte sie ihre große Leidenschaft: Salsa und ganz besonders Mambo. Als Mitglied eines Salsa-Teams vertrat sie Bulgarien auf internationalen Festivals und sammelte dabei wertvolle Erfahrungen in Salsa, Bachata und Cha Cha Cha. Seit 2023 unterrichtet sie in Berlin. In ihrem Unterricht stehen Koordination, Bewegungsbewusstsein und technische Klarheit im Mittelpunkt. Was sie dabei besonders antreibt: ihre Begeisterung für Mambo weiterzugeben und jeden dazu zu bringen, seine eigene Liebe zur Musik zu entdecken.",
         "sonCubano": "Punto Cubano Berlin entstand aus einer tiefen Liebe zur kubanischen Musik und zum kubanischen Tanz – und dem Wunsch, diese mit Sorgfalt, Qualität und Respekt weiterzugeben. Yago & Helen sind davon überzeugt, dass guter Unterricht den entscheidenden Unterschied macht. Unsere Kurse gehen über Figuren und Schrittfolgen hinaus. Wir konzentrieren uns darauf, wie du der Musik lauschst, wie du mit deinem Partner kommunizierst und wie du dich auf der Tanzfläche präsentierst. Ganz gleich, ob du führst oder folgst – wir holen dich dort ab, wo du gerade stehst. Wir schaffen einen Raum, der warmherzig und inklusiv ist und die Kunst ernst nimmt – ohne dabei starr zu sein. Denn Tanzen soll Freude bereiten.",
         "caliStyle": "Geboren und aufgewachsen in Kolumbien, ist Julian Kultursoziologe und Promotor der Salsa Caleña in Berlin. Er hat dazu beigetragen, diese Kultur durch Unterricht, Shows, Veranstaltungen und kulturelle Vorträge zu vermitteln und weiterzuverbreiten. Seine Art zu unterrichten ist das, was ihn unterscheidet: Er konzentriert sich nicht auf Sequenzen — er lehrt, durch den Tanz zu kommunizieren. Sein Fokus liegt auf dem Akzent, den Signalen, der Intention und dem Gefühl hinter jeder Bewegung, damit der Tanz eine echte Verbindung zwischen zwei Menschen wird und nicht nur eine Choreografie. Er legt außerdem großen Wert darauf, die Mechaniken der Stilfusion zu vermitteln, insbesondere zwischen Salsa Caleña und Salsa L.A (On’1). Jede Stunde ist eine Erfahrung, die über die Schritte hinausgeht, es ist Technik, Musikalität und Geschichte, vermittelt aus den Wurzeln des Stils.",
