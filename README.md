@@ -1,3 +1,7 @@
+v3.6.1
+
+- onw show / hide button in token input for list of subscribers
+
 v3.6.0
 
 - implemented a subscribe form for dance classes in the EventModal

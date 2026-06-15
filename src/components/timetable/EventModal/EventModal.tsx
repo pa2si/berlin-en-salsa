@@ -37,6 +37,8 @@ export default function EventModal({
   const [isSubscriberListModalOpen, setIsSubscriberListModalOpen] =
     useState(false);
   const [subscriberToken, setSubscriberToken] = useState("");
+  const [isSubscriberTokenVisible, setIsSubscriberTokenVisible] =
+    useState(false);
   const [isSubscriberListPending, setIsSubscriberListPending] = useState(false);
   const [subscriberListError, setSubscriberListError] = useState("");
   const [hasLoadedSubscriberList, setHasLoadedSubscriberList] = useState(false);
@@ -159,6 +161,7 @@ export default function EventModal({
   const openSubscriberListModal = () => {
     setIsSubscriberListModalOpen(true);
     setSubscriberToken("");
+    setIsSubscriberTokenVisible(false);
     setSubscriberListError("");
     setSubscriberList([]);
     setHasLoadedSubscriberList(false);
@@ -542,14 +545,66 @@ export default function EventModal({
                   >
                     {t("modal.classSubscription.tokenLabel")}
                   </label>
-                  <input
-                    id="subscriber-token-input"
-                    type="password"
-                    value={subscriberToken}
-                    onChange={(e) => setSubscriberToken(e.target.value)}
-                    placeholder={t("modal.classSubscription.tokenPlaceholder")}
-                    className="border-bes-purple text-bes-purple placeholder-bes-purple/60 h-11 w-full rounded-lg border-2 bg-white px-3"
-                  />
+                  <div className="relative">
+                    <input
+                      id="subscriber-token-input"
+                      type={isSubscriberTokenVisible ? "text" : "password"}
+                      value={subscriberToken}
+                      onChange={(e) => setSubscriberToken(e.target.value)}
+                      placeholder={t(
+                        "modal.classSubscription.tokenPlaceholder",
+                      )}
+                      className="border-bes-purple text-bes-purple placeholder-bes-purple/60 h-11 w-full rounded-lg border-2 bg-white px-3 pr-20"
+                    />
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setIsSubscriberTokenVisible((current) => !current)
+                      }
+                      className="text-bes-purple hover:text-bes-red absolute top-1/2 right-3 -translate-y-1/2"
+                      aria-label={
+                        isSubscriberTokenVisible
+                          ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            (t as any)(
+                              "modal.classSubscription.hideTokenButton",
+                            )
+                          : // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                            (t as any)(
+                              "modal.classSubscription.showTokenButton",
+                            )
+                      }
+                    >
+                      {isSubscriberTokenVisible ? (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className="h-5 w-5"
+                          aria-hidden="true"
+                        >
+                          <path d="M3 3l18 18" />
+                          <path d="M10.58 10.58a2 2 0 102.83 2.83" />
+                          <path d="M9.88 5.09A9.77 9.77 0 0112 4c5 0 9.27 3.11 11 8-1.01 2.84-3.14 5.04-5.88 6.32" />
+                          <path d="M6.61 6.61C4.62 8 3.12 9.87 2 12c.72 1.71 1.81 3.23 3.17 4.46" />
+                        </svg>
+                      ) : (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          className="h-5 w-5"
+                          aria-hidden="true"
+                        >
+                          <path d="M2 12s3.5-8 10-8 10 8 10 8-3.5 8-10 8-10-8-10-8z" />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
 
                   {subscriberListError && (
                     <p className="text-bes-red" role="alert" aria-live="polite">

@@ -493,6 +493,8 @@
         "subscriberListTitle": "Teilnehmerliste dieser Klasse",
         "tokenLabel": "Token",
         "tokenPlaceholder": "Token eingeben",
+        "showTokenButton": "Anzeigen",
+        "hideTokenButton": "Verbergen",
         "subscriberListHint": "Nur mit gültigem Token sichtbar.",
         "emptySubscriberList": "Für diese Klasse gibt es noch keine Anmeldungen.",
         "totalSubscribersLabel": "Gesamtzahl",

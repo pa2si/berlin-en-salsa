@@ -493,6 +493,8 @@
         "subscriberListTitle": "Lista de suscriptores de esta clase",
         "tokenLabel": "Token",
         "tokenPlaceholder": "Introduce el token",
+        "showTokenButton": "Mostrar",
+        "hideTokenButton": "Ocultar",
         "subscriberListHint": "Solo visible con token válido.",
         "emptySubscriberList": "Todavía no hay inscripciones para esta clase.",
         "totalSubscribersLabel": "Total",
