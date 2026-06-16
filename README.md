@@ -1,3 +1,7 @@
+v3.6.2
+
+- implemented image priotizing for faster image loading on mobile to optimize LCP for SectionOne and SectionFour
+
 v3.6.1
 
 - onw show / hide button in token input for list of subscribers

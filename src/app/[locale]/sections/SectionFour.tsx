@@ -115,19 +115,16 @@ const SectionFour = () => {
   });
 
   const renderThumbnails = (isDesktop: boolean = false) => {
-    // 1. Define a single animation for the entire wrapper
     const containerAnimation = isDesktop
       ? {
           initial: { opacity: 0, y: 30 },
           whileInView: { opacity: 1, y: 0 },
           viewport: { once: true, margin: "200px" },
-          // Add 'as const' right here:
           transition: { duration: 0.7, ease: "easeOut" as const },
         }
       : {};
 
     return (
-      // 2. Change the outer div to a motion.div and apply the animation here
       <motion.div
         className="mt-auto w-full overflow-hidden bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm"
         {...containerAnimation}
@@ -138,8 +135,6 @@ const SectionFour = () => {
             const isSelected = pairIndex === currentIndex;
 
             return (
-              // 3. Revert this back to a standard <button> (or a static motion.button)
-              // to strip away the heavy per-item staggered overhead.
               <button
                 key={src}
                 onClick={() => setCurrentIndex(pairIndex)}
@@ -182,6 +177,9 @@ const SectionFour = () => {
             src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
             alt={t("title")}
             className="w-[55vw] max-w-sm md:w-[45vw] md:max-w-[300px] landscape:h-[clamp(50px,16vh,90px)] landscape:w-auto lg:landscape:mb-4 lg:landscape:h-auto lg:landscape:w-[300px]"
+            // 1. Lazy load the section title SVG on mobile
+            loading="lazy"
+            decoding="async"
           />
 
           <div
@@ -236,9 +234,10 @@ const SectionFour = () => {
                   }
                   alt={`Merch item ${currentIndex + 1}`}
                   className="max-h-full max-w-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
+                  // 2. Swapped to lazy and async to protect startup network performance
+                  loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -267,9 +266,10 @@ const SectionFour = () => {
                   }
                   alt={`Merch item ${currentIndex + 2}`}
                   className="max-h-full max-w-full object-contain"
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="sync"
+                  // 3. Swapped to lazy and async to protect startup network performance
+                  loading="lazy"
+                  fetchPriority="low"
+                  decoding="async"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
@@ -335,6 +335,9 @@ const SectionFour = () => {
               src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
               alt={t("title")}
               className="mx-auto w-[clamp(18rem,40vh,38rem)] max-w-full object-contain"
+              // 4. Desktop title optimization
+              loading="lazy"
+              decoding="async"
             />
             <p className="text-bes-amber text-center leading-snug font-semibold xl:text-[clamp(1.3rem,3.2vh,2rem)]">
               {t("description1")}
