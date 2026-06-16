@@ -1,3 +1,7 @@
+v3.6.3
+
+- FestivalBanner.tsx adapted to optimize LCP for mobile
+
 v3.6.2
 
 - implemented image priotizing for faster image loading on mobile to optimize LCP for SectionOne and SectionFour
