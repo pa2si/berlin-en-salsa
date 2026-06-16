@@ -1,3 +1,7 @@
+v3.6.4
+
+- In SectionOne the bes-section-1-bg.webp is now with Image Component
+
 v3.6.3
 
 - FestivalBanner.tsx adapted to optimize LCP for mobile
