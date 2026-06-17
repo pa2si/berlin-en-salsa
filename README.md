@@ -1,3 +1,8 @@
+v3.6.6
+
+- added Colaborations section
+- refactured Footer and import now Financed Section as component
+
 v3.6.5
 
 - added more Linnks in the Footer.

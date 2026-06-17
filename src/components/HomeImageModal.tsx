@@ -67,11 +67,7 @@ export default function HomeImageModal() {
               </svg>
             </button>
 
-            <img
-              src="/abran-paso.webp"
-              alt="Festival pass"
-              className="h-full w-full object-contain"
-            />
+            <img alt="Festival pass" className="h-full w-full object-contain" />
           </motion.div>
         </motion.div>
       )}

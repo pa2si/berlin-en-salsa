@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { LinksModal } from "./LinksModal";
+import { Collaborations } from "./Collaborations";
+import { Financed } from "./Financed";
 import { useTranslations, useLocale } from "next-intl";
 import { footerLinks } from "../data/footerLinks";
 
@@ -11,54 +12,25 @@ export const Footer = () => {
   const [isLinksModalOpen, setIsLinksModalOpen] = useState(false);
   const t = useTranslations("Navigation");
   const locale = useLocale();
-  const fundingTitle = locale === "de" ? "Gefördert durch" : "Financiado por";
 
   return (
     <footer className="text-bes-red py-8 text-center lg:py-6">
       <div className="container mx-auto px-4">
-        <section
-          id="footer-funding"
-          className="border-bes-red/20 mb-7 border-b pb-6"
-        >
-          <h3 className="mb-4 text-left text-sm font-semibold tracking-wide sm:text-base">
-            {fundingTitle}
-          </h3>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-nowrap sm:gap-8">
-            <a
-              href="https://www.musicboard-berlin.de/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contents"
-            >
-              <motion.img
-                src="/musicbboard-w-text.webp"
-                alt="Musicboard Berlin"
-                className="h-auto w-[78%] max-w-[380px] object-contain sm:w-[50%]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              />
-            </a>
-            <a
-              href="https://www.brot-fuer-die-welt.de/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contents"
-            >
-              <motion.img
-                src="/brot-fuer-die-welt-logo.webp"
-                alt="Brot fuer die Welt"
-                className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%]"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              />
-            </a>
+        {/* --- Top Sections (Financed & Collaborations) --- */}
+        {/* Switched to xl:flex-row so it only goes side-by-side on extra large screens */}
+        <div className="border-bes-red/20 mb-7 flex flex-col gap-12 border-b pb-8 xl:flex-row xl:items-start xl:gap-10">
+          {/* Left Column - Aligns with Subscribe Form on xl */}
+          <div className="flex w-full flex-col xl:w-1/2">
+            <Financed />
           </div>
-        </section>
 
+          {/* Right Column - Aligns with Map on xl */}
+          <div className="flex w-full flex-col xl:w-1/2">
+            <Collaborations />
+          </div>
+        </div>
+
+        {/* --- Links Section --- */}
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm font-medium md:gap-4">
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 lg:flex-nowrap">
             {footerLinks.map((link, index) => {
@@ -117,6 +89,7 @@ export const Footer = () => {
           © {new Date().getFullYear()} Berlin En Salsa. {t("copyright")}
         </div>
       </div>
+
       <LinksModal
         isOpen={isLinksModalOpen}
         onClose={() => setIsLinksModalOpen(false)}

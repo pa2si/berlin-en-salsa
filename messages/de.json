@@ -119,7 +119,15 @@
     "facebook": "Facebook",
     "instagram": "Instagram",
     "links": "Links",
-    "copyright": "Alle Rechte vorbehalten."
+    "copyright": "Alle Rechte vorbehalten.",
+    "collaborationsTitle": "Kollaborationen"
+  },
+  "Collaborations": {
+    "title": "Kolaborationen",
+    "roses": "Zusammenarbeit mit unserem Awareness-Team.",
+    "club": "Pimp your T-Shirt Stand",
+    "heliconia": "Interview mit BeS",
+    "ln": "Pressearbeit"
   },
   "Banners": {
     "countdown": {
