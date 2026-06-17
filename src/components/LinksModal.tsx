@@ -54,11 +54,21 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: "www.salsa-berlin.de",
       image: "/salsa-berlin-468X98.gif",
     },
-    // {
-    //   url: "https://www.musicboard-berlin.de/",
-    //   title: "Musicboard Berlin GmbH",
-    //   image: "/musicboard_logo_rgb.webp",
-    // },
+    {
+      url: "https://substack.com/@laheliconiarevista",
+      title: "La Heliconia revista",
+      image: "/heliconia.webp",
+    },
+    {
+      url: "https://www.migrationsrat.de/comein/roses-of-care-awareness-kollektiv/",
+      title: "Roses of Care Awareness Collective",
+      image: "/roses-of-care.webp",
+    },
+    {
+      url: "https://www.instagram.com/clubdebaile__/",
+      title: "Club de Baile Collective",
+      image: "/club-de-baile.webp",
+    },
     // {
     //   url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",
     //   title: "THF Berlin En Salsa Event",

@@ -1,3 +1,8 @@
+v3.6.5
+
+- added more Linnks in the Footer.
+- financed logos are now links
+
 v3.6.4
 
 - In SectionOne the bes-section-1-bg.webp is now with Image Component
