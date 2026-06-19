@@ -48,7 +48,7 @@ export const Collaborations = () => {
   return (
     <section id="footer-collaborations" className="w-full">
       {/* Centered the title */}
-      <h3 className="mb-5 text-center text-2xl font-semibold tracking-wide">
+      <h3 className="mb-6 text-center text-2xl font-semibold tracking-wide">
         {t("title")}
       </h3>
 
@@ -64,7 +64,7 @@ export const Collaborations = () => {
             <motion.img
               src={collab.image}
               alt={`${collab.name} logo`}
-              className="h-16 w-16 rounded-full object-cover shadow-sm transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-24 lg:w-24 xl:h-16 xl:w-16 2xl:h-24 2xl:w-24"
+              className="h-16 w-16 rounded-full object-cover shadow-sm transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-24 lg:w-24 xl:h-20 xl:w-20 2xl:h-24 2xl:w-24"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

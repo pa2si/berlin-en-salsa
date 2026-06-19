@@ -1,3 +1,7 @@
+v3.6.9
+
+- more minor ui changes for Colaborations and Financed
+
 v3.6.8
 
 - Aviatrix material in Timetable done

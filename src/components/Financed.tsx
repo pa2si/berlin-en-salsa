@@ -25,7 +25,7 @@ export const Financed = () => {
           <motion.img
             src="/musicbboard-w-text.webp"
             alt="Musicboard Berlin"
-            className="h-auto w-[78%] max-w-[380px] object-contain sm:w-[50%] xl:w-full xl:max-w-60 2xl:max-w-[380px]"
+            className="h-auto w-[78%] max-w-[380px] object-contain sm:w-[50%] xl:w-full xl:max-w-[320px] 2xl:max-w-[380px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -41,7 +41,7 @@ export const Financed = () => {
           <motion.img
             src="/brot-fuer-die-welt-logo.webp"
             alt="Brot fuer die Welt"
-            className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%] xl:w-full xl:max-w-[180px] 2xl:max-w-[280px]"
+            className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%] xl:w-full xl:max-w-60 2xl:max-w-[280px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
