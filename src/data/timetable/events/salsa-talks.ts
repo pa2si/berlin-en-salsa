@@ -71,7 +71,7 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         name: "Timetable.events.aviatrix.diablasFinas.guest",
         role: "guest",
         bio: "Timetable.events.aviatrix.diablasFinas.bio",
-        image: "/christian.webp",
+        image: "/diablas-finas.webp",
       }),
     ],
     artistDiscussed: "Timetable.events.aviatrix.diablasFinas.artist",
@@ -80,84 +80,76 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/lo-dice-todo.webp",
+        image: "/diablas-finas-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/christian.webp",
+        image: "/diablas-finas.webp",
         caption: "Timetable.events.aviatrix.diablasFinas.guest",
       }),
     ],
   }),
 
-  // Aviatrix - Raicez Koncretaz
+  // Aviatrix - Bongo
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.saturday.aviatrixRaicez.title",
+    title: "Timetable.events.aviatrix.bongo.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.renatrix",
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.raicezKoncretaz",
+        name: "Timetable.events.aviatrix.bongo.guest",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.saturday.aviatrixRaicez.bio",
-        image: "/raicez-concretaz.webp",
+        bio: "Timetable.events.aviatrix.bongo.bio",
+        image: "/bongo.webp",
       }),
     ],
-    artistDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixRaicez.artist",
-    recordDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixRaicez.record",
-    moderatorComment:
-      "Timetable.events.salsaTalks.saturday.aviatrixRaicez.comment",
+    artistDiscussed: "Timetable.events.aviatrix.bongo.artist",
+    recordDiscussed: "Timetable.events.aviatrix.bongo.record",
+    moderatorComment: "Timetable.events.aviatrix.bongo.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/francisco-aguabella.webp",
-        caption: "Timetable.events.artists.franciscoAguabella",
+        image: "/bongo-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/raicez-concretaz.webp",
-        caption: "Timetable.events.artists.raicezKoncretaz",
+        image: "/bongo.webp",
+        caption: "Timetable.events.aviatrix.bongo.guest",
       }),
     ],
   }),
 
-  // Aviatrix - DJ MC0LD
+  // Aviatrix - Daylé
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.title",
+    title: "Timetable.events.aviatrix.dayle.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.rodoLeFou",
+        name: "Timetable.events.artists.renatrix",
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.djMc0ld",
+        name: "Timetable.events.aviatrix.dayle.guest",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.bio",
-        image: "/dj-mc0ld.webp",
+        bio: "Timetable.events.aviatrix.dayle.bio",
+        image: "/dayle-aviatrix.webp",
       }),
     ],
-    artistDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.artist",
-    recordDiscussed:
-      "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.record",
-    moderatorComment:
-      "Timetable.events.salsaTalks.saturday.aviatrixMc0ld.comment",
+    artistDiscussed: "Timetable.events.aviatrix.dayle.artist",
+    recordDiscussed: "Timetable.events.aviatrix.dayle.record",
+    moderatorComment: "Timetable.events.aviatrix.dayle.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/frankie-dante.jpg",
-        caption: "Timetable.events.artists.frankieDante",
+        image: "/dayle-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/dj-mc0ld.webp",
-        caption: "Timetable.events.artists.djMc0ld",
+        image: "/dayle-aviatrix.webp",
+        caption: "Timetable.events.aviatrix.dayle.guest",
       }),
     ],
   }),
@@ -184,9 +176,9 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
 
   // ===== SUNDAY EVENTS =====
 
-  // Aviatrix - Suena Chelo
+  // Aviatrix - Amantes del Wax
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.title",
+    title: "Timetable.events.aviatrix.amantesDelWax.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
@@ -194,33 +186,31 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.suenaChelo",
+        name: "Timetable.events.aviatrix.amantesDelWax.guest",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.bio",
-        image: "/suena-chelo.webp",
+        bio: "Timetable.events.aviatrix.amantesDelWax.bio",
+        image: "/amantes-del-wax.webp",
       }),
     ],
-    artistDiscussed:
-      "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.artist",
-    recordDiscussed:
-      "Timetable.events.salsaTalks.sunday.aviatrixSuenaChelo.record",
+    artistDiscussed: "Timetable.events.aviatrix.amantesDelWax.artist",
+    recordDiscussed: "Timetable.events.aviatrix.amantesDelWax.record",
+    moderatorComment: "Timetable.events.aviatrix.amantesDelWax.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/suena-chelo.webp",
-        caption: "Timetable.events.artists.suenaChelo",
+        image: "/amantes-del-wax-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/the-hustler.webp",
-        caption: "Timetable.events.artists.theHustler",
+        image: "/amantes-del-wax.webp",
+        caption: "Timetable.events.aviatrix.amantesDelWax.guest",
       }),
     ],
   }),
 
-  // Aviatrix - Dracaena
+  // Aviatrix - Anacaona
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.sunday.aviatrixDracaena.title",
+    title: "Timetable.events.aviatrix.anacaona.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
@@ -228,35 +218,30 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.dracaena",
+        name: "Timetable.events.aviatrix.anacaona.guest",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.sunday.aviatrixDracaena.bio",
-        image: "/dracaena-charla.webp",
+        bio: "Timetable.events.aviatrix.anacaona.bio",
+        image: "/anacaona.webp",
       }),
     ],
-    artistDiscussed:
-      "Timetable.events.salsaTalks.sunday.aviatrixDracaena.artist",
-    recordDiscussed:
-      "Timetable.events.salsaTalks.sunday.aviatrixDracaena.record",
-    moderatorComment:
-      "Timetable.events.salsaTalks.sunday.aviatrixDracaena.comment",
+    artistDiscussed: "Timetable.events.aviatrix.anacaona.artist",
+    recordDiscussed: "Timetable.events.aviatrix.anacaona.record",
+    moderatorComment: "Timetable.events.aviatrix.anacaona.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/dracaena-charla.webp",
-        caption: "Timetable.events.artists.dracaena",
+        image: "/anacaona-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/cielo-de-tambores.webp",
-        caption: "Timetable.events.artists.cieloDeTambores",
+        image: "/anacaona.webp",
+        caption: "Timetable.events.aviatrix.anacaona.guest",
       }),
     ],
   }),
-
-  // Aviatrix - Enilce Feikes
+  // Aviatrix - Dayán
   EventFactory.createAviatrixTalk({
-    title: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.title",
+    title: "Timetable.events.aviatrix.dayan.title",
     area: "salsa-talks",
     acts: [
       EventFactory.createAct({
@@ -264,26 +249,24 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         role: "moderator",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.artists.enilceFeikes",
+        name: "Timetable.events.aviatrix.dayan.guest",
         role: "guest",
-        bio: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.bio",
-        image: "/enilce.webp",
+        bio: "Timetable.events.aviatrix.dayan.bio",
+        image: "/dayan.webp",
       }),
     ],
-    artistDiscussed: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.artist",
-    recordDiscussed: "Timetable.events.salsaTalks.sunday.aviatrixEnilce.record",
-    moderatorComment:
-      "Timetable.events.salsaTalks.sunday.aviatrixEnilce.comment",
+    artistDiscussed: "Timetable.events.aviatrix.dayan.artist",
+    recordDiscussed: "Timetable.events.aviatrix.dayan.record",
+    moderatorComment: "Timetable.events.aviatrix.dayan.comment",
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/enilce.webp",
-        caption: "Timetable.events.artists.enilceFeikes",
+        image: "/dayan-disco.webp",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/joe-arroyo.jpg",
-        caption: "Timetable.events.artists.joeArroyo",
+        image: "/dayan.webp",
+        caption: "Timetable.events.aviatrix.dayan.guest",
       }),
     ],
   }),

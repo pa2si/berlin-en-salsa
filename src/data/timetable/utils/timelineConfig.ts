@@ -295,20 +295,20 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "14:00",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.diablasFinas.title", //text done, MISSING IMAGE OF ARTITS PLACEHOLDER
+            tba: false,
+            eventId: "Timetable.events.aviatrix.diablasFinas.title", // DONE
           },
           {
             time: "15:00",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.bongo.title", // PLACEHOLDER
+            tba: false,
+            eventId: "Timetable.events.aviatrix.bongo.title", // DONE
           },
           {
             time: "16:00",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.dayle.title",
+            tba: false,
+            eventId: "Timetable.events.aviatrix.dayle.title", // DONE
           },
           {
             time: "16:30",
@@ -324,20 +324,20 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "13:00",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.leoMolina.title",
+            tba: false,
+            eventId: "Timetable.events.aviatrix.amantesDelWax.title", // DONE
           },
           {
             time: "13:30",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.anacaona.title",
+            tba: false,
+            eventId: "Timetable.events.aviatrix.anacaona.title", // DONE
           },
           {
             time: "14:00",
             duration: 30,
-            tba: true,
-            eventId: "Timetable.events.aviatrix.dianaGil.title",
+            tba: false,
+            eventId: "Timetable.events.aviatrix.dayan.title", // DONE
           },
           {
             time: "15:00",

@@ -1,3 +1,9 @@
+v3.6.7
+
+- Aviatrix material in Timetable done
+- Colabs and Financed Section redesigned
+- new Link in Linklist in Footer
+
 v3.6.6
 
 - added Colaborations section

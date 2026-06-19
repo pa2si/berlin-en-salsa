@@ -17,16 +17,15 @@ export const Footer = () => {
     <footer className="text-bes-red py-8 text-center lg:py-6">
       <div className="container mx-auto px-4">
         {/* --- Top Sections (Financed & Collaborations) --- */}
-        {/* Switched to xl:flex-row so it only goes side-by-side on extra large screens */}
-        <div className="border-bes-red/20 mb-7 flex flex-col gap-12 border-b pb-8 xl:flex-row xl:items-start xl:gap-10">
-          {/* Left Column - Aligns with Subscribe Form on xl */}
-          <div className="flex w-full flex-col xl:w-1/2">
-            <Financed />
-          </div>
-
-          {/* Right Column - Aligns with Map on xl */}
-          <div className="flex w-full flex-col xl:w-1/2">
+        {/* Switched back to flex-col for all screens, added items-center to centralize */}
+        <div className="border-bes-red/20 mb-7 flex flex-col items-center gap-12 border-b pb-8">
+          {/* Collaborations Wrapper */}
+          <div className="flex w-full max-w-5xl flex-col items-center">
             <Collaborations />
+          </div>
+          {/* Financed Wrapper */}
+          <div className="flex w-full max-w-4xl flex-col items-center">
+            <Financed />
           </div>
         </div>
 

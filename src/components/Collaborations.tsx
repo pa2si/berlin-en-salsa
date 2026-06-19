@@ -7,8 +7,6 @@ import { useTranslations } from "next-intl";
 export const Collaborations = () => {
   const t = useTranslations("Collaborations");
 
-  // By moving the array INSIDE the component, we can call t() directly!
-  // No need for strict types, interfaces, or "as any".
   const collaborationsData = [
     {
       id: 1,
@@ -26,13 +24,20 @@ export const Collaborations = () => {
     },
     {
       id: 3,
+      name: "Aviatrix",
+      caption: t("aviatrix"),
+      image: "/aviatrix.webp",
+      url: "https://example.com",
+    },
+    {
+      id: 4,
       name: "La Heliconia revista",
       caption: t("heliconia"),
       image: "/heliconia.webp",
       url: "https://substack.com/@laheliconiarevista",
     },
     {
-      id: 4,
+      id: 5,
       name: "Lateinamerika Nachrichten",
       caption: t("ln"),
       image: "/ln.webp",
@@ -42,11 +47,12 @@ export const Collaborations = () => {
 
   return (
     <section id="footer-collaborations" className="w-full">
-      <h3 className="mb-4 text-left text-sm font-semibold tracking-wide sm:mb-2 sm:text-base">
+      {/* Centered the title */}
+      <h3 className="mb-4 text-center font-semibold tracking-wide">
         {t("title")}
       </h3>
 
-      <div className="grid grid-cols-2 gap-x-2 gap-y-8 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-8 lg:gap-10 xl:grid xl:grid-cols-4 xl:gap-4 2xl:gap-6">
+      <div className="grid grid-cols-3 gap-x-2 gap-y-8 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-8 lg:gap-10 xl:grid xl:grid-cols-5 xl:gap-4 2xl:gap-6">
         {collaborationsData.map((collab, index) => (
           <a
             key={collab.id}
@@ -58,7 +64,7 @@ export const Collaborations = () => {
             <motion.img
               src={collab.image}
               alt={`${collab.name} logo`}
-              className="h-20 w-20 rounded-full object-cover shadow-sm transition-transform duration-300 group-hover:scale-105 sm:h-24 sm:w-24 xl:h-16 xl:w-16 2xl:h-24 2xl:w-24"
+              className="h-16 w-16 rounded-full object-cover shadow-sm transition-transform duration-300 group-hover:scale-105 sm:h-20 sm:w-20 lg:h-24 lg:w-24 xl:h-16 xl:w-16 2xl:h-24 2xl:w-24"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -73,7 +79,6 @@ export const Collaborations = () => {
                 {collab.name}
               </h4>
               <p className="text-bes-purple mt-1 line-clamp-3 text-sm opacity-80">
-                {/* Just render the pre-translated string! */}
                 {collab.caption}
               </p>
             </div>

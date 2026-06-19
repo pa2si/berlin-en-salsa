@@ -124,10 +124,11 @@
   },
   "Collaborations": {
     "title": "Colaboraciones",
-    "roses": "Colaboración con nuestro equipo de awareness.",
-    "club": "Pimp your T-Shirt servicio",
-    "heliconia": "Entrevista de BeS.",
-    "ln": "Trabajo de prensa"
+    "roses": "Awareness",
+    "club": "Pimp your T-Shirt",
+    "heliconia": "Cobertura y prensa",
+    "ln": "Prensa",
+    "aviatrix": "Listening Sessions"
   },
   "Banners": {
     "countdown": {
@@ -684,66 +685,51 @@
       "aviatrix": {
         "diablasFinas": {
           "title": "Aviatrix & Diablas Finas",
-          "artist": "GRUPO EXPERIMENTAL NUEVAYORQUINO",
-          "record": "LO DICE TODO",
+          "artist": "Grupo Folklórico y Experimental Nuevayorquino",
+          "record": "Lo dice todo",
           "guest": "Diablas Finas",
           "bio": "Diablas Finas es una costeñita del Pacífico mexicano con base en Berlín. Selectora y apasionada del mundo sonoro, va jugando al vaivén de ritmos donde la tradición se funde con la psicodelia y la travesura. Rastrea músicas que florecen en la diáspora, músicas viajantes que cargan memoria, identidad y corazón.",
           "comment": "Elegí “Lo dice todo” (1976) de Grupo Folklórico y Experimental Nuevayorquino porque nació como un acto de resistencia colectiva. A mediados de los 70, cuando la salsa se volvía fórmula y producto, Grupo Folklórico recuperó el espíritu comunitario de sus raíces, invocando el alma yoruba del tambor, volvió al batá, a la profundidad afrocaribeña, y la fusionó con el jazz y el sonido del Bronx. Este fue el primer disco de salsa que compré, en el puestito de @basuritasrecords en la Ciudad de México, como recomendación suya. Quedé enamorada al oírlo por primera vez."
         },
         "bongo": {
           "title": "Aviatrix & Bongo",
-          "artist": "",
-          "record": "",
-          "bio": "",
-          "comment": ""
+          "artist": "Markolino Dimond",
+          "record": "Brujeria",
+          "guest": "Bongo",
+          "bio": "Hebert Asprilla, conocido en la pista de baile como DJ Bongo, nació en Buenaventura, Colombia, y llegó a Berlín hace más de 25 años. Desde entonces forma parte del colectivo La Regla, con el que ha impulsado la cultura latina en la ciudad a través de una propuesta que, desde sus inicios, abrió espacio a sonidos distintos a los que entonces dominaban la escena en Alemania y particularmente en Berlín: Latin Rock, Latin Hip Hop y Latin Ska, en un contexto marcado por la samba brasileña, la salsa cubana y los sonidos africanos. Con el tiempo, ese proyecto ha evolucionado y se ha adaptado a las sonoridades más contemporáneas, creando una comunidad —o quizá una gran familia— que no deja de crecer. Actualmente, Hebert está produciendo un documental sobre la vida del pianista Markolino Dimond",
+          "comment": "He elegido a Markolino, y especialmente este álbum, porque estoy produciendo y grabando un documental sobre su historia: una vida insólita, maravillosa y al mismo tiempo triste, la de un genio olvidado. Markolino es un músico profundamente querido dentro de la comunidad salsera, tanto entre bailadores como entre especialistas, y aun así, por increíble que parezca, se sabe muy poco de su historia personal. Cuando se habla de él, casi siempre se insiste en sus adicciones y descalabros, pero casi nunca se le hace justicia a su lado genial, a su enorme habilidad musical para componer salsa desde la otra orilla y al filo de la navaja, en una época en la que había que sobrevivir como fuera. Markolino es la banda sonora de aquella Nueva York de los años 70, el sonido de una transición cruda y vibrante. Su piano nos revela más de lo que los pies pueden bailar: estrategias, dolor, ironía, humor y una sensibilidad que atraviesa décadas. En este festival de salsa, voy a presentar algunas canciones de Brujería como un homenaje a este pianista, al margen de tópicos y rescatando su legado como uno de los grandes creadores de la salsa brava de Nueva York."
         },
         "dayle": {
           "title": "Aviatrix & Daylé",
-          "artist": "",
-          "record": "",
-          "bio": "",
-          "comment": ""
+          "artist": "Juan Pablo Torres",
+          "record": "Super Son",
+          "guest": "Daylé",
+          "bio": "Daylé es una selectora de vinilos latinoamericanos y cubanos, con una colección que también abarca sonoridades y generos de todo el mundo. Lleva a la consola sets explosivos, llenos de energía y pensados para hacer bailar, sudar y desatarse, creando momentos de unión entre el público, el cual se convierte en protagonista. Ha tocado en numerosos clubes en Italia y ha participado en dos ediciones del Festival del Vinilo en La Habana y en Luchando Music. Es cofundadora del proyecto La Azotea de la India, un espacio intercultural para DJs de vinilos y artistas visuales, y además un lugar para educar a los niños del barrio y brindarles momentos de diversión.",
+          "comment": "Cuando pensamos en la riqueza de la música cubana y en cómo el son ha marcado generaciones, hay un nombre que siempre me viene a la mente: Juan Pablo Torres. Trombonista, arreglista y compositor, su figura es profundamente respetada tanto en Cuba como en la escena internacional. Elegí hablar de su disco Algo Nuevo Super Son porque siento que ahí se condensa su espíritu inquieto y creativo. Yo estoy enamorada de sus experimentos: cómo juega con la trompeta y el trombón, cómo integra la voz, las percusiones y hasta el sintetizador para abrir caminos nuevos dentro de un género que ya llevaba décadas consolidado. Para mí, su trabajo fue fundamental en el desarrollo de la música cubana. No se conformó con repetir fórmulas: buscó expandir el son, darle nuevas texturas y mostrar que nuestra tradición podía dialogar con la modernidad sin perder su raíz. Hablar de este disco es hablar de un momento clave en nuestra historia musical, y también de la valentía de un artista que supo arriesgarse para que la música cubana siguiera creciendo."
         },
-        "leoMolina": {
-          "title": "Aviatrix & Leo Malina",
-          "artist": "",
-          "record": "",
-          "bio": "",
-          "comment": ""
+        "amantesDelWax": {
+          "title": "Aviatrix & Amantes del Wax",
+          "artist": "Dimensión Latina",
+          "record": "Dimensión Latina ´75",
+          "guest": "Amantes del Wax",
+          "bio": "Detrás de Amantes del Wax hay un coleccionista y melómano venezolano arraigado en Frankfurt, apasionado por el vinilo y sonidos como el boogaloo, la descarga y la salsa dura. El proyecto nace del amor por discos con historia y por la experiencia única de escuchar música en wax, con tiempo y atención. ",
+          "comment": "Escogí Dimensión Latina 75 porque representa una época dorada de la salsa venezolana: fuerza, sabor y elegancia al mismo tiempo. Es un disco con una energía increíble, arreglos brutales y una conexión muy especial con mis raíces y con el sonido que marcó generaciones."
         },
         "anacaona": {
           "title": "Aviatrix & Anacaona",
-          "artist": "",
-          "record": "",
-          "bio": "",
-          "comment": ""
+          "artist": "Perucho Torcat",
+          "record": "Homenaje a Perucho en Nueva York",
+          "guest": "Anacaona",
+          "bio": "La hija pródiga y bruja de Caracas —impulsada por la fuerte influencia de su herencia familiar cubana y profundamente conectada a sus raíces venezolanas— ha desarrollado un estilo único capaz de sorprender con cada pista a los bailarines más experimentados. Sus impecables selecciones son una declaración rotunda que presenta al público el lado más ecléctico de la salsa. Su presencia aporta misticismo y arte a la escena berlinesa, demostrando una y otra vez que es una selectora y artista visual que no acepta concesiones.",
+          "comment": "Haciendo referencia a la importancia y al aporte de la salsa venezolana a este género, el país se ha consagrado como una de las influencias exponenciales que han colaborado de manera definitiva en su proyección mundial, gracias a composiciones y arreglos musicales nacidos íntegramente en el barrio. El disco que se presenta en esta ocasión es “Homenaje a Perucho en Nueva York”. Para los amantes y conocedores del género, este álbum es un pilar indiscutible e imprescindible de la salsa. Pedro María “Perucho” Torcat fue un talentoso compositor e intérprete venezolano que, pese a su corta trayectoria y temprana muerte, dejó como herencia canciones que posteriormente quedaron inmortalizadas en la voz de ‘El Cantante de los Cantantes‘, Héctor Lavoe."
         },
-        "dianaGil": {
-          "title": "Aviatrix & Diana Gil",
-          "artist": "",
-          "record": "",
-          "bio": "",
-          "comment": ""
-        },
-        "aviatrixSuenaChelo": {
-          "title": "Aviatrix & Suena Chelo",
-          "artist": "Willie Colon & Hector Lavoe",
-          "record": "The Hustler",
-          "bio": "Suena Chelo es selector de sonidos afrocaribeños y una de las mentes detrás de movidas culturales como @la_popular_space y @fierasalsa en Göttingen. Su inspiración nace del deseo de abrir espacios donde las diásporas del Sur Global puedan expresarse, conectar y construir comunidad juntxs."
-        },
-        "aviatrixDracaena": {
-          "title": "Aviatrix & Dracaena",
-          "artist": "Grupo Niche",
-          "record": "Cielo de Tambores",
-          "bio": "Dracaena es selectora y coleccionista de discos, nacida en Cali, Colombia y radicada en Berlín. Su práctica se enfoca en la exploración de la salsa y los sonidos de la diáspora, con especial interés en ritmos afrocaribeños, afrolatinos y latinoamericanos. A través del vinilo, sus sets buscan crear puentes entre memoria, identidad y cuerpo, combinando energía, escucha y baile.",
-          "comment": "Cielo de Tambores (1990) del Grupo Niche, es una obra clave en la historia de la salsa colombiana. Publicado en Cali, este álbum marcó una nueva etapa en la evolución del género, posicionando a la salsa caleña en la escena internacional y afirmando a Cali como capital cultural del movimiento salsero en América Latina."
-        },
-        "aviatrixEnilce": {
-          "title": "Aviatrix & Enilce Feikes Álvarez",
-          "artist": "Joe Arroyo",
-          "record": "Me Le Fugué A La Candela",
-          "bio": "Soy bailarina y docente con formación en danzas tradicionales afrocolombianas, y una amplia experiencia en la enseñanza de éstas. Además, soy una melómana empedernida: escucho, bailo y disfruto la música salsa desde que estaba en el jardín infantil.",
-          "comment": "Algunos artistas se han vuelto parte de mi historia personal, casi como familia. Uno de ellos es mi coterráneo Joe Arroyo. Su música, que fusiona salsa, cumbia, porro, soca, reggae y ritmos africanos, dio vida a un sonido único que él llamó 'Joeson'. Joe fue más que un cantante: fue un narrador musical de la experiencia afrodescendiente en Colombia. Muchos lo conocen como el cronista de la negritud. Hoy quiero invitarles a escuchar conmigo uno de sus discos más potentes: Me le fugué a la candela (1985), que incluye temas como Me le fugué a la candela, El barbero, Dolores tiene un piano y El Tumbatecho. No me presento aquí como una experta académica en salsa, sino como lo que soy: una bailadora gozosa y admiradora profunda de Joe Arroyo."
+        "dayan": {
+          "title": "Aviatrix & Dayán",
+          "artist": "Various Artists",
+          "record": "Salsa éxitos del mundo Vol. 2",
+          "guest": "Dayán",
+          "bio": "Dayán lleva durante los últimos diez años en Hamburgo formando parte de los colectivos Cumbia im Viertel y Triopical como DJ, así como del coro de mujeres latinoamericanas Munaimanta y de la banda de Tambores del diablo. Originaria de Medellín, la salsa y la cumbia formaron parte de su día a día. Géneros que hoy para ella trascienden el interés musical y se transformaron (como para muchos otros) en sinónimos de comunidad",
+          "comment": "Elegí el disco Salsa Éxitos del Mundo Vol. 2, como un ejemplo de que en la actualidad todavía se hace esa salsa vigente, que suena a barrio, a pueblo y que no es un sonido solo de la nostalgia. Que la historia de la salsa se sigue escribiendo y qué mejor que de la mano de Latina stereo, la emisora paisa que lleva 40 años como uno de los más importantes bastiones de la salsa brava en Colombia. Ésto es también un homenaje para ellos."
         }
       },
       "salsaTalks": {

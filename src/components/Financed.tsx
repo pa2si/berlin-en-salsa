@@ -10,10 +10,12 @@ export const Financed = () => {
 
   return (
     <section id="footer-funding" className="w-full">
-      <h3 className="mb-4 text-left text-sm font-semibold tracking-wide sm:text-base">
+      {/* Centered the title */}
+      <h3 className="mb-4 text-center font-semibold tracking-wide">
         {fundingTitle}
       </h3>
-      <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-nowrap sm:gap-8 xl:justify-start">
+      {/* Removed xl:justify-start so it centers perfectly */}
+      <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-nowrap sm:gap-8">
         <a
           href="https://www.musicboard-berlin.de/"
           target="_blank"
@@ -23,7 +25,7 @@ export const Financed = () => {
           <motion.img
             src="/musicbboard-w-text.webp"
             alt="Musicboard Berlin"
-            className="h-auto w-[78%] max-w-[380px] object-contain sm:w-[50%] xl:w-full xl:max-w-[340px] 2xl:max-w-[380px]"
+            className="h-auto w-[78%] max-w-[380px] object-contain sm:w-[50%] xl:w-full xl:max-w-60 2xl:max-w-[380px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -39,7 +41,7 @@ export const Financed = () => {
           <motion.img
             src="/brot-fuer-die-welt-logo.webp"
             alt="Brot fuer die Welt"
-            className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%] xl:w-full xl:max-w-[250px] 2xl:max-w-[280px]"
+            className="h-auto w-[62%] max-w-[280px] object-contain sm:w-[38%] xl:w-full xl:max-w-[180px] 2xl:max-w-[280px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

@@ -54,6 +54,11 @@ export const LinksModal = ({ isOpen, onClose, language }: LinksModalProps) => {
       title: "www.salsa-berlin.de",
       image: "/salsa-berlin-468X98.gif",
     },
+    {
+      url: "https://www.salsalemania.de/salsa-festivals/?ID=2026-07-berlin-en-salsa/",
+      title: "www.salsalemania.de",
+      image: "/salsamania.png",
+    },
     // {
     //   url: "https://www.thf-berlin.de/aktuelles/veranstaltungen/veranstaltung/berlin-en-salsa-festival-19-2007",
     //   title: "THF Berlin En Salsa Event",
