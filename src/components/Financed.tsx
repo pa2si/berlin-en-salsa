@@ -11,7 +11,7 @@ export const Financed = () => {
   return (
     <section id="footer-funding" className="w-full">
       {/* Centered the title */}
-      <h3 className="mb-4 text-center font-semibold tracking-wide">
+      <h3 className="mb-4 text-center text-2xl font-semibold tracking-wide">
         {fundingTitle}
       </h3>
       {/* Removed xl:justify-start so it centers perfectly */}

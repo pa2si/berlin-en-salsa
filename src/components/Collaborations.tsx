@@ -48,7 +48,7 @@ export const Collaborations = () => {
   return (
     <section id="footer-collaborations" className="w-full">
       {/* Centered the title */}
-      <h3 className="mb-4 text-center font-semibold tracking-wide">
+      <h3 className="mb-5 text-center text-2xl font-semibold tracking-wide">
         {t("title")}
       </h3>
 
