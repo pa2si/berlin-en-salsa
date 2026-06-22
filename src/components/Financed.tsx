@@ -6,16 +6,27 @@ import { useLocale } from "next-intl";
 
 export const Financed = () => {
   const locale = useLocale();
-  const fundingTitle = locale === "de" ? "Gefördert durch" : "Financiado por";
+
+  // Determine which SVG to use based on the locale
+  const titleSvgSrc =
+    locale === "de" ? "/gefoerdert-durch.svg" : "/financiado-por.svg";
+
+  // Keep the translated text to use as screen reader fallback (alt attribute)
+  const altText = locale === "de" ? "Gefördert durch" : "Financiado por";
 
   return (
     <section id="footer-funding" className="w-full">
-      {/* Centered the title */}
-      <h3 className="mb-4 text-center text-2xl font-semibold tracking-wide">
-        {fundingTitle}
-      </h3>
+      {/* Centered SVG title */}
+      <div className="mb-10 flex justify-center">
+        <img
+          src={titleSvgSrc}
+          alt={altText}
+          className="h-10 w-auto sm:h-12" // Adjust the height class as needed to match your design
+        />
+      </div>
+
       {/* Removed xl:justify-start so it centers perfectly */}
-      <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-nowrap sm:gap-8">
+      <div className="flex flex-col items-center justify-center gap-6 sm:flex-row sm:flex-nowrap sm:gap-8">
         <a
           href="https://www.musicboard-berlin.de/"
           target="_blank"

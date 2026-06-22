@@ -16,9 +16,10 @@ export const Footer = () => {
   return (
     <footer className="text-bes-red py-8 text-center lg:py-6">
       <div className="container mx-auto px-4">
+        <div className="border-bes-red/20 mb-7 flex flex-col items-center gap-12 border-b pb-8"></div>
         {/* --- Top Sections (Financed & Collaborations) --- */}
         {/* Switched back to flex-col for all screens, added items-center to centralize */}
-        <div className="border-bes-red/20 mb-7 flex flex-col items-center gap-12 border-b pb-8">
+        <div className="border-bes-red/20 mt-12 mb-7 flex flex-col items-center gap-16 border-b pb-8">
           {/* Collaborations Wrapper */}
           <div className="flex w-full max-w-5xl flex-col items-center">
             <Collaborations />

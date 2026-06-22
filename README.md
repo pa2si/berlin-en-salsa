@@ -1,3 +1,8 @@
+v3.6.10
+
+- collaborations and financed by sections have now svg for titles .
+- red line on top of collaborations
+
 v3.6.9
 
 - more minor ui changes for Colaborations and Financed

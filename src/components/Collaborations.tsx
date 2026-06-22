@@ -2,10 +2,15 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export const Collaborations = () => {
   const t = useTranslations("Collaborations");
+  const locale = useLocale(); // Fetch the current active locale
+
+  // Determine which SVG to use based on the locale
+  const titleSvgSrc =
+    locale === "de" ? "/kollaborationen.svg" : "/colaboraciones.svg";
 
   const collaborationsData = [
     {
@@ -47,10 +52,14 @@ export const Collaborations = () => {
 
   return (
     <section id="footer-collaborations" className="w-full">
-      {/* Centered the title */}
-      <h3 className="mb-6 text-center text-2xl font-semibold tracking-wide">
-        {t("title")}
-      </h3>
+      {/* Centered SVG title */}
+      <div className="mb-10 flex justify-center">
+        <img
+          src={titleSvgSrc}
+          alt={t("title")} // Fallback translation for screen readers
+          className="h-12 w-auto" // Adjust this height (h-12) to match your design needs
+        />
+      </div>
 
       <div className="grid grid-cols-3 gap-x-2 gap-y-8 sm:flex sm:flex-wrap sm:items-start sm:justify-center sm:gap-8 lg:gap-10 xl:grid xl:grid-cols-5 xl:gap-4 2xl:gap-6">
         {collaborationsData.map((collab, index) => (
