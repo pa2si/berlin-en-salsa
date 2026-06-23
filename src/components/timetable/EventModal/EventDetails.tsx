@@ -44,9 +44,11 @@ export default function EventDetails({
                 ? t("actTypes.dance-area-workshop")
                 : selectedEventDetails.actType === "music-workshop"
                   ? t("actTypes.music-workshop")
-                  : selectedEventDetails.actType === "talk"
-                    ? t("actTypes.talk")
-                    : selectedEventDetails.actType}
+                  : selectedEventDetails.actType === "jam"
+                    ? t("actTypes.jam")
+                    : selectedEventDetails.actType === "talk"
+                      ? t("actTypes.talk")
+                      : selectedEventDetails.actType}
         </span>
       ) : selectedEventDetails.type === "workshop" ||
         selectedEventDetails.type === "dance-area" ? (

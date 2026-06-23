@@ -1,3 +1,8 @@
+v3.6.11
+
+- Placeholder Latin Jam in music-workshop timeline
+- new actType : jam implemented
+
 v3.6.10
 
 - collaborations and financed by sections have now svg for titles .

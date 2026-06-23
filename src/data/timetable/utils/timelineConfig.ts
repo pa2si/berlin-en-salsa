@@ -268,15 +268,21 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
         timeline: [
           {
             time: "12:30",
-            duration: 60,
+            duration: 45,
             tba: true,
-            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER
+            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER.  Content added in json
           },
           {
             time: "13:30",
-            duration: 60,
+            duration: 45,
             tba: true,
-            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER
+            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER. Content added in json
+          },
+          {
+            time: "15:00",
+            duration: 120,
+            tba: true,
+            eventId: "Timetable.events.musicWorkshops.latinJam.title", // PLACEHOLDER.  Content added in json
           },
         ],
       },

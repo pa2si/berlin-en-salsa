@@ -115,6 +115,7 @@ export class EventFactory {
     duration?: number; // Optional - set by timeline config
     area: AreaType;
     acts: Act[];
+    actType?: "workshop" | "jam";
     instrument?: string;
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
@@ -129,6 +130,7 @@ export class EventFactory {
       area: params.area,
       ...(params.duration && { duration: params.duration }),
       acts: params.acts,
+      actType: params.actType,
       instrument: params.instrument,
       level: params.level,
       image: params.image,

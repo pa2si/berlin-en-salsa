@@ -114,6 +114,7 @@ export interface RawDanceAreaEvent extends RawEventWithActs {
  */
 export interface RawMusicWorkshopEvent extends RawEventWithActs {
   type: "music-workshop";
+  actType?: "workshop" | "jam";
   instrument?: string; // e.g., "Conga", "Piano"
   level?: "beginner" | "intermediate" | "advanced";
 }
@@ -195,6 +196,7 @@ export interface DanceAreaEvent extends EventWithActs {
  */
 export interface MusicWorkshopEvent extends EventWithActs {
   type: "music-workshop";
+  actType?: "workshop" | "jam";
   instrument?: string; // e.g., "Conga", "Piano"
   level?: "beginner" | "intermediate" | "advanced";
   duration: number; // Set by timeline config during enrichment

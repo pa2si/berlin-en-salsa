@@ -125,7 +125,7 @@ export function convertTimetableEventToSelectedDetails(
     return {
       ...baseDetails,
       type: "workshop",
-      actType: "music-workshop",
+      actType: event.actType === "jam" ? "jam" : "music-workshop",
       instructor: translateIfKey(firstInstructor?.name),
       description: translateIfKey(event.description),
       bio: translateIfKey(firstInstructor?.bio),

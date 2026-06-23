@@ -120,7 +120,9 @@ export class TimetableService {
               : activeEvent.type === "dance-area"
                 ? "dance-area"
                 : activeEvent.type === "music-workshop"
-                  ? "music-workshop"
+                  ? activeEvent.actType === "jam"
+                    ? "jam"
+                    : "music-workshop"
                   : undefined,
         };
 

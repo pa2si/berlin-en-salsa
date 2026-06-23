@@ -11,65 +11,67 @@ import { RawMusicWorkshopEvent } from "@/types/events";
  * All music workshop events for the festival
  */
 export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
-  // Polyrhythm Introduction Workshop
-  EventFactory.createMusicWorkshop({
-    title: "Timetable.events.musicWorkshops.saturday.polyrhythmIntroduction",
-    area: "music-workshops",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.angelCandeaux",
-        role: "instructor",
-        bio: "Timetable.events.bios.angelCandeaux",
-        image: "/angel-candeaux.webp",
-      }),
-    ],
-    description: "Timetable.events.descriptions.polyrhythmIntroduction",
-    image: "/angel-candeaux.webp",
-  }),
-
   // Ritmo de Clave Workshop
   EventFactory.createMusicWorkshop({
-    title: "Timetable.events.musicWorkshops.saturday.ritmoDeClave",
+    title: "Timetable.events.musicWorkshops.ritmoDeClave.title",
     area: "music-workshops",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.guillermoDiaz",
+        name: "Timetable.events.musicWorkshops.ritmoDeClave.name",
         role: "instructor",
         image: "/guillermo-diaz.webp",
       }),
     ],
-    description: "Timetable.events.descriptions.ritmoDeClave",
+    description: "Timetable.events.musicWorkshops.ritmoDeClave.description",
     image: "/guillermo-diaz.webp",
+  }),
+
+  // Guiro Workshop
+  EventFactory.createMusicWorkshop({
+    title: "Timetable.events.musicWorkshops.guiroWorkshop.title",
+    area: "music-workshops",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.musicWorkshops.guiroWorkshop.name",
+        role: "instructor",
+        // bio: "Timetable.events.bios.angelCandeaux",
+        image: "/angel-candeaux.webp",
+      }),
+    ],
+    description: "Timetable.events.musicWorkshops.guiroWorkshop.description",
+    image: "/angel-candeaux.webp",
   }),
 
   // Campana Workshop
   EventFactory.createMusicWorkshop({
-    title: "Timetable.events.musicWorkshops.sunday.campanaWorkshop",
+    title: "Timetable.events.musicWorkshops.campanaWorkshop.title",
     area: "music-workshops",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.chuchoPalma",
+        name: "Timetable.events.musicWorkshops.campanaWorkshop.name",
         role: "instructor",
-        bio: "Timetable.events.descriptions.chuchoPalma",
+        bio: "Timetable.events.musicWorkshops.campanaWorkshop.bio",
         image: "/chucho-palma.jpeg",
       }),
     ],
-    description: "Timetable.events.descriptions.campanaWorkshop",
+    description: "Timetable.events.musicWorkshops.campanaWorkshop.description",
     image: "/chucho-palma.jpeg",
   }),
 
-  // Soneo Workshop
+  // Latin Jam
   EventFactory.createMusicWorkshop({
-    title: "Timetable.events.musicWorkshops.sunday.soneoWorkshop",
+    title: "Timetable.events.musicWorkshops.latinJam.title",
     area: "music-workshops",
+    actType: "jam",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.harryMunoz",
+        name: "Timetable.events.musicWorkshops.latinJam.name",
         role: "instructor",
-        image: "/harry-munoz.jpeg",
+        // bio: "Timetable.events.musicWorkshops.latinJam.bio",
+        image: "/chucho-palma.jpeg",
       }),
     ],
-    description: "Timetable.events.descriptions.soneoWorkshop",
-    image: "/harry-munoz.jpeg",
+    description: "Timetable.events.musicWorkshops.latinJam.description",
+    image: "/chucho-palma.jpeg",
   }),
 ];
