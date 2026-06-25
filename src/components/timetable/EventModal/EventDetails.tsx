@@ -40,15 +40,17 @@ export default function EventDetails({
             ? t("actTypes.dance-area-class")
             : selectedEventDetails.actType === "dance-area-show"
               ? t("actTypes.dance-area-show")
-              : selectedEventDetails.actType === "dance-area-workshop"
-                ? t("actTypes.dance-area-workshop")
-                : selectedEventDetails.actType === "music-workshop"
-                  ? t("actTypes.music-workshop")
-                  : selectedEventDetails.actType === "jam"
-                    ? t("actTypes.jam")
-                    : selectedEventDetails.actType === "talk"
-                      ? t("actTypes.talk")
-                      : selectedEventDetails.actType}
+              : selectedEventDetails.actType === "dance-area-panel"
+                ? t("actTypes.dance-area-panel")
+                : selectedEventDetails.actType === "dance-area-workshop"
+                  ? t("actTypes.dance-area-workshop")
+                  : selectedEventDetails.actType === "music-workshop"
+                    ? t("actTypes.music-workshop")
+                    : selectedEventDetails.actType === "jam"
+                      ? t("actTypes.jam")
+                      : selectedEventDetails.actType === "talk"
+                        ? t("actTypes.talk")
+                        : selectedEventDetails.actType}
         </span>
       ) : selectedEventDetails.type === "workshop" ||
         selectedEventDetails.type === "dance-area" ? (

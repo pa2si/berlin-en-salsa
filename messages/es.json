@@ -455,6 +455,7 @@
       "dance-area-class": "clase de baile",
       "dance-area-show": "Presentación de baile",
       "dance-area-workshop": "taller de baile",
+      "dance-area-panel": "Conversatorio",
       "music-workshop": "Taller de Música",
       "jam": "Jam",
       "talk": "Charla",
@@ -525,6 +526,17 @@
       }
     },
     "events": {
+      "charlaBailar": {
+        "title": "¡El que baila es gay!: homosexualizando la pista de baile"
+      },
+
+      "panel": {
+        "title": "¡El que baila es gay!: homosexualizando la pista de baile",
+        "description": "Este conversatorio reúne distintas voces para reflexionar sobre el baile social lgttbiq+ y sobre la práctica de homosexualizar la pista de baile. ¿Cómo se relacionan las personas lgttbiq+ con formas como la salsa, la cumbia, la bachata o el merengue? ¿Qué sucede cuando alteramos o desarmamos los roles tradicionales, intercambiamos roles, y exploramos formas más fluidas de conducir y seguir? ¿Existe algo entre medio? ¿Qué otras formas de relación, escucha y negociación corporal pueden emerger? ¿Qué tipos de intimidad, placer, parentesco y experiencia colectiva se vuelven posibles? ¿Y qué pueden enseñarnos las pistas de baile lgttbiq+ sobre otras maneras de bailar juntxs? Más que ofrecer respuestas definitivas, esta conversación busca abrir un espacio para compartir experiencias, cuestionar supuestos e imaginar nuevas formas de movernos juntxs.",
+        "bio": "Club de Baile nació del deseo de reimaginar las pistas de baile social con las que muchxs crecimos: espacios llenos de placer, ritmo, juego, encuentro e intimidad estructurados por normas y expectativas heterosexuales y patriarcales. Bailar con otrxs es una práctica singular y poderosa. Nos invita a entrar en diálogo con otra persona a través del cuerpo. Implica escucha, malentendidos, confianza, improvisación, negociación, cercanía, errores, placer y cuidado. Sin embargo, la mayoria de los espacios de baile social se organizan en torno a roles de género tradicionales y supuestos heteronormativos. Club de Baile surge del deseo de poder habitar estos bailes de otra manera: no rechazándolos, sino reapropiándonos y transformándolos.",
+        "host": "Club de Baile,  Inmensidades Y Camila Malenchini",
+        "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
+      },
       "danceClasses": {
         "nYStyle": "Nueva York Style",
         "sonCubano": "Son Cubano",
@@ -573,9 +585,6 @@
         "niya": "Niya",
         "leiAyna": "Lei & Ayna",
         "alafiaConIre": "Laura, Kimberly, Christian"
-      },
-      "charlaBailar": {
-        "title": "Baile consenso y cuerpo"
       },
       "musicWorkshops": {
         "ritmoDeClave": {

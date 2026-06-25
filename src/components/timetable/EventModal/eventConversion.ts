@@ -94,7 +94,9 @@ export function convertTimetableEventToSelectedDetails(
         ? "dance-area-show"
         : event.danceAreaType === "class"
           ? "dance-area-class"
-          : "dance-area-workshop";
+          : event.danceAreaType === "panel"
+            ? "dance-area-panel"
+            : "dance-area-workshop";
 
     return {
       ...baseDetails,

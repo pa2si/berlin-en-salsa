@@ -1,3 +1,12 @@
+to Do:
+
+- when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
+
+v3.6.12
+
+- added the possibility to add a panel (conversatorio / Diskussionsrunde) as danceAreaType
+- moved the baile consenso slot to Charlas Salseras and changed the title
+
 v3.6.11
 
 - Placeholder Latin Jam in music-workshop timeline

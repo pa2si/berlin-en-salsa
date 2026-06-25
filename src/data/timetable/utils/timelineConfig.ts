@@ -182,12 +182,6 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
         dayWeekday: "saturday",
         timeline: [
           {
-            time: "13:30",
-            duration: 60,
-            tba: true,
-            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
-          },
-          {
             time: "14:30",
             duration: 60,
             eventId: "Timetable.events.danceClasses.nYStyle", //DONE
@@ -214,12 +208,6 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "sunday",
         timeline: [
-          {
-            time: "12:30",
-            duration: 60,
-            tba: true,
-            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
-          },
           {
             time: "14:00",
             duration: 60,
@@ -298,6 +286,12 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
       {
         dayWeekday: "saturday",
         timeline: [
+          {
+            time: "13:00",
+            duration: 60,
+            tba: true,
+            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
+          },
           {
             time: "14:00",
             duration: 30,

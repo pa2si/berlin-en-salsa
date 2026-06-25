@@ -124,4 +124,22 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     description: "Timetable.events.danceClassDescriptions.afroCuban",
     image: "/afro-cuban.webp",
   }),
+
+  // Conversatorio
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.panel.title",
+    area: "music-workshops",
+    danceAreaType: "panel",
+    enableSubscription: false,
+    danceStyle: "",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.panel.host",
+        role: "instructor",
+        bio: "Timetable.events.panel.bio",
+      }),
+    ],
+    description: "Timetable.events.panel.description",
+    image: "/club-de-baile-conversatorio.webp",
+  }),
 ];

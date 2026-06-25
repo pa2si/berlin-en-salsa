@@ -455,6 +455,7 @@
       "dance-area-class": "Tanzklasse",
       "dance-area-show": "Tanz Show",
       "dance-area-workshop": "Tanz Workshop",
+      "dance-area-panel": "Diskussionsrunde",
       "music-workshop": "Musik Workshop",
       "jam": "Jam",
       "talk": "Talk",
@@ -525,6 +526,16 @@
       }
     },
     "events": {
+      "charlaBailar": {
+        "title": "¡El que baila es gay!: homosexualizando la pista de baile"
+      },
+      "panel": {
+        "title": "Wer tanzt, ist Gay!: Die Homosexualisierung der Tanzfläche",
+        "description": "Diese Diskussionsrunde bringt verschiedene Stimmen zusammen, um über das gesellschaftliche Tanzen der LGBTIQ+ Community und die Praxis der Homosexualisierung der Tanzfläche nachzudenken. Wie setzen sich LGBTIQ+ Personen mit Tanzstilen wie Salsa, Cumbia, Bachata oder Merengue auseinander? Was passiert, wenn wir traditionelle Rollen verändern oder aufbrechen, Rollen tauschen und fließendere Formen des Führens und Folgens erkunden? Gibt es etwas dazwischen? Welche anderen Formen der Beziehung, des Zuhörens und der körperlichen Aushandlung können entstehen? Welche Arten von Intimität, Lust, Verbundenheit und kollektiver Erfahrung werden dadurch möglich? Und was können uns die LGBTIQ+ Tanzflächen über andere Arten des gemeinsamen Tanzens lehren? Anstatt endgültige Antworten zu geben, zielt dieses Gespräch darauf ab, einen Raum zu schaffen, in dem Erfahrungen ausgetauscht, Annahmen hinterfragt und neue Formen des gemeinsamen Bewegens erdacht werden können.",
+        "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren.",
+        "host": "Club de Baile,  Inmensidades Y Camila Malenchini",
+        "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
+      },
       "danceClasses": {
         "nYStyle": "New York Style",
         "sonCubano": "Son Cubano",
@@ -573,9 +584,6 @@
         "niya": "Niya",
         "leiAyna": "Lei & Ayna",
         "alafiaConIre": "Laura, Kimberly, Christian"
-      },
-      "charlaBailar": {
-        "title": "Baile consenso y cuerpo"
       },
       "musicWorkshops": {
         "ritmoDeClave": {

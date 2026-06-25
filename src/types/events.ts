@@ -103,7 +103,7 @@ export interface RawMainStageEvent extends RawEventWithActs {
  */
 export interface RawDanceAreaEvent extends RawEventWithActs {
   type: "dance-area";
-  danceAreaType: "class" | "show" | "workshop";
+  danceAreaType: "class" | "show" | "workshop" | "panel";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   enableSubscription?: boolean; // Show class subscription form in the event modal
@@ -184,7 +184,7 @@ export interface MainStageEvent extends EventWithActs {
  */
 export interface DanceAreaEvent extends EventWithActs {
   type: "dance-area";
-  danceAreaType: "class" | "show" | "workshop";
+  danceAreaType: "class" | "show" | "workshop" | "panel";
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   enableSubscription?: boolean; // Show class subscription form in the event modal
