@@ -182,8 +182,6 @@ const LiveBanner = () => {
         return timetableT("actTypes.dance-area-class");
       if (event.danceAreaType === "show")
         return timetableT("actTypes.dance-area-show");
-      if (event.danceAreaType === "panel")
-        return timetableT("actTypes.dance-area-panel");
       if (event.danceAreaType === "workshop")
         return timetableT("actTypes.dance-area-workshop");
       return timetableT("actTypes.dance-area-class"); // fallback

@@ -80,7 +80,7 @@ export class EventFactory {
     title: string;
     duration?: number; // Optional - set by timeline config
     area: AreaType;
-    danceAreaType: "class" | "show" | "workshop" | "panel";
+    danceAreaType: "class" | "show" | "workshop";
     danceStyle: string;
     acts: Act[];
     level?: "beginner" | "intermediate" | "advanced";
