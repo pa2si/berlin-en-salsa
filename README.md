@@ -4,6 +4,10 @@ to Do:
 - Awareness implementing
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.16
+
+- download button for awareness concept pdf in SectionSix
+
 v3.6.15
 
 - added club de baile Workshop

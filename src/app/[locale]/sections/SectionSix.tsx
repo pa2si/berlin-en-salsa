@@ -165,6 +165,42 @@ const SectionSix = () => {
             </div>
           </motion.div>
         )}
+
+        {/* --- DOWNLOAD BUTTON WITH HOVER ANIMATION --- */}
+        <motion.div
+          className="mt-10 flex w-full justify-center lg:mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 1.0 }}
+        >
+          <motion.a // Changed from <a> to <motion.a>
+            href="/concept-awareness-bes.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+            className="border-bes-red text-bes-red hover:bg-bes-red flex items-center justify-center gap-2 rounded-full border-2 px-6 py-3 text-base font-bold transition-colors hover:text-white sm:text-lg"
+            whileHover={{ scale: 1.1 }} // Added scaling effect
+            transition={{ type: "spring", stiffness: 400, damping: 10 }} // Added spring transition
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2.5}
+              stroke="currentColor"
+              className="h-5 w-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
+            {t("downloadAwarenessConcept")}
+          </motion.a>
+        </motion.div>
+        {/* --- END DOWNLOAD BUTTON --- */}
       </div>
 
       <EmailContactModal
