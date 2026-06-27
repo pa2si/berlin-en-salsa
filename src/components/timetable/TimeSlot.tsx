@@ -90,8 +90,8 @@ export default function TimeSlot({
             >
               <div className="text-bes-amber flex items-center justify-center text-xs text-[1rem] leading-4">
                 <span title="Click for details">
-                  {slot.event && slot.event.length > 40
-                    ? `${slot.event.substring(0, 40)}...`
+                  {slot.event && slot.event.length > 50
+                    ? `${slot.event.substring(0, 50)}...`
                     : slot.event}
                 </span>
               </div>

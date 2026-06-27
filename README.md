@@ -2,6 +2,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.21
+
+- instead of max 40 caracters in slot title, now 50 caracters
+
 v3.6.20
 
 - BeS Host DJs individuales added to slot
