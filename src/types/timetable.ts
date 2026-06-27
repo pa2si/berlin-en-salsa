@@ -54,6 +54,20 @@ export interface TimeSlot {
   text?: string; // For Charlas Salseras - additional explanatory text about the talk
   // New field to reference the original TimetableEvent when available
   originalEvent?: unknown; // Using 'unknown' to avoid circular import issues
+  overlapEvents?: {
+    id: string;
+    title: string;
+    isTba?: boolean;
+  }[];
+  activeEvents?: {
+    id: string;
+    title: string;
+    subtitle?: string;
+    isTba?: boolean;
+    lane: number;
+    laneCount: number;
+    isOverlapping: boolean;
+  }[];
 }
 
 export interface Column {

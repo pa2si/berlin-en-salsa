@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
+import { useSmartTranslation } from "../../data/timetable/utils/smartTranslation";
 import { Column } from "../../types/timetable";
 import { TimelineSlot, TimetableEvent } from "../../types/events";
 import { AreaType } from "../../data/timetable/types/area.types";
@@ -41,8 +43,14 @@ export default function TimetableClient({
   dataByWeekday,
   translations,
 }: TimetableClientProps) {
+  const timeToMinutes = (time: string): number => {
+    const [hours, minutes] = time.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
+
   // URL parameter management
   const { parseDayParam, updateDayInUrl } = useURLParams();
+  const t = useTranslations("Timetable");
 
   // Validate the parsed day against available festival days
   const parsedDay = parseDayParam();
@@ -53,6 +61,7 @@ export default function TimetableClient({
   const [currentDay, setCurrentDay] = useState<string>(validDay);
 
   const { translateColumnArea, getOriginalAreaKey } = useColumnTranslation();
+  const { translateIfKey } = useSmartTranslation();
 
   // NEW: Modal state with TimetableEvent
   const [selectedEvent, setSelectedEvent] = useState<TimetableEvent | null>(
@@ -83,6 +92,7 @@ export default function TimetableClient({
   const findEvent = (
     area: AreaType,
     time: string,
+    eventId?: string,
   ): TimetableEvent | undefined => {
     const areaSlots = currentEvents[area];
     if (!areaSlots) return undefined;
@@ -91,13 +101,18 @@ export default function TimetableClient({
     const slot = areaSlots.find((s: TimelineSlot) => s.time === time);
     if (!slot || slot.events.length === 0) return undefined;
 
-    // Return the first event (assuming one event per slot for now)
+    if (eventId) {
+      const matchedEvent = slot.events.find((event) => event.id === eventId);
+      if (matchedEvent) return matchedEvent;
+    }
+
+    // Fallback to first event for non-overlapping slots and backwards compatibility
     return slot.events[0];
   };
 
   // NEW: Handle event click - look up the actual event
-  const handleEventClick = (area: AreaType, time: string) => {
-    const event = findEvent(area, time);
+  const handleEventClick = (area: AreaType, time: string, eventId?: string) => {
+    const event = findEvent(area, time, eventId);
     if (event) {
       setSelectedEvent(event);
       resetSlider();
@@ -114,11 +129,160 @@ export default function TimetableClient({
 
   // Process the data to handle consecutive slots and area translations
   const processData = (rawData: Column[]): Column[] => {
-    return processEventContinuation(
+    const processedData = processEventContinuation(
       rawData,
       translateColumnArea,
       getOriginalAreaKey,
     );
+
+    const getEventSubtitle = (event: TimetableEvent): string | undefined => {
+      if (event.type === "main-stage") {
+        return event.performanceType === "live" ? "Live" : "DJ Set";
+      }
+
+      if (event.type === "dance-area" || event.type === "music-workshop") {
+        const instructors = event.acts
+          .filter((act) => act.role === "instructor")
+          .map((act) => translateIfKey(act.name));
+
+        if (instructors.length === 0) return undefined;
+        if (instructors.length === 1) return instructors[0];
+
+        return `${instructors[0]} ${t("modal.and")} ${instructors[1]}`;
+      }
+
+      return undefined;
+    };
+
+    return processedData.map((column) => {
+      const areaKey = column.originalAreaKey as AreaType | undefined;
+      const timelineSlots = areaKey ? currentEvents[areaKey] : undefined;
+
+      if (!timelineSlots) {
+        return column;
+      }
+
+      const eventById = new Map<string, TimetableEvent>();
+      const overlappingEventIds = new Set<string>();
+
+      timelineSlots.forEach((timelineSlot) => {
+        timelineSlot.events.forEach((event) => {
+          eventById.set(event.id, event);
+        });
+
+        if (timelineSlot.events.length > 1) {
+          timelineSlot.events.forEach((event) => {
+            overlappingEventIds.add(event.id);
+          });
+        }
+      });
+
+      const overlapEvents = Array.from(overlappingEventIds)
+        .map((id) => eventById.get(id))
+        .filter((event): event is TimetableEvent => Boolean(event))
+        .sort((a, b) => {
+          const startDiff =
+            timeToMinutes(a.startTime || "00:00") -
+            timeToMinutes(b.startTime || "00:00");
+
+          if (startDiff !== 0) return startDiff;
+          return a.id.localeCompare(b.id);
+        });
+
+      const laneByEventId = new Map<string, number>();
+
+      overlapEvents.forEach((event) => {
+        const usedLanes = new Set<number>();
+
+        laneByEventId.forEach((lane, assignedEventId) => {
+          const assignedEvent = eventById.get(assignedEventId);
+          if (
+            !assignedEvent ||
+            !assignedEvent.startTime ||
+            !assignedEvent.endTime
+          )
+            return;
+
+          if (!event.startTime || !event.endTime) return;
+
+          const overlaps =
+            timeToMinutes(event.startTime) <
+              timeToMinutes(assignedEvent.endTime) &&
+            timeToMinutes(assignedEvent.startTime) <
+              timeToMinutes(event.endTime);
+
+          if (overlaps) {
+            usedLanes.add(lane);
+          }
+        });
+
+        let lane = 0;
+        while (usedLanes.has(lane)) {
+          lane += 1;
+        }
+
+        laneByEventId.set(event.id, lane);
+      });
+
+      const maxLane =
+        laneByEventId.size > 0
+          ? Math.max(...Array.from(laneByEventId.values()))
+          : 0;
+      const overlapLaneCount =
+        laneByEventId.size > 0 ? Math.max(2, maxLane + 1) : 1;
+
+      return {
+        ...column,
+        slots: column.slots.map((slot) => {
+          const timelineSlot = timelineSlots.find((s) => s.time === slot.time);
+
+          if (!timelineSlot || timelineSlot.events.length === 0) {
+            return slot;
+          }
+
+          const activeEvents = timelineSlot.events
+            .map((event) => {
+              const isOverlapping = overlappingEventIds.has(event.id);
+              return {
+                id: event.id,
+                title: translateIfKey(event.title),
+                subtitle: getEventSubtitle(event),
+                isTba: event.isTba,
+                lane: isOverlapping ? (laneByEventId.get(event.id) ?? 0) : 0,
+                laneCount: isOverlapping ? overlapLaneCount : 1,
+                isOverlapping,
+              };
+            })
+            .sort((a, b) => a.lane - b.lane || a.id.localeCompare(b.id));
+
+          return {
+            ...slot,
+            overlapEvents:
+              timelineSlot.events.length > 1
+                ? timelineSlot.events.map((event) => ({
+                    id: event.id,
+                    title: translateIfKey(event.title),
+                    isTba: event.isTba,
+                  }))
+                : undefined,
+            activeEvents,
+            event: activeEvents[0]?.title ?? slot.event,
+            isTba: activeEvents[0]?.isTba ?? slot.isTba,
+            originalEvent: timelineSlot.events[0] ?? slot.originalEvent,
+            type:
+              timelineSlot.events[0]?.type === "talk" ||
+              timelineSlot.events[0]?.type === "aviatrix-talk"
+                ? "talk"
+                : timelineSlot.events[0]?.type === "dance-show"
+                  ? "dance-show"
+                  : timelineSlot.events[0]?.type === "dance-area" ||
+                      timelineSlot.events[0]?.type === "music-workshop"
+                    ? "workshop"
+                    : "main",
+          };
+        }),
+      };
+    });
   };
 
   // Get current processed data

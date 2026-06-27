@@ -6,7 +6,7 @@ import { AreaType } from "../../data/timetable/types/area.types";
 interface AreaColumnProps {
   column: Column;
   columnIndex: number;
-  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
+  onEventClick: (area: AreaType, time: string, eventId?: string) => void;
   onSlideReset: () => void;
 }
 

@@ -9,7 +9,7 @@ interface TimeSlotProps {
   slotIndex: number;
   columnSlots: (TimeSlotType & { isContinuation?: boolean })[];
   originalAreaKey?: string; // This is the AreaType key
-  onEventClick: (area: AreaType, time: string) => void; // CHANGED signature
+  onEventClick: (area: AreaType, time: string, eventId?: string) => void;
   onSlideReset: () => void;
 }
 
@@ -32,15 +32,48 @@ export default function TimeSlot({
 
   // Alternating background colors for time slots
   const bgColor = slotIndex % 2 === 0 ? "bg-bes-amber" : "bg-bes-red/10";
+  const activeEvents = slot.activeEvents ?? [];
+  const hasStructuredOverlap = activeEvents.some(
+    (event) => event.isOverlapping,
+  );
+  const hasVisibleEvent = activeEvents.length > 0 || Boolean(slot.event);
 
-  const handleEventClick = () => {
-    if (!slot.event || !originalAreaKey || slot.isTba) return;
+  const hasEventInSlot = (
+    candidate: (TimeSlotType & { isContinuation?: boolean }) | undefined,
+    eventId: string,
+  ) => {
+    return (candidate?.activeEvents ?? []).some(
+      (event) => event.id === eventId,
+    );
+  };
+
+  const isEventStart = (eventId: string) => {
+    const previousSlot = slotIndex > 0 ? columnSlots[slotIndex - 1] : undefined;
+    return !hasEventInSlot(previousSlot, eventId);
+  };
+
+  const getEventSpanSlots = (eventId: string) => {
+    let span = 0;
+
+    for (let index = slotIndex; index < columnSlots.length; index += 1) {
+      if (hasEventInSlot(columnSlots[index], eventId)) {
+        span += 1;
+      } else {
+        break;
+      }
+    }
+
+    return Math.max(1, span);
+  };
+
+  const handleEventClick = (eventId?: string) => {
+    if (!originalAreaKey) return;
+    if (!eventId && (!slot.event || slot.isTba)) return;
 
     // Reset current slide index when opening a new modal
     onSlideReset();
 
-    // NEW: Simply pass area and time - TimetableClient will look up the event
-    onEventClick(originalAreaKey as AreaType, slot.time);
+    onEventClick(originalAreaKey as AreaType, slot.time, eventId);
   };
 
   return (
@@ -50,18 +83,67 @@ export default function TimeSlot({
       </div>
 
       {/* For empty slots, add a subtle background to make them visible */}
-      {!slot.event && <div className="ml-2 flex-1 rounded-full"></div>}
+      {!hasVisibleEvent && <div className="ml-2 flex-1 rounded-full"></div>}
 
       {/* For slots with events */}
-      {slot.event && (
+      {hasVisibleEvent && (
         <>
+          {/* Overlapping events are rendered in fixed lanes for their full duration. */}
+          {hasStructuredOverlap && (
+            <div className="relative mx-auto h-full w-[85%] overflow-visible">
+              {activeEvents
+                .filter((event) => isEventStart(event.id))
+                .map((event) => {
+                  const laneCount = Math.max(1, event.laneCount);
+                  const laneWidthPct = 100 / laneCount;
+                  const laneGapPx = laneCount > 1 ? 4 : 0;
+
+                  return (
+                    <motion.div
+                      key={event.id}
+                      whileHover={
+                        event.isTba ? undefined : { scale: 1.01, y: -1 }
+                      }
+                      whileTap={event.isTba ? undefined : { scale: 0.99 }}
+                      className={`absolute flex flex-col justify-center rounded-md px-2 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${event.isTba ? "cursor-default opacity-80" : "cursor-pointer"} ${getEventStyle(slot.type)}`}
+                      onClick={
+                        event.isTba
+                          ? undefined
+                          : () => handleEventClick(event.id)
+                      }
+                      style={{
+                        height: `${getEventSpanSlots(event.id) * 35}px`,
+                        top: "2px",
+                        left: `calc(${event.lane * laneWidthPct}% + ${(event.lane * laneGapPx) / laneCount}px)`,
+                        width: `calc(${laneWidthPct}% - ${laneGapPx}px)`,
+                        zIndex: 20 + event.lane,
+                        boxSizing: "border-box",
+                      }}
+                    >
+                      <span
+                        className="text-bes-amber block text-[1rem] leading-4 wrap-break-word whitespace-normal"
+                        title={event.title}
+                      >
+                        {event.title}
+                      </span>
+                      {event.subtitle && (
+                        <span className="mt-0.5 block text-center font-serif text-[0.9rem] leading-none font-normal wrap-break-word whitespace-normal normal-case opacity-90">
+                          {event.subtitle}
+                        </span>
+                      )}
+                    </motion.div>
+                  );
+                })}
+            </div>
+          )}
+
           {/* Only show the event block for the first occurrence or if it's not a continuation */}
-          {!isContinuation && (
+          {!isContinuation && !hasStructuredOverlap && (
             <motion.div
               whileHover={slot.isTba ? undefined : { scale: 1.02, y: -2 }}
               whileTap={slot.isTba ? undefined : { scale: 0.98 }}
               className={`mx-auto w-[85%] px-3 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${slot.isTba ? "cursor-default" : "cursor-pointer"} ${getEventStyle(slot.type)}`}
-              onClick={slot.isTba ? undefined : handleEventClick}
+              onClick={slot.isTba ? undefined : () => handleEventClick()}
               style={{
                 height: nextSlotHasSameEvent
                   ? // For multi-slot events, calculate the height based on number of slots
@@ -137,7 +219,9 @@ export default function TimeSlot({
           )}
 
           {/* For continuation slots, we render a hidden placeholder to maintain the grid structure */}
-          {isContinuation && <div className="mx-auto w-[85%] opacity-0" />}
+          {isContinuation && !hasStructuredOverlap && (
+            <div className="mx-auto w-[85%] opacity-0" />
+          )}
         </>
       )}
     </div>

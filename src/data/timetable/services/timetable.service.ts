@@ -491,11 +491,22 @@ export class TimetableService {
       }
     }
 
-    // Assign events to their time slots
+    // Assign events to every active 30-minute slot in their time range.
+    // This is required for rendering and clicking overlaps that begin while another event is still running.
     for (const event of timelineEvents) {
-      const startTime = event.startTime;
-      if (startTime && slotsMap.has(startTime)) {
-        slotsMap.get(startTime)!.push(event);
+      if (!event.startTime || !event.endTime) continue;
+
+      const eventStart = this.timeToMinutes(event.startTime);
+      const eventEnd = this.timeToMinutes(event.endTime);
+
+      for (let time = eventStart; time < eventEnd; time += 30) {
+        const hours = Math.floor(time / 60);
+        const minutes = time % 60;
+        const timeStr = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+
+        if (slotsMap.has(timeStr)) {
+          slotsMap.get(timeStr)!.push(event);
+        }
       }
     }
 
