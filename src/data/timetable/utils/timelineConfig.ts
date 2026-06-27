@@ -270,14 +270,14 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "15:00",
             duration: 90,
             tba: false,
-            eventId: "Timetable.events.musicWorkshops.latinJam.title", // PLACEHOLDER.  Content added in json
+            eventId: "Timetable.events.musicWorkshops.latinJam.title", // DONE . No design for foto
           },
           {
             time: "16:30",
             duration: 150,
             tba: false,
             eventId:
-              "Timetable.events.musicWorkshops.clubDeBaileSaturday.title", // Done
+              "Timetable.events.musicWorkshops.clubDeBaileSaturday.title", // DONE
           },
         ],
       },
@@ -307,8 +307,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "13:00",
             duration: 60,
-            tba: true,
-            eventId: "Timetable.events.charlaBailar.title", // PLACEHOLDER
+            tba: false,
+            eventId: "Timetable.events.salsaTalks.clubDeBaile.title", // DONE
           },
           {
             time: "14:00",

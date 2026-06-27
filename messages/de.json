@@ -459,7 +459,7 @@
       "jam": "Jam",
       "interview": "Interview",
       "book-presentation": "Buchpräsentation",
-      "talk": "Talk",
+      "talk": "Diskussionsrunde",
       "Aviatrix": "Aviatrix"
     },
     "modal": {
@@ -471,7 +471,7 @@
       "workshopLeaderLabel": "Geleitet von:",
       "classLeaderLabelDanceArea": "Geleitet von:",
       "presenterLabel": "Präsentiert von:",
-      "hostLabel": "Moderation:",
+      "hostLabel": "Host:",
       "moderatorLabel": "Moderiert von:",
       "authorLabel": "Autor:",
       "guestLabel": "Gast:",
@@ -528,16 +528,6 @@
       }
     },
     "events": {
-      "charlaBailar": {
-        "title": "¡El que baila es gay!: homosexualizando la pista de baile"
-      },
-      "panel": {
-        "title": "Wer tanzt, ist Gay!: Die Homosexualisierung der Tanzfläche",
-        "description": "Diese Diskussionsrunde bringt verschiedene Stimmen zusammen, um über das gesellschaftliche Tanzen der LGBTIQ+ Community und die Praxis der Homosexualisierung der Tanzfläche nachzudenken. Wie setzen sich LGBTIQ+ Personen mit Tanzstilen wie Salsa, Cumbia, Bachata oder Merengue auseinander? Was passiert, wenn wir traditionelle Rollen verändern oder aufbrechen, Rollen tauschen und fließendere Formen des Führens und Folgens erkunden? Gibt es etwas dazwischen? Welche anderen Formen der Beziehung, des Zuhörens und der körperlichen Aushandlung können entstehen? Welche Arten von Intimität, Lust, Verbundenheit und kollektiver Erfahrung werden dadurch möglich? Und was können uns die LGBTIQ+ Tanzflächen über andere Arten des gemeinsamen Tanzens lehren? Anstatt endgültige Antworten zu geben, zielt dieses Gespräch darauf ab, einen Raum zu schaffen, in dem Erfahrungen ausgetauscht, Annahmen hinterfragt und neue Formen des gemeinsamen Bewegens erdacht werden können.",
-        "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren.",
-        "host": "Club de Baile,  Inmensidades Y Camila Malenchini",
-        "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
-      },
       "danceClasses": {
         "nYStyle": "New York Style",
         "sonCubano": "Son Cubano",
@@ -777,6 +767,14 @@
           "guest": "Nelson Antonio Gomez Serrudo",
           "bio": "Professor in Vollzeit an der Fakultät für Sozialwissenschaften der Päpstlichen Javeriana-Universität und seit 2005 Mitglied des Fachbereichs Soziologie. Er ist Soziologe mit Abschluss der Nationalen Universität Kolumbiens, besitzt einen Masterabschluss in Interdisziplinären Studien der Distrital-Universität Francisco José de Caldas und promovierte im Fach Stadtplanung an der Zentraluniversität von Venezuela. Er verfügt über mehr als 20 Jahre Lehrerfahrung an verschiedenen Universitäten in Bogotá. Als Forscher leitet er die Forschungsgruppe „Festkulturen in Kolumbien und Lateinamerika“, eine interdisziplinäre Forschungsgruppe der Päpstlichen Javeriana-Universität. Im Laufe seiner beruflichen Tätigkeit hat er Studien für verschiedene Einrichtungen der Stadtverwaltung von Bogotá in unterschiedlichen Verwaltungsperioden durchgeführt und zahlreiche Veröffentlichungen zu städtischen Themen vorgelegt. Sein Forschungsschwerpunkt liegt auf Themen des öffentlichen Raums, des Verkehrs, der urbanen Kultur sowie der Fest- und Feierkulturen.",
           "description": "Die Schlüssel der Salsa in Kolumbien ist eine klangvolle Reise durch ein Musikgenre, das in der afrokubanischen Tradition entstand und sich zu einer der lebendigsten kulturellen Ausdrucksformen des Landes entwickelte. Dieses Buch bietet vier Schlüssel zum Verständnis der Ankunft, Ausbreitung und Etablierung der Salsa auf kolumbianischem Boden – von den karibischen Häfen bis hin zu den Stadtvierteln, Radiosendern, Tanzflächen und großen Festveranstaltungen, in denen dieser Rhythmus seine endgültige Heimat fand. Das Buch zeigt, wie die Schallplatten, die in Barranquilla, Buenaventura und Cartagena ankamen, eine ganze Generation prägten; wie die Musikindustrie einen eigenen Kanon formte; und wie das Radio, die Sammler, die Tänzerinnen und Tänzer sowie das Nachtleben eine salsera-geprägte Geselligkeitskultur entstehen ließen, die bis heute im kollektiven urbanen Gedächtnis fortlebt. Um zu erklären, wie und warum die Salsa in Kolumbien Fuß fasste, führt das Buch durch die Welt der Rumba, die verschiedenen Tanzstile, die geselligen Zusammenkünfte, die sich in den jeweiligen Lokalen entfalten, sowie die Festkalender des Landes. Auf der Grundlage fundierter Forschung bietet dieses Werk eine tiefgehende Analyse der Art und Weise, wie die Salsa zur musikalischen Begleiterin des Alltags und zum kulturellen Erbe Kolumbiens wurde. Die Schlüssel der Salsa in Kolumbien laden dazu ein, den Rhythmus hinter der Geschichte zu hören und in jedem Schlag der Clave eine besondere Art des Fühlens und der Gestaltung von Gemeinschaft zu erkennen."
+        },
+        "clubDeBaile": {
+          "title": "Wer tanzt, ist Gay!: Die Homosexualisierung der Tanzfläche",
+          "description": "Diese Diskussionsrunde bringt verschiedene Stimmen zusammen, um über das gesellschaftliche Tanzen der LGBTIQ+ Community und die Praxis der Homosexualisierung der Tanzfläche nachzudenken. Wie setzen sich LGBTIQ+ Personen mit Tanzstilen wie Salsa, Cumbia, Bachata oder Merengue auseinander? Was passiert, wenn wir traditionelle Rollen verändern oder aufbrechen, Rollen tauschen und fließendere Formen des Führens und Folgens erkunden? Gibt es etwas dazwischen? Welche anderen Formen der Beziehung, des Zuhörens und der körperlichen Aushandlung können entstehen? Welche Arten von Intimität, Lust, Verbundenheit und kollektiver Erfahrung werden dadurch möglich? Und was können uns die LGBTIQ+ Tanzflächen über andere Arten des gemeinsamen Tanzens lehren? Anstatt endgültige Antworten zu geben, zielt dieses Gespräch darauf ab, einen Raum zu schaffen, in dem Erfahrungen ausgetauscht, Annahmen hinterfragt und neue Formen des gemeinsamen Bewegens erdacht werden können.",
+          "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren.",
+          "host": "Club de Baile",
+          "presenter": "Inmensidades Y Camila Malenchini",
+          "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
         }
       }
     }

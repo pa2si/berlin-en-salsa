@@ -13,52 +13,7 @@ import { RawTimetableEvent } from "@/types/events";
 export const salsaTalksEvents: RawTimetableEvent[] = [
   // ===== SATURDAY EVENTS =====
 
-  // Sarah Balzat Talk
-  EventFactory.createTalk({
-    title: "Timetable.events.salsaTalks.saturday.sarahBalzatTalk.title",
-    area: "salsa-talks",
-    format: "presentation",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.sarahBalzat",
-        role: "presenter",
-        image: "/sarah-balzat.jpeg",
-      }),
-    ],
-    description:
-      "Timetable.events.salsaTalks.saturday.sarahBalzatTalk.description",
-    image: "/sarah-balzat.jpeg",
-  }),
-
-  // Jessi & Vane Talk
-  EventFactory.createTalk({
-    title: "Timetable.events.salsaTalks.saturday.jessiVaneTalk.title",
-    area: "salsa-talks",
-    format: "presentation",
-    acts: [
-      EventFactory.createAct({
-        name: "Timetable.events.artists.jessiVane",
-        role: "presenter",
-        image: "/jessi.jpeg",
-      }),
-    ],
-    description:
-      "Timetable.events.salsaTalks.saturday.jessiVaneTalk.description",
-    slides: [
-      EventFactory.createSlide({
-        type: "image",
-        image: "/jessi.jpeg",
-        caption: "Timetable.events.artists.jessi",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/vane.jpg",
-        caption: "Timetable.events.artists.vane",
-      }),
-    ],
-  }),
-
-  // Aviatrix - DJ Christian
+  // Aviatrix - Diablas Finas
   EventFactory.createAviatrixTalk({
     title: "Timetable.events.aviatrix.diablasFinas.title",
     area: "salsa-talks",
@@ -297,6 +252,30 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
         type: "image",
         image: "/nelson-antonio-gomez-serrudo.webp",
         caption: "Timetable.events.salsaTalks.libroSalsa.guest",
+      }),
+    ],
+  }),
+
+  // Club de Baile
+  EventFactory.createTalk({
+    title: "Timetable.events.salsaTalks.clubDeBaile.title",
+    area: "salsa-talks",
+    format: "panel",
+    description: "Timetable.events.salsaTalks.clubDeBaile.description",
+    image: "/club-de-baile-logo.webp",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.salsaTalks.clubDeBaile.host",
+        role: "host",
+        bio: "Timetable.events.salsaTalks.clubDeBaile.bio",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.salsaTalks.clubDeBaile.presenter",
+        role: "moderator",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.salsaTalks.clubDeBaile.guest",
+        role: "guest",
       }),
     ],
   }),

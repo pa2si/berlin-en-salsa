@@ -180,6 +180,15 @@ export function convertTimetableEventToSelectedDetails(
     const guests = event.acts.filter((act) => act.role === "guest");
     const presenter = event.acts.find((act) => act.role === "presenter");
     const isBookPresentation = event.format === "book-presentation";
+    const talkBios =
+      event.slides && event.slides.length > 0
+        ? undefined
+        : event.acts
+            .filter((act) => Boolean(act.bio))
+            .map((act) => ({
+              name: translateIfKey(act.name),
+              bio: translateIfKey(act.bio),
+            }));
 
     // Only use slides when they were explicitly created on the event.
     const slides = event.slides?.map((slide, index) => {
@@ -216,6 +225,7 @@ export function convertTimetableEventToSelectedDetails(
       description: isBookPresentation
         ? undefined
         : translateIfKey(event.description),
+      talkBios: talkBios && talkBios.length > 0 ? talkBios : undefined,
       slides: slides && slides.length > 0 ? slides : undefined,
       image: slides?.[0]?.image ?? talkImage,
     };

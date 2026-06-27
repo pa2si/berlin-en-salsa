@@ -459,7 +459,7 @@
       "jam": "Jam",
       "interview": "Entrevista",
       "book-presentation": "Presentación de libro",
-      "talk": "Charla",
+      "talk": "Conversatorio",
       "Aviatrix": "Aviatrix"
     },
     "modal": {
@@ -528,17 +528,6 @@
       }
     },
     "events": {
-      "charlaBailar": {
-        "title": "¡El que baila es gay!: homosexualizando la pista de baile"
-      },
-
-      "panel": {
-        "title": "¡El que baila es gay!: homosexualizando la pista de baile",
-        "description": "Este conversatorio reúne distintas voces para reflexionar sobre el baile social lgttbiq+ y sobre la práctica de homosexualizar la pista de baile. ¿Cómo se relacionan las personas lgttbiq+ con formas como la salsa, la cumbia, la bachata o el merengue? ¿Qué sucede cuando alteramos o desarmamos los roles tradicionales, intercambiamos roles, y exploramos formas más fluidas de conducir y seguir? ¿Existe algo entre medio? ¿Qué otras formas de relación, escucha y negociación corporal pueden emerger? ¿Qué tipos de intimidad, placer, parentesco y experiencia colectiva se vuelven posibles? ¿Y qué pueden enseñarnos las pistas de baile lgttbiq+ sobre otras maneras de bailar juntxs? Más que ofrecer respuestas definitivas, esta conversación busca abrir un espacio para compartir experiencias, cuestionar supuestos e imaginar nuevas formas de movernos juntxs.",
-        "bio": "Club de Baile nació del deseo de reimaginar las pistas de baile social con las que muchxs crecimos: espacios llenos de placer, ritmo, juego, encuentro e intimidad estructurados por normas y expectativas heterosexuales y patriarcales. Bailar con otrxs es una práctica singular y poderosa. Nos invita a entrar en diálogo con otra persona a través del cuerpo. Implica escucha, malentendidos, confianza, improvisación, negociación, cercanía, errores, placer y cuidado. Sin embargo, la mayoria de los espacios de baile social se organizan en torno a roles de género tradicionales y supuestos heteronormativos. Club de Baile surge del deseo de poder habitar estos bailes de otra manera: no rechazándolos, sino reapropiándonos y transformándolos.",
-        "host": "Club de Baile,  Inmensidades Y Camila Malenchini",
-        "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
-      },
       "danceClasses": {
         "nYStyle": "Nueva York Style",
         "sonCubano": "Son Cubano",
@@ -776,6 +765,14 @@
           "guest": "Nelson Antonio Gomez Serrudo",
           "bio": "Profesor de tiempo completo de la Facultad de Ciencias Sociales de la Pontificia Universidad Javeriana, vinculado al Departamento de Sociología desde el año 2005. Es sociólogo por la Universidad Nacional de Colombia, magíster en Estudios Interdisciplinarios de la Universidad Distrital Francisco José de Caldas y doctor en Urbanismo por la Universidad Central de Venezuela. Cuenta con más de 20 años de experiencia docente en diferentes universidades de Bogotá. Como investigador, coordina el Grupo de Investigación en Culturas Festivas en Colombia y América Latina, un grupo interdisciplinario de la Pontificia Universidad Javeriana. En su trayectoria profesional ha desarrollado estudios para diversas entidades de la Alcaldía Mayor de Bogotá, en distintas administraciones, y ha publicado numerosos trabajos sobre temas urbanos. Su perfil investigativo se centra en asuntos relacionados con el espacio público, el transporte, la cultura urbana y las culturas festivas.",
           "description": "Las claves de la salsa en Colombia es una travesía sonora por un género nacido en la tradición afrocubana que se convirtió en una de las expresiones culturales más vibrantes del país. Este libro propone cuatro claves para comprender la llegada, expansión y consolidación de la salsa en el territorio colombiano, desde los puertos caribeños hasta los barrios, emisoras, pistas de baile y grandes festividades en los que este ritmo encontró un hogar definitivo. Este libro muestra cómo los discos que arribaron a Barranquilla, Buenaventura y Cartagena influyeron en toda una generación; cómo la industria musical moldeó un canon propio; y cómo la radio, los coleccionistas, los bailarines y los espacios nocturnos configuraron una sociabilidad salsera que aún está presente en la memoria urbana. Para explicar el cómo y el porqué de la salsa en Colombia, se recorren los territorios de la rumba, los estilos de baile, las bohemias que se entrelazan en cada establecimiento y los calendarios festivos. A partir de una investigación sólida, esta obra ofrece una lectura profunda sobre el modo en que la salsa se volvió banda sonora y patrimonio cultural del país. Las claves de la salsa en Colombia invita a escuchar el ritmo detrás de la historia y a reconocer, en cada golpe de clave, una manera de sentir y de construir sociabilidad."
+        },
+        "clubDeBaile": {
+          "title": "¡El que baila es gay!: homosexualizando la pista de baile",
+          "description": "Este conversatorio reúne distintas voces para reflexionar sobre el baile social lgttbiq+ y sobre la práctica de homosexualizar la pista de baile. ¿Cómo se relacionan las personas lgttbiq+ con formas como la salsa, la cumbia, la bachata o el merengue? ¿Qué sucede cuando alteramos o desarmamos los roles tradicionales, intercambiamos roles, y exploramos formas más fluidas de conducir y seguir? ¿Existe algo entre medio? ¿Qué otras formas de relación, escucha y negociación corporal pueden emerger? ¿Qué tipos de intimidad, placer, parentesco y experiencia colectiva se vuelven posibles? ¿Y qué pueden enseñarnos las pistas de baile lgttbiq+ sobre otras maneras de bailar juntxs? Más que ofrecer respuestas definitivas, esta conversación busca abrir un espacio para compartir experiencias, cuestionar supuestos e imaginar nuevas formas de movernos juntxs.",
+          "bio": "Club de Baile nació del deseo de reimaginar las pistas de baile social con las que muchxs crecimos: espacios llenos de placer, ritmo, juego, encuentro e intimidad estructurados por normas y expectativas heterosexuales y patriarcales. Bailar con otrxs es una práctica singular y poderosa. Nos invita a entrar en diálogo con otra persona a través del cuerpo. Implica escucha, malentendidos, confianza, improvisación, negociación, cercanía, errores, placer y cuidado. Sin embargo, la mayoria de los espacios de baile social se organizan en torno a roles de género tradicionales y supuestos heteronormativos. Club de Baile surge del deseo de poder habitar estos bailes de otra manera: no rechazándolos, sino reapropiándonos y transformándolos.",
+          "host": "Club de Baile",
+          "presenter": "Inmensidades Y Camila Malenchini",
+          "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)"
         }
       }
     }

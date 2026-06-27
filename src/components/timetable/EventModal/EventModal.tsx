@@ -334,20 +334,61 @@ export default function EventModal({
             {/* Talk-specific content */}
             {selectedEventDetails.type === "talk" && (
               <>
-                {/* Bio for talks */}
-                {selectedEventDetails.bio && (
-                  <div className="mb-6">
-                    <h4 className="text-bes-red mb-2 text-xl font-bold">
-                      {t("modal.about")}{" "}
-                      {selectedEventDetails.presenter ||
-                        selectedEventDetails.guest ||
-                        ""}
-                    </h4>
-                    <p className="text-xl text-gray-700 md:leading-relaxed">
-                      {selectedEventDetails.bio}
-                    </p>
-                  </div>
-                )}
+                {/* Description first for regular talks without slides */}
+                {selectedEventDetails.actType !== "Aviatrix" &&
+                  selectedEventDetails.description && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.description")}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {selectedEventDetails.description}
+                      </p>
+                    </div>
+                  )}
+
+                {/* Ordered bios for regular talks without slides */}
+                {selectedEventDetails.actType !== "Aviatrix" &&
+                  selectedEventDetails.talkBios?.map((talkBio, index) => (
+                    <div className="mb-6" key={`${talkBio.name}-${index}`}>
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.about")} {talkBio.name}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {talkBio.bio}
+                      </p>
+                    </div>
+                  ))}
+
+                {/* Fallback bio for legacy talk data */}
+                {selectedEventDetails.actType !== "Aviatrix" &&
+                  !selectedEventDetails.talkBios?.length &&
+                  selectedEventDetails.bio && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.about")}{" "}
+                        {selectedEventDetails.presenter ||
+                          selectedEventDetails.guest ||
+                          ""}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {selectedEventDetails.bio}
+                      </p>
+                    </div>
+                  )}
+
+                {/* Bio for Aviatrix talks */}
+                {selectedEventDetails.actType === "Aviatrix" &&
+                  selectedEventDetails.bio && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.about")} {selectedEventDetails.guest || ""}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {selectedEventDetails.bio}
+                      </p>
+                    </div>
+                  )}
 
                 {/* Comment for Aviatrix talks - shown after bio */}
                 {selectedEventDetails.comment &&
@@ -362,17 +403,18 @@ export default function EventModal({
                     </div>
                   )}
 
-                {/* Description for talks */}
-                {selectedEventDetails.description && (
-                  <div className="mb-6">
-                    <h4 className="text-bes-red mb-2 text-xl font-bold">
-                      {t("modal.description")}
-                    </h4>
-                    <p className="text-xl text-gray-700 md:leading-relaxed">
-                      {selectedEventDetails.description}
-                    </p>
-                  </div>
-                )}
+                {/* Description for Aviatrix talks */}
+                {selectedEventDetails.actType === "Aviatrix" &&
+                  selectedEventDetails.description && (
+                    <div className="mb-6">
+                      <h4 className="text-bes-red mb-2 text-xl font-bold">
+                        {t("modal.description")}
+                      </h4>
+                      <p className="text-xl text-gray-700 md:leading-relaxed">
+                        {selectedEventDetails.description}
+                      </p>
+                    </div>
+                  )}
 
                 {/* Additional text for talks */}
                 {selectedEventDetails.text && (

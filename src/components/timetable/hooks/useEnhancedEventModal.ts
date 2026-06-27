@@ -23,6 +23,10 @@ export interface SelectedEventDetails {
   description?: string;
   bio?: string;
   bioTwo?: string;
+  talkBios?: {
+    name: string;
+    bio: string;
+  }[];
   record?: string;
   artist?: string;
   text?: string;
