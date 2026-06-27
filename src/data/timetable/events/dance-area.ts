@@ -152,12 +152,12 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/burundanga.webp",
+        image: "/helen-yago-show.webp",
         caption: "Timetable.events.danceShows.instructor.helenYago",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/bongo.webp",
+        image: "/ley-ayna.webp",
         caption: "Timetable.events.danceShows.instructor.leiAyna",
       }),
       EventFactory.createSlide({
@@ -182,9 +182,9 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         description: "Timetable.events.danceShows.descriptions.jessiJuli",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.danceShows.instructor.agnesVassil",
+        name: "Timetable.events.danceShows.instructor.vassilAgnes",
         role: "dancer",
-        description: "Timetable.events.danceShows.descriptions.agnesVassil",
+        description: "Timetable.events.danceShows.descriptions.vassilAgnes",
       }),
       EventFactory.createAct({
         name: "Timetable.events.danceShows.instructor.various",
@@ -195,13 +195,13 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     slides: [
       EventFactory.createSlide({
         type: "image",
-        image: "/burundanga.webp",
+        image: "/jessi-juli.webp",
         caption: "Timetable.events.danceShows.instructor.jessiJuli",
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/bongo.webp",
-        caption: "Timetable.events.danceShows.instructor.agnesVassil",
+        image: "/vassil-agnes.webp",
+        caption: "Timetable.events.danceShows.instructor.vassilAgnes",
       }),
       EventFactory.createSlide({
         type: "image",

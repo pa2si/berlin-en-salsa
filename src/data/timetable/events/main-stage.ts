@@ -329,6 +329,30 @@ export const mainStageEvents: RawTimetableEvent[] = [
         description: "Timetable.events.descriptions.besHostDJs",
         image: "/bes-host-djs.webp",
       }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.dracaena",
+        role: "dj",
+        bio: "Timetable.events.bios.dracaena",
+        image: "/dracaena.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.elVago",
+        role: "dj",
+        bio: "Timetable.events.bios.elVago",
+        image: "/el-vago.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.andreluxx",
+        role: "dj",
+        bio: "Timetable.events.bios.andreluxx",
+        image: "/andreluxx.webp",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.artists.elMelomanoAleman",
+        role: "dj",
+        bio: "Timetable.events.bios.elMelomanoAleman",
+        image: "/el-melomano-aleman.webp",
+      }),
     ],
   }),
 ];

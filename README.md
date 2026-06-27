@@ -1,8 +1,11 @@
 to Do:
 
-- El Que Baila es gay implementing!
-- Awareness implementing
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
+
+v3.6.20
+
+- BeS Host DJs individuales added to slot
+- for dance shows its only missing the "various" slide
 
 v3.6.19
 

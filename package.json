@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "v3.6.19",
+  "version": "v3.6.20",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
