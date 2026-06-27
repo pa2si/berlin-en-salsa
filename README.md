@@ -4,6 +4,12 @@ to Do:
 - Awareness implementing
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.18
+
+- removed bes-logo bg image in layout for (content) routes.
+- added the logo in the particular pages instead.
+- timetable route now has not bg image
+
 v3.6.17
 
 - Shows de baile prepared and now possible with slides.

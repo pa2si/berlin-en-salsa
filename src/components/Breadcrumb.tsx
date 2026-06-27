@@ -14,7 +14,7 @@ export default function Breadcrumb({ currentPage }: BreadcrumbProps) {
             <li className="inline-flex items-center">
               <Link
                 href="/"
-                className="text-bes-red hover:text-bes-red/80 inline-flex items-center text-sm sm:text-base md:text-lg"
+                className="text-bes-red hover:text-bes-red/80 inline-flex items-center text-sm hover:cursor-pointer sm:text-base md:text-lg"
               >
                 <img
                   src="/bes-logo-color.webp"
