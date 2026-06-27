@@ -73,7 +73,9 @@ export interface Act {
 export type ActRole =
   | "instructor"
   | "presenter"
+  | "host"
   | "moderator"
+  | "author"
   | "guest"
   | "dj"
   | "dancer"
@@ -114,7 +116,7 @@ export interface RawDanceAreaEvent extends RawEventWithActs {
  */
 export interface RawMusicWorkshopEvent extends RawEventWithActs {
   type: "music-workshop";
-  actType?: "workshop" | "jam";
+  actType?: "workshop" | "jam" | "music-workshop";
   instrument?: string; // e.g., "Conga", "Piano"
   level?: "beginner" | "intermediate" | "advanced";
 }
@@ -124,7 +126,7 @@ export interface RawMusicWorkshopEvent extends RawEventWithActs {
  */
 export interface RawTalkEvent extends RawEventWithActs {
   type: "talk";
-  format: "presentation" | "interview" | "panel";
+  format: "presentation" | "interview" | "panel" | "book-presentation";
   topic?: string;
   slides?: MediaSlide[]; // For image galleries
 }
@@ -196,7 +198,7 @@ export interface DanceAreaEvent extends EventWithActs {
  */
 export interface MusicWorkshopEvent extends EventWithActs {
   type: "music-workshop";
-  actType?: "workshop" | "jam";
+  actType?: "workshop" | "jam" | "music-workshop";
   instrument?: string; // e.g., "Conga", "Piano"
   level?: "beginner" | "intermediate" | "advanced";
   duration: number; // Set by timeline config during enrichment
@@ -207,7 +209,7 @@ export interface MusicWorkshopEvent extends EventWithActs {
  */
 export interface TalkEvent extends EventWithActs {
   type: "talk";
-  format: "presentation" | "interview" | "panel";
+  format: "presentation" | "interview" | "panel" | "book-presentation";
   topic?: string;
   slides?: MediaSlide[]; // For image galleries
 }

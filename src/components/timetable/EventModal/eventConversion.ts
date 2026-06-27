@@ -125,7 +125,7 @@ export function convertTimetableEventToSelectedDetails(
     return {
       ...baseDetails,
       type: "workshop",
-      actType: event.actType === "jam" ? "jam" : "music-workshop",
+      actType: event.actType ?? "music-workshop",
       instructor: translateIfKey(firstInstructor?.name),
       description: translateIfKey(event.description),
       bio: translateIfKey(firstInstructor?.bio),
@@ -174,35 +174,50 @@ export function convertTimetableEventToSelectedDetails(
 
   // Regular Salsa Talks
   if (isTalkEvent(event)) {
+    const host = event.acts.find((act) => act.role === "host");
     const moderator = event.acts.find((act) => act.role === "moderator");
+    const authors = event.acts.filter((act) => act.role === "author");
     const guests = event.acts.filter((act) => act.role === "guest");
     const presenter = event.acts.find((act) => act.role === "presenter");
+    const isBookPresentation = event.format === "book-presentation";
 
-    // Use custom slides if provided, otherwise generate from acts
-    const slides = event.slides
-      ? event.slides.map((slide) => ({
-          image: slide.image,
-          description: translateIfKey(slide.content),
-          bio: translateIfKey(slide.bio),
-          caption: slide.caption, // Keep as key for EventNavigation
-        }))
-      : event.acts.map((act) => ({
-          image: act.image,
-          description: translateIfKey(act.description), // Only act's own description, not event description
-          bio: translateIfKey(act.bio),
-          descriptionFromAct: Boolean(act.description),
-          caption: act.name, // Keep as key for EventNavigation
-        }));
+    // Only use slides when they were explicitly created on the event.
+    const slides = event.slides?.map((slide, index) => {
+      const matchedAct = event.acts.find((act) => act.name === slide.caption);
+
+      return {
+        image: slide.image,
+        description: translateIfKey(
+          slide.content ??
+            (isBookPresentation && index === 0 ? event.description : undefined),
+        ),
+        bio: translateIfKey(slide.bio ?? matchedAct?.bio),
+        caption: slide.caption, // Keep as key for EventNavigation
+      };
+    });
+    const talkImage =
+      event.image ?? presenter?.image ?? moderator?.image ?? guests[0]?.image;
 
     return {
       ...baseDetails,
       type: "talk",
+      actType:
+        event.format === "interview"
+          ? "interview"
+          : event.format === "book-presentation"
+            ? "book-presentation"
+            : undefined,
+      host: translateIfKey(host?.name),
       presenter: translateIfKey(presenter?.name), // Fixed: was 'host'
-      guest: guests.map((g) => translateIfKey(g.name)).join(", "),
+      guest: (authors.length > 0 ? authors : guests)
+        .map((person) => translateIfKey(person.name))
+        .join(", "),
       moderator: translateIfKey(moderator?.name),
-      description: translateIfKey(event.description),
-      slides: slides.length > 0 ? slides : undefined,
-      image: slides[0]?.image,
+      description: isBookPresentation
+        ? undefined
+        : translateIfKey(event.description),
+      slides: slides && slides.length > 0 ? slides : undefined,
+      image: slides?.[0]?.image ?? talkImage,
     };
   }
 

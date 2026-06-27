@@ -268,9 +268,27 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           },
           {
             time: "15:00",
-            duration: 120,
-            tba: true,
+            duration: 90,
+            tba: false,
             eventId: "Timetable.events.musicWorkshops.latinJam.title", // PLACEHOLDER.  Content added in json
+          },
+          {
+            time: "16:30",
+            duration: 150,
+            tba: false,
+            eventId:
+              "Timetable.events.musicWorkshops.clubDeBaileSaturday.title", // Done
+          },
+        ],
+      },
+      {
+        dayWeekday: "sunday",
+        timeline: [
+          {
+            time: "17:00",
+            duration: 180,
+            tba: false,
+            eventId: "Timetable.events.musicWorkshops.clubDeBaileSunday.title", // Done
           },
         ],
       },
@@ -313,8 +331,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "16:30",
             duration: 60,
-            tba: true,
-            eventId: "Timetable.events.salsaTalks.isaKaltTalk.title", // PLACEHOLDER
+            tba: false,
+            eventId: "Timetable.events.salsaTalks.elBarrio.title", // DONE
           },
         ],
       },
@@ -342,8 +360,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "15:00",
             duration: 60,
-            tba: true,
-            eventId: "Timetable.events.salsaTalks.libroSalsaTalk.title", // PLACEHOLDER
+            tba: false,
+            eventId: "Timetable.events.salsaTalks.libroSalsa.title", //DONE
           },
         ],
       },

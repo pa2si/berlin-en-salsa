@@ -42,13 +42,19 @@ export default function EventDetails({
               ? t("actTypes.dance-area-show")
               : selectedEventDetails.actType === "dance-area-workshop"
                 ? t("actTypes.dance-area-workshop")
-                : selectedEventDetails.actType === "music-workshop"
-                  ? t("actTypes.music-workshop")
-                  : selectedEventDetails.actType === "jam"
-                    ? t("actTypes.jam")
-                    : selectedEventDetails.actType === "talk"
-                      ? t("actTypes.talk")
-                      : selectedEventDetails.actType}
+                : selectedEventDetails.actType === "workshop"
+                  ? t("actTypes.workshop")
+                  : selectedEventDetails.actType === "music-workshop"
+                    ? t("actTypes.music-workshop")
+                    : selectedEventDetails.actType === "jam"
+                      ? t("actTypes.jam")
+                      : selectedEventDetails.actType === "interview"
+                        ? t("actTypes.interview")
+                        : selectedEventDetails.actType === "book-presentation"
+                          ? t("actTypes.book-presentation")
+                          : selectedEventDetails.actType === "talk"
+                            ? t("actTypes.talk")
+                            : selectedEventDetails.actType}
         </span>
       ) : selectedEventDetails.type === "workshop" ||
         selectedEventDetails.type === "dance-area" ? (
@@ -93,9 +99,19 @@ export default function EventDetails({
         )}
       {selectedEventDetails.type === "talk" && selectedEventDetails.guest && (
         <span className="text-lg text-gray-700">
-          {t("modal.guestLabel")} {selectedEventDetails.guest}
+          {selectedEventDetails.actType === "book-presentation"
+            ? t("modal.authorLabel")
+            : t("modal.guestLabel")}{" "}
+          {selectedEventDetails.guest}
         </span>
       )}
+      {selectedEventDetails.type === "talk" &&
+        selectedEventDetails.actType !== "Aviatrix" &&
+        selectedEventDetails.host && (
+          <span className="text-lg text-gray-700">
+            {t("modal.hostLabel")} {selectedEventDetails.host}
+          </span>
+        )}
       {selectedEventDetails.type === "talk" &&
         selectedEventDetails.presenter && (
           <span className="text-lg text-gray-700">

@@ -2,6 +2,17 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.14
+
+- added "music-workshop" actType to createMusicWorkshop
+- added "club de baile" to workshops
+- the columns translation for music-workshops is now only Workshops
+- Salsa Talk added:
+  - El Barrio
+  - Libro de Salsa
+- new role: author and host
+- new format in createTalk: book-presentation
+
 v3.6.13
 
 - removed in dance-area the panel option with all its connections

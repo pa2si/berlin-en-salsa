@@ -445,7 +445,7 @@
       "mainStage": "Hauptbühne",
       "danceArea": "Tanz Area",
       "salsaTalks": "Salsa-Talks",
-      "musicWorkshops": "Musik-Workshops"
+      "musicWorkshops": "Workshops"
     },
     "actTypes": {
       "live": "Live",
@@ -457,6 +457,8 @@
       "dance-area-workshop": "Tanz Workshop",
       "music-workshop": "Musik Workshop",
       "jam": "Jam",
+      "interview": "Interview",
+      "book-presentation": "Buchpräsentation",
       "talk": "Talk",
       "Aviatrix": "Aviatrix"
     },
@@ -469,9 +471,10 @@
       "workshopLeaderLabel": "Geleitet von:",
       "classLeaderLabelDanceArea": "Geleitet von:",
       "presenterLabel": "Präsentiert von:",
-      "hostLabel": "Moderiert von:",
+      "hostLabel": "Moderation:",
       "moderatorLabel": "Moderiert von:",
-      "guestLabel": "Vortragende Person:",
+      "authorLabel": "Autor:",
+      "guestLabel": "Gast:",
       "hostedByLabel": "Host:",
       "djsLabel": "DJs:",
       "artistLabel": "Künstler:",
@@ -585,6 +588,18 @@
         "alafiaConIre": "Laura, Kimberly, Christian"
       },
       "musicWorkshops": {
+        "clubDeBaileSaturday": {
+          "title": "Gestalte dein T-Shirt ",
+          "name": "Club de Baile",
+          "description": "Während des gesamten Festivals „Berlin en Salsa“ wird das Kollektiv „Club de Baile“ einen Workshop zum Thema Textildesign veranstalten, bei dem Körpervielfalt und geschlechtliche Inklusion im Mittelpunkt stehen. Dabei dienen die einfachen Festival-T-Shirts als Ausgangspunkt, um sie in einzigartige, anpassungsfähige und für verschiedene Körper und Identitäten zugängliche Kleidungsstücke zu verwandeln. Mithilfe verschiedener Techniken, bei denen das Selbermachen im Mittelpunkt steht, zielt dieser Workshop darauf ab, den Standard neu zu definieren und in Vielfalt umzuwandeln – in dem Bewusstsein, dass nicht alle Körper Kleidung auf die gleiche Weise erleben. Der Workshop lädt die Teilnehmenden dazu ein, ihre eigenen T-Shirts zu gestalten und dabei neue Formen, Schnitte und Verwendungsmöglichkeiten zu erkunden, während gleichzeitig der persönliche Ausdruck, der Tragekomfort und das Zugehörigkeitsgefühl zum Kleidungsstück gefördert werden. Der Workshop ist mehr als nur ein einfacher Stand zur individuellen Gestaltung; er fungiert als partizipativer Raum für Verbindung, Kreativität und Austausch, in dem ästhetischer Ausdruck als Instrument für Inklusion, Identität und Gemeinschaft verstanden wird. Achtung: fängt bereits um 16:00 an! ",
+          "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren."
+        },
+        "clubDeBaileSunday": {
+          "title": "Gestalte dein T-Shirt ",
+          "name": "Club de Baile",
+          "description": "Während des gesamten Festivals „Berlin en Salsa“ wird das Kollektiv „Club de Baile“ einen Workshop zum Thema Textildesign veranstalten, bei dem Körpervielfalt und geschlechtliche Inklusion im Mittelpunkt stehen. Dabei dienen die einfachen Festival-T-Shirts als Ausgangspunkt, um sie in einzigartige, anpassungsfähige und für verschiedene Körper und Identitäten zugängliche Kleidungsstücke zu verwandeln. Mithilfe verschiedener Techniken, bei denen das Selbermachen im Mittelpunkt steht, zielt dieser Workshop darauf ab, den Standard neu zu definieren und in Vielfalt umzuwandeln – in dem Bewusstsein, dass nicht alle Körper Kleidung auf die gleiche Weise erleben. Der Workshop lädt die Teilnehmenden dazu ein, ihre eigenen T-Shirts zu gestalten und dabei neue Formen, Schnitte und Verwendungsmöglichkeiten zu erkunden, während gleichzeitig der persönliche Ausdruck, der Tragekomfort und das Zugehörigkeitsgefühl zum Kleidungsstück gefördert werden. Der Workshop ist mehr als nur ein einfacher Stand zur individuellen Gestaltung; er fungiert als partizipativer Raum für Verbindung, Kreativität und Austausch, in dem ästhetischer Ausdruck als Instrument für Inklusion, Identität und Gemeinschaft verstanden wird.",
+          "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren."
+        },
         "ritmoDeClave": {
           "title": "Ritmo de Clave",
           "name": "Guillermo Diaz",
@@ -604,7 +619,7 @@
         "latinJam": {
           "title": "Latin Jam",
           "name": "Daniel Stawinski",
-          "description": "El Latin Jam es, desde hace varios años, un punto de encuentro para músicos, bailarines y amantes de la salsa, el latin jazz y la música tradicional cubana y fue creada por el pianista Daniel Stawinski. Cada primer sábado de mes, músicos y músicas interesados se reúnen para tocar de manera espontánea y relajada los clásicos del repertorio latino. Con sede en Wedding, la Latin Jam llegará en julio con una edición especial en el marco de Berlin En Salsa. Traigan sus instrumentos (ya contamos con percusión, piano eléctrico y bajo eléctrico) y sean parte de esta experiencia para descubrir cómo la música nos conecta y cómo surgen momentos mágicos cuando hacemos música juntos."
+          "description": "Die Latin Jam ist seit mehreren Jahren ein Treffpunkt für Musiker, Tänzer und Liebhaber von Salsa, Latin Jazz und traditioneller kubanischer Musik und wurde vom Pianisten Daniel Stawinski ins Leben gerufen. Jeden ersten Samstag des Monats treffen sich interessierte Musiker*innen und es werden spontan und ungezwungen die Klassiker des Latin Repertoires gespielt. Im Wedding beheimatet, findet die Latin Jam im Juli als Special Edition im Rahmen von Berlin En Salsa statt. Bringt Eure Instrumente (Perkussion, E-Piano und E-Bass sind schon vorhanden), und erlebt mit, wie uns die Musik verbindet und beim gemeinsamen Musizieren magische Momente entstehen. Achtung: Die Jam endet um 17:00 Uhr! "
         }
       },
       "colectivos": {
@@ -749,13 +764,19 @@
         }
       },
       "salsaTalks": {
-        "isaKaltTalk": {
-          "title": "Interview Henry Wolf, “El Barrio",
-          "description": ""
+        "elBarrio": {
+          "title": "Interview mit Henry Wolf, „El Barrio“",
+          "host": "Isa Kalt",
+          "guest": "Henry Wolf",
+          "description": "Interview mit Henry Wolf, „El Barrio“ Berlin war in den 2000er Jahren weniger vielfältig als heute, aber es gab bereits Lateinamerikaner, die ihre Kultur mitbrachten. So entstanden hier lateinamerikanische Restaurants, Bars und Tanzlokale. Eines dieser Tanzlokale und Kulturort war „El Barrio“ in der Potsdamer Straße, nahe der Lützowstraße, das von 1993 bis 2003 bestand. Dort traten puertoricanische Salsa-Orchester und viele andere auf. Damals gab es noch kein Internet – wie funktionierte das Kulturmanagment in jener Zeit? War das reine Privatinitiative oder gab es Fördermittel für die Kultur? Diese und viele andere Fragen möchten wir dem ehemaligen Besitzer von „El Barrio“, Henry Wolf, stellen."
         },
-        "libroSalsaTalk": {
-          "title": "Las Claves de la Salsa en Colombia",
-          "description": ""
+        "libroSalsa": {
+          "title": "Präsentation des Buches \"Las Claves de la Salsa en Colombia\"",
+          "book": "Las Claves de la Salsa en Colombia",
+          "host": "Rodo Le Fou",
+          "guest": "Nelson Antonio Gomez Serrudo",
+          "bio": "Professor in Vollzeit an der Fakultät für Sozialwissenschaften der Päpstlichen Javeriana-Universität und seit 2005 Mitglied des Fachbereichs Soziologie. Er ist Soziologe mit Abschluss der Nationalen Universität Kolumbiens, besitzt einen Masterabschluss in Interdisziplinären Studien der Distrital-Universität Francisco José de Caldas und promovierte im Fach Stadtplanung an der Zentraluniversität von Venezuela. Er verfügt über mehr als 20 Jahre Lehrerfahrung an verschiedenen Universitäten in Bogotá. Als Forscher leitet er die Forschungsgruppe „Festkulturen in Kolumbien und Lateinamerika“, eine interdisziplinäre Forschungsgruppe der Päpstlichen Javeriana-Universität. Im Laufe seiner beruflichen Tätigkeit hat er Studien für verschiedene Einrichtungen der Stadtverwaltung von Bogotá in unterschiedlichen Verwaltungsperioden durchgeführt und zahlreiche Veröffentlichungen zu städtischen Themen vorgelegt. Sein Forschungsschwerpunkt liegt auf Themen des öffentlichen Raums, des Verkehrs, der urbanen Kultur sowie der Fest- und Feierkulturen.",
+          "description": "Die Schlüssel der Salsa in Kolumbien ist eine klangvolle Reise durch ein Musikgenre, das in der afrokubanischen Tradition entstand und sich zu einer der lebendigsten kulturellen Ausdrucksformen des Landes entwickelte. Dieses Buch bietet vier Schlüssel zum Verständnis der Ankunft, Ausbreitung und Etablierung der Salsa auf kolumbianischem Boden – von den karibischen Häfen bis hin zu den Stadtvierteln, Radiosendern, Tanzflächen und großen Festveranstaltungen, in denen dieser Rhythmus seine endgültige Heimat fand. Das Buch zeigt, wie die Schallplatten, die in Barranquilla, Buenaventura und Cartagena ankamen, eine ganze Generation prägten; wie die Musikindustrie einen eigenen Kanon formte; und wie das Radio, die Sammler, die Tänzerinnen und Tänzer sowie das Nachtleben eine salsera-geprägte Geselligkeitskultur entstehen ließen, die bis heute im kollektiven urbanen Gedächtnis fortlebt. Um zu erklären, wie und warum die Salsa in Kolumbien Fuß fasste, führt das Buch durch die Welt der Rumba, die verschiedenen Tanzstile, die geselligen Zusammenkünfte, die sich in den jeweiligen Lokalen entfalten, sowie die Festkalender des Landes. Auf der Grundlage fundierter Forschung bietet dieses Werk eine tiefgehende Analyse der Art und Weise, wie die Salsa zur musikalischen Begleiterin des Alltags und zum kulturellen Erbe Kolumbiens wurde. Die Schlüssel der Salsa in Kolumbien laden dazu ein, den Rhythmus hinter der Geschichte zu hören und in jedem Schlag der Clave eine besondere Art des Fühlens und der Gestaltung von Gemeinschaft zu erkennen."
         }
       }
     }

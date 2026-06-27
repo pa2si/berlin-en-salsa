@@ -63,15 +63,48 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.latinJam.title",
     area: "music-workshops",
     actType: "jam",
+    description: "Timetable.events.musicWorkshops.latinJam.description",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.latinJam.name",
         role: "instructor",
-        // bio: "Timetable.events.musicWorkshops.latinJam.bio",
-        image: "/chucho-palma.jpeg",
+        image: "/latin-jam.webp",
       }),
     ],
-    description: "Timetable.events.musicWorkshops.latinJam.description",
-    image: "/chucho-palma.jpeg",
+  }),
+
+  // Club de Baile Saturday
+  EventFactory.createMusicWorkshop({
+    title: "Timetable.events.musicWorkshops.clubDeBaileSaturday.title",
+    area: "music-workshops",
+    actType: "workshop",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.musicWorkshops.clubDeBaileSaturday.name",
+        role: "instructor",
+        image: "/club-de-baile-logo.webp",
+        bio: "Timetable.events.musicWorkshops.clubDeBaileSaturday.bio",
+      }),
+    ],
+    description:
+      "Timetable.events.musicWorkshops.clubDeBaileSaturday.description",
+    image: "/club-de-baile-logo.webp",
+  }),
+
+  // Club de Baile Sunday
+  EventFactory.createMusicWorkshop({
+    title: "Timetable.events.musicWorkshops.clubDeBaileSunday.title",
+    area: "music-workshops",
+    actType: "workshop",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.musicWorkshops.clubDeBaileSunday.name",
+        role: "instructor",
+        bio: "Timetable.events.musicWorkshops.clubDeBaileSunday.bio",
+        image: "/club-de-baile-logo.webp",
+      }),
+    ],
+    description:
+      "Timetable.events.musicWorkshops.clubDeBaileSunday.description",
   }),
 ];

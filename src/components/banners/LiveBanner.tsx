@@ -189,7 +189,12 @@ const LiveBanner = () => {
     // Check for type (all events have type)
     if (event.type === "music-workshop")
       return timetableT("actTypes.music-workshop");
-    if (event.type === "talk") return timetableT("actTypes.talk");
+    if (event.type === "talk") {
+      if (event.format === "interview") return timetableT("actTypes.interview");
+      if (event.format === "book-presentation")
+        return timetableT("actTypes.book-presentation");
+      return timetableT("actTypes.talk");
+    }
     if (event.type === "aviatrix-talk") return "Aviatrix";
     if (event.type === "dance-show") return "Show";
     return "";

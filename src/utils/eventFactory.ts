@@ -115,7 +115,7 @@ export class EventFactory {
     duration?: number; // Optional - set by timeline config
     area: AreaType;
     acts: Act[];
-    actType?: "workshop" | "jam";
+    actType?: "workshop" | "jam" | "music-workshop";
     instrument?: string;
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
@@ -145,7 +145,7 @@ export class EventFactory {
   static createTalk(params: {
     title: string;
     area: AreaType;
-    format: "presentation" | "interview" | "panel";
+    format: "presentation" | "interview" | "panel" | "book-presentation";
     acts: Act[];
     topic?: string;
     image?: string;

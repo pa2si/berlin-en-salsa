@@ -154,24 +154,23 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
     ],
   }),
 
-  // Salsanco Talk
+  // El Barrio
   EventFactory.createTalk({
-    title: "Timetable.events.salsaTalks.saturday.salsancoTalk.title",
+    title: "Timetable.events.salsaTalks.elBarrio.title",
     area: "salsa-talks",
-    format: "panel",
+    format: "interview",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.artists.paulWelchGuerra",
+        name: "Timetable.events.salsaTalks.elBarrio.host",
         role: "moderator",
+        image: "/el-barrio.webp",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.salsaTalks.saturday.salsancoTalk.guests",
+        name: "Timetable.events.salsaTalks.elBarrio.guest",
         role: "guest",
       }),
     ],
-    description:
-      "Timetable.events.salsaTalks.saturday.salsancoTalk.description",
-    image: "/salsanco.webp",
+    description: "Timetable.events.salsaTalks.elBarrio.description",
   }),
 
   // ===== SUNDAY EVENTS =====
@@ -271,19 +270,34 @@ export const salsaTalksEvents: RawTimetableEvent[] = [
     ],
   }),
 
-  // No Le Llamen Salsa Documentary
+  // libroSalsa
   EventFactory.createTalk({
-    title: "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.title",
+    title: "Timetable.events.salsaTalks.libroSalsa.title",
     area: "salsa-talks",
-    format: "presentation",
+    format: "book-presentation",
+    description: "Timetable.events.salsaTalks.libroSalsa.description",
     acts: [
       EventFactory.createAct({
-        name: "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.presenters",
-        role: "presenter",
+        name: "Timetable.events.salsaTalks.libroSalsa.host",
+        role: "host",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.salsaTalks.libroSalsa.guest",
+        bio: "Timetable.events.salsaTalks.libroSalsa.bio",
+        role: "author",
       }),
     ],
-    description:
-      "Timetable.events.salsaTalks.sunday.noLeLlamenSalsa.description",
-    image: "/no-le-llamen-salsa-a-mi-son.webp",
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/salsa-libro.webp",
+        caption: "Timetable.events.salsaTalks.libroSalsa.book",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/nelson-antonio-gomez-serrudo.webp",
+        caption: "Timetable.events.salsaTalks.libroSalsa.guest",
+      }),
+    ],
   }),
 ];
