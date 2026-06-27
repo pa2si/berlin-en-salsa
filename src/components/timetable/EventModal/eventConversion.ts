@@ -78,17 +78,38 @@ export function convertTimetableEventToSelectedDetails(
 
   // Dance Workshop Events
   if (isDanceAreaEvent(event)) {
-    const instructors = event.acts.filter((act) => act.role === "instructor");
-    const slides = instructors.map((act) => ({
-      image: act.image,
-      description: translateIfKey(event.description),
-      bio: translateIfKey(act.bio),
-      caption: act.name, // Keep as key for EventNavigation
-    }));
+    const participants = event.acts.filter((act) =>
+      event.danceAreaType === "show"
+        ? act.role === "dancer"
+        : act.role === "instructor",
+    );
+    const slides = event.slides
+      ? event.slides.map((slide) => {
+          const matchedParticipant = participants.find(
+            (act) => act.name === slide.caption,
+          );
 
-    const firstInstructor = instructors[0];
-    const secondInstructor =
-      instructors.length > 1 ? instructors[1] : undefined;
+          return {
+            image: slide.image ?? matchedParticipant?.image,
+            description: translateIfKey(
+              slide.content ??
+                matchedParticipant?.description ??
+                event.description,
+            ),
+            bio: translateIfKey(slide.bio ?? matchedParticipant?.bio),
+            caption: slide.caption, // Keep as key for EventNavigation
+          };
+        })
+      : participants.map((act) => ({
+          image: act.image,
+          description: translateIfKey(act.description ?? event.description),
+          bio: translateIfKey(act.bio),
+          caption: act.name, // Keep as key for EventNavigation
+        }));
+
+    const firstParticipant = participants[0];
+    const secondParticipant =
+      participants.length > 1 ? participants[1] : undefined;
     const danceAreaActType =
       event.danceAreaType === "show"
         ? "dance-area-show"
@@ -100,11 +121,19 @@ export function convertTimetableEventToSelectedDetails(
       ...baseDetails,
       type: "dance-area",
       actType: danceAreaActType,
-      instructor: translateIfKey(firstInstructor?.name),
-      instructorTwo: translateIfKey(secondInstructor?.name),
+      instructor:
+        event.danceAreaType === "show"
+          ? participants
+              .map((participant) => translateIfKey(participant.name))
+              .join(", ")
+          : translateIfKey(firstParticipant?.name),
+      instructorTwo:
+        event.danceAreaType === "show"
+          ? undefined
+          : translateIfKey(secondParticipant?.name),
       description: translateIfKey(event.description),
-      bio: translateIfKey(firstInstructor?.bio),
-      bioTwo: translateIfKey(secondInstructor?.bio),
+      bio: translateIfKey(firstParticipant?.bio),
+      bioTwo: translateIfKey(secondParticipant?.bio),
       slides: slides.length > 0 ? slides : undefined,
       image: slides[0]?.image,
     };

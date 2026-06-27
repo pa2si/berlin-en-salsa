@@ -124,4 +124,90 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
     description: "Timetable.events.danceClassDescriptions.afroCuban",
     image: "/afro-cuban.webp",
   }),
+
+  // Performance Shows Saturday
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.danceShows.titleSaturday",
+    area: "dance-area",
+    danceAreaType: "show",
+    enableSubscription: false,
+    danceStyle: "Various styles",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.helenYago",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.helenYago",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.leiAyna",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.leiAyna",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.various",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.various",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/burundanga.webp",
+        caption: "Timetable.events.danceShows.instructor.helenYago",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/bongo.webp",
+        caption: "Timetable.events.danceShows.instructor.leiAyna",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/burundanga.webp",
+        caption: "Timetable.events.danceShows.instructor.various",
+      }),
+    ],
+  }),
+
+  // Performance Shows Sunday
+  EventFactory.createDanceAreaEvent({
+    title: "Timetable.events.danceShows.titleSunday",
+    area: "dance-area",
+    danceAreaType: "show",
+    enableSubscription: false,
+    danceStyle: "Various styles",
+    acts: [
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.jessiJuli",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.jessiJuli",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.agnesVassil",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.agnesVassil",
+      }),
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.various",
+        role: "dancer",
+        description: "Timetable.events.danceShows.descriptions.various",
+      }),
+    ],
+    slides: [
+      EventFactory.createSlide({
+        type: "image",
+        image: "/burundanga.webp",
+        caption: "Timetable.events.danceShows.instructor.jessiJuli",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/bongo.webp",
+        caption: "Timetable.events.danceShows.instructor.agnesVassil",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/burundanga.webp",
+        caption: "Timetable.events.danceShows.instructor.various",
+      }),
+    ],
+  }),
 ];

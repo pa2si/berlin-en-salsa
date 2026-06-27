@@ -87,6 +87,7 @@ export class EventFactory {
     enableSubscription?: boolean;
     image?: string;
     description?: string;
+    slides?: MediaSlide[];
   }): RawDanceAreaEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -103,6 +104,7 @@ export class EventFactory {
       enableSubscription: params.enableSubscription,
       image: params.image,
       description: params.description,
+      slides: params.slides,
     };
   }
 

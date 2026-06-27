@@ -201,7 +201,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "18:30",
             duration: 30,
             tba: true, //
-            eventId: "Timetable.events.danceShows.title", // PLACEHOLDER
+            eventId: "Timetable.events.danceShows.titleSaturday", // PLACEHOLDER. text except for various done
           },
         ],
       },
@@ -227,7 +227,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "18:00",
             duration: 30,
             tba: true,
-            eventId: "Timetable.events.danceShows.title", // PLACEHOLDER
+            eventId: "Timetable.events.danceShows.titleSunday", // PLACEHOLDER. text except for various done
           },
         ],
       },
@@ -247,7 +247,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "17:30",
             duration: 45,
             tba: true,
-            eventId: "Timetable.events.musicWorkshops.ritmoDeClave.title", // PLACEHOLDER
+            eventId: "Timetable.events.musicWorkshops.ritmoDeClave.title", // PLACEHOLDER . Text done, only missing image
           },
         ],
       },
@@ -258,13 +258,13 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
             time: "12:30",
             duration: 45,
             tba: true,
-            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER.  Content added in json
+            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER . Text done, only missing image
           },
           {
             time: "13:30",
             duration: 45,
             tba: true,
-            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER. Content added in json
+            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER . Text done, only missing image
           },
           {
             time: "15:00",

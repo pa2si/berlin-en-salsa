@@ -109,6 +109,7 @@ export interface RawDanceAreaEvent extends RawEventWithActs {
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   enableSubscription?: boolean; // Show class subscription form in the event modal
+  slides?: MediaSlide[]; // Optional custom slides for the event modal
 }
 
 /**
@@ -190,6 +191,7 @@ export interface DanceAreaEvent extends EventWithActs {
   danceStyle: string; // e.g., "Salsa Cubana", "Son", "Afro-Cuban"
   level?: "beginner" | "intermediate" | "advanced";
   enableSubscription?: boolean; // Show class subscription form in the event modal
+  slides?: MediaSlide[]; // Optional custom slides for the event modal
   duration: number; // Set by timeline config during enrichment
 }
 
