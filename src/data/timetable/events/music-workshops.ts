@@ -15,6 +15,8 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
   EventFactory.createMusicWorkshop({
     title: "Timetable.events.musicWorkshops.ritmoDeClave.title",
     area: "music-workshops",
+    description: "Timetable.events.musicWorkshops.ritmoDeClave.description",
+    image: "/guillermo-diaz.webp",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.ritmoDeClave.name",
@@ -22,14 +24,15 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         image: "/guillermo-diaz.webp",
       }),
     ],
-    description: "Timetable.events.musicWorkshops.ritmoDeClave.description",
-    image: "/guillermo-diaz.webp",
   }),
 
   // Guiro Workshop
   EventFactory.createMusicWorkshop({
     title: "Timetable.events.musicWorkshops.guiroWorkshop.title",
     area: "music-workshops",
+    description: "Timetable.events.musicWorkshops.guiroWorkshop.description",
+    image: "/angel-candeaux.webp",
+    location: "Timetable.events.musicWorkshops.guiroWorkshop.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.guiroWorkshop.name",
@@ -38,14 +41,14 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         image: "/angel-candeaux.webp",
       }),
     ],
-    description: "Timetable.events.musicWorkshops.guiroWorkshop.description",
-    image: "/angel-candeaux.webp",
   }),
 
   // Campana Workshop
   EventFactory.createMusicWorkshop({
     title: "Timetable.events.musicWorkshops.campanaWorkshop.title",
     area: "music-workshops",
+    description: "Timetable.events.musicWorkshops.campanaWorkshop.description",
+    image: "/chucho-palma.jpeg",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.campanaWorkshop.name",
@@ -54,8 +57,6 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         image: "/chucho-palma.jpeg",
       }),
     ],
-    description: "Timetable.events.musicWorkshops.campanaWorkshop.description",
-    image: "/chucho-palma.jpeg",
   }),
 
   // Latin Jam
@@ -78,6 +79,9 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.clubDeBaileSaturday.title",
     area: "music-workshops",
     actType: "workshop",
+    description:
+      "Timetable.events.musicWorkshops.clubDeBaileSaturday.description",
+    image: "/club-de-baile-logo.webp",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.clubDeBaileSaturday.name",
@@ -86,9 +90,6 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         bio: "Timetable.events.musicWorkshops.clubDeBaileSaturday.bio",
       }),
     ],
-    description:
-      "Timetable.events.musicWorkshops.clubDeBaileSaturday.description",
-    image: "/club-de-baile-logo.webp",
   }),
 
   // Club de Baile Sunday
@@ -96,6 +97,8 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.clubDeBaileSunday.title",
     area: "music-workshops",
     actType: "workshop",
+    description:
+      "Timetable.events.musicWorkshops.clubDeBaileSunday.description",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.clubDeBaileSunday.name",
@@ -104,7 +107,5 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         image: "/club-de-baile-logo.webp",
       }),
     ],
-    description:
-      "Timetable.events.musicWorkshops.clubDeBaileSunday.description",
   }),
 ];

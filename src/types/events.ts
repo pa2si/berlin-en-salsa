@@ -26,6 +26,7 @@ export interface BaseEventDefinition {
   isTba?: boolean; // Placeholder slot marker for non-clickable TBA entries
   image?: string; // Primary image
   description?: string; // Event description (translatable key)
+  location?: string; // Event location (plain text or translation key)
 }
 
 /**

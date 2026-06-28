@@ -4,6 +4,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.26
+
+- added the possibility to add a location in the eventModal
+
 v3.6.25
 
 - slot bubbles now visibly more accurate with the actual time slot

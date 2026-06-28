@@ -5,6 +5,7 @@ export interface SelectedEventDetails {
   event: string;
   time: string;
   endTime?: string;
+  location?: string;
   instructor?: string;
   instructorTwo?: string;
   presenter?: string;

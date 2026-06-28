@@ -12,25 +12,33 @@ export default function EventDetails({
 
   return (
     <div className="mb-4 flex flex-col">
-      <span className="flex items-center text-lg font-bold text-gray-700">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="mr-1 h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        {selectedEventDetails.endTime
-          ? `${selectedEventDetails.time} - ${selectedEventDetails.endTime}`
-          : selectedEventDetails.time}
-      </span>
+      <div className="flex w-full items-center justify-between gap-x-3 gap-y-1 text-lg font-bold text-gray-700">
+        <span className="flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="mr-1 h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          {selectedEventDetails.endTime
+            ? `${selectedEventDetails.time} - ${selectedEventDetails.endTime}`
+            : selectedEventDetails.time}
+        </span>
+
+        {selectedEventDetails.location && (
+          <span className="ml-auto text-right font-normal text-gray-700">
+            📍 {selectedEventDetails.location}
+          </span>
+        )}
+      </div>
 
       {/* Show actType/format - but skip for Aviatrix (will show host instead) */}
       {selectedEventDetails.actType &&

@@ -33,6 +33,7 @@ export function convertTimetableEventToSelectedDetails(
     event: translateIfKey(event.title),
     time: event.startTime || "", // Provide default empty string if undefined
     endTime: event.endTime,
+    location: translateIfKey(event.location),
   };
 
   // Main Stage Events (DJ sets, live bands)

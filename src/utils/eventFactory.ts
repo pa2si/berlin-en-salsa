@@ -52,6 +52,7 @@ export class EventFactory {
     hasShow?: boolean;
     danceShow?: string;
     dancers?: string;
+    location?: string;
   }): RawMainStageEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -65,6 +66,7 @@ export class EventFactory {
       genre: params.genre,
       image: params.image,
       description: params.description,
+      location: params.location,
       slides: params.slides,
       hasShow: params.hasShow,
       danceShow: params.danceShow,
@@ -88,6 +90,7 @@ export class EventFactory {
     image?: string;
     description?: string;
     slides?: MediaSlide[];
+    location?: string;
   }): RawDanceAreaEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -104,6 +107,7 @@ export class EventFactory {
       enableSubscription: params.enableSubscription,
       image: params.image,
       description: params.description,
+      location: params.location,
       slides: params.slides,
     };
   }
@@ -122,6 +126,7 @@ export class EventFactory {
     level?: "beginner" | "intermediate" | "advanced";
     image?: string;
     description?: string;
+    location?: string;
   }): RawMusicWorkshopEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -137,6 +142,7 @@ export class EventFactory {
       level: params.level,
       image: params.image,
       description: params.description,
+      location: params.location,
     };
   }
 
@@ -153,6 +159,7 @@ export class EventFactory {
     image?: string;
     description?: string;
     slides?: MediaSlide[];
+    location?: string;
   }): RawTalkEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -166,6 +173,7 @@ export class EventFactory {
       topic: params.topic,
       image: params.image,
       description: params.description,
+      location: params.location,
       slides: params.slides,
     };
   }
@@ -185,6 +193,7 @@ export class EventFactory {
     image?: string;
     description?: string;
     slides?: MediaSlide[];
+    location?: string;
   }): RawAviatrixTalkEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -200,6 +209,7 @@ export class EventFactory {
       backgroundInfo: params.backgroundInfo,
       image: params.image,
       description: params.description,
+      location: params.location,
       slides: params.slides,
     };
   }
@@ -216,6 +226,7 @@ export class EventFactory {
     overlapsWithEvent?: string;
     image?: string;
     description?: string;
+    location?: string;
   }): RawDanceShowEvent {
     const id = generateEventId(params.area, params.title);
 
@@ -229,6 +240,7 @@ export class EventFactory {
       overlapsWithEvent: params.overlapsWithEvent,
       image: params.image,
       description: params.description,
+      location: params.location,
     };
   }
 
