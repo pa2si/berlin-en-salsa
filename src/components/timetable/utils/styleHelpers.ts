@@ -2,8 +2,8 @@
  * Style calculation utilities for events
  */
 export const getEventStyle = (type?: string): string => {
-  // Always use rounded corners for all events
-  const borderRadiusClass = "rounded-full";
+  // Use an in-between radius (softer than md/lg, less pill-like than full).
+  const borderRadiusClass = "rounded-xl";
 
   // Base style depending on event type
   let baseStyle = "";
