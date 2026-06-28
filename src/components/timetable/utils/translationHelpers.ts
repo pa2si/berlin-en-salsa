@@ -12,19 +12,25 @@ export const useColumnTranslation = () => {
       case "Tarima Principal":
         return t("columns.mainStage");
       case "Talleres de Baile":
+      case "Zona de Baile":
+      case "Tarima de baile":
         return t("columns.danceArea");
       case "Charlas Salseras":
         return t("columns.salsaTalks");
       case "Talleres de Música":
+      case "Talleres":
         return t("columns.musicWorkshops");
       // German areas to translation keys
       case "Hauptbühne":
         return t("columns.mainStage");
       case "Tanz-Workshops":
+      case "Tanz Area":
+      case "Tanzbühne":
         return t("columns.danceArea");
       case "Salsa-Talks":
         return t("columns.salsaTalks");
       case "Musik-Workshops":
+      case "Workshops":
         return t("columns.musicWorkshops");
       default:
         return originalArea;
@@ -38,7 +44,9 @@ export const useColumnTranslation = () => {
       case "Hauptbühne":
         return "main-stage";
       case "Talleres de Baile":
+      case "Tarima de baile":
       case "Tanz-Workshops":
+      case "Tanzbühne":
       case "Zona de Baile":
       case "Tanz Area":
         return "dance-area";
@@ -46,7 +54,9 @@ export const useColumnTranslation = () => {
       case "Salsa-Talks":
         return "salsa-talks";
       case "Talleres de Música":
+      case "Talleres":
       case "Musik-Workshops":
+      case "Workshops":
         return "music-workshops";
       default:
         return rawArea;
