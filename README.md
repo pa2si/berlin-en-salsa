@@ -4,6 +4,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.29
+
+- Location start in small letter
+
 v3.6.28
 
 - new timetable screenshots
