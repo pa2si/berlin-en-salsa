@@ -105,7 +105,7 @@ export default function TimeSlot({
                         event.isTba ? undefined : { scale: 1.01, y: -1 }
                       }
                       whileTap={event.isTba ? undefined : { scale: 0.99 }}
-                      className={`absolute flex flex-col justify-center rounded-md px-2 py-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${event.isTba ? "cursor-default opacity-80" : "cursor-pointer"} ${getEventStyle(slot.type)}`}
+                      className={`absolute flex flex-col justify-start rounded-md px-2 pt-6 pb-1 text-center text-xs font-black text-white uppercase shadow-md transition-all duration-200 ${event.isTba ? "cursor-default opacity-80" : "cursor-pointer"} ${getEventStyle(slot.type)}`}
                       onClick={
                         event.isTba
                           ? undefined

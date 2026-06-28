@@ -4,6 +4,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.24
+
+- in overlapping slots changed the position of the title and subtitle
+
 v3.6.23
 
 - adapted the rounded borders in general to rounded-xl
