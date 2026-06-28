@@ -4,6 +4,11 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.28
+
+- new timetable screenshots
+- locations added to workshops and charlas
+
 v3.6.27
 
 - now danceArea can be changed in translation and it affects the display in the Timeline

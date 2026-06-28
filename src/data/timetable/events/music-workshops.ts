@@ -16,12 +16,12 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.ritmoDeClave.title",
     area: "music-workshops",
     description: "Timetable.events.musicWorkshops.ritmoDeClave.description",
-    image: "/guillermo-diaz.webp",
+    location: "Timetable.events.musicWorkshops.ritmoDeClave.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.ritmoDeClave.name",
         role: "instructor",
-        image: "/guillermo-diaz.webp",
+        image: "/angel-candeaux.webp",
       }),
     ],
   }),
@@ -37,7 +37,6 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.guiroWorkshop.name",
         role: "instructor",
-        // bio: "Timetable.events.bios.angelCandeaux",
         image: "/angel-candeaux.webp",
       }),
     ],
@@ -48,7 +47,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.campanaWorkshop.title",
     area: "music-workshops",
     description: "Timetable.events.musicWorkshops.campanaWorkshop.description",
-    image: "/chucho-palma.jpeg",
+    location: "Timetable.events.musicWorkshops.campanaWorkshop.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.campanaWorkshop.name",
@@ -65,6 +64,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     area: "music-workshops",
     actType: "jam",
     description: "Timetable.events.musicWorkshops.latinJam.description",
+    location: "Timetable.events.musicWorkshops.latinJam.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.latinJam.name",
@@ -82,6 +82,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     description:
       "Timetable.events.musicWorkshops.clubDeBaileSaturday.description",
     image: "/club-de-baile-logo.webp",
+    location: "Timetable.events.musicWorkshops.clubDeBaileSaturday.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.clubDeBaileSaturday.name",
@@ -99,6 +100,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     actType: "workshop",
     description:
       "Timetable.events.musicWorkshops.clubDeBaileSunday.description",
+    location: "Timetable.events.musicWorkshops.clubDeBaileSunday.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.clubDeBaileSunday.name",

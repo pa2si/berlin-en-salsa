@@ -257,20 +257,20 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 45,
-            tba: false,
+            tba: true,
             eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER . Text done, only missing image
           },
           {
             time: "13:30",
             duration: 45,
-            tba: false,
+            tba: true,
             eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER . Text done, only missing image
           },
           {
             time: "15:00",
             duration: 120,
             tba: false,
-            eventId: "Timetable.events.musicWorkshops.latinJam.title", // DONE . No design for foto
+            eventId: "Timetable.events.musicWorkshops.latinJam.title", // DONE
           },
           {
             time: "16:00",
