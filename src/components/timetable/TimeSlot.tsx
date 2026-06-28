@@ -22,6 +22,9 @@ export default function TimeSlot({
   onSlideReset,
 }: TimeSlotProps) {
   const t = useTranslations("Timetable");
+  const SLOT_HEIGHT_PX = 35;
+  const ROW_GAP_PX = 4; // Matches AreaColumn `space-y-1`
+  const SLOT_TOP_OFFSET_PX = 0;
 
   // Check if this is a continuation slot that should be visually hidden
   const isContinuation = slot.isContinuation === true;
@@ -57,6 +60,26 @@ export default function TimeSlot({
 
     for (let index = slotIndex; index < columnSlots.length; index += 1) {
       if (hasEventInSlot(columnSlots[index], eventId)) {
+        span += 1;
+      } else {
+        break;
+      }
+    }
+
+    return Math.max(1, span);
+  };
+
+  const getSpanHeightPx = (slotSpan: number) => {
+    const safeSpan = Math.max(1, slotSpan);
+    return safeSpan * SLOT_HEIGHT_PX + (safeSpan - 1) * ROW_GAP_PX;
+  };
+
+  const getConsecutiveSameEventSlots = () => {
+    if (!slot.event) return 1;
+
+    let span = 0;
+    for (let index = slotIndex; index < columnSlots.length; index += 1) {
+      if (columnSlots[index].event === slot.event) {
         span += 1;
       } else {
         break;
@@ -112,8 +135,8 @@ export default function TimeSlot({
                           : () => handleEventClick(event.id)
                       }
                       style={{
-                        height: `${getEventSpanSlots(event.id) * 35}px`,
-                        top: "2px",
+                        height: `${getSpanHeightPx(getEventSpanSlots(event.id))}px`,
+                        top: `${SLOT_TOP_OFFSET_PX}px`,
                         left: `calc(${event.lane * laneWidthPct}% + ${(event.lane * laneGapPx) / laneCount}px)`,
                         width: `calc(${laneWidthPct}% - ${laneGapPx}px)`,
                         zIndex: 20 + event.lane,
@@ -148,21 +171,16 @@ export default function TimeSlot({
                 height: nextSlotHasSameEvent
                   ? // For multi-slot events, calculate the height based on number of slots
                     (() => {
-                      const slotCount =
-                        columnSlots
-                          .slice(slotIndex)
-                          .findIndex((s) => s.event !== slot.event) || 1;
-                      // Adjust height for multi-slot events without including spacing between slots
-                      // This ensures each slot in the merged block has the same visual height as individual slots
-                      return `${slotCount * 35}px`;
+                      const slotCount = getConsecutiveSameEventSlots();
+                      return `${getSpanHeightPx(slotCount)}px`;
                     })()
                   : // For single-slot events, maintain consistent height
-                    "35px",
+                    `${SLOT_HEIGHT_PX}px`,
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 position: "relative", // Needed for absolute positioning of dance show bubble
-                top: "2px",
+                top: `${SLOT_TOP_OFFSET_PX}px`,
                 overflow: "visible",
                 marginBottom: "auto", // No negative margin to ensure slots don't touch
                 marginTop: "auto", // No negative margin to ensure slots don't touch
