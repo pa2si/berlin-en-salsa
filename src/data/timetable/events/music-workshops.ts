@@ -21,7 +21,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.ritmoDeClave.name",
         role: "instructor",
-        image: "/angel-candeaux.webp",
+        image: "/guillermo-diaz.webp",
       }),
     ],
   }),
@@ -31,13 +31,12 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
     title: "Timetable.events.musicWorkshops.guiroWorkshop.title",
     area: "music-workshops",
     description: "Timetable.events.musicWorkshops.guiroWorkshop.description",
-    image: "/angel-candeaux.webp",
     location: "Timetable.events.musicWorkshops.guiroWorkshop.location",
     acts: [
       EventFactory.createAct({
         name: "Timetable.events.musicWorkshops.guiroWorkshop.name",
         role: "instructor",
-        image: "/angel-candeaux.webp",
+        image: "/pedro.webp",
       }),
     ],
   }),
@@ -53,7 +52,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         name: "Timetable.events.musicWorkshops.campanaWorkshop.name",
         role: "instructor",
         bio: "Timetable.events.musicWorkshops.campanaWorkshop.bio",
-        image: "/chucho-palma.jpeg",
+        image: "/chucho.jpeg",
       }),
     ],
   }),

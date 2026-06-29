@@ -246,8 +246,8 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "17:30",
             duration: 45,
-            tba: true,
-            eventId: "Timetable.events.musicWorkshops.ritmoDeClave.title", // PLACEHOLDER . Text done, only missing image
+            tba: false,
+            eventId: "Timetable.events.musicWorkshops.ritmoDeClave.title", // DONE
           },
         ],
       },
@@ -257,14 +257,14 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "12:30",
             duration: 45,
-            tba: true,
-            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // PLACEHOLDER . Text done, only missing image
+            tba: false,
+            eventId: "Timetable.events.musicWorkshops.campanaWorkshop.title", // DONE
           },
           {
             time: "13:30",
             duration: 45,
-            tba: true,
-            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // PLACEHOLDER . Text done, only missing image
+            tba: false,
+            eventId: "Timetable.events.musicWorkshops.guiroWorkshop.title", // DONE
           },
           {
             time: "15:00",
