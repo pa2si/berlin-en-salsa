@@ -52,7 +52,7 @@ export const musicWorkshopEvents: RawMusicWorkshopEvent[] = [
         name: "Timetable.events.musicWorkshops.campanaWorkshop.name",
         role: "instructor",
         bio: "Timetable.events.musicWorkshops.campanaWorkshop.bio",
-        image: "/chucho.jpeg",
+        image: "/chucho.webp",
       }),
     ],
   }),

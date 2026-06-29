@@ -4,6 +4,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.31
+
+- src of chucho image modified
+
 v3.6.30
 
 - Workshops in Timeline now no Placeholder anymore
