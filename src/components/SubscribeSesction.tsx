@@ -38,7 +38,7 @@ export const SubscribeSection = () => {
 
   return (
     <div className="h-auto w-full px-5 py-2 sm:px-3 sm:py-0 md:px-4 md:py-0 lg:px-5 lg:py-4">
-      <div className="mx-auto max-w-[700px]">
+      <div className="mx-auto max-w-175">
         {" "}
         <div className="text-bes-red mb-3 text-center text-xl font-bold sm:mb-2 sm:text-xl md:mb-3 md:text-2xl lg:mb-6 lg:text-3xl">
           {t("title")}
@@ -52,7 +52,7 @@ export const SubscribeSection = () => {
             <input
               type="text"
               name="firstName"
-              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
+              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 text-lg sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
               placeholder={t("firstNamePlaceholder")}
               required
               minLength={2}
@@ -63,7 +63,7 @@ export const SubscribeSection = () => {
             <input
               type="text"
               name="lastName"
-              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
+              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 text-lg sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
               placeholder={t("lastNamePlaceholder")}
               required
               minLength={2}
@@ -77,7 +77,7 @@ export const SubscribeSection = () => {
             <input
               type="email"
               name="email"
-              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
+              className="text-bes-purple border-bes-purple placeholder-bes-purple/70 h-12 w-full rounded-lg border-2 bg-white px-4 text-lg sm:h-9 sm:w-full sm:px-3 md:h-10 md:px-3 lg:h-12 lg:w-full lg:px-4"
               placeholder={t("emailPlaceholder")}
               required
               maxLength={320}

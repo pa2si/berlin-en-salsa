@@ -1,8 +1,11 @@
 to Do:
 
-- add location to EventModal
-
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
+
+v3.6.33
+
+- audit fix : 0 vulnerabilities
+- bigger text in subscription form
 
 v3.6.32
 
