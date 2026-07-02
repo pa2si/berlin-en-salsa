@@ -200,7 +200,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:30",
             duration: 30,
-            tba: true,
+            tba: false,
             eventId: "Timetable.events.danceShows.titleSaturday", // PLACEHOLDER. text except for various done
           },
         ],
@@ -226,7 +226,7 @@ export const TIMELINE_CONFIG: AreaTimelineConfig[] = [
           {
             time: "18:00",
             duration: 30,
-            tba: true,
+            tba: false,
             eventId: "Timetable.events.danceShows.titleSunday", // PLACEHOLDER. fotos & text done, missing: various
           },
         ],

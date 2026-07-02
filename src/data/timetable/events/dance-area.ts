@@ -143,11 +143,6 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         role: "dancer",
         description: "Timetable.events.danceShows.descriptions.leiAyna",
       }),
-      EventFactory.createAct({
-        name: "Timetable.events.danceShows.instructor.various",
-        role: "dancer",
-        description: "Timetable.events.danceShows.descriptions.various",
-      }),
     ],
     slides: [
       EventFactory.createSlide({
@@ -159,11 +154,6 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         type: "image",
         image: "/ley-ayna.webp",
         caption: "Timetable.events.danceShows.instructor.leiAyna",
-      }),
-      EventFactory.createSlide({
-        type: "image",
-        image: "/burundanga.webp",
-        caption: "Timetable.events.danceShows.instructor.various",
       }),
     ],
   }),
@@ -187,9 +177,9 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         description: "Timetable.events.danceShows.descriptions.vassilAgnes",
       }),
       EventFactory.createAct({
-        name: "Timetable.events.danceShows.instructor.various",
+        name: "Timetable.events.danceShows.instructor.leiAyna",
         role: "dancer",
-        description: "Timetable.events.danceShows.descriptions.various",
+        description: "Timetable.events.danceShows.descriptions.leiAyna",
       }),
     ],
     slides: [
@@ -205,8 +195,8 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
       }),
       EventFactory.createSlide({
         type: "image",
-        image: "/burundanga.webp",
-        caption: "Timetable.events.danceShows.instructor.various",
+        image: "/ley-ayna.webp",
+        caption: "Timetable.events.danceShows.instructor.leiAyna",
       }),
     ],
   }),
