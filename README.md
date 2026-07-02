@@ -2,6 +2,12 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.34
+
+- modified Legal address
+- modified names for salsa talk guests of club de baile
+- modfied text in SectionTwo
+
 v3.6.33
 
 - audit fix : 0 vulnerabilities

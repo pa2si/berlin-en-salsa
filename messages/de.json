@@ -19,10 +19,10 @@
     },
     "SectionTwo": {
       "title": "Was ist Berlin en Salsa?",
-      "description1": "Ein Wochenende organisiert von und für die Salsa-Community in Berlin. Genieße es!",
+      "description1": "Ein Wochenende organisiert von und für die Salsa-Community in Berlin!",
       "description2": "Hier kannst du die Vielfalt der Salsa-Kultur erleben: Live-Orchester, DJs, Tanz, Workshops, Vorträge, Vinyl-Markt und mehr.",
       "description3": "Eine Veranstaltung, die in Zeiten von Kürzungen und Rechtsruck auf Solidarität, Kultur und Community setzt.",
-      "description4": "Komm, teile, unterstütze und feiere mit uns die Salsa-Kultur Berlins."
+      "description4": "Feiere mit uns die Salsa-Kultur Berlins."
     },
     "SectionThree": {
       "title": "Berlin en Salsa kommt mit voller Power!",
@@ -365,8 +365,8 @@
     "mainTitle": "Impressum",
     "contactSection": {
       "title": "Kontakt",
-      "name": "Paul Welch Guerra",
-      "address": "Drorystr. 2\n12055 Berlin",
+      "name": "Berlin en Salsa e.V.",
+      "address": "Weisestr. 45\n12049 Berlin",
       "phone": "Telefon:",
       "email": "E-Mail:",
       "source": "Quelle:",
@@ -801,7 +801,7 @@
           "bio": "Der „Club de Baile“ entstand aus dem Wunsch heraus, die Tanzflächen, mit denen viele von uns aufgewachsen sind, neu zu gestalten: Orte voller Freude, Rhythmus, Spiel, Begegnung und Intimität, die jedoch von heterosexuellen und patriarchalischen Normen und Erwartungen geprägt sind. Das Tanzen mit anderen ist eine einzigartige und kraftvolle Erfahrung. Es lädt uns dazu ein, über den Körper in einen Dialog mit einer anderen Person zu treten. Es beinhaltet Zuhören, Missverständnisse, Vertrauen, Improvisation, Verhandlung, Nähe, Fehler, Freude und Achtsamkeit. Die meisten sozialen Tanzräume sind jedoch um traditionelle Geschlechterrollen und heteronormative Annahmen herum organisiert. Club de Baile entsteht aus dem Wunsch heraus, diese Tänze auf andere Weise zu verkörpern: nicht indem wir sie ablehnen, sondern indem wir sie uns wieder aneignen und transformieren.",
           "host": "Club de Baile",
           "presenter": "Inmensidades Y Camila Malenchini",
-          "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)",
+          "guest": "Lionza (Fania Brava), La papi (Monstrosity), Lei (Bailarin / Salsa Cubana)",
           "location": "Tanz Area"
         }
       }

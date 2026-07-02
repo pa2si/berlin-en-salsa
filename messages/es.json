@@ -19,10 +19,10 @@
     },
     "SectionTwo": {
       "title": "¿Qué es Berlin en Salsa?",
-      "description1": "Un fin de semana organizado por y para la comunidad salsera de Berlín. ¡Gózatelo!",
+      "description1": "Un fin de semana organizado por y para la comunidad salsera de Berlín!",
       "description2": "Un espacio donde puedes vivir la diversidad de la cultura de la salsa: orquestas en vivo, DJs, baile, talleres, charlas, mercado de vinilos y más.",
       "description3": "Un evento que apuesta por la solidaridad y la cultura en tiempos de recortes y avance de las derechas.",
-      "description4": "Ven a compartir, apoyar y celebrar con nosotrxs la cultura salsera de Berlín."
+      "description4": "Celebra con nosotrxs la cultura salsera de Berlín."
     },
     "SectionThree": {
       "title": "¡Berlin en Salsa se viene con todo!",
@@ -365,8 +365,8 @@
     "mainTitle": "Aviso Legal",
     "contactSection": {
       "title": "Contacto",
-      "name": "Paul Welch Guerra",
-      "address": "Drorystr. 2\n12055 Berlin",
+      "name": "Berlin en Salsa e.V.",
+      "address": "Weisestr. 45\n12049 Berlin",
       "phone": "Teléfono:",
       "email": "Correo electrónico:",
       "source": "Fuente:",
@@ -800,7 +800,7 @@
           "bio": "Club de Baile nació del deseo de reimaginar las pistas de baile social con las que muchxs crecimos: espacios llenos de placer, ritmo, juego, encuentro e intimidad estructurados por normas y expectativas heterosexuales y patriarcales. Bailar con otrxs es una práctica singular y poderosa. Nos invita a entrar en diálogo con otra persona a través del cuerpo. Implica escucha, malentendidos, confianza, improvisación, negociación, cercanía, errores, placer y cuidado. Sin embargo, la mayoria de los espacios de baile social se organizan en torno a roles de género tradicionales y supuestos heteronormativos. Club de Baile surge del deseo de poder habitar estos bailes de otra manera: no rechazándolos, sino reapropiándonos y transformándolos.",
           "host": "Club de Baile",
           "presenter": "Inmensidades Y Camila Malenchini",
-          "guest": "Lionza (Fania Brava), La papi Patacon (Monstrosity), Lei (Salsa Cubana)",
+          "guest": "Lionza (Fania Brava), La papi (Monstrosity), Lei (Bailarin / Salsa Cubana)",
           "location": "Zona de baile"
         }
       }
