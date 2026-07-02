@@ -2,6 +2,10 @@ to Do:
 
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
+v3.6.35
+
+- modified legal page and added all necessary infos
+
 v3.6.34
 
 - modified Legal address

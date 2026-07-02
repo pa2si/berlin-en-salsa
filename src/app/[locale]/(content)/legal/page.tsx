@@ -94,6 +94,20 @@ export default function Legal() {
                   ))}
               </p>
 
+              <p className="mt-4 text-lg sm:text-xl md:text-2xl">
+                {t("contactSection.representationLabel")}
+                <br />
+                {t("contactSection.representatives")}
+              </p>
+
+              <p className="mt-4 text-lg sm:text-xl md:text-2xl">
+                {t("contactSection.registerCourtLabel")}{" "}
+                {t("contactSection.registerCourt")}
+                <br />
+                {t("contactSection.registerNumberLabel")}{" "}
+                {t("contactSection.registerNumber")}
+              </p>
+
               <h2 className="text-bes-red mt-8 mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
                 {t("contactSection.title")}
               </h2>
