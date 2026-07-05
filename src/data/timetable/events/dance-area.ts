@@ -181,6 +181,12 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         role: "dancer",
         description: "Timetable.events.danceShows.descriptions.leiAyna",
       }),
+      EventFactory.createAct({
+        name: "Timetable.events.danceShows.instructor.eloyRojasProject",
+        role: "dancer",
+        description:
+          "Timetable.events.danceShows.descriptions.eloyRojasProject",
+      }),
     ],
     slides: [
       EventFactory.createSlide({
@@ -197,6 +203,11 @@ export const danceAreaEvents: RawDanceAreaEvent[] = [
         type: "image",
         image: "/ley-ayna.webp",
         caption: "Timetable.events.danceShows.instructor.leiAyna",
+      }),
+      EventFactory.createSlide({
+        type: "image",
+        image: "/eloy-rojas-project.webp",
+        caption: "Timetable.events.danceShows.instructor.eloyRojasProject",
       }),
     ],
   }),
