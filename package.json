@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "v3.6.38",
+  "version": "v3.6.39",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -16,7 +16,7 @@
     "audit": "^0.0.6",
     "formidable": "^3.5.2",
     "framer-motion": "^12.19.2",
-    "next": "^15.5.9",
+    "next": "^15.5.24",
     "next-intl": "^4.3.6",
     "npm": "^11.6.4",
     "react": "^19.2.3",

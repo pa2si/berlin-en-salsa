@@ -1,6 +1,11 @@
 to Do:
 
+- change the time position in the timeline
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
+
+v3.6.39
+
+- security patch update from next.js
 
 v3.6.38
 
