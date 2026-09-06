@@ -3,7 +3,7 @@ to Do:
 - change the time position in the timeline
 - when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
 
-v3.6.41
+v3.6.42
 
 - in SectionFour there is a config boolean noe configured in festival.ts which decides if the shop is know or not. depending of the boolean a button with contact us or a loink to shop is shown.
 
