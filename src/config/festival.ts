@@ -114,6 +114,17 @@ export const FESTIVAL_CONFIG = {
   venueIsKnown: true,
 
   /**
+   * Shop availability configuration
+   * When true, displays the "getItHere" shop button in SectionFour.
+   * When false, displays the contact button which scrolls down to SectionSix contact links.
+   */
+  shopIsKnown: false,
+
+  get isShopKnown(): boolean {
+    return this.shopIsKnown;
+  },
+
+  /**
    * Timetable availability configuration
    * Set to true when the timetable is finalized and ready to be displayed
    */

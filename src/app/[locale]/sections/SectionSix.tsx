@@ -14,7 +14,10 @@ const SectionSix = () => {
   const [isEmailModalOpen, setIsEmailModalOpen] = useState(false);
 
   return (
-    <div className="bg-bes-amber flex flex-col overflow-y-auto py-10 sm:py-12 md:py-16 lg:h-full">
+    <div
+      id="section-six"
+      className="bg-bes-amber flex flex-col overflow-y-auto py-10 sm:py-12 md:py-16 lg:h-full"
+    >
       <div className="container mx-auto flex flex-col items-center justify-center px-4 lg:h-full">
         {/* Title */}
         <motion.div
@@ -34,6 +37,7 @@ const SectionSix = () => {
 
         {/* Social Media Links - Now full width and centered */}
         <motion.div
+          id="contact-links"
           className="mb-6 flex w-full flex-wrap items-center justify-center gap-x-[0.2rem] gap-y-2 sm:mb-8 sm:gap-x-[clamp(0.3rem,1vh,0.4rem)] md:gap-x-[clamp(1rem,1.5vh,1.5rem)]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

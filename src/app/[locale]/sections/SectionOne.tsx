@@ -32,7 +32,7 @@ const SectionOne = () => {
           <img
             src="/bes-logo-color_2026.webp"
             alt="Berlin en Salsa Festival Vol. 2 @ Neulich Biergarten am THF"
-            className="h-auto max-h-[60vh] min-h-[150px] w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-h-[72vh] lg:max-w-[110%] lg:min-w-[60%]"
+            className="h-auto max-h-[60vh] min-h-37.5 w-full max-w-[90%] object-contain md:max-w-[70%] lg:max-h-[72vh] lg:max-w-[110%] lg:min-w-[60%]"
             fetchPriority="high"
             decoding="async"
           />
@@ -51,7 +51,7 @@ const SectionOne = () => {
               stiffness: 100,
               damping: 12,
             }}
-            className="-mt-2 w-full max-w-[330px] object-contain sm:mb-2 md:mb-4 md:w-[92%] xl:w-full xl:max-w-[390px]"
+            className="-mt-2 w-full max-w-82.5 object-contain sm:mb-2 md:mb-4 md:w-[92%] xl:w-full xl:max-w-97.5"
             decoding="async"
           />
         </div>

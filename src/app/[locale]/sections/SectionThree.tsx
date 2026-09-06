@@ -167,7 +167,7 @@ const SectionThree = () => {
           <div
             // FIX: Constrain height using dvh so it never pushes out of the visible viewport.
             // calc(100dvh - 7rem) ensures there's always enough room above the video for the close button.
-            className="relative aspect-9/16 h-[calc(100dvh-7rem)] w-auto max-w-[92vw] sm:h-[85vh] sm:max-h-[750px] sm:max-w-[420px]"
+            className="relative aspect-9/16 h-[calc(100dvh-7rem)] w-auto max-w-[92vw] sm:h-[85vh] sm:max-h-187.5 sm:max-w-105"
             onClick={(event) => event.stopPropagation()}
           >
             <button

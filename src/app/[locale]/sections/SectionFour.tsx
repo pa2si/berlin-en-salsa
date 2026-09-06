@@ -3,6 +3,7 @@
 import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import { FESTIVAL_CONFIG } from "@/config/festival";
 
 // Moved outside so it doesn't recreate on every render
 const galleryImages = Array.from(
@@ -102,6 +103,19 @@ const SectionFour = () => {
     }
   };
 
+  const handleContactClick = (
+    event: MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+  ) => {
+    event.preventDefault();
+    const contactSection =
+      document.getElementById("contact-links") ||
+      document.getElementById("section-six");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
+
   const description2WithFundingLink = t.rich("description2", {
     fundingLink: (chunks) => (
       <a
@@ -129,7 +143,7 @@ const SectionFour = () => {
         className="mt-auto w-full overflow-hidden bg-black/15 px-8 py-[clamp(0.75rem,1.5vh,1.5rem)] shadow-inner backdrop-blur-sm"
         {...containerAnimation}
       >
-        <div className="custom-scrollbar mx-auto flex max-w-6xl items-center justify-center gap-3 overflow-x-auto pb-1 [scrollbar-width:none] sm:gap-4 [&::-webkit-scrollbar]:hidden">
+        <div className="custom-scrollbar mx-auto flex max-w-6xl scrollbar-none items-center justify-center gap-3 overflow-x-auto pb-1 sm:gap-4 [&::-webkit-scrollbar]:hidden">
           {galleryImages.map((src, i) => {
             const pairIndex = Math.floor(i / 2) * 2;
             const isSelected = pairIndex === currentIndex;
@@ -176,7 +190,7 @@ const SectionFour = () => {
           <img
             src={locale === "de" ? "/unser-merch.svg" : "/nuestro-merch.svg"}
             alt={t("title")}
-            className="w-[55vw] max-w-sm md:w-[45vw] md:max-w-[300px] landscape:h-[clamp(50px,16vh,90px)] landscape:w-auto lg:landscape:mb-4 lg:landscape:h-auto lg:landscape:w-[300px]"
+            className="w-[55vw] max-w-sm md:w-[45vw] md:max-w-75 landscape:h-[clamp(50px,16vh,90px)] landscape:w-auto lg:landscape:mb-4 lg:landscape:h-auto lg:landscape:w-75"
             // 1. Lazy load the section title SVG on mobile
             loading="lazy"
             decoding="async"
@@ -193,14 +207,24 @@ const SectionFour = () => {
           </div>
 
           <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2 pt-2 lg:landscape:pt-1">
-            <a
-              href={saborHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${getItHereButtonClass} text-[clamp(1rem,3.6vw,1.45rem)] lg:text-[1.35rem] landscape:px-4 landscape:py-1.5 landscape:text-[clamp(0.82rem,3.8vh,1rem)] lg:landscape:text-[1rem]`}
-            >
-              {t("getItHere")}
-            </a>
+            {FESTIVAL_CONFIG.shopIsKnown ? (
+              <a
+                href={saborHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${getItHereButtonClass} text-[clamp(1rem,3.6vw,1.45rem)] lg:text-[1.35rem] landscape:px-4 landscape:py-1.5 landscape:text-[clamp(0.82rem,3.8vh,1rem)] lg:landscape:text-[1rem]`}
+              >
+                {t("getItHere")}
+              </a>
+            ) : (
+              <a
+                href="#contact-links"
+                onClick={handleContactClick}
+                className={`${getItHereButtonClass} cursor-pointer text-[clamp(1rem,3.6vw,1.45rem)] lg:text-[1.35rem] landscape:px-4 landscape:py-1.5 landscape:text-[clamp(0.82rem,3.8vh,1rem)] lg:landscape:text-[1rem]`}
+              >
+                {t("contactUs")}
+              </a>
+            )}
           </div>
 
           <div className="flex w-full max-w-3xl flex-row items-center justify-center gap-2 pt-2 sm:gap-6 lg:landscape:pt-2">
@@ -216,7 +240,7 @@ const SectionFour = () => {
 
             {/* Clickable Image (Left) */}
             <div
-              className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-[220px] shrink-0 cursor-pointer items-center justify-center transition-transform hover:scale-105 sm:h-[300px] md:h-[260px] md:max-w-[190px] landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]"
+              className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-55 shrink-0 cursor-pointer items-center justify-center transition-transform hover:scale-105 sm:h-75 md:h-65 md:max-w-47.5 landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]"
               onClick={() => openModal(currentIndex)}
             >
               <AnimatePresence mode="popLayout" initial={false}>
@@ -248,7 +272,7 @@ const SectionFour = () => {
 
             {/* Clickable Image (Right) */}
             <div
-              className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-[220px] shrink-0 cursor-pointer items-center justify-center transition-transform hover:scale-105 sm:h-[300px] md:h-[260px] md:max-w-[190px] landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]"
+              className="flex h-[clamp(110px,20vh,250px)] w-[35vw] max-w-55 shrink-0 cursor-pointer items-center justify-center transition-transform hover:scale-105 sm:h-75 md:h-65 md:max-w-47.5 landscape:h-[clamp(70px,25vh,130px)] sm:landscape:h-[28vh] lg:landscape:h-[22vh]"
               onClick={() => openModal(currentIndex + 1)}
             >
               <AnimatePresence mode="popLayout" initial={false}>
@@ -349,14 +373,24 @@ const SectionFour = () => {
               {t("description3")}
             </p>
             <div className="flex flex-row flex-wrap items-center justify-center gap-x-3 gap-y-2">
-              <a
-                href={saborHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${getItHereButtonClass} xl:text-[clamp(1rem,2.25vh,1.3rem)]`}
-              >
-                {t("getItHere")}
-              </a>
+              {FESTIVAL_CONFIG.shopIsKnown ? (
+                <a
+                  href={saborHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${getItHereButtonClass} xl:text-[clamp(1rem,2.25vh,1.3rem)]`}
+                >
+                  {t("getItHere")}
+                </a>
+              ) : (
+                <a
+                  href="#contact-links"
+                  onClick={handleContactClick}
+                  className={`${getItHereButtonClass} cursor-pointer xl:text-[clamp(1rem,2.25vh,1.3rem)]`}
+                >
+                  {t("contactUs")}
+                </a>
+              )}
             </div>
           </div>
 
