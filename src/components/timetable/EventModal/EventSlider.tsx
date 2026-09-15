@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface SlideContent {
   image?: string;
@@ -46,13 +46,48 @@ export default function EventSlider({
   const t = useTranslations("Timetable");
   const tGlobal = useTranslations(); // Access global translations
   const currentSlide = slides[currentSlideIndex];
+  // Tracks which slide image urls have already finished loading (initial + preloaded)
+  const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
+  const hasStartedPreload = useRef(false);
   const [isSlideImageLoading, setIsSlideImageLoading] = useState(
-    Boolean(currentSlide?.image),
+    Boolean(currentSlide?.image) && !loadedImages.has(currentSlide.image!),
   );
 
   useEffect(() => {
-    setIsSlideImageLoading(Boolean(currentSlide?.image));
-  }, [currentSlideIndex, currentSlide?.image]);
+    setIsSlideImageLoading(
+      Boolean(currentSlide?.image) && !loadedImages.has(currentSlide.image!),
+    );
+  }, [currentSlideIndex, currentSlide?.image, loadedImages]);
+
+  const markImageLoaded = (src?: string) => {
+    if (src) {
+      setLoadedImages((prev) =>
+        prev.has(src) ? prev : new Set(prev).add(src),
+      );
+    }
+    setIsSlideImageLoading(false);
+  };
+
+  // Once the first slide's image has loaded, preload the remaining slide
+  // images in the background so switching slides doesn't trigger a fresh load.
+  useEffect(() => {
+    const firstImage = slides[0]?.image;
+    if (
+      hasStartedPreload.current ||
+      !firstImage ||
+      !loadedImages.has(firstImage)
+    ) {
+      return;
+    }
+    hasStartedPreload.current = true;
+
+    slides.forEach((slide) => {
+      if (!slide.image || loadedImages.has(slide.image)) return;
+      const preloadImg = new window.Image();
+      preloadImg.src = slide.image;
+      preloadImg.onload = () => markImageLoaded(slide.image);
+    });
+  }, [loadedImages, slides]);
 
   return (
     <AnimatePresence mode="wait">
@@ -119,8 +154,8 @@ export default function EventSlider({
                 className={`h-auto w-full object-cover transition-opacity duration-300 ${
                   isSlideImageLoading ? "opacity-0" : "opacity-100"
                 }`}
-                onLoad={() => setIsSlideImageLoading(false)}
-                onError={() => setIsSlideImageLoading(false)}
+                onLoad={() => markImageLoaded(currentSlide.image)}
+                onError={() => markImageLoaded(currentSlide.image)}
               />
             </div>
           </div>

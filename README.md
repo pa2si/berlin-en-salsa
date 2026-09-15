@@ -1,7 +1,8 @@
 to Do:
 
-- change the time position in the timeline
-- when an eventModal is loaded and there are multiple slides with images , the images shall be loaded after the the first images gets loaded and not on slide change
+v3.6.43
+
+- EventModal: once the first slide's image finishes loading, remaining slide images are preloaded in the background so they don't reload/flash on slide change
 
 v3.6.42
 

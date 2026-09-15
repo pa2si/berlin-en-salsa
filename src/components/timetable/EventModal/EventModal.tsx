@@ -276,7 +276,7 @@ export default function EventModal({
               /* Single image/description if no slides */
               selectedEventDetails.image && (
                 <div className="mb-6">
-                  <div className="relative mb-4 min-h-[220px] overflow-hidden rounded-lg bg-gray-100">
+                  <div className="relative mb-4 min-h-55 overflow-hidden rounded-lg bg-gray-100">
                     {isSingleImageLoading && (
                       <div className="absolute inset-0 animate-pulse bg-gray-200" />
                     )}
