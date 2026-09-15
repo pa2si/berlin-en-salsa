@@ -1,5 +1,9 @@
 to Do:
 
+v3.6.44
+
+- EventModal: slide image preloading now uses next/image (same optimizer params as the visible image) instead of a raw Image() object, so preloaded images are actually cache hits on slide change
+
 v3.6.43
 
 - EventModal: once the first slide's image finishes loading, remaining slide images are preloaded in the background so they don't reload/flash on slide change

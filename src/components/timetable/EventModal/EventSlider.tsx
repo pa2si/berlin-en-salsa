@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface SlideContent {
   image?: string;
@@ -48,7 +48,7 @@ export default function EventSlider({
   const currentSlide = slides[currentSlideIndex];
   // Tracks which slide image urls have already finished loading (initial + preloaded)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set());
-  const hasStartedPreload = useRef(false);
+  const [preloadReady, setPreloadReady] = useState(false);
   const [isSlideImageLoading, setIsSlideImageLoading] = useState(
     Boolean(currentSlide?.image) && !loadedImages.has(currentSlide.image!),
   );
@@ -68,192 +68,140 @@ export default function EventSlider({
     setIsSlideImageLoading(false);
   };
 
-  // Once the first slide's image has loaded, preload the remaining slide
-  // images in the background so switching slides doesn't trigger a fresh load.
+  // Once the first slide's image has loaded, start rendering hidden <Image>
+  // tags for the remaining slides below (using the same optimizer params),
+  // so those requests are cached before the user changes slides.
   useEffect(() => {
     const firstImage = slides[0]?.image;
-    if (
-      hasStartedPreload.current ||
-      !firstImage ||
-      !loadedImages.has(firstImage)
-    ) {
-      return;
+    if (firstImage && loadedImages.has(firstImage)) {
+      setPreloadReady(true);
     }
-    hasStartedPreload.current = true;
-
-    slides.forEach((slide) => {
-      if (!slide.image || loadedImages.has(slide.image)) return;
-      const preloadImg = new window.Image();
-      preloadImg.src = slide.image;
-      preloadImg.onload = () => markImageLoaded(slide.image);
-    });
   }, [loadedImages, slides]);
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={currentSlideIndex}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
-        {/* Image */}
-        {currentSlide?.image && (
-          <div className="mb-4">
-            {/* Act's name above image - only show for dancers when there are multiple slides, not for DJs */}
-            {slides.length > 1 &&
-              (currentSlide?.dancerName ||
-                currentSlide?.dancer ||
-                currentSlide?.dancerOne) && (
-                <h3 className="text-bes-red mb-3 text-xl font-bold">
-                  {(() => {
-                    const name =
-                      currentSlide?.dancerName ||
-                      currentSlide?.dancer ||
-                      (currentSlide?.dancerOne
-                        ? currentSlide?.dancerTwo
-                          ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
-                          : currentSlide?.dancerOne
-                        : "");
-
-                    if (name.startsWith("Timetable.")) {
-                      try {
-                        const key = name.substring(10);
-                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        return (t as any)(key);
-                      } catch {
-                        return name;
-                      }
-                    }
-                    return name;
-                  })()}
-                </h3>
-              )}
-
-            <div className="relative overflow-hidden rounded-lg bg-gray-100">
-              {isSlideImageLoading && (
-                <div className="absolute inset-0 animate-pulse bg-gray-200" />
-              )}
-              <Image
-                src={currentSlide.image}
-                alt={
-                  currentSlide.dancerName ||
-                  currentSlide.dancer ||
-                  (currentSlide.dancerOne
-                    ? currentSlide.dancerTwo
-                      ? `${currentSlide.dancerOne} ${t("modal.and")} ${currentSlide.dancerTwo}`
-                      : currentSlide.dancerOne
-                    : `Slide ${currentSlideIndex + 1}`)
-                }
-                width={600}
-                height={400}
-                className={`h-auto w-full object-cover transition-opacity duration-300 ${
-                  isSlideImageLoading ? "opacity-0" : "opacity-100"
-                }`}
-                onLoad={() => markImageLoaded(currentSlide.image)}
-                onError={() => markImageLoaded(currentSlide.image)}
-              />
-            </div>
-          </div>
-        )}
-
-        {/* Description Section */}
-        {currentSlide?.description &&
-          !currentSlide?.showCombinedDescription && (
+    <>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlideIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
+          {/* Image */}
+          {currentSlide?.image && (
             <div className="mb-4">
-              <h4 className="text-bes-red mb-2 text-xl font-bold">
-                {currentSlide?.descriptionFromAct ? (
-                  <>
-                    {t("modal.about")}
-                    {currentSlide?.caption && (
-                      <>
-                        {" "}
-                        {(() => {
-                          const key = currentSlide.caption.startsWith(
-                            "Timetable.",
-                          )
-                            ? currentSlide.caption.substring(10)
-                            : currentSlide.caption;
-                          try {
-                            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                            return (t as any)(key) as string;
-                          } catch {
-                            return currentSlide.caption;
-                          }
-                        })()}
-                      </>
-                    )}
-                  </>
-                ) : (
-                  t("modal.description")
+              {/* Act's name above image - only show for dancers when there are multiple slides, not for DJs */}
+              {slides.length > 1 &&
+                (currentSlide?.dancerName ||
+                  currentSlide?.dancer ||
+                  currentSlide?.dancerOne) && (
+                  <h3 className="text-bes-red mb-3 text-xl font-bold">
+                    {(() => {
+                      const name =
+                        currentSlide?.dancerName ||
+                        currentSlide?.dancer ||
+                        (currentSlide?.dancerOne
+                          ? currentSlide?.dancerTwo
+                            ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
+                            : currentSlide?.dancerOne
+                          : "");
+
+                      if (name.startsWith("Timetable.")) {
+                        try {
+                          const key = name.substring(10);
+                          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                          return (t as any)(key);
+                        } catch {
+                          return name;
+                        }
+                      }
+                      return name;
+                    })()}
+                  </h3>
                 )}
-              </h4>
-              <p className="text-xl text-gray-700 md:leading-relaxed">
-                {(() => {
-                  const content = currentSlide.description;
-                  if (content?.startsWith("Timetable.")) {
-                    try {
-                      const key = content.substring(10);
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      return (t as any)(key);
-                    } catch {
-                      return content;
-                    }
+
+              <div className="relative overflow-hidden rounded-lg bg-gray-100">
+                {isSlideImageLoading && (
+                  <div className="absolute inset-0 animate-pulse bg-gray-200" />
+                )}
+                <Image
+                  src={currentSlide.image}
+                  alt={
+                    currentSlide.dancerName ||
+                    currentSlide.dancer ||
+                    (currentSlide.dancerOne
+                      ? currentSlide.dancerTwo
+                        ? `${currentSlide.dancerOne} ${t("modal.and")} ${currentSlide.dancerTwo}`
+                        : currentSlide.dancerOne
+                      : `Slide ${currentSlideIndex + 1}`)
                   }
-                  return content;
-                })()}
-              </p>
+                  width={600}
+                  height={400}
+                  className={`h-auto w-full object-cover transition-opacity duration-300 ${
+                    isSlideImageLoading ? "opacity-0" : "opacity-100"
+                  }`}
+                  onLoad={() => markImageLoaded(currentSlide.image)}
+                  onError={() => markImageLoaded(currentSlide.image)}
+                />
+              </div>
             </div>
           )}
 
-        {/* Colectivo Description Section */}
-        {currentSlide?.descriptionColectivo && (
-          <div className="mb-4">
-            <h4 className="text-bes-red mb-2 text-xl font-bold">
-              {t("modal.about")}
-              {currentSlide?.caption && (
-                <>
-                  {" "}
+          {/* Description Section */}
+          {currentSlide?.description &&
+            !currentSlide?.showCombinedDescription && (
+              <div className="mb-4">
+                <h4 className="text-bes-red mb-2 text-xl font-bold">
+                  {currentSlide?.descriptionFromAct ? (
+                    <>
+                      {t("modal.about")}
+                      {currentSlide?.caption && (
+                        <>
+                          {" "}
+                          {(() => {
+                            const key = currentSlide.caption.startsWith(
+                              "Timetable.",
+                            )
+                              ? currentSlide.caption.substring(10)
+                              : currentSlide.caption;
+                            try {
+                              // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                              return (t as any)(key) as string;
+                            } catch {
+                              return currentSlide.caption;
+                            }
+                          })()}
+                        </>
+                      )}
+                    </>
+                  ) : (
+                    t("modal.description")
+                  )}
+                </h4>
+                <p className="text-xl text-gray-700 md:leading-relaxed">
                   {(() => {
-                    const key = currentSlide.caption.startsWith("Timetable.")
-                      ? currentSlide.caption.substring(10)
-                      : currentSlide.caption;
-                    try {
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                      return (t as any)(key) as string;
-                    } catch {
-                      return currentSlide.caption;
+                    const content = currentSlide.description;
+                    if (content?.startsWith("Timetable.")) {
+                      try {
+                        const key = content.substring(10);
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        return (t as any)(key);
+                      } catch {
+                        return content;
+                      }
                     }
-                  })()}
-                </>
-              )}
-            </h4>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {(() => {
-                const content = currentSlide.descriptionColectivo;
-                if (content?.startsWith("Timetable.")) {
-                  try {
-                    const key = content.substring(10);
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    return (t as any)(key);
-                  } catch {
                     return content;
-                  }
-                }
-                return content;
-              })()}
-            </p>
-          </div>
-        )}
+                  })()}
+                </p>
+              </div>
+            )}
 
-        {/* Bio Section - Show separately if different from description */}
-        {currentSlide?.bio &&
-          currentSlide?.bio !== currentSlide?.description &&
-          !currentSlide?.showCombinedDescription && (
+          {/* Colectivo Description Section */}
+          {currentSlide?.descriptionColectivo && (
             <div className="mb-4">
               <h4 className="text-bes-red mb-2 text-xl font-bold">
                 {t("modal.about")}
@@ -261,7 +209,6 @@ export default function EventSlider({
                   <>
                     {" "}
                     {(() => {
-                      // Translate the caption (instructor name)
                       const key = currentSlide.caption.startsWith("Timetable.")
                         ? currentSlide.caption.substring(10)
                         : currentSlide.caption;
@@ -277,7 +224,7 @@ export default function EventSlider({
               </h4>
               <p className="text-xl text-gray-700 md:leading-relaxed">
                 {(() => {
-                  const content = currentSlide.bio;
+                  const content = currentSlide.descriptionColectivo;
                   if (content?.startsWith("Timetable.")) {
                     try {
                       const key = content.substring(10);
@@ -292,107 +239,174 @@ export default function EventSlider({
               </p>
             </div>
           )}
-        {/* Dancer descriptions */}
-        {currentSlide?.dancerOne && currentSlide?.dancerOneBio && (
-          <div className="mb-4">
-            <h5 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.dancerOne}
-            </h5>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.dancerOneBio}
-            </p>
-          </div>
-        )}
 
-        {currentSlide?.dancerTwo && currentSlide?.dancerTwoBio && (
-          <div className="mb-4">
-            <h5 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.dancerTwo}
-            </h5>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.dancerTwoBio}
-            </p>
-          </div>
-        )}
-
-        {/* Combined Dancers Description - only show if individual descriptions aren't available */}
-        {currentSlide?.dancerOne &&
-          currentSlide?.combinedDancersDescription &&
-          !currentSlide?.dancerOneBio &&
-          (!currentSlide?.dancerTwo || !currentSlide?.dancerTwoBio) && (
+          {/* Bio Section - Show separately if different from description */}
+          {currentSlide?.bio &&
+            currentSlide?.bio !== currentSlide?.description &&
+            !currentSlide?.showCombinedDescription && (
+              <div className="mb-4">
+                <h4 className="text-bes-red mb-2 text-xl font-bold">
+                  {t("modal.about")}
+                  {currentSlide?.caption && (
+                    <>
+                      {" "}
+                      {(() => {
+                        // Translate the caption (instructor name)
+                        const key = currentSlide.caption.startsWith(
+                          "Timetable.",
+                        )
+                          ? currentSlide.caption.substring(10)
+                          : currentSlide.caption;
+                        try {
+                          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                          return (t as any)(key) as string;
+                        } catch {
+                          return currentSlide.caption;
+                        }
+                      })()}
+                    </>
+                  )}
+                </h4>
+                <p className="text-xl text-gray-700 md:leading-relaxed">
+                  {(() => {
+                    const content = currentSlide.bio;
+                    if (content?.startsWith("Timetable.")) {
+                      try {
+                        const key = content.substring(10);
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        return (t as any)(key);
+                      } catch {
+                        return content;
+                      }
+                    }
+                    return content;
+                  })()}
+                </p>
+              </div>
+            )}
+          {/* Dancer descriptions */}
+          {currentSlide?.dancerOne && currentSlide?.dancerOneBio && (
             <div className="mb-4">
               <h5 className="text-bes-red mb-2 text-xl font-bold">
-                {currentSlide?.dancerTwo
-                  ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
-                  : currentSlide?.dancerOne}
+                {currentSlide?.dancerOne}
               </h5>
               <p className="text-xl text-gray-700 md:leading-relaxed">
-                {currentSlide?.combinedDancersDescription}
+                {currentSlide?.dancerOneBio}
               </p>
             </div>
           )}
 
-        {/* DJ descriptions */}
-        {currentSlide?.djOne && currentSlide?.djOneBio && (
-          <div className="mb-4">
-            <h5 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.djOne}
-            </h5>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.djOneBio}
-            </p>
-          </div>
-        )}
-
-        {currentSlide?.djTwo && currentSlide?.djTwoBio && (
-          <div className="mb-4">
-            <h5 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.djTwo}
-            </h5>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.djTwoBio}
-            </p>
-          </div>
-        )}
-
-        {/* Combined Description with Special Styling */}
-        {currentSlide?.showCombinedDescription &&
-          currentSlide?.description &&
-          currentSlide?.djOne &&
-          currentSlide?.djTwo && (
-            <div className="from-bes-amber/15 to-bes-red/10 border-bes-red mt-6 mb-4 rounded-lg border-l-4 bg-linear-to-r p-4">
-              <h5 className="text-bes-red mb-3 text-xl font-bold">
-                {`${currentSlide.djOne} & ${currentSlide.djTwo} ${tGlobal("Timetable.modal.together" as never)}`}
+          {currentSlide?.dancerTwo && currentSlide?.dancerTwoBio && (
+            <div className="mb-4">
+              <h5 className="text-bes-red mb-2 text-xl font-bold">
+                {currentSlide?.dancerTwo}
               </h5>
               <p className="text-xl text-gray-700 md:leading-relaxed">
-                {currentSlide.description}
+                {currentSlide?.dancerTwoBio}
               </p>
             </div>
           )}
 
-        {/* Combined DJs Description */}
-        {currentSlide?.descriptionTwoDjsTogether && (
-          <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
-            <h5 className="text-bes-red mb-2 text-xl font-bold">
-              {currentSlide?.djOne && currentSlide?.djTwo
-                ? `${currentSlide?.djOne} & ${currentSlide?.djTwo} juntos`
-                : "Colaboración"}
-            </h5>
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.descriptionTwoDjsTogether}
-            </p>
-          </div>
-        )}
+          {/* Combined Dancers Description - only show if individual descriptions aren't available */}
+          {currentSlide?.dancerOne &&
+            currentSlide?.combinedDancersDescription &&
+            !currentSlide?.dancerOneBio &&
+            (!currentSlide?.dancerTwo || !currentSlide?.dancerTwoBio) && (
+              <div className="mb-4">
+                <h5 className="text-bes-red mb-2 text-xl font-bold">
+                  {currentSlide?.dancerTwo
+                    ? `${currentSlide?.dancerOne} ${t("modal.and")} ${currentSlide?.dancerTwo}`
+                    : currentSlide?.dancerOne}
+                </h5>
+                <p className="text-xl text-gray-700 md:leading-relaxed">
+                  {currentSlide?.combinedDancersDescription}
+                </p>
+              </div>
+            )}
 
-        {/* Genre Description */}
-        {currentSlide?.genreDescription && (
-          <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
-            <p className="text-xl text-gray-700 md:leading-relaxed">
-              {currentSlide?.genreDescription}
-            </p>
-          </div>
+          {/* DJ descriptions */}
+          {currentSlide?.djOne && currentSlide?.djOneBio && (
+            <div className="mb-4">
+              <h5 className="text-bes-red mb-2 text-xl font-bold">
+                {currentSlide?.djOne}
+              </h5>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide?.djOneBio}
+              </p>
+            </div>
+          )}
+
+          {currentSlide?.djTwo && currentSlide?.djTwoBio && (
+            <div className="mb-4">
+              <h5 className="text-bes-red mb-2 text-xl font-bold">
+                {currentSlide?.djTwo}
+              </h5>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide?.djTwoBio}
+              </p>
+            </div>
+          )}
+
+          {/* Combined Description with Special Styling */}
+          {currentSlide?.showCombinedDescription &&
+            currentSlide?.description &&
+            currentSlide?.djOne &&
+            currentSlide?.djTwo && (
+              <div className="from-bes-amber/15 to-bes-red/10 border-bes-red mt-6 mb-4 rounded-lg border-l-4 bg-linear-to-r p-4">
+                <h5 className="text-bes-red mb-3 text-xl font-bold">
+                  {`${currentSlide.djOne} & ${currentSlide.djTwo} ${tGlobal("Timetable.modal.together" as never)}`}
+                </h5>
+                <p className="text-xl text-gray-700 md:leading-relaxed">
+                  {currentSlide.description}
+                </p>
+              </div>
+            )}
+
+          {/* Combined DJs Description */}
+          {currentSlide?.descriptionTwoDjsTogether && (
+            <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
+              <h5 className="text-bes-red mb-2 text-xl font-bold">
+                {currentSlide?.djOne && currentSlide?.djTwo
+                  ? `${currentSlide?.djOne} & ${currentSlide?.djTwo} juntos`
+                  : "Colaboración"}
+              </h5>
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide?.descriptionTwoDjsTogether}
+              </p>
+            </div>
+          )}
+
+          {/* Genre Description */}
+          {currentSlide?.genreDescription && (
+            <div className="bg-bes-amber/10 mt-6 mb-4 rounded-lg p-3">
+              <p className="text-xl text-gray-700 md:leading-relaxed">
+                {currentSlide?.genreDescription}
+              </p>
+            </div>
+          )}
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Hidden preload: same optimizer params as the visible image above, so the
+          browser cache is warm before the user changes slides. */}
+      {preloadReady &&
+        slides.map(
+          (slide, index) =>
+            slide.image &&
+            index !== currentSlideIndex && (
+              <Image
+                key={slide.image}
+                src={slide.image}
+                alt=""
+                aria-hidden
+                width={600}
+                height={400}
+                loading="eager"
+                className="hidden"
+                onLoad={() => markImageLoaded(slide.image)}
+              />
+            ),
         )}
-      </motion.div>
-    </AnimatePresence>
+    </>
   );
 }
