@@ -1,5 +1,9 @@
 to Do:
 
+v3.6.45
+
+- got rid of unnecessary favicons and favicon metadata in layout.tsx
+
 v3.6.44
 
 - EventModal: slide image preloading now uses next/image (same optimizer params as the visible image) instead of a raw Image() object, so preloaded images are actually cache hits on slide change
