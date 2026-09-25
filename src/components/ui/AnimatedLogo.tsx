@@ -9,7 +9,7 @@ interface AnimatedLogoProps {
 }
 
 const AnimatedLogo = ({
-  src = "/bes-logo-habano.png",
+  src = "/bes-logo-habano.webp",
   alt = "Berlin En Salsa Logo",
   className = "h-15 w-auto",
 }: AnimatedLogoProps) => {

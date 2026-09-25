@@ -72,7 +72,6 @@ const SectionFive = () => {
       style={{ backgroundImage: "url('/bes-section-6-bg.webp')" }}
     >
       <div className="container mx-auto">
-        {/* Title Image */}
         <div className="mb-12 flex justify-center">
           <h2 className="sr-only">{t("title")}</h2>
           <motion.img
@@ -253,7 +252,7 @@ const SectionFive = () => {
                     transition={{ duration: 0.3 }}
                   />
                   <motion.div
-                    className="bg-bes-amber bg-opacity-70 absolute inset-0 flex flex-col items-center justify-center"
+                    className="bg-bes-amber/90 absolute inset-0 flex flex-col items-center justify-center"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: hoveredDays[day.id] ? 1 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -263,29 +262,23 @@ const SectionFive = () => {
                       animate={{ scale: hoveredDays[day.id] ? 1 : 0.8 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="text-bes-red mb-3 h-16 w-16"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                        />
-                      </svg>
+                      <motion.img
+                        src="/bes-logo-color-small.webp"
+                        alt=""
+                        className="mb-3 h-30 w-30 object-contain"
+                        animate={{
+                          rotate: hoveredDays[day.id] ? 8 : 0,
+                          scale: hoveredDays[day.id] ? 1.1 : 1,
+                        }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 16,
+                        }}
+                      />
                     </motion.div>
                     <motion.p
-                      className="text-bes-red text-lg font-bold"
+                      className="text-bes-red text-xl font-bold"
                       initial={{ y: 10 }}
                       animate={{ y: hoveredDays[day.id] ? 0 : 10 }}
                       transition={{ duration: 0.3 }}

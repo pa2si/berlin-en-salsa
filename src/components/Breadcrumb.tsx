@@ -17,9 +17,9 @@ export default function Breadcrumb({ currentPage }: BreadcrumbProps) {
                 className="text-bes-red hover:text-bes-red/80 inline-flex items-center text-sm hover:cursor-pointer sm:text-base md:text-lg"
               >
                 <img
-                  src="/bes-logo-color.webp"
+                  src="/bes-logo-color-small.webp"
                   alt="Berlin En Salsa"
-                  className="h-20 w-auto sm:h-15"
+                  className="h-20 w-auto transition-transform duration-300 ease-out hover:scale-110 hover:-rotate-6 sm:h-15"
                 />
               </Link>
             </li>

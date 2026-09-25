@@ -62,7 +62,7 @@ const CountdownBanner = ({ targetDate }: CountdownBannerProps) => {
           <div className="flex items-center">
             {/* Logo */}
             <AnimatedLogo
-              src="/bes-logo-habano.png"
+              src="/bes-logo-habano.webp"
               alt="Berlin En Salsa Logo"
             />
 

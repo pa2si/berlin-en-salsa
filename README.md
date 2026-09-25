@@ -1,5 +1,10 @@
 to Do:
 
+v3.6.46
+
+- when hovering over the timetable images in main route, now the logo gets displayed instead of the eye
+- when hovering over the breadcrumb the logo animates
+
 v3.6.45
 
 - got rid of unnecessary favicons and favicon metadata in layout.tsx
