@@ -1,5 +1,9 @@
 to Do:
 
+v4.0.2
+
+- added explicit locale={locale} to both SectionFive links.
+
 v4.0.1
 
 - added scrollToTopBeforeNavigation in SectionFive. Reason-> when hitting the timetable link in main route the timtable route loaded the footer not the top of the page

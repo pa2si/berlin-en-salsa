@@ -157,6 +157,7 @@ const SectionFive = () => {
                       pathname: "/timetable",
                       query: buildTimetableQuery(day.weekday, locale),
                     }}
+                    locale={locale}
                     onNavigate={scrollToTopBeforeNavigation}
                   >
                     <motion.div
@@ -239,6 +240,7 @@ const SectionFive = () => {
                   pathname: "/timetable",
                   query: buildTimetableQuery(day.weekday, locale),
                 }}
+                locale={locale}
                 onNavigate={scrollToTopBeforeNavigation}
               >
                 <motion.div
