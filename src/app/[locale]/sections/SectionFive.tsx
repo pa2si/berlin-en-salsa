@@ -43,6 +43,10 @@ const SectionFive = () => {
     setHoveredDays((prev) => ({ ...prev, [dayId]: isHovered }));
   };
 
+  const scrollToTopBeforeNavigation = () => {
+    window.scrollTo(0, 0);
+  };
+
   // Helper to get translated day name
   const getDayTranslation = (weekday: string) => {
     // Use the days object from translations
@@ -153,6 +157,7 @@ const SectionFive = () => {
                       pathname: "/timetable",
                       query: buildTimetableQuery(day.weekday, locale),
                     }}
+                    onNavigate={scrollToTopBeforeNavigation}
                   >
                     <motion.div
                       className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"
@@ -234,6 +239,7 @@ const SectionFive = () => {
                   pathname: "/timetable",
                   query: buildTimetableQuery(day.weekday, locale),
                 }}
+                onNavigate={scrollToTopBeforeNavigation}
               >
                 <motion.div
                   className="relative cursor-pointer overflow-hidden rounded-lg shadow-xl"

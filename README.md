@@ -1,5 +1,14 @@
 to Do:
 
+v4.0.1
+
+- added scrollToTopBeforeNavigation in SectionFive. Reason-> when hitting the timetable link in main route the timtable route loaded the footer not the top of the page
+
+Upgrade to Next.js 16
+
+- upgraded to v16.3.6
+- when in timetable route the switch between languages conserves the current selected date.
+
 v3.6.46
 
 - when hovering over the timetable images in main route, now the logo gets displayed instead of the eye
