@@ -3,6 +3,11 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
+import {
+  getDayParamName,
+  getLocalizedDayParam,
+  LOCALIZED_TO_ENGLISH,
+} from "@/components/timetable/utils/urlHelpers";
 
 const LanguageSwitcher = () => {
   const router = useRouter();
@@ -72,9 +77,38 @@ const LanguageSwitcher = () => {
   const switchLanguage = (lang: string) => {
     if (lang === locale) return;
 
+    const searchParams = new URLSearchParams(window.location.search);
+    const selectedDay =
+      searchParams.get(getDayParamName(locale)) ?? searchParams.get("day");
+    const englishDay = selectedDay
+      ? LOCALIZED_TO_ENGLISH[selectedDay.toLowerCase()]
+      : undefined;
+
+    if (englishDay) {
+      searchParams.delete("day");
+      searchParams.delete("tag");
+      searchParams.delete("dia");
+      searchParams.set(
+        getDayParamName(lang),
+        getLocalizedDayParam(englishDay, lang),
+      );
+    }
+
+    const query: Record<string, string | string[]> = {};
+    searchParams.forEach((value, key) => {
+      const previousValue = query[key];
+      if (previousValue === undefined) {
+        query[key] = value;
+      } else if (Array.isArray(previousValue)) {
+        previousValue.push(value);
+      } else {
+        query[key] = [previousValue, value];
+      }
+    });
+
     // Use next-intl's router to navigate to the same page in different locale
-    // This will maintain the current path and just switch the locale
-    router.replace(pathname, { locale: lang as "de" | "es" });
+    // while preserving query state such as the selected timetable day.
+    router.replace({ pathname, query }, { locale: lang as "de" | "es" });
   };
 
   return (

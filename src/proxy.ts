@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 // Create the next-intl middleware with custom locale detection
 const intlMiddleware = createMiddleware(routing);
 
-export default function middleware(request: NextRequest) {
+export default function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Check if the pathname already has a locale prefix
