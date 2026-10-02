@@ -1,6 +1,6 @@
 {
   "name": "berlin-en-salsa",
-  "version": "v4.0.2",
+  "version": "v4.0.3",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -13,12 +13,10 @@
     "@neondatabase/serverless": "^1.1.0",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "@vercel/og": "^0.6.8",
-    "audit": "^0.0.6",
     "formidable": "^3.5.2",
     "framer-motion": "^12.19.2",
-    "next": "16.3.6",
+    "next": "^16.3.8",
     "next-intl": "^4.3.6",
-    "npm": "^11.6.4",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },

@@ -1,5 +1,10 @@
 to Do:
 
+v4.0.3
+
+- next.js security update
+- uninstalled npm and audit dependencies in package.json
+
 v4.0.2
 
 - added explicit locale={locale} to both SectionFive links.
