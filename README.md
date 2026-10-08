@@ -1,5 +1,9 @@
 to Do:
 
+v4.0.4
+
+- updated to next.js 16.4
+
 v4.0.3
 
 - next.js security update
