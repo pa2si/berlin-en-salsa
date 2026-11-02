@@ -23,6 +23,10 @@ to Do:
     ├── next.config.ts
     └── package.json
 
+v.4.1.3
+
+- update next and eslint-config-next to 16.4.4
+
 v.4.1.2
 
 - modified links in colaborations.tsx
