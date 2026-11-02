@@ -1,5 +1,44 @@
 to Do:
 
+- make a CMS with payload and vercel blob for the shop
+  - my-website/
+    ├── app/
+    │ ├── (frontend)/
+    │ │ ├── page.tsx
+    │ │ └── shop/
+    │ │ ├── page.tsx
+    │ │ └── [slug]/
+    │ │ └── page.tsx
+    │ └── (payload)/
+    │ ├── admin/
+    │ │ └── [[...segments]]/
+    │ │ └── page.tsx
+    │ └── api/
+    │ └── [...slug]/
+    │ └── route.ts
+    ├── collections/
+    │ ├── Products.ts
+    │ └── Media.ts
+    ├── payload.config.ts
+    ├── next.config.ts
+    └── package.json
+
+v.4.1.0
+chore: update dependencies for Node 26
+
+- next 16.4.1 -> 16.4.3
+- tailwindcss 4 -> 4.3.3, @tailwindcss/postcss 4 -> 4.3.3
+- eslint-config-next 16.4.1 -> 16.4.3
+- @types/node ^20 -> ^26
+- framer-motion 12.19.2 -> 14.9.0
+- next-intl 4.3.6 -> 4.14.9
+- @neondatabase/serverless 1.1.0 -> 1.2.0
+- react, react-dom 19.3.0 -> 19.3.1
+- prettier 3.5.3 -> 3.9.10
+- prettier-plugin-tailwindcss 0.6.12 -> 0.8.1
+- remove unused @vercel/og (fixes satori audit finding)
+- npm audit fix (zod, qs)
+
 v4.0.5
 
 - next.js update to 16.4.1
