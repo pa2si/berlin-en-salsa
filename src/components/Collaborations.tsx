@@ -32,7 +32,7 @@ export const Collaborations = () => {
       name: "Aviatrix",
       caption: t("aviatrix"),
       image: "/aviatrix.webp",
-      url: "https://example.com",
+      url: "https://www.instagram.com/aviatrix.ls/",
     },
     {
       id: 4,
@@ -46,7 +46,7 @@ export const Collaborations = () => {
       name: "Lateinamerika Nachrichten",
       caption: t("ln"),
       image: "/ln.webp",
-      url: "https://example.com",
+      url: "https://lateinamerika-nachrichten.de/",
     },
   ];
 
@@ -68,7 +68,7 @@ export const Collaborations = () => {
             href={collab.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group mx-auto flex w-full flex-col items-center text-center sm:mx-0 sm:w-auto sm:max-w-40 xl:mx-auto xl:max-w-[120px] 2xl:max-w-40"
+            className="group mx-auto flex w-full flex-col items-center text-center sm:mx-0 sm:w-auto sm:max-w-40 xl:mx-auto xl:max-w-30 2xl:max-w-40"
           >
             <motion.img
               src={collab.image}
