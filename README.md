@@ -23,6 +23,10 @@ to Do:
     ├── next.config.ts
     └── package.json
 
+v.4.1.1
+
+- updated typescript 5 to typescript@6.0.3
+
 v.4.1.0
 chore: update dependencies for Node 26
 
