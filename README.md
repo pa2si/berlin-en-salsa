@@ -23,6 +23,10 @@ to Do:
     ├── next.config.ts
     └── package.json
 
+v.4.1.5
+
+- changed Pauls name in Datenschutz to the Verein
+
 v.4.1.4
 
 - next patch -> next@16.4.5
