@@ -23,6 +23,10 @@ to Do:
     ├── next.config.ts
     └── package.json
 
+v.4.1.6
+
+- email in datenschutz Mailchimp section replaced
+
 v.4.1.5
 
 - changed Pauls name in Datenschutz to the Verein
